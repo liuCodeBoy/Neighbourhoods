@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D31CD47C1F8E02D100195686 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31CD47B1F8E02D100195686 /* AFNetworking.framework */; };
-		D31CD47D1F8E02DD00195686 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D31CD47B1F8E02D100195686 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CD4A21F91B14700195686 /* CircleViewController.swift */; };
+		D31CD4A51F91B3F000195686 /* CircleTopicsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CD4A41F91B3F000195686 /* CircleTopicsCell.swift */; };
 		D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A193581F8DC74D002C1E23 /* AppDelegate.swift */; };
 		D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935C1F8DC74D002C1E23 /* Main.storyboard */; };
 		D3A193601F8DC74D002C1E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935F1F8DC74D002C1E23 /* Assets.xcassets */; };
@@ -31,20 +31,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D369E0921F8DF5A600FDB7E8 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D31CD47D1F8E02DD00195686 /* AFNetworking.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D31CD47B1F8E02D100195686 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		D31CD4A21F91B14700195686 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
+		D31CD4A41F91B3F000195686 /* CircleTopicsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTopicsCell.swift; sourceTree = "<group>"; };
+		D31CD4A81F91DAB700195686 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D31CD4A91F91DAB700195686 /* RegistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistVC.swift; sourceTree = "<group>"; };
+		D31CD4AA1F91DAC100195686 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		D31CD4AB1F91DAC100195686 /* RegistVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistVC.xib; sourceTree = "<group>"; };
 		D3A193551F8DC74D002C1E23 /* Neighbourhoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbourhoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A193581F8DC74D002C1E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A1935D1F8DC74D002C1E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,19 +58,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D31CD47C1F8E02D100195686 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D31CD47A1F8E02D100195686 /* Frameworks */ = {
+		D31CD4A61F91DA5300195686 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D31CD47B1F8E02D100195686 /* AFNetworking.framework */,
+				D31CD4A81F91DAB700195686 /* LoginVC.swift */,
+				D31CD4A91F91DAB700195686 /* RegistVC.swift */,
 			);
-			name = Frameworks;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D31CD4A71F91DA9100195686 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D31CD4AA1F91DAC100195686 /* LoginVC.xib */,
+				D31CD4AB1F91DAC100195686 /* RegistVC.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D3A1934C1F8DC74D002C1E23 = {
@@ -83,7 +87,6 @@
 			children = (
 				D3A193571F8DC74D002C1E23 /* Neighbourhoods */,
 				D3A193561F8DC74D002C1E23 /* Products */,
-				D31CD47A1F8E02D100195686 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,7 +120,6 @@
 			children = (
 				D3A1937E1F8DCA37002C1E23 /* Circle.storyboard */,
 				D3A1936B1F8DC867002C1E23 /* Controller */,
-				D3A1936C1F8DC867002C1E23 /* Model */,
 				D3A1936D1F8DC867002C1E23 /* View */,
 			);
 			path = Circle;
@@ -126,20 +128,15 @@
 		D3A1936B1F8DC867002C1E23 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D31CD4A21F91B14700195686 /* CircleViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		D3A1936C1F8DC867002C1E23 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		D3A1936D1F8DC867002C1E23 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D31CD4A41F91B3F000195686 /* CircleTopicsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,96 +145,26 @@
 			isa = PBXGroup;
 			children = (
 				D3A193801F8DCA4F002C1E23 /* Announcement.storyboard */,
-				D3A1936F1F8DC87F002C1E23 /* Controller */,
-				D3A193701F8DC87F002C1E23 /* Model */,
-				D3A193711F8DC87F002C1E23 /* View */,
 			);
 			path = Announcement;
-			sourceTree = "<group>";
-		};
-		D3A1936F1F8DC87F002C1E23 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D3A193701F8DC87F002C1E23 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D3A193711F8DC87F002C1E23 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D3A193721F8DC887002C1E23 /* Help */ = {
 			isa = PBXGroup;
 			children = (
 				D3A193871F8DCB4C002C1E23 /* Help.storyboard */,
-				D3A193731F8DC887002C1E23 /* Controller */,
-				D3A193741F8DC887002C1E23 /* Model */,
-				D3A193751F8DC887002C1E23 /* View */,
 			);
 			path = Help;
-			sourceTree = "<group>";
-		};
-		D3A193731F8DC887002C1E23 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D3A193741F8DC887002C1E23 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D3A193751F8DC887002C1E23 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D3A193761F8DC88E002C1E23 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */,
-				D3A193771F8DC88E002C1E23 /* Controller */,
-				D3A193781F8DC88E002C1E23 /* Model */,
-				D3A193791F8DC88E002C1E23 /* View */,
+				D31CD4A61F91DA5300195686 /* Controller */,
+				D31CD4A71F91DA9100195686 /* View */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		D3A193771F8DC88E002C1E23 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		D3A193781F8DC88E002C1E23 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D3A193791F8DC88E002C1E23 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D3A193821F8DCAA7002C1E23 /* Null */ = {
@@ -259,7 +186,6 @@
 				D3A193521F8DC74D002C1E23 /* Frameworks */,
 				D3A193531F8DC74D002C1E23 /* Resources */,
 				D369E0911F8DF57900FDB7E8 /* Embed Frameworks */,
-				D369E0921F8DF5A600FDB7E8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -327,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31CD4A51F91B3F000195686 /* CircleTopicsCell.swift in Sources */,
+				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
 				D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
