@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31CD47C1F8E02D100195686 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31CD47B1F8E02D100195686 /* AFNetworking.framework */; };
+		D31CD47D1F8E02DD00195686 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D31CD47B1F8E02D100195686 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A193581F8DC74D002C1E23 /* AppDelegate.swift */; };
 		D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935C1F8DC74D002C1E23 /* Main.storyboard */; };
 		D3A193601F8DC74D002C1E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935F1F8DC74D002C1E23 /* Assets.xcassets */; };
@@ -18,7 +20,31 @@
 		D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D369E0911F8DF57900FDB7E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D369E0921F8DF5A600FDB7E8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D31CD47D1F8E02DD00195686 /* AFNetworking.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D31CD47B1F8E02D100195686 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		D3A193551F8DC74D002C1E23 /* Neighbourhoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbourhoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A193581F8DC74D002C1E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A1935D1F8DC74D002C1E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,17 +63,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31CD47C1F8E02D100195686 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D31CD47A1F8E02D100195686 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D31CD47B1F8E02D100195686 /* AFNetworking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3A1934C1F8DC74D002C1E23 = {
 			isa = PBXGroup;
 			children = (
 				D3A193571F8DC74D002C1E23 /* Neighbourhoods */,
 				D3A193561F8DC74D002C1E23 /* Products */,
+				D31CD47A1F8E02D100195686 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +258,8 @@
 				D3A193511F8DC74D002C1E23 /* Sources */,
 				D3A193521F8DC74D002C1E23 /* Frameworks */,
 				D3A193531F8DC74D002C1E23 /* Resources */,
+				D369E0911F8DF57900FDB7E8 /* Embed Frameworks */,
+				D369E0921F8DF5A600FDB7E8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -428,6 +466,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
@@ -443,6 +486,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
