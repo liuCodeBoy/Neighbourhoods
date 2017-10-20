@@ -16,6 +16,12 @@ class CircleViewController: UIViewController {
 
         topicsTableView.delegate = self
         topicsTableView.dataSource = self
+    
+        let URLArr = [URL(string: "http://ow1i9ri5b.bkt.clouddn.com/IMG_7944.jpg"),
+                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/prototype-design-white.png"),
+                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Sombrero.jpg")]
+        let  loopView = LoopView.init(images: URLArr as! [URL], frame: CGRect.init(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 160), isAutoScroll: true)
+        self.view.addSubview(loopView)
 
     }
 
