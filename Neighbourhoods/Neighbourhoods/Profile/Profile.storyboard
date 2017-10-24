@@ -380,12 +380,24 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-cS-fqC">
+                                        <rect key="frame" x="12" y="12" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="fUo-aU-ej2"/>
+                                            <constraint firstAttribute="width" constant="20" id="mOb-Zb-p4U"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="back:" destination="l2W-vz-ADN" eventType="touchUpInside" id="dAl-YK-Zse"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.27812278270721436" green="0.68835920095443726" blue="0.99172490835189819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Nvj-8Z-wWA" firstAttribute="leading" secondItem="a7u-K6-t0E" secondAttribute="leading" constant="22" id="0wk-xM-m6t"/>
                                     <constraint firstItem="cN1-DV-leb" firstAttribute="leading" secondItem="1ek-Ii-9LK" secondAttribute="trailing" constant="5" id="4IA-Mq-X4h"/>
                                     <constraint firstItem="1ek-Ii-9LK" firstAttribute="top" secondItem="a7u-K6-t0E" secondAttribute="top" constant="60" id="Al6-Qa-xXB"/>
+                                    <constraint firstItem="Kna-cS-fqC" firstAttribute="top" secondItem="a7u-K6-t0E" secondAttribute="top" constant="12" id="FTb-LL-vcd"/>
                                     <constraint firstItem="1ek-Ii-9LK" firstAttribute="centerX" secondItem="a7u-K6-t0E" secondAttribute="centerX" id="HW9-WH-kjH"/>
                                     <constraint firstAttribute="height" constant="180" id="Jim-Np-fQx"/>
                                     <constraint firstAttribute="bottom" secondItem="Nvj-8Z-wWA" secondAttribute="bottom" constant="8" id="NUp-YE-xmj"/>
@@ -396,6 +408,7 @@
                                     <constraint firstItem="iYN-zS-pjr" firstAttribute="centerY" secondItem="Nvj-8Z-wWA" secondAttribute="centerY" id="mgi-Wl-oAF"/>
                                     <constraint firstItem="ZSV-Wv-Cab" firstAttribute="centerY" secondItem="Nvj-8Z-wWA" secondAttribute="centerY" id="sHi-pG-1dj"/>
                                     <constraint firstAttribute="trailing" secondItem="qd6-xG-dr7" secondAttribute="trailing" constant="22" id="vMs-1P-dTg"/>
+                                    <constraint firstItem="Kna-cS-fqC" firstAttribute="leading" secondItem="a7u-K6-t0E" secondAttribute="leading" constant="12" id="y9H-un-YmB"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8YU-nf-oiT">
@@ -454,7 +467,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GbH-fG-l8a"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EwG-wx-bOW"/>
                     <connections>
                         <outlet property="receiveScoreTableView" destination="8YU-nf-oiT" id="EEP-f5-XEc"/>
                     </connections>
@@ -484,6 +496,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="20" height="20"/>
         <image name="cumulative_score" width="20" height="20"/>
         <image name="location_icon_small" width="7" height="10"/>
         <image name="profile_activity" width="60" height="60"/>

@@ -1,56 +1,48 @@
 //
-//  MomentsViewController.swift
+//  MyFavouriteViewController.swift
 //  Neighbourhoods
 //
-//  Created by Weslie on 21/10/2017.
+//  Created by Weslie on 24/10/2017.
 //  Copyright © 2017 NJQL. All rights reserved.
 //
 
 import UIKit
 
-class MomentsViewController: UIViewController {
+class MyFavouriteViewController: UIViewController {
     
-    @IBOutlet weak var latestIssue: UIButton!
-    @IBOutlet weak var hotestTopic: UIButton!
-    @IBOutlet weak var topicClassify: UIButton!
+    @IBOutlet weak var myFavTableView: UITableView!
     
-    @IBOutlet weak var topicsView: UIView!
+    @IBOutlet weak var favMoments: UIButton!
+    @IBOutlet weak var favUsers: UIButton!
     
     @IBAction func btn1clicked(_ sender: UIButton) {
-        latestIssue.isSelected = true
-        hotestTopic.isSelected = false
-        topicClassify.isSelected = false
-        
-        topicsView.isHidden = true
+        favMoments.isSelected = true
+        favUsers.isSelected = false
     }
     @IBAction func btn2clicked(_ sender: UIButton) {
-        latestIssue.isSelected = false
-        hotestTopic.isSelected = true
-        topicClassify.isSelected = false
-        
-        topicsView.isHidden = true
-
+        favMoments.isSelected = false
+        favUsers.isSelected = true
     }
-    @IBAction func btn3clicked(_ sender: UIButton) {
-        latestIssue.isSelected = false
-        hotestTopic.isSelected = false
-        topicClassify.isSelected = true
-        
-        topicsView.isHidden = false
-    }
-    
-    @IBOutlet weak var momentsTopicsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadNavItems()
-        topicsView.isHidden = true
+        myFavTableView.delegate = self
+        myFavTableView.dataSource = self
         
-        momentsTopicsTableView.delegate = self
-        momentsTopicsTableView.dataSource = self
+        let childVC = FavUsersTableViewController()
+        
+        let tableView = childVC.view
+        
+        tableView?.frame = CGRect.init(x: 0, y: (favMoments.superview?.frame.maxY)! + 1, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
+        self.addChildViewController(childVC)
+        self.view.addSubview(tableView!)
+
+        
     }
-
+    
     func loadNavItems() {
         let backBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_back"), style: .done, target: self, action: #selector(pop))
         self.navigationItem.setLeftBarButton(backBtn, animated: true)
@@ -60,7 +52,7 @@ class MomentsViewController: UIViewController {
         let messgaeBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_message"), style: .done, target: self, action: #selector(lookUpMessage))
         // MARK:- set right items
         self.navigationItem.setRightBarButtonItems([messgaeBtn, writeBtn], animated: true)
-
+        
     }
     
     @objc func pop() {
@@ -74,20 +66,19 @@ class MomentsViewController: UIViewController {
     @objc func lookUpMessage() {
         
     }
-    
-    
+
 
 }
 
 
-extension MomentsViewController: UITableViewDataSource, UITableViewDelegate {
+extension MyFavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsTopicCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyFavouriteCell")
         return cell!
     }
 }

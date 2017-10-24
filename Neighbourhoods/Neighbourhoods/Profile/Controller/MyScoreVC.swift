@@ -12,6 +12,9 @@ class MyScoreVC: UIViewController {
     
     @IBOutlet weak var receiveScoreTableView: UITableView!
     
+    @IBAction func back(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,19 +22,14 @@ class MyScoreVC: UIViewController {
         receiveScoreTableView.delegate = self
         receiveScoreTableView.dataSource = self
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.3019607961, green: 0.6941176653, blue: 0.980392158, alpha: 1)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = false
-
-       
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = UIColor(white: 1, alpha: 0.98)
+        self.navigationController?.isNavigationBarHidden = false
     }
 
 }
