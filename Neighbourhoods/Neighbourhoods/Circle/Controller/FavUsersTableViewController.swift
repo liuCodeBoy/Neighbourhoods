@@ -13,7 +13,7 @@ class FavUsersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView?.register(UINib(nibName: "aaa", bundle: nil), forCellReuseIdentifier: "aaa")
+        tableView?.register(UINib(nibName: "UsersListTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersListCell")
         
 
     }
@@ -23,15 +23,17 @@ class FavUsersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "aaa")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UsersListCell")
 
         return cell!
 
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 95
+        
     }
+    
 
 
 }
