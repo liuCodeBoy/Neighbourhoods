@@ -20,6 +20,8 @@
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
 		D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */; };
+		D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347E5A51FA2091000FFE815 /* SpringView.xib */; };
+		D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A71FA20B6B00FFE815 /* SpringView.swift */; };
 		D359931C1F9C9B8C00F96103 /* MyScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */; };
 		D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */; };
 		D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */; };
@@ -33,8 +35,6 @@
 		D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */; };
 		D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86C61FA0C19A000CCA17 /* Share.xib */; };
 		D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C81FA0C1A5000CCA17 /* Share.swift */; };
-		D36C86CB1FA0C52E000CCA17 /* ConvenienceProfileFunctionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86CA1FA0C52E000CCA17 /* ConvenienceProfileFunctionsView.swift */; };
-		D36C86CD1FA0C537000CCA17 /* ConvenienceProfileFunctionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86CC1FA0C537000CCA17 /* ConvenienceProfileFunctionsView.xib */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */; };
 		D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A193581F8DC74D002C1E23 /* AppDelegate.swift */; };
@@ -88,6 +88,8 @@
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		D347E5A51FA2091000FFE815 /* SpringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringView.xib; sourceTree = "<group>"; };
+		D347E5A71FA20B6B00FFE815 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
 		D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreVC.swift; sourceTree = "<group>"; };
 		D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersTableViewController.swift; sourceTree = "<group>"; };
 		D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewCell.swift; sourceTree = "<group>"; };
@@ -101,8 +103,6 @@
 		D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCommentDetialViewController.swift; sourceTree = "<group>"; };
 		D36C86C61FA0C19A000CCA17 /* Share.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Share.xib; sourceTree = "<group>"; };
 		D36C86C81FA0C1A5000CCA17 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
-		D36C86CA1FA0C52E000CCA17 /* ConvenienceProfileFunctionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceProfileFunctionsView.swift; sourceTree = "<group>"; };
-		D36C86CC1FA0C537000CCA17 /* ConvenienceProfileFunctionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConvenienceProfileFunctionsView.xib; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialLogin.storyboard; sourceTree = "<group>"; };
 		D3A193551F8DC74D002C1E23 /* Neighbourhoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbourhoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,8 +245,8 @@
 				D36C86C11FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.xib */,
 				D36C86C81FA0C1A5000CCA17 /* Share.swift */,
 				D36C86C61FA0C19A000CCA17 /* Share.xib */,
-				D36C86CA1FA0C52E000CCA17 /* ConvenienceProfileFunctionsView.swift */,
-				D36C86CC1FA0C537000CCA17 /* ConvenienceProfileFunctionsView.xib */,
+				D347E5A71FA20B6B00FFE815 /* SpringView.swift */,
+				D347E5A51FA2091000FFE815 /* SpringView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,8 +386,8 @@
 				D36C86BF1FA0B279000CCA17 /* MomentDetialTableViewCell.xib in Resources */,
 				D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */,
 				D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */,
+				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
-				D36C86CD1FA0C537000CCA17 /* ConvenienceProfileFunctionsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +408,6 @@
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
 				D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */,
 				D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */,
-				D36C86CB1FA0C52E000CCA17 /* ConvenienceProfileFunctionsView.swift in Sources */,
 				D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */,
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
@@ -416,6 +415,7 @@
 				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
 				D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */,
+				D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */,
 				D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */,
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
 				D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */,
