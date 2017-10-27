@@ -516,10 +516,10 @@
             </objects>
             <point key="canvasLocation" x="2640.8000000000002" y="1050.224887556222"/>
         </scene>
-        <!--View Controller-->
+        <!--My Followings View Controller-->
         <scene sceneID="3hH-uB-5hw">
             <objects>
-                <viewController id="p3y-wX-WSA" sceneMemberID="viewController">
+                <viewController id="p3y-wX-WSA" customClass="MyFollowingsViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cUO-Zr-qiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -545,15 +545,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Py6-wk-Gj5"/>
                     </view>
+                    <connections>
+                        <outlet property="myFollowingsTableView" destination="Grn-Rb-5cB" id="TQd-wp-I7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgK-vD-mmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1902" y="1777"/>
         </scene>
-        <!--View Controller-->
+        <!--My Followers View Controller-->
         <scene sceneID="kW6-uA-917">
             <objects>
-                <viewController id="OxP-a3-qFT" sceneMemberID="viewController">
+                <viewController id="OxP-a3-qFT" customClass="MyFollowersViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="leA-fj-ijV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,6 +582,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bFM-cS-iNU"/>
                     </view>
+                    <connections>
+                        <outlet property="myFollowersTableView" destination="xga-U9-FAt" id="f6q-Mm-o3X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSW-iE-F4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -62,7 +62,8 @@ class RegisterViewController: UIViewController {
                         NetWorkTool.shareInstance.UserRegister((weakSelf?.phoneNumber.text!)!, password: (weakSelf?.password.text!)!, finished: { (userInfo, error) in
                             if error == nil {
                                 //存储手机号码和密码
-                                sender.saveUserData(phone: self.phoneNumber.text!, password: self.password.text!, token: "")
+                                //MARK: - bug fix
+//                                sender.saveUserData(phone: self.phoneNumber.text!, password: self.password.text!, token: "")
                                 //存储数据到服务器
                                 let alert = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
                                 let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
@@ -117,5 +118,6 @@ extension String {
         set {
             
         }
+    }
 }
 

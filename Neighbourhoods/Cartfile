@@ -1,2 +1,4 @@
 github "AFNetworking/AFNetworking"
 github "rs/SDWebImage"
+github "MobClub/SMSSDK-for-iOS"
+github "MobClub/MOBFoundation"
