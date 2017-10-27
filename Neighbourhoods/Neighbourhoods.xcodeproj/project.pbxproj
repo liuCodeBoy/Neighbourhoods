@@ -17,6 +17,7 @@
 		D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */; };
 		D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CD4A21F91B14700195686 /* CircleViewController.swift */; };
 		D31CD4A51F91B3F000195686 /* CircleTopicsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CD4A41F91B3F000195686 /* CircleTopicsCell.swift */; };
+		D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */; };
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
 		D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */; };
@@ -85,6 +86,7 @@
 		D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfProfileViewController.swift; sourceTree = "<group>"; };
 		D31CD4A21F91B14700195686 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		D31CD4A41F91B3F000195686 /* CircleTopicsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTopicsCell.swift; sourceTree = "<group>"; };
+		D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueViewController.swift; sourceTree = "<group>"; };
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				D31CD4A21F91B14700195686 /* CircleViewController.swift */,
 				D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */,
 				D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */,
+				D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */,
 				D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */,
 			);
 			path = Controller;
@@ -405,6 +408,7 @@
 				D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */,
 				D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
+				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
 				D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */,
 				D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */,
