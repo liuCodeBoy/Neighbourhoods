@@ -22,4 +22,4 @@ let lbl_Official = #colorLiteral(red: 0.521568656, green: 0.7921568751, blue: 0.
 
 let following_top = #colorLiteral(red: 0.9686274529, green: 0.6862745285, blue: 0.4274509847, alpha: 1)
 
-let following_cancel = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+let following_delete = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)

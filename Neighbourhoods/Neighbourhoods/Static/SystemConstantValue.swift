@@ -10,3 +10,13 @@ import UIKit
 
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
+
+let isIPHONEX: Bool = { () -> Bool in
+    if screenHeight == 812.0 && screenWidth == 375.0 {
+        return true
+    } else {
+        return false
+    }
+}()
+
+

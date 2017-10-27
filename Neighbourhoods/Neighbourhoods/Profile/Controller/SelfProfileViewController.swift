@@ -14,13 +14,8 @@ class SelfProfileViewController: UIViewController {
         super.viewDidLoad()
         
         self.setNavBarTitle(title: "我的")
-        
-        let editBtn = UIBarButtonItem(title: "编辑", style: .done, target: self, action: #selector(editSelfProfile))
-        self.navigationItem.setRightBarButton(editBtn, animated: true)
+
     }
     
-    @objc func editSelfProfile() {
-        
-    }
-
 }
+

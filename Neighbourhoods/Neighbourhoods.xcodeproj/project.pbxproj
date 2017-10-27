@@ -23,6 +23,7 @@
 		D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */; };
 		D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347E5A51FA2091000FFE815 /* SpringView.xib */; };
 		D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A71FA20B6B00FFE815 /* SpringView.swift */; };
+		D347E5AA1FA3644F00FFE815 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A91FA3644F00FFE815 /* EditProfileViewController.swift */; };
 		D359931C1F9C9B8C00F96103 /* MyScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */; };
 		D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */; };
 		D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */; };
@@ -92,6 +93,7 @@
 		D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		D347E5A51FA2091000FFE815 /* SpringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringView.xib; sourceTree = "<group>"; };
 		D347E5A71FA20B6B00FFE815 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		D347E5A91FA3644F00FFE815 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreVC.swift; sourceTree = "<group>"; };
 		D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersTableViewController.swift; sourceTree = "<group>"; };
 		D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */,
+				D347E5A91FA3644F00FFE815 /* EditProfileViewController.swift */,
 				D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */,
 				D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */,
 				D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */,
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D347E5AA1FA3644F00FFE815 /* EditProfileViewController.swift in Sources */,
 				D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */,
 				D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */,
 				D31CD4A51F91B3F000195686 /* CircleTopicsCell.swift in Sources */,
