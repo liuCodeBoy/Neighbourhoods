@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -55,8 +55,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-Oj-B9l">
                                 <rect key="frame" x="16" y="350" width="208" height="45"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T74-oN-FTT">
-                                        <rect key="frame" x="27" y="11.5" width="73.5" height="21"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T74-oN-FTT">
+                                        <rect key="frame" x="27" y="11.5" width="56" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -77,6 +77,9 @@
                                 <state key="normal" title="立即注册">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="registeAction:" destination="LWj-7Y-etA" eventType="touchUpInside" id="lPB-Qa-mg1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF3-Ix-qrg">
                                 <rect key="frame" x="234" y="350" width="125" height="45"/>
@@ -124,8 +127,11 @@
                     <navigationItem key="navigationItem" id="OXv-t0-7be"/>
                     <connections>
                         <outlet property="confirmBackView" destination="g6S-Oj-B9l" id="bSX-Wu-I2n"/>
+                        <outlet property="idNumber" destination="T74-oN-FTT" id="wsU-05-hRO"/>
                         <outlet property="navBar" destination="OXv-t0-7be" id="jvx-bP-ZWQ"/>
+                        <outlet property="password" destination="cWE-a9-MJ7" id="ude-3l-Md0"/>
                         <outlet property="phoneBackView" destination="Fqa-wG-i6w" id="gN3-Vr-VZw"/>
+                        <outlet property="phoneNumber" destination="TIu-in-DXA" id="sST-OM-4bk"/>
                         <outlet property="pwdBackView" destination="z1P-LT-ZyO" id="qoD-B8-tTi"/>
                         <outlet property="registerBackView" destination="9Tu-DH-Lgu" id="xkc-RG-Cej"/>
                         <outlet property="sendIDNumBackVIew" destination="FF3-Ix-qrg" id="8AA-Bq-aqA"/>
@@ -133,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9Q-jF-LHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="125"/>
+            <point key="canvasLocation" x="1769" y="63"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lkt-Ex-3ZP">
@@ -306,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PkA-TO-QFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.79999999999995" y="124.58770614692655"/>
+            <point key="canvasLocation" x="1044" y="89"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8uI-0i-U3j">
