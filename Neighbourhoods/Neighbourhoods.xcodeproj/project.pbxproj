@@ -49,12 +49,16 @@
 		D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A193851F8DCB2E002C1E23 /* Null.storyboard */; };
 		D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A193871F8DCB4C002C1E23 /* Help.storyboard */; };
 		D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */; };
+		D3B4FE3F1FA41D2F0018FADD /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */; };
+		D3B4FE401FA41D2F0018FADD /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */; };
+		D3B4FE411FA41D4C0018FADD /* MOBFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3B4FE421FA41D4C0018FADD /* MOBFoundationEx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */; };
+		D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */; };
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
 		D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */; };
-		D3BEA8901FA3931F00E4595E /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEA88F1FA3931F00E4595E /* MOBFoundation.framework */; };
 		D3BEA8921FA3932400E4595E /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEA8911FA3932400E4595E /* SMS_SDK.framework */; };
 		D3BEA8931FA3933200E4595E /* SMS_SDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3BEA8911FA3932400E4595E /* SMS_SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D3BEA8941FA3933600E4595E /* MOBFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3BEA88F1FA3931F00E4595E /* MOBFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3BEA8961FA3935000E4595E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEA8951FA3935000E4595E /* libz.tbd */; };
 		D3BEA8981FA3935D00E4595E /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEA8971FA3935D00E4595E /* libstdc++.tbd */; };
 		D3BEA89D1FA39E3000E4595E /* MyMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */; };
@@ -62,6 +66,8 @@
 		D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */; };
 		D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */; };
 		D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B18B1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift */; };
+		D3FE2FFE1FA45B0100FAD95E /* SocialCharityDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FE2FFD1FA45B0100FAD95E /* SocialCharityDetialViewController.swift */; };
+		D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FE2FFF1FA45B2100FAD95E /* ConsultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +77,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3BEA8941FA3933600E4595E /* MOBFoundation.framework in CopyFiles */,
+				D3B4FE411FA41D4C0018FADD /* MOBFoundation.framework in CopyFiles */,
+				D3B4FE421FA41D4C0018FADD /* MOBFoundationEx.framework in CopyFiles */,
 				D3BEA8931FA3933200E4595E /* SMS_SDK.framework in CopyFiles */,
 				B692F89E1F91F1A700C75B41 /* AFNetworking.framework in CopyFiles */,
 				B692F89F1F91F1A700C75B41 /* SDWebImage.framework in CopyFiles */,
@@ -133,9 +140,12 @@
 		D3A193851F8DCB2E002C1E23 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.storyboard; sourceTree = "<group>"; };
 		D3A193871F8DCB4C002C1E23 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = Carthage/Checkouts/MOBFoundation_IDFA/MOBFoundation.framework; sourceTree = "<group>"; };
+		D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundationEx.framework; path = Carthage/Checkouts/MOBFoundation_IDFA/MOBFoundationEx.framework; sourceTree = "<group>"; };
+		D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityViewController.swift; sourceTree = "<group>"; };
+		D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAndMomentViewController.swift; sourceTree = "<group>"; };
 		D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingsViewController.swift; sourceTree = "<group>"; };
 		D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowersViewController.swift; sourceTree = "<group>"; };
-		D3BEA88F1FA3931F00E4595E /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = "Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/Required/MOBFoundation.framework"; sourceTree = "<group>"; };
 		D3BEA8911FA3932400E4595E /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SMS_SDK.framework; path = "Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/SMSSDK/SMS_SDK.framework"; sourceTree = "<group>"; };
 		D3BEA8951FA3935000E4595E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3BEA8971FA3935D00E4595E /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -145,6 +155,8 @@
 		D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
 		D3F6B18B1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMissionsCategoriesCell.swift; sourceTree = "<group>"; };
+		D3FE2FFD1FA45B0100FAD95E /* SocialCharityDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityDetialViewController.swift; sourceTree = "<group>"; };
+		D3FE2FFF1FA45B2100FAD95E /* ConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +167,9 @@
 				B692F89B1F91F17E00C75B41 /* SDWebImage.framework in Frameworks */,
 				B692F89C1F91F17E00C75B41 /* AFNetworking.framework in Frameworks */,
 				D3BEA8981FA3935D00E4595E /* libstdc++.tbd in Frameworks */,
-				D3BEA8901FA3931F00E4595E /* MOBFoundation.framework in Frameworks */,
 				D3BEA8921FA3932400E4595E /* SMS_SDK.framework in Frameworks */,
+				D3B4FE3F1FA41D2F0018FADD /* MOBFoundation.framework in Frameworks */,
+				D3B4FE401FA41D2F0018FADD /* MOBFoundationEx.framework in Frameworks */,
 				D3BEA8961FA3935000E4595E /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,10 +180,11 @@
 		B692F8981F91F17D00C75B41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */,
+				D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */,
 				D3BEA8971FA3935D00E4595E /* libstdc++.tbd */,
 				D3BEA8951FA3935000E4595E /* libz.tbd */,
 				D3BEA8911FA3932400E4595E /* SMS_SDK.framework */,
-				D3BEA88F1FA3931F00E4595E /* MOBFoundation.framework */,
 				B692F89A1F91F17E00C75B41 /* AFNetworking.framework */,
 				B692F8991F91F17E00C75B41 /* SDWebImage.framework */,
 			);
@@ -331,6 +345,10 @@
 			children = (
 				D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */,
 				D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */,
+				D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */,
+				D3FE2FFD1FA45B0100FAD95E /* SocialCharityDetialViewController.swift */,
+				D3FE2FFF1FA45B2100FAD95E /* ConsultViewController.swift */,
+				D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -445,10 +463,12 @@
 				D31CD4A51F91B3F000195686 /* CircleTopicsCell.swift in Sources */,
 				D359931C1F9C9B8C00F96103 /* MyScoreVC.swift in Sources */,
 				D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */,
+				D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */,
 				D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
+				D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */,
 				D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */,
 				D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */,
 				D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */,
@@ -456,6 +476,7 @@
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
 				D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */,
+				D3FE2FFE1FA45B0100FAD95E /* SocialCharityDetialViewController.swift in Sources */,
 				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
 				D3BEA89D1FA39E3000E4595E /* MyMissionsViewController.swift in Sources */,
@@ -467,6 +488,7 @@
 				D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */,
 				D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */,
 				D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */,
+				D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */,
 				D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */,
 				D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */,
 			);
@@ -613,6 +635,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/Required",
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/SMSSDK",
+					"$(PROJECT_DIR)/Carthage/Checkouts/MOBFoundation_IDFA",
 				);
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -637,6 +660,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/Required",
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/SMSSDK",
+					"$(PROJECT_DIR)/Carthage/Checkouts/MOBFoundation_IDFA",
 				);
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

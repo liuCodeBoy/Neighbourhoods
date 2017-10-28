@@ -1,4 +1,4 @@
 github "AFNetworking/AFNetworking" "3.1.0"
-github "MobClub/MOBFoundation" "3.0.4"
+github "MobClub/MOBFoundation_IDFA" "3.0.4"
 github "MobClub/SMSSDK-for-iOS" "3.0.1"
 github "rs/SDWebImage" "4.1.2"

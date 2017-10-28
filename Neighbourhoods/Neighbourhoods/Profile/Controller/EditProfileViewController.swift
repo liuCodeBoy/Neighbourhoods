@@ -10,6 +10,8 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var editTableVIew: UITableView!
     
     override func viewDidLoad() {
