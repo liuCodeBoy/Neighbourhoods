@@ -43,7 +43,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAw-lX-bYj">
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAw-lX-bYj">
                         <rect key="frame" x="394" y="49.5" width="13" height="13"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="76j-xN-eEr"/>
@@ -51,7 +51,7 @@
                         </constraints>
                         <state key="normal" image="share_smalll"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUL-Q1-kbh">
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUL-Q1-kbh">
                         <rect key="frame" x="417" y="49.5" width="13" height="13"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="1YJ-rt-dDq"/>

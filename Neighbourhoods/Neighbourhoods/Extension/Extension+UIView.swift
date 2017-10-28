@@ -26,6 +26,15 @@ extension UIViewController {
         titleLbl.textColor = navAndTabBarTintColor
         self.navigationItem.titleView = titleLbl
     }
+    
+    func setNavBarBackBtn() {
+        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(popopop))
+        self.navigationItem.setLeftBarButton(back, animated: true)
+    }
+    
+    @objc func popopop() {
+        self.navigationController?.popViewController(animated: true)
+    }
 
 
 }
