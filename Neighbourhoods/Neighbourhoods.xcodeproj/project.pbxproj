@@ -62,6 +62,7 @@
 		D3BEA8961FA3935000E4595E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEA8951FA3935000E4595E /* libz.tbd */; };
 		D3BEA8981FA3935D00E4595E /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BEA8971FA3935D00E4595E /* libstdc++.tbd */; };
 		D3BEA89D1FA39E3000E4595E /* MyMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */; };
+		D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */; };
 		D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */; };
 		D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */; };
 		D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */; };
@@ -151,6 +152,7 @@
 		D3BEA8971FA3935D00E4595E /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbourhoods-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionsViewController.swift; sourceTree = "<group>"; };
+		D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
 		D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
@@ -308,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				D3A193801F8DCA4F002C1E23 /* Announcement.storyboard */,
+				D3C1D6C71FA6D7B100207E38 /* Controller */,
+				D3C1D6C91FA6D7BF00207E38 /* View */,
 			);
 			path = Announcement;
 			sourceTree = "<group>";
@@ -338,6 +342,21 @@
 				D3A193851F8DCB2E002C1E23 /* Null.storyboard */,
 			);
 			path = Null;
+			sourceTree = "<group>";
+		};
+		D3C1D6C71FA6D7B100207E38 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3C1D6C91FA6D7BF00207E38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D3F6B1831F9A1071004D0A20 /* Controller */ = {
@@ -467,6 +486,7 @@
 				D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
+				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
 				D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */,
 				D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */,

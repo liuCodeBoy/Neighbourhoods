@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OjL-R2-iab">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mcl-uA-zDH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,24 +9,141 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--社区公告-->
+        <!--Announcement View Controller-->
         <scene sceneID="7rl-E4-82Q">
             <objects>
-                <viewController id="OjL-R2-iab" sceneMemberID="viewController">
+                <viewController id="OjL-R2-iab" customClass="AnnouncementViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mxP-mm-NBT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVa-xl-AUW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkm-Hh-Pdb">
+                                        <rect key="frame" x="8" y="15" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="ZdG-7C-KTZ"/>
+                                            <constraint firstAttribute="width" constant="100" id="i6u-XN-D9y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="社区公告">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn1Clicked:" destination="OjL-R2-iab" eventType="touchUpInside" id="kc0-mV-H1A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oi6-xK-0xA">
+                                        <rect key="frame" x="267" y="15" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="A7v-rS-76a"/>
+                                            <constraint firstAttribute="height" constant="35" id="bat-yB-NUI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="活动投票">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn3Clicked:" destination="OjL-R2-iab" eventType="touchUpInside" id="rrH-Qb-Z5X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-oz-ePA">
+                                        <rect key="frame" x="137.5" y="15" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="6cj-0Y-KtB"/>
+                                            <constraint firstAttribute="width" constant="100" id="UaZ-4K-i20"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="摇号">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn2Clicked:" destination="OjL-R2-iab" eventType="touchUpInside" id="kyT-xg-kPI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cSJ-oz-ePA" secondAttribute="bottom" id="3GX-20-yx9"/>
+                                    <constraint firstItem="cSJ-oz-ePA" firstAttribute="centerX" secondItem="dVa-xl-AUW" secondAttribute="centerX" id="5vE-bT-DCP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oi6-xK-0xA" secondAttribute="trailing" constant="8" id="E6W-LY-CG1"/>
+                                    <constraint firstItem="Qkm-Hh-Pdb" firstAttribute="leading" secondItem="dVa-xl-AUW" secondAttribute="leading" constant="8" id="IfB-vB-4Du"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qkm-Hh-Pdb" secondAttribute="bottom" id="b9s-yu-jsK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Oi6-xK-0xA" secondAttribute="bottom" id="kod-OT-dK2"/>
+                                    <constraint firstAttribute="height" constant="50" id="wNf-3f-FoF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ii-Tc-U1O">
+                                <rect key="frame" x="0.0" y="114" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.39479482173919678" green="0.68088632822036743" blue="0.96869164705276489" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="dqU-r5-Y5Q"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-rM-LbM">
+                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z1u-rM-LbM" firstAttribute="top" secondItem="2ii-Tc-U1O" secondAttribute="bottom" id="0HC-ga-DAZ"/>
+                            <constraint firstItem="2xy-VH-Rpr" firstAttribute="trailing" secondItem="Z1u-rM-LbM" secondAttribute="trailing" id="2tc-Tq-FEQ"/>
+                            <constraint firstItem="2ii-Tc-U1O" firstAttribute="leading" secondItem="2xy-VH-Rpr" secondAttribute="leading" id="6B3-PO-BpI"/>
+                            <constraint firstItem="2xy-VH-Rpr" firstAttribute="trailing" secondItem="2ii-Tc-U1O" secondAttribute="trailing" id="QiR-dd-qzB"/>
+                            <constraint firstItem="Z1u-rM-LbM" firstAttribute="leading" secondItem="2xy-VH-Rpr" secondAttribute="leading" id="a2X-pb-feT"/>
+                            <constraint firstItem="dVa-xl-AUW" firstAttribute="leading" secondItem="2xy-VH-Rpr" secondAttribute="leading" id="aCx-fA-vMK"/>
+                            <constraint firstItem="2xy-VH-Rpr" firstAttribute="trailing" secondItem="dVa-xl-AUW" secondAttribute="trailing" id="ao0-d5-P35"/>
+                            <constraint firstItem="2xy-VH-Rpr" firstAttribute="bottom" secondItem="Z1u-rM-LbM" secondAttribute="bottom" id="hOm-Ix-vrg"/>
+                            <constraint firstItem="dVa-xl-AUW" firstAttribute="top" secondItem="2xy-VH-Rpr" secondAttribute="top" id="pbq-Xv-QWO"/>
+                            <constraint firstItem="2ii-Tc-U1O" firstAttribute="top" secondItem="dVa-xl-AUW" secondAttribute="bottom" id="yer-03-nSY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2xy-VH-Rpr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="社区公告" image="tabbar_announcement" selectedImage="tabbar_announcements_highlighted" id="CfG-OX-xkb"/>
+                    <navigationItem key="navigationItem" id="j32-CI-6Eg"/>
+                    <connections>
+                        <outlet property="announcementTableView" destination="Z1u-rM-LbM" id="hSS-p7-fdv"/>
+                        <outlet property="lottery" destination="cSJ-oz-ePA" id="hmF-Oe-DZg"/>
+                        <outlet property="socialAnnouncement" destination="Qkm-Hh-Pdb" id="Nsa-Wm-OeQ"/>
+                        <outlet property="vote" destination="Oi6-xK-0xA" id="3hh-D8-dNf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMx-gg-2It" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="46"/>
+            <point key="canvasLocation" x="2143" y="45"/>
+        </scene>
+        <!--社区公告-->
+        <scene sceneID="fhz-nP-SrP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mcl-uA-zDH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="社区公告" image="tabbar_announcement" selectedImage="tabbar_announcements_highlighted" id="CfG-OX-xkb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PaH-Vq-1CT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OjL-R2-iab" kind="relationship" relationship="rootViewController" id="f1S-un-S5u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxE-By-2Id" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376" y="45.877061469265371"/>
         </scene>
     </scenes>
     <resources>
+        <image name="blue_tab_selected_backgreound" width="22" height="34"/>
         <image name="tabbar_announcement" width="25" height="19"/>
         <image name="tabbar_announcements_highlighted" width="25" height="19"/>
     </resources>
