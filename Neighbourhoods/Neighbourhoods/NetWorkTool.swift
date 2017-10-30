@@ -68,7 +68,8 @@ extension NetWorkTool {
     //用户登录
     func UserLogin( _ account:String, password:String , type : String , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
       //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/jraz/api/login/login"
+        
+        let urlString = "http://192.168.0.144/llb/index.php/api/login/login"
       //2.获取请求参数
         let parameters = ["account" : account , "password": password , "type" : type]
       //3.发送请求参数
@@ -87,7 +88,7 @@ extension NetWorkTool {
     //用户注册
     func UserRegister( _ account:String, password:String , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://106.15.199.8/jraz/api/login/register"
+        let urlString = "http://192.168.0.144/llb/index.php/api/login/register"
         //2.获取请求参数
         let parameters = ["account" : account , "password": password]
         //3.发送请求参数

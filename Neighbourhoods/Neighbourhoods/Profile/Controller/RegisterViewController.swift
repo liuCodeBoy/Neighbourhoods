@@ -9,7 +9,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-    
+    fileprivate var countDownTimer: Timer?
     @IBOutlet weak var phoneBackView: UIView!
     @IBOutlet weak var pwdBackView: UIView!
     @IBOutlet weak var confirmBackView: UIView!
@@ -18,14 +18,38 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var idNumber: UITextField!
-    
     @IBOutlet weak var navBar: UINavigationItem!
+    
+    fileprivate var remainingSeconds: Int = 0 {
+        willSet {
+                sendIDNumBackVIew.setTitle("重新发送\(newValue)秒", for: .normal)
+            if newValue <= 0 {
+                sendIDNumBackVIew.setTitle("发送验证码", for: .normal)
+                isCounting = false
+            }
+        }
+    }
+    
+    fileprivate var isCounting = false {
+        willSet {
+            if newValue {
+                countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+                remainingSeconds = 60
+            } else {
+                countDownTimer?.invalidate()
+                countDownTimer = nil
+            }
+            sendIDNumBackVIew.isEnabled = !newValue
+        }
+    }
+    
+    @objc fileprivate func updateTime() {
+        remainingSeconds -= 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.setRoundRect(targets: [phoneBackView, pwdBackView, confirmBackView, sendIDNumBackVIew, registerBackView])
-        
         // MARK:- set nav bar attribute
         setNavBarAttribute()
     }
@@ -40,6 +64,22 @@ class RegisterViewController: UIViewController {
         let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(pop))
         self.navBar.setLeftBarButton(back, animated: true)
     }
+    @IBAction func sendIDNumAction(_ sender: Any) {
+        if phoneNumber.text == "" {
+            self.presentHintMessage(target: self, hintMessgae: "请输入手机号码")
+        }
+        
+        SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneNumber.text, zone: "86", result: { (error: Error?) in
+            if error != nil {
+                print(error as Any)
+            } else {
+                self.phoneNumber.endEditing(true)
+                self.presentHintMessage(target: self, hintMessgae: "验证码发送成功")
+                self.isCounting = true
+                
+            }
+        })
+    }
     
     @IBAction func registeAction(_ sender: Any) {
         if phoneNumber.text == "" {
@@ -49,7 +89,7 @@ class RegisterViewController: UIViewController {
             self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
         } else if password.text == "" {
             self.presentHintMessage(target: self, hintMessgae: "请输入密码")
-        } else if idNumber.text != "" {
+        } else if idNumber.text == "" {
             self.presentHintMessage(target: self, hintMessgae: "请输入验证码")
         } else {
             if phoneNumber.text!.isValidePhoneNumber == true {
@@ -91,9 +131,6 @@ class RegisterViewController: UIViewController {
 }
 
 extension UIViewController {
-    
-    
-    
     func presentHintMessage(target: UIViewController, hintMessgae: String) {
         let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
         let ok = UIAlertAction(title: "好的", style: .cancel, handler: nil)
