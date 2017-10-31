@@ -90,21 +90,13 @@
                                     <constraint firstAttribute="height" constant="1" id="dqU-r5-Y5Q"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-rM-LbM">
-                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Z1u-rM-LbM" firstAttribute="top" secondItem="2ii-Tc-U1O" secondAttribute="bottom" id="0HC-ga-DAZ"/>
-                            <constraint firstItem="2xy-VH-Rpr" firstAttribute="trailing" secondItem="Z1u-rM-LbM" secondAttribute="trailing" id="2tc-Tq-FEQ"/>
                             <constraint firstItem="2ii-Tc-U1O" firstAttribute="leading" secondItem="2xy-VH-Rpr" secondAttribute="leading" id="6B3-PO-BpI"/>
                             <constraint firstItem="2xy-VH-Rpr" firstAttribute="trailing" secondItem="2ii-Tc-U1O" secondAttribute="trailing" id="QiR-dd-qzB"/>
-                            <constraint firstItem="Z1u-rM-LbM" firstAttribute="leading" secondItem="2xy-VH-Rpr" secondAttribute="leading" id="a2X-pb-feT"/>
                             <constraint firstItem="dVa-xl-AUW" firstAttribute="leading" secondItem="2xy-VH-Rpr" secondAttribute="leading" id="aCx-fA-vMK"/>
                             <constraint firstItem="2xy-VH-Rpr" firstAttribute="trailing" secondItem="dVa-xl-AUW" secondAttribute="trailing" id="ao0-d5-P35"/>
-                            <constraint firstItem="2xy-VH-Rpr" firstAttribute="bottom" secondItem="Z1u-rM-LbM" secondAttribute="bottom" id="hOm-Ix-vrg"/>
                             <constraint firstItem="dVa-xl-AUW" firstAttribute="top" secondItem="2xy-VH-Rpr" secondAttribute="top" id="pbq-Xv-QWO"/>
                             <constraint firstItem="2ii-Tc-U1O" firstAttribute="top" secondItem="dVa-xl-AUW" secondAttribute="bottom" id="yer-03-nSY"/>
                         </constraints>
@@ -112,7 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="j32-CI-6Eg"/>
                     <connections>
-                        <outlet property="announcementTableView" destination="Z1u-rM-LbM" id="hSS-p7-fdv"/>
+                        <outlet property="lineView" destination="2ii-Tc-U1O" id="DPS-ew-J0j"/>
                         <outlet property="lottery" destination="cSJ-oz-ePA" id="hmF-Oe-DZg"/>
                         <outlet property="socialAnnouncement" destination="Qkm-Hh-Pdb" id="Nsa-Wm-OeQ"/>
                         <outlet property="vote" destination="Oi6-xK-0xA" id="3hh-D8-dNf"/>

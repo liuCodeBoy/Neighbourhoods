@@ -137,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="360" width="375" height="307"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HotTopicsCell" rowHeight="251" id="WiK-RV-apu" customClass="CircleTopicsCell" customModule="Neighbourhoods" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HotTopicsCell" rowHeight="251" id="WiK-RV-apu" customClass="CircleVCTopicsTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="251"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WiK-RV-apu" id="dZ0-rn-d0x">
@@ -212,12 +212,18 @@
                                                     <state key="normal" title="0" image="moments_commented">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="commentBtnCell:" destination="WiK-RV-apu" eventType="touchUpInside" id="2W9-Ju-klv"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-Xy-5vE">
                                                     <rect key="frame" x="279" y="220.5" width="38" height="20"/>
                                                     <state key="normal" title="0" image="moments_liked">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likeBtnClicked:" destination="WiK-RV-apu" eventType="touchUpInside" id="vx5-Yg-4at"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -256,6 +262,17 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="avatar" destination="kVp-3s-CLz" id="FiK-mP-HRN"/>
+                                            <outlet property="certifyLbl" destination="Cae-nX-NXp" id="kS7-Hz-dV1"/>
+                                            <outlet property="commentBtn" destination="6GU-cY-qPj" id="AL9-4C-Wzd"/>
+                                            <outlet property="createTime" destination="7TB-KJ-b3J" id="ZNH-s4-NhR"/>
+                                            <outlet property="gender" destination="2eM-lb-3aK" id="LNS-rh-HLY"/>
+                                            <outlet property="imageLeft" destination="ASI-qC-vtS" id="QtT-1A-poy"/>
+                                            <outlet property="imageRight" destination="eIh-Gm-nkc" id="ztR-8b-OEY"/>
+                                            <outlet property="likeBtn" destination="XnA-Xy-5vE" id="b2e-2B-Skz"/>
+                                            <outlet property="location" destination="Lj7-Jc-Vxr" id="edp-aG-2gI"/>
+                                            <outlet property="nickName" destination="QvN-wz-lFg" id="vGI-Nk-9vc"/>
+                                            <outlet property="textLbl" destination="2FJ-cz-fly" id="Sdm-nQ-2AR"/>
                                             <segue destination="zJJ-Qr-hu8" kind="show" id="YeN-PW-xeT"/>
                                         </connections>
                                     </tableViewCell>
@@ -303,7 +320,7 @@
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MomentsTopicCell" rowHeight="266" id="ukS-3E-5LY" customClass="CircleTopicsCell" customModule="Neighbourhoods" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MomentsTopicCell" rowHeight="266" id="ukS-3E-5LY" customClass="MomentsVCLatestIssueTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="266"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ukS-3E-5LY" id="75p-PQ-CNM">
@@ -378,12 +395,18 @@
                                                     <state key="normal" title="0" image="moments_commented">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="commentBtnCell:" destination="ukS-3E-5LY" eventType="touchUpInside" id="Dys-zX-ZfV"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLC-j4-r5m">
                                                     <rect key="frame" x="279" y="220.5" width="38" height="20"/>
                                                     <state key="normal" title="0" image="moments_liked">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likeBtnClicked:" destination="ukS-3E-5LY" eventType="touchUpInside" id="GJl-YD-PWy"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcS-QT-7EG">
                                                     <rect key="frame" x="0.0" y="250.5" width="375" height="15"/>
@@ -433,6 +456,17 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="avatar" destination="w3N-BO-Mwz" id="iER-gl-kRP"/>
+                                            <outlet property="certifyLbl" destination="xlh-YS-9di" id="ics-iA-idX"/>
+                                            <outlet property="commentBtn" destination="U0X-w5-hkZ" id="vHH-zw-FtL"/>
+                                            <outlet property="createTime" destination="sTa-iA-Crb" id="zGH-oh-und"/>
+                                            <outlet property="gender" destination="vK8-bt-jEb" id="OXv-wu-Lef"/>
+                                            <outlet property="imageLeft" destination="C2q-Wf-2Gr" id="QT9-vU-pK6"/>
+                                            <outlet property="imageRight" destination="2To-c4-7q9" id="v14-6Y-3Gf"/>
+                                            <outlet property="likeBtn" destination="yLC-j4-r5m" id="Kaf-8Q-zCK"/>
+                                            <outlet property="location" destination="FwL-hT-KEG" id="8Vg-C2-M0J"/>
+                                            <outlet property="nickName" destination="qUO-9o-Keh" id="49R-TE-oZD"/>
+                                            <outlet property="textLbl" destination="9gK-W1-ODR" id="2gM-vT-Z6H"/>
                                             <segue destination="zJJ-Qr-hu8" kind="show" id="Eo5-J5-NHw"/>
                                         </connections>
                                     </tableViewCell>
@@ -711,7 +745,7 @@
                                 <rect key="frame" x="0.0" y="171" width="375" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyFavouriteCell" rowHeight="266" id="5t5-Du-ZRH" customClass="CircleTopicsCell" customModule="Neighbourhoods" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyFavouriteCell" rowHeight="266" id="5t5-Du-ZRH" customClass="FavVCMomentsTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="266"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5t5-Du-ZRH" id="IOu-nF-LhB">
@@ -786,12 +820,18 @@
                                                     <state key="normal" title="0" image="moments_commented">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="commentBtnCell:" destination="5t5-Du-ZRH" eventType="touchUpInside" id="KH3-Bb-4rs"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="age-G3-4Dd">
                                                     <rect key="frame" x="279" y="220.5" width="38" height="20"/>
                                                     <state key="normal" title="0" image="moments_liked">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likeBtnClicked:" destination="5t5-Du-ZRH" eventType="touchUpInside" id="HTQ-Ka-GOf"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-ML-V2v">
                                                     <rect key="frame" x="0.0" y="250.5" width="375" height="15"/>
@@ -841,6 +881,17 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="avatar" destination="Mdp-kk-aje" id="XlT-dz-unS"/>
+                                            <outlet property="certifyLbl" destination="bWq-t7-HqP" id="mI2-wx-CGf"/>
+                                            <outlet property="commentBtn" destination="cdE-Kt-bDg" id="zqt-ZO-iY4"/>
+                                            <outlet property="createTime" destination="odt-Xa-CGO" id="dbE-9X-jQL"/>
+                                            <outlet property="gender" destination="l4e-Du-c5N" id="RX9-71-D0D"/>
+                                            <outlet property="imageLeft" destination="oLA-PP-XKV" id="4sw-Ev-3SH"/>
+                                            <outlet property="imageRight" destination="D4H-Q8-ZIO" id="rBO-03-2UT"/>
+                                            <outlet property="likeBtn" destination="age-G3-4Dd" id="oNP-tj-zRe"/>
+                                            <outlet property="location" destination="ARb-h3-WIZ" id="AeY-lU-3mY"/>
+                                            <outlet property="nickName" destination="NEE-et-Tau" id="xbh-J3-kaj"/>
+                                            <outlet property="textLbl" destination="rEl-SD-G2b" id="8vs-Oa-dvt"/>
                                             <segue destination="zJJ-Qr-hu8" kind="show" id="JHT-yQ-Yxo"/>
                                         </connections>
                                     </tableViewCell>
@@ -972,6 +1023,6 @@
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YeN-PW-xeT"/>
+        <segue reference="JHT-yQ-Yxo"/>
     </inferredMetricsTieBreakers>
 </document>

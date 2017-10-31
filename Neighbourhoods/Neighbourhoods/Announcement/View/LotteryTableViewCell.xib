@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LotteryCell" rowHeight="73" id="KGk-i7-Jjw" customClass="LotteryTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afT-E6-Bf3">
+                        <rect key="frame" x="30" y="25" width="220" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="CeK-Lk-aSH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfD-Gf-zOy">
+                        <rect key="frame" x="30" y="48" width="220" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynf-RZ-U8p">
+                        <rect key="frame" x="275" y="30" width="70" height="28"/>
+                        <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="Ukn-g2-Hp3"/>
+                            <constraint firstAttribute="width" constant="70" id="z9d-oL-B9i"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title="状态"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ynf-RZ-U8p" secondAttribute="trailing" constant="30" id="8dS-qH-ine"/>
+                    <constraint firstItem="AfD-Gf-zOy" firstAttribute="leading" secondItem="afT-E6-Bf3" secondAttribute="leading" id="HOJ-BD-kHi"/>
+                    <constraint firstItem="afT-E6-Bf3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="VVh-BN-Doz"/>
+                    <constraint firstAttribute="bottom" secondItem="AfD-Gf-zOy" secondAttribute="bottom" constant="15" id="XjP-GF-hl6"/>
+                    <constraint firstItem="afT-E6-Bf3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="ep4-LF-6Sp"/>
+                    <constraint firstItem="AfD-Gf-zOy" firstAttribute="trailing" secondItem="afT-E6-Bf3" secondAttribute="trailing" id="oOt-Zh-n9I"/>
+                    <constraint firstItem="Ynf-RZ-U8p" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qI0-yg-7EP"/>
+                    <constraint firstItem="AfD-Gf-zOy" firstAttribute="top" secondItem="afT-E6-Bf3" secondAttribute="bottom" constant="8" id="tSK-fx-lNf"/>
+                    <constraint firstItem="Ynf-RZ-U8p" firstAttribute="leading" secondItem="afT-E6-Bf3" secondAttribute="trailing" constant="25" id="zuE-WR-wBf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+            <point key="canvasLocation" x="33.5" y="68"/>
+        </tableViewCell>
+    </objects>
+</document>
