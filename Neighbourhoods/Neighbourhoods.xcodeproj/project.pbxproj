@@ -17,6 +17,7 @@
 		B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */; };
 		B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */; };
 		B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */; };
+		D31735851FA8923100C97B60 /* MyMissionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31735841FA8923100C97B60 /* MyMissionsTableViewCell.swift */; };
 		D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360C1F9C6D8300313268 /* MainViewController.swift */; };
 		D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360F1F9C768A00313268 /* SystemConstantValue.swift */; };
 		D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */; };
@@ -46,6 +47,12 @@
 		D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */; };
 		D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86C61FA0C19A000CCA17 /* Share.xib */; };
 		D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C81FA0C1A5000CCA17 /* Share.swift */; };
+		D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */; };
+		D3716F901FA897F900C31A48 /* ActivityVote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3716F8F1FA897F900C31A48 /* ActivityVote.storyboard */; };
+		D3716F921FA8980500C31A48 /* FigureVote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3716F911FA8980500C31A48 /* FigureVote.storyboard */; };
+		D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */; };
+		D3716F961FA89B2000C31A48 /* ActivityVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F951FA89B1F00C31A48 /* ActivityVoteListViewController.swift */; };
+		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */; };
 		D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A193581F8DC74D002C1E23 /* AppDelegate.swift */; };
@@ -57,10 +64,11 @@
 		D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A193851F8DCB2E002C1E23 /* Null.storyboard */; };
 		D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A193871F8DCB4C002C1E23 /* Help.storyboard */; };
 		D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */; };
-		D3B4FE3F1FA41D2F0018FADD /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */; };
-		D3B4FE401FA41D2F0018FADD /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */; };
-		D3B4FE411FA41D4C0018FADD /* MOBFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D3B4FE421FA41D4C0018FADD /* MOBFoundationEx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3A2F1C71FA888110030873F /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */; };
+		D3A2F1C81FA888110030873F /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */; };
+		D3A2F1C91FA8881E0030873F /* MOBFoundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3A2F1CA1FA8881E0030873F /* MOBFoundationEx.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */; };
 		D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */; };
 		D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */; };
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
@@ -97,8 +105,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D3B4FE411FA41D4C0018FADD /* MOBFoundation.framework in CopyFiles */,
-				D3B4FE421FA41D4C0018FADD /* MOBFoundationEx.framework in CopyFiles */,
+				D3A2F1C91FA8881E0030873F /* MOBFoundation.framework in CopyFiles */,
+				D3A2F1CA1FA8881E0030873F /* MOBFoundationEx.framework in CopyFiles */,
 				D3BEA8931FA3933200E4595E /* SMS_SDK.framework in CopyFiles */,
 				B692F89E1F91F1A700C75B41 /* AFNetworking.framework in CopyFiles */,
 				B692F89F1F91F1A700C75B41 /* SDWebImage.framework in CopyFiles */,
@@ -130,6 +138,7 @@
 		B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborCircleModel.swift; sourceTree = "<group>"; };
 		B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.release.xcconfig"; sourceTree = "<group>"; };
+		D31735841FA8923100C97B60 /* MyMissionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionsTableViewCell.swift; sourceTree = "<group>"; };
 		D31B360C1F9C6D8300313268 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D31B360F1F9C768A00313268 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
 		D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfProfileViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +168,12 @@
 		D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCommentDetialViewController.swift; sourceTree = "<group>"; };
 		D36C86C61FA0C19A000CCA17 /* Share.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Share.xib; sourceTree = "<group>"; };
 		D36C86C81FA0C1A5000CCA17 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityListTableViewCell.swift; sourceTree = "<group>"; };
+		D3716F8F1FA897F900C31A48 /* ActivityVote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityVote.storyboard; sourceTree = "<group>"; };
+		D3716F911FA8980500C31A48 /* FigureVote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FigureVote.storyboard; sourceTree = "<group>"; };
+		D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListViewController.swift; sourceTree = "<group>"; };
+		D3716F951FA89B1F00C31A48 /* ActivityVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteListViewController.swift; sourceTree = "<group>"; };
+		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialLogin.storyboard; sourceTree = "<group>"; };
 		D3A193551F8DC74D002C1E23 /* Neighbourhoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbourhoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +187,7 @@
 		D3A193851F8DCB2E002C1E23 /* Null.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.storyboard; sourceTree = "<group>"; };
 		D3A193871F8DCB4C002C1E23 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetialViewController.swift; sourceTree = "<group>"; };
 		D3B4FE3D1FA41D2F0018FADD /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundation.framework; path = Carthage/Checkouts/MOBFoundation_IDFA/MOBFoundation.framework; sourceTree = "<group>"; };
 		D3B4FE3E1FA41D2F0018FADD /* MOBFoundationEx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MOBFoundationEx.framework; path = Carthage/Checkouts/MOBFoundation_IDFA/MOBFoundationEx.framework; sourceTree = "<group>"; };
 		D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityViewController.swift; sourceTree = "<group>"; };
@@ -208,12 +224,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A2F1C71FA888110030873F /* MOBFoundation.framework in Frameworks */,
+				D3A2F1C81FA888110030873F /* MOBFoundationEx.framework in Frameworks */,
 				B692F89B1F91F17E00C75B41 /* SDWebImage.framework in Frameworks */,
 				B692F89C1F91F17E00C75B41 /* AFNetworking.framework in Frameworks */,
 				D3BEA8981FA3935D00E4595E /* libstdc++.tbd in Frameworks */,
 				D3BEA8921FA3932400E4595E /* SMS_SDK.framework in Frameworks */,
-				D3B4FE3F1FA41D2F0018FADD /* MOBFoundation.framework in Frameworks */,
-				D3B4FE401FA41D2F0018FADD /* MOBFoundationEx.framework in Frameworks */,
 				D3BEA8961FA3935000E4595E /* libz.tbd in Frameworks */,
 				91738E5369CA97748E1652E9 /* Pods_Neighbourhoods.framework in Frameworks */,
 			);
@@ -295,6 +311,14 @@
 				D334F5E71FA86819006E2769 /* FavVCMomentsTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D3716F971FA89B3000C31A48 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D3A1934C1F8DC74D002C1E23 = {
@@ -386,6 +410,8 @@
 			isa = PBXGroup;
 			children = (
 				D3A193801F8DCA4F002C1E23 /* Announcement.storyboard */,
+				D3716F8F1FA897F900C31A48 /* ActivityVote.storyboard */,
+				D3716F911FA8980500C31A48 /* FigureVote.storyboard */,
 				D3C1D6C71FA6D7B100207E38 /* Controller */,
 				D3D1FD721FA80ABC009A2E58 /* View */,
 			);
@@ -427,6 +453,8 @@
 				D3D1FD7F1FA8116D009A2E58 /* SocialAnnouncementTableViewController.swift */,
 				D3D1FD811FA81179009A2E58 /* LotteryTableViewController.swift */,
 				D3D1FD831FA81187009A2E58 /* ActivityVoteTableViewController.swift */,
+				D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */,
+				D3716F951FA89B1F00C31A48 /* ActivityVoteListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -444,6 +472,7 @@
 				D334F5DF1FA86564006E2769 /* FigureVoteTableViewCell.xib */,
 				D3D1FD851FA81DB2009A2E58 /* AnnouncementDetialViewController.swift */,
 				D3D1FD861FA81DB2009A2E58 /* AnnouncementDetialViewController.xib */,
+				D3716F971FA89B3000C31A48 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,6 +482,7 @@
 			children = (
 				D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */,
 				D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */,
+				D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */,
 				D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */,
 				D3FE2FFD1FA45B0100FAD95E /* SocialCharityDetialViewController.swift */,
 				D3FE2FFF1FA45B2100FAD95E /* ConsultViewController.swift */,
@@ -475,6 +505,8 @@
 			isa = PBXGroup;
 			children = (
 				D3F6B18B1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift */,
+				D31735841FA8923100C97B60 /* MyMissionsTableViewCell.swift */,
+				D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,10 +589,12 @@
 				D36C86C31FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.xib in Resources */,
 				D36C86B71FA09EF0000CCA17 /* UsersListTableViewCell.xib in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
+				D3716F901FA897F900C31A48 /* ActivityVote.storyboard in Resources */,
 				D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */,
 				D36C86BF1FA0B279000CCA17 /* MomentDetialTableViewCell.xib in Resources */,
 				D334F5E11FA86564006E2769 /* FigureVoteTableViewCell.xib in Resources */,
 				D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */,
+				D3716F921FA8980500C31A48 /* FigureVote.storyboard in Resources */,
 				D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */,
 				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
@@ -632,6 +666,7 @@
 				D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */,
 				D3D1FD871FA81DB2009A2E58 /* AnnouncementDetialViewController.swift in Sources */,
 				D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */,
+				D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */,
 				B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */,
 				D359931C1F9C9B8C00F96103 /* MyScoreVC.swift in Sources */,
 				D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */,
@@ -640,20 +675,24 @@
 				D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementTableViewController.swift in Sources */,
+				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */,
 				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
 				D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */,
+				D31735851FA8923100C97B60 /* MyMissionsTableViewCell.swift in Sources */,
 				D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */,
 				D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */,
 				D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */,
+				D3716F961FA89B2000C31A48 /* ActivityVoteListViewController.swift in Sources */,
 				D3D1FD821FA81179009A2E58 /* LotteryTableViewController.swift in Sources */,
 				B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */,
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
 				D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */,
+				D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */,
 				D3FE2FFE1FA45B0100FAD95E /* SocialCharityDetialViewController.swift in Sources */,
 				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
 				D334F5E81FA86819006E2769 /* FavVCMomentsTableViewCell.swift in Sources */,
@@ -674,6 +713,7 @@
 				D3D1FD791FA80BA9009A2E58 /* LotteryTableViewCell.swift in Sources */,
 				D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */,
 				D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */,
+				D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */,
 				D3D1FD841FA81187009A2E58 /* ActivityVoteTableViewController.swift in Sources */,
 				D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */,
 			);

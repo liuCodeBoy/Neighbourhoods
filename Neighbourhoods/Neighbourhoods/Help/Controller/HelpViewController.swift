@@ -10,59 +10,32 @@ import UIKit
 
 class HelpViewController: UIViewController {
     
-    @IBOutlet weak var missionCategoryBtn: UIButton!
     @IBOutlet weak var timeBtn: UIButton!
     @IBOutlet weak var finishedStatusBtn: UIButton!
     @IBOutlet weak var scoreBtn: UIButton!
-    @IBOutlet weak var natureBtn: UIButton!
-    
-    
-    @IBAction func btn1Clicked(_ sender: UIButton) {
-        missionCategoryBtn.isSelected   = true
-        timeBtn.isSelected              = false
-        finishedStatusBtn.isSelected    = false
-        scoreBtn.isSelected             = false
-        natureBtn.isSelected            = false
-        
-        
-    }
+   
     @IBAction func btn2Clicked(_ sender: UIButton) {
-        missionCategoryBtn.isSelected   = false
         timeBtn.isSelected              = true
         finishedStatusBtn.isSelected    = false
         scoreBtn.isSelected             = false
-        natureBtn.isSelected            = false
         
         
     }
     @IBAction func btn3Clicked(_ sender: UIButton) {
-        missionCategoryBtn.isSelected   = false
         timeBtn.isSelected              = false
         finishedStatusBtn.isSelected    = true
         scoreBtn.isSelected             = false
-        natureBtn.isSelected            = false
         
         
     }
     @IBAction func btn4Clicked(_ sender: UIButton) {
-        missionCategoryBtn.isSelected   = false
         timeBtn.isSelected              = false
         finishedStatusBtn.isSelected    = false
         scoreBtn.isSelected             = true
-        natureBtn.isSelected            = false
-        
-        
-        
-    }
-    @IBAction func btn5Clicked(_ sender: UIButton) {
-        missionCategoryBtn.isSelected   = false
-        timeBtn.isSelected              = false
-        finishedStatusBtn.isSelected    = false
-        scoreBtn.isSelected             = false
-        natureBtn.isSelected            = true
         
         
     }
+
     
     
     @IBOutlet weak var missionCategoriesTableView: UITableView!

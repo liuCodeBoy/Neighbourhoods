@@ -9,11 +9,26 @@
 import UIKit
 
 class MyMissionsViewController: UIViewController {
-
+    
+    @IBOutlet weak var myIssueMissionBtn: UIButton!
+    @IBOutlet weak var receivedMissionBtn: UIButton!
+    
+    @IBAction func btn1Clicked(_ sender: UIButton) {
+        myIssueMissionBtn.isSelected = true
+        receivedMissionBtn.isSelected = false
+    }
+    @IBAction func btn2Clicked(_ sender: UIButton) {
+        myIssueMissionBtn.isSelected = false
+        receivedMissionBtn.isSelected = true
+    }
+    
+    @IBOutlet weak var missionsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadNavItems()
+        missionsTableView.delegate = self
+        missionsTableView.dataSource = self
     }
     
     func loadNavItems() {
@@ -40,4 +55,17 @@ class MyMissionsViewController: UIViewController {
     }
 
 
+}
+
+
+extension MyMissionsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyMissionsCell")
+        return cell!
+    }
 }
