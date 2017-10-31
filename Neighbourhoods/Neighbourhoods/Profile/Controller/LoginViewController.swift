@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import TZImagePickerController
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     
     @IBOutlet weak var accountBackView: UIView!
     @IBOutlet weak var pwdBackView: UIView!
@@ -64,7 +65,9 @@ class LoginViewController: UIViewController {
     }
     // MARK:- Passenger login
     @IBAction func passengerLoginClicked(_ sender: UIButton) {
-        let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
+   
+
+       let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
         self.present(mainVC, animated: true, completion: nil)
     }
     
