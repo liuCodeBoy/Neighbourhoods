@@ -15,19 +15,16 @@ class ActivityVoteTableViewController: UITableViewController {
 
         tableView.register(UINib.init(nibName: "ActivityVoteTableViewCell", bundle: nil), forCellReuseIdentifier: "ActivityVoteCell")
         tableView.register(UINib.init(nibName: "FigureVoteTableViewCell", bundle: nil), forCellReuseIdentifier: "FigureVoteCell")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(showFigureVoteVC), name: NSNotification.Name.init(figureVoteListNotification), object: nil)
 
     }
     
-    @objc func showFigureVoteVC() {
-        self.navigationController?.pushViewController(UIStoryboard.init(name: "FigureVote", bundle: Bundle.main).instantiateInitialViewController()!, animated: true)
+    func showFigureVoteVC() {
+        
     }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,9 +45,12 @@ class ActivityVoteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            NotificationCenter.default.post(name: NSNotification.Name.init(figureVoteListNotification), object: nil)
-        } else {
+            self.navigationController?.pushViewController(UIStoryboard.init(name: "FigureVote", bundle: Bundle.main).instantiateInitialViewController()!, animated: true)
             
+        } else if indexPath.row == 1 {
+            self.navigationController?.pushViewController(UIStoryboard.init(name: "ActivityVoteConsultingViewController", bundle: Bundle.main).instantiateInitialViewController()!, animated: true)
+        } else {
+            self.navigationController?.pushViewController(UIStoryboard.init(name: "ActivityUnderVotingViewController", bundle: Bundle.main).instantiateInitialViewController()!, animated: true)
         }
 
     }

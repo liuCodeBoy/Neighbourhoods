@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="qSd-8V-SFz" customClass="SpringView" customModule="Neighbourhoods" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spring_view_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-e2-tTE">
+                    <rect key="frame" x="0.0" y="495" width="375" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="3iB-h3-DYb"/>
+                        <constraint firstAttribute="height" constant="12" id="6Sg-ze-HOJ"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vui-da-V1R">
+                    <rect key="frame" x="0.0" y="507" width="375" height="160"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-ZD-7UQ">
+                            <rect key="frame" x="175" y="115" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="CwW-LL-9b4"/>
+                                <constraint firstAttribute="height" constant="25" id="PX2-7s-3ap"/>
+                            </constraints>
+                            <state key="normal" image="close_button"/>
+                            <connections>
+                                <action selector="closeBtnClicked:" destination="qSd-8V-SFz" eventType="touchUpInside" id="hsE-DW-oxq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uca-3c-ceY">
+                            <rect key="frame" x="60" y="25" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="Ub9-UE-Ixu"/>
+                                <constraint firstAttribute="width" constant="45" id="lG7-QD-vEy"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="profile_missions"/>
+                            <connections>
+                                <action selector="missionBtn:" destination="qSd-8V-SFz" eventType="touchUpInside" id="v2J-va-Xue"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEd-DU-ZjP">
+                            <rect key="frame" x="68.5" y="78" width="29" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aka-uS-c65">
+                            <rect key="frame" x="270" y="25" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="iYW-Ih-btZ"/>
+                                <constraint firstAttribute="width" constant="45" id="r3U-Ru-cjx"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="profile_missions"/>
+                            <connections>
+                                <action selector="messgaeBtn:" destination="qSd-8V-SFz" eventType="touchUpInside" id="7ie-w0-aPr"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-IH-58i">
+                            <rect key="frame" x="278.5" y="78" width="29" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCB-AC-rCE">
+                            <rect key="frame" x="165" y="25" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="o6F-Ly-bPy"/>
+                                <constraint firstAttribute="width" constant="45" id="qhU-dA-4RC"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="profile_missions"/>
+                            <connections>
+                                <action selector="topicBtn:" destination="qSd-8V-SFz" eventType="touchUpInside" id="M1g-dN-2Vb"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="话题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHv-M5-use">
+                            <rect key="frame" x="173.5" y="78" width="29" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="vCB-AC-rCE" firstAttribute="top" secondItem="Vui-da-V1R" secondAttribute="top" constant="25" id="5ec-id-eeD"/>
+                        <constraint firstItem="WEd-DU-ZjP" firstAttribute="centerX" secondItem="uca-3c-ceY" secondAttribute="centerX" id="64V-yU-gzn"/>
+                        <constraint firstItem="aka-uS-c65" firstAttribute="leading" secondItem="vCB-AC-rCE" secondAttribute="trailing" constant="60" id="6H7-0e-ErF"/>
+                        <constraint firstItem="w0V-IH-58i" firstAttribute="centerX" secondItem="aka-uS-c65" secondAttribute="centerX" id="AV1-St-u5e"/>
+                        <constraint firstItem="eMo-ZD-7UQ" firstAttribute="centerX" secondItem="Vui-da-V1R" secondAttribute="centerX" id="AaU-94-uko"/>
+                        <constraint firstItem="jHv-M5-use" firstAttribute="top" secondItem="vCB-AC-rCE" secondAttribute="bottom" constant="8" id="DOM-GR-sCR"/>
+                        <constraint firstItem="vCB-AC-rCE" firstAttribute="centerY" secondItem="uca-3c-ceY" secondAttribute="centerY" id="Id3-Jf-SD0"/>
+                        <constraint firstItem="jHv-M5-use" firstAttribute="centerX" secondItem="vCB-AC-rCE" secondAttribute="centerX" id="MLk-Jm-f4R"/>
+                        <constraint firstItem="w0V-IH-58i" firstAttribute="top" secondItem="aka-uS-c65" secondAttribute="bottom" constant="8" id="NMM-6C-JB6"/>
+                        <constraint firstItem="aka-uS-c65" firstAttribute="centerY" secondItem="uca-3c-ceY" secondAttribute="centerY" id="bJI-vi-22q"/>
+                        <constraint firstItem="WEd-DU-ZjP" firstAttribute="top" secondItem="uca-3c-ceY" secondAttribute="bottom" constant="8" id="g7L-GC-Kic"/>
+                        <constraint firstAttribute="height" constant="160" id="hMs-jD-RDb"/>
+                        <constraint firstAttribute="bottom" secondItem="eMo-ZD-7UQ" secondAttribute="bottom" constant="20" id="ncq-2a-toU"/>
+                        <constraint firstItem="vCB-AC-rCE" firstAttribute="leading" secondItem="uca-3c-ceY" secondAttribute="trailing" constant="60" id="swb-9B-DX1"/>
+                        <constraint firstItem="vCB-AC-rCE" firstAttribute="centerX" secondItem="Vui-da-V1R" secondAttribute="centerX" id="vwW-8G-tSF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Zb1-e2-tTE" firstAttribute="leading" secondItem="hRz-5R-DMR" secondAttribute="leading" id="9bl-MO-Kf3"/>
+                <constraint firstItem="Vui-da-V1R" firstAttribute="leading" secondItem="hRz-5R-DMR" secondAttribute="leading" id="Mdl-ba-8dq"/>
+                <constraint firstItem="Vui-da-V1R" firstAttribute="top" secondItem="Zb1-e2-tTE" secondAttribute="bottom" id="RBe-hX-AMj"/>
+                <constraint firstItem="Zb1-e2-tTE" firstAttribute="trailing" secondItem="hRz-5R-DMR" secondAttribute="trailing" id="lvB-KM-Zop"/>
+                <constraint firstItem="Vui-da-V1R" firstAttribute="bottom" secondItem="hRz-5R-DMR" secondAttribute="bottom" id="nyH-nc-1wf"/>
+                <constraint firstItem="hRz-5R-DMR" firstAttribute="trailing" secondItem="Vui-da-V1R" secondAttribute="trailing" id="q2p-ZH-nZE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="hRz-5R-DMR"/>
+            <point key="canvasLocation" x="584.5" y="273.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close_button" width="20" height="20"/>
+        <image name="profile_missions" width="60" height="60"/>
+        <image name="spring_view_shadow" width="100" height="12"/>
+    </resources>
+</document>

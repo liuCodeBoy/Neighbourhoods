@@ -9,16 +9,20 @@
 import UIKit
 
 class FigureVoteListTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var nickName: UILabel!
+    @IBOutlet weak var gender: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var voteCountLbl: UILabel!
+    @IBOutlet weak var voteBtn: UIButton!
+    @IBOutlet weak var rankLbl: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }

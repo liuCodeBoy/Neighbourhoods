@@ -8,6 +8,8 @@
 
 import UIKit
 
+let activityVoteListNotification = "com.NJQL.Announcement.ActivityVote"
+
 class ActivityVoteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var statusBtn: UIButton!

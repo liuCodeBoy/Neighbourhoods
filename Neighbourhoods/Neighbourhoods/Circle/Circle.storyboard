@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -214,6 +215,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentBtnCell:" destination="WiK-RV-apu" eventType="touchUpInside" id="2W9-Ju-klv"/>
+                                                        <segue destination="UFO-nZ-pRN" kind="show" id="JkO-Gl-OXN"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-Xy-5vE">
@@ -397,6 +399,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentBtnCell:" destination="ukS-3E-5LY" eventType="touchUpInside" id="Dys-zX-ZfV"/>
+                                                        <segue destination="UFO-nZ-pRN" kind="show" id="mIc-Ic-liV"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLC-j4-r5m">
@@ -491,6 +494,69 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ans-dt-K3b">
+                                <rect key="frame" x="0.0" y="121" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntj-i8-FLO">
+                                        <rect key="frame" x="8" y="15" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="jNV-lb-koj"/>
+                                            <constraint firstAttribute="width" constant="100" id="yxD-Xg-R3N"/>
+                                        </constraints>
+                                        <state key="normal" title="最新发布">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn1clicked:" destination="y9L-xv-6CX" eventType="touchUpInside" id="HJ7-Mf-RX7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYq-HZ-xD9">
+                                        <rect key="frame" x="137.5" y="15" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="M13-jm-oaa"/>
+                                            <constraint firstAttribute="height" constant="35" id="lHO-sa-Spt"/>
+                                        </constraints>
+                                        <state key="normal" title="最热话题">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn2clicked:" destination="y9L-xv-6CX" eventType="touchUpInside" id="Fo2-PO-2MT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiB-yh-3qF">
+                                        <rect key="frame" x="267" y="15" width="100" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Fao-HK-kNP"/>
+                                            <constraint firstAttribute="height" constant="35" id="ZJN-UF-Svb"/>
+                                        </constraints>
+                                        <state key="normal" title="话题分类">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn3clicked:" destination="y9L-xv-6CX" eventType="touchUpInside" id="Nil-2N-y6L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ntj-i8-FLO" firstAttribute="leading" secondItem="ans-dt-K3b" secondAttribute="leading" constant="8" id="FsO-xp-Z8S"/>
+                                    <constraint firstAttribute="trailing" secondItem="wiB-yh-3qF" secondAttribute="trailing" constant="8" id="Z12-qG-CIL"/>
+                                    <constraint firstItem="WYq-HZ-xD9" firstAttribute="centerX" secondItem="ans-dt-K3b" secondAttribute="centerX" id="bIA-SI-heO"/>
+                                    <constraint firstAttribute="bottom" secondItem="WYq-HZ-xD9" secondAttribute="bottom" id="ccp-w1-yxH"/>
+                                    <constraint firstAttribute="bottom" secondItem="ntj-i8-FLO" secondAttribute="bottom" id="pdH-hN-v1V"/>
+                                    <constraint firstAttribute="bottom" secondItem="wiB-yh-3qF" secondAttribute="bottom" id="res-Sc-tAo"/>
+                                    <constraint firstAttribute="height" constant="50" id="sj3-FK-a8L"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3i-c8-mHV">
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <subviews>
@@ -578,69 +644,6 @@
                                     <constraint firstItem="3sE-Bg-w1g" firstAttribute="leading" secondItem="7Cb-D0-Z6H" secondAttribute="leading" id="vs7-kZ-3YS"/>
                                     <constraint firstItem="7Cb-D0-Z6H" firstAttribute="centerY" secondItem="adk-IO-E7S" secondAttribute="centerY" id="z77-2b-Sz0"/>
                                     <constraint firstItem="Pqx-ux-39y" firstAttribute="leading" secondItem="adk-IO-E7S" secondAttribute="leading" id="zby-9G-Y7c"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ans-dt-K3b">
-                                <rect key="frame" x="0.0" y="121" width="375" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntj-i8-FLO">
-                                        <rect key="frame" x="8" y="15" width="100" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="jNV-lb-koj"/>
-                                            <constraint firstAttribute="width" constant="100" id="yxD-Xg-R3N"/>
-                                        </constraints>
-                                        <state key="normal" title="最新发布">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btn1clicked:" destination="y9L-xv-6CX" eventType="touchUpInside" id="HJ7-Mf-RX7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYq-HZ-xD9">
-                                        <rect key="frame" x="137.5" y="15" width="100" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="M13-jm-oaa"/>
-                                            <constraint firstAttribute="height" constant="35" id="lHO-sa-Spt"/>
-                                        </constraints>
-                                        <state key="normal" title="最热话题">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btn2clicked:" destination="y9L-xv-6CX" eventType="touchUpInside" id="Fo2-PO-2MT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiB-yh-3qF">
-                                        <rect key="frame" x="267" y="15" width="100" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Fao-HK-kNP"/>
-                                            <constraint firstAttribute="height" constant="35" id="ZJN-UF-Svb"/>
-                                        </constraints>
-                                        <state key="normal" title="话题分类">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="blue_tab_selected_backgreound">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btn3clicked:" destination="y9L-xv-6CX" eventType="touchUpInside" id="Nil-2N-y6L"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="ntj-i8-FLO" firstAttribute="leading" secondItem="ans-dt-K3b" secondAttribute="leading" constant="8" id="FsO-xp-Z8S"/>
-                                    <constraint firstAttribute="trailing" secondItem="wiB-yh-3qF" secondAttribute="trailing" constant="8" id="Z12-qG-CIL"/>
-                                    <constraint firstItem="WYq-HZ-xD9" firstAttribute="centerX" secondItem="ans-dt-K3b" secondAttribute="centerX" id="bIA-SI-heO"/>
-                                    <constraint firstAttribute="bottom" secondItem="WYq-HZ-xD9" secondAttribute="bottom" id="ccp-w1-yxH"/>
-                                    <constraint firstAttribute="bottom" secondItem="ntj-i8-FLO" secondAttribute="bottom" id="pdH-hN-v1V"/>
-                                    <constraint firstAttribute="bottom" secondItem="wiB-yh-3qF" secondAttribute="bottom" id="res-Sc-tAo"/>
-                                    <constraint firstAttribute="height" constant="50" id="sj3-FK-a8L"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -822,6 +825,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentBtnCell:" destination="5t5-Du-ZRH" eventType="touchUpInside" id="KH3-Bb-4rs"/>
+                                                        <segue destination="UFO-nZ-pRN" kind="show" id="Khk-nn-BpM"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="age-G3-4Dd">
@@ -986,7 +990,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCd-ik-lIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="744"/>
+            <point key="canvasLocation" x="1022" y="934"/>
+        </scene>
+        <!--Write Comment View Controller-->
+        <scene sceneID="WKH-VI-9Zc">
+            <objects>
+                <viewController id="UFO-nZ-pRN" customClass="WriteCommentViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ng6-ez-wWV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="写评论" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-cd-dDZ">
+                                <rect key="frame" x="25" y="79" width="325" height="573"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eaJ-0B-j12" firstAttribute="bottom" secondItem="MKd-cd-dDZ" secondAttribute="bottom" constant="15" id="OXn-WF-TsK"/>
+                            <constraint firstItem="MKd-cd-dDZ" firstAttribute="top" secondItem="eaJ-0B-j12" secondAttribute="top" constant="15" id="UUA-7V-HgL"/>
+                            <constraint firstItem="eaJ-0B-j12" firstAttribute="trailing" secondItem="MKd-cd-dDZ" secondAttribute="trailing" constant="25" id="XKS-Rj-yRk"/>
+                            <constraint firstItem="MKd-cd-dDZ" firstAttribute="leading" secondItem="eaJ-0B-j12" secondAttribute="leading" constant="25" id="q4t-eh-Sm8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eaJ-0B-j12"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8r-Lc-JwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2540" y="933"/>
         </scene>
         <!--邻里圈-->
         <scene sceneID="9wT-1X-FCl">
@@ -1023,6 +1057,7 @@
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mIc-Ic-liV"/>
         <segue reference="JHT-yQ-Yxo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,8 @@ class FigureVoteListViewController: UIViewController {
         figureVoteTableView.delegate = self
         figureVoteTableView.dataSource = self
     
+        setNavBarBackBtn()
+        setNavBarTitle(title: "正在投票")
     }
 
 

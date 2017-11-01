@@ -35,23 +35,10 @@ class MyMissionsViewController: UIViewController {
         self.setNavBarBackBtn()
         self.setNavBarTitle(title: "我的任务")
         
-        let writeBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_write_message"), style: .done, target: self, action: #selector(writeMessgae))
-        let messgaeBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_message"), style: .done, target: self, action: #selector(lookUpMessage))
-        // MARK:- set right items
-        self.navigationItem.setRightBarButtonItems([messgaeBtn, writeBtn], animated: true)
-        
     }
     
     @objc func pop() {
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func writeMessgae() {
-        
-    }
-    
-    @objc func lookUpMessage() {
-        
     }
 
 
