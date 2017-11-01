@@ -9,9 +9,9 @@
 import UIKit
 import MJExtension
 class UserModel: NSObject {
-    var head_pic : String?
-    var nickname : String?
-    var  sex     : NSInteger?
-    var is_admin : String?
+   @objc  var head_pic : String?
+   @objc  var nickname : String?
+   @objc  var  sex     : NSNumber?
+   @objc  var is_admin : String?
 }
 

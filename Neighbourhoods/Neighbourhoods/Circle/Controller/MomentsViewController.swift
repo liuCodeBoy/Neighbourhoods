@@ -7,50 +7,64 @@
 //
 
 import UIKit
-
+import SDWebImage
 class MomentsViewController: UIViewController {
     
     @IBOutlet weak var latestIssue: UIButton!
     @IBOutlet weak var hotestTopic: UIButton!
     @IBOutlet weak var topicClassify: UIButton!
-    
     @IBOutlet weak var topicsView: UIView!
-    
     @IBAction func btn1clicked(_ sender: UIButton) {
         latestIssue.isSelected = true
         hotestTopic.isSelected = false
         topicClassify.isSelected = false
-        
         topicsView.isHidden = true
     }
     @IBAction func btn2clicked(_ sender: UIButton) {
         latestIssue.isSelected = false
         hotestTopic.isSelected = true
         topicClassify.isSelected = false
-        
         topicsView.isHidden = true
-
     }
     @IBAction func btn3clicked(_ sender: UIButton) {
         latestIssue.isSelected = false
         hotestTopic.isSelected = false
         topicClassify.isSelected = true
-        
         topicsView.isHidden = false
     }
     
     @IBOutlet weak var momentsTopicsTableView: UITableView!
-    
+    lazy var  rotaionArray = [NborCircleModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNavItems()
         topicsView.isHidden = true
-        
         momentsTopicsTableView.delegate = self
         momentsTopicsTableView.dataSource = self
+        //默认下拉刷新
+//        momentsTopicsTableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: nil)
+//         self.momentsTopicsTableView.mj_header.beginRefreshing()
+        
+        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.time, p: 1) {[weak self](info, error) in
 
+            if info?["code"] as? String == "200"{
+                let result  = info!["result"]!["list"] as! [NSDictionary]
+                for i in 0..<result.count {
+                    let  circleInfo  =  result[i]
+                    if  let rotationModel = NborCircleModel.mj_object(withKeyValues: circleInfo) {
+                        self?.rotaionArray.append(rotationModel)
+                   
+                    }
+                }
+                self?.momentsTopicsTableView.reloadData()
+           }
+        }
+        
+  
     }
 
+   
+    
     func loadNavItems() {
         let backBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_back"), style: .done, target: self, action: #selector(pop))
         self.navigationItem.setLeftBarButton(backBtn, animated: true)
@@ -69,11 +83,14 @@ class MomentsViewController: UIViewController {
 extension MomentsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.rotaionArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsTopicCell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsTopicCell") as!  MomentsVCLatestIssueTableViewCell
+       
+        let  model =  rotaionArray[indexPath.row]
+        cell.momentsCellModel = model
+        return cell
     }
 }

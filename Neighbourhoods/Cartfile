@@ -3,6 +3,3 @@ github "rs/SDWebImage"
 github "MobClub/SMSSDK-for-iOS"
 github "MobClub/MOBFoundation_IDFA"
 gitHub "Darren-chenchen/CLImagePickerTool"
-gitHub "CoderMJLee/MJRefresh"
-gitHub "CoderMJLee/MJExtension"
-

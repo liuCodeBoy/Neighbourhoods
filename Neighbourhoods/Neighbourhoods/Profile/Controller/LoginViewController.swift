@@ -18,9 +18,7 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var navBar: UINavigationItem!
-    
-    
-    
+
     @IBAction func userLoginClick(_ sender: Any) {
         
         if phoneNumber.text == "" {
@@ -46,7 +44,6 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
 //                            isLogin = true
                             //发送值到profileVC
 //                            NotificationCenter.default.post(name: isLoginNotification, object: nil)
-                            
                             //登陆界面销毁
                             weakSelf?.navigationController?.popToRootViewController(animated: true)
                         })
@@ -65,8 +62,6 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     }
     // MARK:- Passenger login
     @IBAction func passengerLoginClicked(_ sender: UIButton) {
-   
-
        let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
         self.present(mainVC, animated: true, completion: nil)
     }

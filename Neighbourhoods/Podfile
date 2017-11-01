@@ -6,7 +6,8 @@ target 'Neighbourhoods' do
   use_frameworks!
 
   pod 'TZImagePickerController'
-
+  pod 'MJRefresh'
+  pod 'MJExtension'
 
   # Pods for Neighbourhoods
 
