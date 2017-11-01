@@ -15,7 +15,8 @@ class CircleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        topicsTableView.estimatedRowHeight = 50
+        topicsTableView.rowHeight = UITableViewAutomaticDimension
 
         topicsTableView.delegate = self
         topicsTableView.dataSource = self
@@ -26,6 +27,7 @@ class CircleViewController: UIViewController {
                       URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Sombrero.jpg")]
         let  loopView = LoopView.init(images: URLArr as! [URL], frame: CGRect.init(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 160), isAutoScroll: true)
         self.view.addSubview(loopView)
+        
 
     }
     

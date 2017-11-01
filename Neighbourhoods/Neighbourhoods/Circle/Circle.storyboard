@@ -269,6 +269,7 @@
                                             <outlet property="commentBtn" destination="6GU-cY-qPj" id="AL9-4C-Wzd"/>
                                             <outlet property="createTime" destination="7TB-KJ-b3J" id="ZNH-s4-NhR"/>
                                             <outlet property="gender" destination="2eM-lb-3aK" id="LNS-rh-HLY"/>
+                                            <outlet property="imageHeightConstraint" destination="loV-JI-AuZ" id="4Nf-uq-CsI"/>
                                             <outlet property="imageLeft" destination="ASI-qC-vtS" id="QtT-1A-poy"/>
                                             <outlet property="imageRight" destination="eIh-Gm-nkc" id="ztR-8b-OEY"/>
                                             <outlet property="likeBtn" destination="XnA-Xy-5vE" id="b2e-2B-Skz"/>
@@ -557,95 +558,6 @@
                                     <constraint firstAttribute="height" constant="50" id="sj3-FK-a8L"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3i-c8-mHV">
-                                <rect key="frame" x="0.0" y="172" width="375" height="495"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adk-IO-E7S">
-                                        <rect key="frame" x="40" y="20" width="46" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#高考">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOI-wB-CLh">
-                                        <rect key="frame" x="154.5" y="20" width="46" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#高数">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cb-D0-Z6H">
-                                        <rect key="frame" x="279" y="20" width="46" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#家教">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqx-ux-39y">
-                                        <rect key="frame" x="40" y="68" width="46" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#历史">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUQ-Q7-cvR">
-                                        <rect key="frame" x="154.5" y="68" width="80" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#小学英语">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sE-Bg-w1g">
-                                        <rect key="frame" x="279" y="68" width="46" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#美术">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1O-SU-bTy">
-                                        <rect key="frame" x="40" y="116" width="63" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#艺术班">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEU-Zr-29a">
-                                        <rect key="frame" x="279" y="116" width="46" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#生物">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkS-T0-xJY">
-                                        <rect key="frame" x="154" y="116" width="46" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="#地理">
-                                            <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="IEU-Zr-29a" firstAttribute="centerY" secondItem="p1O-SU-bTy" secondAttribute="centerY" id="04i-8X-ker"/>
-                                    <constraint firstItem="PUQ-Q7-cvR" firstAttribute="top" secondItem="FOI-wB-CLh" secondAttribute="bottom" constant="15" id="2fe-Zz-KTU"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Cb-D0-Z6H" secondAttribute="trailing" constant="50" id="7AT-26-ZV8"/>
-                                    <constraint firstItem="FOI-wB-CLh" firstAttribute="top" secondItem="Q3i-c8-mHV" secondAttribute="top" constant="20" id="8oe-0P-MUE"/>
-                                    <constraint firstItem="p1O-SU-bTy" firstAttribute="leading" secondItem="adk-IO-E7S" secondAttribute="leading" id="CZU-Yl-dEE"/>
-                                    <constraint firstItem="FOI-wB-CLh" firstAttribute="centerX" secondItem="Q3i-c8-mHV" secondAttribute="centerX" constant="-10" id="UWH-dh-fFF"/>
-                                    <constraint firstItem="adk-IO-E7S" firstAttribute="leading" secondItem="Q3i-c8-mHV" secondAttribute="leading" constant="40" id="XKB-3S-iPZ"/>
-                                    <constraint firstItem="pkS-T0-xJY" firstAttribute="top" secondItem="PUQ-Q7-cvR" secondAttribute="bottom" constant="15" id="Xui-Lx-gw3"/>
-                                    <constraint firstItem="pkS-T0-xJY" firstAttribute="centerY" secondItem="p1O-SU-bTy" secondAttribute="centerY" id="atA-b5-oGx"/>
-                                    <constraint firstItem="IEU-Zr-29a" firstAttribute="leading" secondItem="7Cb-D0-Z6H" secondAttribute="leading" id="cKC-FS-GyK"/>
-                                    <constraint firstItem="PUQ-Q7-cvR" firstAttribute="centerY" secondItem="Pqx-ux-39y" secondAttribute="centerY" id="czl-FJ-kHB"/>
-                                    <constraint firstItem="FOI-wB-CLh" firstAttribute="centerY" secondItem="adk-IO-E7S" secondAttribute="centerY" id="hKF-Ac-C79"/>
-                                    <constraint firstItem="PUQ-Q7-cvR" firstAttribute="leading" secondItem="FOI-wB-CLh" secondAttribute="leading" id="ocy-SU-RvK"/>
-                                    <constraint firstItem="pkS-T0-xJY" firstAttribute="leading" secondItem="FOI-wB-CLh" secondAttribute="leading" id="tPX-Y9-3CQ"/>
-                                    <constraint firstItem="3sE-Bg-w1g" firstAttribute="centerY" secondItem="Pqx-ux-39y" secondAttribute="centerY" id="tzV-6j-RhI"/>
-                                    <constraint firstItem="3sE-Bg-w1g" firstAttribute="leading" secondItem="7Cb-D0-Z6H" secondAttribute="leading" id="vs7-kZ-3YS"/>
-                                    <constraint firstItem="7Cb-D0-Z6H" firstAttribute="centerY" secondItem="adk-IO-E7S" secondAttribute="centerY" id="z77-2b-Sz0"/>
-                                    <constraint firstItem="Pqx-ux-39y" firstAttribute="leading" secondItem="adk-IO-E7S" secondAttribute="leading" id="zby-9G-Y7c"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -660,14 +572,10 @@
                             <constraint firstItem="xq9-XA-OcX" firstAttribute="trailing" secondItem="VTj-sl-32o" secondAttribute="trailing" id="J7d-zq-hFi"/>
                             <constraint firstItem="xq9-XA-OcX" firstAttribute="trailing" secondItem="ak8-gr-VJ5" secondAttribute="trailing" id="KY5-P2-xD0"/>
                             <constraint firstItem="ak8-gr-VJ5" firstAttribute="leading" secondItem="HxD-5z-W8e" secondAttribute="leading" id="Ms7-rf-NYy"/>
-                            <constraint firstItem="xq9-XA-OcX" firstAttribute="trailing" secondItem="Q3i-c8-mHV" secondAttribute="trailing" id="V0P-3L-XSQ"/>
                             <constraint firstItem="xq9-XA-OcX" firstAttribute="trailing" secondItem="06i-s2-mZj" secondAttribute="trailing" id="aRW-xg-foQ"/>
-                            <constraint firstItem="xq9-XA-OcX" firstAttribute="bottom" secondItem="Q3i-c8-mHV" secondAttribute="bottom" id="fM0-8C-NZu"/>
                             <constraint firstItem="ans-dt-K3b" firstAttribute="leading" secondItem="xq9-XA-OcX" secondAttribute="leading" id="g6M-1o-xVc"/>
-                            <constraint firstItem="Q3i-c8-mHV" firstAttribute="top" secondItem="06i-s2-mZj" secondAttribute="bottom" id="jC0-mS-k6J"/>
                             <constraint firstItem="ihw-aJ-9hK" firstAttribute="trailing" secondItem="xq9-XA-OcX" secondAttribute="trailing" id="jNn-jX-Zin"/>
                             <constraint firstItem="06i-s2-mZj" firstAttribute="leading" secondItem="xq9-XA-OcX" secondAttribute="leading" id="lZE-JK-zvd"/>
-                            <constraint firstItem="Q3i-c8-mHV" firstAttribute="leading" secondItem="xq9-XA-OcX" secondAttribute="leading" id="oyq-zp-VJf"/>
                             <constraint firstItem="xq9-XA-OcX" firstAttribute="trailing" secondItem="ans-dt-K3b" secondAttribute="trailing" id="xHB-aL-Nkx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xq9-XA-OcX"/>
@@ -678,7 +586,6 @@
                         <outlet property="latestIssue" destination="ntj-i8-FLO" id="A4E-xD-mGF"/>
                         <outlet property="momentsTopicsTableView" destination="ak8-gr-VJ5" id="xkY-by-tyw"/>
                         <outlet property="topicClassify" destination="wiB-yh-3qF" id="6zC-gG-Lhf"/>
-                        <outlet property="topicsView" destination="Q3i-c8-mHV" id="utB-oQ-paC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3C-O2-Ja5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1058,6 +965,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mIc-Ic-liV"/>
-        <segue reference="JHT-yQ-Yxo"/>
+        <segue reference="Eo5-J5-NHw"/>
     </inferredMetricsTieBreakers>
 </document>

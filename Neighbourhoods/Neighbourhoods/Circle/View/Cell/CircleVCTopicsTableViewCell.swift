@@ -23,6 +23,9 @@ class CircleVCTopicsTableViewCell: UITableViewCell {
     @IBOutlet weak var imageLeft: UIImageView!
     @IBOutlet weak var imageRight: UIImageView!
     
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+
+    
     @IBAction func likeBtnClicked(_ sender: UIButton) {
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
@@ -31,6 +34,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imageHeightConstraint.constant = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
