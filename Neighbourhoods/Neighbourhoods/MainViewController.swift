@@ -42,6 +42,12 @@ class MainViewController: UITabBarController {
         self.view.addSubview(add)
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeBtnClicked), name: NSNotification.Name.init(closeSpringViewNotification), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showIssueTopicsVC), name: NSNotification.Name.init(issueTopicsNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showIssueMissionVC), name: NSNotification.Name.init(issueMissionNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showQuickMessageVC), name: NSNotification.Name.init(quickLookMessageNotification), object: nil)
+
+
     }
     
     @objc func addButtonClicked() {
@@ -52,14 +58,24 @@ class MainViewController: UITabBarController {
         springView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         presentedVC?.view.addSubview(springView)
 
-
     }
     
     @objc func closeBtnClicked() {
         
         spring?.removeFromSuperview()
         
-
+    }
+    
+    @objc func showIssueTopicsVC() {
+        self.present(IssueTopicsViewController(), animated: true, completion: nil)
+    }
+    
+    @objc func showIssueMissionVC() {
+        self.present(IssueMissionViewController(), animated: true, completion: nil)
+    }
+    
+    @objc func showQuickMessageVC() {
+        self.present(UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateInitialViewController()!, animated: true, completion: nil)
     }
     
     deinit {

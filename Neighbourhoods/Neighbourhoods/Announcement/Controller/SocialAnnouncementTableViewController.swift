@@ -18,6 +18,10 @@ class SocialAnnouncementTableViewController: UITableViewController {
         tableView.register(UINib.init(nibName: "SocialAnnouncementTableViewCell", bundle: nil), forCellReuseIdentifier: "SocialAnnouncementCell")
         
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

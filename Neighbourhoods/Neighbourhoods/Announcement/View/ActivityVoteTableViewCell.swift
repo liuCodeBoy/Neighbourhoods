@@ -8,6 +8,8 @@
 
 import UIKit
 
+let activityVoteListNotification = "com.NJQL.Announcement.ActivityVote"
+
 class ActivityVoteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var statusBtn: UIButton!
@@ -17,10 +19,5 @@ class ActivityVoteTableViewCell: UITableViewCell {
         
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }

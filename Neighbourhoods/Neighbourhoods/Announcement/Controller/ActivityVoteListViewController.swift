@@ -1,5 +1,5 @@
 //
-//  AnnouncementDetialViewController.swift
+//  ActivityVoteListViewController.swift
 //  Neighbourhoods
 //
 //  Created by Weslie on 31/10/2017.
@@ -7,18 +7,13 @@
 //
 
 import UIKit
-import WebKit
 
-class AnnouncementDetialViewController: UIViewController {
+class ActivityVoteListViewController: UIViewController {
 
-    @IBOutlet weak var announcementWeb: WKWebView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
+
     }
-    
 
 }
-

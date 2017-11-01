@@ -9,7 +9,13 @@
 import UIKit
 
 class SocialCharityDetialViewController: UIViewController {
-
+    
+    @IBOutlet weak var charityAvatar: UIImageView!
+    @IBOutlet weak var charityName: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
+    @IBOutlet weak var emailAddress: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

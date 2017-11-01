@@ -9,6 +9,12 @@
 import UIKit
 
 class HelpMissionsCategoriesCell: UITableViewCell {
+    
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var detialLbl: UILabel!
+    @IBOutlet weak var scoreBtn: UIButton!
+    @IBOutlet weak var createTime: UILabel!
+    
 
     @IBOutlet weak var marginView: UIView!
     
