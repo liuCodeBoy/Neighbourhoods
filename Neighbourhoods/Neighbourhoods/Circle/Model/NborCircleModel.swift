@@ -7,17 +7,19 @@
 //
 
 import UIKit
-import MJExtension
+import  MJExtension
 class NborCircleModel: NSObject {
-    var id      :   NSNumber?
-    var uid     :   NSNumber?
-    var time    :   NSNumber?
-    var content :   String?
-    var comment :   NSNumber?
-    var like    :   NSNumber?
-    var picture :   String?
-    var address :   String?
-    var user    :   String?
+   @objc    var id      :   NSNumber?
+   @objc    var uid     :   NSNumber?
+   @objc    var time    :   NSNumber?
+   @objc    var content :   String?
+   @objc    var comment :   NSNumber?
+   @objc    var like    :   NSNumber?
+   @objc    var picture :   String?
+   @objc    var address :   String?
+   @objc    var user    :   UserModel?
+    
+
 }
 
 

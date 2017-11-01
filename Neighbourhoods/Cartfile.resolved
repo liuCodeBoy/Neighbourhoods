@@ -1,7 +1,5 @@
 github "AFNetworking/AFNetworking" "3.1.0"
-github "CoderMJLee/MJExtension" "3.0.13"
-github "CoderMJLee/MJRefresh" "3.1.15"
 github "Darren-chenchen/CLImagePickerTool" "2.1.4"
 github "MobClub/MOBFoundation_IDFA" "3.0.4"
 github "MobClub/SMSSDK-for-iOS" "3.0.1"
-github "rs/SDWebImage" "4.2.0"
+github "rs/SDWebImage" "4.2.1"

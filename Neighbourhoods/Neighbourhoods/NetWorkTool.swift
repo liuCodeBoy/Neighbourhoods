@@ -79,6 +79,7 @@ extension NetWorkTool {
       //3.发送请求参数
        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
         //获取字典数据
+        print(result)
         guard let resultDict = result as? [String : AnyObject] else {
             finished(nil, error)
             return
@@ -112,11 +113,17 @@ extension NetWorkTool {
   //MARK: - 邻里圈
 extension NetWorkTool {
     //圈内动态 nbor / nbor_list
-    func  nbor_list(_ sort:Nbor_Sort, p: Int ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    
+    
+    
+    
+    
+    
+    func  nbor_list(_ sort:Nbor_Sort, p: NSInteger ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         let urlString = "http://192.168.0.144/llb/index.php/api/nbor/nbor_list"
         //2.获取请求参数
-        let parameters = ["sort" : sort , "p" : p ] as [String : Any]
+        let parameters = ["sort" : sort.rawValue]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据

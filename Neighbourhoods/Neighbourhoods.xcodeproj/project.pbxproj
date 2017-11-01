@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91738E5369CA97748E1652E9 /* Pods_Neighbourhoods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C24ABCE591C5A1B847A1370 /* Pods_Neighbourhoods.framework */; };
+		B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
 		B692F89B1F91F17E00C75B41 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692F8991F91F17E00C75B41 /* SDWebImage.framework */; };
 		B692F89C1F91F17E00C75B41 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692F89A1F91F17E00C75B41 /* AFNetworking.framework */; };
@@ -17,6 +18,7 @@
 		B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */; };
 		B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */; };
 		B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */; };
+		B6F71F391FA9647500BB8B90 /* NewsRotationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F71F381FA9647300BB8B90 /* NewsRotationModel.swift */; };
 		D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360C1F9C6D8300313268 /* MainViewController.swift */; };
 		D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360F1F9C768A00313268 /* SystemConstantValue.swift */; };
 		D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */; };
@@ -120,6 +122,7 @@
 /* Begin PBXFileReference section */
 		0C24ABCE591C5A1B847A1370 /* Pods_Neighbourhoods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neighbourhoods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.debug.xcconfig"; sourceTree = "<group>"; };
+		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
 		B692F8991F91F17E00C75B41 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		B692F89A1F91F17E00C75B41 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 		B6ECB7161FA81D72006C2BCC /* ImagePickerTool.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImagePickerTool.framework; path = Carthage/Build/iOS/ImagePickerTool.framework; sourceTree = "<group>"; };
 		B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborCircleModel.swift; sourceTree = "<group>"; };
 		B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B6F71F381FA9647300BB8B90 /* NewsRotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRotationModel.swift; sourceTree = "<group>"; };
 		CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.release.xcconfig"; sourceTree = "<group>"; };
 		D31B360C1F9C6D8300313268 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D31B360F1F9C768A00313268 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		B6ECB7181FA858A0006C2BCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6F71F381FA9647300BB8B90 /* NewsRotationModel.swift */,
 				B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */,
 				B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */,
 			);
@@ -467,6 +472,7 @@
 				B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */,
 				D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */,
 				D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */,
+				B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -577,10 +583,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,6 +648,7 @@
 				B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */,
 				D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */,
 				D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */,
+				B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementTableViewController.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
@@ -648,6 +659,7 @@
 				D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */,
 				D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */,
 				D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */,
+				B6F71F391FA9647500BB8B90 /* NewsRotationModel.swift in Sources */,
 				D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */,
 				D3D1FD821FA81179009A2E58 /* LotteryTableViewController.swift in Sources */,
 				B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */,
