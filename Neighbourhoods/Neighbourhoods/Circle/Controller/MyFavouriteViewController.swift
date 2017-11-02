@@ -40,7 +40,9 @@ class MyFavouriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadNavItems()
+
+        setNavBarBackBtn()
+        setNavBarTitle(title: "我的关注")
         myFavTableView.delegate = self
         myFavTableView.dataSource = self
         
@@ -66,18 +68,6 @@ class MyFavouriteViewController: UIViewController {
         self.view.addSubview(tableView!)
         
     }
-    
-    func loadNavItems() {
-        let backBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_back"), style: .done, target: self, action: #selector(pop))
-        self.navigationItem.setLeftBarButton(backBtn, animated: true)
-        self.setNavBarTitle(title: "我的关注")
-        
-    }
-    
-    @objc func pop() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
 
 
 }

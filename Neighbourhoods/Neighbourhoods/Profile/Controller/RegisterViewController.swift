@@ -130,31 +130,5 @@ class RegisterViewController: UIViewController {
 
 }
 
-extension UIViewController {
-    func presentHintMessage(target: UIViewController, hintMessgae: String) {
-        let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "好的", style: .cancel, handler: nil)
-        alert.addAction(ok)
-        target.present(alert, animated: true, completion: nil)
-    }
-}
-extension String {
-    
-    var isValidePhoneNumber: Bool {
-        get {
-            let mobileRE: String = "^((13[0-9])|(147)|(15[0-3,5-9])|(18[0,0-9])|(17[0-3,5-9]))\\d{8}$"
-            let regex = NSPredicate(format: "SELF MATCHES %@", mobileRE)
-            
-            if regex.evaluate(with: self) == true {
-                return true
-            } else {
-                return false
-            }
-        }
-        
-        set {
-            
-        }
-    }
-}
+
 

@@ -14,7 +14,6 @@ class MomentsViewController: UIViewController {
     @IBOutlet weak var latestIssue: UIButton!
     @IBOutlet weak var hotestTopic: UIButton!
     @IBOutlet weak var topicClassify: UIButton!
-    @IBOutlet weak var topicsView: UIView!
     
     private   var     lastPageStart  = 1
     private   var     lastPageEnd    = 1
@@ -27,7 +26,6 @@ class MomentsViewController: UIViewController {
         latestIssue.isSelected   = true
         hotestTopic.isSelected   = false
         topicClassify.isSelected = false
-        topicsView.isHidden      = true
         isLasted                 = true
         momentsTopicsTableView.reloadData()
     }
@@ -35,7 +33,6 @@ class MomentsViewController: UIViewController {
         latestIssue.isSelected    = false
         hotestTopic.isSelected    = true
         topicClassify.isSelected  = false
-        topicsView.isHidden       = true
         isLasted                  = false
         momentsTopicsTableView.reloadData()
     }
@@ -43,7 +40,6 @@ class MomentsViewController: UIViewController {
         latestIssue.isSelected   = false
         hotestTopic.isSelected   = false
         topicClassify.isSelected = true
-        topicsView.isHidden      = false
     }
     
     @IBOutlet weak var momentsTopicsTableView: UITableView!
@@ -52,8 +48,6 @@ class MomentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNavItems()
-        topicsView.isHidden = true
         momentsTopicsTableView.delegate = self
         momentsTopicsTableView.dataSource = self
         momentsTopicsTableView.showsVerticalScrollIndicator = false
@@ -61,6 +55,9 @@ class MomentsViewController: UIViewController {
         loadRefreshComponet()
         lastedRequest(p: lastPageStart, isTop: false)
         lastedTopicRequest(p: likePageStart, isTop: false)
+        
+        setNavBarBackBtn()
+        setNavBarTitle(title: "圈内动态")
         //自动计算高度
         momentsTopicsTableView.estimatedRowHeight = 100
         momentsTopicsTableView.rowHeight = UITableViewAutomaticDimension
@@ -177,17 +174,7 @@ class MomentsViewController: UIViewController {
                 }
         }
     }
-    
-    func loadNavItems() {
-        let backBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_back"), style: .done, target: self, action: #selector(pop))
-        self.navigationItem.setLeftBarButton(backBtn, animated: true)
-        self.setNavBarTitle(title: "圈内动态")
 
-    }
-    
-    @objc func pop() {
-        self.navigationController?.popViewController(animated: true)
-    }
    
 
 }
