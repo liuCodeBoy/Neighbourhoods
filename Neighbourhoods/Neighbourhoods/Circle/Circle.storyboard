@@ -4,8 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -466,6 +465,7 @@
                                             <outlet property="gender" destination="vK8-bt-jEb" id="OXv-wu-Lef"/>
                                             <outlet property="imageLeft" destination="C2q-Wf-2Gr" id="QT9-vU-pK6"/>
                                             <outlet property="imageRight" destination="2To-c4-7q9" id="v14-6Y-3Gf"/>
+                                            <outlet property="leftImageHeightCon" destination="cOt-sP-KYp" id="zL9-nA-oMI"/>
                                             <outlet property="likeBtn" destination="yLC-j4-r5m" id="Kaf-8Q-zCK"/>
                                             <outlet property="location" destination="FwL-hT-KEG" id="8Vg-C2-M0J"/>
                                             <outlet property="nickName" destination="qUO-9o-Keh" id="49R-TE-oZD"/>
@@ -557,8 +557,8 @@
                                     <constraint firstAttribute="height" constant="50" id="sj3-FK-a8L"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3i-c8-mHV">
-                                <rect key="frame" x="0.0" y="172" width="375" height="495"/>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3i-c8-mHV">
+                                <rect key="frame" x="48" y="-101" width="375" height="495"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adk-IO-E7S">
                                         <rect key="frame" x="40" y="20" width="46" height="33"/>
@@ -1058,6 +1058,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mIc-Ic-liV"/>
-        <segue reference="JHT-yQ-Yxo"/>
+        <segue reference="Eo5-J5-NHw"/>
     </inferredMetricsTieBreakers>
 </document>

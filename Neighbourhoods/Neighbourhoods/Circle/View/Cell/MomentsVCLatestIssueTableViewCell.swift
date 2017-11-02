@@ -21,14 +21,18 @@ class MomentsVCLatestIssueTableViewCell: UITableViewCell {
     @IBOutlet private weak var commentBtn: UIButton!
     @IBOutlet private weak var imageLeft: UIImageView!
     @IBOutlet private weak var imageRight: UIImageView!
+    @IBOutlet weak var leftImageHeightCon: NSLayoutConstraint!
     var momentsCellModel : NborCircleModel!{
         didSet {
             self.nickName.text = momentsCellModel.user?.nickname
-            self.imageLeft.isHidden = true
-            self.imageRight.isHidden = true
-//        if let pictureString = momentsCellModel.picture{
-//            self.avatar.sd_setImage(with: URL.init(string: pictureString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
-//            }
+        if let pictureString = momentsCellModel.picture{
+            leftImageHeightCon.constant = 90
+            let pictureStringArr = pictureString.components(separatedBy: ",")
+            let leftImage = pictureStringArr[0]
+            self.imageLeft.sd_setImage(with: URL.init(string: leftImage), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+        }else{
+            leftImageHeightCon.constant = 0
+            }
             self.textLbl.text = momentsCellModel.content
             self.location.text = momentsCellModel.address
            
