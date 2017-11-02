@@ -75,46 +75,40 @@ class MomentsViewController: UIViewController {
         momentsTopicsTableView.mj_header.isAutomaticallyChangeAlpha = true
     }
     @objc func refresh() -> () {
-        if isLasted{
-        self.lastedRequest(p: lastPageStart, isTop : true)
-        if lastPageStart > 1 { 
+        if isLasted && lastPageStart > 1 {
+          self.lastedRequest(p: lastPageStart, isTop : true)
           lastPageStart -= 1
-        }else{
+           }else{
             momentsTopicsTableView.mj_header.endRefreshing()
          }
-        }else{
+        if isLasted == false && likePageStart > 1 {
             lastedTopicRequest(p: likePageStart, isTop: true)
-            if likePageStart > 1 {
                 likePageStart -= 1
             }else{
                 momentsTopicsTableView.mj_header.endRefreshing()
             }
-        }
     }
     
     @objc func  endrefresh() -> (){
         if isLasted {
         lastedRequest(p: lastPageEnd,isTop : false)
-            if  lastPageEnd < lastedAllPages{
-            lastPageEnd += 1
-            }
         }else{
        lastedTopicRequest(p: likePageEnd, isTop: false)
-            if  likePageEnd < likedAllPages{
-            likePageEnd += 1
-            }
         }
 }
     
   //MARK: - 最新发布网络请求
     func lastedRequest(p : Int , isTop : Bool) -> () {
-       
+     
         NetWorkTool.shareInstance.nbor_list(Nbor_Sort.time, p: p) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"]
                  {
                     self?.lastedAllPages = pages as! Int
                  }
+                if  CGFloat((self?.lastPageEnd)!) <  CGFloat((self?.lastedAllPages)!){
+                    self?.lastPageEnd += 1
+                }
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count
                 {
@@ -123,7 +117,7 @@ class MomentsViewController: UIViewController {
                     {
                         if isTop == false
                         {
-                        self?.rotaionArray.append(rotationModel)
+                        self?.rotaionArray.append(rotationModel) 
                         }else{
                         self?.rotaionArray.insert(rotationModel, at: 0)
                         }
@@ -145,11 +139,17 @@ class MomentsViewController: UIViewController {
     func lastedTopicRequest(p : Int,isTop : Bool) -> (){
         NetWorkTool.shareInstance.nbor_list(Nbor_Sort.like, p: p) {[weak self](info, error) in
                 if info?["code"] as? String == "200"{
+                    
                     if let pages  = info!["result"]!["pages"]
                     {
                         self?.likedAllPages = pages as! Int
                     }
+                    if  CGFloat((self?.likePageEnd)!) <  CGFloat((self?.likedAllPages)!){
+                        self?.likePageEnd += 1
+                    }
+                   
                     let result  = info!["result"]!["list"] as! [NSDictionary]
+                    
                     for i in 0..<result.count
                     {
                         let  circleInfo  =  result[i]
@@ -188,9 +188,11 @@ extension MomentsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let modelArr = self.isLasted == true ? self.rotaionArray : self.hotArray
+//        let modelArr = self.isLasted == true ? self.rotaionArray : self.hotArray
+        let modelArr =  self.rotaionArray
         let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsTopicCell") as!  MomentsVCLatestIssueTableViewCell
         let  model =  modelArr[indexPath.row]
+        print(model.picture)
         cell.momentsCellModel = model
         return cell
     }

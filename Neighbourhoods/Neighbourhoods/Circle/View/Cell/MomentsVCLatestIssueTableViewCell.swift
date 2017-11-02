@@ -25,6 +25,7 @@ class MomentsVCLatestIssueTableViewCell: UITableViewCell {
     var momentsCellModel : NborCircleModel!{
         didSet {
             self.nickName.text = momentsCellModel.user?.nickname
+//            print(momentsCellModel.picture)
         if let pictureString = momentsCellModel.picture{
             leftImageHeightCon.constant = 90
             let pictureStringArr = pictureString.components(separatedBy: ",")

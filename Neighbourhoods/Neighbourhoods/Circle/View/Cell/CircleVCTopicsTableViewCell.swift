@@ -7,9 +7,8 @@
 //
 
 import UIKit
-
-class CircleVCTopicsTableViewCell: UITableViewCell {
-    
+import FaveButton
+class CircleVCTopicsTableViewCell: UITableViewCell{
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
