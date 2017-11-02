@@ -113,12 +113,6 @@ extension NetWorkTool {
   //MARK: - 邻里圈
 extension NetWorkTool {
     //圈内动态 nbor / nbor_list
-    
-    
-    
-    
-    
-    
     func  nbor_list(_ sort:Nbor_Sort, p: NSInteger ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
        
