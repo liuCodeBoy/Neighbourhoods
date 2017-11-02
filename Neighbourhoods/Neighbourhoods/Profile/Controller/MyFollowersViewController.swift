@@ -20,6 +20,8 @@ class MyFollowersViewController: UIViewController {
         myFollowersTableView?.register(UINib(nibName: "UsersListTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersListCell")
 
         
+        setNavBarBackBtn()
+        setNavBarTitle(title: "我的粉丝")
     }
 
 

@@ -60,6 +60,16 @@ class MainViewController: UITabBarController {
 
     }
     
+    @objc func shareButtonClicked() {
+        
+        let presentedVC = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
+        let springView = Bundle.main.loadNibNamed("Share", owner: self, options: nil)?.first! as! UIView
+        spring = springView
+        springView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        presentedVC?.view.addSubview(springView)
+        
+    }
+    
     @objc func closeBtnClicked() {
         
         spring?.removeFromSuperview()
