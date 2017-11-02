@@ -22,8 +22,16 @@
 		D31735851FA8923100C97B60 /* MyMissionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31735841FA8923100C97B60 /* MyMissionsTableViewCell.swift */; };
 		D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360C1F9C6D8300313268 /* MainViewController.swift */; };
 		D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360F1F9C768A00313268 /* SystemConstantValue.swift */; };
-		D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */; };
 		D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CD4A21F91B14700195686 /* CircleViewController.swift */; };
+		D31E970D1FA9F88200A78D3A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */; };
+		D31E970F1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */; };
+		D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */; };
+		D31E97131FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */; };
+		D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */; };
+		D31E97171FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97161FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift */; };
+		D31E97191FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97181FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift */; };
+		D31E971B1FA9FEB100A78D3A /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E971A1FA9FEB100A78D3A /* ProfileTableViewController.swift */; };
+		D31E971D1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E971C1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift */; };
 		D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */; };
 		D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */; };
 		D334F5E11FA86564006E2769 /* FigureVoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D334F5DF1FA86564006E2769 /* FigureVoteTableViewCell.xib */; };
@@ -35,8 +43,7 @@
 		D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */; };
 		D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347E5A51FA2091000FFE815 /* SpringView.xib */; };
 		D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A71FA20B6B00FFE815 /* SpringView.swift */; };
-		D347E5AA1FA3644F00FFE815 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A91FA3644F00FFE815 /* EditProfileViewController.swift */; };
-		D359931C1F9C9B8C00F96103 /* MyScoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */; };
+		D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */; };
 		D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */; };
 		D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */; };
 		D36C86B71FA09EF0000CCA17 /* UsersListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86B51FA09EF0000CCA17 /* UsersListTableViewCell.xib */; };
@@ -54,7 +61,11 @@
 		D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */; };
 		D3716F961FA89B2000C31A48 /* ActivityVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F951FA89B1F00C31A48 /* ActivityVoteListViewController.swift */; };
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
+		D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
+		D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */; };
+		D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */; };
+		D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */; };
 		D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */; };
 		D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A193581F8DC74D002C1E23 /* AppDelegate.swift */; };
 		D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935C1F8DC74D002C1E23 /* Main.storyboard */; };
@@ -92,6 +103,7 @@
 		D3D1FD871FA81DB2009A2E58 /* AnnouncementDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD851FA81DB2009A2E58 /* AnnouncementDetialViewController.swift */; };
 		D3D1FD881FA81DB2009A2E58 /* AnnouncementDetialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D1FD861FA81DB2009A2E58 /* AnnouncementDetialViewController.xib */; };
 		D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */; };
+		D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */; };
 		D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */; };
 		D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */; };
 		D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */; };
@@ -160,8 +172,16 @@
 		D31735841FA8923100C97B60 /* MyMissionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionsTableViewCell.swift; sourceTree = "<group>"; };
 		D31B360C1F9C6D8300313268 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D31B360F1F9C768A00313268 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
-		D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfProfileViewController.swift; sourceTree = "<group>"; };
 		D31CD4A21F91B14700195686 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
+		D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationVerifiedInfomationViewController.swift; sourceTree = "<group>"; };
+		D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadIDInfomationViewController.swift; sourceTree = "<group>"; };
+		D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIDInfomationFailedViewController.swift; sourceTree = "<group>"; };
+		D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIDInfomationSucceededViewController.swift; sourceTree = "<group>"; };
+		D31E97161FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfInfomationTableViewController.swift; sourceTree = "<group>"; };
+		D31E97181FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotVerifiedIDInfomationViewController.swift; sourceTree = "<group>"; };
+		D31E971A1FA9FEB100A78D3A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		D31E971C1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessDeniedNotVerifiedIDInfomationViewController.swift; sourceTree = "<group>"; };
 		D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueViewController.swift; sourceTree = "<group>"; };
 		D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteTableViewCell.swift; sourceTree = "<group>"; };
 		D334F5DF1FA86564006E2769 /* FigureVoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FigureVoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -173,8 +193,7 @@
 		D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		D347E5A51FA2091000FFE815 /* SpringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringView.xib; sourceTree = "<group>"; };
 		D347E5A71FA20B6B00FFE815 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
-		D347E5A91FA3644F00FFE815 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreVC.swift; sourceTree = "<group>"; };
+		D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
 		D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersTableViewController.swift; sourceTree = "<group>"; };
 		D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewCell.swift; sourceTree = "<group>"; };
 		D36C86B51FA09EF0000CCA17 /* UsersListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListTableViewCell.xib; sourceTree = "<group>"; };
@@ -192,7 +211,11 @@
 		D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListViewController.swift; sourceTree = "<group>"; };
 		D3716F951FA89B1F00C31A48 /* ActivityVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteListViewController.swift; sourceTree = "<group>"; };
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
+		D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
+		D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsViewController.swift; sourceTree = "<group>"; };
+		D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsTableViewCell.swift; sourceTree = "<group>"; };
+		D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsViewController.swift; sourceTree = "<group>"; };
 		D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialLogin.storyboard; sourceTree = "<group>"; };
 		D3A193551F8DC74D002C1E23 /* Neighbourhoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbourhoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A193581F8DC74D002C1E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +253,7 @@
 		D3D1FD851FA81DB2009A2E58 /* AnnouncementDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetialViewController.swift; sourceTree = "<group>"; };
 		D3D1FD861FA81DB2009A2E58 /* AnnouncementDetialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementDetialViewController.xib; sourceTree = "<group>"; };
 		D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
+		D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
 		D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
@@ -326,12 +350,22 @@
 			isa = PBXGroup;
 			children = (
 				D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */,
-				D347E5A91FA3644F00FFE815 /* EditProfileViewController.swift */,
 				D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */,
-				D31B36111F9C8BDF00313268 /* SelfProfileViewController.swift */,
+				D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */,
+				D31E971A1FA9FEB100A78D3A /* ProfileTableViewController.swift */,
 				D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */,
 				D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */,
-				D359931B1F9C9B8C00F96103 /* MyScoreVC.swift */,
+				D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */,
+				D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */,
+				D31E97161FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift */,
+				D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */,
+				D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */,
+				D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */,
+				D31E97181FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift */,
+				D31E971C1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift */,
+				D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */,
+				D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */,
+				D39F63351FAACDAE00C69CA9 /* Others */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +373,7 @@
 		D31CD4A71F91DA9100195686 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D37974A21FAAC70E006EA0EE /* Cell */,
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
 			);
 			path = View;
@@ -361,6 +396,23 @@
 				D3A1C0171FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D37974A21FAAC70E006EA0EE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */,
+				D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D39F63351FAACDAE00C69CA9 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		D3A1934C1F8DC74D002C1E23 = {
@@ -392,7 +444,7 @@
 				D3A193821F8DCAA7002C1E23 /* Null */,
 				D3A193721F8DC887002C1E23 /* Help */,
 				D3A193761F8DC88E002C1E23 /* Profile */,
-				D3FAC7D31FA9633A00D972B9 /* Others */,
+				D3FAC7D31FA9633A00D972B9 /* Miscellaneous */,
 				D3A193581F8DC74D002C1E23 /* AppDelegate.swift */,
 				B678E6491FA36899003F7638 /* NetWorkTool.swift */,
 				D3A1935C1F8DC74D002C1E23 /* Main.storyboard */,
@@ -560,13 +612,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D3FAC7D31FA9633A00D972B9 /* Others */ = {
+		D3FAC7D31FA9633A00D972B9 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
 				D3FAC7E51FA9755200D972B9 /* View */,
 				D3FAC7E41FA9753300D972B9 /* Controller */,
 			);
-			path = Others;
+			path = Miscellaneous;
 			sourceTree = "<group>";
 		};
 		D3FAC7E41FA9753300D972B9 /* Controller */ = {
@@ -759,14 +811,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FAC7F61FA99B8A00D972B9 /* FigureVoteJoinViewController.swift in Sources */,
-				D347E5AA1FA3644F00FFE815 /* EditProfileViewController.swift in Sources */,
+				D31E97131FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift in Sources */,
 				D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */,
 				D3FAC7DA1FA9691200D972B9 /* IssueMissionViewController.swift in Sources */,
 				D3D1FD871FA81DB2009A2E58 /* AnnouncementDetialViewController.swift in Sources */,
+				D31E97171FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift in Sources */,
 				D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */,
+				D31E971D1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift in Sources */,
 				D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */,
+				D31E970F1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift in Sources */,
 				B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */,
-				D359931C1F9C9B8C00F96103 /* MyScoreVC.swift in Sources */,
+				D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */,
 				D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */,
 				B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */,
 				D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */,
@@ -780,12 +835,12 @@
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */,
 				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
+				D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
 				D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */,
 				D31735851FA8923100C97B60 /* MyMissionsTableViewCell.swift in Sources */,
 				B681C9DC1FA9ED06008006D6 /* LXQHeader.swift in Sources */,
-				D31B36121F9C8BDF00313268 /* SelfProfileViewController.swift in Sources */,
 				D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */,
 				D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */,
 				D3716F961FA89B2000C31A48 /* ActivityVoteListViewController.swift in Sources */,
@@ -793,22 +848,27 @@
 				D3D1FD821FA81179009A2E58 /* LotteryTableViewController.swift in Sources */,
 				B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */,
 				D3FAC7F41FA99B7200D972B9 /* FigureVoteDetialViewController.swift in Sources */,
+				D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */,
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
 				D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */,
 				D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */,
+				D31E97191FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift in Sources */,
 				D3FE2FFE1FA45B0100FAD95E /* SocialCharityDetialViewController.swift in Sources */,
 				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
 				D334F5E81FA86819006E2769 /* FavVCMomentsTableViewCell.swift in Sources */,
 				D3FAC7D61FA9648500D972B9 /* IssueTopicsViewController.swift in Sources */,
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
+				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
 				D3BEA89D1FA39E3000E4595E /* MyMissionsViewController.swift in Sources */,
 				D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */,
 				D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */,
+				D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */,
 				D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */,
 				D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */,
 				D334F5E41FA86788006E2769 /* CircleVCTopicsTableViewCell.swift in Sources */,
 				D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */,
+				D31E971B1FA9FEB100A78D3A /* ProfileTableViewController.swift in Sources */,
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
 				D334F5E61FA867B8006E2769 /* MomentsVCLatestIssueTableViewCell.swift in Sources */,
 				D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */,
@@ -818,9 +878,13 @@
 				D3FAC7ED1FA97ECD00D972B9 /* ActivityUnderVotingViewController.swift in Sources */,
 				D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */,
 				D3D1FD791FA80BA9009A2E58 /* LotteryTableViewCell.swift in Sources */,
+				D31E970D1FA9F88200A78D3A /* ChangePasswordViewController.swift in Sources */,
+				D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */,
 				D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */,
 				D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */,
 				D3FAC7E91FA97E9E00D972B9 /* ActivityVoteConsultingViewController.swift in Sources */,
+				D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */,
+				D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */,
 				D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */,
 				D3D1FD841FA81187009A2E58 /* ActivityVoteTableViewController.swift in Sources */,
 				D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */,

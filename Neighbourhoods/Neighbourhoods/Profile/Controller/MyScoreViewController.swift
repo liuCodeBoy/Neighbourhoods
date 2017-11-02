@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyScoreVC: UIViewController {
+class MyScoreViewController: UIViewController {
     
     @IBOutlet weak var receiveScoreTableView: UITableView!
     
@@ -34,7 +34,7 @@ class MyScoreVC: UIViewController {
 
 }
 
-extension MyScoreVC: UITableViewDelegate, UITableViewDataSource {
+extension MyScoreViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiveScoreCell")
