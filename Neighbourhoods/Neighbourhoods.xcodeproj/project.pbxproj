@@ -60,7 +60,11 @@
 		D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */; };
 		D3716F961FA89B2000C31A48 /* ActivityVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F951FA89B1F00C31A48 /* ActivityVoteListViewController.swift */; };
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
+		D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
+		D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */; };
+		D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */; };
+		D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */; };
 		D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */; };
 		D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A193581F8DC74D002C1E23 /* AppDelegate.swift */; };
 		D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935C1F8DC74D002C1E23 /* Main.storyboard */; };
@@ -205,7 +209,11 @@
 		D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListViewController.swift; sourceTree = "<group>"; };
 		D3716F951FA89B1F00C31A48 /* ActivityVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteListViewController.swift; sourceTree = "<group>"; };
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
+		D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
+		D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsViewController.swift; sourceTree = "<group>"; };
+		D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsTableViewCell.swift; sourceTree = "<group>"; };
+		D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsViewController.swift; sourceTree = "<group>"; };
 		D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialLogin.storyboard; sourceTree = "<group>"; };
 		D3A193551F8DC74D002C1E23 /* Neighbourhoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbourhoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A193581F8DC74D002C1E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -339,6 +347,7 @@
 				D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */,
 				D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */,
 				D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */,
+				D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */,
 				D31E97161FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift */,
 				D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */,
 				D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */,
@@ -347,6 +356,7 @@
 				D31E971C1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift */,
 				D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */,
 				D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */,
+				D39F63351FAACDAE00C69CA9 /* Others */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,6 +364,7 @@
 		D31CD4A71F91DA9100195686 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D37974A21FAAC70E006EA0EE /* Cell */,
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
 			);
 			path = View;
@@ -376,6 +387,23 @@
 				D3A1C0171FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D37974A21FAAC70E006EA0EE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */,
+				D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D39F63351FAACDAE00C69CA9 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		D3A1934C1F8DC74D002C1E23 = {
@@ -406,7 +434,7 @@
 				D3A193821F8DCAA7002C1E23 /* Null */,
 				D3A193721F8DC887002C1E23 /* Help */,
 				D3A193761F8DC88E002C1E23 /* Profile */,
-				D3FAC7D31FA9633A00D972B9 /* Others */,
+				D3FAC7D31FA9633A00D972B9 /* Miscellaneous */,
 				D3A193581F8DC74D002C1E23 /* AppDelegate.swift */,
 				B678E6491FA36899003F7638 /* NetWorkTool.swift */,
 				D3A1935C1F8DC74D002C1E23 /* Main.storyboard */,
@@ -574,13 +602,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D3FAC7D31FA9633A00D972B9 /* Others */ = {
+		D3FAC7D31FA9633A00D972B9 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
 				D3FAC7E51FA9755200D972B9 /* View */,
 				D3FAC7E41FA9753300D972B9 /* Controller */,
 			);
-			path = Others;
+			path = Miscellaneous;
 			sourceTree = "<group>";
 		};
 		D3FAC7E41FA9753300D972B9 /* Controller */ = {
@@ -810,6 +838,7 @@
 				D3D1FD821FA81179009A2E58 /* LotteryTableViewController.swift in Sources */,
 				B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */,
 				D3FAC7F41FA99B7200D972B9 /* FigureVoteDetialViewController.swift in Sources */,
+				D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */,
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
 				D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */,
@@ -820,6 +849,7 @@
 				D334F5E81FA86819006E2769 /* FavVCMomentsTableViewCell.swift in Sources */,
 				D3FAC7D61FA9648500D972B9 /* IssueTopicsViewController.swift in Sources */,
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
+				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
 				D3BEA89D1FA39E3000E4595E /* MyMissionsViewController.swift in Sources */,
 				D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */,
 				D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */,
@@ -843,6 +873,8 @@
 				D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */,
 				D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */,
 				D3FAC7E91FA97E9E00D972B9 /* ActivityVoteConsultingViewController.swift in Sources */,
+				D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */,
+				D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */,
 				D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */,
 				D3D1FD841FA81187009A2E58 /* ActivityVoteTableViewController.swift in Sources */,
 				D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */,
