@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +43,7 @@
                                 <constraint firstAttribute="height" constant="45" id="Ub9-UE-Ixu"/>
                                 <constraint firstAttribute="width" constant="45" id="lG7-QD-vEy"/>
                             </constraints>
-                            <state key="normal" title="Button" image="profile_missions"/>
+                            <state key="normal" title="Button" image="convinience_mission"/>
                             <connections>
                                 <action selector="missionBtn:" destination="qSd-8V-SFz" eventType="touchUpInside" id="v2J-va-Xue"/>
                             </connections>
@@ -59,7 +60,7 @@
                                 <constraint firstAttribute="height" constant="45" id="iYW-Ih-btZ"/>
                                 <constraint firstAttribute="width" constant="45" id="r3U-Ru-cjx"/>
                             </constraints>
-                            <state key="normal" title="Button" image="profile_missions"/>
+                            <state key="normal" title="Button" image="convenience_message"/>
                             <connections>
                                 <action selector="messgaeBtn:" destination="qSd-8V-SFz" eventType="touchUpInside" id="7ie-w0-aPr"/>
                             </connections>
@@ -76,7 +77,7 @@
                                 <constraint firstAttribute="height" constant="45" id="o6F-Ly-bPy"/>
                                 <constraint firstAttribute="width" constant="45" id="qhU-dA-4RC"/>
                             </constraints>
-                            <state key="normal" title="Button" image="profile_missions"/>
+                            <state key="normal" title="Button" image="convinience_topic"/>
                             <connections>
                                 <action selector="topicBtn:" destination="qSd-8V-SFz" eventType="touchUpInside" id="M1g-dN-2Vb"/>
                             </connections>
@@ -123,7 +124,9 @@
     </objects>
     <resources>
         <image name="close_button" width="20" height="20"/>
-        <image name="profile_missions" width="60" height="60"/>
+        <image name="convenience_message" width="60" height="60"/>
+        <image name="convinience_mission" width="60" height="60"/>
+        <image name="convinience_topic" width="60" height="60"/>
         <image name="spring_view_shadow" width="100" height="12"/>
     </resources>
 </document>

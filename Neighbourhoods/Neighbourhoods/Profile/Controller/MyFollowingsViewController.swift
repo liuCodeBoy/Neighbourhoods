@@ -19,6 +19,9 @@ class MyFollowingsViewController: UIViewController {
         myFollowingsTableView.dataSource = self
         myFollowingsTableView?.register(UINib(nibName: "UsersListTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersListCell")
         
+        setNavBarBackBtn()
+        setNavBarTitle(title: "我的关注")
+        
     }
 
 
