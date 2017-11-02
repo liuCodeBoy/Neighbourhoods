@@ -27,6 +27,14 @@ extension UIViewController {
         self.navigationItem.titleView = titleLbl
     }
     
+    //MARK: - convenience alert vie hint message
+    func presentHintMessage(target: UIViewController, hintMessgae: String) {
+        let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "好的", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        target.present(alert, animated: true, completion: nil)
+    }
+    
     func setNavBarBackBtn() {
         let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(popopop))
         self.navigationItem.setLeftBarButton(back, animated: true)

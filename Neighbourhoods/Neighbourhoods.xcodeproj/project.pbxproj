@@ -19,6 +19,7 @@
 		B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */; };
 		B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */; };
 		B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */; };
+		D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */; };
 		D31735851FA8923100C97B60 /* MyMissionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31735841FA8923100C97B60 /* MyMissionsTableViewCell.swift */; };
 		D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360C1F9C6D8300313268 /* MainViewController.swift */; };
 		D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360F1F9C768A00313268 /* SystemConstantValue.swift */; };
@@ -40,7 +41,7 @@
 		D334F5E81FA86819006E2769 /* FavVCMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5E71FA86819006E2769 /* FavVCMomentsTableViewCell.swift */; };
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
-		D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */; };
+		D341AAAA1F9AF14100E640E1 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */; };
 		D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347E5A51FA2091000FFE815 /* SpringView.xib */; };
 		D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A71FA20B6B00FFE815 /* SpringView.swift */; };
 		D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */; };
@@ -158,7 +159,6 @@
 		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
 		B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXQHeader.swift; sourceTree = "<group>"; };
-		B681C9DD1FA9F2CA008006D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B692F8991F91F17E00C75B41 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		B692F89A1F91F17E00C75B41 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		B692F8A01F91F1DF00C75B41 /* LoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
@@ -169,6 +169,7 @@
 		B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B6F71F381FA9647300BB8B90 /* NewsRotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRotationModel.swift; sourceTree = "<group>"; };
 		CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.release.xcconfig"; sourceTree = "<group>"; };
+		D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D31735841FA8923100C97B60 /* MyMissionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionsTableViewCell.swift; sourceTree = "<group>"; };
 		D31B360C1F9C6D8300313268 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D31B360F1F9C768A00313268 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
@@ -190,7 +191,7 @@
 		D334F5E71FA86819006E2769 /* FavVCMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavVCMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		D347E5A51FA2091000FFE815 /* SpringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringView.xib; sourceTree = "<group>"; };
 		D347E5A71FA20B6B00FFE815 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
 		D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
@@ -452,7 +453,7 @@
 				D3A193611F8DC74D002C1E23 /* LaunchScreen.storyboard */,
 				D3A193641F8DC74D002C1E23 /* Info.plist */,
 				D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */,
-				B681C9DD1FA9F2CA008006D6 /* Assets.xcassets */,
+				D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */,
 			);
 			path = Neighbourhoods;
 			sourceTree = "<group>";
@@ -596,7 +597,7 @@
 			children = (
 				B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */,
 				D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */,
-				D341AAA91F9AF14100E640E1 /* Extension+UIView.swift */,
+				D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */,
 				B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */,
 			);
 			path = Extension;
@@ -723,6 +724,7 @@
 				D3A193631F8DC74D002C1E23 /* LaunchScreen.storyboard in Resources */,
 				D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */,
 				D3FAC7E11FA96AD400D972B9 /* QuickViewMessgaes.storyboard in Resources */,
+				D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */,
 				D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */,
 				D3FAC7D71FA9648500D972B9 /* IssueTopicsViewController.xib in Resources */,
 				D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */,
@@ -822,7 +824,7 @@
 				D31E970F1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift in Sources */,
 				B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */,
 				D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */,
-				D341AAAA1F9AF14100E640E1 /* Extension+UIView.swift in Sources */,
+				D341AAAA1F9AF14100E640E1 /* Extension+UIViewController.swift in Sources */,
 				B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */,
 				D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */,
 				D3A1C0181FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift in Sources */,
@@ -1024,7 +1026,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
@@ -1051,7 +1054,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
