@@ -4,8 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -467,6 +466,7 @@
                                             <outlet property="gender" destination="vK8-bt-jEb" id="OXv-wu-Lef"/>
                                             <outlet property="imageLeft" destination="C2q-Wf-2Gr" id="QT9-vU-pK6"/>
                                             <outlet property="imageRight" destination="2To-c4-7q9" id="v14-6Y-3Gf"/>
+                                            <outlet property="leftImageHeightCon" destination="cOt-sP-KYp" id="zL9-nA-oMI"/>
                                             <outlet property="likeBtn" destination="yLC-j4-r5m" id="Kaf-8Q-zCK"/>
                                             <outlet property="location" destination="FwL-hT-KEG" id="8Vg-C2-M0J"/>
                                             <outlet property="nickName" destination="qUO-9o-Keh" id="49R-TE-oZD"/>

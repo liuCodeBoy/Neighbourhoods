@@ -73,7 +73,7 @@ extension NetWorkTool {
     func UserLogin( _ account:String, password:String , type : String , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
       //1.获取请求的URLString
         
-        let urlString = "http://192.168.0.144/llb/index.php/api/login/login"
+        let urlString = "http://106.15.199.8/llb/api/login/login"
       //2.获取请求参数
         let parameters = ["account" : account , "password": password , "type" : type]
       //3.发送请求参数
@@ -93,7 +93,7 @@ extension NetWorkTool {
     //用户注册
     func UserRegister( _ account:String, password:String , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://192.168.0.144/llb/index.php/api/login/register"
+        let urlString = "http://106.15.199.8/llb/api/login/register"
         //2.获取请求参数
         let parameters = ["account" : account , "password": password]
         //3.发送请求参数
@@ -121,11 +121,12 @@ extension NetWorkTool {
     
     func  nbor_list(_ sort:Nbor_Sort, p: NSInteger ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
-        let urlString = "http://192.168.0.144/llb/index.php/api/nbor/nbor_list"
+       
+        let urlString = "http://106.15.199.8/llb/api/nbor/nbor_list"
         //2.获取请求参数
-        let parameters = ["sort" : sort.rawValue]
+        let parameters = ["sort" : sort.rawValue , "p" : p] as [String : Any]
         //3.发送请求参数
-        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
             //获取字典数据
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)

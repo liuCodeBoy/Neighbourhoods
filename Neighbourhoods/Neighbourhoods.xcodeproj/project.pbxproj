@@ -10,6 +10,7 @@
 		91738E5369CA97748E1652E9 /* Pods_Neighbourhoods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C24ABCE591C5A1B847A1370 /* Pods_Neighbourhoods.framework */; };
 		B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
+		B681C9DC1FA9ED06008006D6 /* LXQHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */; };
 		B692F89B1F91F17E00C75B41 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692F8991F91F17E00C75B41 /* SDWebImage.framework */; };
 		B692F89C1F91F17E00C75B41 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692F89A1F91F17E00C75B41 /* AFNetworking.framework */; };
 		B692F89E1F91F1A700C75B41 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B692F89A1F91F17E00C75B41 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -68,7 +69,6 @@
 		D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */; };
 		D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A193581F8DC74D002C1E23 /* AppDelegate.swift */; };
 		D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935C1F8DC74D002C1E23 /* Main.storyboard */; };
-		D3A193601F8DC74D002C1E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A1935F1F8DC74D002C1E23 /* Assets.xcassets */; };
 		D3A193631F8DC74D002C1E23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A193611F8DC74D002C1E23 /* LaunchScreen.storyboard */; };
 		D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A1937E1F8DCA37002C1E23 /* Circle.storyboard */; };
 		D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A193801F8DCA4F002C1E23 /* Announcement.storyboard */; };
@@ -157,6 +157,8 @@
 		56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.debug.xcconfig"; sourceTree = "<group>"; };
 		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
+		B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXQHeader.swift; sourceTree = "<group>"; };
+		B681C9DD1FA9F2CA008006D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B692F8991F91F17E00C75B41 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		B692F89A1F91F17E00C75B41 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		B692F8A01F91F1DF00C75B41 /* LoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
@@ -218,7 +220,6 @@
 		D3A193551F8DC74D002C1E23 /* Neighbourhoods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbourhoods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A193581F8DC74D002C1E23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3A1935D1F8DC74D002C1E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D3A1935F1F8DC74D002C1E23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3A193621F8DC74D002C1E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3A193641F8DC74D002C1E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A1937E1F8DCA37002C1E23 /* Circle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Circle.storyboard; sourceTree = "<group>"; };
@@ -300,6 +301,14 @@
 				CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B681C9DA1FA9ECA8008006D6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		B692F8981F91F17D00C75B41 /* Frameworks */ = {
@@ -427,6 +436,7 @@
 		D3A193571F8DC74D002C1E23 /* Neighbourhoods */ = {
 			isa = PBXGroup;
 			children = (
+				B681C9DA1FA9ECA8008006D6 /* Tool */,
 				D31B360E1F9C766800313268 /* Static */,
 				D3F6B1861F9A1325004D0A20 /* Extension */,
 				D3A1936A1F8DC867002C1E23 /* Circle */,
@@ -439,10 +449,10 @@
 				B678E6491FA36899003F7638 /* NetWorkTool.swift */,
 				D3A1935C1F8DC74D002C1E23 /* Main.storyboard */,
 				D31B360C1F9C6D8300313268 /* MainViewController.swift */,
-				D3A1935F1F8DC74D002C1E23 /* Assets.xcassets */,
 				D3A193611F8DC74D002C1E23 /* LaunchScreen.storyboard */,
 				D3A193641F8DC74D002C1E23 /* Info.plist */,
 				D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */,
+				B681C9DD1FA9F2CA008006D6 /* Assets.xcassets */,
 			);
 			path = Neighbourhoods;
 			sourceTree = "<group>";
@@ -712,7 +722,6 @@
 				D3FAC7DB1FA9691200D972B9 /* IssueMissionViewController.xib in Resources */,
 				D3A193631F8DC74D002C1E23 /* LaunchScreen.storyboard in Resources */,
 				D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */,
-				D3A193601F8DC74D002C1E23 /* Assets.xcassets in Resources */,
 				D3FAC7E11FA96AD400D972B9 /* QuickViewMessgaes.storyboard in Resources */,
 				D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */,
 				D3FAC7D71FA9648500D972B9 /* IssueTopicsViewController.xib in Resources */,
@@ -831,6 +840,7 @@
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
 				D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */,
 				D31735851FA8923100C97B60 /* MyMissionsTableViewCell.swift in Sources */,
+				B681C9DC1FA9ED06008006D6 /* LXQHeader.swift in Sources */,
 				D3F6B18C1F9A1D53004D0A20 /* HelpMissionsCategoriesCell.swift in Sources */,
 				D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */,
 				D3716F961FA89B2000C31A48 /* ActivityVoteListViewController.swift in Sources */,
