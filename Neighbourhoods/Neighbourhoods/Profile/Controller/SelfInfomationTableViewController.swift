@@ -11,7 +11,9 @@ import UIKit
 class SelfInfomationTableViewController: UITableViewController {
 
     @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var nickName: UILabel!
+    @IBOutlet weak var nickNameLbl: UILabel!
+    
+    var nickName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,16 @@ class SelfInfomationTableViewController: UITableViewController {
         default: break
         }
     }
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "NickNameChangeSegue" {
+            let dest = segue.destination as! ChangeNickNameViewController
+            
+            //MARK: - send self's segue vc to next vc
+            dest.retSegue = segue
+        }
+    }
 
 }

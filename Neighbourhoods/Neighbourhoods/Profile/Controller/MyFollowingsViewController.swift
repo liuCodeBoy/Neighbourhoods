@@ -22,6 +22,7 @@ class MyFollowingsViewController: UIViewController {
         setNavBarBackBtn()
         setNavBarTitle(title: "我的关注")
         
+        
     }
 
 
@@ -30,7 +31,7 @@ class MyFollowingsViewController: UIViewController {
 extension MyFollowingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return tempCellData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,16 +59,25 @@ extension MyFollowingsViewController: UITableViewDelegate, UITableViewDataSource
         
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let top = UITableViewRowAction(style: .normal, title: "置顶") { (action, index) in
-            print("top")
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    //MARK: - left slide to delete row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //TODO: remove form data source
+        if editingStyle == .delete {
+            tempCellData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
         }
-        top.backgroundColor = following_top
-        let delete = UITableViewRowAction(style: .normal, title: "删除") { (action, index) in
-            print("delete")
-        }
-        delete.backgroundColor = following_delete
         
-        return [delete, top]
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
     }
 }

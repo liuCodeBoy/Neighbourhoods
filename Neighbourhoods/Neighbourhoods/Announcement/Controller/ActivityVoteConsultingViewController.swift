@@ -18,6 +18,7 @@ class ActivityVoteConsultingViewController: UIViewController {
     @IBOutlet weak var detialTextLbl: UILabel!
     
     @IBAction func addComment(_ sender: UIButton) {
+        self.navigationController?.pushViewController(CommentViewController(), animated: true)
     }
     
     @IBOutlet weak var commentTableView: UITableView!

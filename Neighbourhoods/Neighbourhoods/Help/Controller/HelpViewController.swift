@@ -14,6 +14,12 @@ class HelpViewController: UIViewController {
     @IBOutlet weak var finishedStatusBtn: UIButton!
     @IBOutlet weak var scoreBtn: UIButton!
    
+    @IBOutlet weak var lineView: UIView!
+    
+    var childView1: UIView?
+    var childView2: UIView?
+    var childView3: UIView?
+    
     @IBAction func btn2Clicked(_ sender: UIButton) {
         timeBtn.isSelected              = true
         finishedStatusBtn.isSelected    = false
@@ -38,50 +44,41 @@ class HelpViewController: UIViewController {
 
     
     
-    @IBOutlet weak var missionCategoriesTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadNavBarItems()
+        setNavBarTitle(title: "邻里帮")
         
-        missionCategoriesTableView.delegate = self
-        missionCategoriesTableView.dataSource = self
-        
-    }
-    
-    // MARK:- set nav attribute and items
-    func loadNavBarItems() {
-        let titleLbl = UILabel()
-        titleLbl.textColor = defaultBlueColor
-        titleLbl.text = "邻里帮"
-        self.navigationItem.titleView = titleLbl
-        
-        let leftBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_search"), style: .done, target: self, action: #selector(navSearch))
-        self.navigationItem.setLeftBarButton(leftBtn, animated: true)
+        loadTableViews()
         
     }
     
-    @objc func navSearch() {
+    
+    func loadTableViews() {
+        let childVC1 = self.storyboard?.instantiateViewController(withIdentifier: "HelpCategoryByTimeVC")               as! HelpCategoryByTimeViewController
+        let childVC2 = self.storyboard?.instantiateViewController(withIdentifier: "HelpCategoryByCompletionStatusVC")   as! HelpCategoryByCompletionStatusViewController
+        let childVC3 = self.storyboard?.instantiateViewController(withIdentifier: "HelpCategoryByScoreVC")              as! HelpCategoryByScoreViewController
         
+        childView1 = childVC1.view
+        childView2 = childVC2.view
+        childView3 = childVC3.view
+        
+        let y = lineView.frame.origin.y + 1
+        
+        childView1?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
+        childView2?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
+        childView3?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
+        
+        
+        self.addChildViewController(childVC1)
+        self.addChildViewController(childVC2)
+        self.addChildViewController(childVC3)
+        
+        self.view.addSubview(childView1!)
+        self.view.addSubview(childView2!)
+        self.view.addSubview(childView3!)
     }
 
-}
 
-extension HelpViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HelpMissionCell")
-        return cell!
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
-    }
 }
 

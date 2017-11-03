@@ -42,6 +42,7 @@ class MainViewController: UITabBarController {
         self.view.addSubview(add)
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeBtnClicked), name: NSNotification.Name.init(closeSpringViewNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(shareButtonClicked), name: NSNotification.Name.init(shareNotification), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueTopicsVC), name: NSNotification.Name.init(issueTopicsNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueMissionVC), name: NSNotification.Name.init(issueMissionNotification), object: nil)

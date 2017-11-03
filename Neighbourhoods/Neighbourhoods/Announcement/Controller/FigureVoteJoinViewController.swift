@@ -10,13 +10,15 @@ import UIKit
 
 class FigureVoteJoinViewController: UIViewController {
 
-    @IBOutlet weak var forwardbtn: UIButton!
+    @IBAction func forwardBtnClicked(_ sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setNavBarBackBtn()
         setNavBarTitle(title: "我要参与")
-        setRoundRect(targets: [forwardbtn])
     
     }
 

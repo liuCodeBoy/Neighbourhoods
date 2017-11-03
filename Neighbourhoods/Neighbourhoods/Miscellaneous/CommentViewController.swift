@@ -17,7 +17,7 @@ class CommentViewController: UIViewController {
         self.setNavBarTitle(title: "写评论")
         
         let issueBtn = UIBarButtonItem(title: "发送", style: .done, target: self, action: #selector(issueBtnClicked))
-        let backBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_back"), style: .done, target: self, action: #selector(pop))
+        let backBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(pop))
         
         self.navigationItem.setLeftBarButton(backBtn, animated: true)
         self.navigationItem.setRightBarButton(issueBtn, animated: true)
