@@ -12,9 +12,13 @@ let figureVoteListNotification = "com.NJQL.Announcement.FigureVote"
 
 class FigureVoteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var detialLbl: UILabel!
+    @IBOutlet weak var statusBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     

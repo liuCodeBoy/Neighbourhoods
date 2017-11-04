@@ -16,10 +16,9 @@ let navAndTabBarTintColor = #colorLiteral(red: 0.3019607961, green: 0.6941176653
 
 let score_Background = #colorLiteral(red: 0.9568627477, green: 0.6392157078, blue: 0.6784313917, alpha: 1)
 
-let lbl_Individual = #colorLiteral(red: 0.9325884581, green: 0.8438286185, blue: 0.5085062385, alpha: 1)
-
 let lbl_Official = #colorLiteral(red: 0.521568656, green: 0.7921568751, blue: 0.9490196109, alpha: 1)
 
-let following_top = #colorLiteral(red: 0.9686274529, green: 0.6862745285, blue: 0.4274509847, alpha: 1)
+let default_orange = #colorLiteral(red: 0.9887720942, green: 0.7015311718, blue: 0.2488877475, alpha: 1)
 
-let following_delete = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+let default_grey = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+

@@ -12,6 +12,8 @@ let activityVoteListNotification = "com.NJQL.Announcement.ActivityVote"
 
 class ActivityVoteTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var detialLbl: UILabel!
     @IBOutlet weak var statusBtn: UIButton!
     
     override func awakeFromNib() {
