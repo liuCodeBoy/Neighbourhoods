@@ -188,8 +188,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_personal_data" id="FH9-LE-RCG">
-                                                    <rect key="frame" x="16" y="9" width="25" height="24"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_self" id="FH9-LE-RCG">
+                                                    <rect key="frame" x="16" y="9" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -213,15 +213,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_my_task" id="Wp0-9k-ikq">
-                                                    <rect key="frame" x="16" y="6" width="25" height="31"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_mission" id="Wp0-9k-ikq">
+                                                    <rect key="frame" x="16" y="9" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wd5-9j-lUz" imageView="Qww-0N-gCr" style="IBUITableViewCellStyleDefault" id="uth-oo-2aW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wd5-9j-lUz" imageView="x9z-Cw-qES" style="IBUITableViewCellStyleDefault" id="uth-oo-2aW">
                                         <rect key="frame" x="0.0" y="288" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uth-oo-2aW" id="Rlt-ap-MyL">
@@ -235,7 +235,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_circle_moments" id="Qww-0N-gCr">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_circle" id="x9z-Cw-qES">
                                                     <rect key="frame" x="16" y="9" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -258,14 +258,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Siz-hz-QWX">
-                                                    <rect key="frame" x="56" y="0.0" width="284" height="43.5"/>
+                                                    <rect key="frame" x="61" y="0.0" width="279" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_setting" id="VjO-LW-6UR">
-                                                    <rect key="frame" x="16" y="10" width="25" height="23"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_settings" id="VjO-LW-6UR">
+                                                    <rect key="frame" x="16" y="6" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -289,7 +289,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_about_us" id="3P1-8R-XtB">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="profile_about" id="3P1-8R-XtB">
                                                     <rect key="frame" x="16" y="9" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -2025,19 +2025,19 @@
         <image name="back" width="20" height="20"/>
         <image name="cumulative_score" width="20" height="20"/>
         <image name="id_card_authentication" width="249" height="180"/>
-        <image name="id_card_authentication_failed" width="271" height="179"/>
-        <image name="id_card_authentication_succeeded" width="267" height="179"/>
+        <image name="id_card_authentication_failed" width="271" height="180"/>
+        <image name="id_card_authentication_succeeded" width="260" height="180"/>
         <image name="location_icon_small" width="7" height="10"/>
-        <image name="male" width="5" height="6"/>
+        <image name="male" width="9" height="9"/>
         <image name="moments_commented" width="27" height="20"/>
         <image name="moments_liked" width="23" height="20"/>
-        <image name="profile_about_us" width="25" height="25"/>
+        <image name="profile_about" width="25" height="25"/>
         <image name="profile_avatar_placeholder" width="60" height="60"/>
         <image name="profile_background" width="375" height="177"/>
-        <image name="profile_circle_moments" width="25" height="25"/>
-        <image name="profile_my_task" width="25" height="31"/>
-        <image name="profile_personal_data" width="25" height="24"/>
-        <image name="profile_setting" width="25" height="23"/>
+        <image name="profile_circle" width="25" height="25"/>
+        <image name="profile_mission" width="25" height="25"/>
+        <image name="profile_self" width="25" height="25"/>
+        <image name="profile_settings" width="30" height="30"/>
         <image name="secureity-verify.png" width="11" height="12"/>
         <image name="tabbar_profile" width="25" height="25"/>
         <image name="tabbar_profile_highlighted" width="25" height="25"/>

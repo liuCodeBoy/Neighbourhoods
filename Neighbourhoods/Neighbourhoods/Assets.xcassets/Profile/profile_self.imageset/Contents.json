@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "profile_my_task@2x.png",
+      "filename" : "profile_self@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "profile_self3x.png",
       "scale" : "3x"
     }
   ],

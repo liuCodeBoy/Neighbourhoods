@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "id_card_authentication.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "id_card_authentication@2x.png",
       "scale" : "2x"
     },
     {

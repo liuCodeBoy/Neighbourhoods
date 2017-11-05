@@ -16,10 +16,8 @@ class ActivityVoteCounsultantCompletedViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var emailAddress: UILabel!
     @IBOutlet weak var detialTextLbl: UILabel!
-
     @IBOutlet weak var voteBtn: UIButton!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
