@@ -15,185 +15,80 @@ class MomentsViewController: UIViewController {
     @IBOutlet weak var hotestTopic: UIButton!
     @IBOutlet weak var topicClassify: UIButton!
     
-    private   var     lastPageStart  = 1
-    private   var     lastPageEnd    = 1
-    private   var     likePageStart  = 1
-    private   var     likePageEnd    = 1
-    private   var     lastedAllPages = 1
-    private   var     likedAllPages  = 1
-    private   var     isLasted       = true
+    @IBOutlet weak var lineView: UIView!
+    
+    var childView1: UIView?
+    var childView2: UIView?
+    var childView3: UIView?
+
     @IBAction func btn1clicked(_ sender: UIButton) {
         latestIssue.isSelected   = true
         hotestTopic.isSelected   = false
         topicClassify.isSelected = false
-        isLasted                 = true
-        momentsTopicsTableView.reloadData()
+        
+        childView1?.isHidden = false
+        childView2?.isHidden = true
+        childView3?.isHidden = true
     }
     @IBAction func btn2clicked(_ sender: UIButton) {
         latestIssue.isSelected    = false
         hotestTopic.isSelected    = true
         topicClassify.isSelected  = false
-        isLasted                  = false
-        momentsTopicsTableView.reloadData()
+        
+        childView1?.isHidden = true
+        childView2?.isHidden = false
+        childView3?.isHidden = true
     }
     @IBAction func btn3clicked(_ sender: UIButton) {
         latestIssue.isSelected   = false
         hotestTopic.isSelected   = false
         topicClassify.isSelected = true
+        
+        childView1?.isHidden = true
+        childView2?.isHidden = true
+        childView3?.isHidden = false
     }
     
-    @IBOutlet weak var momentsTopicsTableView: UITableView!
     lazy var  rotaionArray = [NborCircleModel]()
     lazy var  hotArray     = [NborCircleModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        momentsTopicsTableView.delegate = self
-        momentsTopicsTableView.dataSource = self
-        momentsTopicsTableView.showsVerticalScrollIndicator = false
-        momentsTopicsTableView.showsHorizontalScrollIndicator = false
-        loadRefreshComponet()
-        lastedRequest(p: lastPageStart, isTop: false)
-        lastedTopicRequest(p: likePageStart, isTop: false)
         
         setNavBarBackBtn()
         setNavBarTitle(title: "圈内动态")
-        //自动计算高度
-        momentsTopicsTableView.estimatedRowHeight = 100
-        momentsTopicsTableView.rowHeight = UITableViewAutomaticDimension
+        
+        loadTableViews()
         
     }
-  //MARK: - 初始化刷新
-    func loadRefreshComponet() -> () {
-        //默认下拉刷新
-        momentsTopicsTableView.mj_header = LXQHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
-        //上拉刷新
-        momentsTopicsTableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(endrefresh))
-        //自动根据有无数据来显示和隐藏
-        momentsTopicsTableView.mj_footer.isAutomaticallyHidden = true
-        // 设置自动切换透明度(在导航栏下面自动隐藏)
-        momentsTopicsTableView.mj_header.isAutomaticallyChangeAlpha = true
-    }
-    @objc func refresh() -> () {
-        if isLasted && lastPageStart > 1 {
-          self.lastedRequest(p: lastPageStart, isTop : true)
-          lastPageStart -= 1
-           }else{
-            momentsTopicsTableView.mj_header.endRefreshing()
-         }
-        if isLasted == false && likePageStart > 1 {
-            lastedTopicRequest(p: likePageStart, isTop: true)
-                likePageStart -= 1
-            }else{
-                momentsTopicsTableView.mj_header.endRefreshing()
-            }
-    }
     
-    @objc func  endrefresh() -> (){
-        if isLasted {
-        lastedRequest(p: lastPageEnd,isTop : false)
-        }else{
-       lastedTopicRequest(p: likePageEnd, isTop: false)
-        }
-}
-    
-  //MARK: - 最新发布网络请求
-    func lastedRequest(p : Int , isTop : Bool) -> () {
-     
-        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.time, p: p) {[weak self](info, error) in
-            if info?["code"] as? String == "200"{
-                if let pages  = info!["result"]!["pages"]
-                 {
-                    self?.lastedAllPages = pages as! Int
-                 }
-                if  CGFloat((self?.lastPageEnd)!) <  CGFloat((self?.lastedAllPages)!){
-                    self?.lastPageEnd += 1
-                }
-                let result  = info!["result"]!["list"] as! [NSDictionary]
-                for i in 0..<result.count
-                {
-                    let  circleInfo  =  result[i]
-                    if  let rotationModel = NborCircleModel.mj_object(withKeyValues: circleInfo)
-                    {
-                        if isTop == false
-                        {
-                        self?.rotaionArray.append(rotationModel) 
-                        }else{
-                        self?.rotaionArray.insert(rotationModel, at: 0)
-                        }
-                    }
-                }
-                self?.momentsTopicsTableView.reloadData()
-                if p == self?.lastedAllPages {
-                    self?.momentsTopicsTableView.mj_footer.endRefreshingWithNoMoreData()
-                }
-            }else{
-                //服务器
-                self?.momentsTopicsTableView.mj_header.endRefreshing()
-                self?.momentsTopicsTableView.mj_footer.endRefreshing()
-                 }
-             
-        }
+    func loadTableViews() {
+        let childVC1 = self.storyboard?.instantiateViewController(withIdentifier: "MomentsLatestIssueTVC") as! MomentsLatestIssueTableViewController
+        let childVC2 = self.storyboard?.instantiateViewController(withIdentifier: "MomentsHotestTopicTVC") as! MomentsHotestTopicTableViewController
+        let childVC3 = self.storyboard?.instantiateViewController(withIdentifier: "MomentsTopicsClassificationTVC") as! MomentsTopicsClassificationTableViewController
+        
+        childView1 = childVC1.view
+        childView2 = childVC2.view
+        childView3 = childVC3.view
+        
+        let y = lineView.frame.origin.y + 1
+        
+        childView1?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
+        childView2?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
+        childView3?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
+        
+        
+        self.addChildViewController(childVC1)
+        self.addChildViewController(childVC2)
+        self.addChildViewController(childVC3)
+        
+        self.view.addSubview(childView3!)
+        self.view.addSubview(childView2!)
+        self.view.addSubview(childView1!)
     }
-   //MARK: - 最新话题网络请求
-    func lastedTopicRequest(p : Int,isTop : Bool) -> (){
-        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.like, p: p) {[weak self](info, error) in
-                if info?["code"] as? String == "200"{
-                    
-                    if let pages  = info!["result"]!["pages"]
-                    {
-                        self?.likedAllPages = pages as! Int
-                    }
-                    if  CGFloat((self?.likePageEnd)!) <  CGFloat((self?.likedAllPages)!){
-                        self?.likePageEnd += 1
-                    }
-                   
-                    let result  = info!["result"]!["list"] as! [NSDictionary]
-                    
-                    for i in 0..<result.count
-                    {
-                        let  circleInfo  =  result[i]
-                        if  let rotationModel = NborCircleModel.mj_object(withKeyValues: circleInfo)
-                        {
-                            if isTop == false
-                            {
-                                self?.hotArray.append(rotationModel)
-                            }else{
-                                self?.hotArray.insert(rotationModel, at: 0)
-                            }
-                        }
-                    }
-                    self?.momentsTopicsTableView.reloadData()
-                    if p == self?.likedAllPages {
-                        self?.momentsTopicsTableView.mj_footer.endRefreshingWithNoMoreData()
-                    }
-                }else{
-                    //服务器
-                    self?.momentsTopicsTableView.mj_header.endRefreshing()
-                    self?.momentsTopicsTableView.mj_footer.endRefreshing()
-                }
-        }
-    }
-
-   
 
 }
 
 
-extension MomentsViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = self.isLasted == true ? self.rotaionArray.count : self.hotArray.count
-        return count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let modelArr = self.isLasted == true ? self.rotaionArray : self.hotArray
-        let modelArr =  self.rotaionArray
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsTopicCell") as!  MomentsVCLatestIssueTableViewCell
-        let  model =  modelArr[indexPath.row]
-        print(model.picture)
-        cell.momentsCellModel = model
-        return cell
-    }
-}
+
+

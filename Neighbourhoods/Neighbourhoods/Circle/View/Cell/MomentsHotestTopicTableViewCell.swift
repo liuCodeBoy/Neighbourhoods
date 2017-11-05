@@ -1,14 +1,14 @@
 //
-//  CircleVCTopicsTableViewCell.swift
+//  MomentsHotestTopicTableViewCell.swift
 //  Neighbourhoods
 //
-//  Created by Weslie on 31/10/2017.
+//  Created by Weslie on 05/11/2017.
 //  Copyright © 2017 NJQL. All rights reserved.
 //
 
 import UIKit
 
-class CircleVCTopicsTableViewCell: UITableViewCell{
+class MomentsHotestTopicTableViewCell: UITableViewCell {
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -27,17 +27,12 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        imageHeightConstraint.constant = 0
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
 
 }

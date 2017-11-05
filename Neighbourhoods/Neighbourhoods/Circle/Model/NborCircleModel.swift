@@ -15,7 +15,7 @@ class NborCircleModel: NSObject {
    @objc    var content :   String?
    @objc    var comment :   NSNumber?
    @objc    var like    :   NSNumber?
-   @objc    var picture :   String?
+   @objc    var picture :   NSArray?
    @objc    var address :   String?
    @objc    var user    :   UserModel?
     

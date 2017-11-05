@@ -1,14 +1,14 @@
 //
-//  FavVCMomentsTableViewCell.swift
+//  MomentsCommentDetialHeaderTableViewCell.swift
 //  Neighbourhoods
 //
-//  Created by Weslie on 31/10/2017.
+//  Created by Weslie on 05/11/2017.
 //  Copyright © 2017 NJQL. All rights reserved.
 //
 
 import UIKit
 
-class FavVCMomentsTableViewCell: UITableViewCell {
+class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -22,7 +22,7 @@ class FavVCMomentsTableViewCell: UITableViewCell {
     @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var imageLeft: UIImageView!
     @IBOutlet weak var imageRight: UIImageView!
-    
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBAction func likeBtnClicked(_ sender: UIButton) {
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
@@ -31,12 +31,6 @@ class FavVCMomentsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

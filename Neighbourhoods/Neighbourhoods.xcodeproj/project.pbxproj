@@ -19,6 +19,19 @@
 		B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */; };
 		B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */; };
 		B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */; };
+		D30A17CE1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17CD1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift */; };
+		D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17CF1FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift */; };
+		D30A17D21FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17D11FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift */; };
+		D30A17D41FAF2E07007820D3 /* TopicDetialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17D31FAF2E07007820D3 /* TopicDetialTableViewController.swift */; };
+		D30A17D81FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17D71FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift */; };
+		D30A17DA1FAF328E007820D3 /* MomentsLatestIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17D91FAF328E007820D3 /* MomentsLatestIssueTableViewCell.swift */; };
+		D30A17DC1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17DB1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift */; };
+		D30A17DE1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17DD1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift */; };
+		D30A17E21FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17E11FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift */; };
+		D30A17E41FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17E31FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift */; };
+		D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17E51FAF339D007820D3 /* TopicDetialTableViewCell.swift */; };
+		D30A17E81FAF39FE007820D3 /* MomentsCommentDetialHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17E71FAF39FE007820D3 /* MomentsCommentDetialHeaderTableViewCell.swift */; };
+		D30A17EA1FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17E91FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift */; };
 		D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */; };
 		D30ED0F41FAAF6FC007A5858 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */; };
 		D30ED0F61FAAF832007A5858 /* SelectDistrictTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30ED0F51FAAF832007A5858 /* SelectDistrictTableViewController.swift */; };
@@ -38,8 +51,6 @@
 		D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */; };
 		D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */; };
 		D334F5E41FA86788006E2769 /* CircleVCTopicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5E31FA86788006E2769 /* CircleVCTopicsTableViewCell.swift */; };
-		D334F5E61FA867B8006E2769 /* MomentsVCLatestIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5E51FA867B8006E2769 /* MomentsVCLatestIssueTableViewCell.swift */; };
-		D334F5E81FA86819006E2769 /* FavVCMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5E71FA86819006E2769 /* FavVCMomentsTableViewCell.swift */; };
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
 		D341AAAA1F9AF14100E640E1 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */; };
@@ -52,9 +63,7 @@
 		D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */; };
 		D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */; };
 		D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */; };
-		D36C86BF1FA0B279000CCA17 /* MomentDetialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86BD1FA0B279000CCA17 /* MomentDetialTableViewCell.xib */; };
 		D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C01FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift */; };
-		D36C86C31FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86C11FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.xib */; };
 		D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */; };
 		D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86C61FA0C19A000CCA17 /* Share.xib */; };
 		D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C81FA0C1A5000CCA17 /* Share.swift */; };
@@ -86,8 +95,6 @@
 		D3A54D371FAC42080066C486 /* HelpCategoryByTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D361FAC42080066C486 /* HelpCategoryByTimeViewController.swift */; };
 		D3A54D391FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D381FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift */; };
 		D3A54D3B1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D3A1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift */; };
-		D3A54D3E1FACA40D0066C486 /* SecondaryCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D3C1FACA40D0066C486 /* SecondaryCommentViewController.swift */; };
-		D3A54D411FACA7DA0066C486 /* SecondaryComment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A54D401FACA7DA0066C486 /* SecondaryComment.storyboard */; };
 		D3A54D441FAD5A770066C486 /* LotteryDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D431FAD5A770066C486 /* LotteryDetialViewController.swift */; };
 		D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */; };
 		D3A54D481FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */; };
@@ -163,6 +170,19 @@
 		B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B6F71F381FA9647300BB8B90 /* NewsRotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRotationModel.swift; sourceTree = "<group>"; };
 		CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.release.xcconfig"; sourceTree = "<group>"; };
+		D30A17CD1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsLatestIssueTableViewController.swift; sourceTree = "<group>"; };
+		D30A17CF1FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsHotestTopicTableViewController.swift; sourceTree = "<group>"; };
+		D30A17D11FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTopicsClassificationTableViewController.swift; sourceTree = "<group>"; };
+		D30A17D31FAF2E07007820D3 /* TopicDetialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetialTableViewController.swift; sourceTree = "<group>"; };
+		D30A17D71FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCommentTableViewController.swift; sourceTree = "<group>"; };
+		D30A17D91FAF328E007820D3 /* MomentsLatestIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsLatestIssueTableViewCell.swift; sourceTree = "<group>"; };
+		D30A17DB1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsHotestTopicTableViewCell.swift; sourceTree = "<group>"; };
+		D30A17DD1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsTopicsClassificationTableViewCell.swift; sourceTree = "<group>"; };
+		D30A17E11FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCommentHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D30A17E31FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCommentDetialTableViewCell.swift; sourceTree = "<group>"; };
+		D30A17E51FAF339D007820D3 /* TopicDetialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetialTableViewCell.swift; sourceTree = "<group>"; };
+		D30A17E71FAF39FE007820D3 /* MomentsCommentDetialHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCommentDetialHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D30A17E91FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCommentDetialSpecificCommentTableViewCell.swift; sourceTree = "<group>"; };
 		D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D30ED0F51FAAF832007A5858 /* SelectDistrictTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictTableViewController.swift; sourceTree = "<group>"; };
@@ -182,8 +202,6 @@
 		D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueViewController.swift; sourceTree = "<group>"; };
 		D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteTableViewCell.swift; sourceTree = "<group>"; };
 		D334F5E31FA86788006E2769 /* CircleVCTopicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleVCTopicsTableViewCell.swift; sourceTree = "<group>"; };
-		D334F5E51FA867B8006E2769 /* MomentsVCLatestIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsVCLatestIssueTableViewCell.swift; sourceTree = "<group>"; };
-		D334F5E71FA86819006E2769 /* FavVCMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavVCMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
@@ -196,9 +214,7 @@
 		D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetialTableViewCell.swift; sourceTree = "<group>"; };
-		D36C86BD1FA0B279000CCA17 /* MomentDetialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MomentDetialTableViewCell.xib; sourceTree = "<group>"; };
 		D36C86C01FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetialsCommentTableViewCell.swift; sourceTree = "<group>"; };
-		D36C86C11FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MomentDetialsCommentTableViewCell.xib; sourceTree = "<group>"; };
 		D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCommentDetialViewController.swift; sourceTree = "<group>"; };
 		D36C86C61FA0C19A000CCA17 /* Share.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Share.xib; sourceTree = "<group>"; };
 		D36C86C81FA0C1A5000CCA17 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
@@ -232,8 +248,6 @@
 		D3A54D361FAC42080066C486 /* HelpCategoryByTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryByTimeViewController.swift; sourceTree = "<group>"; };
 		D3A54D381FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryByCompletionStatusViewController.swift; sourceTree = "<group>"; };
 		D3A54D3A1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryByScoreViewController.swift; sourceTree = "<group>"; };
-		D3A54D3C1FACA40D0066C486 /* SecondaryCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCommentViewController.swift; sourceTree = "<group>"; };
-		D3A54D401FACA7DA0066C486 /* SecondaryComment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondaryComment.storyboard; sourceTree = "<group>"; };
 		D3A54D431FAD5A770066C486 /* LotteryDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryDetialViewController.swift; sourceTree = "<group>"; };
 		D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteCounsultantCompletedViewController.swift; sourceTree = "<group>"; };
 		D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAnnouncementDetialViewController.swift; sourceTree = "<group>"; };
@@ -386,8 +400,16 @@
 			isa = PBXGroup;
 			children = (
 				D334F5E31FA86788006E2769 /* CircleVCTopicsTableViewCell.swift */,
-				D334F5E51FA867B8006E2769 /* MomentsVCLatestIssueTableViewCell.swift */,
-				D334F5E71FA86819006E2769 /* FavVCMomentsTableViewCell.swift */,
+				D30A17D91FAF328E007820D3 /* MomentsLatestIssueTableViewCell.swift */,
+				D30A17DB1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift */,
+				D30A17DD1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift */,
+				D30A17E51FAF339D007820D3 /* TopicDetialTableViewCell.swift */,
+				D30A17E71FAF39FE007820D3 /* MomentsCommentDetialHeaderTableViewCell.swift */,
+				D30A17E91FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift */,
+				D30A17E11FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift */,
+				D30A17E31FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift */,
+				D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */,
+				D36C86C01FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -469,6 +491,11 @@
 				D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */,
 				D31CD4A21F91B14700195686 /* CircleViewController.swift */,
 				D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */,
+				D30A17CD1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift */,
+				D30A17CF1FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift */,
+				D30A17D11FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift */,
+				D30A17D31FAF2E07007820D3 /* TopicDetialTableViewController.swift */,
+				D30A17D71FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift */,
 				D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */,
 				D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */,
 				D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */,
@@ -484,10 +511,6 @@
 				B692F8A01F91F1DF00C75B41 /* LoopView.swift */,
 				D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */,
 				D36C86B51FA09EF0000CCA17 /* UsersListTableViewCell.xib */,
-				D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */,
-				D36C86BD1FA0B279000CCA17 /* MomentDetialTableViewCell.xib */,
-				D36C86C01FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift */,
-				D36C86C11FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -640,8 +663,6 @@
 			children = (
 				D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */,
 				D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */,
-				D3A54D3C1FACA40D0066C486 /* SecondaryCommentViewController.swift */,
-				D3A54D401FACA7DA0066C486 /* SecondaryComment.storyboard */,
 				D3FAC7E51FA9755200D972B9 /* View */,
 				D3FAC7E41FA9753300D972B9 /* Controller */,
 			);
@@ -750,14 +771,11 @@
 				D3FAC7D71FA9648500D972B9 /* IssueTopicsViewController.xib in Resources */,
 				D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */,
 				D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */,
-				D36C86C31FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.xib in Resources */,
 				D36C86B71FA09EF0000CCA17 /* UsersListTableViewCell.xib in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
 				D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */,
-				D36C86BF1FA0B279000CCA17 /* MomentDetialTableViewCell.xib in Resources */,
 				D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */,
 				D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */,
-				D3A54D411FACA7DA0066C486 /* SecondaryComment.storyboard in Resources */,
 				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
 			);
@@ -858,23 +876,31 @@
 				B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */,
 				D3A54D441FAD5A770066C486 /* LotteryDetialViewController.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
+				D30A17DE1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift in Sources */,
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementViewController.swift in Sources */,
 				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D3FAC7E31FA974DB00D972B9 /* QuickMessageListTableViewCell.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */,
+				D30A17EA1FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift in Sources */,
 				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
+				D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */,
+				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,
 				D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
+				D30A17E21FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift in Sources */,
+				D30A17CE1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift in Sources */,
 				D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */,
 				D31735851FA8923100C97B60 /* MyMissionsTableViewCell.swift in Sources */,
 				B681C9DC1FA9ED06008006D6 /* LXQHeader.swift in Sources */,
 				D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */,
 				D3FAC7DE1FA96A2A00D972B9 /* QuickViewMessgaesViewController.swift in Sources */,
+				D30A17D21FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift in Sources */,
 				D3D1FD821FA81179009A2E58 /* LotteryViewController.swift in Sources */,
 				B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */,
 				D3FAC7F41FA99B7200D972B9 /* FigureVoteDetialViewController.swift in Sources */,
+				D30A17E81FAF39FE007820D3 /* MomentsCommentDetialHeaderTableViewCell.swift in Sources */,
 				D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */,
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
@@ -882,12 +908,10 @@
 				D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */,
 				D3A54D2D1FAC3C8E0066C486 /* ReceivedMissionsTableViewCell.swift in Sources */,
 				D3A54D481FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift in Sources */,
-				D3A54D3E1FACA40D0066C486 /* SecondaryCommentViewController.swift in Sources */,
 				D3A54D371FAC42080066C486 /* HelpCategoryByTimeViewController.swift in Sources */,
 				D31E97191FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift in Sources */,
 				D3FE2FFE1FA45B0100FAD95E /* SocialCharityDetialViewController.swift in Sources */,
 				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
-				D334F5E81FA86819006E2769 /* FavVCMomentsTableViewCell.swift in Sources */,
 				D3FAC7D61FA9648500D972B9 /* IssueTopicsViewController.swift in Sources */,
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
 				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
@@ -902,7 +926,7 @@
 				D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */,
 				D31E971B1FA9FEB100A78D3A /* ProfileTableViewController.swift in Sources */,
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
-				D334F5E61FA867B8006E2769 /* MomentsVCLatestIssueTableViewCell.swift in Sources */,
+				D30A17D81FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift in Sources */,
 				D3A54D3B1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift in Sources */,
 				D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */,
 				D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */,
@@ -914,17 +938,21 @@
 				D3A54D391FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift in Sources */,
 				D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */,
 				D3D1FD791FA80BA9009A2E58 /* LotteryTableViewCell.swift in Sources */,
+				D30A17E41FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift in Sources */,
 				D31E970D1FA9F88200A78D3A /* ChangePasswordViewController.swift in Sources */,
 				D3A54D2B1FAC3B980066C486 /* ReceivedMissionsViewController.swift in Sources */,
 				D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */,
 				D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */,
 				D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */,
+				D30A17D41FAF2E07007820D3 /* TopicDetialTableViewController.swift in Sources */,
+				D30A17DA1FAF328E007820D3 /* MomentsLatestIssueTableViewCell.swift in Sources */,
 				D3FAC7E91FA97E9E00D972B9 /* ActivityVoteConsultingViewController.swift in Sources */,
 				D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */,
 				D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */,
 				D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */,
 				D3A54D311FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift in Sources */,
 				D3D1FD841FA81187009A2E58 /* VoteViewController.swift in Sources */,
+				D30A17DC1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift in Sources */,
 				D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
