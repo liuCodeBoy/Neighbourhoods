@@ -14,7 +14,8 @@ class MyMissionsTableViewCell: UITableViewCell {
     @IBOutlet weak var deialLbl: UILabel!
     @IBOutlet weak var marginView: UIView!
     @IBOutlet weak var scoreBtn: UIButton!
-
+    @IBOutlet weak var createTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -24,10 +25,5 @@ class MyMissionsTableViewCell: UITableViewCell {
         
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }

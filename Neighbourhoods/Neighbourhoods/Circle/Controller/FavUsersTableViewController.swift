@@ -19,7 +19,7 @@ class FavUsersTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return tempCellData.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,18 +47,27 @@ class FavUsersTableViewController: UITableViewController {
         return 80
         
     }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let top = UITableViewRowAction(style: .normal, title: "置顶") { (action, index) in
-            print("top")
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    //MARK: - left slide to delete row
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //TODO: remove form data source
+        if editingStyle == .delete {
+            tempCellData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
         }
-        top.backgroundColor = following_top
-        let delete = UITableViewRowAction(style: .normal, title: "删除") { (action, index) in
-            print("delete")
-        }
-        delete.backgroundColor = following_delete
         
-        return [delete, top]
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
     }
 
 

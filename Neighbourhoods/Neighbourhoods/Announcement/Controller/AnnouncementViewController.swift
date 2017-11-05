@@ -23,6 +23,7 @@ class AnnouncementViewController: UIViewController {
         socialAnnouncement.isSelected   = true
         lottery.isSelected              = false
         vote.isSelected                 = false
+        
         announcementView?.isHidden      = false
         lotteryView?.isHidden           = true
         voteView?.isHidden              = true
@@ -31,6 +32,7 @@ class AnnouncementViewController: UIViewController {
         socialAnnouncement.isSelected   = false
         lottery.isSelected              = true
         vote.isSelected                 = false
+        
         announcementView?.isHidden      = true
         lotteryView?.isHidden           = false
         voteView?.isHidden              = true
@@ -39,6 +41,7 @@ class AnnouncementViewController: UIViewController {
         socialAnnouncement.isSelected   = false
         lottery.isSelected              = false
         vote.isSelected                 = true
+        
         announcementView?.isHidden      = true
         lotteryView?.isHidden           = true
         voteView?.isHidden              = false
@@ -51,15 +54,14 @@ class AnnouncementViewController: UIViewController {
         setNavBarTitle(title: "社区公告")
         
         loadTableViews()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(showAnnouncementDetial), name: NSNotification.Name.init(announcementDetialNotification), object: nil)
-        
+
+        print(self.view.subviews)
     }
     
     func loadTableViews() {
-        let childVC1 = SocialAnnouncementTableViewController()
-        let childVC2 = LotteryTableViewController()
-        let childVC3 = ActivityVoteTableViewController()
+        let childVC1 = self.storyboard?.instantiateViewController(withIdentifier: "SocialAnnouncementVC") as! SocialAnnouncementViewController
+        let childVC2 = self.storyboard?.instantiateViewController(withIdentifier: "LotteryVC") as! LotteryViewController
+        let childVC3 = self.storyboard?.instantiateViewController(withIdentifier: "VoteVC") as! VoteViewController
         
         announcementView = childVC1.view
         lotteryView = childVC2.view
@@ -80,15 +82,7 @@ class AnnouncementViewController: UIViewController {
         self.view.addSubview(voteView!)
         self.view.addSubview(announcementView!)
     }
-    
-    @objc func showAnnouncementDetial() {
-        
-        let announcementDetialVC = AnnouncementDetialViewController()
-        announcementDetialVC.setNavBarBackBtn()
-        announcementDetialVC.setNavBarTitle(title: "某某公告")
-        
-        self.navigationController?.pushViewController(announcementDetialVC, animated: true)
-    }
+
 
 }
 
