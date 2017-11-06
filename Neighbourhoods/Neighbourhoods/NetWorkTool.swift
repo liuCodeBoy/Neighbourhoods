@@ -7,7 +7,9 @@
 //
 
 import AFNetworking
-//import SVProgressHUD
+import NoticeBar
+
+
 
 // MARK:- 定义枚举类型
 enum RequestType : String {
@@ -29,7 +31,7 @@ enum LunTanType : String {
 
 class NetWorkTool: AFHTTPSessionManager {
     
-    var  canConnect : Bool = true
+    static   var   canConnect : Bool = true
     
     //let 是线程安全的,创建单例
     static let shareInstance : NetWorkTool = {
@@ -43,10 +45,39 @@ class NetWorkTool: AFHTTPSessionManager {
 
 // MARK:-  封装请求方法
 extension NetWorkTool {
+    func startMonitoringNetwork() -> () {
+        let mgr = AFNetworkReachabilityManager.shared()
+        mgr.setReachabilityStatusChange { (Status) -> Void in
+            switch(Status){
+            case AFNetworkReachabilityStatus.notReachable:
+                let config = NoticeBarConfig(title: "网络错误，请稍后再试", image: nil, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let noticeBar = NoticeBar(config: config)
+                noticeBar.show(duration: 2.0, completed: {
+                    (finished) in
+                    if finished {
+                    }
+                })
+                NetWorkTool.canConnect = false
+                break
+            case AFNetworkReachabilityStatus.reachableViaWiFi:
+                NetWorkTool.canConnect = true
+                break
+            case AFNetworkReachabilityStatus.reachableViaWWAN:
+                NetWorkTool.canConnect = true
+                break
+            default:
+                NetWorkTool.canConnect = true
+                break
+            }
+        }
+        
+        mgr.startMonitoring()
+    }
     
     func request(_ method: RequestType, urlString : String, parameters:[String :AnyObject]?, finished:@escaping (_ result : AnyObject?, _ error : Error?)->()){
-        
-        if(canConnect == true){
+        //网路监控
+        startMonitoringNetwork()
+        if(NetWorkTool.canConnect == true){
             //定义成功的回调闭包
             let successCallBack = {  (task: URLSessionDataTask?, result: Any?) -> Void in
                 finished(result  as AnyObject, nil )

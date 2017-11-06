@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AFNetworking
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = navAndTabBarTintColor
         UINavigationBar.appearance().tintColor = navAndTabBarTintColor
         
-        
+       
         //MARK: - initialize the mob
         
         /**
@@ -77,5 +77,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+   
+    
+ 
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        
+        let mgr = AFNetworkReachabilityManager.shared()
+        mgr.stopMonitoring()
+//        //偏好设置
+//        let userDefault =  UserDefaults.standard
+//        //存储数据
+//        userDefault.set(appdelgate?.fontSize, forKey: "font")
+//        //同步数据
+//        userDefault.synchronize()
+        
+    }
+    
 }
 
