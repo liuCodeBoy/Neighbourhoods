@@ -9,17 +9,27 @@
 import UIKit
 import  MJExtension
 class NborCircleModel: NSObject {
-   @objc    var id      :   NSNumber?
-   @objc    var uid     :   NSNumber?
-   @objc    var time    :   NSNumber?
-   @objc    var content :   String?
-   @objc    var comment :   NSNumber?
-   @objc    var like    :   NSNumber?
-   @objc    var picture :   NSArray?
-   @objc    var address :   String?
-   @objc    var user    :   UserModel?
-    
-
+   @objc  var id        :   NSNumber?
+   @objc  var uid       :   NSNumber?
+   @objc  var from_uid  :   NSNumber?
+   @objc  var time      :   NSNumber?
+   @objc  var content   :   String?
+   @objc  var comment   :   NSNumber?
+   @objc  var like      :   NSNumber?
+   @objc  var love      :   NSNumber?
+   @objc  var picture   :   NSArray?
+   @objc  var address   :   String?
+   @objc  var pid       :   NSNumber?
+   @objc  var user      :   UserModel?
+   @objc  var user_info :   UserModel?
+    @objc  var info     :   String?
+//    override init(){
+//        super.init()
+//        NborCircleModel.mj_setupReplacedKey { () -> [AnyHashable : Any]? in
+//            return ["desc" : "description"]
+//        }
+//    }
+   
 }
 
 

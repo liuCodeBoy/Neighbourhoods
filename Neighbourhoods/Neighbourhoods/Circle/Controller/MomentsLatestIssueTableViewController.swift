@@ -14,6 +14,8 @@ class MomentsLatestIssueTableViewController: UITableViewController {
     lazy var  rotaionArray = [NborCircleModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
         loadRefreshComponet()
         lastedRequest(p : page)
     }
@@ -29,7 +31,8 @@ class MomentsLatestIssueTableViewController: UITableViewController {
                 tableView.mj_header.isAutomaticallyChangeAlpha = true
             }
             @objc func refresh() -> () {
-                  self.lastedRequest(p: page)
+                 tableView.reloadData()
+                 tableView.mj_header.endRefreshing()
            
                  }
             @objc func  endrefresh() -> (){
@@ -55,12 +58,7 @@ class MomentsLatestIssueTableViewController: UITableViewController {
                         let  circleInfo  =  result[i]
                         if  let rotationModel = NborCircleModel.mj_object(withKeyValues: circleInfo)
                         {
-//                            if isTop == false
-//                            {
                             self?.rotaionArray.append(rotationModel)
-//                            }else{
-//                            self?.rotaionArray.insert(rotationModel, at: 0)
-//                            }
                         }
                     }
                     self?.tableView.reloadData()
@@ -85,10 +83,16 @@ class MomentsLatestIssueTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsLatestIssueCell") as! MomentsLatestIssueTableViewCell
         let modelArr =  self.rotaionArray
         let  model =  modelArr[indexPath.row]
-       
         cell.momentsCellModel = model
         return cell
        
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let   momentsCommentDetialVC =  UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
+        let modelArr =  self.rotaionArray
+        let  model =  modelArr[indexPath.row]
+         momentsCommentDetialVC.id = model.id
+        self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
     }
 
 
