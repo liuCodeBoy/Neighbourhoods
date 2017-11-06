@@ -19,9 +19,6 @@ class MomentsCommentDetialViewController: UIViewController {
         
         momentsCommentDetialTableView.delegate = self
         momentsCommentDetialTableView.dataSource = self
-        
-        momentsCommentDetialTableView.register(UINib.init(nibName: "MomentDetialTableViewCell", bundle: nil), forCellReuseIdentifier: "MomentDetialCell")
-        momentsCommentDetialTableView.register(UINib.init(nibName: "MomentDetialsCommentTableViewCell", bundle: nil), forCellReuseIdentifier: "MomentDetialsCommentCell")
 
     }
 
@@ -50,9 +47,9 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: "MomentDetialCell")!
+            return tableView.dequeueReusableCell(withIdentifier: "MomentsCommentDetialHeaderCell")!
         } else {
-            return tableView.dequeueReusableCell(withIdentifier: "MomentDetialsCommentCell")!
+            return tableView.dequeueReusableCell(withIdentifier: "MomentsCommentDetialSpecificCommentCell")!
         }
     }
     
