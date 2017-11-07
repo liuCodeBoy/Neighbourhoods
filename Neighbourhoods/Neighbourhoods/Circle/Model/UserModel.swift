@@ -11,7 +11,8 @@ import MJExtension
 class UserModel: NSObject {
    @objc  var head_pic : String?
    @objc  var nickname : String?
-   @objc  var  sex     : NSNumber?
+   @objc  var sex      : NSNumber?
    @objc  var is_admin : String?
+   @objc var type     : String?
 }
 

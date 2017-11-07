@@ -1,8 +1,4 @@
 github "AFNetworking/AFNetworking" "3.1.0"
-github "Darren-chenchen/CLImagePickerTool" "2.1.4"
 github "Minitour/AZDialogViewController" "1.2.0"
-github "MobClub/MOBFoundation_IDFA" "3.0.5"
-github "MobClub/SMSSDK-for-iOS" "3.0.1"
 github "qiuncheng/Noticebar" "0.1.7"
 github "rs/SDWebImage" "4.2.1"
-github "xhamr/fave-button" "2.0.3"
