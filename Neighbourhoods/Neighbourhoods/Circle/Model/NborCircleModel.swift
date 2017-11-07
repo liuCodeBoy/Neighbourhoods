@@ -11,6 +11,7 @@ import  MJExtension
 class NborCircleModel: NSObject {
    @objc  var id        :   NSNumber?
    @objc  var uid       :   NSNumber?
+   @objc  var nbor_id   :   NSNumber?
    @objc  var from_uid  :   NSNumber?
    @objc  var time      :   NSNumber?
    @objc  var content   :   String?
@@ -22,7 +23,7 @@ class NborCircleModel: NSObject {
    @objc  var pid       :   NSNumber?
    @objc  var user      :   UserModel?
    @objc  var user_info :   UserModel?
-    @objc  var info     :   String?
+   @objc  var info      :   String?
 //    override init(){
 //        super.init()
 //        NborCircleModel.mj_setupReplacedKey { () -> [AnyHashable : Any]? in

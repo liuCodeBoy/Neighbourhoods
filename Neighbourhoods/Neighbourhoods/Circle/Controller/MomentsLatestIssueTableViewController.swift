@@ -42,12 +42,11 @@ class MomentsLatestIssueTableViewController: UITableViewController {
     
     //MARK: - 最新发布网络请求
         func lastedRequest(p : Int) -> () {
-    
             NetWorkTool.shareInstance.nbor_list(Nbor_Sort.time, p: p) {[weak self](info, error) in
                 if info?["code"] as? String == "200"{
                     if let pages  = info!["result"]!["pages"]
                      {
-                        self?.pages = pages as! Int
+                        self?.pages = (pages as! Int)
                      }
                     if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                         self?.page += 1
@@ -97,96 +96,6 @@ class MomentsLatestIssueTableViewController: UITableViewController {
 
 
 }
-
-
-//  //MARK: - 初始化刷新
-//
-//
-//    @objc func  endrefresh() -> (){
-//        if isLasted {
-//        lastedRequest(p: lastPageEnd,isTop : false)
-//        }else{
-//       lastedTopicRequest(p: likePageEnd, isTop: false)
-//        }
-//}
-//
-//  //MARK: - 最新发布网络请求
-//    func lastedRequest(p : Int , isTop : Bool) -> () {
-//
-//        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.time, p: p) {[weak self](info, error) in
-//            if info?["code"] as? String == "200"{
-//                if let pages  = info!["result"]!["pages"]
-//                 {
-//                    self?.lastedAllPages = pages as! Int
-//                 }
-//                if  CGFloat((self?.lastPageEnd)!) <  CGFloat((self?.lastedAllPages)!){
-//                    self?.lastPageEnd += 1
-//                }
-//                let result  = info!["result"]!["list"] as! [NSDictionary]
-//                for i in 0..<result.count
-//                {
-//                    let  circleInfo  =  result[i]
-//                    if  let rotationModel = NborCircleModel.mj_object(withKeyValues: circleInfo)
-//                    {
-//                        if isTop == false
-//                        {
-//                        self?.rotaionArray.append(rotationModel)
-//                        }else{
-//                        self?.rotaionArray.insert(rotationModel, at: 0)
-//                        }
-//                    }
-//                }
-//                self?.momentsTopicsTableView.reloadData()
-//                if p == self?.lastedAllPages {
-//                    self?.momentsTopicsTableView.mj_footer.endRefreshingWithNoMoreData()
-//                }
-//            }else{
-//                //服务器
-//                self?.momentsTopicsTableView.mj_header.endRefreshing()
-//                self?.momentsTopicsTableView.mj_footer.endRefreshing()
-//                 }
-//
-//        }
-//    }
-//   //MARK: - 最新话题网络请求
-//    func lastedTopicRequest(p : Int,isTop : Bool) -> (){
-//        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.like, p: p) {[weak self](info, error) in
-//                if info?["code"] as? String == "200"{
-//
-//                    if let pages  = info!["result"]!["pages"]
-//                    {
-//                        self?.likedAllPages = pages as! Int
-//                    }
-//                    if  CGFloat((self?.likePageEnd)!) <  CGFloat((self?.likedAllPages)!){
-//                        self?.likePageEnd += 1
-//                    }
-//
-//                    let result  = info!["result"]!["list"] as! [NSDictionary]
-//
-//                    for i in 0..<result.count
-//                    {
-//                        let  circleInfo  =  result[i]
-//                        if  let rotationModel = NborCircleModel.mj_object(withKeyValues: circleInfo)
-//                        {
-//                            if isTop == false
-//                            {
-//                                self?.hotArray.append(rotationModel)
-//                            }else{
-//                                self?.hotArray.insert(rotationModel, at: 0)
-//                            }
-//                        }
-//                    }
-//                    self?.momentsTopicsTableView.reloadData()
-//                    if p == self?.likedAllPages {
-//                        self?.momentsTopicsTableView.mj_footer.endRefreshingWithNoMoreData()
-//                    }
-//                }else{
-//                    //服务器
-//                    self?.momentsTopicsTableView.mj_header.endRefreshing()
-//                    self?.momentsTopicsTableView.mj_footer.endRefreshing()
-//                }
-//        }
-//    }
 
 
 

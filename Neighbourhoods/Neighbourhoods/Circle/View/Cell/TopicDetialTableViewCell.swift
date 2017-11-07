@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class TopicDetialTableViewCell: UITableViewCell {
     
     @IBOutlet weak var avatar: UIImageView!
@@ -26,6 +26,39 @@ class TopicDetialTableViewCell: UITableViewCell {
     @IBAction func likeBtnClicked(_ sender: UIButton) {
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
+    }
+    var TopicDetialModel : NborCircleModel!{
+        didSet {
+            if let avatarString  =  TopicDetialModel?.user?.head_pic {
+                self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+            }
+            self.nickName.text = TopicDetialModel.user?.nickname
+            self.certifyLbl.text = TopicDetialModel?.user?.type
+            if let  sex = TopicDetialModel?.user?.sex?.intValue {
+            if sex == 1 || sex == 2 {
+                self.gender.image =   sex == 1 ? UIImage.init(named: "male") : UIImage.init(named: "female")
+              }else{
+             }
+            }
+            if let timeNum = TopicDetialModel.time {
+                self.createTime.text = NSDate.createDateString(createAtStr: "\(timeNum)")
+            }
+            self.textLbl.text = TopicDetialModel.content
+            self.likeBtn.titleLabel?.text = "\(String(describing: TopicDetialModel.love))"
+            self.commentBtn.titleLabel?.text = "\(String(describing: TopicDetialModel.comment))"
+            
+            if let pictureStringArr = TopicDetialModel?.picture{
+                imageHeightConstraint.constant = 90
+                let leftImage = pictureStringArr[0]
+                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                if  pictureStringArr.count >= 2 {
+                      let  rightImage = pictureStringArr[1]
+                      self.imageLeft.sd_setImage(with: URL.init(string: rightImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"),options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                }
+            }else{
+                imageHeightConstraint.constant = 0
+            }
+        }
     }
 
     override func awakeFromNib() {

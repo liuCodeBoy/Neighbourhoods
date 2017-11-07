@@ -54,7 +54,6 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
                 self.gender.image =   sex == 1 ? UIImage.init(named: "male") : UIImage.init(named: "female")
             }else{
             }
-            
         }
     }
 
