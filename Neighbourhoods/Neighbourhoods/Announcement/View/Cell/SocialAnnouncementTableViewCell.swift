@@ -10,15 +10,31 @@ import UIKit
 
 class SocialAnnouncementTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var noticeImage: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var detialLbl: UILabel!
+    @IBOutlet weak var commentCount: UILabel!
+    @IBOutlet weak var readCount: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var viewModel: ActListModel? {
+        didSet {
+            if let title = viewModel?.title {
+                titleLbl.text = title
+            }
+            if let content = viewModel?.content {
+                detialLbl.text = content
+            }
+//            if let comment = <#optional#> {
+//                <#statements#>
+//            }
+        }
+       
     }
+
     
 }

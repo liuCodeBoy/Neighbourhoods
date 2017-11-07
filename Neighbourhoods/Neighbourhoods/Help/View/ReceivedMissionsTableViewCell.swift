@@ -14,12 +14,29 @@ class ReceivedMissionsTableViewCell: UITableViewCell {
     @IBOutlet weak var deialLbl: UILabel!
     @IBOutlet weak var marginView: UIView!
     @IBOutlet weak var scoreBtn: UIButton!
-    @IBOutlet weak var createTime: UILabel!
 
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
+    
+    var viewModel: MyMissionModel? {
+        didSet {
+            if let title = viewModel?.title {
+                titleLbl.text = title
+            }
+            if let detial = viewModel?.content {
+                deialLbl.text = detial
+            }
+            if let score = viewModel?.integral {
+                scoreBtn.setTitle("\(score)", for: .normal)
+            }
+            //                    if let time = viewModel.content {
+            //                        <#statements#>
+            //                    }
+        }
+    }
+    
 
 }
