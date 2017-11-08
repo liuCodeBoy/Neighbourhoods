@@ -54,7 +54,7 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                     }
                 }
                 self?.tableView.reloadData()
-                if p == self?.pages {
+                if self?.page == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
                 }
             }else{

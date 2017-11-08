@@ -59,7 +59,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Uz-gC-oG8">
                                         <rect key="frame" x="125" y="0.0" width="125" height="95"/>
                                         <connections>
-                                            <segue destination="MPQ-dJ-NcX" kind="show" id="cZW-Eb-uXg"/>
+                                            <segue destination="MPQ-dJ-NcX" kind="show" id="HM7-BC-icF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5J-Zl-fCJ">
@@ -112,7 +112,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68t-Jd-zBL">
                                 <rect key="frame" x="0.0" y="320" width="375" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门话题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-wb-pqQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门动态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-wb-pqQ">
                                         <rect key="frame" x="12" y="10" width="69.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.31289632865538064" blue="0.15886984096148182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -277,7 +277,6 @@
                                             <outlet property="location" destination="Lj7-Jc-Vxr" id="edp-aG-2gI"/>
                                             <outlet property="nickName" destination="QvN-wz-lFg" id="vGI-Nk-9vc"/>
                                             <outlet property="textLbl" destination="2FJ-cz-fly" id="Sdm-nQ-2AR"/>
-                                            <segue destination="zJJ-Qr-hu8" kind="show" id="YeN-PW-xeT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1145,7 +1144,7 @@
                                 <rect key="frame" x="0.0" y="171" width="375" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyFavouriteCell" rowHeight="266" id="5t5-Du-ZRH" customClass="FavVCMomentsTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyFavouriteCell" rowHeight="266" id="5t5-Du-ZRH">
                                         <rect key="frame" x="0.0" y="28" width="375" height="266"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5t5-Du-ZRH" id="IOu-nF-LhB">
@@ -1220,19 +1219,12 @@
                                                     <state key="normal" title="0" image="moments_commented">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="commentBtnCell:" destination="5t5-Du-ZRH" eventType="touchUpInside" id="KH3-Bb-4rs"/>
-                                                        <segue destination="UFO-nZ-pRN" kind="show" id="Khk-nn-BpM"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="age-G3-4Dd">
                                                     <rect key="frame" x="279" y="220.5" width="38" height="20"/>
                                                     <state key="normal" title="0" image="moments_liked">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="likeBtnClicked:" destination="5t5-Du-ZRH" eventType="touchUpInside" id="HTQ-Ka-GOf"/>
-                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-ML-V2v">
                                                     <rect key="frame" x="0.0" y="250.5" width="375" height="15"/>
@@ -1282,17 +1274,6 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="avatar" destination="Mdp-kk-aje" id="XlT-dz-unS"/>
-                                            <outlet property="certifyLbl" destination="bWq-t7-HqP" id="mI2-wx-CGf"/>
-                                            <outlet property="commentBtn" destination="cdE-Kt-bDg" id="zqt-ZO-iY4"/>
-                                            <outlet property="createTime" destination="odt-Xa-CGO" id="dbE-9X-jQL"/>
-                                            <outlet property="gender" destination="l4e-Du-c5N" id="RX9-71-D0D"/>
-                                            <outlet property="imageLeft" destination="oLA-PP-XKV" id="4sw-Ev-3SH"/>
-                                            <outlet property="imageRight" destination="D4H-Q8-ZIO" id="rBO-03-2UT"/>
-                                            <outlet property="likeBtn" destination="age-G3-4Dd" id="oNP-tj-zRe"/>
-                                            <outlet property="location" destination="ARb-h3-WIZ" id="AeY-lU-3mY"/>
-                                            <outlet property="nickName" destination="NEE-et-Tau" id="xbh-J3-kaj"/>
-                                            <outlet property="textLbl" destination="rEl-SD-G2b" id="8vs-Oa-dvt"/>
                                             <segue destination="zJJ-Qr-hu8" kind="show" id="JHT-yQ-Yxo"/>
                                         </connections>
                                     </tableViewCell>
@@ -1357,7 +1338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IyD-ax-PTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="738"/>
+            <point key="canvasLocation" x="804" y="853"/>
         </scene>
         <!--Moments Comment Detial View Controller-->
         <scene sceneID="Hja-5T-grQ">
@@ -1894,7 +1875,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="写评论" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-cd-dDZ">
-                                <rect key="frame" x="25" y="35" width="325" height="617"/>
+                                <rect key="frame" x="25" y="79" width="325" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1913,7 +1894,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8r-Lc-JwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2753" y="1229"/>
+            <point key="canvasLocation" x="2316" y="1312"/>
         </scene>
         <!--邻里圈-->
         <scene sceneID="9wT-1X-FCl">
@@ -1951,7 +1932,6 @@
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fBt-uw-gZD"/>
-        <segue reference="JHT-yQ-Yxo"/>
+        <segue reference="JkO-Gl-OXN"/>
     </inferredMetricsTieBreakers>
 </document>

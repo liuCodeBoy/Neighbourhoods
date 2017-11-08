@@ -18,7 +18,7 @@ enum RequestType : String {
 }
 enum Nbor_Sort : String {
     case  time  =  "time"
-    case  like  =  "like"
+    case  love  =  "love"
 }
 
 enum LunTanType : String {
@@ -110,7 +110,7 @@ extension NetWorkTool {
       //3.发送请求参数
        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
         //获取字典数据
-        print(result)
+      
         guard let resultDict = result as? [String : AnyObject] else {
             finished(nil, error)
             return

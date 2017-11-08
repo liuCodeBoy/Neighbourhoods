@@ -55,7 +55,7 @@ class AnnouncementViewController: UIViewController {
         
         loadTableViews()
 
-        print(self.view.subviews)
+       
     }
     
     func loadTableViews() {
