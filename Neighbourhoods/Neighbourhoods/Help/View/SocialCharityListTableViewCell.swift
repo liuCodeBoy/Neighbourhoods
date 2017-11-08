@@ -20,10 +20,17 @@ class SocialCharityListTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var viewModel: SocialOrgListModel? {
+        didSet {
+            if let name = viewModel?.name {
+                charityName.text = name
+            }
+            if let content = viewModel?.content {
+                charityLocation.text = content
+            }
+            if let avatarStr = viewModel?.head_pic {
+                charityAvatr.sd_setImage(with: URL.init(string: avatarStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+        }
     }
-
 }

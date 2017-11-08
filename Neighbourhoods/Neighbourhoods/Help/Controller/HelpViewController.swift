@@ -24,21 +24,27 @@ class HelpViewController: UIViewController {
         timeBtn.isSelected              = true
         finishedStatusBtn.isSelected    = false
         scoreBtn.isSelected             = false
-        
+        childView1?.isHidden            = false
+        childView2?.isHidden            = true
+        childView3?.isHidden            = true
         
     }
     @IBAction func btn3Clicked(_ sender: UIButton) {
         timeBtn.isSelected              = false
         finishedStatusBtn.isSelected    = true
         scoreBtn.isSelected             = false
-        
+        childView1?.isHidden            = true
+        childView2?.isHidden            = false
+        childView3?.isHidden            = true
         
     }
     @IBAction func btn4Clicked(_ sender: UIButton) {
         timeBtn.isSelected              = false
         finishedStatusBtn.isSelected    = false
         scoreBtn.isSelected             = true
-        
+        childView1?.isHidden            = true
+        childView2?.isHidden            = true
+        childView3?.isHidden            = false
         
     }
 
@@ -74,9 +80,9 @@ class HelpViewController: UIViewController {
         self.addChildViewController(childVC2)
         self.addChildViewController(childVC3)
         
-        self.view.addSubview(childView1!)
-        self.view.addSubview(childView2!)
         self.view.addSubview(childView3!)
+        self.view.addSubview(childView2!)
+        self.view.addSubview(childView1!)
     }
 
 

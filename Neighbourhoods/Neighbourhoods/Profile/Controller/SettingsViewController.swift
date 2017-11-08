@@ -56,9 +56,21 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var confirmChangeBtn: UIButton!
     
     @IBAction func confirmChangeClicked(_ sender: UIButton) {
-        
-        
-        self.navigationController?.popViewController(animated: true)
+        let alert = UIAlertController(title: "提示", message: "确认删除", preferredStyle: .alert)
+         weak var weakSelf = self
+        let ok = UIAlertAction(title: "确认", style: .default, handler: { (_) in
+            let deafult = UserDefaults.standard
+            deafult.removeObject(forKey: "token")
+            deafult.removeObject(forKey: "number")
+            deafult.removeObject(forKey: "pwd")
+            //登陆界面销毁
+           let mainVC = UIStoryboard.init(name: "InitialLogin", bundle: Bundle.main).instantiateInitialViewController()!
+            weakSelf?.present(mainVC, animated: true, completion: nil)
+        })
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        weakSelf?.present(alert, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,12 +80,7 @@ class SettingsViewController: UIViewController {
         
         setNavBarBackBtn()
         setNavBarTitle(title: "设置")
-        
-        
-        
         cacheValue.text = "\(calculateCache())M"
-
-        
     }
     
     func calculateCache() -> Int {

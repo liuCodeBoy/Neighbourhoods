@@ -14,23 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        //MARK: - set the global navigation bar and tab bar tint
-        
         UITabBar.appearance().tintColor = navAndTabBarTintColor
         UINavigationBar.appearance().tintColor = navAndTabBarTintColor
+        //读取偏好设置数据
+        let deafult = UserDefaults.standard
+        if deafult.string(forKey: "token") != nil {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.backgroundColor = UIColor.white
+            let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
+            window?.rootViewController = mainVC
+            window?.makeKeyAndVisible()
+
+        }
         
-       
         //MARK: - initialize the mob
-        
-        /**
-         *  初始化ShareSDK应用
-         *
-         *  @param activePlatforms          使用的分享平台集合，如:@[@(SSDKPlatformTypeSinaWeibo), @(SSDKPlatformTypeTencentWeibo)];
-         *  @param importHandler           导入回调处理，当某个平台的功能需要依赖原平台提供的SDK支持时，需要在此方法中对原平台SDK进行导入操作。具体的导入方式可以参考ShareSDKConnector.framework中所提供的方法。
-         *  @param configurationHandler     配置回调处理，在此方法中根据设置的platformType来填充应用配置信息
-         */
-        
         ShareSDK.registerActivePlatforms(
             [
                 SSDKPlatformType.typeSinaWeibo.rawValue,

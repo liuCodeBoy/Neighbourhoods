@@ -16,11 +16,8 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     @IBOutlet weak var loginBtnBackView: UIButton!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var password: UITextField!
-    
     @IBOutlet weak var navBar: UINavigationItem!
-
     @IBAction func userLoginClick(_ sender: Any) {
-        
         if phoneNumber.text == "" {
             self.presentHintMessage(target: self, hintMessgae: "请输入手机号码")
         } else if phoneNumber.text?.isValidePhoneNumber == false {
@@ -36,21 +33,26 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                     let loginStaus =  userInfoDict["code"] as? String
                     if  loginStaus == "200" {
                         let  resultDict = userInfoDict["result"] as? NSDictionary
-                        let token = resultDict?["token"]
-                        // 存储手机号码
-//                        sender.savePhoneNumber(phone: (weakSelf?.phoneNumber.text!)!, token: token as! String)
+                        if  let token = resultDict?["token"]{
+                            //偏好设置
+                            let userDefault =  UserDefaults.standard
+                            //存储数据
+                            userDefault.set(token, forKey: "token")
+                            userDefault.set(self.phoneNumber.text ,forKey: "number")
+                            userDefault.set(self.password.text, forKey: "pwd")
+                            //同步数据
+                            userDefault.synchronize()
+                        }
                         let alert = UIAlertController(title: "提示", message: "登录成功", preferredStyle: .alert)
                         let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
-//                            isLogin = true
-                            //发送值到profileVC
-//                            NotificationCenter.default.post(name: isLoginNotification, object: nil)
                             //登陆界面销毁
-                            weakSelf?.navigationController?.popToRootViewController(animated: true)
+                              let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
+                            weakSelf?.present(mainVC, animated: true, completion: nil)
                         })
                         alert.addAction(ok)
                         weakSelf?.present(alert, animated: true, completion: nil)
                     }else{
-//                        SVProgressHUD.showError(withStatus:userInfoDict["msg"]! as! String )
+
                     }
                 }
             })
@@ -68,11 +70,8 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.setRoundRect(targets: [accountBackView, pwdBackView, loginBtnBackView])
-        
         setNavBarAttribute()
-        
     }
     
     func setNavBarAttribute() {
@@ -83,8 +82,6 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
         self.navBar.titleView = titleLbl
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = navAndTabBarTintColor
-        
-        
     }
 
 }

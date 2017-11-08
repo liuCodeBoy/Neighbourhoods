@@ -13,6 +13,6 @@ class UserModel: NSObject {
    @objc  var nickname : String?
    @objc  var sex      : NSNumber?
    @objc  var is_admin : String?
-   @objc var type     : String?
+   @objc  var type     : String?
 }
 
