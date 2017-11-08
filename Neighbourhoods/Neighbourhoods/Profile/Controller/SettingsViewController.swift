@@ -56,7 +56,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var confirmChangeBtn: UIButton!
     
     @IBAction func confirmChangeClicked(_ sender: UIButton) {
-        let alert = UIAlertController(title: "提示", message: "确认删除", preferredStyle: .alert)
+        let alert = UIAlertController(title: "提示", message: "确认退出", preferredStyle: .alert)
          weak var weakSelf = self
         let ok = UIAlertAction(title: "确认", style: .default, handler: { (_) in
             let deafult = UserDefaults.standard
@@ -64,8 +64,9 @@ class SettingsViewController: UIViewController {
             deafult.removeObject(forKey: "number")
             deafult.removeObject(forKey: "pwd")
             //登陆界面销毁
-           let mainVC = UIStoryboard.init(name: "InitialLogin", bundle: Bundle.main).instantiateInitialViewController()!
-            weakSelf?.present(mainVC, animated: true, completion: nil)
+//           let mainVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()!
+//           mainVC.dismiss(animated: true, completion: nil)
+            weakSelf?.navigationController?.dismiss(animated: true, completion: nil)
         })
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)

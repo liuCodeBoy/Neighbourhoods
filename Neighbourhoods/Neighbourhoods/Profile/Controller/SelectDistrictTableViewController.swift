@@ -8,7 +8,10 @@
 
 import UIKit
 
+let district = ["111", "222", "333", "444", "555", "666", "777", "888", "999", "000"]
 class SelectDistrictTableViewController: UITableViewController {
+    
+    var retSegue: UIStoryboardSegue?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +28,19 @@ class SelectDistrictTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DistrictNameCell")
         
-        switch indexPath.row {
-        case 0: cell?.textLabel?.text = "111"
-        case 1: cell?.textLabel?.text = "222"
-        case 2: cell?.textLabel?.text = "333"
-        case 3: cell?.textLabel?.text = "444"
-        case 4: cell?.textLabel?.text = "555"
-        case 5: cell?.textLabel?.text = "666"
-        default: cell?.textLabel?.text = "777"
-
-        }
+        cell?.textLabel?.text = district[indexPath.row]
         
         return cell!
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = retSegue?.destination as! SelfInfomationTableViewController
+        vc.
+        district[indexPath.row]
+    }
+    
+    
 
     
 }
