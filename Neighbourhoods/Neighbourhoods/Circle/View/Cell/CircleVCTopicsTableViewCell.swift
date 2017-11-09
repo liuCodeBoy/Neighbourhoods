@@ -26,14 +26,15 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
     var momentsCellModel : NborCircleModel!{
         didSet {
             self.nickName.text = momentsCellModel.user?.nickname
-            
             if let pictureStringArr = momentsCellModel.picture{
                 imageHeightConstraint.constant = 90
                 let leftImage = pictureStringArr[0]
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageRight.image = nil
                 if  pictureStringArr.count >= 2 {
                     let rightImage = pictureStringArr[1]
                     self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), completed: nil)
+
                 }
             }else{
                 imageHeightConstraint.constant = 0

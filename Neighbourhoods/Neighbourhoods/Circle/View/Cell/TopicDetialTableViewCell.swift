@@ -17,12 +17,12 @@ class TopicDetialTableViewCell: UITableViewCell {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var createTime: UILabel!
     @IBOutlet weak var textLbl: UILabel!
-    
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var imageLeft: UIImageView!
     @IBOutlet weak var imageRight: UIImageView!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    var title : String?
     @IBAction func likeBtnClicked(_ sender: UIButton) {
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
@@ -44,13 +44,15 @@ class TopicDetialTableViewCell: UITableViewCell {
                 self.createTime.text = NSDate.createDateString(createAtStr: "\(timeNum)")
             }
             self.textLbl.text = TopicDetialModel.content
+            let searchText =  TopicDetialModel.content
+            
             self.likeBtn.titleLabel?.text = "\(String(describing: TopicDetialModel.love))"
             self.commentBtn.titleLabel?.text = "\(String(describing: TopicDetialModel.comment))"
-            
             if let pictureStringArr = TopicDetialModel?.picture{
                 imageHeightConstraint.constant = 90
                 let leftImage = pictureStringArr[0]
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageRight.image = nil
                 if  pictureStringArr.count >= 2 {
                       let  rightImage = pictureStringArr[1]
                       self.imageLeft.sd_setImage(with: URL.init(string: rightImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"),options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
