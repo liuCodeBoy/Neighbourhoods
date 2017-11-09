@@ -90,7 +90,7 @@ class SecondaryCommentTableViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SecondaryCommentDetialCell")  as! SecondaryCommentDetialTableViewCell
-            if  self.detailModelArr != nil{
+            if  self.detailModelArr[indexPath.row] != nil{
             cell.momentsCellModel = detailModelArr[indexPath.row - 1]
             }
             return cell

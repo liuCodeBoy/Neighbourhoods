@@ -10,6 +10,8 @@
 		91738E5369CA97748E1652E9 /* Pods_Neighbourhoods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C24ABCE591C5A1B847A1370 /* Pods_Neighbourhoods.framework */; };
 		B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */; };
 		B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646FDD21FB18D4C00990357 /* NborTopicModel.swift */; };
+		B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */; };
+		B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
 		B681C9DC1FA9ED06008006D6 /* LXQHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */; };
 		B692F89B1F91F17E00C75B41 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692F8991F91F17E00C75B41 /* SDWebImage.framework */; };
@@ -174,6 +176,8 @@
 		56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.debug.xcconfig"; sourceTree = "<group>"; };
 		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B646FDD21FB18D4C00990357 /* NborTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborTopicModel.swift; sourceTree = "<group>"; };
+		B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowVC.swift; sourceTree = "<group>"; };
+		B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
 		B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXQHeader.swift; sourceTree = "<group>"; };
 		B692F8991F91F17E00C75B41 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
@@ -547,6 +551,7 @@
 				D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */,
 				D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */,
 				D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */,
+				B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -690,6 +695,7 @@
 				D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */,
 				D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */,
 				B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */,
+				B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -904,6 +910,7 @@
 				D3FAC7F61FA99B8A00D972B9 /* FigureVoteJoinViewController.swift in Sources */,
 				D31E97131FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift in Sources */,
 				D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */,
+				B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */,
 				D3FAC7DA1FA9691200D972B9 /* IssueMissionViewController.swift in Sources */,
 				D31E97171FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift in Sources */,
 				D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */,
@@ -912,6 +919,7 @@
 				D3A54D291FAC0BFD0066C486 /* ChangeNickNameViewController.swift in Sources */,
 				D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */,
 				D3A54D4E1FAD9D990066C486 /* ActivityVoteEndedViewController.swift in Sources */,
+				B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */,
 				D31E970F1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift in Sources */,
 				B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */,
 				D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */,
@@ -1148,7 +1156,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				DEVELOPMENT_TEAM = 2473XH87M2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1174,7 +1182,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4UXX38SJ8T;
+				DEVELOPMENT_TEAM = 2473XH87M2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

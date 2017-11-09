@@ -25,6 +25,7 @@ class TopicDetialTableViewController: UITableViewController {
         super.viewDidLoad()
         loadRefreshComponet()
         lastedRequest()
+        self.tableView.reloadData()
         setNavBarBackBtn()
     }
     
@@ -86,14 +87,15 @@ class TopicDetialTableViewController: UITableViewController {
                         self?.rotaionArray.append(model)
                     }
                 }
-                self?.tableView.reloadData()
                 if self?.page == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
                 }
+                self?.tableView.reloadData()
             }else{
                 //服务器
                 self?.tableView.mj_header.endRefreshing()
                 self?.tableView.mj_footer.endRefreshing()
+                self?.tableView.reloadData()
             }
             
         }
@@ -104,9 +106,11 @@ class TopicDetialTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopicDetialCell") as? TopicDetialTableViewCell
-        if  self.rotaionArray[indexPath.row] !=  nil {
+        if  self.rotaionArray.count > 0 {
+            cell?.title = "#"+(self.modelMain?.name)!+"#"
             cell?.TopicDetialModel = self.rotaionArray[indexPath.row]
         }
+        
         return cell!
     }
 

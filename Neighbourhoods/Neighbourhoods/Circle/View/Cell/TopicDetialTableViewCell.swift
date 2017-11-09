@@ -43,11 +43,22 @@ class TopicDetialTableViewCell: UITableViewCell {
             if let timeNum = TopicDetialModel.time {
                 self.createTime.text = NSDate.createDateString(createAtStr: "\(timeNum)")
             }
-            self.textLbl.text = TopicDetialModel.content
-            let searchText =  TopicDetialModel.content
-            
-            self.likeBtn.titleLabel?.text = "\(String(describing: TopicDetialModel.love))"
-            self.commentBtn.titleLabel?.text = "\(String(describing: TopicDetialModel.comment))"
+            if let topicStr = TopicDetialModel.content{
+            if let titleTheme = self.title{
+            let str = NSMutableAttributedString(string: titleTheme + topicStr)
+            let strNum = titleTheme.characters.count
+            let range  = Range.init(0...strNum-1)
+            str.addAttributes([NSAttributedStringKey.foregroundColor : UIColor.blue ,NSAttributedStringKey.font :  UIFont.systemFont(ofSize: 18)], range: NSRange.init(range))
+            self.textLbl.attributedText = str
+             }
+          
+            }
+            if let  likeNum = TopicDetialModel.love{
+                self.likeBtn.titleLabel?.text = "\(String(describing: likeNum))"
+            }
+            if let  comment = TopicDetialModel.comment{
+                self.commentBtn.titleLabel?.text = "\(String(describing: comment))"
+            }
             if let pictureStringArr = TopicDetialModel?.picture{
                 imageHeightConstraint.constant = 90
                 let leftImage = pictureStringArr[0]
