@@ -32,7 +32,7 @@ class SelfInfomationTableViewController: UITableViewController {
         // MARK:- judge wheater the user's id is verified
             // TODO:- verify succeeded
             if true {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifySucceeded") as! VerifyIDInfomationSucceededViewController
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotVerified") as! VerifyIDInfomationSucceededViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
             // TODO:- verify failed

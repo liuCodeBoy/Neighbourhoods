@@ -66,6 +66,7 @@
 		D345ABF51FB1505B00FAB15F /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D345ABF41FB1505B00FAB15F /* TaskListModel.swift */; };
 		D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347E5A51FA2091000FFE815 /* SpringView.xib */; };
 		D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A71FA20B6B00FFE815 /* SpringView.swift */; };
+		D3524C5F1FB40994004240A5 /* ProfileFollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */; };
 		D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */; };
 		D360A6B31FB1E85500BC3ABC /* ActListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360A6B21FB1E85500BC3ABC /* ActListModel.swift */; };
 		D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */; };
@@ -228,6 +229,7 @@
 		D345ABF41FB1505B00FAB15F /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		D347E5A51FA2091000FFE815 /* SpringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringView.xib; sourceTree = "<group>"; };
 		D347E5A71FA20B6B00FFE815 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowingTableViewCell.swift; sourceTree = "<group>"; };
 		D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
 		D360A6B21FB1E85500BC3ABC /* ActListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListModel.swift; sourceTree = "<group>"; };
 		D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersTableViewController.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 			children = (
 				D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */,
 				D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */,
+				D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -842,12 +845,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-11/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -979,6 +984,7 @@
 				D31B54AF1FB1AF29003549AF /* SocialOrgDetModel.swift in Sources */,
 				D31E971B1FA9FEB100A78D3A /* ProfileTableViewController.swift in Sources */,
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
+				D3524C5F1FB40994004240A5 /* ProfileFollowingTableViewCell.swift in Sources */,
 				D30A17D81FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift in Sources */,
 				D3A54D3B1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift in Sources */,
 				D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */,
@@ -1159,7 +1165,7 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1185,7 +1191,7 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

@@ -17,7 +17,6 @@ class MyFollowingsViewController: UIViewController {
 
         myFollowingsTableView.delegate = self
         myFollowingsTableView.dataSource = self
-        myFollowingsTableView?.register(UINib(nibName: "UsersListTableViewCell", bundle: nil), forCellReuseIdentifier: "UsersListCell")
         
         setNavBarBackBtn()
         setNavBarTitle(title: "我的关注")
@@ -40,7 +39,7 @@ extension MyFollowingsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UsersListCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileFollowingsCell")
         return cell!
     }
     

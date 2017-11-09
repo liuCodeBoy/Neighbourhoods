@@ -582,59 +582,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-Pj-z4u">
-                                <rect key="frame" x="20" y="40" width="55" height="55"/>
+                                <rect key="frame" x="20" y="84" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="n4z-uT-aZA"/>
                                     <constraint firstAttribute="height" constant="55" id="uSc-hU-O4u"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf1-f5-pcq">
-                                <rect key="frame" x="87" y="47" width="37" height="21.5"/>
+                                <rect key="frame" x="87" y="91" width="37" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-wc-H4s">
-                                <rect key="frame" x="93" y="76" width="10" height="15"/>
+                                <rect key="frame" x="93" y="120" width="10" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="DuI-Cj-jAF"/>
                                     <constraint firstAttribute="height" constant="15" id="pk6-WB-6ox"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_icon_small" translatesAutoresizingMaskIntoConstraints="NO" id="vtY-M8-O7f">
-                                <rect key="frame" x="108" y="77" width="8" height="13"/>
+                                <rect key="frame" x="108" y="121" width="8" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="8" id="cQQ-L0-Xqk"/>
                                     <constraint firstAttribute="height" constant="13" id="jhf-c7-djN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 认证 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNn-pD-77M">
-                                <rect key="frame" x="132" y="49" width="34" height="16"/>
+                                <rect key="frame" x="132" y="93" width="34" height="16"/>
                                 <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南京鼓楼区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTh-H3-A6s">
-                                <rect key="frame" x="121" y="78" width="46" height="11"/>
+                                <rect key="frame" x="121" y="122" width="46" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtA-Sg-fDl">
-                                <rect key="frame" x="25" y="150.5" width="325" height="14.5"/>
+                                <rect key="frame" x="25" y="194.5" width="325" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F44-8S-pWb">
-                                <rect key="frame" x="25" y="111" width="325" height="21.5"/>
+                                <rect key="frame" x="25" y="155" width="325" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nl5-dx-ue8">
-                                <rect key="frame" x="300" y="30" width="85" height="30"/>
+                                <rect key="frame" x="300" y="74" width="85" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w1-Fk-QRp">
                                         <rect key="frame" x="5" y="5" width="30" height="20"/>
@@ -657,14 +657,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pXI-HN-6N6">
-                                <rect key="frame" x="167.5" y="185" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="229" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="N2m-Be-K6V"/>
                                     <constraint firstAttribute="height" constant="40" id="Psb-Io-omm"/>
                                 </constraints>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-u1-Xyf">
-                                <rect key="frame" x="82.5" y="230" width="100" height="46"/>
+                                <rect key="frame" x="82.5" y="274" width="100" height="46"/>
                                 <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="JVw-Be-5Zd"/>
@@ -673,7 +673,7 @@
                                 <state key="normal" title="领取任务"/>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLg-RL-yFJ">
-                                <rect key="frame" x="192.5" y="230" width="100" height="46"/>
+                                <rect key="frame" x="192.5" y="274" width="100" height="46"/>
                                 <color key="backgroundColor" red="0.94605284929275513" green="0.71354317665100098" blue="0.34094586968421936" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Lnu-NH-UxB"/>
@@ -682,7 +682,7 @@
                                 <state key="normal" title="取消任务"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdF-li-VXI">
-                                <rect key="frame" x="137.5" y="230" width="100" height="46"/>
+                                <rect key="frame" x="137.5" y="274" width="100" height="46"/>
                                 <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="DWl-HR-Zbi"/>
@@ -691,7 +691,7 @@
                                 <state key="normal" title="任务领取状态"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QR9-rI-vL2">
-                                <rect key="frame" x="0.0" y="296" width="375" height="371"/>
+                                <rect key="frame" x="0.0" y="340" width="375" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="zAQ-Nk-5DC">
@@ -1440,7 +1440,6 @@
                     <tabBarItem key="tabBarItem" title="邻里帮" image="tabbar_help" selectedImage="tabbar_help_highlighted" id="B99-wB-w10"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wr8-vU-IJA">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1468,6 +1467,6 @@
         <image name="yellow_tab_selected_background" width="55" height="8"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zSq-C6-KUn"/>
+        <segue reference="mQu-nX-dB7"/>
     </inferredMetricsTieBreakers>
 </document>
