@@ -26,8 +26,8 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
             if let avatarString  =  userModel?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
             }
-            self.likeBtn.titleLabel?.text = "\(momentsCellModel.love)"
-            self.commentBtn.titleLabel?.text = "\(momentsCellModel.comment)"
+            self.likeBtn.titleLabel?.text = "\(String(describing: momentsCellModel.love))"
+            self.commentBtn.titleLabel?.text = "\(String(describing: momentsCellModel.comment))"
             if let timeNum = momentsCellModel.time {
                 self.createTime.text = NSDate.createDateString(createAtStr: "\(timeNum)")
             }

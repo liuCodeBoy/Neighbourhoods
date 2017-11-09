@@ -25,6 +25,7 @@ class TopicDetialTableViewController: UITableViewController {
         super.viewDidLoad()
         loadRefreshComponet()
         lastedRequest()
+        setNavBarBackBtn()
     }
     
     func loadRefreshComponet() -> () {
@@ -66,7 +67,9 @@ class TopicDetialTableViewController: UITableViewController {
                         self?.topicImage.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                     }
                     self?.topicDetialTextView.text = self?.modelMain?.content
-                    
+                    if let title = self?.modelMain?.name {
+                        self?.setNavBarTitle(title: "#"+title+"#")
+                    }
                     if let comment = self?.modelMain?.comment {
                         self?.commentCountLbl.text = "\(String(describing: comment))条评论"
                     }

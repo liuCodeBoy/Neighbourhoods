@@ -34,17 +34,18 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
                 imageHeightConstraint.constant = 90
                 let leftImage = pictureStringArr[0]
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageRight.image = nil
                 if  pictureStringArr.count >= 2 {
                     let rightImage = pictureStringArr[1]
                     self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), completed: nil)
-                }
+              }
             }else{
                 imageHeightConstraint.constant = 0
             }
             self.textLbl.text = momentsCellModel.content
             self.location.text = momentsCellModel.address
-            self.likeBtn.titleLabel?.text = "\(momentsCellModel.love)"
-            self.commentBtn.titleLabel?.text = "\(momentsCellModel.comment)"
+            self.likeBtn.titleLabel?.text = "\(String(describing: momentsCellModel.love))"
+            self.commentBtn.titleLabel?.text = "\(String(describing: momentsCellModel.comment))"
             if let timeNum = momentsCellModel.time {
                 self.createTime.text = NSDate.createDateString(createAtStr: "\(timeNum)")
             }
