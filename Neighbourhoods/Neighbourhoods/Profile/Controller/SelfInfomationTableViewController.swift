@@ -12,6 +12,8 @@ class SelfInfomationTableViewController: UITableViewController {
 
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickNameLbl: UILabel!
+    @IBOutlet weak var genderLbl: UILabel!
+    @IBOutlet weak var discrictLbl: UILabel!
     
     var nickName: String?
     
@@ -25,10 +27,7 @@ class SelfInfomationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-//        case 0: self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
-//        case 1: self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
-//        case 2: self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
-        case 3:
+        case 4:
             
         // MARK:- judge wheater the user's id is verified
             // TODO:- verify succeeded
@@ -37,8 +36,8 @@ class SelfInfomationTableViewController: UITableViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {
             // TODO:- verify failed
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifyFailed") as! VerifyIDInfomationFailedViewController
-                self.navigationController?.pushViewController(vc, animated: true)
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifyFailed") as! VerifyIDInfomationFailedViewController
+//                self.navigationController?.pushViewController(vc, animated: true)
             }
             
         // MARK:- not uploaded verification infomation
@@ -58,6 +57,12 @@ class SelfInfomationTableViewController: UITableViewController {
             
             //MARK: - send self's segue vc to next vc
             dest.retSegue = segue
+        } else if segue.identifier == "SelectDistrictSegue" {
+            let dest = segue.destination as! SelectDistrictTableViewController
+            
+            //MARK: - pass source vc segue
+            dest.retSegue = segue
+            
         }
     }
 
