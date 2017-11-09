@@ -35,9 +35,11 @@ class SelectDistrictTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = retSegue?.destination as! SelfInfomationTableViewController
-        vc.
-        district[indexPath.row]
+        let vc = retSegue?.source as! SelfInfomationTableViewController
+        vc.discrictLbl.text = district[indexPath.row]
+        
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     
