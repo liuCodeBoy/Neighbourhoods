@@ -111,6 +111,7 @@
 		D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */; };
 		D3A54D481FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */; };
 		D3A54D4E1FAD9D990066C486 /* ActivityVoteEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */; };
+		D3AD803B1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */; };
 		D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */; };
 		D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */; };
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
@@ -276,6 +277,7 @@
 		D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteCounsultantCompletedViewController.swift; sourceTree = "<group>"; };
 		D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAnnouncementDetialViewController.swift; sourceTree = "<group>"; };
 		D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteEndedViewController.swift; sourceTree = "<group>"; };
+		D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowerTableViewCell.swift; sourceTree = "<group>"; };
 		D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityViewController.swift; sourceTree = "<group>"; };
 		D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAndMomentViewController.swift; sourceTree = "<group>"; };
 		D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingsViewController.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */,
 				D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */,
 				D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */,
+				D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -960,6 +963,7 @@
 				D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */,
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
+				D3AD803B1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift in Sources */,
 				D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */,
 				D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */,
 				D3A54D2D1FAC3C8E0066C486 /* ReceivedMissionsTableViewCell.swift in Sources */,
@@ -1153,6 +1157,7 @@
 			baseConfigurationReference = 56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1167,6 +1172,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1179,6 +1185,7 @@
 			baseConfigurationReference = CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UXX38SJ8T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1193,6 +1200,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

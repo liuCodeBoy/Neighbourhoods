@@ -67,8 +67,10 @@ class AnnouncementViewController: UIViewController {
         lotteryView = childVC2.view
         voteView = childVC3.view
         
-        let y = lineView.frame.origin.y + 1
+        var y = lineView.frame.origin.y + 1
         
+        if isIPHONEX { y += 24 }
+
         announcementView?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
         lotteryView?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
         voteView?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)

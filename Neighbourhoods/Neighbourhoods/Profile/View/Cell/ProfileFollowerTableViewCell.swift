@@ -1,14 +1,14 @@
 //
-//  ProfileFollowTableViewCell.swift
+//  ProfileFollowerTableViewCell.swift
 //  Neighbourhoods
 //
-//  Created by Weslie on 09/11/2017.
+//  Created by Weslie on 10/11/2017.
 //  Copyright © 2017 NJQL. All rights reserved.
 //
 
 import UIKit
 
-class ProfileFollowingTableViewCell: UITableViewCell {
+class ProfileFollowerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
