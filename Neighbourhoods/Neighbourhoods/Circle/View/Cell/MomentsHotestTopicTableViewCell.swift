@@ -8,8 +8,9 @@
 
 import UIKit
 import SDWebImage
+typealias MonentHotestImageType = (NSArray? , NSNumber?) -> ()
 class MomentsHotestTopicTableViewCell: UITableViewCell {
-    
+    var   pushImageClouse : MonentHotestImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -34,9 +35,15 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
                 imageHeightConstraint.constant = 90
                 let leftImage = pictureStringArr[0]
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
+                imageLeft.addGestureRecognizer(tap)
+                self.imageRight.isUserInteractionEnabled = false
                 self.imageRight.image = nil
                 if  pictureStringArr.count >= 2 {
                     let rightImage = pictureStringArr[1]
+                    self.imageRight.isUserInteractionEnabled = true
+                    let  tapSecond = UITapGestureRecognizer.init(target: self, action:#selector(showSecondVC))
+                    imageRight.addGestureRecognizer(tapSecond)
                     self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), completed: nil)
                 }
             }else{
@@ -62,11 +69,20 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @objc private func showImageVC(){
+        if let pictureStringArr = momentsCellModel.picture{
+            if self.pushImageClouse != nil{
+                self.pushImageClouse!(pictureStringArr ,0)
+            }
+        }
     }
-
+    @objc private func showSecondVC(){
+        if let pictureStringArr = momentsCellModel.picture{
+            if self.pushImageClouse != nil{
+                self.pushImageClouse!(pictureStringArr ,1)
+            }
+        }
+    }
 
 
 }

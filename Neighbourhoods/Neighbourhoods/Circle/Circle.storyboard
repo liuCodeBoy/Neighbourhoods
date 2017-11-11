@@ -152,6 +152,12 @@
                                                         <constraint firstAttribute="width" constant="60" id="3Fq-8a-2lE"/>
                                                         <constraint firstAttribute="height" constant="60" id="gdZ-iE-YXi"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvN-wz-lFg">
                                                     <rect key="frame" x="80" y="18" width="33" height="19.5"/>
@@ -461,6 +467,12 @@
                                                 <constraint firstAttribute="height" constant="60" id="aMp-Zp-Hkn"/>
                                                 <constraint firstAttribute="width" constant="60" id="bwW-r9-aP7"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="30"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUc-LQ-Q2s">
                                             <rect key="frame" x="80" y="18" width="33" height="19.5"/>
@@ -640,6 +652,12 @@
                                                 <constraint firstAttribute="height" constant="60" id="57A-SY-ckI"/>
                                                 <constraint firstAttribute="width" constant="60" id="Mut-PA-p8k"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="30"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rig-JE-0RB">
                                             <rect key="frame" x="80" y="18" width="33" height="19.5"/>
@@ -795,7 +813,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umE-of-HyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4610" y="-1033"/>
+            <point key="canvasLocation" x="4958" y="-872"/>
         </scene>
         <!--Moments Topics Classification Table View Controller-->
         <scene sceneID="noU-w0-OGK">
@@ -949,6 +967,12 @@
                                                 <constraint firstAttribute="height" constant="60" id="AXL-h6-anP"/>
                                                 <constraint firstAttribute="width" constant="60" id="JYG-HX-mYm"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="30"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmr-D4-1gR">
                                             <rect key="frame" x="80" y="18" width="33" height="19.5"/>
@@ -1001,7 +1025,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQ8-Wf-ROP">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQ8-Wf-ROP">
                                             <rect key="frame" x="195" y="120.5" width="165" height="90"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHY-BP-sBD">
@@ -1187,6 +1211,12 @@
                                                         <constraint firstAttribute="height" constant="60" id="ESM-nY-6AR"/>
                                                         <constraint firstAttribute="width" constant="60" id="c7s-c8-zav"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEE-et-Tau">
                                                     <rect key="frame" x="80" y="18" width="33" height="19.5"/>
@@ -1361,7 +1391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKk-Fh-X6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="-45.42728635682159"/>
+            <point key="canvasLocation" x="2073" y="12"/>
         </scene>
         <!--My Issue View Controller-->
         <scene sceneID="Cfw-Ue-gTa">
@@ -1403,6 +1433,12 @@
                                                         <constraint firstAttribute="height" constant="60" id="MPD-JJ-Zuk"/>
                                                         <constraint firstAttribute="width" constant="60" id="tRS-Ht-74z"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX7-IE-Cgr">
                                                     <rect key="frame" x="80" y="18" width="33" height="19.5"/>
@@ -1561,6 +1597,12 @@
                                                         <constraint firstAttribute="width" constant="50" id="Rs6-M0-q68"/>
                                                         <constraint firstAttribute="height" constant="50" id="px1-Tq-Vqq"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09-11 20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVd-D4-Xxa">
                                                     <rect key="frame" x="73" y="49" width="64" height="13.5"/>
@@ -1770,6 +1812,12 @@
                                                 <constraint firstAttribute="height" constant="55" id="bhF-WJ-nH5"/>
                                                 <constraint firstAttribute="width" constant="55" id="jzp-OP-pRS"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="30"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwh-Sk-oGj">
                                             <rect key="frame" x="0.0" y="130.5" width="375" height="5"/>
@@ -1830,6 +1878,12 @@
                                                 <constraint firstAttribute="width" constant="50" id="gXc-QA-XwX"/>
                                                 <constraint firstAttribute="height" constant="50" id="w3W-Li-FaY"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="25"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09-11 20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9r-Rz-N2d">
                                             <rect key="frame" x="73" y="49" width="64" height="13.5"/>
@@ -1905,7 +1959,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="写评论" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-cd-dDZ">
-                                <rect key="frame" x="25" y="35" width="325" height="617"/>
+                                <rect key="frame" x="25" y="79" width="325" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1940,10 +1994,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Mxi-aR-c6L" firstAttribute="top" secondItem="NSC-Ag-0Fo" secondAttribute="top" id="4ga-gS-nHw"/>
-                            <constraint firstItem="Mxi-aR-c6L" firstAttribute="leading" secondItem="NSC-Ag-0Fo" secondAttribute="leading" id="4oZ-bH-CEH"/>
-                            <constraint firstItem="NSC-Ag-0Fo" firstAttribute="bottom" secondItem="Mxi-aR-c6L" secondAttribute="bottom" id="WTW-FN-aw3"/>
-                            <constraint firstItem="NSC-Ag-0Fo" firstAttribute="trailing" secondItem="Mxi-aR-c6L" secondAttribute="trailing" id="dib-QJ-RMw"/>
+                            <constraint firstItem="Mxi-aR-c6L" firstAttribute="top" secondItem="NSC-Ag-0Fo" secondAttribute="top" id="PfA-na-RlQ"/>
+                            <constraint firstItem="Mxi-aR-c6L" firstAttribute="trailing" secondItem="NSC-Ag-0Fo" secondAttribute="trailing" id="WTM-Tx-wQE"/>
+                            <constraint firstItem="Mxi-aR-c6L" firstAttribute="leading" secondItem="NSC-Ag-0Fo" secondAttribute="leading" id="ixT-Ip-LRK"/>
+                            <constraint firstItem="Mxi-aR-c6L" firstAttribute="bottom" secondItem="NSC-Ag-0Fo" secondAttribute="bottom" id="y2r-BK-tju"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSC-Ag-0Fo"/>
                     </view>
@@ -1991,6 +2045,6 @@
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fBt-uw-gZD"/>
+        <segue reference="JkO-Gl-OXN"/>
     </inferredMetricsTieBreakers>
 </document>

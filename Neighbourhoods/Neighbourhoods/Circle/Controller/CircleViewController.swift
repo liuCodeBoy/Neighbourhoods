@@ -106,7 +106,7 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
         let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
         desVC.index  = index
         desVC.imageArr = imageArr
-        self.navigationController?.pushViewController(desVC, animated: true)
+        self.present(desVC, animated: true, completion: nil)
     }
         return cell
     }

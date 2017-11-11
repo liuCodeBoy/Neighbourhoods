@@ -83,6 +83,12 @@ class MomentsLatestIssueTableViewController: UITableViewController {
         let modelArr =  self.rotaionArray
         let  model =  modelArr[indexPath.row]
         cell.momentsCellModel = model
+        cell.pushImageClouse = {(imageArr, index) in
+            let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
+            desVC.index  = index
+            desVC.imageArr = imageArr
+            self.present(desVC, animated: true, completion: nil)
+        }
         return cell
        
     }

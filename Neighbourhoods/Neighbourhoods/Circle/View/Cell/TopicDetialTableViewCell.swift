@@ -8,8 +8,9 @@
 
 import UIKit
 import SDWebImage
+typealias MonentDetialImageType = (NSArray? , NSNumber?) -> ()
 class TopicDetialTableViewCell: UITableViewCell {
-    
+    var   pushImageClouse : MonentDetialImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -63,10 +64,16 @@ class TopicDetialTableViewCell: UITableViewCell {
                 imageHeightConstraint.constant = 90
                 let leftImage = pictureStringArr[0]
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
-                self.imageRight.image = nil
+                let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
+                imageLeft.addGestureRecognizer(tap)
+                 self.imageRight.image = nil
+                 self.imageRight.isUserInteractionEnabled = false
                 if  pictureStringArr.count >= 2 {
                       let  rightImage = pictureStringArr[1]
-                      self.imageLeft.sd_setImage(with: URL.init(string: rightImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"),options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                      self.imageRight.isUserInteractionEnabled = true
+                      self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"),options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                    let  tapSecond = UITapGestureRecognizer.init(target: self, action:#selector(showSecondVC))
+                    imageRight.addGestureRecognizer(tapSecond)
                 }
             }else{
                 imageHeightConstraint.constant = 0
@@ -74,9 +81,19 @@ class TopicDetialTableViewCell: UITableViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @objc private func showImageVC(){
+        if let pictureStringArr = TopicDetialModel.picture{
+            if self.pushImageClouse != nil{
+                self.pushImageClouse!(pictureStringArr ,0)
+            }
+        }
+    }
+    @objc private func showSecondVC(){
+        if let pictureStringArr = TopicDetialModel.picture{
+            if self.pushImageClouse != nil{
+                self.pushImageClouse!(pictureStringArr ,1)
+            }
+        }
     }
 
 }

@@ -39,7 +39,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
                 if  pictureStringArr.count >= 2 {
                     self.imageRight.isUserInteractionEnabled = true
                     let  tapSecond = UITapGestureRecognizer.init(target: self, action:#selector(showSecondVC))
-                    imageLeft.addGestureRecognizer(tapSecond)
+                    imageRight.addGestureRecognizer(tapSecond)
                     let rightImage = pictureStringArr[1]
                     self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), completed: nil)
 
@@ -69,14 +69,14 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
     }
-    @objc func showImageVC(){
+    @objc private func showImageVC(){
         if let pictureStringArr = momentsCellModel.picture{
         if self.pushImageClouse != nil{
             self.pushImageClouse!(pictureStringArr ,0)
             }
         }
     }
-    @objc func showSecondVC(){
+    @objc private func showSecondVC(){
         if let pictureStringArr = momentsCellModel.picture{
             if self.pushImageClouse != nil{
                 self.pushImageClouse!(pictureStringArr ,1)

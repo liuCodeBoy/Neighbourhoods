@@ -110,7 +110,12 @@ class TopicDetialTableViewController: UITableViewController {
             cell?.title = "#"+(self.modelMain?.name)!+"#"
             cell?.TopicDetialModel = self.rotaionArray[indexPath.row]
         }
-        
+        cell?.pushImageClouse = {(imageArr, index) in
+            let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
+            desVC.index  = index
+            desVC.imageArr = imageArr
+            self.present(desVC, animated: true, completion: nil)
+        }
         return cell!
     }
 
