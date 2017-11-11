@@ -84,6 +84,8 @@
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
 		D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
+		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
+		D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */; };
 		D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */; };
 		D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */; };
 		D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */; };
@@ -248,6 +250,8 @@
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
 		D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
+		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
+		D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectPickerView.swift; sourceTree = "<group>"; };
 		D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsViewController.swift; sourceTree = "<group>"; };
 		D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsViewController.swift; sourceTree = "<group>"; };
@@ -429,6 +433,8 @@
 		D31CD4A71F91DA9100195686 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */,
+				D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */,
 				D37974A21FAAC70E006EA0EE /* Cell */,
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
 			);
@@ -828,6 +834,7 @@
 				D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */,
 				D36C86B71FA09EF0000CCA17 /* UsersListTableViewCell.xib in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
+				D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */,
 				D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */,
 				D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */,
 				D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */,
@@ -946,6 +953,7 @@
 				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,
 				D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
+				D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */,
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
 				D30A17E21FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift in Sources */,
 				D30A17CE1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift in Sources */,

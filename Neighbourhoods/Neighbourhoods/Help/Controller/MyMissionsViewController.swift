@@ -96,7 +96,8 @@ class MyMissionsViewController: UIViewController {
     
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
-        NetWorkTool.shareInstance.myTask("273c4b5a83f1c7ef5dae664d258e5652", type: 1, p: page) { [weak self](info, error) in
+        let token = UserDefaults.standard.object(forKey: "token") as! String
+        NetWorkTool.shareInstance.myTask(token, type: 1, p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
