@@ -23,7 +23,6 @@ class CircleViewController: UIViewController {
         lastedRequest(p : page)
         topicsTableView.delegate = self
         topicsTableView.dataSource = self
-    
         let URLArr = [URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Screen%20Shot%202017-10-21%20at%205.35.48%20PM.png"),
                       URL(string: "http://ow1i9ri5b.bkt.clouddn.com/IMG_7944.jpg"),
                       URL(string: "http://ow1i9ri5b.bkt.clouddn.com/prototype-design-white.png"),
@@ -103,6 +102,12 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
         let modelArr =  self.rotaionArray
         let  model =  modelArr[indexPath.row]
         cell.momentsCellModel = model
+        cell.pushImageClouse = {(imageArr, index) in
+        let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
+        desVC.index  = index
+        desVC.imageArr = imageArr
+        self.present(desVC, animated: true, completion: nil)
+    }
         return cell
     }
     

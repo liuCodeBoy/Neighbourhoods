@@ -8,8 +8,10 @@
 
 import UIKit
 import SDWebImage
+//定义跳转闭包
+typealias pushImageType = (NSArray? , NSNumber?) -> ()
 class CircleVCTopicsTableViewCell: UITableViewCell{
-    
+    var   pushImageClouse : pushImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -27,11 +29,17 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
         didSet {
             self.nickName.text = momentsCellModel.user?.nickname
             if let pictureStringArr = momentsCellModel.picture{
-                imageHeightConstraint.constant = 90
+                imageHeightConstraint.constant = 100
+                let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
+                imageLeft.addGestureRecognizer(tap)
                 let leftImage = pictureStringArr[0]
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageRight.isUserInteractionEnabled = false
                 self.imageRight.image = nil
                 if  pictureStringArr.count >= 2 {
+                    self.imageRight.isUserInteractionEnabled = true
+                    let  tapSecond = UITapGestureRecognizer.init(target: self, action:#selector(showSecondVC))
+                    imageRight.addGestureRecognizer(tapSecond)
                     let rightImage = pictureStringArr[1]
                     self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), completed: nil)
 
@@ -55,20 +63,31 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
                 self.gender.image =   sex == 1 ? UIImage.init(named: "male") : UIImage.init(named: "female")
             }else{
             }
-            
         }
     }
     @IBAction func likeBtnClicked(_ sender: UIButton) {
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
     }
-    
+    @objc private func showImageVC(){
+        if let pictureStringArr = momentsCellModel.picture{
+        if self.pushImageClouse != nil{
+            self.pushImageClouse!(pictureStringArr ,0)
+            }
+        }
+    }
+    @objc private func showSecondVC(){
+        if let pictureStringArr = momentsCellModel.picture{
+            if self.pushImageClouse != nil{
+                self.pushImageClouse!(pictureStringArr ,1)
+            }
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         imageHeightConstraint.constant = 0
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
