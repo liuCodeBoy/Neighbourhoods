@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14o-AQ-Vw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="912.5937031484259"/>
+            <point key="canvasLocation" x="1052" y="913"/>
         </scene>
         <!--My Missions View Controller-->
         <scene sceneID="yBl-zu-pzv">
@@ -1143,7 +1143,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saB-sn-R0n">
-                                                            <rect key="frame" x="329" y="80" width="27" height="16"/>
+                                                            <rect key="frame" x="346" y="80" width="27" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1152,7 +1152,7 @@
                                                     <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="K0K-BA-1Y7" secondAttribute="trailing" constant="100" id="FXt-bl-Cmi"/>
-                                                        <constraint firstItem="saB-sn-R0n" firstAttribute="centerX" secondItem="87d-If-Cvd" secondAttribute="centerX" id="GCQ-hf-NSB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="saB-sn-R0n" secondAttribute="trailing" constant="2" id="KLo-wj-Kzb"/>
                                                         <constraint firstItem="Dlf-yd-tay" firstAttribute="leading" secondItem="VD6-dI-6hR" secondAttribute="leading" constant="20" id="NIh-ld-f4K"/>
                                                         <constraint firstItem="K0K-BA-1Y7" firstAttribute="leading" secondItem="Dlf-yd-tay" secondAttribute="leading" id="QyR-XF-er4"/>
                                                         <constraint firstAttribute="bottom" secondItem="K0K-BA-1Y7" secondAttribute="bottom" constant="25" id="eJt-fu-MwK"/>
@@ -1259,7 +1259,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOy-dj-NFW">
-                                                            <rect key="frame" x="329" y="80" width="27" height="16"/>
+                                                            <rect key="frame" x="346" y="80" width="27" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1267,12 +1267,12 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.96852236989999996" green="0.96868795159999999" blue="0.96851199870000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="MOy-dj-NFW" firstAttribute="centerX" secondItem="quO-HK-8ZN" secondAttribute="centerX" id="3db-Oq-Nfa"/>
                                                         <constraint firstAttribute="trailing" secondItem="J2H-6M-Pnj" secondAttribute="trailing" constant="100" id="9dT-JA-sQk"/>
                                                         <constraint firstItem="J2H-6M-Pnj" firstAttribute="top" secondItem="l7k-Us-yxB" secondAttribute="bottom" constant="12" id="9jp-Ds-Oe8"/>
                                                         <constraint firstItem="l7k-Us-yxB" firstAttribute="top" secondItem="zqb-70-RDh" secondAttribute="top" constant="25" id="Hoa-ht-HdJ"/>
                                                         <constraint firstItem="J2H-6M-Pnj" firstAttribute="leading" secondItem="l7k-Us-yxB" secondAttribute="leading" id="PBr-ox-TX2"/>
                                                         <constraint firstItem="l7k-Us-yxB" firstAttribute="leading" secondItem="zqb-70-RDh" secondAttribute="leading" constant="20" id="TpZ-td-Alq"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MOy-dj-NFW" secondAttribute="trailing" constant="2" id="U9o-WL-vyt"/>
                                                         <constraint firstAttribute="trailing" secondItem="quO-HK-8ZN" secondAttribute="trailing" constant="-10" id="VE6-lt-8l5"/>
                                                         <constraint firstItem="MOy-dj-NFW" firstAttribute="top" secondItem="quO-HK-8ZN" secondAttribute="bottom" constant="5" id="log-6z-7Nz"/>
                                                         <constraint firstItem="quO-HK-8ZN" firstAttribute="top" secondItem="zqb-70-RDh" secondAttribute="top" constant="45" id="qwY-vT-dro"/>
@@ -1375,7 +1375,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dx-vo-e0Q">
-                                                            <rect key="frame" x="329" y="80" width="27" height="16"/>
+                                                            <rect key="frame" x="346" y="80" width="27" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1390,7 +1390,7 @@
                                                         <constraint firstItem="0dx-vo-e0Q" firstAttribute="top" secondItem="Io0-Lt-mb2" secondAttribute="bottom" constant="5" id="aaq-uL-ZE5"/>
                                                         <constraint firstItem="D9a-r8-IlP" firstAttribute="leading" secondItem="6S8-43-GIw" secondAttribute="leading" id="dbZ-It-Dhd"/>
                                                         <constraint firstItem="6S8-43-GIw" firstAttribute="leading" secondItem="TYA-US-AlV" secondAttribute="leading" constant="20" id="eT2-Io-j5K"/>
-                                                        <constraint firstItem="0dx-vo-e0Q" firstAttribute="centerX" secondItem="Io0-Lt-mb2" secondAttribute="centerX" id="iLY-Xu-bkN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0dx-vo-e0Q" secondAttribute="trailing" constant="2" id="hfB-VB-0Fd"/>
                                                         <constraint firstItem="6S8-43-GIw" firstAttribute="top" secondItem="TYA-US-AlV" secondAttribute="top" constant="25" id="jW8-tX-MW3"/>
                                                         <constraint firstAttribute="trailing" secondItem="Io0-Lt-mb2" secondAttribute="trailing" constant="-10" id="nkS-HA-9au"/>
                                                         <constraint firstAttribute="bottom" secondItem="D9a-r8-IlP" secondAttribute="bottom" constant="25" id="oz3-0q-9f4"/>

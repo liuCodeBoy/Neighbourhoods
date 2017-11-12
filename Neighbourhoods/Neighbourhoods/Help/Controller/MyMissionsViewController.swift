@@ -66,7 +66,8 @@ class MyMissionsViewController: UIViewController {
 
         let childVC = self.storyboard?.instantiateViewController(withIdentifier: "ReceivedMissionsVC") as! ReceivedMissionsViewController
         childView = childVC.view
-        let y = lineView.frame.origin.y + 1
+        var y = lineView.frame.origin.y + 1
+        if isIPHONEX { y += 24 }
         childView?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
 
         self.addChildViewController(childVC)
@@ -95,7 +96,8 @@ class MyMissionsViewController: UIViewController {
     
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
-        NetWorkTool.shareInstance.myTask(HTTP_TOKEN: "273c4b5a83f1c7ef5dae664d258e5652", type: 1, p: page) { [weak self](info, error) in
+        let token = UserDefaults.standard.object(forKey: "token") as! String
+        NetWorkTool.shareInstance.myTask(token, type: 1, p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
@@ -103,6 +105,7 @@ class MyMissionsViewController: UIViewController {
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
                 }
+                print(info)
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count {
                     let taskDict =  result[i]

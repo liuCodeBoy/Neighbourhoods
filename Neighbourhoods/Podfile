@@ -21,5 +21,7 @@ target 'Neighbourhoods' do
   pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
   pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
 
+  # Reveal
+  pod 'Reveal-SDK', :configurations => ['Debug']
 
 end

@@ -35,10 +35,20 @@ class SelectDistrictTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = retSegue?.source as! SelfInfomationTableViewController
-        vc.discrictLbl.text = district[indexPath.row]
+        let ok = UIAlertAction(title: "确定", style: .default) { (_) in
+            let vc = self.retSegue?.source as! SelfInfomationTableViewController
+            vc.discrictLbl.text = district[indexPath.row]
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "提示", message: "确定选择小区", preferredStyle: .alert)
+        alert.addAction(cancel)
+        alert.addAction(ok)
+
+        self.present(alert, animated: true, completion: nil)
         
-        self.navigationController?.popViewController(animated: true)
+
         
     }
     

@@ -76,7 +76,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        notificationSwitch.onTintColor = #colorLiteral(red: 0.3019607961, green: 0.6941176653, blue: 0.980392158, alpha: 1)
+        notificationSwitch.onTintColor = defaultBlueColor
         setRoundRect(targets: [confirmChangeBtn])
         
         setNavBarBackBtn()

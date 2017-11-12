@@ -68,6 +68,7 @@
 		D345ABF51FB1505B00FAB15F /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D345ABF41FB1505B00FAB15F /* TaskListModel.swift */; };
 		D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347E5A51FA2091000FFE815 /* SpringView.xib */; };
 		D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D347E5A71FA20B6B00FFE815 /* SpringView.swift */; };
+		D3524C5F1FB40994004240A5 /* ProfileFollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */; };
 		D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */; };
 		D360A6B31FB1E85500BC3ABC /* ActListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360A6B21FB1E85500BC3ABC /* ActListModel.swift */; };
 		D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */; };
@@ -85,6 +86,8 @@
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
 		D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
+		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
+		D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */; };
 		D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */; };
 		D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */; };
 		D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */; };
@@ -112,6 +115,7 @@
 		D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */; };
 		D3A54D481FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */; };
 		D3A54D4E1FAD9D990066C486 /* ActivityVoteEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */; };
+		D3AD803B1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */; };
 		D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */; };
 		D3B4FE491FA4551D0018FADD /* MessageAndMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */; };
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
@@ -232,6 +236,7 @@
 		D345ABF41FB1505B00FAB15F /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		D347E5A51FA2091000FFE815 /* SpringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringView.xib; sourceTree = "<group>"; };
 		D347E5A71FA20B6B00FFE815 /* SpringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowingTableViewCell.swift; sourceTree = "<group>"; };
 		D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
 		D360A6B21FB1E85500BC3ABC /* ActListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListModel.swift; sourceTree = "<group>"; };
 		D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersTableViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +254,8 @@
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
 		D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
+		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
+		D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectPickerView.swift; sourceTree = "<group>"; };
 		D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsViewController.swift; sourceTree = "<group>"; };
 		D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMomentsViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +285,7 @@
 		D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteCounsultantCompletedViewController.swift; sourceTree = "<group>"; };
 		D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAnnouncementDetialViewController.swift; sourceTree = "<group>"; };
 		D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteEndedViewController.swift; sourceTree = "<group>"; };
+		D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowerTableViewCell.swift; sourceTree = "<group>"; };
 		D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityViewController.swift; sourceTree = "<group>"; };
 		D3B4FE481FA4551D0018FADD /* MessageAndMomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAndMomentViewController.swift; sourceTree = "<group>"; };
 		D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingsViewController.swift; sourceTree = "<group>"; };
@@ -429,6 +437,8 @@
 		D31CD4A71F91DA9100195686 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */,
+				D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */,
 				D37974A21FAAC70E006EA0EE /* Cell */,
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
 			);
@@ -470,6 +480,8 @@
 			children = (
 				D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */,
 				D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */,
+				D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */,
+				D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -828,6 +840,7 @@
 				D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */,
 				D36C86B71FA09EF0000CCA17 /* UsersListTableViewCell.xib in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
+				D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */,
 				D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */,
 				D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */,
 				D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */,
@@ -848,12 +861,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-11/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -946,6 +961,7 @@
 				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,
 				D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
+				D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */,
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
 				D30A17E21FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift in Sources */,
 				D30A17CE1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift in Sources */,
@@ -963,6 +979,7 @@
 				D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */,
 				D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */,
 				D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */,
+				D3AD803B1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift in Sources */,
 				D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */,
 				D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */,
 				D3A54D2D1FAC3C8E0066C486 /* ReceivedMissionsTableViewCell.swift in Sources */,
@@ -987,6 +1004,7 @@
 				D31B54AF1FB1AF29003549AF /* SocialOrgDetModel.swift in Sources */,
 				D31E971B1FA9FEB100A78D3A /* ProfileTableViewController.swift in Sources */,
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
+				D3524C5F1FB40994004240A5 /* ProfileFollowingTableViewCell.swift in Sources */,
 				D30A17D81FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift in Sources */,
 				D3A54D3B1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift in Sources */,
 				D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */,
@@ -1155,6 +1173,7 @@
 			baseConfigurationReference = 56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2473XH87M2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1167,8 +1186,9 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1181,6 +1201,7 @@
 			baseConfigurationReference = CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2473XH87M2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1193,8 +1214,9 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -8,6 +8,19 @@
 
 import UIKit
 
+var tabBarHeight: CGFloat {
+    set {
+        
+    }
+    get {
+        if isIPHONEX {
+            return 83
+        } else {
+            return 49
+        }
+    }
+}
+
 class MainViewController: UITabBarController {
     
     let presentedVC = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
@@ -19,13 +32,8 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var tabBarHeight: CGFloat = 0
         
-        if isIPHONEX {
-            tabBarHeight = 83
-        } else {
-            tabBarHeight = 49
-        }
+        
         // MARK:- cover the null tab bar item
         let coverView = UIView(frame: CGRect(x: screenWidth / 2 - 50, y: screenHeight - tabBarHeight, width: 100, height: 49))
 
