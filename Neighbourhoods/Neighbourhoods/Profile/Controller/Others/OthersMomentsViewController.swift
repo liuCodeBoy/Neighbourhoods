@@ -52,11 +52,12 @@ class OthersMomentsViewController: UIViewController {
         super.viewDidLoad()
         othersMomentsTableView.delegate = self
         othersMomentsTableView.dataSource = self
+        othersMomentsTableView.showsVerticalScrollIndicator = false
+        
         setNavBarBackBtn()
         setNavBarTitle(title: "他的")
         //加载刷新控件
         loadRefreshComponet()
-        //
         endrefresh()
     }
  
@@ -113,10 +114,19 @@ class OthersMomentsViewController: UIViewController {
 extension OthersMomentsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return rotaionArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "OthersMomentsCell")!
+       let  cell = tableView.dequeueReusableCell(withIdentifier: "OthersMomentsCell") as! OthersMomentsTableViewCell
+        cell.momentsCellModel = rotaionArray[indexPath.row]
+        cell.pushImageClouse = {(imageArr, index) in
+            let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
+            desVC.index  = index
+            desVC.imageArr = imageArr
+            self.present(desVC, animated: true, completion: nil)
+        }
+        return cell
+        
     }
 }
