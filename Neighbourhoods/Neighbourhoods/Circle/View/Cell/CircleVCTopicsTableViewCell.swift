@@ -10,8 +10,11 @@ import UIKit
 import SDWebImage
 //定义跳转闭包
 typealias pushImageType = (NSArray? , NSNumber?) -> ()
+//定义头像个人详情跳转闭包
+typealias headImageType = (NSNumber?) -> ()
 class CircleVCTopicsTableViewCell: UITableViewCell{
     var   pushImageClouse : pushImageType?
+    var   headImagePushClouse   : headImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -50,6 +53,12 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
             self.textLbl.text = momentsCellModel.content
             self.location.text = momentsCellModel.address
             
+            if let  loveNum = momentsCellModel.love {
+                self.likeBtn.setTitle("\(loveNum)", for: .normal)
+            }
+            if let  commentNum = momentsCellModel.comment{
+                self.commentBtn.setTitle("\(commentNum)", for: .normal)
+            }
             if let timeNum = momentsCellModel.time {
                 self.createTime.text = NSDate.createDateString(createAtStr: "\(timeNum)")
             }
@@ -57,6 +66,8 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
             self.certifyLbl.text = userModel?.is_admin
             if let avatarString  =  userModel?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                let  headImageTap = UITapGestureRecognizer.init(target: self, action:#selector(showUserInfoVC))
+                avatar.addGestureRecognizer(headImageTap)
             }
             let  sex = userModel?.sex?.intValue
             if sex == 1 || sex == 2 {
@@ -83,15 +94,20 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
             }
         }
     }
+    //点击头像
+    @objc private func showUserInfoVC(){
+        if let  otherID = self.momentsCellModel.uid {
+        if self.headImagePushClouse != nil {
+            self.headImagePushClouse!(otherID)
+         }
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         imageHeightConstraint.constant = 0
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

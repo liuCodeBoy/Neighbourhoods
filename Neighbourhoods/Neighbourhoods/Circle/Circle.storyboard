@@ -146,7 +146,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="kVp-3s-CLz">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="kVp-3s-CLz">
                                                     <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="3Fq-8a-2lE"/>
@@ -228,8 +228,8 @@
                                                         <segue destination="UFO-nZ-pRN" kind="show" id="JkO-Gl-OXN"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-Xy-5vE">
-                                                    <rect key="frame" x="245" y="222" width="60" height="20"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-Xy-5vE">
+                                                    <rect key="frame" x="244" y="222" width="60" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="lFp-Uc-poN"/>
                                                     </constraints>
@@ -461,7 +461,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="265.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fgT-1I-O7e">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fgT-1I-O7e">
                                             <rect key="frame" x="10" y="10" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="aMp-Zp-Hkn"/>
@@ -646,7 +646,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="265.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="X8A-RN-wet">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="X8A-RN-wet">
                                             <rect key="frame" x="10" y="10" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="57A-SY-ckI"/>
@@ -961,7 +961,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="265.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4KU-BQ-TrG">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4KU-BQ-TrG">
                                             <rect key="frame" x="10" y="10" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="AXL-h6-anP"/>
@@ -1205,7 +1205,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="277.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Mdp-kk-aje">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Mdp-kk-aje">
                                                     <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="ESM-nY-6AR"/>
@@ -1427,7 +1427,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="265.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="VlN-LA-Ej2">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="VlN-LA-Ej2">
                                                     <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="MPD-JJ-Zuk"/>
@@ -1591,7 +1591,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LDB-Wv-9sT">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LDB-Wv-9sT">
                                                     <rect key="frame" x="18" y="20" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Rs6-M0-q68"/>
@@ -1806,7 +1806,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="um3-z0-xL4">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="um3-z0-xL4">
                                             <rect key="frame" x="20" y="20" width="55" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="bhF-WJ-nH5"/>
@@ -1872,7 +1872,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="cQT-QC-Co8">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="cQT-QC-Co8">
                                             <rect key="frame" x="18" y="20" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="gXc-QA-XwX"/>

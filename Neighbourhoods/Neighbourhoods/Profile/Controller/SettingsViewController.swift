@@ -64,9 +64,14 @@ class SettingsViewController: UIViewController {
             deafult.removeObject(forKey: "number")
             deafult.removeObject(forKey: "pwd")
             //登陆界面销毁
+//            [[UIApplication sharedApplication].delegate window]
+     
+             let window = UIApplication.shared.delegate?.window as? UIWindow
+             window?.rootViewController = AppDelegate.InitialLoginVC
+           
 //           let mainVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController()!
 //           mainVC.dismiss(animated: true, completion: nil)
-            weakSelf?.navigationController?.dismiss(animated: true, completion: nil)
+//            weakSelf?.navigationController?.dismiss(animated: true, completion: nil)
         })
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(ok)

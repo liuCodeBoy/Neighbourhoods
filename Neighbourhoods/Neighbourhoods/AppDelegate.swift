@@ -12,7 +12,8 @@ import AFNetworking
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    static let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
+    static let InitialLoginVC = UIStoryboard.init(name: "InitialLogin", bundle: Bundle.main).instantiateInitialViewController()!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UITabBar.appearance().tintColor = navAndTabBarTintColor
         UINavigationBar.appearance().tintColor = navAndTabBarTintColor
@@ -21,10 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if deafult.string(forKey: "token") != nil {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             self.window?.backgroundColor = UIColor.white
-            let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
-            window?.rootViewController = mainVC
+            window?.rootViewController = AppDelegate.mainVC
             window?.makeKeyAndVisible()
-
+        }else{
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.backgroundColor = UIColor.white
+            window?.rootViewController = AppDelegate.InitialLoginVC
+            window?.makeKeyAndVisible()
         }
         
         //MARK: - initialize the mob

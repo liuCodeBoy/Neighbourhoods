@@ -54,11 +54,12 @@ class TopicDetialTableViewCell: UITableViewCell {
              }
           
             }
+          
             if let  likeNum = TopicDetialModel.love{
-                self.likeBtn.titleLabel?.text = "\(String(describing: likeNum))"
+                self.likeBtn.setTitle("\(likeNum)", for: .normal)
             }
             if let  comment = TopicDetialModel.comment{
-                self.commentBtn.titleLabel?.text = "\(String(describing: comment))"
+                self.commentBtn.setTitle("\(comment)", for: .normal)
             }
             if let pictureStringArr = TopicDetialModel?.picture{
                 imageHeightConstraint.constant = 90

@@ -14,5 +14,12 @@ class UserModel: NSObject {
    @objc  var sex      : NSNumber?
    @objc  var is_admin : String?
    @objc  var type     : String?
+   @objc  var uid      : NSNumber?
+   @objc  var atten    : NSNumber?
+   @objc  var fans     : NSNumber?
+   @objc  var address  : String?
+   @objc  var is_atten : NSNumber?
+
 }
+
 

@@ -64,8 +64,8 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     }
     // MARK:- Passenger login
     @IBAction func passengerLoginClicked(_ sender: UIButton) {
-       let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
-        self.present(mainVC, animated: true, completion: nil)
+        let window = UIApplication.shared.delegate?.window as? UIWindow
+        window?.rootViewController = AppDelegate.mainVC
     }
     
     override func viewDidLoad() {
