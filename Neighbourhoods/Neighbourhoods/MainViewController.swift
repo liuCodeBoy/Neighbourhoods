@@ -61,11 +61,17 @@ class MainViewController: UITabBarController {
     
     @objc func addButtonClicked() {
         
-        let presentedVC = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
+        let presentedVC = UIApplication.shared.keyWindow?.rootViewController?.presentationController
+        
         let springView = Bundle.main.loadNibNamed("SpringView", owner: self, options: nil)?.first! as! UIView
         spring = springView
         springView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        presentedVC?.view.addSubview(springView)
+//        print(presentedVC)
+//        print(UIApplication.shared.keyWindow?.rootViewController?.presentedViewController)
+//        print(UIApplication.shared.keyWindow?.rootViewController?.presentationController)
+//        print(UIApplication.shared.keyWindow?.rootViewController?.presentingViewController)
+        presentedVC?.presentedView?.addSubview(springView)
+//        presentedVC?.view.addSubview(springView)
 
     }
     
