@@ -150,7 +150,7 @@ extension NetWorkTool {
         
         let urlString = "http://106.15.199.8/llb/api/notice/act_list"
         //2.获取请求参数
-        let parameters = ["id": id]
+//        let parameters = ["id": id]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据
