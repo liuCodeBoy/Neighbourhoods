@@ -49,6 +49,12 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
             }else{
                 imageHeightConstraint.constant = 0
             }
+            if let  loveNum = momentsCellModel.love {
+                self.likeBtn.setTitle("\(loveNum)", for: .normal)
+            }
+            if let  commentNum = momentsCellModel.comment{
+                self.commentBtn.setTitle("\(commentNum)", for: .normal)
+            }
             self.textLbl.text = momentsCellModel.content
             self.location.text = momentsCellModel.address
             
