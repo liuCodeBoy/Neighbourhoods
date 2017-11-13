@@ -51,8 +51,8 @@ class MyMissionsViewController: UIViewController {
         
         self.setNavBarBackBtn()
         self.setNavBarTitle(title: "我的任务")
-        missionsTableView.delegate = self
-        missionsTableView.dataSource = self
+//        missionsTableView.delegate = self
+//        missionsTableView.dataSource = self
         
         loadTableViews()
         childView?.isHidden = true
@@ -129,15 +129,16 @@ class MyMissionsViewController: UIViewController {
 }
 
 
-extension MyMissionsViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myMissionArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyIssuedMissionsCell")  as! MyMissionsTableViewCell
-        cell.viewModel = myMissionArray[indexPath.row]
-        return cell
-    }
-}
+//extension MyMissionsViewController: UITableViewDelegate, UITableViewDataSource {
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return myMissionArray.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "MyIssuedMissionsCell")  as! MyMissionsTableViewCell
+//        cell.viewModel = myMissionArray[indexPath.row]
+//        return cell
+//    }
+//}
+

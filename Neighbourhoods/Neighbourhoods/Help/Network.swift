@@ -87,25 +87,6 @@ extension NetWorkTool {
     }
     
     //MARK: - 我发布接受的任务
-//    func myTask(HTTP_TOKEN: String, type: Int, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
-//        //1.获取请求的URLString
-//
-//        let urlString = "http://106.15.199.8/llb/api/user/my_task"
-//        //2.获取请求参数
-//        let parameters = ["HTTP_TOKEN": HTTP_TOKEN, "type": type, "p": p] as [String : Any]
-//        //3.发送请求参数
-//        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
-//            //获取字典数据
-//            guard let resultDict = result as? [String : AnyObject] else {
-//                finished(nil, error)
-//                return
-//            }
-//            //将数组数据回调给外界控制器
-//            finished(resultDict, error)
-//        }
-//    }
-    
-    //MARK: - 我发布接受的任务
     func myTask(_ token: String, type: Int, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
@@ -113,6 +94,25 @@ extension NetWorkTool {
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["type": type, "p": p] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //MARK: - 任务详情
+    func taskDet(id: Int, uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/task/task_det"
+        //2.获取请求参数
+        let parameters = ["id": id, "uid": uid]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据
