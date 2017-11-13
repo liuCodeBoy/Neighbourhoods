@@ -87,11 +87,31 @@ class SecondaryCommentTableViewController: UITableViewController {
             if mainCommentModel != nil {
             cell.momentsCellModel =  mainCommentModel
             }
+            //跳出用户详情
+            cell.headImagePushClouse = { (otherID) in
+                let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+                userInfoVc?.uid = otherID as? Int
+                if  UserDefaults.standard.string(forKey: "token") == nil{
+                    self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+                }else{
+                    self.navigationController?.pushViewController(userInfoVc!, animated: true)
+                }
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SecondaryCommentDetialCell")  as! SecondaryCommentDetialTableViewCell
-            if  self.detailModelArr[indexPath.row] != nil{
+            if  self.detailModelArr[indexPath.row - 1] != nil{
             cell.momentsCellModel = detailModelArr[indexPath.row - 1]
+            }
+            //跳出用户详情
+            cell.headImagePushClouse = { (otherID) in
+                let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+                userInfoVc?.uid = otherID as? Int
+                if  UserDefaults.standard.string(forKey: "token") == nil{
+                    self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+                }else{
+                    self.navigationController?.pushViewController(userInfoVc!, animated: true)
+                }
             }
             return cell
         }

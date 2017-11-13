@@ -64,19 +64,21 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.section == 0 {
-//            return 175
-//        } else {
-//            return 150
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsCommentDetialHeaderCell") as! MomentsCommentDetialHeaderTableViewCell
             if detailMainModel != nil {
             cell.momentsCellModel = detailMainModel
+            }
+            //跳出用户详情
+            cell.headImagePushClouse = { (otherID) in
+                let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+                userInfoVc?.uid = otherID as? Int
+                if  UserDefaults.standard.string(forKey: "token") == nil{
+                    self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+                }else{
+                    self.navigationController?.pushViewController(userInfoVc!, animated: true)
+                }
             }
             return cell
         } else {
@@ -88,6 +90,16 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
             }
             let  model = self.momentsComDetListArray[indexPath.row]
             cell?.momentsCellModel = model
+            //跳出用户详情
+            cell?.headImagePushClouse = { (otherID) in
+                let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+                userInfoVc?.uid = otherID as? Int
+                if  UserDefaults.standard.string(forKey: "token") == nil{
+                    self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+                }else{
+                    self.navigationController?.pushViewController(userInfoVc!, animated: true)
+                }
+            }
             return cell!
         }
     }

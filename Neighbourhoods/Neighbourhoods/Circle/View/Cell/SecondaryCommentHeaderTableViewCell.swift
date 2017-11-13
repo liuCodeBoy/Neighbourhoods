@@ -8,8 +8,9 @@
 
 import UIKit
 import SDWebImage
+typealias MonentSecondaryCommHeadImageType = (NSNumber?) -> ()
 class SecondaryCommentHeaderTableViewCell: UITableViewCell {
-    
+    var  headImagePushClouse   : MonentSecondaryCommHeadImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -28,6 +29,9 @@ class SecondaryCommentHeaderTableViewCell: UITableViewCell {
             }
             if let avatarString  =  userModel?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                let  headImageTap = UITapGestureRecognizer.init(target: self, action:#selector(showUserInfoVC))
+                avatar.addGestureRecognizer(headImageTap)
+            
             }
             if let timeNum = momentsCellModel.time {
                 self.createTime.text = NSDate.createDateString(createAtStr: "\(timeNum)")
@@ -51,7 +55,14 @@ class SecondaryCommentHeaderTableViewCell: UITableViewCell {
     @IBAction func shareBtnClicked(_ sender: UIButton) {
         NotificationCenter.default.post(name: NSNotification.Name.init(shareNotification), object: nil)
     }
-    
+    //点击头像
+    @objc private func showUserInfoVC(){
+        if let  otherID = self.momentsCellModel.uid {
+            if self.headImagePushClouse != nil {
+                self.headImagePushClouse!(otherID)
+            }
+        }
+    }
     
     
     override func awakeFromNib() {

@@ -8,8 +8,11 @@
 
 import UIKit
 import SDWebImage
+
+typealias MonentDetailHeadImageType = (NSNumber?) -> ()
 typealias MonentDetialImageType = (NSArray? , NSNumber?) -> ()
 class TopicDetialTableViewCell: UITableViewCell {
+    var  headImagePushClouse   : MonentDetailHeadImageType?
     var   pushImageClouse : MonentDetialImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -32,6 +35,8 @@ class TopicDetialTableViewCell: UITableViewCell {
         didSet {
             if let avatarString  =  TopicDetialModel?.user?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                let  headImageTap = UITapGestureRecognizer.init(target: self, action:#selector(showUserInfoVC))
+                avatar.addGestureRecognizer(headImageTap)
             }
             self.nickName.text = TopicDetialModel.user?.nickname
             self.certifyLbl.text = TopicDetialModel?.user?.type
@@ -93,6 +98,14 @@ class TopicDetialTableViewCell: UITableViewCell {
         if let pictureStringArr = TopicDetialModel.picture{
             if self.pushImageClouse != nil{
                 self.pushImageClouse!(pictureStringArr ,1)
+            }
+        }
+    }
+    //点击头像
+    @objc private func showUserInfoVC(){
+        if let  otherID = self.TopicDetialModel.uid {
+            if self.headImagePushClouse != nil {
+                self.headImagePushClouse!(otherID)
             }
         }
     }

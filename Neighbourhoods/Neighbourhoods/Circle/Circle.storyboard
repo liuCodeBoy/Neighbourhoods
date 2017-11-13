@@ -1617,7 +1617,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P0-EM-Th0">
-                                                    <rect key="frame" x="289" y="49.5" width="13" height="13"/>
+                                                    <rect key="frame" x="249" y="49.5" width="13" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="9hj-ER-XrK"/>
                                                         <constraint firstAttribute="width" constant="13" id="uX2-dJ-UiF"/>
@@ -1627,24 +1627,32 @@
                                                         <action selector="shareBtnClicked:" destination="zpc-Y6-h03" eventType="touchUpInside" id="YG9-V4-KUg"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUj-OG-7jO">
-                                                    <rect key="frame" x="312" y="49.5" width="13" height="13"/>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUj-OG-7jO">
+                                                    <rect key="frame" x="272" y="46" width="40" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="13" id="Bg9-uh-zoo"/>
-                                                        <constraint firstAttribute="width" constant="13" id="Vbm-MP-Y8u"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Bg9-uh-zoo"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Vbm-MP-Y8u"/>
                                                     </constraints>
-                                                    <state key="normal" image="moments_liked"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="0" image="moments_liked">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="likeBtnClicked:" destination="zpc-Y6-h03" eventType="touchUpInside" id="PgS-LH-hJ3"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kra-aL-wGd">
-                                                    <rect key="frame" x="335" y="49.5" width="15" height="13"/>
+                                                    <rect key="frame" x="320" y="46" width="40" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="15" id="Bzv-55-yhW"/>
-                                                        <constraint firstAttribute="height" constant="13" id="sMq-IA-vPN"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Bzv-55-yhW"/>
+                                                        <constraint firstAttribute="height" constant="20" id="sMq-IA-vPN"/>
                                                     </constraints>
-                                                    <state key="normal" image="moments_commented"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="0" image="moments_commented">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="commentBtnCell:" destination="zpc-Y6-h03" eventType="touchUpInside" id="RQi-2T-FtO"/>
                                                         <segue destination="UFO-nZ-pRN" kind="show" id="Caz-KH-HTT"/>
@@ -1662,6 +1670,9 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8i-sI-1DH">
                                                     <rect key="frame" x="73" y="102" width="290" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="II3-kO-gd3"/>
+                                                    </constraints>
                                                     <connections>
                                                         <action selector="showCommentDetail:" destination="zpc-Y6-h03" eventType="touchUpInside" id="ZRH-h8-gTH"/>
                                                     </connections>
@@ -1676,7 +1687,7 @@
                                             <constraints>
                                                 <constraint firstItem="dVd-D4-Xxa" firstAttribute="leading" secondItem="f91-NN-PUy" secondAttribute="leading" id="5HJ-x8-wzV"/>
                                                 <constraint firstItem="WXk-YT-LBk" firstAttribute="leading" secondItem="f91-NN-PUy" secondAttribute="leading" id="6PE-xw-YTQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="Kra-aL-wGd" secondAttribute="trailing" constant="25" id="73B-Q6-T0C"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kra-aL-wGd" secondAttribute="trailing" constant="15" id="73B-Q6-T0C"/>
                                                 <constraint firstItem="LDB-Wv-9sT" firstAttribute="top" secondItem="D69-dN-Tc7" secondAttribute="top" constant="20" id="8My-2A-d6o"/>
                                                 <constraint firstItem="l8i-sI-1DH" firstAttribute="top" secondItem="WXk-YT-LBk" secondAttribute="top" id="C6c-wV-c4R"/>
                                                 <constraint firstAttribute="bottom" secondItem="WXk-YT-LBk" secondAttribute="bottom" constant="8" id="CjQ-fS-VFd"/>
@@ -1689,7 +1700,7 @@
                                                 <constraint firstItem="f91-NN-PUy" firstAttribute="top" secondItem="D69-dN-Tc7" secondAttribute="top" constant="28" id="ZQD-vH-rPK"/>
                                                 <constraint firstAttribute="trailing" secondItem="FXV-8j-f5y" secondAttribute="trailing" constant="30" id="aCW-7u-Jyf"/>
                                                 <constraint firstItem="l8i-sI-1DH" firstAttribute="leading" secondItem="D69-dN-Tc7" secondAttribute="leading" constant="73" id="aMX-Eu-LQ9"/>
-                                                <constraint firstItem="Kra-aL-wGd" firstAttribute="leading" secondItem="JUj-OG-7jO" secondAttribute="trailing" constant="10" id="cwW-F4-FDh"/>
+                                                <constraint firstItem="Kra-aL-wGd" firstAttribute="leading" secondItem="JUj-OG-7jO" secondAttribute="trailing" constant="8" symbolic="YES" id="cwW-F4-FDh"/>
                                                 <constraint firstItem="7P0-EM-Th0" firstAttribute="centerY" secondItem="dVd-D4-Xxa" secondAttribute="centerY" id="eSI-E9-gZ5"/>
                                                 <constraint firstItem="FXV-8j-f5y" firstAttribute="top" secondItem="LDB-Wv-9sT" secondAttribute="bottom" constant="5" id="iZY-dN-9Md"/>
                                                 <constraint firstAttribute="trailing" secondItem="l8i-sI-1DH" secondAttribute="trailing" constant="12" id="iws-f8-gnp"/>
@@ -1705,6 +1716,8 @@
                                             <outlet property="avatar" destination="LDB-Wv-9sT" id="2F7-cJ-EHb"/>
                                             <outlet property="commentBtn" destination="Kra-aL-wGd" id="Te6-rB-Y3F"/>
                                             <outlet property="commentCountLbl" destination="WXk-YT-LBk" id="NBI-xq-PoH"/>
+                                            <outlet property="commentDetailHeight" destination="II3-kO-gd3" id="uwN-w5-iIh"/>
+                                            <outlet property="commentMoreBtn" destination="l8i-sI-1DH" id="T2i-87-CCR"/>
                                             <outlet property="createTime" destination="dVd-D4-Xxa" id="RTZ-Ae-Fag"/>
                                             <outlet property="likeBtn" destination="JUj-OG-7jO" id="ClP-GK-DQh"/>
                                             <outlet property="nickName" destination="f91-NN-PUy" id="MB6-if-0pO"/>
@@ -1733,7 +1746,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCd-ik-lIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2961" y="-44"/>
+            <point key="canvasLocation" x="3308" y="-159.67016491754123"/>
         </scene>
         <!--Secondary Comment Table View Controller-->
         <scene sceneID="Wjv-ub-8W6">
@@ -2007,7 +2020,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJs-Ze-FJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="885"/>
+            <point key="canvasLocation" x="1983" y="833"/>
         </scene>
         <!--邻里圈-->
         <scene sceneID="9wT-1X-FCl">
@@ -2045,6 +2058,6 @@
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JkO-Gl-OXN"/>
+        <segue reference="Caz-KH-HTT"/>
     </inferredMetricsTieBreakers>
 </document>

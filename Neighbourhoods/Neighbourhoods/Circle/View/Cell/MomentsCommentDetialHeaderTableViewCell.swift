@@ -8,8 +8,10 @@
 
 import UIKit
 import SDWebImage
+typealias MonentDetailHeaderHeadImageType = (NSNumber?) -> ()
 typealias MonentDetialHeaderImageType = (NSArray? , NSNumber?) -> ()
 class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
+    var  headImagePushClouse   : MonentDetailHeaderHeadImageType?
     var   pushImageClouse : MonentDetialHeaderImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -32,9 +34,11 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
         didSet {
             self.nickName.text = momentsCellModel.user?.nickname
             if let pictureStringArr = momentsCellModel.picture{
+                let leftImage = pictureStringArr[0] as! String
+                if leftImage.characters.count > 1 {
                 imageHeightConstraint.constant = 90
-                let leftImage = pictureStringArr[0]
-                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageLeft.sd_setImage(with: URL.init(string: leftImage), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                print(leftImage)
                 let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
                 imageLeft.addGestureRecognizer(tap)
                 self.imageRight.isUserInteractionEnabled = false
@@ -46,6 +50,9 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
                     let  tapSecond = UITapGestureRecognizer.init(target: self, action:#selector(showSecondVC))
                     imageRight.addGestureRecognizer(tapSecond)
               }
+                }else{
+                imageHeightConstraint.constant = 0
+            }
             }else{
                 imageHeightConstraint.constant = 0
             }
@@ -64,6 +71,8 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             self.certifyLbl.text = userModel?.is_admin
             if let avatarString  =  userModel?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                let  headImageTap = UITapGestureRecognizer.init(target: self, action:#selector(showUserInfoVC))
+                avatar.addGestureRecognizer(headImageTap)
             }
             let  sex = userModel?.sex?.intValue
             if sex == 1 || sex == 2 {
@@ -87,9 +96,14 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             }
         }
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+ 
+    //点击头像
+    @objc private func showUserInfoVC(){
+        if let  otherID = self.momentsCellModel.uid {
+            if self.headImagePushClouse != nil {
+                self.headImagePushClouse!(otherID)
+            }
+        }
     }
 
 }
