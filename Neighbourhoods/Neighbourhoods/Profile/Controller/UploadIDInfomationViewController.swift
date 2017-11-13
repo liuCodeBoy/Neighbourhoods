@@ -9,7 +9,7 @@
 import UIKit
 import TZImagePickerController
 
-class UploadIDInfomationViewController: UIViewController, TZImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class UploadIDInfomationViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let imagePicker = UIImagePickerController()
 
@@ -31,6 +31,7 @@ class UploadIDInfomationViewController: UIViewController, TZImagePickerControlle
         setNavBarTitle(title: "上传认证信息")
         
         imagePicker.delegate = self
+        imagePicker.sourceType = .camera
         imagePicker.sourceType = .camera
         
         

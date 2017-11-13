@@ -22,3 +22,10 @@ let default_orange = #colorLiteral(red: 0.9887720942, green: 0.7015311718, blue:
 
 let default_grey = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
 
+let mission_going = #colorLiteral(red: 0.9490196109, green: 0.7098039389, blue: 0.3411764801, alpha: 1)
+
+let mission_complete = #colorLiteral(red: 0.3882353008, green: 0.6901960969, blue: 0.9725490212, alpha: 1)
+
+let mission_refuse = #colorLiteral(red: 0.8823529482, green: 0.6392157078, blue: 0.521568656, alpha: 1)
+
+

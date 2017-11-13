@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-class ReceivedMissionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ReceivedMissionsViewController: UIViewController {
 
     @IBOutlet weak var receivedMissionTableView: UITableView!
     @IBOutlet weak var noMissionView: UIView!
@@ -22,8 +22,7 @@ class ReceivedMissionsViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        receivedMissionTableView.delegate = self
-        receivedMissionTableView.dataSource = self
+
         
         if myMissionArray.count == 0 {
             noMissionView.isHidden = false
@@ -86,15 +85,15 @@ class ReceivedMissionsViewController: UIViewController, UITableViewDelegate, UIT
 //            }
 //    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myMissionArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyReceivedMissionsCell") as! ReceivedMissionsTableViewCell
-        cell.viewModel = myMissionArray[indexPath.row]
-        return cell
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return myMissionArray.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "MyReceivedMissionsCell") as! ReceivedMissionsTableViewCell
+//        cell.viewModel = myMissionArray[indexPath.row]
+//        return cell
+//    }
 
 }
 

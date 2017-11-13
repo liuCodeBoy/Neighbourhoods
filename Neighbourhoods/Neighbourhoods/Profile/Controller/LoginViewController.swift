@@ -46,8 +46,8 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                         let alert = UIAlertController(title: "提示", message: "登录成功", preferredStyle: .alert)
                         let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
                             //登陆界面销毁
-                              let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
-                            weakSelf?.present(mainVC, animated: true, completion: nil)
+                            let window = UIApplication.shared.delegate?.window as? UIWindow
+                            window?.rootViewController = AppDelegate.mainVC
                         })
                         alert.addAction(ok)
                         weakSelf?.present(alert, animated: true, completion: nil)
