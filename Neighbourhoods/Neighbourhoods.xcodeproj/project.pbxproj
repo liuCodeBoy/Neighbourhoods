@@ -103,7 +103,6 @@
 		D3A1C0181FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A1C0171FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift */; };
 		D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */; };
 		D3A54D291FAC0BFD0066C486 /* ChangeNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D281FAC0BFD0066C486 /* ChangeNickNameViewController.swift */; };
-		D3A54D2B1FAC3B980066C486 /* ReceivedMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D2A1FAC3B980066C486 /* ReceivedMissionsViewController.swift */; };
 		D3A54D2F1FAC41320066C486 /* HelpCategoryByTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D2E1FAC41320066C486 /* HelpCategoryByTimeTableViewCell.swift */; };
 		D3A54D311FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D301FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift */; };
 		D3A54D331FAC41670066C486 /* HelpCategoryByScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D321FAC41670066C486 /* HelpCategoryByScoreTableViewCell.swift */; };
@@ -118,7 +117,6 @@
 		D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */; };
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
 		D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */; };
-		D3BEA89D1FA39E3000E4595E /* MyMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */; };
 		D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */; };
 		D3C8640A1FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */; };
 		D3C8640C1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */; };
@@ -277,7 +275,6 @@
 		D3A1C0171FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityConsultingCommentTableViewCell.swift; sourceTree = "<group>"; };
 		D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetialViewController.swift; sourceTree = "<group>"; };
 		D3A54D281FAC0BFD0066C486 /* ChangeNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNickNameViewController.swift; sourceTree = "<group>"; };
-		D3A54D2A1FAC3B980066C486 /* ReceivedMissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedMissionsViewController.swift; sourceTree = "<group>"; };
 		D3A54D2E1FAC41320066C486 /* HelpCategoryByTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryByTimeTableViewCell.swift; sourceTree = "<group>"; };
 		D3A54D301FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryByCompletionStatusTableViewCell.swift; sourceTree = "<group>"; };
 		D3A54D321FAC41670066C486 /* HelpCategoryByScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCategoryByScoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -293,7 +290,6 @@
 		D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingsViewController.swift; sourceTree = "<group>"; };
 		D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowersViewController.swift; sourceTree = "<group>"; };
 		D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbourhoods-Bridging-Header.h"; sourceTree = "<group>"; };
-		D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionsViewController.swift; sourceTree = "<group>"; };
 		D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuedMissionTableViewController.swift; sourceTree = "<group>"; };
 		D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceivedMissionTableViewController.swift; sourceTree = "<group>"; };
@@ -710,10 +706,8 @@
 				D3A54D361FAC42080066C486 /* HelpCategoryByTimeViewController.swift */,
 				D3A54D381FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift */,
 				D3A54D3A1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift */,
-				D3BEA89C1FA39E3000E4595E /* MyMissionsViewController.swift */,
 				D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */,
 				D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */,
-				D3A54D2A1FAC3B980066C486 /* ReceivedMissionsViewController.swift */,
 				D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */,
 				D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */,
 				D3FE2FFD1FA45B0100FAD95E /* SocialCharityDetialViewController.swift */,
@@ -1013,7 +1007,6 @@
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
 				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
 				B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */,
-				D3BEA89D1FA39E3000E4595E /* MyMissionsViewController.swift in Sources */,
 				D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */,
 				D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */,
 				D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */,
@@ -1042,7 +1035,6 @@
 				D30A17E41FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift in Sources */,
 				D3C864101FB96F2F00CE3B50 /* MyReceivedMissionTableViewCell.swift in Sources */,
 				D31E970D1FA9F88200A78D3A /* ChangePasswordViewController.swift in Sources */,
-				D3A54D2B1FAC3B980066C486 /* ReceivedMissionsViewController.swift in Sources */,
 				D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */,
 				D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */,
 				D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */,

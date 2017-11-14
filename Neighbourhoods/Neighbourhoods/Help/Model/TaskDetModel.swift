@@ -11,12 +11,13 @@ import MJRefresh
 
 class TaskDetModel: NSObject {
     @objc var id            : NSNumber?
-    @objc var task_id       : NSNumber?
     @objc var uid           : NSNumber?
+    @objc var title         : String?
     @objc var content       : String?
-    @objc var time          : String?
-    @objc var pid           : NSNumber?
-    @objc var user_info     : UserModel?
-    @objc var info          : String?
+    @objc var integral      : NSNumber?
+    @objc var picture       : [String]?
+    @objc var time          : NSNumber?
+    @objc var task_status   : NSNumber?
+    @objc var receive       : UserModel?
+    @objc var user          : UserModel?
 }
-
