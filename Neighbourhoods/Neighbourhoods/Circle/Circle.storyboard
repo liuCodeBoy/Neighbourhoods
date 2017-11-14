@@ -225,7 +225,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentBtnCell:" destination="WiK-RV-apu" eventType="touchUpInside" id="2W9-Ju-klv"/>
-                                                        <segue destination="UFO-nZ-pRN" kind="show" id="JkO-Gl-OXN"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-Xy-5vE">
@@ -1966,12 +1965,12 @@
         <!--Write Comment View Controller-->
         <scene sceneID="WKH-VI-9Zc">
             <objects>
-                <viewController id="UFO-nZ-pRN" customClass="WriteCommentViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteCommentIdent" id="UFO-nZ-pRN" customClass="WriteCommentViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ng6-ez-wWV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="写评论" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-cd-dDZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-cd-dDZ">
                                 <rect key="frame" x="25" y="79" width="325" height="573"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1988,10 +1987,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eaJ-0B-j12"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vEZ-xM-M6D">
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="jte-uf-rvE">
+                            <connections>
+                                <action selector="sendOutComment:" destination="UFO-nZ-pRN" id="l3N-gM-swL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentTextView" destination="MKd-cd-dDZ" id="F1P-pD-Vfj"/>
+                        <outlet property="sendBtn" destination="jte-uf-rvE" id="FY2-FK-Qdz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8r-Lc-JwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4241" y="1229"/>
+            <point key="canvasLocation" x="3682" y="833"/>
         </scene>
         <!--Image ShowVC-->
         <scene sceneID="m71-C9-bP6">
@@ -2058,6 +2068,6 @@
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Caz-KH-HTT"/>
+        <segue reference="R4J-qm-i3V"/>
     </inferredMetricsTieBreakers>
 </document>

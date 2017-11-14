@@ -12,9 +12,12 @@ import SDWebImage
 typealias pushImageType = (NSArray? , NSNumber?) -> ()
 //定义头像个人详情跳转闭包
 typealias headImageType = (NSNumber?) -> ()
+//定义评论闭包类型
+typealias commentType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_ uid : NSNumber?,_ post_id : NSNumber?) -> ()
 class CircleVCTopicsTableViewCell: UITableViewCell{
     var   pushImageClouse : pushImageType?
-    var   headImagePushClouse   : headImageType?
+    var   headImagePushClouse  : headImageType?
+    var   showCommentClouse : commentType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -78,7 +81,11 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
     }
     @IBAction func likeBtnClicked(_ sender: UIButton) {
     }
+    //评论点击
     @IBAction func commentBtnCell(_ sender: UIButton) {
+        if self.showCommentClouse != nil{
+            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid)
+        }
     }
     @objc private func showImageVC(){
         if let pictureStringArr = momentsCellModel.picture{
@@ -102,6 +109,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
          }
       }
     }
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         imageHeightConstraint.constant = 0
