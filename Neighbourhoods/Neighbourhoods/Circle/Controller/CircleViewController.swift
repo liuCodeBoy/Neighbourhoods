@@ -16,7 +16,6 @@ class CircleViewController: UIViewController {
     lazy var  rotaionArray = [NborCircleModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         topicsTableView.estimatedRowHeight = 50
         topicsTableView.rowHeight = UITableViewAutomaticDimension
         loadRefreshComponet()
@@ -118,6 +117,17 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
              self.navigationController?.pushViewController(userInfoVc!, animated: true)
         }
      }
+    //跳出评论
+    cell.showCommentClouse = {(pid ,to_uid ,uid,post_id) in
+        let commentVc = self.storyboard?.instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
+            commentVc?.pid = 0
+            commentVc?.to_uid  = model.uid
+            commentVc?.uid     = model.uid
+            commentVc?.post_id = model.id
+            self.navigationController?.pushViewController(commentVc!, animated: true)
+        
+    }
+    
         return cell
     }
     
@@ -126,6 +136,11 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
         let modelArr =  self.rotaionArray
         let  model =  modelArr[indexPath.row]
         momentsCommentDetialVC.id = model.id
+//       //将评论值传入评论控制器
+//        commentVc?.pid = 0
+//        commentVc?.to_uid  = model.id
+//        commentVc?.uid     = model.id
+//        commentVc?.post_id = model.pid
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
     }
 }
