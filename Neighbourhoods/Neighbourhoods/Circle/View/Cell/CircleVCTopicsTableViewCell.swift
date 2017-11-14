@@ -100,7 +100,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
         if self.headImagePushClouse != nil {
             self.headImagePushClouse!(otherID)
          }
-        }
+      }
     }
     override func awakeFromNib() {
         super.awakeFromNib()

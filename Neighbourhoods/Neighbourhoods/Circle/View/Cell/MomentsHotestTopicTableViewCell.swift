@@ -8,8 +8,10 @@
 
 import UIKit
 import SDWebImage
+typealias MonentHotestHeadImageType = (NSNumber?) -> ()
 typealias MonentHotestImageType = (NSArray? , NSNumber?) -> ()
 class MomentsHotestTopicTableViewCell: UITableViewCell {
+    var  headImagePushClouse   : MonentHotestHeadImageType?
     var   pushImageClouse : MonentHotestImageType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -65,6 +67,8 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
             self.certifyLbl.text = userModel?.is_admin
             if let avatarString  =  userModel?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                let  headImageTap = UITapGestureRecognizer.init(target: self, action:#selector(showUserInfoVC))
+                avatar.addGestureRecognizer(headImageTap)
             }
             let  sex = userModel?.sex?.intValue
             if sex == 1 || sex == 2 {
@@ -86,6 +90,14 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
         if let pictureStringArr = momentsCellModel.picture{
             if self.pushImageClouse != nil{
                 self.pushImageClouse!(pictureStringArr ,1)
+            }
+        }
+    }
+    //点击头像
+    @objc private func showUserInfoVC(){
+        if let  otherID = self.momentsCellModel.uid {
+            if self.headImagePushClouse != nil {
+                self.headImagePushClouse!(otherID)
             }
         }
     }

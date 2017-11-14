@@ -48,12 +48,13 @@ class OthersMomentsViewController: UIViewController {
     @IBOutlet weak var sexImageView: UIImageView!
     @IBOutlet weak var addressBtn: UIButton!
     @IBOutlet weak var niChen: UILabel!
+    var nomission : NoMissionCoverView?
     override func viewDidLoad() {
         super.viewDidLoad()
         othersMomentsTableView.delegate = self
         othersMomentsTableView.dataSource = self
         othersMomentsTableView.showsVerticalScrollIndicator = false
-        
+        self.nomission = Bundle.main.loadNibNamed("NoMissionCoverView", owner: self, options: nil)?.first as? NoMissionCoverView
         setNavBarBackBtn()
         setNavBarTitle(title: "他的")
         //加载刷新控件
@@ -76,20 +77,32 @@ class OthersMomentsViewController: UIViewController {
             lastedRequest(p: page, token: tokenStr!, uid: uid!)
         }
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        self.nomission?.removeFromSuperview()
+    }
 //    user_userInfo
     //MARK: - 最新发布网络请求
     private func  lastedRequest(p : Int ,token : String ,uid :Int) -> () {
             NetWorkTool.shareInstance.user_userInfo(token, uid :uid , p: p) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
+                let userInfo    = info!["result"]!
+                self?.userModel = UserModel.mj_object(withKeyValues: userInfo)
                 if let pages  = info!["result"]!["pages"]
                 {
+                    guard  pages != nil else{
+                        self?.nomission?.frame = CGRect(x: 0, y: 0, width: (self?.othersMomentsTableView.bounds.width)!, height: (self?.othersMomentsTableView.bounds.height)!)
+                        self?.nomission?.showLab.text = "该用户未发表动态"
+                        self?.othersMomentsTableView.addSubview((self?.nomission)!)
+                        self?.othersMomentsTableView.isScrollEnabled = false
+                        return
+                    }
+                    self?.nomission?.removeFromSuperview()
                     self?.pages = (pages as! Int)
                 }
+               
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
                 }
-                let userInfo    = info!["result"]!
-                self?.userModel = UserModel.mj_object(withKeyValues: userInfo)
                 let result   = info!["result"]!["nbor_list"] as! [NSDictionary]
                 for i in 0..<result.count
                 {
