@@ -41,4 +41,43 @@ class ProfileFollowingTableViewCell: UITableViewCell {
         
     }
     
+    var viewModel: AttentionAndFansModel? {
+        didSet {
+            if let avatatStr = viewModel?.head_pic {
+                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "notice_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let name = viewModel?.nickname {
+                self.nickName.text = name
+            }
+            if let verify = viewModel?.type {
+                self.verifyLbl.text = verify
+            }
+            if let gender = viewModel?.sex {
+                if gender == 1 {
+                    self.gender.image = #imageLiteral(resourceName: "male")
+                } else if gender == 2  {
+                    self.gender.image = #imageLiteral(resourceName: "female")
+                }
+            }
+            
+            // FIXME: - location bug
+//            if let location = viewModel? {
+//                self.locationBtn.setTitle(location, for: .normal)
+//            } else {
+//                self.locationBtn.isHidden = true
+//            }
+            self.location.text = ""
+            
+            if let isFollowing = viewModel?.is_atten {
+                if isFollowing == 1 {
+                    alreadyFollowLbl.isHidden = false
+                    addFollowView.isHidden    = true
+                } else {
+                    alreadyFollowLbl.isHidden = true
+                    addFollowView.isHidden    = false
+                }
+            }
+        }
+    }
+    
 }
