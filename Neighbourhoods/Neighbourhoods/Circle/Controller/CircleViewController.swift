@@ -125,7 +125,6 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
             commentVc?.uid     = model.uid
             commentVc?.post_id = model.id
             self.navigationController?.pushViewController(commentVc!, animated: true)
-        
     }
     
         return cell

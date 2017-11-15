@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import NoticeBar
 typealias MonentHotestHeadImageType = (NSNumber?) -> ()
 typealias MonentHotestImageType = (NSArray? , NSNumber?) -> ()
 class MomentsHotestTopicTableViewCell: UITableViewCell {
@@ -27,6 +28,31 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
     @IBOutlet weak var imageRight: UIImageView!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBAction func likeBtnClicked(_ sender: UIButton) {
+        let  nbor_id  =  self.momentsCellModel.id
+        guard UserDefaults.standard.string(forKey: "token") != nil else{
+            let config = NoticeBarConfig(title: "你还未登录,请退出游客模式", image: nil, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let noticeBar = NoticeBar(config: config)
+            noticeBar.show(duration: 1.0, completed: {
+                (finished) in
+                if finished {
+                }
+            })
+            return
+        }
+        NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { (info, error) in
+            if info?["code"] as? String == "400"{
+                let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let noticeBar = NoticeBar(config: config)
+                noticeBar.show(duration: 0.25, completed: {
+                    (finished) in
+                    if finished {
+                    }
+                })
+            }else if (info?["code"] as? String == "200"){
+                //服务器
+                self.likeBtn.setTitle("\(Int(self.momentsCellModel.love!) + 1)", for: .normal)
+            }
+        }
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
     }
