@@ -14,6 +14,15 @@ class MyIssuedMissionTableViewController: UITableViewController {
     private var pages = 1
     private var page = 1
     
+    
+    var detialVC: MissionDetialViewController?
+    
+    private var idNum: Int? {
+        didSet {
+            detialVC?.id = self.idNum
+        }
+    }
+    
     var myMissionArray = [MyMissionModel]()
 
     @IBOutlet weak var noMissionCoverView: UIView!
@@ -95,6 +104,17 @@ class MyIssuedMissionTableViewController: UITableViewController {
         cell.viewModel = myMissionArray[indexPath.row]
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        idNum = myMissionArray[indexPath.row].id as? Int
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! MissionDetialViewController
+        self.detialVC = dest
+
+    }
+    
 
 
 }

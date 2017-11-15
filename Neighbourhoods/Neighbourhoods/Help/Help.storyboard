@@ -13,56 +13,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="YC5-dQ-vGw">
-            <objects>
-                <viewController id="cES-pf-ndj" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SKp-4F-iUV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="UFW-m6-nTp"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="ZTK-Kf-UNH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="usJ-Op-WOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="449" y="-111"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="Flx-9N-KKH">
-            <objects>
-                <viewController id="ecs-q9-nz5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H9N-La-btt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="nnR-pN-Qef"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Ghm-Bj-GTw"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g9B-C6-qNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="449" y="-775"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="B2i-Nb-OXi">
-            <objects>
-                <tabBarController id="2AG-2I-SJm" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AoO-70-6iD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="ecs-q9-nz5" kind="relationship" relationship="viewControllers" id="224-sE-7qo"/>
-                        <segue destination="cES-pf-ndj" kind="relationship" relationship="viewControllers" id="cOu-1g-c2z"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XML-xx-wZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-502" y="-443"/>
-        </scene>
         <!--Help View Controller-->
         <scene sceneID="xEe-VS-7vq">
             <objects>
@@ -482,10 +432,16 @@
                         <outlet property="avatar" destination="Yfh-Pj-z4u" id="jSs-YC-iDA"/>
                         <outlet property="cartifyLbl" destination="KNn-pD-77M" id="JtL-i6-8NY"/>
                         <outlet property="detialLbl" destination="ZtA-Sg-fDl" id="8ZN-dh-Gkv"/>
+                        <outlet property="gender" destination="PB7-wc-H4s" id="0j6-V5-W6a"/>
                         <outlet property="location" destination="DTh-H3-A6s" id="UQV-xw-FqR"/>
+                        <outlet property="locationImg" destination="vtY-M8-O7f" id="Z0x-p1-rn8"/>
                         <outlet property="marginView" destination="Nl5-dx-ue8" id="nAi-rR-pJF"/>
-                        <outlet property="missionStatusBtn" destination="DdF-li-VXI" id="mxU-NQ-IX2"/>
+                        <outlet property="missionStatusBtn1" destination="DdF-li-VXI" id="7vx-fp-iXz"/>
+                        <outlet property="missionStatusBtn2" destination="5kg-u1-Xyf" id="Pnf-79-tlg"/>
+                        <outlet property="missionStatusBtn3" destination="SLg-RL-yFJ" id="NMy-kG-sb9"/>
                         <outlet property="nickName" destination="Rf1-f5-pcq" id="njo-3C-QWn"/>
+                        <outlet property="receiveStatusLbl" destination="8nO-ya-ah2" id="SSe-7g-mKx"/>
+                        <outlet property="receiverAvatar" destination="pXI-HN-6N6" id="ODF-jx-eUQ"/>
                         <outlet property="scoreBtn" destination="5w1-Fk-QRp" id="Tr9-3r-pkL"/>
                         <outlet property="titleLbl" destination="F44-8S-pWb" id="8vr-JJ-5rG"/>
                     </connections>
@@ -831,7 +787,7 @@
                                     <outlet property="statusBackView" destination="KCa-AT-bFe" id="ae7-ov-DPp"/>
                                     <outlet property="statusBtn" destination="XjR-VQ-QWy" id="jPA-W1-gQf"/>
                                     <outlet property="titleLbl" destination="Hce-Rt-n3V" id="vom-Jw-slG"/>
-                                    <segue destination="BCo-8g-pFl" kind="show" id="9IE-zi-0hP"/>
+                                    <segue destination="BCo-8g-pFl" kind="show" identifier="missionDetialSegue" id="9IE-zi-0hP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
