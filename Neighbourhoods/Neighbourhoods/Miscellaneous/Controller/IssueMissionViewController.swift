@@ -19,6 +19,7 @@ class IssueMissionViewController: UIViewController {
     }
     
     @IBOutlet weak var missionTitle: UITextField!
+    @IBOutlet weak var missionScoreTF: UITextField!
     @IBOutlet weak var missionDetialTextView: UITextView!
     
     override func viewDidLoad() {

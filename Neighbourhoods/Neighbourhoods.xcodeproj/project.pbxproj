@@ -72,6 +72,10 @@
 		D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */; };
 		D35B2D141FBB0B5000F1E8DF /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D131FBB0B5000F1E8DF /* UserInfoModel.swift */; };
 		D35B2D161FBB16AD00F1E8DF /* AttentionAndFansModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D151FBB16AD00F1E8DF /* AttentionAndFansModel.swift */; };
+		D35B2D181FBC1A8700F1E8DF /* MyIntegralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D171FBC1A8700F1E8DF /* MyIntegralModel.swift */; };
+		D35B2D1A1FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D191FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift */; };
+		D35B2D1C1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */; };
+		D35B2D1E1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */; };
 		D360A6B31FB1E85500BC3ABC /* ActListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360A6B21FB1E85500BC3ABC /* ActListModel.swift */; };
 		D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */; };
 		D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */; };
@@ -87,6 +91,7 @@
 		D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */; };
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
 		D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */; };
+		D38305451FBC29DC00202FA2 /* SelectDistrictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
 		D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */; };
@@ -244,6 +249,10 @@
 		D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
 		D35B2D131FBB0B5000F1E8DF /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		D35B2D151FBB16AD00F1E8DF /* AttentionAndFansModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionAndFansModel.swift; sourceTree = "<group>"; };
+		D35B2D171FBC1A8700F1E8DF /* MyIntegralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIntegralModel.swift; sourceTree = "<group>"; };
+		D35B2D191FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedScoreListTableViewCell.swift; sourceTree = "<group>"; };
+		D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictSecondLevelTableViewController.swift; sourceTree = "<group>"; };
+		D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictThirdLevelTableViewController.swift; sourceTree = "<group>"; };
 		D360A6B21FB1E85500BC3ABC /* ActListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListModel.swift; sourceTree = "<group>"; };
 		D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersTableViewController.swift; sourceTree = "<group>"; };
 		D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +268,7 @@
 		D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListViewController.swift; sourceTree = "<group>"; };
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
 		D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsTableViewCell.swift; sourceTree = "<group>"; };
+		D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictModel.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
 		D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectPickerView.swift; sourceTree = "<group>"; };
@@ -430,6 +440,8 @@
 				D31E97161FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift */,
 				D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */,
 				D30ED0F51FAAF832007A5858 /* SelectDistrictTableViewController.swift */,
+				D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */,
+				D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */,
 				D3A54D281FAC0BFD0066C486 /* ChangeNickNameViewController.swift */,
 				D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */,
 				D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */,
@@ -489,6 +501,8 @@
 			children = (
 				D35B2D131FBB0B5000F1E8DF /* UserInfoModel.swift */,
 				D35B2D151FBB16AD00F1E8DF /* AttentionAndFansModel.swift */,
+				D35B2D171FBC1A8700F1E8DF /* MyIntegralModel.swift */,
+				D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +514,7 @@
 				D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */,
 				D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */,
 				D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */,
+				D35B2D191FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -611,7 +626,6 @@
 			isa = PBXGroup;
 			children = (
 				D3A193871F8DCB4C002C1E23 /* Help.storyboard */,
-				D345ABF11FB149A900FAB15F /* Network.swift */,
 				D345ABF31FB1503500FAB15F /* Model */,
 				D3F6B1831F9A1071004D0A20 /* Controller */,
 				D3F6B18A1F9A1CFB004D0A20 /* View */,
@@ -623,6 +637,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */,
+				D345ABF11FB149A900FAB15F /* Network.swift */,
 				D35B2D121FBB0B3800F1E8DF /* Model */,
 				D31CD4A61F91DA5300195686 /* Controller */,
 				D31CD4A71F91DA9100195686 /* View */,
@@ -956,7 +971,10 @@
 				D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */,
 				B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */,
 				D3FAC7DA1FA9691200D972B9 /* IssueMissionViewController.swift in Sources */,
+				D38305451FBC29DC00202FA2 /* SelectDistrictModel.swift in Sources */,
+				D35B2D1E1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift in Sources */,
 				D31E97171FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift in Sources */,
+				D35B2D1C1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift in Sources */,
 				D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */,
 				D31E971D1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift in Sources */,
 				B6B6E0671FB9D2BA00CCD567 /* NoMissionCoverView.swift in Sources */,
@@ -984,6 +1002,7 @@
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementViewController.swift in Sources */,
 				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D3FAC7E31FA974DB00D972B9 /* QuickMessageListTableViewCell.swift in Sources */,
+				D35B2D1A1FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */,
 				D30A17EA1FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift in Sources */,
@@ -992,6 +1011,7 @@
 				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,
 				D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */,
 				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
+				D35B2D181FBC1A8700F1E8DF /* MyIntegralModel.swift in Sources */,
 				D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */,
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
 				D30A17E21FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift in Sources */,

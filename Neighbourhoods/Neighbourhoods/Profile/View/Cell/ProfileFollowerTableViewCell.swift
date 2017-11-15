@@ -33,11 +33,34 @@ class ProfileFollowerTableViewCell: UITableViewCell {
     @objc func addFollow() {
         alreadyFollowLbl.isHidden = false
         addFollowView.isHidden    = true
+        userClickChangeFollowStatus(uid: self.viewModel?.uid! as! Int, type: 1)
     }
     
     @objc func cancelFollow() {
         alreadyFollowLbl.isHidden = true
         addFollowView.isHidden    = false
+        userClickChangeFollowStatus(uid: self.viewModel?.uid! as! Int, type: 2)
+        
+    }
+    
+    func userClickChangeFollowStatus(uid: Int, type: Int) {
+        
+        let token = UserDefaults.standard.string(forKey: "token")
+        NetWorkTool.shareInstance.changeFollowStatus(token!, uid: uid, type: type) { (result, error) in
+            if error != nil {
+                print(error as AnyObject)
+                return
+            }
+            
+            switch result!["code"] as! String {
+            case "200" : print("关注成功")
+            case "400" : print("关注失败, 取消关注成功")
+            case "402" : print("请传入type参数")
+            default    : break
+            }
+        }
+//        let tableView = self.superview as! UITableView
+//        tableView.reloadData()
         
     }
     
