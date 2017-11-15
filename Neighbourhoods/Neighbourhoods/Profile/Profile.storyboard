@@ -418,7 +418,7 @@
                                 <rect key="frame" x="0.0" y="244" width="375" height="423"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReceiveScoreCell" rowHeight="80" id="nwg-iE-Bmu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReceiveScoreCell" rowHeight="80" id="nwg-iE-Bmu" customClass="ReceivedScoreListTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nwg-iE-Bmu" id="iZG-ME-xhU">
@@ -454,6 +454,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="increaseScoreLbl" destination="ueg-6n-bcH" id="04q-Hq-Wi1"/>
+                                            <outlet property="receiveTimeLbl" destination="wSr-iv-TKr" id="V9D-4q-UCD"/>
+                                            <outlet property="receiveWayLbl" destination="TUs-iX-Mvg" id="IDk-U3-Ax2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -471,6 +476,9 @@
                         <viewLayoutGuide key="safeArea" id="GbH-fG-l8a"/>
                     </view>
                     <connections>
+                        <outlet property="allScoreLbl" destination="1ek-Ii-9LK" id="CeZ-Me-FIU"/>
+                        <outlet property="dailyScorLbl" destination="qd6-xG-dr7" id="1Pe-YN-z9H"/>
+                        <outlet property="monthlyScoreLbl" destination="iYN-zS-pjr" id="yDR-ah-7EF"/>
                         <outlet property="receiveScoreTableView" destination="8YU-nf-oiT" id="EEP-f5-XEc"/>
                     </connections>
                 </viewController>
