@@ -39,8 +39,6 @@ class MyFavouriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         setNavBarBackBtn()
         setNavBarTitle(title: "我的关注")
         myFavTableView.delegate = self
@@ -50,26 +48,16 @@ class MyFavouriteViewController: UIViewController {
         favUserTableView?.isHidden = true
         
     }
-    
-    
     // MARK:- initialize the user list table view and controller
     func loadFavUserVC() {
-        
         let childVC = FavUsersTableViewController()
-        
         let tableView = childVC.view
         favUserTableView = tableView
-        
         let y = (favMoments.superview?.frame.maxY)! + 1
-        
         tableView?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y - 49)
-        
         self.addChildViewController(childVC)
         self.view.addSubview(tableView!)
-        
     }
-
-
 }
 
 

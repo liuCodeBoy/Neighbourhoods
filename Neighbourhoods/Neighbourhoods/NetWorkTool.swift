@@ -249,8 +249,7 @@ extension NetWorkTool{
 //    user/ postReply 评论接口
     func postReply(token : String, pid :NSNumber,to_uid :NSNumber, uid: NSNumber, post_id : NSNumber,
                    content:String, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
-        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
-        //1.获取请求的URLString
+         //1.获取请求的URLString
         let urlString = "http://106.15.199.8/llb/api/user/postReply"
         //2.获取请求参数
         let parameters = ["pid" : pid,"to_uid" : to_uid,"uid" : uid,"post_id" : post_id, "content" : content] as [String : Any]
@@ -267,23 +266,23 @@ extension NetWorkTool{
     }
   //点赞接口user/nbor_zan
    
-//    func nbor_zan(token : String, nbor_id : NSNumber , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
-//        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
-//        //1.获取请求的URLString
-//        let urlString = "http://106.15.199.8/llb/api/user/postReply"
-//        //2.获取请求参数
-//        let parameters = ["pid" : pid,"to_uid" : to_uid,"uid" : uid,"post_id" : post_id, "content" : content] as [String : Any]
-//        //3.发送请求参数
-//        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
-//            //获取字典数据
-//            guard let resultDict = result as? [String : AnyObject] else {
-//                finished(nil, error)
-//                return
-//            }
-//            //将数组数据回调给外界控制器
-//            finished(resultDict, error)
-//        }
-//    }
+    func nbor_zan(token : String, nbor_id : NSNumber , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/nbor_zan"
+        //2.获取请求参数
+        let parameters = ["nbor_id" : nbor_id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
     
     
 }
