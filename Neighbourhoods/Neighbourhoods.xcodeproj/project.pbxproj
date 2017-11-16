@@ -91,6 +91,8 @@
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
 		D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */; };
 		D38305451FBC29DC00202FA2 /* SelectDistrictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */; };
+		D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */; };
+		D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
 		D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */; };
@@ -267,6 +269,8 @@
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
 		D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictModel.swift; sourceTree = "<group>"; };
+		D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMomentsViewController.swift; sourceTree = "<group>"; };
+		D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueMomentsViewController.xib; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
 		D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectPickerView.swift; sourceTree = "<group>"; };
@@ -718,6 +722,7 @@
 			children = (
 				D347E5A71FA20B6B00FFE815 /* SpringView.swift */,
 				D347E5A51FA2091000FFE815 /* SpringView.xib */,
+				D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */,
 				D3FAC7D51FA9648500D972B9 /* IssueTopicsViewController.xib */,
 				D3FAC7D91FA9691200D972B9 /* IssueMissionViewController.xib */,
 				D3FAC7E01FA96AD400D972B9 /* QuickViewMessgaes.storyboard */,
@@ -779,6 +784,7 @@
 		D3FAC7E41FA9753300D972B9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */,
 				D3FAC7D41FA9648500D972B9 /* IssueTopicsViewController.swift */,
 				D3FAC7D81FA9691200D972B9 /* IssueMissionViewController.swift */,
 				D3FAC7DC1FA96A2A00D972B9 /* QuickViewMessgaesViewController.swift */,
@@ -885,6 +891,7 @@
 				D3C864121FB989EB00CE3B50 /* NoMissionCoverView.xib in Resources */,
 				D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */,
 				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
+				D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1003,6 +1010,7 @@
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */,
 				D30A17EA1FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift in Sources */,
+				D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */,
 				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
 				D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */,
 				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,
