@@ -23,9 +23,14 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setNavBarTitle(title: "我的")
-
-        let token = UserDefaults.standard.string(forKey: "token")
-        NetWorkTool.shareInstance.userInfo(token!) { (result, error) in
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        NetWorkTool.shareInstance.userInfo(access_token) { (result, error) in
             if error != nil {
                 print(error as Any)
             } else if result?["code"] as! String == "200" {

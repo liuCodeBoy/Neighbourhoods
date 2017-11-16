@@ -119,12 +119,14 @@ class MissionDetialViewController: UIViewController {
     
     var id: Int? {
         didSet {
-            let token = UserDefaults.standard.string(forKey: "token")
             guard let id = self.id else {
                 return
             }
 
-            NetWorkTool.shareInstance.taskDet(token!, id: id) { [weak self](info, error) in
+            guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+                return
+            }
+            NetWorkTool.shareInstance.taskDet(access_token, id: id) { [weak self](info, error) in
                 if info?["code"] as? String == "200"{
                     let result = info!["result"] as! NSDictionary
                     self?.viewModel = TaskDetModel.mj_object(withKeyValues: result)

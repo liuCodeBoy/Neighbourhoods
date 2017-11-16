@@ -51,7 +51,6 @@
 		D31B54B11FB1D134003549AF /* MyMissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B54B01FB1D134003549AF /* MyMissionModel.swift */; };
 		D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CD4A21F91B14700195686 /* CircleViewController.swift */; };
 		D31E970D1FA9F88200A78D3A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */; };
-		D31E970F1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */; };
 		D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */; };
 		D31E97131FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */; };
 		D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */; };
@@ -93,6 +92,7 @@
 		D38305451FBC29DC00202FA2 /* SelectDistrictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */; };
 		D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */; };
 		D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */; };
+		D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
 		D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */; };
@@ -139,6 +139,7 @@
 		D3D1FD821FA81179009A2E58 /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD811FA81179009A2E58 /* LotteryViewController.swift */; };
 		D3D1FD841FA81187009A2E58 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD831FA81187009A2E58 /* VoteViewController.swift */; };
 		D3D2D7871FAB0FBA0020EE4B /* ShareSDK-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2D7861FAB0FBA0020EE4B /* ShareSDK-Extension.swift */; };
+		D3E5BF3B1FBDC01000C4766F /* ProfileReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */; };
 		D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */; };
 		D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */; };
 		D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */; };
@@ -229,7 +230,6 @@
 		D31B54B01FB1D134003549AF /* MyMissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionModel.swift; sourceTree = "<group>"; };
 		D31CD4A21F91B14700195686 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationVerifiedInfomationViewController.swift; sourceTree = "<group>"; };
 		D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadIDInfomationViewController.swift; sourceTree = "<group>"; };
 		D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIDInfomationFailedViewController.swift; sourceTree = "<group>"; };
 		D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIDInfomationSucceededViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +271,7 @@
 		D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictModel.swift; sourceTree = "<group>"; };
 		D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMomentsViewController.swift; sourceTree = "<group>"; };
 		D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueMomentsViewController.xib; sourceTree = "<group>"; };
+		D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityJudgeModel.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
 		D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectPickerView.swift; sourceTree = "<group>"; };
@@ -320,6 +321,7 @@
 		D3D1FD811FA81179009A2E58 /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
 		D3D1FD831FA81187009A2E58 /* VoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
 		D3D2D7861FAB0FBA0020EE4B /* ShareSDK-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareSDK-Extension.swift"; sourceTree = "<group>"; };
+		D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReportViewController.swift; sourceTree = "<group>"; };
 		D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
 		D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
@@ -430,27 +432,11 @@
 		D31CD4A61F91DA5300195686 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */,
-				D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */,
-				D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */,
 				D31E971A1FA9FEB100A78D3A /* ProfileTableViewController.swift */,
-				D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */,
-				D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */,
-				D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */,
-				D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */,
-				D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */,
-				D31E97161FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift */,
-				D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */,
-				D30ED0F51FAAF832007A5858 /* SelectDistrictTableViewController.swift */,
-				D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */,
-				D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */,
-				D3A54D281FAC0BFD0066C486 /* ChangeNickNameViewController.swift */,
-				D31E970E1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift */,
-				D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */,
-				D31E97181FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift */,
-				D31E971C1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift */,
-				D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */,
-				D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */,
+				D383054C1FBDBEE200202FA2 /* InitialLogin */,
+				D383054D1FBDBF0200202FA2 /* Main */,
+				D3E5BF3C1FBDC03D00C4766F /* Self */,
+				D3E5BF3D1FBDC0A500C4766F /* Identification */,
 				D39F63351FAACDAE00C69CA9 /* Others */,
 			);
 			path = Controller;
@@ -462,7 +448,6 @@
 				D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */,
 				D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */,
 				D37974A21FAAC70E006EA0EE /* Cell */,
-				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -505,6 +490,7 @@
 				D35B2D151FBB16AD00F1E8DF /* AttentionAndFansModel.swift */,
 				D35B2D171FBC1A8700F1E8DF /* MyIntegralModel.swift */,
 				D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */,
+				D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -519,6 +505,29 @@
 				D35B2D191FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D383054C1FBDBEE200202FA2 /* InitialLogin */ = {
+			isa = PBXGroup;
+			children = (
+				D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */,
+				D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */,
+				D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */,
+			);
+			path = InitialLogin;
+			sourceTree = "<group>";
+		};
+		D383054D1FBDBF0200202FA2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */,
+				D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */,
+				D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */,
+				D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */,
+				D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */,
+				D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		D39F63351FAACDAE00C69CA9 /* Others */ = {
@@ -637,6 +646,7 @@
 		D3A193761F8DC88E002C1E23 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
 				D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */,
 				D345ABF11FB149A900FAB15F /* Network.swift */,
 				D35B2D121FBB0B3800F1E8DF /* Model */,
@@ -688,12 +698,8 @@
 		D3C864081FB96B6D00CE3B50 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D3A54D2E1FAC41320066C486 /* HelpCategoryByTimeTableViewCell.swift */,
-				D3A54D301FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift */,
-				D3A54D321FAC41670066C486 /* HelpCategoryByScoreTableViewCell.swift */,
-				D3C8640D1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift */,
-				D3C8640F1FB96F2F00CE3B50 /* MyReceivedMissionTableViewCell.swift */,
-				D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */,
+				D3E5BF421FBDC2C200C4766F /* Mission */,
+				D3E5BF431FBDC2E000C4766F /* Charity */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -706,6 +712,81 @@
 				D3A1C0171FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D3E5BF3C1FBDC03D00C4766F /* Self */ = {
+			isa = PBXGroup;
+			children = (
+				D31E97161FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift */,
+				D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */,
+				D30ED0F51FAAF832007A5858 /* SelectDistrictTableViewController.swift */,
+				D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */,
+				D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */,
+				D3A54D281FAC0BFD0066C486 /* ChangeNickNameViewController.swift */,
+			);
+			path = Self;
+			sourceTree = "<group>";
+		};
+		D3E5BF3D1FBDC0A500C4766F /* Identification */ = {
+			isa = PBXGroup;
+			children = (
+				D31E97181FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift */,
+				D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */,
+				D31E971C1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift */,
+				D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */,
+				D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */,
+			);
+			path = Identification;
+			sourceTree = "<group>";
+		};
+		D3E5BF3E1FBDC1D900C4766F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D3A54D361FAC42080066C486 /* HelpCategoryByTimeViewController.swift */,
+				D3A54D381FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift */,
+				D3A54D3A1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D3E5BF401FBDC27A00C4766F /* MyMission */ = {
+			isa = PBXGroup;
+			children = (
+				D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */,
+				D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */,
+				D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */,
+			);
+			path = MyMission;
+			sourceTree = "<group>";
+		};
+		D3E5BF411FBDC29500C4766F /* SocialCharity */ = {
+			isa = PBXGroup;
+			children = (
+				D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */,
+				D3FE2FFD1FA45B0100FAD95E /* SocialCharityDetialViewController.swift */,
+				D3FE2FFF1FA45B2100FAD95E /* ConsultViewController.swift */,
+			);
+			path = SocialCharity;
+			sourceTree = "<group>";
+		};
+		D3E5BF421FBDC2C200C4766F /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				D3A54D2E1FAC41320066C486 /* HelpCategoryByTimeTableViewCell.swift */,
+				D3A54D301FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift */,
+				D3A54D321FAC41670066C486 /* HelpCategoryByScoreTableViewCell.swift */,
+				D3C8640D1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift */,
+				D3C8640F1FB96F2F00CE3B50 /* MyReceivedMissionTableViewCell.swift */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		D3E5BF431FBDC2E000C4766F /* Charity */ = {
+			isa = PBXGroup;
+			children = (
+				D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */,
+			);
+			path = Charity;
 			sourceTree = "<group>";
 		};
 		D3F5BBFE1FAB17BB000A6CF5 /* Share */ = {
@@ -734,15 +815,9 @@
 			isa = PBXGroup;
 			children = (
 				D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */,
-				D3A54D361FAC42080066C486 /* HelpCategoryByTimeViewController.swift */,
-				D3A54D381FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift */,
-				D3A54D3A1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift */,
-				D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */,
-				D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */,
-				D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */,
-				D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */,
-				D3FE2FFD1FA45B0100FAD95E /* SocialCharityDetialViewController.swift */,
-				D3FE2FFF1FA45B2100FAD95E /* ConsultViewController.swift */,
+				D3E5BF411FBDC29500C4766F /* SocialCharity */,
+				D3E5BF401FBDC27A00C4766F /* MyMission */,
+				D3E5BF3E1FBDC1D900C4766F /* Categories */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -987,7 +1062,6 @@
 				D3A54D4E1FAD9D990066C486 /* ActivityVoteEndedViewController.swift in Sources */,
 				B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */,
 				D35B2D141FBB0B5000F1E8DF /* UserInfoModel.swift in Sources */,
-				D31E970F1FA9F8CD00A78D3A /* IdentificationVerifiedInfomationViewController.swift in Sources */,
 				B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */,
 				D359931C1F9C9B8C00F96103 /* MyScoreViewController.swift in Sources */,
 				D341AAAA1F9AF14100E640E1 /* Extension+UIViewController.swift in Sources */,
@@ -1006,6 +1080,7 @@
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementViewController.swift in Sources */,
 				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D3FAC7E31FA974DB00D972B9 /* QuickMessageListTableViewCell.swift in Sources */,
+				D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */,
 				D35B2D1A1FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
 				B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */,
@@ -1044,6 +1119,7 @@
 				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
 				D3FAC7D61FA9648500D972B9 /* IssueTopicsViewController.swift in Sources */,
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
+				D3E5BF3B1FBDC01000C4766F /* ProfileReportViewController.swift in Sources */,
 				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
 				B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */,
 				D36C86B61FA09EF0000CCA17 /* FavUsersListTableViewCell.swift in Sources */,

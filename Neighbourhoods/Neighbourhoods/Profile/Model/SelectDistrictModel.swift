@@ -14,7 +14,5 @@ class SelectDistrictModel: NSObject {
     @objc var name           : String?
     @objc var level          : NSNumber?
     @objc var pid            : NSNumber?
-    
-    
 }
 

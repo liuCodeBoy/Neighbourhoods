@@ -56,6 +56,14 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
             
         }
     }
+    
+    func uploadIDCardPhoto() {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+//        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: <#T##Int#>, name: <#T##String#>, id_number: <#T##String#>, finished: <#T##([String : AnyObject]?, Error?) -> ()#>)
+        
+    }
 
     
 //    @objc func takePhoto(sender: UIImageView) {
