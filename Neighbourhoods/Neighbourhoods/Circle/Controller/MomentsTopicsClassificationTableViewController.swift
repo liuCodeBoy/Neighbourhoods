@@ -41,9 +41,6 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                 {
                     self?.pages = (pages as! Int)
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
-                }
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count
                 {
@@ -54,8 +51,13 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                     }
                 }
                 self?.tableView.reloadData()
-                if self?.page == self?.pages {
+                if p == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableView.mj_footer.endRefreshing()
+                }
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
                 }
             }else{
                 //服务器

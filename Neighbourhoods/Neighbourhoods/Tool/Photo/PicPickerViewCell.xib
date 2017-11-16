@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PicPickerViewCell" reuseIdentifier="PicPickerViewCell" id="gTV-IL-0wX" customClass="PicPickerViewCell" customModule="Neighbourhoods" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="137" height="123"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="137" height="123"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="picPickerCell" image="luntan_houserent_addphoto_default" translatesAutoresizingMaskIntoConstraints="NO" id="qPc-FG-iNn">
+                        <rect key="frame" x="0.0" y="0.0" width="137" height="123"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6U-f9-VS3">
+                        <rect key="frame" x="28" y="21" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="J2C-by-3Rh"/>
+                            <constraint firstAttribute="width" constant="80" id="r5c-aM-wgM"/>
+                        </constraints>
+                        <connections>
+                            <action selector="addPhotoClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="4c2-6U-5D3"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5Z-Bf-Sw6">
+                        <rect key="frame" x="97" y="0.0" width="40" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="9cs-Xt-PWQ"/>
+                            <constraint firstAttribute="height" constant="20" id="UFs-RB-qFZ"/>
+                        </constraints>
+                        <state key="normal" title="取消">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="removePhotoClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="S0C-2D-eqt"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="M6U-f9-VS3" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="Ute-iQ-e7s"/>
+                <constraint firstAttribute="trailing" secondItem="b5Z-Bf-Sw6" secondAttribute="trailing" id="V9b-kj-3Ud"/>
+                <constraint firstItem="qPc-FG-iNn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cUJ-I0-laE"/>
+                <constraint firstAttribute="bottom" secondItem="qPc-FG-iNn" secondAttribute="bottom" id="gB4-SW-ppQ"/>
+                <constraint firstItem="M6U-f9-VS3" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="jb7-9S-9wC"/>
+                <constraint firstAttribute="trailing" secondItem="qPc-FG-iNn" secondAttribute="trailing" id="lvV-xg-MHH"/>
+                <constraint firstItem="b5Z-Bf-Sw6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="q9G-IQ-ZLu"/>
+                <constraint firstItem="qPc-FG-iNn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tal-tx-GZk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="137" height="123"/>
+            <connections>
+                <outlet property="addPhotoBtn" destination="M6U-f9-VS3" id="PcX-PV-ftL"/>
+                <outlet property="imageView" destination="qPc-FG-iNn" id="5bu-RB-xSW"/>
+                <outlet property="removePhotoBtn" destination="b5Z-Bf-Sw6" id="cI7-nn-LOJ"/>
+            </connections>
+            <point key="canvasLocation" x="-273" y="-188"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="luntan_houserent_addphoto_default" width="90" height="90"/>
+    </resources>
+</document>
