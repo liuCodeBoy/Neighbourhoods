@@ -10,6 +10,7 @@
 		91738E5369CA97748E1652E9 /* Pods_Neighbourhoods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C24ABCE591C5A1B847A1370 /* Pods_Neighbourhoods.framework */; };
 		B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */; };
 		B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646FDD21FB18D4C00990357 /* NborTopicModel.swift */; };
+		B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */; };
 		B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */; };
 		B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
@@ -77,9 +78,7 @@
 		D35B2D1C1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */; };
 		D35B2D1E1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */; };
 		D360A6B31FB1E85500BC3ABC /* ActListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360A6B21FB1E85500BC3ABC /* ActListModel.swift */; };
-		D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */; };
-		D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */; };
-		D36C86B71FA09EF0000CCA17 /* UsersListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86B51FA09EF0000CCA17 /* UsersListTableViewCell.xib */; };
+		D36C86B61FA09EF0000CCA17 /* FavUsersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B41FA09EF0000CCA17 /* FavUsersListTableViewCell.swift */; };
 		D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */; };
 		D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */; };
 		D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */; };
@@ -189,6 +188,7 @@
 		56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.debug.xcconfig"; sourceTree = "<group>"; };
 		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B646FDD21FB18D4C00990357 /* NborTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborTopicModel.swift; sourceTree = "<group>"; };
+		B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersListViewController.swift; sourceTree = "<group>"; };
 		B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowVC.swift; sourceTree = "<group>"; };
 		B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
@@ -254,9 +254,7 @@
 		D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictSecondLevelTableViewController.swift; sourceTree = "<group>"; };
 		D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictThirdLevelTableViewController.swift; sourceTree = "<group>"; };
 		D360A6B21FB1E85500BC3ABC /* ActListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListModel.swift; sourceTree = "<group>"; };
-		D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersTableViewController.swift; sourceTree = "<group>"; };
-		D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListTableViewCell.swift; sourceTree = "<group>"; };
-		D36C86B51FA09EF0000CCA17 /* UsersListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListTableViewCell.xib; sourceTree = "<group>"; };
+		D36C86B41FA09EF0000CCA17 /* FavUsersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersListTableViewCell.swift; sourceTree = "<group>"; };
 		D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetialTableViewCell.swift; sourceTree = "<group>"; };
@@ -477,7 +475,7 @@
 				D30A17E91FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift */,
 				D30A17E11FAF3301007820D3 /* SecondaryCommentHeaderTableViewCell.swift */,
 				D30A17E31FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift */,
-				D36C86B41FA09EF0000CCA17 /* UsersListTableViewCell.swift */,
+				D36C86B41FA09EF0000CCA17 /* FavUsersListTableViewCell.swift */,
 				D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */,
 				D36C86C01FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift */,
 			);
@@ -584,7 +582,6 @@
 		D3A1936B1F8DC867002C1E23 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D36C86AE1F9F6F90000CCA17 /* FavUsersTableViewController.swift */,
 				D31CD4A21F91B14700195686 /* CircleViewController.swift */,
 				D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */,
 				D30A17CD1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift */,
@@ -597,6 +594,7 @@
 				D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */,
 				D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */,
 				B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */,
+				B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -606,7 +604,6 @@
 			children = (
 				D334F5E21FA8674F006E2769 /* Cell */,
 				B692F8A01F91F1DF00C75B41 /* LoopView.swift */,
-				D36C86B51FA09EF0000CCA17 /* UsersListTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -881,7 +878,6 @@
 				D3FAC7D71FA9648500D972B9 /* IssueTopicsViewController.xib in Resources */,
 				D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */,
 				D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */,
-				D36C86B71FA09EF0000CCA17 /* UsersListTableViewCell.xib in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
 				D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */,
 				D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */,
@@ -990,6 +986,7 @@
 				D341AAAA1F9AF14100E640E1 /* Extension+UIViewController.swift in Sources */,
 				B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */,
 				D3C864141FB99CC600CE3B50 /* TaskDetModel.swift in Sources */,
+				B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */,
 				D30ED0F61FAAF832007A5858 /* SelectDistrictTableViewController.swift in Sources */,
 				D3A54D2F1FAC41320066C486 /* HelpCategoryByTimeTableViewCell.swift in Sources */,
 				D3A1C0181FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift in Sources */,
@@ -1010,7 +1007,6 @@
 				D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */,
 				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,
 				D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */,
-				D36C86AF1F9F6F90000CCA17 /* FavUsersTableViewController.swift in Sources */,
 				D35B2D181FBC1A8700F1E8DF /* MyIntegralModel.swift in Sources */,
 				D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */,
 				D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */,
@@ -1042,7 +1038,7 @@
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
 				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
 				B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */,
-				D36C86B61FA09EF0000CCA17 /* UsersListTableViewCell.swift in Sources */,
+				D36C86B61FA09EF0000CCA17 /* FavUsersListTableViewCell.swift in Sources */,
 				D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */,
 				D35B2D161FBB16AD00F1E8DF /* AttentionAndFansModel.swift in Sources */,
 				D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */,
