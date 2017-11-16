@@ -50,10 +50,11 @@ class MyFavouriteViewController: UIViewController {
     }
     // MARK:- initialize the user list table view and controller
     func loadFavUserVC() {
-        let childVC = FavUsersTableViewController()
+        let childVC = self.storyboard?.instantiateViewController(withIdentifier: "FavUsersListVC") as! FavUsersListViewController
         let tableView = childVC.view
         favUserTableView = tableView
-        let y = (favMoments.superview?.frame.maxY)! + 1
+        var y = (favMoments.superview?.frame.maxY)! + 1
+        if isIPHONEX { y += 24 }
         tableView?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y - 49)
         self.addChildViewController(childVC)
         self.view.addSubview(tableView!)
