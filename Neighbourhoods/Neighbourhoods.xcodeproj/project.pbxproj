@@ -11,6 +11,9 @@
 		B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */; };
 		B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646FDD21FB18D4C00990357 /* NborTopicModel.swift */; };
 		B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */; };
+		B6559A101FBD613B00EB6D56 /* PicPicKerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */; };
+		B6559A141FBD6D8C00EB6D56 /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A121FBD6D8C00EB6D56 /* PicPickerViewCell.swift */; };
+		B6559A151FBD6D8C00EB6D56 /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6559A131FBD6D8C00EB6D56 /* PicPickerViewCell.xib */; };
 		B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */; };
 		B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
@@ -191,6 +194,9 @@
 		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B646FDD21FB18D4C00990357 /* NborTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborTopicModel.swift; sourceTree = "<group>"; };
 		B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersListViewController.swift; sourceTree = "<group>"; };
+		B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPicKerCollectionView.swift; sourceTree = "<group>"; };
+		B6559A121FBD6D8C00EB6D56 /* PicPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
+		B6559A131FBD6D8C00EB6D56 /* PicPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
 		B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowVC.swift; sourceTree = "<group>"; };
 		B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
@@ -365,9 +371,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B6559A0B1FBD5CFE00EB6D56 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */,
+				B6559A121FBD6D8C00EB6D56 /* PicPickerViewCell.swift */,
+				B6559A131FBD6D8C00EB6D56 /* PicPickerViewCell.xib */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		B681C9DA1FA9ECA8008006D6 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B6559A0B1FBD5CFE00EB6D56 /* Photo */,
 				B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */,
 			);
 			path = Tool;
@@ -877,6 +894,7 @@
 			files = (
 				D3FAC7DB1FA9691200D972B9 /* IssueMissionViewController.xib in Resources */,
 				D3A193631F8DC74D002C1E23 /* LaunchScreen.storyboard in Resources */,
+				B6559A151FBD6D8C00EB6D56 /* PicPickerViewCell.xib in Resources */,
 				D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */,
 				D3FAC7E11FA96AD400D972B9 /* QuickViewMessgaes.storyboard in Resources */,
 				D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */,
@@ -994,6 +1012,7 @@
 				B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */,
 				D3C864141FB99CC600CE3B50 /* TaskDetModel.swift in Sources */,
 				B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */,
+				B6559A101FBD613B00EB6D56 /* PicPicKerCollectionView.swift in Sources */,
 				D30ED0F61FAAF832007A5858 /* SelectDistrictTableViewController.swift in Sources */,
 				D3A54D2F1FAC41320066C486 /* HelpCategoryByTimeTableViewCell.swift in Sources */,
 				D3A1C0181FA9B09D0048EE60 /* ActivityConsultingCommentTableViewCell.swift in Sources */,
@@ -1082,6 +1101,7 @@
 				D30A17DA1FAF328E007820D3 /* MomentsLatestIssueTableViewCell.swift in Sources */,
 				D31B54AD1FB1A1F3003549AF /* SocialOrgListModel.swift in Sources */,
 				D3FAC7E91FA97E9E00D972B9 /* ActivityVoteConsultingViewController.swift in Sources */,
+				B6559A141FBD6D8C00EB6D56 /* PicPickerViewCell.swift in Sources */,
 				D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */,
 				D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */,
 				D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */,

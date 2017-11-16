@@ -265,7 +265,6 @@ extension NetWorkTool{
         }
     }
   //点赞接口user/nbor_zan
-   
     func nbor_zan(token : String, nbor_id : NSNumber , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //1.获取请求的URLString
@@ -283,8 +282,99 @@ extension NetWorkTool{
             finished(resultDict, error)
         }
     }
+}
+
+//发布功能模块
+extension NetWorkTool {
+    // MARK:- 论坛发布信息
+    func nbor_publish(_ token: String,
+                     image  : [UIImage],
+                     content : String,
+                     finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/nbor_publish"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        var parameters =  ["content" : content ] as [String : Any]
+        var up_cate = 0
+        if image.count > 0 {
+         up_cate = image.count == 1 ? 1 : 2
+           parameters.updateValue(up_cate, forKey: "up_cate")
+        }
+        
+        //3.发送请求参数
+        post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
+            //确定选择类型
+            if image.count > 0 {
+                var  cateName =  ""
+                cateName =  image.count > 1 ?  "image[]" :  "image"
+                for pic in image {
+                    if let imageData = UIImageJPEGRepresentation(pic, 0.5){
+                        let imageName =  self?.getNowTime()
+                        formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName! , mimeType: "image/png")
+                    }
+                }
+            }
+            }, progress: { (Progress) in
+        }, success: { (URLSessionDataTask, success) in         //获取字典数据
+            guard let resultDict = success as? [String : AnyObject] else {
+                return
+            }
+            finished(resultDict , nil)
+        }) { (URLSessionDataTask, error) in
+        finished(nil , error)
+        }
+    }
+    func getNowTime() -> (String){
+        let date = NSDate.init(timeIntervalSinceNow: 0)
+        let a  =  date.timeIntervalSince1970
+        let timesString = "\(a).png"
+        return  timesString
+    }
     
     
+    
+    
+    //话题发布user/ topic_publish
+    func topic_publish(_ token: String,
+                      image  : [UIImage],
+                      name : String,
+                      content : String,
+                      finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/topic_publish"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        var parameters =  ["content" : content ] as [String : Any]
+        var up_cate = 0
+        if image.count > 0 {
+            up_cate = 1
+            parameters.updateValue(up_cate, forKey: "up_cate")
+        }
+        
+        //3.发送请求参数
+        post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
+            //确定选择类型
+            if image.count > 0 {
+                var  cateName =  ""
+                cateName =  image.count > 1 ?  "image[]" :  "image"
+                for pic in image {
+                    if let imageData = UIImageJPEGRepresentation(pic, 0.5){
+                        let imageName =  self?.getNowTime()
+                        formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName! , mimeType: "image/png")
+                    }
+                }
+            }
+            }, progress: { (Progress) in
+        }, success: { (URLSessionDataTask, success) in         //获取字典数据
+            guard let resultDict = success as? [String : AnyObject] else {
+                return
+            }
+            finished(resultDict , nil)
+        }) { (URLSessionDataTask, error) in
+            finished(nil , error)
+        }
+    }
 }
 
 

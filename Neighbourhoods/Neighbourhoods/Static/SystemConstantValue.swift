@@ -10,7 +10,9 @@ import UIKit
 
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
-
+let PicPickerAddPhotoNote = Notification.Name("PicPickerAddPhotoNote")
+let PicPickerRemovePhotoNote = Notification.Name("PicPickerRemovePhotoNote")
+let edgeMargin  = 5
 let isIPHONEX: Bool = { () -> Bool in
     if screenHeight == 812.0 && screenWidth == 375.0 {
         return true

@@ -51,9 +51,6 @@ class SecondaryCommentTableViewController: UITableViewController {
                         self?.pages = pages as? Int
                     }
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
-                }
                 let result  = info!["result"] as! [String : Any]
                 self?.mainCommentModel =  NborCircleModel.mj_object(withKeyValues: result)
                 let resultComment = result["sec_comment"] as? [[String : Any]]
@@ -67,7 +64,13 @@ class SecondaryCommentTableViewController: UITableViewController {
                 self?.tableView.reloadData()
                 if p == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableView.mj_footer.endRefreshing()
                 }
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
+                }
+                
             }else{
                 //服务器
                 self?.tableView.mj_header.endRefreshing()

@@ -24,7 +24,7 @@ class TopicDetialTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRefreshComponet()
-        lastedRequest()
+        lastedRequest(p: page)
         self.tableView.reloadData()
         setNavBarBackBtn()
     }
@@ -46,20 +46,17 @@ class TopicDetialTableViewController: UITableViewController {
         
     }
     @objc private func  endrefresh() -> (){
-        lastedRequest()
+        lastedRequest(p : self.page)
         
     }
     
     //MARK: - 最新发布网络请求
-   private func lastedRequest() -> () {
-    NetWorkTool.shareInstance.topic_det(id : self.id as! NSInteger, p: page) {[weak self](info, error) in
+   private func lastedRequest(p : Int) -> () {
+    NetWorkTool.shareInstance.topic_det(id : self.id as! NSInteger, p: p) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"]
                 {
                     self?.pages = (pages as! Int)
-                }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
                 }
                 let resultMain = info!["result"]
                 self?.modelMain =  NborTopicModel.mj_object(withKeyValues: resultMain)
@@ -87,10 +84,16 @@ class TopicDetialTableViewController: UITableViewController {
                         self?.rotaionArray.append(model)
                     }
                 }
+                self?.tableView.reloadData()
                 if self?.page == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableView.mj_footer.endRefreshing()
                 }
-                self?.tableView.reloadData()
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
+                }
+                
             }else{
                 //服务器
                 self?.tableView.mj_header.endRefreshing()
