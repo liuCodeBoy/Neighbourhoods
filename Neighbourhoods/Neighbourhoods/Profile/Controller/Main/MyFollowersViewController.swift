@@ -1,5 +1,5 @@
 //
-//  MyFollowingsViewController.swift
+//  MyFollowersViewController.swift
 //  Neighbourhoods
 //
 //  Created by Weslie on 28/10/2017.
@@ -8,29 +8,31 @@
 
 import UIKit
 
-class MyFollowingsViewController: UIViewController {
-
-    @IBOutlet weak var myFollowingsTableView: UITableView!
-
+class MyFollowersViewController: UIViewController {
+    
+    @IBOutlet weak var myFollowersTableView: UITableView!
+    
     private var followingList = [AttentionAndFansModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myFollowingsTableView.delegate = self
-        myFollowingsTableView.dataSource = self
+        myFollowersTableView.delegate = self
+        myFollowersTableView.dataSource = self
         
         setNavBarBackBtn()
-        setNavBarTitle(title: "我的关注")
+        setNavBarTitle(title: "我的粉丝")
         
         loadFollowingUsers()
-        
+
     }
-    
+
     func loadFollowingUsers() {
         
-        let token = UserDefaults.standard.string(forKey: "token")
-        NetWorkTool.shareInstance.userAttention(token!) { (result, error) in
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        NetWorkTool.shareInstance.userFans(access_token) { (result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
@@ -40,17 +42,16 @@ class MyFollowingsViewController: UIViewController {
                         self.followingList.append(listModel)
                     }
                 }
-                self.myFollowingsTableView.reloadData()
+                self.myFollowersTableView.reloadData()
             } else {
                 print("post failed with code \(String(describing: result!["code"]))")
             }
         }
     }
 
-
 }
 
-extension MyFollowingsViewController: UITableViewDelegate, UITableViewDataSource {
+extension MyFollowersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return followingList.count
@@ -58,7 +59,7 @@ extension MyFollowingsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileFollowingsCell") as! ProfileFollowingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileFollowersCell") as! ProfileFollowerTableViewCell
         cell.viewModel = followingList[indexPath.row]
         return cell
     }
@@ -67,5 +68,5 @@ extension MyFollowingsViewController: UITableViewDelegate, UITableViewDataSource
         return 60
         
     }
-
+    
 }

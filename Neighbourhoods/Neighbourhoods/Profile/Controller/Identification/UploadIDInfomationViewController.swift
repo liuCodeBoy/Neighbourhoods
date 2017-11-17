@@ -30,16 +30,18 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         setNavBarBackBtn()
         setNavBarTitle(title: "上传认证信息")
         
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        imagePicker.sourceType = .camera
-        
-        
-        let leftTap = UITapGestureRecognizer(target: self, action: #selector(takeLeftPhoto))
-        let rightTap = UITapGestureRecognizer(target: self, action: #selector(takeRightPhot))
-
-        IDImgFront.addGestureRecognizer(leftTap)
-        IDImgBack.addGestureRecognizer(rightTap)
+        if TARGET_IPHONE_SIMULATOR != 1 {
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.sourceType = .camera
+            
+            
+            let leftTap = UITapGestureRecognizer(target: self, action: #selector(takeLeftPhoto))
+            let rightTap = UITapGestureRecognizer(target: self, action: #selector(takeRightPhot))
+            
+            IDImgFront.addGestureRecognizer(leftTap)
+            IDImgBack.addGestureRecognizer(rightTap)
+        }
 
     }
     
@@ -55,6 +57,14 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         self.present(imagePicker, animated: true) {
             
         }
+    }
+    
+    func uploadIDCardPhoto() {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+//        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: <#T##Int#>, name: <#T##String#>, id_number: <#T##String#>, finished: <#T##([String : AnyObject]?, Error?) -> ()#>)
+        
     }
 
     
@@ -102,7 +112,7 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
 //
 //        self.present(sheet, animated: true, completion: {
 //
-//        })
+    //        })
 //
 //    }
     

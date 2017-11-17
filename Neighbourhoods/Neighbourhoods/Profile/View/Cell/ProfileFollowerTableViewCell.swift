@@ -45,8 +45,10 @@ class ProfileFollowerTableViewCell: UITableViewCell {
     
     func userClickChangeFollowStatus(uid: Int, type: Int) {
         
-        let token = UserDefaults.standard.string(forKey: "token")
-        NetWorkTool.shareInstance.changeFollowStatus(token!, uid: uid, type: type) { (result, error) in
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid, type: type) { (result, error) in
             if error != nil {
                 print(error as AnyObject)
                 return

@@ -12,10 +12,15 @@ class GenderSelectPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSour
 
     @IBOutlet weak var picker: UIPickerView!
     
-    var gender: String?
+    var gender: String? = "男"
+    
+    var genderClosure: ((_ gender: String) -> ())?
     
     @IBAction func confirmBtnClicked(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2) {
+            if self.genderClosure != nil {
+                self.genderClosure!(self.gender!)
+            }
             self.frame.origin.y = screenHeight
         }
 
