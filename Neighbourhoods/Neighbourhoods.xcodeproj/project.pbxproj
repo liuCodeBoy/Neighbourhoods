@@ -124,6 +124,7 @@
 		D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */; };
 		D3A54D481FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */; };
 		D3A54D4E1FAD9D990066C486 /* ActivityVoteEndedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */; };
+		D3A8CB3D1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8CB3C1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift */; };
 		D3AD803B1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */; };
 		D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */; };
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
@@ -308,6 +309,7 @@
 		D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteCounsultantCompletedViewController.swift; sourceTree = "<group>"; };
 		D3A54D471FAD643C0066C486 /* SocialAnnouncementDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAnnouncementDetialViewController.swift; sourceTree = "<group>"; };
 		D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteEndedViewController.swift; sourceTree = "<group>"; };
+		D3A8CB3C1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIDInfomaionUnderCheckingViewController.swift; sourceTree = "<group>"; };
 		D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowerTableViewCell.swift; sourceTree = "<group>"; };
 		D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityViewController.swift; sourceTree = "<group>"; };
 		D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingsViewController.swift; sourceTree = "<group>"; };
@@ -749,6 +751,7 @@
 			children = (
 				D31E97181FA9FBFB00A78D3A /* NotVerifiedIDInfomationViewController.swift */,
 				D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */,
+				D3A8CB3C1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift */,
 				D31E971C1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift */,
 				D31E97121FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift */,
 				D31E97141FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift */,
@@ -1105,6 +1108,7 @@
 				B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */,
 				D30A17EA1FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift in Sources */,
 				D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */,
+				D3A8CB3D1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift in Sources */,
 				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
 				D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */,
 				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,

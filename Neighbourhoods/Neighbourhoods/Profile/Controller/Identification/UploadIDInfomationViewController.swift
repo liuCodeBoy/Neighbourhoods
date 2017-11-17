@@ -18,10 +18,21 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
     
     var imageCount = 2
     
+    var leftImgLoaded: Bool = false
+    var rightImgLoaded: Bool = false
+    
     @IBOutlet weak var IDImgFront: UIImageView!
     @IBOutlet weak var IDImgBack: UIImageView!
     
     @IBAction func uploadClicked(_ sender: UIButton) {
+        
+        if nameTF.text == nil || IDNumTF.text == nil || leftImgLoaded == false || rightImgLoaded == false {
+            presentHintMessage(target: self, hintMessgae: "请完善您的信息")
+            return
+        } else {
+            uploadIDCardPhoto(name: nameTF.text!, id_Num: IDNumTF.text!)
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -59,11 +70,24 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         }
     }
     
-    func uploadIDCardPhoto() {
+    func uploadIDCardPhoto(name: String, id_Num: String) {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-//        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: <#T##Int#>, name: <#T##String#>, id_number: <#T##String#>, finished: <#T##([String : AnyObject]?, Error?) -> ()#>)
+        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: 2, name: name, id_number: id_Num, image: [IDImgFront.image!, IDImgBack.image!]) { (result, error) in
+            // MARK:- upload
+            if result!["code"] as! String == "400" {
+                self.presentHintMessage(target: self, hintMessgae: "图片上传失败")
+                return
+            } else if result!["code"] as! String == "401" {
+                self.presentHintMessage(target: self, hintMessgae: "认证失败")
+                return
+            } else if result!["code"] as! String == "200" {
+                self.presentHintMessage(target: self, hintMessgae: "上传成功")
+                let index = self.navigationController?.viewControllers.index(after: 0)
+                self.navigationController?.popToViewController((self.navigationController?.viewControllers[index!])!, animated: true)
+            }
+        }
         
     }
 
@@ -120,8 +144,10 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         let chosenImg = info[UIImagePickerControllerOriginalImage] as! UIImage
         if imageCount == 2 {
             IDImgFront.image = chosenImg
+            self.leftImgLoaded = true
         } else {
             IDImgBack.image = chosenImg
+            self.rightImgLoaded = true
         }
         
         dismiss(animated: true) {

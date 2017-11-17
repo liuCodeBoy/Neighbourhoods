@@ -15,6 +15,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
     @IBOutlet weak var nickNameLbl: UILabel!
     @IBOutlet weak var genderLbl: UILabel!
     @IBOutlet weak var discrictLbl: UILabel!
+    @IBOutlet weak var verifyImg: UIImageView!
     
     
     lazy var images = [UIImage]()
@@ -28,10 +29,34 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
     
     var userIdentificationStatus: String?
     
+    var profileViewModel: UserInfoModel? {
+        didSet {
+            if let avatar = profileViewModel?.head_pic {
+                self.avatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let name = profileViewModel?.nickname {
+                self.nickNameLbl.text = name
+            }
+            if let gender = profileViewModel?.sex {
+                if gender == 1 {
+                    genderLbl.text = "男"
+                } else if gender == 2 {
+                    genderLbl.text = "女"
+                }
+            }
+            if let district = profileViewModel?.district {
+                self.discrictLbl.text = district
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavBarBackBtn()
+        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(popAndUpdateEditedInfomation))
+        self.navigationItem.setLeftBarButton(back, animated: true)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         setNavBarTitle(title: "个人资料")
         
     }
@@ -55,6 +80,11 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         }
         
         loadIdentityStatus()
+        loadProfileInfo()
+    }
+    
+    @objc func popAndUpdateEditedInfomation() {
+        
     }
     
     
@@ -78,6 +108,14 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                 weak var wealSelf = self
                 imagePickerVC?.didFinishPickingPhotosWithInfosHandle = {(photosArr, _ , _, _) in
                     wealSelf?.avatar.image = photosArr?.first!
+                    guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+                        return
+                    }
+                    // MARK:- upload avatar to the server
+                    NetWorkTool.shareInstance.uploadAvatar(access_token, image: (photosArr?.first!)!, finished: { (result, error) in
+                        
+                        
+                    })
                 }
                 self.present(imagePickerVC!, animated: true, completion: {
                     
@@ -114,6 +152,11 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
             if userIdentificationStatus == "身份已认证" {
             // MARK:- verify succeeded
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifySucceeded") as! VerifyIDInfomationSucceededViewController
+                // MARK:- pass id info data through closure
+                vc.receiveIDInfoClosure = { (name, idNum) in
+                    name.text = "真实姓名：" + self.identityName!
+                    idNum.text = "身份证号：" + self.identityNumber!
+                }
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if userIdentificationStatus == "审核失败" {
             // MARK:- verify failed
@@ -124,8 +167,9 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotVerified") as! NotVerifiedIDInfomationViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if userIdentificationStatus == "身份待审核" {
-            // TODO:- create a vc
-                
+            // MARK:- under checking verification infomation
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "CheckingVerification") as! VerifyIDInfomaionUnderCheckingViewController
+                self.navigationController?.pushViewController(vc, animated: true)
             }
             
         default: break
@@ -146,6 +190,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                     self.userIdentificationStatus = "身份已认证"
                     self.identityName = idStatus?.name
                     self.identityNumber = idStatus?.id_number
+                    self.verifyImg.image = #imageLiteral(resourceName: "security_id_verified")
                 case 2: self.userIdentificationStatus = "身份待审核"
                 case 3: self.userIdentificationStatus = "审核失败"
                 default: break
@@ -156,10 +201,26 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         }
     }
     
+    func loadProfileInfo() {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        NetWorkTool.shareInstance.loadProfileInfo(access_token) { (result, error) in
+            if error != nil {
+                print(error as AnyObject)
+            } else if result!["code"] as! String == "200" {
+                let dict = result!["result"] as! [String : AnyObject]
+                self.profileViewModel = UserInfoModel.mj_object(withKeyValues: dict)
+            } else {
+                print("post request failed with code : \(result!["code"] as! String)")
+            }
+        }
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImg = info[UIImagePickerControllerEditedImage] as! UIImage
         self.avatar.image = chosenImg
-        //MARK: - uoload image
+        //MARK: - upload image
         dismiss(animated: true) {
             
         }
