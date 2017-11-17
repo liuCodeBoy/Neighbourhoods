@@ -53,10 +53,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(popAndUpdateEditedInfomation))
-        self.navigationItem.setLeftBarButton(back, animated: true)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+        setNavBarBackBtn()
         setNavBarTitle(title: "个人资料")
         
     }
@@ -83,11 +80,6 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         loadProfileInfo()
     }
     
-    @objc func popAndUpdateEditedInfomation() {
-        
-    }
-    
-    
     
     @objc func changeLocation(_ sender: Notification) {
         self.discrictLbl.text = (sender.object as! String)
@@ -112,9 +104,15 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                         return
                     }
                     // MARK:- upload avatar to the server
-                    NetWorkTool.shareInstance.uploadAvatar(access_token, image: (photosArr?.first!)!, finished: { (result, error) in
+                    NetWorkTool.shareInstance.updateProfile(access_token, cate: nil, content: nil, image: photosArr?.first!, finished: { (result, error) in
                         
-                        
+                        if error != nil {
+                            print(error as AnyObject)
+                        } else if result!["code"] as! String == "200" {
+                            self.presentHintMessage(target: self, hintMessgae: "上传成功")
+                        } else {
+                            print("request failed with exit code \(String(describing: result!["code"]))")
+                        }
                     })
                 }
                 self.present(imagePickerVC!, animated: true, completion: {

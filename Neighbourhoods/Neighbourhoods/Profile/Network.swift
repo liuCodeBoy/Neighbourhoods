@@ -329,54 +329,74 @@ extension NetWorkTool {
         }
     }
     
-    //MARK: - 选择小区
-    func changeAvatar(_ token: String, cate: String, content: String, up_cate: String, image: UIImage, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    //MARK: - 编辑个人资料
+    func updateProfile(_ token: String, cate: String?, content: String?, image: UIImage?, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
         let urlString = "http://106.15.199.8/llb/api/user/edit_data"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
-        let parameters = ["cate": cate, "content": content, "up_cate": up_cate, ] as [String : Any]
+        var parameters: [String: Any] = [String: AnyObject]()
         //3.发送请求参数
-        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
-            //获取字典数据
-            guard let resultDict = result as? [String : AnyObject] else {
-                finished(nil, error)
-                return
-            }
-            //将数组数据回调给外界控制器
-            finished(resultDict, error)
+        
+        if image != nil {
+            parameters.updateValue(1, forKey: "up_cate")
         }
-    }
-    
-    // MARK:- 上传头像
-    func uploadAvatar(_ token: String, image: UIImage, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        if cate != nil && content != nil {
+            parameters.updateValue(cate!, forKey: "cate")
+            parameters.updateValue(content!, forKey: "content")
+        }
         
-        //1.fetch the url string
-        let urlString = "http://106.15.199.8/llb/api/user/identity_auth"
-        
-        //2.add access token in the http request head
-        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
-
-        //3.post request to the server
-        post(urlString, parameters: nil, constructingBodyWith: { [weak self](fromData) in
-            let cateName = "image"
-            if let imageData = UIImageJPEGRepresentation(image, 1) {
-                let imgName = self?.getNowTime()
-                fromData.appendPart(withFileData: imageData, name: cateName, fileName: imgName!, mimeType: "image/png")
+        //3.发送请求参数
+        post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
+            //upload avatar
+            if image != nil {
+                let cateName = "image"
+                if let imageData = UIImageJPEGRepresentation(image!, 0.5){
+                    let imageName =  self?.getNowTime()
+                    formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName! , mimeType: "image/png")
+                }
             }
-            }, progress: { (progress) in
+            
+            }, progress: { (Progress) in
         }, success: { (_, success) in
             guard let resultDict = success as? [String : AnyObject] else {
                 return
             }
-            // return success infomation
-            finished(resultDict, nil)
-        }) { (_, error) in
-            // return failure infomation
-            finished(nil, error)
+            finished(resultDict , nil)
+        }) { (URLSessionDataTask, error) in
+            finished(nil , error)
         }
     }
+    
+//    // MARK:- 上传头像
+//    func updateprofile(_ token: String, image: UIImage, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+//
+//        //1.fetch the url string
+//        let urlString = "http://106.15.199.8/llb/api/user/identity_auth"
+//
+//        //2.add access token in the http request head
+//        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+//
+//        //3.post request to the server
+//        post(urlString, parameters: nil, constructingBodyWith: { [weak self](fromData) in
+//            let cateName = "image"
+//            if let imageData = UIImageJPEGRepresentation(image, 1) {
+//                let imgName = self?.getNowTime()
+//                fromData.appendPart(withFileData: imageData, name: cateName, fileName: imgName!, mimeType: "image/png")
+//            }
+//            }, progress: { (progress) in
+//        }, success: { (_, success) in
+//            guard let resultDict = success as? [String : AnyObject] else {
+//                return
+//            }
+//            // return success infomation
+//            finished(resultDict, nil)
+//        }) { (_, error) in
+//            // return failure infomation
+//            finished(nil, error)
+//        }
+//    }
     
 }
 
