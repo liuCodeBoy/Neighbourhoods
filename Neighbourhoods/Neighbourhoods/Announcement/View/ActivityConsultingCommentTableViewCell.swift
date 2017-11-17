@@ -22,8 +22,6 @@ class ActivityConsultingCommentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-    
     }
-
 
 }
