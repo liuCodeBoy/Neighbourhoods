@@ -14,7 +14,7 @@ typealias pushImageType = (NSArray? , NSNumber?) -> ()
 //定义头像个人详情跳转闭包
 typealias headImageType = (NSNumber?) -> ()
 //定义评论闭包类型
-typealias commentType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_ uid : NSNumber?,_ post_id : NSNumber?) -> ()
+typealias commentType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_ uid : NSNumber?,_ post_id : NSNumber?,_ indexRow : NSNumber?) -> ()
 class CircleVCTopicsTableViewCell: UITableViewCell{
     var   pushImageClouse : pushImageType?
     var   headImagePushClouse  : headImageType?
@@ -26,7 +26,6 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var createTime: UILabel!
     @IBOutlet weak var textLbl: UILabel!
-    
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
     @IBOutlet weak var imageLeft: UIImageView!
@@ -81,6 +80,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
         }
     }
     @IBAction func likeBtnClicked(_ sender: UIButton) {
+        
         let  nbor_id  =  self.momentsCellModel.id
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             let config = NoticeBarConfig(title: "你还未登录,请退出游客模式", image: nil, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
@@ -93,6 +93,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
             return
         }
         NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { (info, error) in
+            print(UserDefaults.standard.string(forKey: "token")!)
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
@@ -103,15 +104,19 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
                 })
               }else if (info?["code"] as? String == "200"){
              //服务器
-                self.likeBtn.setTitle("\(Int(self.momentsCellModel.love!) + 1)", for: .normal)
+                self.likeBtn.setTitle("\(Int(truncating: self.momentsCellModel.love!) + 1)", for: .normal)
              }
           }
       }
     //评论点击
     @IBAction func commentBtnCell(_ sender: UIButton) {
+        //取到当前cell的index索引值
+        let tableview = self.superview as! UITableView
+        let indexRow  = tableview.indexPath(for: self)?.row
         if self.showCommentClouse != nil{
-            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid)
+            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid, indexRow! as NSNumber)
         }
+        self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
     }
     @objc private func showImageVC(){
         if let pictureStringArr = momentsCellModel.picture{

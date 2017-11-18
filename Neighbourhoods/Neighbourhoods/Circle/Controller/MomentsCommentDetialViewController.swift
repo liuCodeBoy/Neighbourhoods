@@ -21,16 +21,18 @@ class MomentsCommentDetialViewController: UIViewController {
         //自动计算高度
         momentsCommentDetialTableView.estimatedRowHeight = 100
         momentsCommentDetialTableView.rowHeight = UITableViewAutomaticDimension
+       
+   
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        //发起网络请求
+        momentsComDetListArray.removeAll()
+
         //发起网络请求
         showDetailInfo()
-        //执行cell跳转闭包
-        action()
-    }
-    
-    func action() -> () {
-        
         
     }
+   
     
     func showDetailInfo() -> () {
         NetWorkTool.shareInstance.nbor_Detail(id: self.id as! NSInteger ) {[weak self](info, error) in
@@ -80,6 +82,15 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
                     self.navigationController?.pushViewController(userInfoVc!, animated: true)
                 }
             }
+            //跳出评论
+            cell.showCommentClouse = {[weak self](pid ,to_uid ,uid,post_id) in
+                let commentVc = self?.storyboard?.instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
+                commentVc?.pid =  0
+                commentVc?.to_uid  = self?.detailMainModel?.uid
+                commentVc?.uid     = self?.detailMainModel?.uid
+                commentVc?.post_id = self?.detailMainModel?.id
+                self?.navigationController?.pushViewController(commentVc!, animated: true)
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsCommentDetialSpecificCommentCell") as? MomentsCommentDetialSpecificCommentTableViewCell
@@ -99,6 +110,15 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
                 }else{
                     self.navigationController?.pushViewController(userInfoVc!, animated: true)
                 }
+            }
+            //跳出评论
+            cell?.showCommentClouse = {[weak self](pid ,to_uid ,uid,post_id) in
+                let commentVc = self?.storyboard?.instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
+                commentVc?.pid     =  model.id
+                commentVc?.to_uid  =  model.uid
+                commentVc?.uid     =  self?.detailMainModel?.uid
+                commentVc?.post_id =  self?.detailMainModel?.id
+                self?.navigationController?.pushViewController(commentVc!, animated: true)
             }
             return cell!
         }

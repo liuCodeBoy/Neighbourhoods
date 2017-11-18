@@ -40,14 +40,14 @@ class CircleViewController: UIViewController {
         topicsTableView.mj_header.isAutomaticallyChangeAlpha = true
     }
     @objc func refresh() -> () {
-        topicsTableView.reloadData()
+        self.page = 1
+        self.rotaionArray.removeAll()
+        lastedRequest(p: page)
         topicsTableView.mj_header.endRefreshing()
-        
     }
     @objc func  endrefresh() -> (){
         lastedRequest(p: page)
     }
-    
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         NetWorkTool.shareInstance.nbor_list(Nbor_Sort.love, p: p) {[weak self](info, error) in
@@ -122,9 +122,10 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
         }
      }
     //跳出评论
-    cell.showCommentClouse = {(pid ,to_uid ,uid,post_id) in
+    cell.showCommentClouse = {(pid ,to_uid ,uid,post_id,indexRow) in
         let commentVc = self.storyboard?.instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
             commentVc?.pid = 0
+            commentVc?.row = indexRow
             commentVc?.to_uid  = model.uid
             commentVc?.uid     = model.uid
             commentVc?.post_id = model.id
@@ -139,11 +140,6 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
         let modelArr =  self.rotaionArray
         let  model =  modelArr[indexPath.row]
         momentsCommentDetialVC.id = model.id
-//       //将评论值传入评论控制器
-//        commentVc?.pid = 0
-//        commentVc?.to_uid  = model.id
-//        commentVc?.uid     = model.id
-//        commentVc?.post_id = model.pid
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
     }
 }

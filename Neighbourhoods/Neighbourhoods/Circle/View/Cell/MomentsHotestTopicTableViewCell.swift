@@ -11,9 +11,13 @@ import SDWebImage
 import NoticeBar
 typealias MonentHotestHeadImageType = (NSNumber?) -> ()
 typealias MonentHotestImageType = (NSArray? , NSNumber?) -> ()
+//定义评论闭包类型
+typealias commentHotestTopicType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_ uid : NSNumber?,_ post_id : NSNumber?) -> ()
 class MomentsHotestTopicTableViewCell: UITableViewCell {
     var  headImagePushClouse   : MonentHotestHeadImageType?
     var   pushImageClouse : MonentHotestImageType?
+    var   showCommentClouse : commentHotestTopicType?
+
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -50,11 +54,15 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
                 })
             }else if (info?["code"] as? String == "200"){
                 //服务器
-                self.likeBtn.setTitle("\(Int(self.momentsCellModel.love!) + 1)", for: .normal)
+                self.likeBtn.setTitle("\(Int(truncating: self.momentsCellModel.love!) + 1)", for: .normal)
             }
         }
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
+        if self.showCommentClouse != nil{
+            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid)
+        }
+        self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
     }
     var momentsCellModel : NborCircleModel!{
         didSet {

@@ -23,7 +23,9 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
         tableView.mj_header.isAutomaticallyChangeAlpha = true
     }
     @objc func refresh() -> () {
-        tableView.reloadData()
+        self.page = 1
+        self.rotaionArray.removeAll()
+        lastedRequest(p: page)
         tableView.mj_header.endRefreshing()
         
     }

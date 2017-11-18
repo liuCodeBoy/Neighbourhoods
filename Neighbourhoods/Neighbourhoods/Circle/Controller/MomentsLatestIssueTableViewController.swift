@@ -31,13 +31,14 @@ class MomentsLatestIssueTableViewController: UITableViewController {
                 tableView.mj_header.isAutomaticallyChangeAlpha = true
             }
             @objc func refresh() -> () {
-                 tableView.reloadData()
+                self.page = 1
+                self.rotaionArray.removeAll()
+                 lastedRequest(p: page)
                  tableView.mj_header.endRefreshing()
            
                  }
             @objc func  endrefresh() -> (){
                 lastedRequest(p: page)
-            
                 }
     
     //MARK: - 最新发布网络请求
@@ -67,8 +68,6 @@ class MomentsLatestIssueTableViewController: UITableViewController {
                     if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                         self?.page += 1
                     }
-                    
-                    
                 }else{
                     //服务器
                     self?.tableView.mj_header.endRefreshing()
@@ -103,6 +102,16 @@ class MomentsLatestIssueTableViewController: UITableViewController {
             }else{
                 self.navigationController?.pushViewController(userInfoVc!, animated: true)
             }
+        }
+        
+        //跳出评论
+        cell.showCommentClouse = {(pid ,to_uid ,uid,post_id) in
+            let commentVc = self.storyboard?.instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
+            commentVc?.pid = 0
+            commentVc?.to_uid  = model.uid
+            commentVc?.uid     = model.uid
+            commentVc?.post_id = model.id
+            self.navigationController?.pushViewController(commentVc!, animated: true)
         }
         return cell
        

@@ -10,6 +10,7 @@ import UIKit
 import MJExtension
 class NborTopicModel: NSObject {
     @objc  var id               : NSNumber?
+    @objc  var uid               : NSNumber?
     @objc  var name             : String?
     @objc  var content          : String?
     @objc  var time             : NSNumber?

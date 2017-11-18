@@ -12,8 +12,10 @@ import NoticeBar
 //定义跳转闭包
 typealias pushDetailVCType = (NSNumber?) -> ()
 typealias MonentCommentDetailSpecHeadImageType = (NSNumber?) -> ()
+typealias commentSecondaryDetialType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_ uid : NSNumber?,_ post_id : NSNumber?) -> ()
 class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
     var  headImagePushClouse   : MonentCommentDetailSpecHeadImageType?
+    var  showCommentClouse     : commentSecondaryDetialType?
     @IBOutlet weak var commentMoreBtn: UIButton!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -75,11 +77,15 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
                 })
             }else if (info?["code"] as? String == "200"){
                 //服务器
-                self.likeBtn.setTitle("\(Int(self.momentsCellModel.love!) + 1)", for: .normal)
+                self.likeBtn.setTitle("\(Int(truncating: self.momentsCellModel.love!) + 1)", for: .normal)
             }
         }
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
+        if self.showCommentClouse != nil{
+            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid)
+        }
+        self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
     }
     @IBAction func shareBtnClicked(_ sender: UIButton) {
     }

@@ -1,4 +1,4 @@
-//
+   //
 //  TopicDetialTableViewController.swift
 //  Neighbourhoods
 //
@@ -41,7 +41,9 @@ class TopicDetialTableViewController: UITableViewController {
     }
     
     @objc  private func refresh() -> () {
-        tableView.reloadData()
+        self.page = 1
+        self.rotaionArray.removeAll()
+        lastedRequest(p: page)
         tableView.mj_header.endRefreshing()
         
     }
@@ -49,6 +51,15 @@ class TopicDetialTableViewController: UITableViewController {
         lastedRequest(p : self.page)
         
     }
+    @IBAction func showCommentVC(_ sender: Any) {
+        let commentVc = self.storyboard?.instantiateViewController(withIdentifier: "TopicCommentVC") as? TopicCommentVC
+        commentVc?.pid = 0
+        commentVc?.to_uid  = modelMain?.uid
+        commentVc?.uid     = modelMain?.uid
+        commentVc?.post_id = modelMain?.id
+        self.navigationController?.pushViewController(commentVc!, animated: true)
+    }
+    
     
     //MARK: - 最新发布网络请求
    private func lastedRequest(p : Int) -> () {

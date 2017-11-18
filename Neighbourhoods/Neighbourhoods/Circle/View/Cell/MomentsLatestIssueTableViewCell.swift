@@ -13,9 +13,12 @@ import NoticeBar
 typealias MonentImageType = (NSArray? , NSNumber?) -> ()
 //定义头像个人详情跳转闭包
 typealias MonentHeadImageType = (NSNumber?) -> ()
+//定义评论闭包类型
+typealias commentLatestIssueType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_ uid : NSNumber?,_ post_id : NSNumber?) -> ()
 class MomentsLatestIssueTableViewCell: UITableViewCell {
     var   pushImageClouse : MonentImageType?
      var  headImagePushClouse   : MonentHeadImageType?
+    var   showCommentClouse : commentLatestIssueType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -57,6 +60,10 @@ class MomentsLatestIssueTableViewCell: UITableViewCell {
         }
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
+        if self.showCommentClouse != nil{
+            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid)
+        }
+        self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
     }
     
     var momentsCellModel : NborCircleModel!{
