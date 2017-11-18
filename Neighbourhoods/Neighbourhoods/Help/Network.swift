@@ -30,10 +30,11 @@ extension NetWorkTool {
     }
     
     //MARK: - 任务详情
-    func taskDetial(id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func taskDetial(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/task/task_det"
+        let urlString = "http://106.15.199.8/llb/api/user/task_det"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id] as [String : Any]
         //3.发送请求参数
@@ -114,6 +115,66 @@ extension NetWorkTool {
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //MARK: - 领取任务
+    func receiveTask(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/task_rec"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["id": id]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //MARK: - 取消任务
+    func cancelTask(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/task_cancel"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["id": id]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //MARK: - 任务操作
+    func operateTask(_ token: String, id: Int, type: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/task_operate"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["id": id, "type": type]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据
@@ -330,7 +391,7 @@ extension NetWorkTool {
     }
     
     //MARK: - 编辑个人资料
-    func updateProfile(_ token: String, cate: String?, content: String?, image: UIImage?, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func updateProfile(_ token: String, cate: String?, content: String?, content_sex: Int?, image: UIImage?, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
         let urlString = "http://106.15.199.8/llb/api/user/edit_data"
@@ -339,14 +400,21 @@ extension NetWorkTool {
         var parameters: [String: Any] = [String: AnyObject]()
         //3.发送请求参数
         
+        //set image
         if image != nil {
             parameters.updateValue(1, forKey: "up_cate")
         }
+        //set nickname
         if cate != nil && content != nil {
             parameters.updateValue(cate!, forKey: "cate")
             parameters.updateValue(content!, forKey: "content")
         }
         
+        //set gender
+        if cate != nil && content_sex != nil {
+            parameters.updateValue(cate!, forKey: "cate")
+            parameters.updateValue(content_sex!, forKey: "content")
+        }
         //3.发送请求参数
         post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
             //upload avatar
@@ -369,34 +437,46 @@ extension NetWorkTool {
         }
     }
     
-//    // MARK:- 上传头像
-//    func updateprofile(_ token: String, image: UIImage, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
-//
-//        //1.fetch the url string
-//        let urlString = "http://106.15.199.8/llb/api/user/identity_auth"
-//
-//        //2.add access token in the http request head
-//        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
-//
-//        //3.post request to the server
-//        post(urlString, parameters: nil, constructingBodyWith: { [weak self](fromData) in
-//            let cateName = "image"
-//            if let imageData = UIImageJPEGRepresentation(image, 1) {
-//                let imgName = self?.getNowTime()
-//                fromData.appendPart(withFileData: imageData, name: cateName, fileName: imgName!, mimeType: "image/png")
-//            }
-//            }, progress: { (progress) in
-//        }, success: { (_, success) in
-//            guard let resultDict = success as? [String : AnyObject] else {
-//                return
-//            }
-//            // return success infomation
-//            finished(resultDict, nil)
-//        }) { (_, error) in
-//            // return failure infomation
-//            finished(nil, error)
-//        }
-//    }
+    //MARK: - 修改密码
+    func changePwd(_ token: String, oldpwd: String, newpwd: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/changePwd"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["oldpwd": oldpwd, "newpwd": newpwd] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //MARK: - 保存小区
+    func upDistrict(_ token: String, district: Int, dong: Int, door: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/up_district"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["district": district, "dong": dong, "door": door] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
     
 }
 

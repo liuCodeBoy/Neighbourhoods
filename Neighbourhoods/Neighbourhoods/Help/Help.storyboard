@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nlP-Jf-GuV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nlP-Jf-GuV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -281,59 +281,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Yfh-Pj-z4u">
-                                <rect key="frame" x="20" y="84" width="55" height="55"/>
+                                <rect key="frame" x="20" y="40" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="n4z-uT-aZA"/>
                                     <constraint firstAttribute="height" constant="55" id="uSc-hU-O4u"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="27.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf1-f5-pcq">
-                                <rect key="frame" x="87" y="91" width="37" height="21.5"/>
+                                <rect key="frame" x="87" y="47" width="37" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-wc-H4s">
-                                <rect key="frame" x="93" y="120" width="10" height="15"/>
+                                <rect key="frame" x="93" y="76" width="10" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="DuI-Cj-jAF"/>
                                     <constraint firstAttribute="height" constant="15" id="pk6-WB-6ox"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_icon_small" translatesAutoresizingMaskIntoConstraints="NO" id="vtY-M8-O7f">
-                                <rect key="frame" x="108" y="121" width="8" height="13"/>
+                                <rect key="frame" x="108" y="77" width="8" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="8" id="cQQ-L0-Xqk"/>
                                     <constraint firstAttribute="height" constant="13" id="jhf-c7-djN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 认证 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNn-pD-77M">
-                                <rect key="frame" x="132" y="93" width="34" height="16"/>
+                                <rect key="frame" x="132" y="49" width="34" height="16"/>
                                 <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南京鼓楼区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTh-H3-A6s">
-                                <rect key="frame" x="121" y="122" width="46" height="11"/>
+                                <rect key="frame" x="121" y="78" width="46" height="11"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtA-Sg-fDl">
-                                <rect key="frame" x="25" y="194.5" width="325" height="14.5"/>
+                                <rect key="frame" x="25" y="150.5" width="325" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F44-8S-pWb">
-                                <rect key="frame" x="25" y="155" width="325" height="21.5"/>
+                                <rect key="frame" x="25" y="111" width="325" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nl5-dx-ue8">
-                                <rect key="frame" x="300" y="74" width="85" height="30"/>
+                                <rect key="frame" x="300" y="30" width="85" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w1-Fk-QRp">
                                         <rect key="frame" x="5" y="5" width="30" height="20"/>
@@ -361,6 +367,12 @@
                                     <constraint firstAttribute="width" constant="40" id="N2m-Be-K6V"/>
                                     <constraint firstAttribute="height" constant="40" id="Psb-Io-omm"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-u1-Xyf">
                                 <rect key="frame" x="82.5" y="541" width="100" height="46"/>
@@ -448,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzB-Gh-noa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3359" y="15"/>
+            <point key="canvasLocation" x="1806" y="2663"/>
         </scene>
         <!--Social Charity View Controller-->
         <scene sceneID="ihd-Hn-zHC">
@@ -486,7 +498,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：江苏省南京市某某某街道" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-NB-GfE">
-                                                    <rect key="frame" x="130" y="51" width="127" height="28.5"/>
+                                                    <rect key="frame" x="130" y="51" width="120" height="28.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -551,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ija-kj-QZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="1400"/>
+            <point key="canvasLocation" x="3167" y="1693"/>
         </scene>
         <!--Social Charity Detial View Controller-->
         <scene sceneID="nhc-zQ-lIG">
@@ -683,7 +695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDj-yL-LS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3324" y="1399"/>
+            <point key="canvasLocation" x="3959" y="1693"/>
         </scene>
         <!--Consult View Controller-->
         <scene sceneID="PWH-Wu-VMh">
@@ -698,7 +710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6JK-tl-jpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4095" y="1398"/>
+            <point key="canvasLocation" x="4767" y="1693"/>
         </scene>
         <!--My Issued Mission Table View Controller-->
         <scene sceneID="gzd-hR-9zd">
@@ -787,7 +799,7 @@
                                     <outlet property="statusBackView" destination="KCa-AT-bFe" id="ae7-ov-DPp"/>
                                     <outlet property="statusBtn" destination="XjR-VQ-QWy" id="jPA-W1-gQf"/>
                                     <outlet property="titleLbl" destination="Hce-Rt-n3V" id="vom-Jw-slG"/>
-                                    <segue destination="BCo-8g-pFl" kind="show" identifier="missionDetialSegue" id="9IE-zi-0hP"/>
+                                    <segue destination="BCo-8g-pFl" kind="show" id="aw5-IC-nwb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -799,7 +811,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cg-NZ-vqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="15"/>
+            <point key="canvasLocation" x="3166" y="172"/>
         </scene>
         <!--My Received Mission Table View Controller-->
         <scene sceneID="Mve-Ji-tF5">
@@ -888,6 +900,7 @@
                                     <outlet property="statusBackView" destination="TnS-Dj-X6e" id="nJL-FC-QDp"/>
                                     <outlet property="statusBtn" destination="3NA-Ph-GrH" id="m9S-WA-qqX"/>
                                     <outlet property="titleLbl" destination="kn5-om-Dro" id="0O0-In-56c"/>
+                                    <segue destination="BCo-8g-pFl" kind="show" id="jvi-Ob-NSS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -899,7 +912,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmF-6K-cwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="712"/>
+            <point key="canvasLocation" x="3166" y="913"/>
         </scene>
         <!--Help Category By Time View Controller-->
         <scene sceneID="F1P-n9-A1A">
@@ -995,6 +1008,7 @@
                                             <outlet property="marginView" destination="87d-If-Cvd" id="DcR-5B-2wd"/>
                                             <outlet property="scoreBtn" destination="cfB-cs-nfB" id="3BU-Ds-yae"/>
                                             <outlet property="titleLbl" destination="Dlf-yd-tay" id="cxb-6q-TZ1"/>
+                                            <segue destination="BCo-8g-pFl" kind="show" id="2wo-ig-F6q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1111,6 +1125,7 @@
                                             <outlet property="marginView" destination="quO-HK-8ZN" id="wUu-ZH-Pn0"/>
                                             <outlet property="scoreBtn" destination="Msw-gC-fXK" id="cUw-b4-rFp"/>
                                             <outlet property="titleLbl" destination="l7k-Us-yxB" id="Hen-0E-6DU"/>
+                                            <segue destination="BCo-8g-pFl" kind="show" id="cNx-K1-0WA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1227,6 +1242,7 @@
                                             <outlet property="marginView" destination="Io0-Lt-mb2" id="cMu-lE-5wb"/>
                                             <outlet property="scoreBtn" destination="crI-gF-68P" id="U0v-zC-fT8"/>
                                             <outlet property="titleLbl" destination="6S8-43-GIw" id="QCm-Aq-IIs"/>
+                                            <segue destination="BCo-8g-pFl" kind="show" id="rVl-Oi-aln"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1281,4 +1297,7 @@
         <image name="tabbar_help_highlighted" width="19" height="25"/>
         <image name="yellow_tab_selected_background" width="55" height="8"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cNx-K1-0WA"/>
+    </inferredMetricsTieBreakers>
 </document>

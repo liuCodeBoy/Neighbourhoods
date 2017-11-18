@@ -12,20 +12,25 @@ class SelectDistrictSecondLevelTableViewController: UITableViewController {
     
     var secondLevelList = [SelectDistrictModel]()
     
-    var firstDName: String?
+//    var firstDName: String?
+//
+//    var secondDName: String? {
+//        didSet {
+//            thirdVC?.firstDName = self.firstDName
+//            thirdVC?.secondDName = self.secondDName
+//        }
+//    }
     
-    var secondDName: String? {
-        didSet {
-            thirdVC?.firstDName = self.firstDName
-            thirdVC?.secondDName = self.secondDName
-        }
-    }
+    var district: Int?
     
     var pid: Int?
     
     var id: Int? {
         didSet {
-            thirdVC?.pid = self.id
+            thirdVC?.pid         = self.id
+            
+            thirdVC?.district    = self.district
+            thirdVC?.dong        = self.id
         }
     }
     
@@ -67,7 +72,7 @@ class SelectDistrictSecondLevelTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         id = secondLevelList[indexPath.row].id as? Int
         pid = secondLevelList[indexPath.row].pid as? Int
-        secondDName = firstDName! + secondLevelList[indexPath.row].name!
+//        secondDName = firstDName! + secondLevelList[indexPath.row].name!
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

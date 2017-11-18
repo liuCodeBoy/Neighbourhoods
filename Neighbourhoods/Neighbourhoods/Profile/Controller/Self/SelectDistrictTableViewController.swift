@@ -14,17 +14,20 @@ class SelectDistrictTableViewController: UITableViewController {
     
     var secondVC: SelectDistrictSecondLevelTableViewController?
     
-    var firstDName: String? {
-        didSet {
-            secondVC?.firstDName = self.firstDName
-        }
-    }
+//    var firstDName: String? {
+//        didSet {
+//            secondVC?.firstDName = self.firstDName
+//        }
+//    }
+    
     
     var pid: Int?
     
     var id: Int? {
         didSet {
-            secondVC?.pid = self.id
+            secondVC?.pid        = self.id
+            
+            secondVC?.district   = self.id
         }
     }
     
@@ -90,7 +93,7 @@ class SelectDistrictTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         id = firstLevelList[indexPath.row].id as? Int
         pid = firstLevelList[indexPath.row].pid as? Int
-        firstDName = firstLevelList[indexPath.row].name
+//        firstDName = firstLevelList[indexPath.row].name
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

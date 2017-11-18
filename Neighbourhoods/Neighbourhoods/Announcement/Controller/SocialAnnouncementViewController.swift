@@ -58,9 +58,7 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
-                }
+                
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count {
                     let dict =  result[i]
@@ -71,6 +69,11 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
                 self?.tableview.reloadData()
                 if p == self?.pages {
                     self?.tableview.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableview.mj_footer.endRefreshing()
+                }
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
                 }
             }else{
                 //服务器

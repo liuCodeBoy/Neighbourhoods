@@ -655,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A193871F8DCB4C002C1E23 /* Help.storyboard */,
+				D345ABF11FB149A900FAB15F /* Network.swift */,
 				D345ABF31FB1503500FAB15F /* Model */,
 				D3F6B1831F9A1071004D0A20 /* Controller */,
 				D3F6B18A1F9A1CFB004D0A20 /* View */,
@@ -667,7 +668,6 @@
 			children = (
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
 				D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */,
-				D345ABF11FB149A900FAB15F /* Network.swift */,
 				D35B2D121FBB0B3800F1E8DF /* Model */,
 				D31CD4A61F91DA5300195686 /* Controller */,
 				D31CD4A71F91DA9100195686 /* View */,

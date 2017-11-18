@@ -14,17 +14,19 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
     
     var thirdLevelList = [SelectDistrictModel]()
     
-    var firstDName: String?
+    var district: Int?
+    var dong    : Int?
+    var door    : Int?
     
-    var secondDName: String?
-    
-    var thirdDName: String?
+//    var firstDName: String?
+//    var secondDName: String?
+//    var thirdDName: String?
     
     var pid: Int?
     
     var id: Int? {
         didSet {
-            
+            self.door = self.id
         }
     }
 
@@ -64,15 +66,30 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         id = thirdLevelList[indexPath.row].id as? Int
         pid = thirdLevelList[indexPath.row].pid as? Int
-        thirdDName = secondDName! + thirdLevelList[indexPath.row].name!
+//        thirdDName = secondDName! + thirdLevelList[indexPath.row].name!
         let ok = UIAlertAction(title: "确定", style: .default) { (_) in
             
             // MARK: - pass data to designate vc
-            NotificationCenter.default.post(name: NSNotification.Name.init(locationNotification), object: self.thirdDName!)
-            
+//            NotificationCenter.default.post(name: NSNotification.Name.init(locationNotification), object: self.thirdDName!)
+
+            // MARK:- upload district
+            guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+                return
+            }
+            NetWorkTool.shareInstance.upDistrict(access_token, district: self.district!, dong: self.dong!, door: self.door!, finished: { (result, error) in
+                if error != nil {
+                    print(error as AnyObject)
+                    self.presentHintMessage(target: self, hintMessgae: error as! String)
+                } else if result!["code"] as! String == "200" {
+                    let index = self.navigationController?.viewControllers.index(after: 0)
+                    self.navigationController?.popToViewController((self.navigationController?.viewControllers[index!])!, animated: true)
+                } else {
+                    self.presentHintMessage(target: self, hintMessgae: "修改失败")
+                    print("post failed with exit code \(String(describing: result!["code"]))")
+                }
+            })
             // MARK: - pop to designate vc
-            let index = self.navigationController?.viewControllers.index(after: 0)
-            self.navigationController?.popToViewController((self.navigationController?.viewControllers[index!])!, animated: true)
+            
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let alert = UIAlertController(title: "提示", message: "确定", preferredStyle: .alert)

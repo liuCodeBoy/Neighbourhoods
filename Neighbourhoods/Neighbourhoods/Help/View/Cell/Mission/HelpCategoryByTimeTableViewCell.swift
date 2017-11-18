@@ -29,8 +29,8 @@ class HelpCategoryByTimeTableViewCell: UITableViewCell {
             if let content = viewModel?.content {
                 detialLbl.text = content
             }
-            if let btnTitle = viewModel?.task_status {
-                scoreBtn.setTitle(btnTitle, for: .normal)
+            if let btnTitle = viewModel?.integral {
+                scoreBtn.setTitle("\(btnTitle)", for: .normal)
             }
             if let time = viewModel?.time {
                 createTime.text = NSDate.createDateString(createAtStr: "\(String(describing: time))")

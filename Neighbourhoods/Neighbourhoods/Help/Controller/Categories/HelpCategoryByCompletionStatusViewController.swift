@@ -18,15 +18,17 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
     
     var taskListArray = [TaskListModel]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        lastedRequest(p: page)
+        loadRefreshComponet()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableview.delegate = self
         tableview.dataSource = self
-        
-        lastedRequest(p: page)
-        loadRefreshComponet()
-        
+    
     }
     
     func loadRefreshComponet() -> () {
@@ -57,9 +59,7 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
-                }
+                
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count {
                     let taskDict =  result[i]
@@ -70,6 +70,11 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
                 self?.tableview.reloadData()
                 if p == self?.pages {
                     self?.tableview.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableview.mj_footer.endRefreshing()
+                }
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
                 }
             }else{
                 //服务器

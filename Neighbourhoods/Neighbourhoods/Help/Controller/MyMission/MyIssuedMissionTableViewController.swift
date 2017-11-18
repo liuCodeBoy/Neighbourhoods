@@ -19,7 +19,7 @@ class MyIssuedMissionTableViewController: UITableViewController {
     
     private var idNum: Int? {
         didSet {
-            detialVC?.id = self.idNum
+//            detialVC?.id = self.idNum
         }
     }
     
@@ -35,14 +35,14 @@ class MyIssuedMissionTableViewController: UITableViewController {
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if myMissionArray.count == 0 {
-            let nomission = Bundle.main.loadNibNamed("NoMissionCoverView", owner: self, options: nil)?.first as! UIView
-            nomission.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-            self.view.addSubview(nomission)
-            self.tableView.isScrollEnabled = false
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        if myMissionArray.count == 0 {
+//            let nomission = Bundle.main.loadNibNamed("NoMissionCoverView", owner: self, options: nil)?.first as! UIView
+//            nomission.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//            self.view.addSubview(nomission)
+//            self.tableView.isScrollEnabled = false
+//        }
+//    }
     
     func loadRefreshComponet() -> () {
         //默认下拉刷新
@@ -72,9 +72,7 @@ class MyIssuedMissionTableViewController: UITableViewController {
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
-                }
+                
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count {
                     let taskDict =  result[i]
@@ -85,6 +83,11 @@ class MyIssuedMissionTableViewController: UITableViewController {
                 self?.tableView.reloadData()
                 if p == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableView.mj_footer.endRefreshing()
+                }
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
                 }
             }else{
                 //服务器

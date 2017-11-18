@@ -17,7 +17,7 @@ class UserInfoModel: NSObject {
     @objc var integral       : NSNumber?
     @objc var atten          : NSNumber?
     @objc var fans           : NSNumber?
-    @objc var addressd       : String?
+    @objc var address        : String?
     @objc var type           : String?
     @objc var account        : String?
     @objc var district       : String?
