@@ -1,46 +1,36 @@
 //
-//  WriteCommentViewController.swift
+//  TopicCommentVC.swift
 //  Neighbourhoods
 //
-//  Created by Weslie on 01/11/2017.
-//  Copyright © 2017 NJQL. All rights reserved.
+//  Created by LiuXinQiang on 2017/11/18.
+//  Copyright © 2017年 NJQL. All rights reserved.
 //
 
 import UIKit
 import NoticeBar
-class WriteCommentViewController: UIViewController ,UITextViewDelegate{
+class TopicCommentVC: UIViewController ,UITextViewDelegate {
     var pid : NSNumber?
     var row : NSNumber?
     var to_uid :NSNumber?
     var uid  : NSNumber?
     var post_id :NSNumber?
-    @IBOutlet weak var commentTextView: UITextView!
-    @IBOutlet weak var sendBtn: UIBarButtonItem!
+    @IBOutlet weak var sendOutBtn: UIBarButtonItem!
     var commentLabel : String?{
         didSet{
             if commentLabel?.characters.count == 0 {
-                self.sendBtn.isEnabled = false
+                self.sendOutBtn.isEnabled = false
             }else{
-                self.sendBtn.isEnabled = true
+                self.sendOutBtn.isEnabled = true
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setNavBarBackBtn()
-        commentTextView.delegate = self
-        setNavBarTitle(title: "写评论")
-        self.commentTextView.text = "写评论..."
-        self.commentTextView.textColor = UIColor.lightGray
-    }
-    
-    @IBAction func sendOutComment(_ sender: Any) {
+   
+    @IBAction func sendOut(_ sender: UIBarButtonItem) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
             return
         }
-        NetWorkTool.shareInstance.postReply(token: UserDefaults.standard.string(forKey: "token")!, pid: self.pid! , to_uid: self.to_uid!, uid: self.uid!, post_id: self.post_id!, content:  self.commentTextView.text) { [weak self](info, error) in
+        NetWorkTool.shareInstance.topicReply(token: UserDefaults.standard.string(forKey: "token")!, pid: self.pid! , to_uid: self.to_uid!, uid: self.uid!, post_id: self.post_id!, content:  self.commentTextField.text) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let result  = info!["result"]
                 {
@@ -55,11 +45,27 @@ class WriteCommentViewController: UIViewController ,UITextViewDelegate{
                 }
             }
         }
-  }
-        
-    func textViewDidChange(_ textView: UITextView) {
-           self.commentLabel =   textView.text
     }
-   
+    @IBOutlet weak var commentTextField: UITextView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setNavBarBackBtn()
+        commentTextField.delegate = self
+        setNavBarTitle(title: "写评论")
+        self.commentTextField.text = "写评论..."
+        self.commentTextField.textColor = UIColor.lightGray
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
+
+    func textViewDidChange(_ textView: UITextView) {
+        self.commentLabel =   textView.text
+    }
+    
+
 }

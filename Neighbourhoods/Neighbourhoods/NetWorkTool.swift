@@ -249,6 +249,7 @@ extension NetWorkTool{
 //    user/ postReply 评论接口
     func postReply(token : String, pid :NSNumber,to_uid :NSNumber, uid: NSNumber, post_id : NSNumber,
                    content:String, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
          //1.获取请求的URLString
         let urlString = "http://106.15.199.8/llb/api/user/postReply"
         //2.获取请求参数
@@ -264,6 +265,28 @@ extension NetWorkTool{
             finished(resultDict, error)
         }
     }
+    //user/ topicReply
+    func topicReply(token : String, pid :NSNumber,to_uid :NSNumber, uid: NSNumber, post_id : NSNumber,
+                   content:String, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/postReply"
+        //2.获取请求参数
+        let parameters = ["pid" : pid,"to_uid" : to_uid,"uid" : uid,"post_id" : post_id, "content" : content] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    
+    
   //点赞接口user/nbor_zan
     func nbor_zan(token : String, nbor_id : NSNumber , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
@@ -331,10 +354,6 @@ extension NetWorkTool {
         let timesString = "\(a).png"
         return  timesString
     }
-    
-    
-    
-    
     //话题发布user/ topic_publish
     func topic_publish(_ token: String,
                       image  : [UIImage],
@@ -373,6 +392,30 @@ extension NetWorkTool {
             finished(resultDict , nil)
         }) { (URLSessionDataTask, error) in
             finished(nil , error)
+        }
+    }
+    
+    //发布任务
+    //user/ task_publish
+    func task_publish(_ token: String,
+                       title  : String,
+                       content : String,
+                       integral : Int,
+                       finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/topic_publish"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters =  ["title":title,"integral" : integral, "content" : content ] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
         }
     }
 }

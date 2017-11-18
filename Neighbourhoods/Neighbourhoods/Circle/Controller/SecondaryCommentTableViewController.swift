@@ -32,7 +32,9 @@ class SecondaryCommentTableViewController: UITableViewController {
         tableView.mj_header.isAutomaticallyChangeAlpha = true
     }
     @objc func refresh() -> () {
-        tableView.reloadData()
+        self.page = 1
+        self.detailModelArr.removeAll()
+        lastedRequest(p: page)
         tableView.mj_header.endRefreshing()
         
     }
@@ -100,6 +102,8 @@ class SecondaryCommentTableViewController: UITableViewController {
                     self.navigationController?.pushViewController(userInfoVc!, animated: true)
                 }
             }
+            
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SecondaryCommentDetialCell")  as! SecondaryCommentDetialTableViewCell

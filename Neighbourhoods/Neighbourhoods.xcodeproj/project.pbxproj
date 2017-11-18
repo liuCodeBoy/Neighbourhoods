@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		91738E5369CA97748E1652E9 /* Pods_Neighbourhoods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C24ABCE591C5A1B847A1370 /* Pods_Neighbourhoods.framework */; };
 		B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */; };
+		B62C7D8F1FC0351F00772187 /* TopicCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C7D8E1FC0351F00772187 /* TopicCommentVC.swift */; };
 		B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646FDD21FB18D4C00990357 /* NborTopicModel.swift */; };
 		B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */; };
 		B6559A101FBD613B00EB6D56 /* PicPicKerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */; };
@@ -194,6 +195,7 @@
 		0C24ABCE591C5A1B847A1370 /* Pods_Neighbourhoods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neighbourhoods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.debug.xcconfig"; sourceTree = "<group>"; };
 		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		B62C7D8E1FC0351F00772187 /* TopicCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCommentVC.swift; sourceTree = "<group>"; };
 		B646FDD21FB18D4C00990357 /* NborTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborTopicModel.swift; sourceTree = "<group>"; };
 		B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersListViewController.swift; sourceTree = "<group>"; };
 		B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPicKerCollectionView.swift; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 				D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */,
 				B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */,
 				B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */,
+				B62C7D8E1FC0351F00772187 /* TopicCommentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1155,6 +1158,7 @@
 				D334F5E41FA86788006E2769 /* CircleVCTopicsTableViewCell.swift in Sources */,
 				D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */,
 				D31B54AF1FB1AF29003549AF /* SocialOrgDetModel.swift in Sources */,
+				B62C7D8F1FC0351F00772187 /* TopicCommentVC.swift in Sources */,
 				D31E971B1FA9FEB100A78D3A /* ProfileTableViewController.swift in Sources */,
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
 				D3524C5F1FB40994004240A5 /* ProfileFollowingTableViewCell.swift in Sources */,

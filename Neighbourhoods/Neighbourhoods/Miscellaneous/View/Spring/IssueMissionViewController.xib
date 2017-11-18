@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IssueMissionViewController" customModule="Neighbourhoods" customModuleProvider="target">
             <connections>
                 <outlet property="missionDetialTextView" destination="4RL-WG-pY5" id="Eb5-ZJ-t7c"/>
+                <outlet property="missionScoreTF" destination="vUb-W2-Xf5" id="z4K-UY-7Du"/>
                 <outlet property="missionTitle" destination="asT-XH-KOE" id="cgE-p8-xiS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -97,12 +98,24 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUb-W2-Xf5">
+                            <rect key="frame" x="270" y="8" width="97" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="J7t-uj-adT"/>
+                                <constraint firstAttribute="width" constant="97" id="QxK-Je-M0I"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ziN-eH-jLA" firstAttribute="leading" secondItem="mgd-cZ-l3s" secondAttribute="leading" constant="20" id="A1l-Sm-NJs"/>
                         <constraint firstAttribute="height" constant="45" id="Cxp-c6-cdq"/>
                         <constraint firstItem="ziN-eH-jLA" firstAttribute="centerY" secondItem="mgd-cZ-l3s" secondAttribute="centerY" id="a9L-SC-tYz"/>
+                        <constraint firstItem="vUb-W2-Xf5" firstAttribute="centerY" secondItem="mgd-cZ-l3s" secondAttribute="centerY" id="klw-K0-Cvs"/>
+                        <constraint firstAttribute="trailing" secondItem="vUb-W2-Xf5" secondAttribute="trailing" constant="8" id="tbB-M3-Lm6"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNu-rY-ZB8">

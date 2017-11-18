@@ -214,9 +214,9 @@
                                                     <rect key="frame" x="197.5" y="110" width="167.5" height="100"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GU-cY-qPj">
-                                                    <rect key="frame" x="305" y="222" width="60" height="20"/>
+                                                    <rect key="frame" x="305" y="222" width="60" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="O6d-zF-AhS"/>
+                                                        <constraint firstAttribute="height" constant="22" id="O6d-zF-AhS"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -227,16 +227,17 @@
                                                         <action selector="commentBtnCell:" destination="WiK-RV-apu" eventType="touchUpInside" id="2W9-Ju-klv"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-Xy-5vE">
-                                                    <rect key="frame" x="244" y="222" width="60" height="20"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-Xy-5vE">
+                                                    <rect key="frame" x="245" y="222" width="60" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="lFp-Uc-poN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="0" image="moments_liked">
+                                                    <state key="normal" title="0" image="moments_disliked">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <state key="selected" image="moments_liked" backgroundImage="moments_liked"/>
                                                     <connections>
                                                         <action selector="likeBtnClicked:" destination="WiK-RV-apu" eventType="touchUpInside" id="vx5-Yg-4at"/>
                                                     </connections>
@@ -472,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vw5-yL-Am7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105" y="-777"/>
+            <point key="canvasLocation" x="4618" y="10"/>
         </scene>
         <!--Moments View Controller-->
         <scene sceneID="Zik-qI-0IC">
@@ -678,9 +679,9 @@
                                             <rect key="frame" x="195" y="120.5" width="165" height="90"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVW-u4-Duu">
-                                            <rect key="frame" x="305" y="222.5" width="60" height="20"/>
+                                            <rect key="frame" x="305" y="222.5" width="60" height="22"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="Ues-l9-ZmL"/>
+                                                <constraint firstAttribute="height" constant="22" id="Ues-l9-ZmL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -689,19 +690,19 @@
                                             </state>
                                             <connections>
                                                 <action selector="commentBtnCell:" destination="4Az-ER-6x8" eventType="touchUpInside" id="dUm-eb-ezj"/>
-                                                <segue destination="UFO-nZ-pRN" kind="show" id="ODt-Ub-nup"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bey-SQ-WrY">
-                                            <rect key="frame" x="245" y="222.5" width="60" height="20"/>
+                                            <rect key="frame" x="245" y="222.5" width="60" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="ucz-Oj-guy"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="0" image="moments_liked">
+                                            <state key="normal" title="0" image="moments_disliked">
                                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <state key="selected" image="moments_liked"/>
                                             <connections>
                                                 <action selector="likeBtnClicked:" destination="4Az-ER-6x8" eventType="touchUpInside" id="YMh-RP-n18"/>
                                             </connections>
@@ -863,9 +864,9 @@
                                             <rect key="frame" x="195" y="115.5" width="165" height="90"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h6-7g-wgd">
-                                            <rect key="frame" x="305" y="217.5" width="60" height="20"/>
+                                            <rect key="frame" x="305" y="217.5" width="60" height="22"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="0Wx-kD-MQP"/>
+                                                <constraint firstAttribute="height" constant="22" id="0Wx-kD-MQP"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -874,17 +875,16 @@
                                             </state>
                                             <connections>
                                                 <action selector="commentBtnCell:" destination="3FG-mW-jte" eventType="touchUpInside" id="oIm-kj-CHE"/>
-                                                <segue destination="UFO-nZ-pRN" kind="show" id="V9y-dk-Cnk"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaD-KS-SYd">
-                                            <rect key="frame" x="245" y="217.5" width="60" height="20"/>
+                                            <rect key="frame" x="245" y="217.5" width="60" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="2oR-NH-dZa"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="0" image="moments_liked">
+                                            <state key="normal" title="0" image="moments_disliked">
                                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
@@ -962,7 +962,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umE-of-HyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4958" y="-872"/>
+            <point key="canvasLocation" x="4937" y="-828"/>
         </scene>
         <!--Moments Topics Classification Table View Controller-->
         <scene sceneID="noU-w0-OGK">
@@ -1086,6 +1086,17 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gep-ub-KY0">
+                                    <rect key="frame" x="335" y="114" width="35" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="b2x-m8-JVB"/>
+                                        <constraint firstAttribute="height" constant="20" id="h74-Hr-C98"/>
+                                    </constraints>
+                                    <state key="normal" backgroundImage="moments_commented"/>
+                                    <connections>
+                                        <action selector="showCommentVC:" destination="O6G-lF-7js" eventType="touchUpInside" id="4Ej-GQ-ZRt"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.46032005549999999" green="0.71703249219999998" blue="0.96868544820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
@@ -1093,6 +1104,8 @@
                                 <constraint firstItem="gNN-9H-l0f" firstAttribute="top" secondItem="2Zn-eG-Qvd" secondAttribute="bottom" constant="5" id="4CJ-wK-XgZ"/>
                                 <constraint firstItem="2Zn-eG-Qvd" firstAttribute="top" secondItem="nZC-wk-cTe" secondAttribute="top" constant="18" id="FYe-qh-8dp"/>
                                 <constraint firstAttribute="trailing" secondItem="2Zn-eG-Qvd" secondAttribute="trailing" constant="18" id="VfK-gK-IUQ"/>
+                                <constraint firstAttribute="bottom" secondItem="gep-ub-KY0" secondAttribute="bottom" constant="5" id="WJg-iH-vmH"/>
+                                <constraint firstAttribute="trailing" secondItem="gep-ub-KY0" secondAttribute="trailing" constant="5" id="aio-jk-0wn"/>
                                 <constraint firstItem="gNN-9H-l0f" firstAttribute="leading" secondItem="3Jx-RR-3tV" secondAttribute="trailing" constant="8" id="dCp-dw-ylL"/>
                                 <constraint firstItem="3Jx-RR-3tV" firstAttribute="centerY" secondItem="nZC-wk-cTe" secondAttribute="centerY" id="p1O-JK-Qax"/>
                                 <constraint firstItem="gNN-9H-l0f" firstAttribute="bottom" secondItem="3Jx-RR-3tV" secondAttribute="bottom" id="rHD-iO-M6F"/>
@@ -1188,7 +1201,6 @@
                                             </state>
                                             <connections>
                                                 <action selector="commentBtnCell:" destination="RRZ-Yd-7aU" eventType="touchUpInside" id="j2y-LY-KaO"/>
-                                                <segue destination="UFO-nZ-pRN" kind="show" id="fBt-uw-gZD"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGa-Zb-9f3">
@@ -1197,9 +1209,10 @@
                                                 <constraint firstAttribute="width" constant="60" id="YTD-hL-2aW"/>
                                             </constraints>
                                             <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="0" image="moments_liked">
+                                            <state key="normal" title="0" image="moments_disliked">
                                                 <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <state key="selected" image="moments_liked"/>
                                             <connections>
                                                 <action selector="likeBtnClicked:" destination="RRZ-Yd-7aU" eventType="touchUpInside" id="S4M-kz-aMM"/>
                                             </connections>
@@ -1282,7 +1295,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsL-gw-fDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6428" y="-828"/>
+            <point key="canvasLocation" x="6428" y="-828.03598200899557"/>
         </scene>
         <!--My Favourite View Controller-->
         <scene sceneID="vj0-6y-aDm">
@@ -1422,9 +1435,9 @@
                                                     <rect key="frame" x="195" y="132.5" width="165" height="90"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-Kt-bDg">
-                                                    <rect key="frame" x="305" y="234.5" width="60" height="20"/>
+                                                    <rect key="frame" x="305" y="234.5" width="60" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="mAG-yS-rqW"/>
+                                                        <constraint firstAttribute="height" constant="22" id="mAG-yS-rqW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1433,15 +1446,16 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="age-G3-4Dd">
-                                                    <rect key="frame" x="235" y="234.5" width="60" height="20"/>
+                                                    <rect key="frame" x="235" y="234.5" width="60" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="MSN-hy-QbY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="0" image="moments_liked">
+                                                    <state key="normal" title="0" image="moments_disliked">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <state key="selected" image="moments_liked"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-ML-V2v">
                                                     <rect key="frame" x="0.0" y="262.5" width="375" height="15"/>
@@ -1540,7 +1554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKk-Fh-X6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="-265"/>
+            <point key="canvasLocation" x="1948" y="-27"/>
         </scene>
         <!--My Issue View Controller-->
         <scene sceneID="Cfw-Ue-gTa">
@@ -1643,9 +1657,9 @@
                                                     <rect key="frame" x="199" y="130" width="161" height="90"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7K-zb-7qG">
-                                                    <rect key="frame" x="295" y="232" width="70" height="20"/>
+                                                    <rect key="frame" x="295" y="232" width="70" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="5Z4-GT-nds"/>
+                                                        <constraint firstAttribute="height" constant="22" id="5Z4-GT-nds"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1654,19 +1668,19 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentBtnCell:" destination="2nc-pR-aen" eventType="touchUpInside" id="Wtj-lK-1NS"/>
-                                                        <segue destination="UFO-nZ-pRN" kind="show" id="R4J-qm-i3V"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOz-BB-UJ0">
-                                                    <rect key="frame" x="224" y="232" width="70" height="20"/>
+                                                    <rect key="frame" x="224" y="232" width="70" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="FUo-Xp-hc9"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="452" image="moments_liked">
+                                                    <state key="normal" title="452" image="moments_disliked">
                                                         <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <state key="selected" image="moments_liked"/>
                                                     <connections>
                                                         <action selector="likeBtnClicked:" destination="2nc-pR-aen" eventType="touchUpInside" id="Dos-VA-hfg"/>
                                                     </connections>
@@ -1777,25 +1791,26 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUj-OG-7jO">
-                                                    <rect key="frame" x="272" y="46" width="40" height="20"/>
+                                                    <rect key="frame" x="272" y="45" width="40" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Bg9-uh-zoo"/>
+                                                        <constraint firstAttribute="height" constant="22" id="Bg9-uh-zoo"/>
                                                         <constraint firstAttribute="width" constant="40" id="Vbm-MP-Y8u"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="0" image="moments_liked">
+                                                    <state key="normal" title="0" image="moments_disliked">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <state key="selected" image="moments_liked"/>
                                                     <connections>
                                                         <action selector="likeBtnClicked:" destination="zpc-Y6-h03" eventType="touchUpInside" id="PgS-LH-hJ3"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kra-aL-wGd">
-                                                    <rect key="frame" x="320" y="46" width="40" height="20"/>
+                                                    <rect key="frame" x="320" y="45" width="40" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Bzv-55-yhW"/>
-                                                        <constraint firstAttribute="height" constant="20" id="sMq-IA-vPN"/>
+                                                        <constraint firstAttribute="height" constant="22" id="sMq-IA-vPN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1804,7 +1819,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentBtnCell:" destination="zpc-Y6-h03" eventType="touchUpInside" id="RQi-2T-FtO"/>
-                                                        <segue destination="UFO-nZ-pRN" kind="show" id="Caz-KH-HTT"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  邻里帮帮物业等人 共8条回复 &gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXk-YT-LBk">
@@ -1895,7 +1909,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCd-ik-lIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2862" y="11"/>
+            <point key="canvasLocation" x="2689" y="-27"/>
         </scene>
         <!--Secondary Comment Table View Controller-->
         <scene sceneID="Wjv-ub-8W6">
@@ -2059,17 +2073,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rb4-4c-6Wc">
-                                            <rect key="frame" x="344" y="49.5" width="13" height="13"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="13" id="39J-zp-U7P"/>
-                                                <constraint firstAttribute="height" constant="13" id="o7N-5y-nxk"/>
-                                            </constraints>
-                                            <state key="normal" image="moments_liked"/>
-                                            <connections>
-                                                <action selector="likeBtnClicked:" destination="zIy-WK-gsI" eventType="touchUpInside" id="5dD-90-k1J"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5B-eG-AMt">
                                             <rect key="frame" x="73" y="28" width="27" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -2085,9 +2088,7 @@
                                         <constraint firstItem="i9r-Rz-N2d" firstAttribute="top" secondItem="U5B-eG-AMt" secondAttribute="bottom" constant="5" id="HCJ-X4-OM4"/>
                                         <constraint firstItem="cQT-QC-Co8" firstAttribute="leading" secondItem="BbG-MR-5KE" secondAttribute="leading" constant="18" id="Xee-w2-dL1"/>
                                         <constraint firstItem="lBi-jZ-ocD" firstAttribute="leading" secondItem="U5B-eG-AMt" secondAttribute="leading" id="YAg-OG-Ndl"/>
-                                        <constraint firstItem="Rb4-4c-6Wc" firstAttribute="centerY" secondItem="i9r-Rz-N2d" secondAttribute="centerY" id="gf3-UT-kNC"/>
                                         <constraint firstAttribute="bottom" secondItem="lBi-jZ-ocD" secondAttribute="bottom" constant="10" id="jTn-LM-22L"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Rb4-4c-6Wc" secondAttribute="trailing" constant="10" id="ke9-or-R1U"/>
                                         <constraint firstItem="cQT-QC-Co8" firstAttribute="top" secondItem="BbG-MR-5KE" secondAttribute="top" constant="20" id="rzR-8O-eM0"/>
                                         <constraint firstItem="U5B-eG-AMt" firstAttribute="top" secondItem="BbG-MR-5KE" secondAttribute="top" constant="28" id="t7w-ST-VNH"/>
                                     </constraints>
@@ -2110,7 +2111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tif-xN-j7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3761" y="-45"/>
+            <point key="canvasLocation" x="3433" y="-27"/>
         </scene>
         <!--Write Comment View Controller-->
         <scene sceneID="WKH-VI-9Zc">
@@ -2121,7 +2122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MKd-cd-dDZ">
-                                <rect key="frame" x="25" y="79" width="325" height="573"/>
+                                <rect key="frame" x="25" y="35" width="325" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2151,7 +2152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8r-Lc-JwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3682" y="833"/>
+            <point key="canvasLocation" x="2818" y="833"/>
         </scene>
         <!--Image ShowVC-->
         <scene sceneID="m71-C9-bP6">
@@ -2201,6 +2202,48 @@
             </objects>
             <point key="canvasLocation" x="225" y="-44"/>
         </scene>
+        <!--Topic CommentVC-->
+        <scene sceneID="xlQ-pn-xL2">
+            <objects>
+                <viewController storyboardIdentifier="TopicCommentVC" id="rgK-oG-SSL" customClass="TopicCommentVC" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZNG-qS-jX4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iJ5-2I-Fwi">
+                                <rect key="frame" x="25" y="35" width="325" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xFH-un-LBx" firstAttribute="trailing" secondItem="iJ5-2I-Fwi" secondAttribute="trailing" constant="25" id="2We-kZ-nVp"/>
+                            <constraint firstItem="iJ5-2I-Fwi" firstAttribute="leading" secondItem="xFH-un-LBx" secondAttribute="leading" constant="25" id="4hE-Ww-cfk"/>
+                            <constraint firstItem="iJ5-2I-Fwi" firstAttribute="top" secondItem="xFH-un-LBx" secondAttribute="top" constant="15" id="nvP-1O-ZtR"/>
+                            <constraint firstItem="xFH-un-LBx" firstAttribute="bottom" secondItem="iJ5-2I-Fwi" secondAttribute="bottom" constant="15" id="tYU-F2-zcR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xFH-un-LBx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jaO-C6-eVy">
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="1dm-Df-Mfa">
+                            <connections>
+                                <action selector="sendOut:" destination="rgK-oG-SSL" id="UfT-ah-tCf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentTextField" destination="iJ5-2I-Fwi" id="YQ9-I1-fuv"/>
+                        <outlet property="sendBtn" destination="1dm-Df-Mfa" id="V0v-11-ddU"/>
+                        <outlet property="sendOutBtn" destination="1dm-Df-Mfa" id="Upy-yR-D5o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EC5-cz-qNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3748" y="797"/>
+        </scene>
     </scenes>
     <resources>
         <image name="blue_tab_selected_backgreound" width="22" height="34"/>
@@ -2211,6 +2254,7 @@
         <image name="main_my_follow" width="60" height="60"/>
         <image name="male" width="9" height="9"/>
         <image name="moments_commented" width="27" height="20"/>
+        <image name="moments_disliked" width="23" height="23"/>
         <image name="moments_liked" width="23" height="20"/>
         <image name="profile_avatar_placeholder" width="60" height="60"/>
         <image name="profile_follow" width="25" height="26"/>
@@ -2218,7 +2262,4 @@
         <image name="tabbar_circle" width="25" height="26"/>
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="R4J-qm-i3V"/>
-    </inferredMetricsTieBreakers>
 </document>

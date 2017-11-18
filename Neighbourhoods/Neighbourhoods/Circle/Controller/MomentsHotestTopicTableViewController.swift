@@ -31,7 +31,9 @@ class MomentsHotestTopicTableViewController: UITableViewController {
         tableView.mj_header.isAutomaticallyChangeAlpha = true
     }
     @objc func refresh() -> () {
-        tableView.reloadData()
+        self.page = 1
+        self.rotaionArray.removeAll()
+        lastedRequest(p: page)
         tableView.mj_header.endRefreshing()
         
     }
@@ -102,6 +104,15 @@ class MomentsHotestTopicTableViewController: UITableViewController {
             }else{
                 self.navigationController?.pushViewController(userInfoVc!, animated: true)
             }
+        }
+        //跳出评论
+        cell.showCommentClouse = {(pid ,to_uid ,uid,post_id) in
+            let commentVc = self.storyboard?.instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
+            commentVc?.pid = 0
+            commentVc?.to_uid  = model.uid
+            commentVc?.uid     = model.uid
+            commentVc?.post_id = model.id
+            self.navigationController?.pushViewController(commentVc!, animated: true)
         }
         return cell
         
