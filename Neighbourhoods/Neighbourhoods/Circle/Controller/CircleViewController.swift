@@ -103,6 +103,9 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HotTopicsCell") as! CircleVCTopicsTableViewCell
         let modelArr =  self.rotaionArray
+        guard modelArr.count > 0 else{
+         return cell
+        }
         let  model =  modelArr[indexPath.row]
         cell.momentsCellModel = model
         cell.pushImageClouse = {(imageArr, index) in
