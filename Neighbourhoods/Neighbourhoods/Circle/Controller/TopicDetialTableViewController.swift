@@ -13,7 +13,7 @@ class TopicDetialTableViewController: UITableViewController {
     var  id  : NSNumber?
     private var  rotaionArray = [NborCircleModel]()
     private var  modelMain : NborTopicModel?
-    private  var  page  = 0
+    private  var  page  = 1
     private  var  pages : Int?
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var topicImage: UIImageView!
@@ -52,7 +52,7 @@ class TopicDetialTableViewController: UITableViewController {
         
     }
     @IBAction func showCommentVC(_ sender: Any) {
-        let commentVc = self.storyboard?.instantiateViewController(withIdentifier: "TopicCommentVC") as? TopicCommentVC
+        let commentVc = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "TopicCommentVCID") as? TopicCommentVC
         commentVc?.pid = 0
         commentVc?.to_uid  = modelMain?.uid
         commentVc?.uid     = modelMain?.uid
@@ -65,9 +65,11 @@ class TopicDetialTableViewController: UITableViewController {
    private func lastedRequest(p : Int) -> () {
     NetWorkTool.shareInstance.topic_det(id : self.id as! NSInteger, p: p) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
-                if let pages  = info!["result"]!["pages"]
+                if let tempPages  = info!["result"]!["pages"]
                 {
-                    self?.pages = (pages as! Int)
+                    if tempPages != nil{
+                        self?.pages = (tempPages as! Int)
+                    }
                 }
                 let resultMain = info!["result"]
                 self?.modelMain =  NborTopicModel.mj_object(withKeyValues: resultMain)
@@ -101,8 +103,10 @@ class TopicDetialTableViewController: UITableViewController {
                 }else{
                     self?.tableView.mj_footer.endRefreshing()
                 }
+                if self?.pages != nil {
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
+                  }
                 }
                 
             }else{

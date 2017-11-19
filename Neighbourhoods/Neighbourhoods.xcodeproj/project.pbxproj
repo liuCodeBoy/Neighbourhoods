@@ -24,6 +24,7 @@
 		B692F89E1F91F1A700C75B41 /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B692F89A1F91F17E00C75B41 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B692F89F1F91F1A700C75B41 /* SDWebImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B692F8991F91F17E00C75B41 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692F8A01F91F1DF00C75B41 /* LoopView.swift */; };
+		B69850F41FC154AC0012FC1D /* LotteryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69850F31FC154AB0012FC1D /* LotteryListModel.swift */; };
 		B6B6E0671FB9D2BA00CCD567 /* NoMissionCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B6E0661FB9D2B900CCD567 /* NoMissionCoverView.swift */; };
 		B6DD94061FAF0B9E00A416E1 /* AZDialogViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DD94051FAF0B9E00A416E1 /* AZDialogViewController.framework */; };
 		B6DD94081FAF0BA600A416E1 /* NoticeBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DD94071FAF0BA600A416E1 /* NoticeBar.framework */; };
@@ -208,6 +209,7 @@
 		B692F8991F91F17E00C75B41 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		B692F89A1F91F17E00C75B41 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		B692F8A01F91F1DF00C75B41 /* LoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
+		B69850F31FC154AB0012FC1D /* LotteryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryListModel.swift; sourceTree = "<group>"; };
 		B6B6E0661FB9D2B900CCD567 /* NoMissionCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMissionCoverView.swift; sourceTree = "<group>"; };
 		B6DD94051FAF0B9E00A416E1 /* AZDialogViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AZDialogViewController.framework; path = Carthage/Build/iOS/AZDialogViewController.framework; sourceTree = "<group>"; };
 		B6DD94071FAF0BA600A416E1 /* NoticeBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NoticeBar.framework; path = Carthage/Build/iOS/NoticeBar.framework; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				D360A6B21FB1E85500BC3ABC /* ActListModel.swift */,
+				B69850F31FC154AB0012FC1D /* LotteryListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1151,6 +1154,7 @@
 				D36C86B61FA09EF0000CCA17 /* FavUsersListTableViewCell.swift in Sources */,
 				D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */,
 				D35B2D161FBB16AD00F1E8DF /* AttentionAndFansModel.swift in Sources */,
+				B69850F41FC154AC0012FC1D /* LotteryListModel.swift in Sources */,
 				D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */,
 				D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */,
 				D3D2D7871FAB0FBA0020EE4B /* ShareSDK-Extension.swift in Sources */,

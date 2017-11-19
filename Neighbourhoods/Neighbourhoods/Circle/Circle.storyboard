@@ -473,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vw5-yL-Am7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4618" y="10"/>
+            <point key="canvasLocation" x="4353" y="-8"/>
         </scene>
         <!--Moments View Controller-->
         <scene sceneID="Zik-qI-0IC">
@@ -2205,7 +2205,7 @@
         <!--Topic CommentVC-->
         <scene sceneID="xlQ-pn-xL2">
             <objects>
-                <viewController storyboardIdentifier="TopicCommentVC" id="rgK-oG-SSL" customClass="TopicCommentVC" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopicCommentVCID" id="rgK-oG-SSL" customClass="TopicCommentVC" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZNG-qS-jX4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2236,7 +2236,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="commentTextField" destination="iJ5-2I-Fwi" id="YQ9-I1-fuv"/>
-                        <outlet property="sendBtn" destination="1dm-Df-Mfa" id="V0v-11-ddU"/>
                         <outlet property="sendOutBtn" destination="1dm-Df-Mfa" id="Upy-yR-D5o"/>
                     </connections>
                 </viewController>

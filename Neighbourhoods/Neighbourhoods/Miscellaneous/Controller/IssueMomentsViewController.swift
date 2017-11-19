@@ -36,7 +36,7 @@ class IssueMomentsViewController: UIViewController {
         }
         NetWorkTool.shareInstance.nbor_publish(UserDefaults.standard.string(forKey: "token")!, image: images, content: topicDetialTextView.text) { (info, error) in
               if info?["code"] as? String == "200"{
-            let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor: UIColor.blue, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
             let noticeBar = NoticeBar(config: config)
             noticeBar.show(duration: 0.25, completed: {
                 (finished) in
@@ -64,12 +64,8 @@ class IssueMomentsViewController: UIViewController {
         setupNotifications()
         setUpHeaderImageView()
     }
-    
-    
-    
-    
-    deinit {
-        
+
+    deinit {        
         NotificationCenter.default.removeObserver(self)
     }
 }
