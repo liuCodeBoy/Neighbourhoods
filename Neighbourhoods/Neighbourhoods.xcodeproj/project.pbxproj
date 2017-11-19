@@ -53,7 +53,6 @@
 		D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360F1F9C768A00313268 /* SystemConstantValue.swift */; };
 		D31B54AD1FB1A1F3003549AF /* SocialOrgListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B54AC1FB1A1F3003549AF /* SocialOrgListModel.swift */; };
 		D31B54AF1FB1AF29003549AF /* SocialOrgDetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B54AE1FB1AF29003549AF /* SocialOrgDetModel.swift */; };
-		D31B54B11FB1D134003549AF /* MyMissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B54B01FB1D134003549AF /* MyMissionModel.swift */; };
 		D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CD4A21F91B14700195686 /* CircleViewController.swift */; };
 		D31E970D1FA9F88200A78D3A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */; };
 		D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */; };
@@ -138,6 +137,7 @@
 		D3C864101FB96F2F00CE3B50 /* MyReceivedMissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8640F1FB96F2F00CE3B50 /* MyReceivedMissionTableViewCell.swift */; };
 		D3C864121FB989EB00CE3B50 /* NoMissionCoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C864111FB989EA00CE3B50 /* NoMissionCoverView.xib */; };
 		D3C864141FB99CC600CE3B50 /* TaskDetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C864131FB99CC600CE3B50 /* TaskDetModel.swift */; };
+		D3CDF5C61FC1997200C6513A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3CDF5C81FC1997200C6513A /* InfoPlist.strings */; };
 		D3D1FD751FA80B8F009A2E58 /* SocialAnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD731FA80B8F009A2E58 /* SocialAnnouncementTableViewCell.swift */; };
 		D3D1FD791FA80BA9009A2E58 /* LotteryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD771FA80BA9009A2E58 /* LotteryTableViewCell.swift */; };
 		D3D1FD7D1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD7B1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift */; };
@@ -238,7 +238,6 @@
 		D31B360F1F9C768A00313268 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
 		D31B54AC1FB1A1F3003549AF /* SocialOrgListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialOrgListModel.swift; sourceTree = "<group>"; };
 		D31B54AE1FB1AF29003549AF /* SocialOrgDetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialOrgDetModel.swift; sourceTree = "<group>"; };
-		D31B54B01FB1D134003549AF /* MyMissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionModel.swift; sourceTree = "<group>"; };
 		D31CD4A21F91B14700195686 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		D31E970C1FA9F88200A78D3A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		D31E97101FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadIDInfomationViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +325,8 @@
 		D3C8640F1FB96F2F00CE3B50 /* MyReceivedMissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceivedMissionTableViewCell.swift; sourceTree = "<group>"; };
 		D3C864111FB989EA00CE3B50 /* NoMissionCoverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoMissionCoverView.xib; sourceTree = "<group>"; };
 		D3C864131FB99CC600CE3B50 /* TaskDetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetModel.swift; sourceTree = "<group>"; };
+		D3CDF5C71FC1997200C6513A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3CDF5C91FC1997700C6513A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D3D1FD731FA80B8F009A2E58 /* SocialAnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		D3D1FD771FA80BA9009A2E58 /* LotteryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTableViewCell.swift; sourceTree = "<group>"; };
 		D3D1FD7B1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -501,7 +502,6 @@
 				D345ABF41FB1505B00FAB15F /* TaskListModel.swift */,
 				D31B54AC1FB1A1F3003549AF /* SocialOrgListModel.swift */,
 				D31B54AE1FB1AF29003549AF /* SocialOrgDetModel.swift */,
-				D31B54B01FB1D134003549AF /* MyMissionModel.swift */,
 				D3C864131FB99CC600CE3B50 /* TaskDetModel.swift */,
 			);
 			path = Model;
@@ -598,6 +598,7 @@
 				D3A1935C1F8DC74D002C1E23 /* Main.storyboard */,
 				D31B360C1F9C6D8300313268 /* MainViewController.swift */,
 				D3A193611F8DC74D002C1E23 /* LaunchScreen.storyboard */,
+				D3CDF5C81FC1997200C6513A /* InfoPlist.strings */,
 				D3A193641F8DC74D002C1E23 /* Info.plist */,
 				D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */,
 				D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */,
@@ -960,6 +961,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = D3A1934C1F8DC74D002C1E23;
 			productRefGroup = D3A193561F8DC74D002C1E23 /* Products */;
@@ -985,6 +987,7 @@
 				D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */,
 				D3FAC7D71FA9648500D972B9 /* IssueTopicsViewController.xib in Resources */,
 				D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */,
+				D3CDF5C61FC1997200C6513A /* InfoPlist.strings in Resources */,
 				D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
 				D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */,
@@ -1197,7 +1200,6 @@
 				D3D1FD841FA81187009A2E58 /* VoteViewController.swift in Sources */,
 				D30A17DC1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift in Sources */,
 				D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */,
-				D31B54B11FB1D134003549AF /* MyMissionModel.swift in Sources */,
 				D3C8640A1FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift in Sources */,
 				D3C8640E1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift in Sources */,
 			);
@@ -1222,6 +1224,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		D3CDF5C81FC1997200C6513A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3CDF5C71FC1997200C6513A /* en */,
+				D3CDF5C91FC1997700C6513A /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1229,6 +1240,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1286,6 +1298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -21,7 +21,7 @@ class MyIssuedMissionTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    var viewModel: MyMissionModel? {
+    var viewModel: TaskListModel? {
         didSet {
             if let title = viewModel?.title {
                 titleLbl.text = title
