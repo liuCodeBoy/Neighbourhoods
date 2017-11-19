@@ -43,13 +43,20 @@ class LotteryViewController: UIViewController{
     }
       //MARK: -   权限控制
     func lottery_judeg(token : String ,id : Int) -> () {
-        let detailLotteryDetialVC = self.storyboard?.instantiateViewController(withIdentifier: "LotteryDetialVC")
+        let detailLotteryDetialVC = self.storyboard?.instantiateViewController(withIdentifier: "LotteryDetialVC") as! LotteryDetialViewController
+        let AccessDeniedNotVC = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "AccessDeniedNotVerified")
         NetWorkTool.shareInstance.lottery_judeg(token, id: id) { (info, error) in
             if info?["code"] as? String == "200"{
-                self.navigationController?.pushViewController(detailLotteryDetialVC!, animated: true)
+                let  result =  "已摇号".compare( info?["result"] as! String).rawValue
+                if result == 0{
+                     detailLotteryDetialVC.showText = info?["result"] as? String
+                }else{
+                     detailLotteryDetialVC.id  = id
+                }
+                self.navigationController?.pushViewController(detailLotteryDetialVC, animated: true)
             }else if(info?["code"] as? String == "401"){
-                //服务器error
-                self.presentHintMessage(target: self, hintMessgae: "您的身份还未认证")
+                //服务器error 
+                 self.navigationController?.pushViewController(AccessDeniedNotVC, animated: true)
             }
         }
     }
@@ -80,8 +87,7 @@ extension LotteryViewController: UITableViewDelegate, UITableViewDataSource  {
         
     }
     
-    
-    
+  
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
