@@ -27,12 +27,20 @@ extension UIViewController {
         self.navigationItem.titleView = titleLbl
     }
     
-    //MARK: - convenience alert vie hint message
+    //MARK: - convenience alert with hint message
     func presentHintMessage(target: UIViewController, hintMessgae: String) {
         let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
         let ok = UIAlertAction(title: "好的", style: .cancel, handler: nil)
         alert.addAction(ok)
         target.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK:- convenience alert with hint message and completion
+    func presentHintMessage(hintMessgae: String, completion: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "提示", message: hintMessgae, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "好的", style: .default, handler: completion)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setNavBarBackBtn() {

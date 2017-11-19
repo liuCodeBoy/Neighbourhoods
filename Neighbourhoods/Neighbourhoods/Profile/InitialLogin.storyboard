@@ -94,7 +94,7 @@
                                     <action selector="sendIDNumAction:" destination="LWj-7Y-etA" eventType="touchUpInside" id="Wm9-bX-BCG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neighbourhoods" translatesAutoresizingMaskIntoConstraints="NO" id="XZ6-d1-vu9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_title" translatesAutoresizingMaskIntoConstraints="NO" id="XZ6-d1-vu9">
                                 <rect key="frame" x="97.5" y="129" width="180" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0ay-ah-lRI"/>
@@ -295,7 +295,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neighbourhoods" translatesAutoresizingMaskIntoConstraints="NO" id="gzo-z8-lDA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_title" translatesAutoresizingMaskIntoConstraints="NO" id="gzo-z8-lDA">
                                 <rect key="frame" x="97.5" y="119" width="180" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="ftQ-m5-gz3"/>
@@ -433,6 +433,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Neighbourhoods" width="217" height="65"/>
+        <image name="launch_title" width="217" height="65"/>
     </resources>
 </document>

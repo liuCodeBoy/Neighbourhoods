@@ -59,7 +59,7 @@ class ProfileTableViewController: UITableViewController {
                     self.gender.image = #imageLiteral(resourceName: "female")
                 }
             }
-            if let location = viewModel?.addressd {
+            if let location = viewModel?.address {
                 self.locationBtn.setTitle(location, for: .normal)
             } else {
                 self.locationBtn.isHidden = true

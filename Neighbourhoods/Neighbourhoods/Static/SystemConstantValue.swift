@@ -21,4 +21,10 @@ let isIPHONEX: Bool = { () -> Bool in
     }
 }()
 
+enum MissionOperation: Int {
+    case submit
+    case done
+    case reject
+}
+
 

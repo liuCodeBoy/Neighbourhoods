@@ -60,9 +60,7 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
-                }
+                
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count {
                     let dict =  result[i]
@@ -73,6 +71,11 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
                 self?.socialCharityListTableView.reloadData()
                 if p == self?.pages {
                     self?.socialCharityListTableView.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.socialCharityListTableView.mj_footer.endRefreshing()
+                }
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
                 }
             }else{
                 //服务器

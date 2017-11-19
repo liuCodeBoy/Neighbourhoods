@@ -19,5 +19,6 @@ class TaskDetModel: NSObject {
     @objc var time          : NSNumber?
     @objc var task_status   : NSNumber?
     @objc var receive       : UserModel?
+    @objc var is_user       : NSNumber?
     @objc var user          : UserModel?
 }

@@ -30,7 +30,7 @@ class HelpCategoryByCompletionStatusTableViewCell: UITableViewCell {
                 detialLbl.text = content
             }
             if let btnTitle = viewModel?.task_status {
-                scoreBtn.setTitle(btnTitle, for: .normal)
+                scoreBtn.setTitle(" " + btnTitle, for: .normal)
             }
             if let time = viewModel?.time {
                 createTime.text = NSDate.createDateString(createAtStr: "\(String(describing: time))")
