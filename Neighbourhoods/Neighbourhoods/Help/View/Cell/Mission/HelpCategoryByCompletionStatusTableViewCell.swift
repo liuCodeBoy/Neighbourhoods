@@ -29,8 +29,16 @@ class HelpCategoryByCompletionStatusTableViewCell: UITableViewCell {
             if let content = viewModel?.content {
                 detialLbl.text = content
             }
-            if let btnTitle = viewModel?.task_status {
-                scoreBtn.setTitle(" " + btnTitle, for: .normal)
+            if let status = viewModel?.task_status {
+                switch status {
+                case 0      : scoreBtn.setTitle("待领取", for: .normal)
+                              marginView.backgroundColor = mission_going
+                case 1, 2   : scoreBtn.setTitle("进行中", for: .normal)
+                              marginView.backgroundColor = mission_going
+                case 3, 4   : scoreBtn.setTitle("已完成", for: .normal)
+                              marginView.backgroundColor = mission_complete
+                default: break
+                }
             }
             if let time = viewModel?.time {
                 createTime.text = NSDate.createDateString(createAtStr: "\(String(describing: time))")

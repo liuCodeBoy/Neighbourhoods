@@ -37,7 +37,7 @@ class MissionDetialViewController: UIViewController {
     @IBOutlet weak var marginView: UIView!
     @IBOutlet weak var scoreBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var detialLbl: UILabel!
+    @IBOutlet weak var detialLbl: UITextView!
     @IBOutlet weak var missionStatusBtn1: UIButton!
     @IBOutlet weak var missionStatusBtn2: UIButton!
     @IBOutlet weak var missionStatusBtn3: UIButton!

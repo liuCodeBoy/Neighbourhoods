@@ -15,6 +15,6 @@ class TaskListModel: NSObject {
     @objc var content       : String?
     @objc var integral      : NSNumber?
     @objc var time          : NSNumber?
-    @objc var task_status   : String?
+    @objc var task_status   : NSNumber?
 }
 

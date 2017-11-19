@@ -68,6 +68,11 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
         window?.rootViewController = AppDelegate.mainVC
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        phoneNumber.resignFirstResponder()
+        password.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setRoundRect(targets: [accountBackView, pwdBackView, loginBtnBackView])
