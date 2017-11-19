@@ -777,7 +777,6 @@
 			children = (
 				D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */,
 				D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */,
-				D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */,
 			);
 			path = MyMission;
 			sourceTree = "<group>";
@@ -838,6 +837,7 @@
 			isa = PBXGroup;
 			children = (
 				D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */,
+				D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */,
 				D3E5BF411FBDC29500C4766F /* SocialCharity */,
 				D3E5BF401FBDC27A00C4766F /* MyMission */,
 				D3E5BF3E1FBDC1D900C4766F /* Categories */,
@@ -1332,6 +1332,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 56A90F244786FDA4494474D0 /* Pods-Neighbourhoods.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Neighbourhoods;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1346,13 +1347,13 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1360,6 +1361,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Neighbourhoods;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1374,12 +1376,12 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.weslie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -168,13 +168,13 @@ extension NetWorkTool {
     }
     
     //MARK: - 任务操作
-    func operateTask(_ token: String, id: Int, type: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func operateTask(_ token: String, id: Int, type: MissionOperation, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
         let urlString = "http://106.15.199.8/llb/api/user/task_operate"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
-        let parameters = ["id": id, "type": type]
+        let parameters = ["id": id, "type": type.rawValue + 1] as [String : Any]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据

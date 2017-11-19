@@ -16,18 +16,24 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
     private var pages = 1
     private var page  = 1
     
-    var taskListArray = [TaskListModel]()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        lastedRequest(p: page)
-        loadRefreshComponet()
+    var missionID: Int? {
+        didSet {
+            destnationVC?.missionID = self.missionID!
+        }
     }
+    
+    var destnationVC: MissionDetialViewController?
+
+    var taskListArray = [TaskListModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableview.delegate = self
         tableview.dataSource = self
+        
+        lastedRequest(p: page)
+        loadRefreshComponet()
     
     }
     
@@ -42,7 +48,9 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
         tableview.mj_header.isAutomaticallyChangeAlpha = true
     }
     @objc func refresh() -> () {
-        tableview.reloadData()
+        self.page = 1
+        self.taskListArray.removeAll()
+        lastedRequest(p: page)
         tableview.mj_header.endRefreshing()
         
     }
@@ -54,7 +62,7 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
-        NetWorkTool.shareInstance.taskList(sort: "integral", p: 1) { [weak self](info, error) in
+        NetWorkTool.shareInstance.taskList(sort: "time", p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
@@ -91,17 +99,27 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HelpCategoryByCompletionStatusCell") as! HelpCategoryByCompletionStatusTableViewCell
-        cell.viewModel = taskListArray[indexPath.row]
+        if taskListArray.count > 0 {
+            cell.viewModel = taskListArray[indexPath.row]
+        }
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // MARK:- restore the id
+        if taskListArray.count > 0 {
+            missionID = taskListArray[indexPath.row].id as? Int
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! MissionDetialViewController
+        destnationVC = dest
+    }
 }
-
-
-
 

@@ -26,19 +26,13 @@ class HelpCategoryByTimeViewController: UIViewController, UITableViewDelegate, U
     
     var taskListArray = [TaskListModel]()
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        lastedRequest(p: page)
-        loadRefreshComponet()
-        refresh()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableview.delegate = self
         tableview.dataSource = self
-        
+        lastedRequest(p: page)
+        loadRefreshComponet()
     }
     
     func loadRefreshComponet() -> () {
@@ -103,14 +97,18 @@ class HelpCategoryByTimeViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HelpCategoryByTimeCell") as! HelpCategoryByTimeTableViewCell
-        cell.viewModel = taskListArray[indexPath.row]
+        if taskListArray.count > 0 {
+            cell.viewModel = taskListArray[indexPath.row]
+        }
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // MARK:- restore the id
-        missionID = taskListArray[indexPath.row].id as? Int
+        if taskListArray.count > 0 {
+            missionID = taskListArray[indexPath.row].id as? Int
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
