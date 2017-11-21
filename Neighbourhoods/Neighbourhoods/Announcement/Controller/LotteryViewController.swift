@@ -47,7 +47,7 @@ class LotteryViewController: UIViewController{
         let AccessDeniedNotVC = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "AccessDeniedNotVerified")
         NetWorkTool.shareInstance.lottery_judeg(token, id: id) { (info, error) in
             if info?["code"] as? String == "200"{
-                let  result =  "已摇号".compare( info?["result"] as! String).rawValue
+                let  result =  "已摇号".compare( info?["msg"] as! String).rawValue
                 if result == 0{
                      detailLotteryDetialVC.showText = info?["result"] as? String
                 }else{

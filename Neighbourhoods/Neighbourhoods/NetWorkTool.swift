@@ -513,7 +513,7 @@ extension NetWorkTool {
         }
     }
 
-    //身份认证 user/ play_lottery
+    //投票 user/ play_lottery
     func play_lottery(_ token: String,
                        id : Int,
                        finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
@@ -534,5 +534,64 @@ extension NetWorkTool {
         }
     }
     
+    //notice/ act_list
+    func act_list(p : Int,
+                      finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/notice/act_list"
+        //2.获取请求参数
+        let parameters =  ["p":p] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    //活动投票详情（notice/act_det）
+    func act_det(id : Int,
+                  finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/notice/act_det"
+        //2.获取请求参数
+        let parameters =  ["id":id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    //user/ option_list
+    func option_list(_ token: String,
+                      p  : Int,
+                      status : Int,
+                      cate : Int,
+                      id : Int,
+                      finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/option_list"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters =  ["p":p,"status" : status, "cate" : cate ,"id":id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
 }
 

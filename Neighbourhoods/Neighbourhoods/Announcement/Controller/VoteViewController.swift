@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
-class VoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+import MJRefresh
+class VoteViewController: UIViewController{
+    var page  = 1
+    var pages : Int?
+    lazy var  rotaionArray = [VoteListModel]()
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
@@ -17,66 +19,130 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableview.delegate = self
         tableview.dataSource = self
+        loadRefreshComponet()
+        refresh()
     }
 
+    func loadRefreshComponet() -> () {
+        //默认下拉刷新
+        tableview.mj_header = LXQHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
+        //上拉刷新
+        tableview.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(endrefresh))
+        //自动根据有无数据来显示和隐藏
+        tableview.mj_footer.isAutomaticallyHidden = true
+        // 设置自动切换透明度(在导航栏下面自动隐藏)
+        tableview.mj_header.isAutomaticallyChangeAlpha = true
+    }
+    @objc func refresh() -> () {
+        self.page = 1
+        self.rotaionArray.removeAll()
+        lastedRequest(p: page)
+        tableview.mj_header.endRefreshing()
+    }
+    @objc func  endrefresh() -> (){
+        lastedRequest(p: page)
+    }
+    
+    //MARK: - 最新发布网络请求
+    func lastedRequest(p : Int) -> () {
+        NetWorkTool.shareInstance.act_list(p: p) {[weak self](info, error) in
+            if info?["code"] as? String == "200"{
+                if let pages  = info!["result"]!["pages"]
+                {
+                    self?.pages = (pages as! Int)
+                }
+                let result  = info!["result"]!["list"] as! [NSDictionary]
+                for i in 0..<result.count
+                {
+                    let  circleInfo  =  result[i]
+                    if  let rotationModel = VoteListModel.mj_object(withKeyValues: circleInfo)
+                    {
+                        self?.rotaionArray.append(rotationModel)
+                    }
+                }
+                self?.tableview.reloadData()
+                if p == self?.pages {
+                    self?.tableview.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableview.mj_footer.endRefreshing()
+                }
+                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
+                    self?.page += 1
+                }
+            }else{
+                //服务器
+                self?.tableview.mj_header.endRefreshing()
+                self?.tableview.mj_footer.endRefreshing()
+            }
+            
+        }
+    }
+    
+  
+    
 
+}
+
+
+
+extension VoteViewController :  UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.rotaionArray.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let activityCell = tableView.dequeueReusableCell(withIdentifier: "ActivityVoteCell") as! ActivityVoteTableViewCell
         let figureCell = tableView.dequeueReusableCell(withIdentifier: "FigureVoteCell") as! FigureVoteTableViewCell
-
-        switch indexPath.row {
-        case 0:
-            figureCell.statusBtn.setTitle("正在投票", for: .normal)
-            figureCell.statusBtn.backgroundColor = defaultBlueColor
-            return figureCell
-        case 1:
-            figureCell.statusBtn.setTitle("已结束", for: .normal)
-            figureCell.statusBtn.backgroundColor = default_grey
-            return figureCell
-        case 2:
-            activityCell.statusBtn.setTitle("协商中", for: .normal)
-            activityCell.statusBtn.backgroundColor = default_orange
-            return activityCell
-        case 3:
-            activityCell.statusBtn.setTitle("正在投票", for: .normal)
-            activityCell.statusBtn.backgroundColor = defaultBlueColor
-            return activityCell
-        case 4:
-            activityCell.statusBtn.setTitle("已结束", for: .normal)
-            activityCell.statusBtn.backgroundColor = default_grey
-            return activityCell
-        default: break
+        
+        guard self.rotaionArray.count > 0 else {
+            return  activityCell
         }
-
-        return activityCell
+        //取出模型 ：2正在投票；1协商中；-1已结束
+        let model = self.rotaionArray[indexPath.row]
+        let cate = model.cate as! Int
+        if cate == 1 {
+            figureCell.modle = model
+            return figureCell
+        }else{
+            activityCell.modle = model
+            return activityCell
+        }
+   
     }
- 
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        switch indexPath.row {
-        case 2:
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteConsultingVC") as! ActivityVoteConsultingViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 3:
-            
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteCounsultantCompletedVC") as! ActivityVoteCounsultantCompletedViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-
-        case 4:
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteEndedVC") as! ActivityVoteEndedViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        default: break
+        guard self.rotaionArray.count > 0 else {
+            return
         }
-    }
-    
+        //取出模型 ：2正在投票；1协商中；-1已结束
+        let model = self.rotaionArray[indexPath.row]
+  //      let cate = model.cate as! Int
+//        if cate == 1 {
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "FigureVoteListVC") as! FigureVoteListViewController
+//            vc.id = model.id
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }else{
+            if model.status == -1 {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteEndedVC") as! ActivityVoteEndedViewController
+                vc.id = model.id
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }else if  model.status == 1{
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteConsultingVC") as! ActivityVoteConsultingViewController
+                vc.id = model.id
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else if model.status == 2{
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteCounsultantCompletedVC") as! ActivityVoteCounsultantCompletedViewController
+                vc.id = model.id
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+//        }
 
+    }
 }

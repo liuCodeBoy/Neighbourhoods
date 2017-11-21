@@ -388,7 +388,6 @@
                                             <outlet property="detialLbl" destination="AxL-Zu-Nta" id="t0z-GQ-1qZ"/>
                                             <outlet property="statusBtn" destination="gjn-hi-MO8" id="Da6-Nz-DdU"/>
                                             <outlet property="titleLbl" destination="bY1-gy-x9q" id="Sfd-iA-Y5k"/>
-                                            <segue destination="8nC-ry-jwz" kind="show" id="uM5-fi-mRP"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActivityVoteCell" rowHeight="75" id="GcD-4Z-d1W" customClass="ActivityVoteTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
@@ -468,7 +467,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn4-6d-Q3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3545" y="1171"/>
+            <point key="canvasLocation" x="4609" y="1100"/>
         </scene>
         <!--Lottery Detial View Controller-->
         <scene sceneID="ndu-kU-qdd">
@@ -949,9 +948,6 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="uG2-qE-q5l" kind="show" id="gnS-C0-Efd"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
