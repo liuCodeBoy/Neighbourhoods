@@ -237,31 +237,6 @@ class MissionDetialViewController: UIViewController {
         
     }
     
-//    var id: Int? {
-//        didSet {
-//            guard let id = self.id else {
-//                return
-//            }
-//
-//            guard let access_token = UserDefaults.standard.string(forKey: "token") else {
-//                return
-//            }
-//            NetWorkTool.shareInstance.taskDet(access_token, id: id) { [weak self](info, error) in
-//                if info?["code"] as? String == "200"{
-//                    let result = info!["result"] as! NSDictionary
-//                    self?.viewModel = TaskDetModel.mj_object(withKeyValues: result)
-//                }
-//            }
-//        }
-//    }
-    
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
-//            return
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -271,17 +246,17 @@ class MissionDetialViewController: UIViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.cancelTask(access_token, id: self.missionID!) { (result, error) in
+        NetWorkTool.shareInstance.cancelTask(access_token, id: self.missionID!) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(hintMessgae: "任务删除成功", completion: { (_) in
-                    self.navigationController?.popViewController(animated: true)
+                self?.presentHintMessage(hintMessgae: "任务删除成功", completion: { (_) in
+                    self?.navigationController?.popViewController(animated: true)
                 })
             } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(target: self, hintMessgae: "任务删除失败")
+                self?.presentHintMessage(hintMessgae: "任务删除失败", completion: nil)
             } else if result!["code"] as! String == "403" {
-                self.presentHintMessage(target: self, hintMessgae: "任务进行中，无法删除")
+                self?.presentHintMessage(hintMessgae: "任务进行中，无法删除", completion: nil)
             } else {
                 print("post request failed with exit code \(String(describing: result!["code"]))")
             }
@@ -317,9 +292,10 @@ class MissionDetialViewController: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 })
             } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(target: self, hintMessgae: "提交失败")
+                self.presentHintMessage(hintMessgae: "提交失败", completion: nil)
+                
             } else if result!["code"] as! String == "400" {
-                self.presentHintMessage(target: self, hintMessgae: "查询失败")
+                self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
             } else {
                 print("post request failed with exit code \(String(describing: result!["code"]))")
             }
@@ -338,9 +314,10 @@ class MissionDetialViewController: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 })
             } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(target: self, hintMessgae: "确认失败")
+                self.presentHintMessage(hintMessgae: "提交失败", completion: nil)
+                
             } else if result!["code"] as! String == "400" {
-                self.presentHintMessage(target: self, hintMessgae: "查询失败")
+                self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
             } else {
                 print("post request failed with exit code \(String(describing: result!["code"]))")
             }
@@ -359,9 +336,10 @@ class MissionDetialViewController: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 })
             } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(target: self, hintMessgae: "驳回失败")
+                self.presentHintMessage(hintMessgae: "提交失败", completion: nil)
+                
             } else if result!["code"] as! String == "400" {
-                self.presentHintMessage(target: self, hintMessgae: "查询失败")
+                self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
             } else {
                 print("post request failed with exit code \(String(describing: result!["code"]))")
             }

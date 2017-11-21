@@ -77,7 +77,7 @@ extension LotteryViewController: UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard (UserDefaults.standard.string(forKey: "token") != nil) else {
-             self.presentHintMessage(target: self, hintMessgae: "您还未登录")
+             self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
             return
         }
         if rotaionArray.count > 0 {

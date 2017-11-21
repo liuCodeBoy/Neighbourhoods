@@ -33,11 +33,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func enterBtnClicked(_ sender: UIButton) {
         
         if nickNameTF.text == "" {
-            presentHintMessage(target: self, hintMessgae: "昵称不能为空")
+            presentHintMessage(hintMessgae: "昵称不能为空", completion: nil)
         } else if (nickNameTF.text?.contains(" "))! {
-            presentHintMessage(target: self, hintMessgae: "昵称不能含有空格")
+            presentHintMessage(hintMessgae: "昵称不能含有空格", completion: nil)
         } else if maleBtn.isSelected == false && femaleBtn.isSelected == false {
-            presentHintMessage(target: self, hintMessgae: "请选择性别")
+            presentHintMessage(hintMessgae: "请选择性别", completion: nil)
         } else {
             // MARK:- create user and save to the server
             

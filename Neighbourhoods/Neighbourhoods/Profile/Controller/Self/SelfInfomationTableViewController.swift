@@ -109,7 +109,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                         if error != nil {
                             print(error as AnyObject)
                         } else if result!["code"] as! String == "200" {
-                            self?.presentHintMessage(target: self!, hintMessgae: "上传成功")
+                            self?.presentHintMessage(hintMessgae: "上传成功", completion: nil)
                         } else {
                             print("request failed with exit code \(String(describing: result!["code"]))")
                         }

@@ -54,7 +54,7 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
                 })
             }else if (info?["code"] as? String == "200"){
                 //服务器
-                self?.likeBtn.setTitle("\(Int(truncating: self.momentsCellModel.love!) + 1)", for: .normal)
+                self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
             }
         }
     }

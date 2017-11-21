@@ -16,7 +16,7 @@ class ForgetPasswordViewController: UIViewController {
     @IBOutlet weak var idNumber: UITextField!
     @IBAction func sendIDNuberClicked(_ sender: UIButton) {
         if phoneOrUserName.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入手机号码或用户名")
+            self.presentHintMessage(hintMessgae: "请输入手机号码或用户名", completion: nil)
         }
         
         SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneOrUserName.text, zone: "86", result: { (error: Error?) in
@@ -24,7 +24,7 @@ class ForgetPasswordViewController: UIViewController {
                 print(error as Any)
             } else {
                 self.phoneOrUserName.endEditing(true)
-                self.presentHintMessage(target: self, hintMessgae: "验证码发送成功")
+                self.presentHintMessage(hintMessgae: "验证码发送成功", completion: nil)
                 self.isCounting = true
                 
             }
@@ -36,24 +36,24 @@ class ForgetPasswordViewController: UIViewController {
     @IBOutlet weak var confirmChange: UIButton!
     @IBAction func confirmChangeClicked(_ sender: UIButton) {
         if phoneOrUserName.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入手机号码")
+            self.presentHintMessage(hintMessgae: "请输入手机号码", completion: nil)
             
         } else if phoneOrUserName.text?.isValidePhoneNumber == false {
-            self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
+            self.presentHintMessage(hintMessgae: "请输入正确的手机号码", completion: nil)
         } else if newPwd.text?.isValidPassword == false {
-            self.presentHintMessage(target: self, hintMessgae: "密码应为6-20位字母和数字组合")
+            self.presentHintMessage(hintMessgae: "密码应为6-20位字母和数字组合", completion: nil)
         } else if newPwd.text == "" || confirmPwd.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入密码")
+            self.presentHintMessage(hintMessgae: "请输入密码", completion: nil)
         } else if idNumber.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入验证码")
+            self.presentHintMessage(hintMessgae: "请输入验证码", completion: nil)
         } else if newPwd.text != confirmPwd.text {
-            self.presentHintMessage(target: self, hintMessgae: "您两次输入的密码不一样")
+            self.presentHintMessage(hintMessgae: "您两次输入的密码不一样", completion: nil)
         } else {
             
             
             SMSSDK.commitVerificationCode(idNumber.text!, phoneNumber: phoneOrUserName.text!, zone: "86", result: { (error: Error?) in
                 if error != nil {
-                    self.presentHintMessage(target: self, hintMessgae: "验证码输入错误")
+                    self.presentHintMessage(hintMessgae: "验证码输入错误", completion: nil)
                 } else {
                     weak var weakSelf = self
                     // MARK:- change the pwd and send to server
@@ -67,7 +67,7 @@ class ForgetPasswordViewController: UIViewController {
                             })
                         } else {
                             print(result!["code"] as! String)
-                            weakSelf?.presentHintMessage(target: self!, hintMessgae: "修改失败")
+                            weakSelf?.presentHintMessage(hintMessgae: "修改失败", completion: nil)
                         }
                     })
                     

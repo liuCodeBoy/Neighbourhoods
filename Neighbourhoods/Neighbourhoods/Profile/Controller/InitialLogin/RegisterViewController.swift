@@ -74,7 +74,7 @@ class RegisterViewController: UIViewController {
     }
     @IBAction func sendIDNumAction(_ sender: Any) {
         if phoneNumber.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入手机号码")
+            self.presentHintMessage(hintMessgae: "请输入手机号码", completion: nil)
         }
         
         SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneNumber.text, zone: "86", result: { (error: Error?) in
@@ -82,7 +82,7 @@ class RegisterViewController: UIViewController {
                 print(error as Any)
             } else {
                 self.phoneNumber.endEditing(true)
-                self.presentHintMessage(target: self, hintMessgae: "验证码发送成功")
+                self.presentHintMessage(hintMessgae: "验证码发送成功", completion: nil)
                 self.isCounting = true
                 
             }
@@ -91,16 +91,16 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registeAction(_ sender: Any) {
         if phoneNumber.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入手机号码")
+            self.presentHintMessage(hintMessgae: "请输入手机号码", completion: nil)
             
         } else if phoneNumber.text?.isValidePhoneNumber == false {
-            self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
+            self.presentHintMessage(hintMessgae: "请输入正确的手机号码", completion: nil)
         } else if password.text?.isValidPassword == false {
-            self.presentHintMessage(target: self, hintMessgae: "密码应为6-20位字母和数字组合")
+            self.presentHintMessage(hintMessgae: "密码应为6-20位字母和数字组合", completion: nil)
         } else if password.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入密码")
+            self.presentHintMessage(hintMessgae: "请输入密码", completion: nil)
         } else if idNumber.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入验证码")
+            self.presentHintMessage(hintMessgae: "请输入验证码", completion: nil)
         } else {
             if phoneNumber.text!.isValidePhoneNumber == true {
                 
@@ -133,7 +133,7 @@ class RegisterViewController: UIViewController {
                     })
                 })
             } else {
-                self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
+                self.presentHintMessage(hintMessgae: "请输入正确的手机号码", completion: nil)
             
      
             }

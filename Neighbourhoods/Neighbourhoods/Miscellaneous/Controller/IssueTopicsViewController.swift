@@ -31,15 +31,15 @@ class IssueTopicsViewController: UIViewController {
     }
     @IBAction func issueBtn(_ sender: UIButton) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+            self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
         guard  topicNameField.text != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "话题不能为空")
+            self.presentHintMessage(hintMessgae:  "话题不能为空", completion: nil)
             return
         }
         guard  topicDetialTextView.text != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "话题描述不能为空")
+            self.presentHintMessage(hintMessgae:  "话题描述不能为空", completion: nil)
             return
         }
         NetWorkTool.shareInstance.topic_publish(UserDefaults.standard.string(forKey: "token")!, image: images, name: topicNameField.text!, content: topicDetialTextView.text!)  { [weak self](info, error) in
@@ -102,7 +102,7 @@ extension IssueTopicsViewController : TZImagePickerControllerDelegate {
             if   (self.picPickerView?.images.count)! < (weakself?.maxNum)! {
                 self.showLocalPhotoGallery()}
             else{
-                self.presentHintMessage(target: self, hintMessgae: "你的上传图片已经达到最大数额")
+                self.presentHintMessage(hintMessgae: "你的上传图片已经达到最大数额", completion: nil)
             }
         }
         

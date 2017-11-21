@@ -79,12 +79,12 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
             NetWorkTool.shareInstance.upDistrict(access_token, district: self.district!, dong: self.dong!, door: self.door!, finished: { [weak self](result, error) in
                 if error != nil {
                     print(error as AnyObject)
-                    self?.presentHintMessage(target: self!, hintMessgae: error as! String)
+                    self?.presentHintMessage(hintMessgae: error as! String, completion: nil)
                 } else if result!["code"] as! String == "200" {
                     let index = self?.navigationController?.viewControllers.index(after: 0)
                     self?.navigationController?.popToViewController((self?.navigationController?.viewControllers[index!])!, animated: true)
                 } else {
-                    self?.presentHintMessage(target: self!, hintMessgae: "修改失败")
+                    self?.presentHintMessage(hintMessgae: "修改失败", completion: nil)
                     print("post failed with exit code \(String(describing: result!["code"]))")
                 }
             })

@@ -100,7 +100,7 @@ class MomentsHotestTopicTableViewController: UITableViewController {
             let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
             userInfoVc?.uid = otherID as? Int
             if  UserDefaults.standard.string(forKey: "token") == nil{
-                self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+                self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
             }else{
                 self.navigationController?.pushViewController(userInfoVc!, animated: true)
             }

@@ -31,7 +31,7 @@ class IssueMomentsViewController: UIViewController {
     }
     @IBAction func issueBtn(_ sender: UIButton) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+            self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
         NetWorkTool.shareInstance.nbor_publish(UserDefaults.standard.string(forKey: "token")!, image: images, content: topicDetialTextView.text) { [weak self](info, error) in
@@ -88,7 +88,7 @@ extension IssueMomentsViewController : TZImagePickerControllerDelegate {
             if   (self.picPickerView?.images.count)! < (weakself?.maxNum)! {
                 self.showLocalPhotoGallery()}
             else{
-                self.presentHintMessage(target: self, hintMessgae: "你的上传图片已经达到最大数额")
+                self.presentHintMessage(hintMessgae: "你的上传图片已经达到最大数额", completion: nil)
             }
         }
         

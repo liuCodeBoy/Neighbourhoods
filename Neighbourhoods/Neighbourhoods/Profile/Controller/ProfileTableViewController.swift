@@ -35,7 +35,7 @@ class ProfileTableViewController: UITableViewController {
                 print(error as Any)
             } else if result?["code"] as! String == "200" {
                 let resultDict = result!["result"] as! [String: AnyObject]
-                self.viewModel = UserInfoModel.mj_object(withKeyValues: resultDict)
+                self?.viewModel = UserInfoModel.mj_object(withKeyValues: resultDict)
             }
         }
     }

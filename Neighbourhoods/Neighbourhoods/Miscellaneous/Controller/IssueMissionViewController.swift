@@ -19,19 +19,19 @@ class IssueMissionViewController: UIViewController {
     }
     @IBAction func issueBtn(_ sender: UIButton) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+            self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
         guard  missionTitle.text != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "话题不能为空")
+            self.presentHintMessage(hintMessgae:  "话题不能为空", completion: nil)
             return
         }
         guard  missionDetialTextView.text != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "话题描述不能为空")
+            self.presentHintMessage(hintMessgae:  "话题描述不能为空", completion: nil)
             return
         }
         guard missionScoreTF.text != nil else {
-            self.presentHintMessage(target: self, hintMessgae:  "金币数不能为空")
+            self.presentHintMessage(hintMessgae:  "金币数不能为空", completion: nil)
             return
         }
         NetWorkTool.shareInstance.task_publish(UserDefaults.standard.string(forKey: "token")!, title: missionTitle.text!, content: missionDetialTextView.text!, integral: Int(missionScoreTF.text!)!){ [weak self](info, error) in

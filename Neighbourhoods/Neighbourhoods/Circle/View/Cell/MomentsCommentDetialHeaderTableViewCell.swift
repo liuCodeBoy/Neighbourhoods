@@ -52,7 +52,7 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
                 })
             }else if (info?["code"] as? String == "200"){
                 //服务器
-                self?.likeBtn.setTitle("\(Int(truncating: self?.momentsCellModel.love!) + 1)", for: .normal)
+                self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
             }
         }
     }
@@ -67,7 +67,7 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             self.nickName.text = momentsCellModel.user?.nickname
             if let pictureStringArr = momentsCellModel.picture{
                 let leftImage = pictureStringArr[0] as! String
-                if leftImage.characters.count > 1 {
+                if leftImage.count > 1 {
                 imageHeightConstraint.constant = 90
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                 print(leftImage)

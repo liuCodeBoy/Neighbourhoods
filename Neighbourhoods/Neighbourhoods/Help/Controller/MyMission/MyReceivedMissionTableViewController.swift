@@ -14,6 +14,8 @@ class MyReceivedMissionTableViewController: UITableViewController {
     private var pages = 1
     private var page = 1
     
+    let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
+    
     var myMissionArray = [TaskListModel]()
     
     var missionID: Int? {
@@ -29,16 +31,11 @@ class MyReceivedMissionTableViewController: UITableViewController {
         
         lastedRequest(p: page)
         loadRefreshComponet()
+        
+        coverView.showLab.text = "暂无任务"
+        coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        self.view.addSubview(coverView)
 
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if myMissionArray.count == 0 {
-            let nomission = Bundle.main.loadNibNamed("NoMissionCoverView", owner: self, options: nil)?.first as! UIView
-            nomission.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-            self.view.addSubview(nomission)
-            self.tableView.isScrollEnabled = false
-        }
     }
 
     func loadRefreshComponet() -> () {
@@ -89,6 +86,9 @@ class MyReceivedMissionTableViewController: UITableViewController {
                 }
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
+                }
+                if CGFloat((self?.myMissionArray.count)!) > 0 {
+                    self?.coverView.removeFromSuperview()
                 }
             }else{
                 //服务器
