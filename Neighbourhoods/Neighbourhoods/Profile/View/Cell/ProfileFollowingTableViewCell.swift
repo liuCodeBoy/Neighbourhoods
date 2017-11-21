@@ -49,7 +49,7 @@ class ProfileFollowingTableViewCell: UITableViewCell {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid, type: type) { (result, error) in
+        NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid, type: type) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
                 return

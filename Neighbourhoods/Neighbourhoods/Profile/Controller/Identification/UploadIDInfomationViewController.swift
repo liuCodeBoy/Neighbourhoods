@@ -74,18 +74,19 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: 2, name: name, id_number: id_Num, image: [IDImgFront.image!, IDImgBack.image!]) { (result, error) in
+        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: 2, name: name, id_number: id_Num, image: [IDImgFront.image!, IDImgBack.image!]) { [weak self](result, error) in
             // MARK:- upload
             if result!["code"] as! String == "400" {
-                self.presentHintMessage(target: self, hintMessgae: "图片上传失败")
+                self?.presentHintMessage(target: self, hintMessgae: "图片上传失败")
+                self?.presentHintMessage(hintMessgae: "图片上传失败", completion: nil)
                 return
             } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(target: self, hintMessgae: "认证失败")
+                self?.presentHintMessage(target: self, hintMessgae: "认证失败")
                 return
             } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(target: self, hintMessgae: "上传成功")
+                self?.presentHintMessage(target: self, hintMessgae: "上传成功")
                 let index = self.navigationController?.viewControllers.index(after: 0)
-                self.navigationController?.popToViewController((self.navigationController?.viewControllers[index!])!, animated: true)
+                self?.navigationController?.popToViewController((self.navigationController?.viewControllers[index!])!, animated: true)
             }
         }
         

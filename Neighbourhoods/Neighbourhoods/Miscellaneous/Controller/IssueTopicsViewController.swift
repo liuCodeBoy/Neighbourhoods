@@ -42,14 +42,14 @@ class IssueTopicsViewController: UIViewController {
             self.presentHintMessage(target: self, hintMessgae:  "话题描述不能为空")
             return
         }
-        NetWorkTool.shareInstance.topic_publish(UserDefaults.standard.string(forKey: "token")!, image: images, name: topicNameField.text!, content: topicDetialTextView.text!)  { (info, error) in
+        NetWorkTool.shareInstance.topic_publish(UserDefaults.standard.string(forKey: "token")!, image: images, name: topicNameField.text!, content: topicDetialTextView.text!)  { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor: UIColor.blue, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }else {
@@ -58,7 +58,7 @@ class IssueTopicsViewController: UIViewController {
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }

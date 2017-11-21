@@ -44,7 +44,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                     genderLbl.text = "女"
                 }
             }
-            if var district = profileViewModel?.district {
+            if let district = profileViewModel?.district {
                 self.discrictLbl.text = district
             }
         }
@@ -104,12 +104,12 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                         return
                     }
                     // MARK:- upload avatar to the server
-                    NetWorkTool.shareInstance.updateProfile(access_token, cate: nil, content: nil, content_sex: nil, image: photosArr?.first!, finished: { (result, error) in
+                    NetWorkTool.shareInstance.updateProfile(access_token, cate: nil, content: nil, content_sex: nil, image: photosArr?.first!, finished: { [weak self](result, error) in
                         
                         if error != nil {
                             print(error as AnyObject)
                         } else if result!["code"] as! String == "200" {
-                            self.presentHintMessage(target: self, hintMessgae: "上传成功")
+                            self?.presentHintMessage(target: self!, hintMessgae: "上传成功")
                         } else {
                             print("request failed with exit code \(String(describing: result!["code"]))")
                         }
@@ -178,19 +178,19 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.identityJudge(access_token) { (result, error) in
+        NetWorkTool.shareInstance.identityJudge(access_token) { [weak self](result, error) in
             if result!["code"] as! String == "200" {
                 let dict = result!["result"] as! [String : AnyObject]
                 let idStatus = IdentityJudgeModel.mj_object(withKeyValues: dict)
                 switch idStatus?.status as! Int {
-                case 0: self.userIdentificationStatus = "身份未认证"
+                case 0: self?.userIdentificationStatus = "身份未认证"
                 case 1:
-                    self.userIdentificationStatus = "身份已认证"
-                    self.identityName = idStatus?.name
-                    self.identityNumber = idStatus?.id_number
-                    self.verifyImg.image = #imageLiteral(resourceName: "security_id_verified")
-                case 2: self.userIdentificationStatus = "身份待审核"
-                case 3: self.userIdentificationStatus = "审核失败"
+                    self?.userIdentificationStatus = "身份已认证"
+                    self?.identityName = idStatus?.name
+                    self?.identityNumber = idStatus?.id_number
+                    self?.verifyImg.image = #imageLiteral(resourceName: "security_id_verified")
+                case 2: self?.userIdentificationStatus = "身份待审核"
+                case 3: self?.userIdentificationStatus = "审核失败"
                 default: break
                 }
             } else {
@@ -203,12 +203,12 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.loadProfileInfo(access_token) { (result, error) in
+        NetWorkTool.shareInstance.loadProfileInfo(access_token) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 let dict = result!["result"] as! [String : AnyObject]
-                self.profileViewModel = UserInfoModel.mj_object(withKeyValues: dict)
+                self?.profileViewModel = UserInfoModel.mj_object(withKeyValues: dict)
             } else {
                 print("post request failed with code : \(result!["code"] as! String)")
             }

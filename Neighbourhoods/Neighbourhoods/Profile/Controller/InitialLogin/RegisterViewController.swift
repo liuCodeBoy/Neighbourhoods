@@ -9,7 +9,9 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
     fileprivate var countDownTimer: Timer?
+    
     @IBOutlet weak var phoneBackView: UIView!
     @IBOutlet weak var pwdBackView: UIView!
     @IBOutlet weak var confirmBackView: UIView!
@@ -54,6 +56,12 @@ class RegisterViewController: UIViewController {
         setNavBarAttribute()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.idNumber.resignFirstResponder()
+        self.password.resignFirstResponder()
+        self.phoneNumber.resignFirstResponder()
+    }
+    
     func setNavBarAttribute() {
 
         let titleLbl = UILabel()
@@ -87,6 +95,8 @@ class RegisterViewController: UIViewController {
             
         } else if phoneNumber.text?.isValidePhoneNumber == false {
             self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
+        } else if password.text?.isValidPassword == false {
+            self.presentHintMessage(target: self, hintMessgae: "密码应为6-20位字母和数字组合")
         } else if password.text == "" {
             self.presentHintMessage(target: self, hintMessgae: "请输入密码")
         } else if idNumber.text == "" {
@@ -94,36 +104,44 @@ class RegisterViewController: UIViewController {
         } else {
             if phoneNumber.text!.isValidePhoneNumber == true {
                 
-                SMSSDK.commitVerificationCode(idNumber.text!, phoneNumber: phoneNumber.text!, zone: "86", result: { (error: Error?) in
-                    if error != nil {
-                        self.presentHintMessage(target: self, hintMessgae: "验证码输入错误")
-                    } else {
-                        weak var weakSelf = self
-                        NetWorkTool.shareInstance.UserRegister((weakSelf?.phoneNumber.text!)!, password: (weakSelf?.password.text!)!, finished: { (userInfo, error) in
-                            if error == nil {
-                                //存储手机号码和密码
-                                //MARK: - bug fix
-//                                sender.saveUserData(phone: self.phoneNumber.text!, password: self.password.text!, token: "")
-                                //存储数据到服务器
-                                let alert = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
-                                let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
-                                    //登陆界面销毁
-                                    weakSelf?.navigationController?.popToRootViewController(animated: true)
-                                })
-                                alert.addAction(ok)
-                                weakSelf?.present(alert, animated: true, completion: nil)
-                                
-                            }
-                        })
-                    }
+//                SMSSDK.commitVerificationCode(idNumber.text!, phoneNumber: phoneNumber.text!, zone: "86", result: { (error: Error?) in
+//                    if error != nil {
+//                        self.presentHintMessage(target: self, hintMessgae: "验证码输入错误")
+//                    } else {
+//                        weak var weakSelf = self
+//                        NetWorkTool.shareInstance.UserRegister((weakSelf?.phoneNumber.text!)!, password: (weakSelf?.password.text!)!, finished: { [weak self](userInfo, error) in
+//                            if error == nil {
+//                                //存储数据到服务器
+//                                let alert = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
+//                                let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
+//                                    //登陆界面销毁
+//                                    weakSelf?.navigationController?.popToRootViewController(animated: true)
+//                                })
+//                                alert.addAction(ok)
+//                                weakSelf?.present(alert, animated: true, completion: nil)
+//
+//                            }
+//                        })
+//                    }
+//                })
+                
+                presentHintMessage(hintMessgae: "success", completion: { (_) in
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Welcome")
+                    self.present(vc!, animated: true, completion: {
+                       
+                    })
                 })
             } else {
                 self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
+            
+     
             }
         }
         
         
     }
+    
     @objc func pop() {
         self.navigationController?.popViewController(animated: true)
     }

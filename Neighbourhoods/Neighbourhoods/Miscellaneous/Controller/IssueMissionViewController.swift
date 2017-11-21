@@ -34,14 +34,14 @@ class IssueMissionViewController: UIViewController {
             self.presentHintMessage(target: self, hintMessgae:  "金币数不能为空")
             return
         }
-        NetWorkTool.shareInstance.task_publish(UserDefaults.standard.string(forKey: "token")!, title: missionTitle.text!, content: missionDetialTextView.text!, integral: Int(missionScoreTF.text!)!){ (info, error) in
+        NetWorkTool.shareInstance.task_publish(UserDefaults.standard.string(forKey: "token")!, title: missionTitle.text!, content: missionDetialTextView.text!, integral: Int(missionScoreTF.text!)!){ [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor: UIColor.blue, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }else {
@@ -50,7 +50,7 @@ class IssueMissionViewController: UIViewController {
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }

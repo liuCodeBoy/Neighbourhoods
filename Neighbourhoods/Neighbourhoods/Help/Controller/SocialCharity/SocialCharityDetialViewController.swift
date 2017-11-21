@@ -28,7 +28,7 @@ class SocialCharityDetialViewController: UIViewController {
         setNavBarBackBtn()
         
         //MARK: - load data
-        NetWorkTool.shareInstance.socialCharityDetial(id: 1) { (result, error) in
+        NetWorkTool.shareInstance.socialCharityDetial(id: 1) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else {
@@ -38,13 +38,13 @@ class SocialCharityDetialViewController: UIViewController {
                 if let detialDict = resultDict["result"] {
                     let viewModel = SocialOrgDetModel.mj_object(withKeyValues: detialDict)
                     
-                    self.charityAvatar.sd_setImage(with: URL.init(string: (viewModel?.head_pic!)!), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
-                    self.charityName.text = viewModel?.name
-                    self.location.text = viewModel?.address
-                    self.phoneNumber.text = viewModel?.phone
-                    self.emailAddress.text = viewModel?.email
-                    self.detialTextView.text = viewModel?.content
-                    self.image.sd_setImage(with: URL.init(string: "\(String(describing: viewModel?.picture?.first))"), placeholderImage: #imageLiteral(resourceName: "id_card_authentication_succeeded"), options: .continueInBackground, completed: nil)
+                    self?.charityAvatar.sd_setImage(with: URL.init(string: (viewModel?.head_pic!)!), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+                    self?.charityName.text = viewModel?.name
+                    self?.location.text = viewModel?.address
+                    self?.phoneNumber.text = viewModel?.phone
+                    self?.emailAddress.text = viewModel?.email
+                    self?.detialTextView.text = viewModel?.content
+                    self?.image.sd_setImage(with: URL.init(string: "\(String(describing: viewModel?.picture?.first))"), placeholderImage: #imageLiteral(resourceName: "id_card_authentication_succeeded"), options: .continueInBackground, completed: nil)
                 }
                 
             }

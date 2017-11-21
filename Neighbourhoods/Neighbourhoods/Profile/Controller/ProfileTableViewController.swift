@@ -30,7 +30,7 @@ class ProfileTableViewController: UITableViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.userInfo(access_token) { (result, error) in
+        NetWorkTool.shareInstance.userInfo(access_token) { [weak self](result, error) in
             if error != nil {
                 print(error as Any)
             } else if result?["code"] as! String == "200" {

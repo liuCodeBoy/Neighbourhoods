@@ -16,6 +16,10 @@ class ChangeNickNameViewController: UIViewController {
     var nickName: String?
     var retSegue: UIStoryboardSegue?
     
+    @IBAction func welcome(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Welcome", bundle: nil).instantiateInitialViewController()
+        self.present(vc!, animated: true, completion: nil)
+    }
     @IBOutlet weak var nickNameTF: UITextField!
     @IBAction func confirmChangeBtnClicked(_ sender: UIButton) {
         
@@ -40,14 +44,14 @@ class ChangeNickNameViewController: UIViewController {
             return
         }
         // MARK:- upload avatar to the server
-        NetWorkTool.shareInstance.updateProfile(access_token, cate: "nickname", content: nickName, content_sex: nil, image: nil, finished: { (result, error) in
+        NetWorkTool.shareInstance.updateProfile(access_token, cate: "nickname", content: nickName, content_sex: nil, image: nil, finished: { [weak self](result, error) in
             
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
-                let source = self.retSegue?.source as! SelfInfomationTableViewController
-                source.nickNameLbl.text = self.nickName
-                self.presentHintMessage(target: self, hintMessgae: "修改成功")
+                let source = self?.retSegue?.source as! SelfInfomationTableViewController
+                source.nickNameLbl.text = self?.nickName
+                self?.presentHintMessage(target: self!, hintMessgae: "修改成功")
             } else {
                 print("request failed with exit code \(String(describing: result!["code"]))")
             }

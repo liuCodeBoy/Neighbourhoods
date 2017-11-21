@@ -14,6 +14,8 @@ class MyFollowersViewController: UIViewController {
     
     private var followingList = [AttentionAndFansModel]()
     
+    let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,10 @@ class MyFollowersViewController: UIViewController {
         setNavBarTitle(title: "我的粉丝")
         
         loadFollowingUsers()
+        
+        coverView.showLab.text = "暂无粉丝"
+        coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        self.view.addSubview(coverView)
 
     }
 
@@ -32,17 +38,20 @@ class MyFollowersViewController: UIViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.userFans(access_token) { (result, error) in
+        NetWorkTool.shareInstance.userFans(access_token) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 let dictArray = result!["result"] as! [[String : AnyObject]]
                 for userDict in dictArray {
                     if let listModel = AttentionAndFansModel.mj_object(withKeyValues: userDict["user"]) {
-                        self.followingList.append(listModel)
+                        self?.followingList.append(listModel)
                     }
                 }
-                self.myFollowersTableView.reloadData()
+                self?.myFollowersTableView.reloadData()
+                if CGFloat((self?.followingList.count)!) > 0 {
+                    self?.coverView.removeFromSuperview()
+                }
             } else {
                 print("post failed with code \(String(describing: result!["code"]))")
             }

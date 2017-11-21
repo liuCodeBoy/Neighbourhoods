@@ -28,7 +28,7 @@ class GenderSelectPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSour
         } else {
             sex = 2
         }
-        NetWorkTool.shareInstance.updateProfile(access_token, cate: "sex", content: nil, content_sex: self.sex, image: nil) { (result, error) in
+        NetWorkTool.shareInstance.updateProfile(access_token, cate: "sex", content: nil, content_sex: self.sex, image: nil) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {

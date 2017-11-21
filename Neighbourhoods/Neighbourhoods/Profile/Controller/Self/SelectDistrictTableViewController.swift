@@ -60,18 +60,18 @@ class SelectDistrictTableViewController: UITableViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.selectDistrict(access_token, level: 1, pid: 0) { (result, error) in
+        NetWorkTool.shareInstance.selectDistrict(access_token, level: 1, pid: 0) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 for dict in result!["result"] as! [[String : AnyObject]] {
                     let model = SelectDistrictModel.mj_object(withKeyValues: dict)!
-                    self.firstLevelList.append(model)
+                    self?.firstLevelList.append(model)
                 }
             } else {
                 print("post failed with exit code \(String(describing: result!["code"]))")
             }
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
         }
         
     }

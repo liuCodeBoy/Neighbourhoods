@@ -35,15 +35,15 @@ class ChangePasswordViewController: UIViewController {
             return
         }
         //judge whether the old pwd is right
-        NetWorkTool.shareInstance.changePwd(access_token, oldpwd: oldPassword.text!, newpwd: newPassword.text!) { (result, error) in
+        NetWorkTool.shareInstance.changePwd(access_token, oldpwd: oldPassword.text!, newpwd: newPassword.text!) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "400.4" {
-                self.presentHintMessage(target: self, hintMessgae: "您输入的密码有误")
+                self?.presentHintMessage(target: self, hintMessgae: "您输入的密码有误")
             } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(target: self, hintMessgae: "密码修改成功")
+                self?.presentHintMessage(target: self, hintMessgae: "密码修改成功")
             } else {
-                self.presentHintMessage(target: self, hintMessgae: "修改失败")
+                self?.presentHintMessage(target: self, hintMessgae: "修改失败")
                 print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
