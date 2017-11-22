@@ -20,7 +20,8 @@ class LotteryDetialViewController: UIViewController {
     
     @IBAction func lotteryClicked(_ sender: UIButton) {
         guard (UserDefaults.standard.string(forKey: "token") != nil) else {
-            self.presentHintMessage(target: self, hintMessgae: "您还未登录")
+
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
             return
         }
         play_lottery(token: UserDefaults.standard.string(forKey: "token")!, id: id!)
@@ -52,7 +53,7 @@ class LotteryDetialViewController: UIViewController {
                 }
             }else if(info?["code"] as? String == "403"){
                 //服务器error
-                self.presentHintMessage(target: self, hintMessgae: "抱歉你还没有权限")
+                self.presentHintMessage(hintMessgae: "抱歉你还没有权限", completion: nil)
             }
         }
     }

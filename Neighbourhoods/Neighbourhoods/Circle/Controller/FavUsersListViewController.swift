@@ -30,17 +30,17 @@ class FavUsersListViewController: UIViewController {
     func loadFollowingUsers() {
         
         let token = UserDefaults.standard.string(forKey: "token")
-        NetWorkTool.shareInstance.userAttention(token!) { (result, error) in
+        NetWorkTool.shareInstance.userAttention(token!) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 let dictArray = result!["result"] as! [[String : AnyObject]]
                 for userDict in dictArray {
                     if let listModel = AttentionAndFansModel.mj_object(withKeyValues: userDict["user"]) {
-                        self.followingList.append(listModel)
+                        self?.followingList.append(listModel)
                     }
                 }
-                self.followingsTableView.reloadData()
+                self?.followingsTableView.reloadData()
             } else {
                 print("post failed with code \(String(describing: result!["code"]))")
             }

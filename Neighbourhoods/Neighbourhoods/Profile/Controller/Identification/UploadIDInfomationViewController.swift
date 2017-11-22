@@ -27,7 +27,7 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
     @IBAction func uploadClicked(_ sender: UIButton) {
         
         if nameTF.text == nil || IDNumTF.text == nil || leftImgLoaded == false || rightImgLoaded == false {
-            presentHintMessage(target: self, hintMessgae: "请完善您的信息")
+            presentHintMessage(hintMessgae: "请完善您的信息", completion: nil)
             return
         } else {
             uploadIDCardPhoto(name: nameTF.text!, id_Num: IDNumTF.text!)
@@ -74,71 +74,23 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: 2, name: name, id_number: id_Num, image: [IDImgFront.image!, IDImgBack.image!]) { (result, error) in
+        NetWorkTool.shareInstance.identityAuth(access_token, up_cate: 2, name: name, id_number: id_Num, image: [IDImgFront.image!, IDImgBack.image!]) { [weak self](result, error) in
             // MARK:- upload
             if result!["code"] as! String == "400" {
-                self.presentHintMessage(target: self, hintMessgae: "图片上传失败")
+                self?.presentHintMessage(hintMessgae: "图片上传失败", completion: nil)
+                self?.presentHintMessage(hintMessgae: "图片上传失败", completion: nil)
                 return
             } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(target: self, hintMessgae: "认证失败")
+                self?.presentHintMessage(hintMessgae: "认证失败", completion: nil)
                 return
             } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(target: self, hintMessgae: "上传成功")
-                let index = self.navigationController?.viewControllers.index(after: 0)
-                self.navigationController?.popToViewController((self.navigationController?.viewControllers[index!])!, animated: true)
+                self?.presentHintMessage(hintMessgae: "上传成功", completion: nil)
+                let index = self?.navigationController?.viewControllers.index(after: 0)
+                self?.navigationController?.popToViewController((self?.navigationController?.viewControllers[index!])!, animated: true)
             }
         }
         
     }
-
-    
-//    @objc func takePhoto(sender: UIImageView) {
-//        let sheet = UIAlertController()
-//        let imagePickerVC = TZImagePickerController(maxImagesCount: 1, delegate: self)
-//        let photoLib = UIAlertAction(title: "选择照片", style: .default, handler: { (_) in
-//            imagePickerVC?.allowPickingOriginalPhoto = false
-//            imagePickerVC?.allowCrop = true
-//            weak var wealSelf = self
-//            imagePickerVC?.didFinishPickingPhotosWithInfosHandle = {(photosArr, _ , _, _) in
-//                if sender.image == #imageLiteral(resourceName: "upload_id_card2") {
-//                    wealSelf?.IDImgFront.image = photosArr?.first!
-//                } else {
-//                    wealSelf?.IDImgBack.image = photosArr?.first!
-//                }
-//                if self.imageCount == 0 {
-//                    wealSelf?.IDImgFront.image = photosArr?.first!
-//                } else {
-//                    wealSelf?.IDImgBack.image = photosArr?.first!
-//                }
-//
-//            }
-//            self.present(imagePickerVC!, animated: true, completion: {
-//
-//            })
-//        })
-//        let takePhoto = UIAlertAction(title: "拍照", style: .default, handler: { (_) in
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.sourceType = .camera
-//            imagePicker.allowsEditing = true
-//            imagePicker.delegate = self
-//            self.present(imagePicker, animated: true, completion: {
-//
-//            })
-//        })
-//        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: { (_) in
-//
-//        })
-        
-//        sheet.addAction(takePhoto)
-//        sheet.addAction(photoLib)
-//        sheet.addAction(cancel)
-//
-//
-//        self.present(sheet, animated: true, completion: {
-//
-    //        })
-//
-//    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImg = info[UIImagePickerControllerOriginalImage] as! UIImage

@@ -43,7 +43,7 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
             })
             return
         }
-        NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { (info, error) in
+        NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
@@ -54,7 +54,7 @@ class MomentsHotestTopicTableViewCell: UITableViewCell {
                 })
             }else if (info?["code"] as? String == "200"){
                 //服务器
-                self.likeBtn.setTitle("\(Int(truncating: self.momentsCellModel.love!) + 1)", for: .normal)
+                self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
             }
         }
     }

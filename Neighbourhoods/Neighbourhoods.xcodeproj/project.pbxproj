@@ -100,6 +100,8 @@
 		D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */; };
 		D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */; };
 		D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */; };
+		D3954E881FC3BAB7003C08DC /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3954E871FC3BAB7003C08DC /* Welcome.storyboard */; };
+		D3954E8C1FC3CCF9003C08DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
 		D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */; };
@@ -288,6 +290,8 @@
 		D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMomentsViewController.swift; sourceTree = "<group>"; };
 		D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueMomentsViewController.xib; sourceTree = "<group>"; };
 		D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityJudgeModel.swift; sourceTree = "<group>"; };
+		D3954E871FC3BAB7003C08DC /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
 		D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectPickerView.swift; sourceTree = "<group>"; };
@@ -546,6 +550,7 @@
 				D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */,
 				D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */,
 				D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */,
+				D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */,
 			);
 			path = InitialLogin;
 			sourceTree = "<group>";
@@ -683,6 +688,7 @@
 			isa = PBXGroup;
 			children = (
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
+				D3954E871FC3BAB7003C08DC /* Welcome.storyboard */,
 				D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */,
 				D35B2D121FBB0B3800F1E8DF /* Model */,
 				D31CD4A61F91DA5300195686 /* Controller */,
@@ -1007,6 +1013,7 @@
 				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
 				D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
+				D3954E881FC3BAB7003C08DC /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,6 +1194,7 @@
 				D3D1FD751FA80B8F009A2E58 /* SocialAnnouncementTableViewCell.swift in Sources */,
 				D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */,
 				D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */,
+				D3954E8C1FC3CCF9003C08DC /* WelcomeViewController.swift in Sources */,
 				D3FAC7ED1FA97ECD00D972B9 /* ActivityUnderVotingViewController.swift in Sources */,
 				D345ABF21FB149A900FAB15F /* Network.swift in Sources */,
 				D30ED0F41FAAF6FC007A5858 /* SettingsViewController.swift in Sources */,

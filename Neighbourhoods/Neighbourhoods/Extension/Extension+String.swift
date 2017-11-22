@@ -13,7 +13,7 @@ extension  String {
         let statusLabelText = labelStr
         let size = CGSize(width: width, height: 900)
     let dic = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
-    let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as! [NSAttributedStringKey : Any] , context: nil).size
+    let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : Any] , context: nil).size
         return strSize.height
     }
     
@@ -31,6 +31,22 @@ extension  String {
             }
         }
         
+        set {
+            
+        }
+    }
+    
+    var isValidPassword: Bool {
+        get {
+            let pwdRE: String = "^((?!\\d+$)(?![a-zA-Z]+$)[a-zA-Z\\d@#$%^&_+].{5,19})+$"
+            let regex = NSPredicate(format: "SELF MATCHES %@", pwdRE)
+            
+            if regex.evaluate(with: self) == true {
+                return true
+            } else {
+                return false
+            }
+        }
         set {
             
         }

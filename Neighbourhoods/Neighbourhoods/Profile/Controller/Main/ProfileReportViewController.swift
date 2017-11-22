@@ -22,7 +22,7 @@ class ProfileReportViewController: UIViewController {
     //detailLable
     var  detailLable : UILabel?
     //定义默认上传图片的最大数额
-    let maxNum = 6
+    let maxNum = 3
     
     lazy var images = [UIImage]()
     override func viewDidLoad() {
@@ -32,18 +32,18 @@ class ProfileReportViewController: UIViewController {
     }
     @IBAction func submitAction(_ sender: Any) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+            self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
       
-        NetWorkTool.shareInstance.report(UserDefaults.standard.string(forKey: "token")!, image: images, content: reportTextField.text) { (info, error) in
+        NetWorkTool.shareInstance.report(UserDefaults.standard.string(forKey: "token")!, image: images, content: reportTextField.text) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.navigationController?.popViewController(animated: true)
+                        self?.navigationController?.popViewController(animated: true)
                     }
                 })
             }else {
@@ -52,7 +52,7 @@ class ProfileReportViewController: UIViewController {
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }
@@ -80,7 +80,7 @@ extension ProfileReportViewController : TZImagePickerControllerDelegate {
             if   (self.picPickerView?.images.count)! < (weakself?.maxNum)! {
                 self.showLocalPhotoGallery()}
             else{
-                self.presentHintMessage(target: self, hintMessgae: "你的上传图片已经达到最大数额")
+                self.presentHintMessage(hintMessgae: "你的上传图片已经达到最大数额", completion: nil)
             }
         }
         
@@ -147,7 +147,7 @@ extension ProfileReportViewController : TZImagePickerControllerDelegate {
     private func  setUpHeaderImageView(){
         
         //初始化view成为tableview的headerView
-        let  headerImageView =  UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 200))
+        let  headerImageView =  UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 100))
         // self.view.addSubview(headerImageView)
         headerImageView.backgroundColor = UIColor.init(red: 247 / 255, green: 247 / 255, blue: 247 / 255, alpha: 1.0)
         self.pickImageContainView.addSubview(headerImageView)
@@ -160,7 +160,7 @@ extension ProfileReportViewController : TZImagePickerControllerDelegate {
         layout.minimumInteritemSpacing = CGFloat(edgeMargin)
         layout.minimumLineSpacing =  CGFloat(edgeMargin)
         
-        let  picPickerView = PicPicKerCollectionView(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 170), collectionViewLayout: layout)
+        let  picPickerView = PicPicKerCollectionView(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 100), collectionViewLayout: layout)
         picPickerView.backgroundColor = UIColor.init(red: 247 / 255, green: 247 / 255, blue: 247 / 255, alpha: 1.0)
         self.pickImageContainView?.addSubview(picPickerView)
         self.picPickerView = picPickerView
@@ -168,7 +168,8 @@ extension ProfileReportViewController : TZImagePickerControllerDelegate {
         
         // 创建默认视图
         let  imageView = UIImageView.init(image: UIImage.init(named: "luntan_houserent_addphoto_default"))
-        imageView.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: 150)
+        imageView.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: 100)
+        imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = UIColor.init(red: 247 / 255, green: 247 / 255, blue: 247 / 255, alpha: 1.0)
         imageView.contentMode = .center
         self.pickImageContainView?.addSubview(imageView)
@@ -198,7 +199,7 @@ extension ProfileReportViewController : TZImagePickerControllerDelegate {
         detailLable.frame.size = CGSize.init(width: 100, height: 15)
         detailLable.textColor = UIColor.lightGray
         detailLable.font = UIFont.systemFont(ofSize: 10)
-        detailLable.text = "个数不超过2张"
+        detailLable.text = "个数不超过3张"
         self.defaultImage?.addSubview(detailLable)
         self.detailLable = detailLable
     }

@@ -31,17 +31,17 @@ class IssueMomentsViewController: UIViewController {
     }
     @IBAction func issueBtn(_ sender: UIButton) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+            self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
-        NetWorkTool.shareInstance.nbor_publish(UserDefaults.standard.string(forKey: "token")!, image: images, content: topicDetialTextView.text) { (info, error) in
+        NetWorkTool.shareInstance.nbor_publish(UserDefaults.standard.string(forKey: "token")!, image: images, content: topicDetialTextView.text) { [weak self](info, error) in
               if info?["code"] as? String == "200"{
             let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
             let noticeBar = NoticeBar(config: config)
             noticeBar.show(duration: 0.25, completed: {
                 (finished) in
                 if finished {
-                    self.dismiss(animated: true, completion: nil)
+                    self?.dismiss(animated: true, completion: nil)
                 }
             })
            }else {
@@ -50,7 +50,7 @@ class IssueMomentsViewController: UIViewController {
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }
@@ -88,7 +88,7 @@ extension IssueMomentsViewController : TZImagePickerControllerDelegate {
             if   (self.picPickerView?.images.count)! < (weakself?.maxNum)! {
                 self.showLocalPhotoGallery()}
             else{
-                self.presentHintMessage(target: self, hintMessgae: "你的上传图片已经达到最大数额")
+                self.presentHintMessage(hintMessgae: "你的上传图片已经达到最大数额", completion: nil)
             }
         }
         

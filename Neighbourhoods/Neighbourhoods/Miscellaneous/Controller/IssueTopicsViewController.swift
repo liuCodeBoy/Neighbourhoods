@@ -31,25 +31,25 @@ class IssueTopicsViewController: UIViewController {
     }
     @IBAction func issueBtn(_ sender: UIButton) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+            self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
         guard  topicNameField.text != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "话题不能为空")
+            self.presentHintMessage(hintMessgae:  "话题不能为空", completion: nil)
             return
         }
         guard  topicDetialTextView.text != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "话题描述不能为空")
+            self.presentHintMessage(hintMessgae:  "话题描述不能为空", completion: nil)
             return
         }
-        NetWorkTool.shareInstance.topic_publish(UserDefaults.standard.string(forKey: "token")!, image: images, name: topicNameField.text!, content: topicDetialTextView.text!)  { (info, error) in
+        NetWorkTool.shareInstance.topic_publish(UserDefaults.standard.string(forKey: "token")!, image: images, name: topicNameField.text!, content: topicDetialTextView.text!)  { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor: UIColor.blue, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }else {
@@ -58,7 +58,7 @@ class IssueTopicsViewController: UIViewController {
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
                     if finished {
-                        self.dismiss(animated: true, completion: nil)
+                        self?.dismiss(animated: true, completion: nil)
                     }
                 })
             }
@@ -102,7 +102,7 @@ extension IssueTopicsViewController : TZImagePickerControllerDelegate {
             if   (self.picPickerView?.images.count)! < (weakself?.maxNum)! {
                 self.showLocalPhotoGallery()}
             else{
-                self.presentHintMessage(target: self, hintMessgae: "你的上传图片已经达到最大数额")
+                self.presentHintMessage(hintMessgae: "你的上传图片已经达到最大数额", completion: nil)
             }
         }
         

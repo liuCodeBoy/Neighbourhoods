@@ -19,15 +19,15 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     @IBOutlet weak var navBar: UINavigationItem!
     @IBAction func userLoginClick(_ sender: Any) {
         if phoneNumber.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入手机号码")
+            self.presentHintMessage(hintMessgae: "请输入手机号码", completion: nil)
         } else if phoneNumber.text?.isValidePhoneNumber == false {
-            self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
+            self.presentHintMessage(hintMessgae: "请输入正确的手机号码", completion: nil)
         } else if password.text == "" {
-            self.presentHintMessage(target: self, hintMessgae: "请输入密码")
+            self.presentHintMessage(hintMessgae: "请输入密码", completion: nil)
         } else if phoneNumber.text?.isValidePhoneNumber == true {
             //检查密码是否与服务器数据匹配
             weak var weakSelf = self
-            NetWorkTool.shareInstance.UserLogin((weakSelf?.phoneNumber.text)!, password: (weakSelf?.password.text)!, type: "pas", finished: { (userInfo, error) in
+            NetWorkTool.shareInstance.UserLogin((weakSelf?.phoneNumber.text)!, password: (weakSelf?.password.text)!, type: "pas", finished: { [weak self](userInfo, error) in
                 if error == nil {
                     let  userInfoDict = userInfo!
                     let loginStaus =  userInfoDict["code"] as? String
@@ -38,8 +38,8 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                             let userDefault =  UserDefaults.standard
                             //存储数据
                             userDefault.set(token, forKey: "token")
-                            userDefault.set(self.phoneNumber.text ,forKey: "number")
-                            userDefault.set(self.password.text, forKey: "pwd")
+                            userDefault.set(self?.phoneNumber.text ,forKey: "number")
+                            userDefault.set(self?.password.text, forKey: "pwd")
                             //同步数据
                             userDefault.synchronize()
                         }
@@ -52,13 +52,19 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                         alert.addAction(ok)
                         weakSelf?.present(alert, animated: true, completion: nil)
                     }else{
-
+                        print("login failed with post request exit code \(String(describing: userInfoDict["code"] as? String))")
+                        let alert = UIAlertController(title: "登录失败", message: "请检查账号密码后重试", preferredStyle: .alert)
+                        let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
+                            
+                        })
+                        alert.addAction(ok)
+                        weakSelf?.present(alert, animated: true, completion: nil)
                     }
                 }
             })
             
         } else {
-            self.presentHintMessage(target: self, hintMessgae: "请输入正确的手机号码")
+            self.presentHintMessage(hintMessgae: "请输入正确的手机号码", completion: nil)
         }
         
     }

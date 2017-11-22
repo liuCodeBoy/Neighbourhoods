@@ -41,7 +41,7 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             })
             return
         }
-        NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { (info, error) in
+        NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
@@ -52,7 +52,7 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
                 })
             }else if (info?["code"] as? String == "200"){
                 //服务器
-                self.likeBtn.setTitle("\(Int(truncating: self.momentsCellModel.love!) + 1)", for: .normal)
+                self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
             }
         }
     }
@@ -67,7 +67,7 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             self.nickName.text = momentsCellModel.user?.nickname
             if let pictureStringArr = momentsCellModel.picture{
                 let leftImage = pictureStringArr[0] as! String
-                if leftImage.characters.count > 1 {
+                if leftImage.count > 1 {
                 imageHeightConstraint.constant = 90
                 self.imageLeft.sd_setImage(with: URL.init(string: leftImage), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                 print(leftImage)

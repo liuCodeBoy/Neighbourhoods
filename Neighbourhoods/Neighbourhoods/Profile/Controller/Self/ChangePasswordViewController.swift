@@ -22,12 +22,12 @@ class ChangePasswordViewController: UIViewController {
     @IBAction func confirmChangeClicked(_ sender: UIButton) {
         
         if oldPassword.text == "" || newPassword.text == "" || confirmPassword.text == "" {
-            presentHintMessage(target: self, hintMessgae: "请填写完整")
+            presentHintMessage(hintMessgae: "请填写完整", completion: nil)
             return
         }
         
         if newPassword.text != confirmPassword.text {
-            presentHintMessage(target: self, hintMessgae: "您输入的两次密码不一样")
+            presentHintMessage(hintMessgae: "您输入的两次密码不一样", completion: nil)
             return
         }
         
@@ -35,15 +35,15 @@ class ChangePasswordViewController: UIViewController {
             return
         }
         //judge whether the old pwd is right
-        NetWorkTool.shareInstance.changePwd(access_token, oldpwd: oldPassword.text!, newpwd: newPassword.text!) { (result, error) in
+        NetWorkTool.shareInstance.changePwd(access_token, oldpwd: oldPassword.text!, newpwd: newPassword.text!) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "400.4" {
-                self.presentHintMessage(target: self, hintMessgae: "您输入的密码有误")
+                self?.presentHintMessage(hintMessgae: "您输入的密码有误", completion: nil)
             } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(target: self, hintMessgae: "密码修改成功")
+                self?.presentHintMessage(hintMessgae: "密码修改成功", completion: nil)
             } else {
-                self.presentHintMessage(target: self, hintMessgae: "修改失败")
+                self?.presentHintMessage(hintMessgae: "修改失败", completion: nil)
                 print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }

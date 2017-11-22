@@ -43,18 +43,18 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        NetWorkTool.shareInstance.selectDistrict(access_token, level: 3, pid: self.pid!) { (result, error) in
+        NetWorkTool.shareInstance.selectDistrict(access_token, level: 3, pid: self.pid!) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 for dict in result!["result"] as! [[String : AnyObject]] {
                     let model = SelectDistrictModel.mj_object(withKeyValues: dict)!
-                    self.thirdLevelList.append(model)
+                    self?.thirdLevelList.append(model)
                 }
             } else {
                 print("post failed with exit code \(String(describing: result!["code"]))")
             }
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
         }
         
     }
@@ -76,15 +76,15 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
             guard let access_token = UserDefaults.standard.string(forKey: "token") else {
                 return
             }
-            NetWorkTool.shareInstance.upDistrict(access_token, district: self.district!, dong: self.dong!, door: self.door!, finished: { (result, error) in
+            NetWorkTool.shareInstance.upDistrict(access_token, district: self.district!, dong: self.dong!, door: self.door!, finished: { [weak self](result, error) in
                 if error != nil {
                     print(error as AnyObject)
-                    self.presentHintMessage(target: self, hintMessgae: error as! String)
+                    self?.presentHintMessage(hintMessgae: error as! String, completion: nil)
                 } else if result!["code"] as! String == "200" {
-                    let index = self.navigationController?.viewControllers.index(after: 0)
-                    self.navigationController?.popToViewController((self.navigationController?.viewControllers[index!])!, animated: true)
+                    let index = self?.navigationController?.viewControllers.index(after: 0)
+                    self?.navigationController?.popToViewController((self?.navigationController?.viewControllers[index!])!, animated: true)
                 } else {
-                    self.presentHintMessage(target: self, hintMessgae: "修改失败")
+                    self?.presentHintMessage(hintMessgae: "修改失败", completion: nil)
                     print("post failed with exit code \(String(describing: result!["code"]))")
                 }
             })

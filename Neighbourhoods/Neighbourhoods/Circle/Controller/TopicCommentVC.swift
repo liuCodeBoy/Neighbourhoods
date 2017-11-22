@@ -27,7 +27,7 @@ class TopicCommentVC: UIViewController ,UITextViewDelegate {
    
     @IBAction func sendOut(_ sender: UIBarButtonItem) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
-            self.presentHintMessage(target: self, hintMessgae:  "你还未登录")
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
             return
         }
         NetWorkTool.shareInstance.topicReply(token: UserDefaults.standard.string(forKey: "token")!, pid: self.pid! , to_uid: self.to_uid!, uid: self.uid!, post_id: self.post_id!, content:  self.commentTextField.text) { [weak self](info, error) in

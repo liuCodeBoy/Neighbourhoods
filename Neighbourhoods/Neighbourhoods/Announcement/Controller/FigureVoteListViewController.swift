@@ -45,7 +45,7 @@ class FigureVoteListViewController: UIViewController {
     }
     func lastedRequest(p: Int, status: Int, cate: Int, id: Int) -> () {
         guard (UserDefaults.standard.string(forKey: "token") != nil) else {
-         self.presentHintMessage(target: self, hintMessgae: "您还未登录")
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
            return
          }
         NetWorkTool.shareInstance.option_list("1", p: 2, status: 1, cate: 2, id: 1) { [weak self](info, error) in
