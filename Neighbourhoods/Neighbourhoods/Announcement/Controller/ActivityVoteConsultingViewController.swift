@@ -62,7 +62,6 @@ func lastedRequest(id : Int) -> () {
             
         }else{
             //服务器
-            
         }
         
     }

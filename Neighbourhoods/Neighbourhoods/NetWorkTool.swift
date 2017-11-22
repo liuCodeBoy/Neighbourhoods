@@ -581,7 +581,7 @@ extension NetWorkTool {
         let urlString = "http://106.15.199.8/llb/api/user/option_list"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
-        let parameters =  ["p":p,"status" : status, "cate" : cate ,"id":id] as [String : Any]
+        let parameters =  ["p":p, "status": status, "cate" : cate ,"id":id] as [String : Any]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
             //获取字典数据
@@ -593,5 +593,93 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
+    //user/ join_vote 参与投票
+    func join_vote(_ token: String,
+                     name  : String,
+                     image  : [UIImage],
+                     id : Int,
+                     finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/join_vote"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        var parameters =  ["name":name,"id":id] as [String : Any]
+        if image.count > 0 {
+            let up_cate = 1
+            parameters.updateValue(up_cate, forKey: "up_cate")
+        }
+        //3.发送请求参数
+        post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
+            //确定选择类型
+            if image.count > 0 {
+                var  cateName =  ""
+                cateName =  image.count > 1 ?  "image[]" :  "image"
+                for pic in image {
+                    if let imageData = UIImageJPEGRepresentation(pic, 0.5){
+                        let imageName =  self?.getNowTime()
+                        formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName! , mimeType: "image/png")
+                    }
+                }
+            }
+            }, progress: { (Progress) in
+        }, success: { (URLSessionDataTask, success) in         //获取字典数据
+            guard let resultDict = success as? [String : AnyObject] else {
+                return
+            }
+            finished(resultDict , nil)
+        }) { (URLSessionDataTask, error) in
+            finished(nil , error)
+        }
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    //user/ vote 投票
+    func vote(_ token: String,
+                   vote_id  : Int,
+                   option_id : Int,
+                   finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/vote"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters =  ["vote_id":vote_id, "option_id": option_id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+  //user/ people_det 查看选项详情
+    func people_det(_ token: String,
+              id  : Int,
+              finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/people_det"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters =  ["id" : id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
 }
 

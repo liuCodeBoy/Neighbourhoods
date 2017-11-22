@@ -35,6 +35,8 @@ class FigureVoteTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
     }
-
+    @IBAction func VoteAction(_ sender: Any) {
+    }
+    
     
 }

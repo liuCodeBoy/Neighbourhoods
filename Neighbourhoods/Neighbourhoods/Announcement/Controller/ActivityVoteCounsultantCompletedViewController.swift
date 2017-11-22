@@ -11,6 +11,8 @@ import SDWebImage
 class ActivityVoteCounsultantCompletedViewController: UIViewController {
     //投票详情id
     var  id : NSNumber?
+    var  cate : NSNumber?
+    var  status : NSNumber?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
@@ -23,7 +25,19 @@ class ActivityVoteCounsultantCompletedViewController: UIViewController {
         super.viewDidLoad()
         lastedRequest(id : id as! Int)
     }
-
+    @IBAction func VoteAction(_ sender: Any) {
+        if cate == 2{
+        let voteAcVC = self.storyboard?.instantiateViewController(withIdentifier: "ActivityUnderVotingVC") as! ActivityUnderVotingViewController
+        self.navigationController?.pushViewController(voteAcVC, animated: true)
+        }else if cate == 1{
+        let voteAFigureVC = self.storyboard?.instantiateViewController(withIdentifier: "FigureVoteListID") as! FigureVoteListViewController
+            voteAFigureVC.id = self.id
+            voteAFigureVC.cate = self.cate
+            voteAFigureVC.status = self.status
+            self.navigationController?.pushViewController(voteAFigureVC, animated: true)
+        }
+    }
+    
     //MARK: - 最新发布网络请求
     func lastedRequest(id : Int) -> () {
         NetWorkTool.shareInstance.act_det(id: id) {[weak self](info, error) in
@@ -57,8 +71,6 @@ class ActivityVoteCounsultantCompletedViewController: UIViewController {
             
         }
     }
-    
-    
-    
+ 
 
 }
