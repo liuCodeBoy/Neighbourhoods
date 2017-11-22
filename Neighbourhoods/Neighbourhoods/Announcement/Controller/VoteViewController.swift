@@ -140,6 +140,8 @@ extension VoteViewController :  UITableViewDelegate, UITableViewDataSource {
             }else if model.status == 2{
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteCounsultantCompletedVC") as! ActivityVoteCounsultantCompletedViewController
                 vc.id = model.id
+                vc.status = model.status
+                vc.cate = model.cate
                 self.navigationController?.pushViewController(vc, animated: true)
             }
 //        }
