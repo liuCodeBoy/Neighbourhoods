@@ -496,6 +496,46 @@ extension NetWorkTool {
         }
     }
     
+    //MARK: - 引导页填写昵称性别
+    func editNameAndSex(_ token: String, nickname: String, sex: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/edit_name"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["nickname": nickname, "sex": sex] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //MARK: - 消息首页
+    func quickMessageMain(_ token: String, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/msg_list"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["p": p] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
     
 }
 

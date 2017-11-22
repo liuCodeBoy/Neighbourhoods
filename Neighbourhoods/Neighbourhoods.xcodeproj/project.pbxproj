@@ -69,6 +69,7 @@
 		D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */; };
 		D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */; };
 		D334F5E41FA86788006E2769 /* CircleVCTopicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5E31FA86788006E2769 /* CircleVCTopicsTableViewCell.swift */; };
+		D33F510E1FC51B2200F5AF87 /* CheckForUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */; };
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
 		D341AAAA1F9AF14100E640E1 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */; };
@@ -134,6 +135,7 @@
 		D3A8CB3D1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8CB3C1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift */; };
 		D3AD803B1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */; };
 		D3B4FE471FA455060018FADD /* SocialCharityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */; };
+		D3B589261FC52AFA003396D3 /* CommentQucikViewListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B589251FC52AF9003396D3 /* CommentQucikViewListTableViewCell.swift */; };
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
 		D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */; };
 		D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */; };
@@ -260,6 +262,7 @@
 		D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueViewController.swift; sourceTree = "<group>"; };
 		D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteTableViewCell.swift; sourceTree = "<group>"; };
 		D334F5E31FA86788006E2769 /* CircleVCTopicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleVCTopicsTableViewCell.swift; sourceTree = "<group>"; };
+		D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForUpdatesViewController.swift; sourceTree = "<group>"; };
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
@@ -327,6 +330,7 @@
 		D3A8CB3C1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyIDInfomaionUnderCheckingViewController.swift; sourceTree = "<group>"; };
 		D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowerTableViewCell.swift; sourceTree = "<group>"; };
 		D3B4FE461FA455060018FADD /* SocialCharityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityViewController.swift; sourceTree = "<group>"; };
+		D3B589251FC52AF9003396D3 /* CommentQucikViewListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentQucikViewListTableViewCell.swift; sourceTree = "<group>"; };
 		D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowingsViewController.swift; sourceTree = "<group>"; };
 		D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowersViewController.swift; sourceTree = "<group>"; };
 		D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbourhoods-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -575,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */,
+				D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -926,6 +931,7 @@
 			isa = PBXGroup;
 			children = (
 				D3FAC7E21FA974DB00D972B9 /* QuickMessageListTableViewCell.swift */,
+				D3B589251FC52AF9003396D3 /* CommentQucikViewListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -945,6 +951,7 @@
 				B692F89D1F91F19000C75B41 /* CopyFiles */,
 				110D7019E2BC97238707F9DE /* [CP] Embed Pods Frameworks */,
 				1DB30466C1F822018A82592D /* [CP] Copy Pods Resources */,
+				D3B589271FC5697D003396D3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1086,6 +1093,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3B589271FC5697D003396D3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AZDialogViewController.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NoticeBar.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1184,6 +1208,7 @@
 				D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */,
 				D3D2D7871FAB0FBA0020EE4B /* ShareSDK-Extension.swift in Sources */,
 				D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */,
+				D3B589261FC52AFA003396D3 /* CommentQucikViewListTableViewCell.swift in Sources */,
 				D334F5E41FA86788006E2769 /* CircleVCTopicsTableViewCell.swift in Sources */,
 				D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */,
 				D31B54AF1FB1AF29003549AF /* SocialOrgDetModel.swift in Sources */,
@@ -1209,6 +1234,7 @@
 				D3C864101FB96F2F00CE3B50 /* MyReceivedMissionTableViewCell.swift in Sources */,
 				D31E970D1FA9F88200A78D3A /* ChangePasswordViewController.swift in Sources */,
 				D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */,
+				D33F510E1FC51B2200F5AF87 /* CheckForUpdatesViewController.swift in Sources */,
 				D3FE30001FA45B2100FAD95E /* ConsultViewController.swift in Sources */,
 				D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */,
 				D30A17D41FAF2E07007820D3 /* TopicDetialTableViewController.swift in Sources */,
@@ -1377,7 +1403,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2473XH87M2;
+				DEVELOPMENT_TEAM = M2JN69G9M6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1388,7 +1414,7 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.njSubier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
@@ -1406,7 +1432,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2473XH87M2;
+				DEVELOPMENT_TEAM = M2JN69G9M6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1417,7 +1443,7 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJQL.Neighbourhoods.njSubier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";

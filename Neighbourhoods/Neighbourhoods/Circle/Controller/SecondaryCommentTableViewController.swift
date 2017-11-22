@@ -107,9 +107,7 @@ class SecondaryCommentTableViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SecondaryCommentDetialCell")  as! SecondaryCommentDetialTableViewCell
-            if  self.detailModelArr[indexPath.row - 1] != nil{
             cell.momentsCellModel = detailModelArr[indexPath.row - 1]
-            }
             //跳出用户详情
             cell.headImagePushClouse = { (otherID) in
                 let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController

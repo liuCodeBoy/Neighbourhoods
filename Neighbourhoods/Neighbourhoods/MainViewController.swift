@@ -105,7 +105,9 @@ class MainViewController: UITabBarController {
     }
     
     @objc func showQuickMessageVC() {
-        self.present(UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateInitialViewController()!, animated: true, completion: nil)
+        let vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateInitialViewController()! as! QuickViewMessgaesViewController
+        self.present(vc, animated: true, completion: nil)
+        
     }
     
     deinit {
