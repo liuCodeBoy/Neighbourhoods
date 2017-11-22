@@ -17,7 +17,7 @@ class TopicCommentVC: UIViewController ,UITextViewDelegate {
     @IBOutlet weak var sendOutBtn: UIBarButtonItem!
     var commentLabel : String?{
         didSet{
-            if commentLabel?.characters.count == 0 {
+            if commentLabel?.count == 0 {
                 self.sendOutBtn.isEnabled = false
             }else{
                 self.sendOutBtn.isEnabled = true

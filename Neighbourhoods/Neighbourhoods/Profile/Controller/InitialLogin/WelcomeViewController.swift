@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var nickNameTF: UITextField!
     @IBOutlet weak var maleBtn: UIButton!
     @IBOutlet weak var femaleBtn: UIButton!
+    var gender: Int?
     @IBAction func maleBtnClicked(_ sender: UIButton) {
         maleBtn.isSelected = true
         femaleBtn.isSelected = false
@@ -40,18 +41,38 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             presentHintMessage(hintMessgae: "请选择性别", completion: nil)
         } else {
             // MARK:- create user and save to the server
-            
-            
-            UIView.animate(withDuration: 1, animations: {
-                self.view.alpha = 0
-                UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
-                
-            }) { (_) in
-//                UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
-                
-                self.dismiss(animated: true, completion: {
-                })
+            guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+                return
             }
+            if femaleBtn.isSelected {
+                gender = 2
+            } else if maleBtn.isSelected {
+                gender = 1
+            }
+            NetWorkTool.shareInstance.editNameAndSex(access_token, nickname: self.nickNameTF.text!, sex: gender!, finished: { [weak self](result, error) in
+                if error != nil {
+                    print(error as AnyObject)
+                } else if result!["code"] as! String == "200" {
+                    self?.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
+                        UIView.animate(withDuration: 1, animations: {
+                            self?.view.alpha = 0
+                            UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
+                            
+                        }) { (_) in
+//                            UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
+                            
+                            self?.dismiss(animated: true, completion: {
+                            })
+                        }
+                    })
+                } else if result!["code"] as! String == "400" {
+                    self?.presentHintMessage(hintMessgae: "查询失败", completion: nil)
+                } else {
+                    print("post failed with code \(String(describing: result!["code"]))")
+                }
+            })
+            
+            
         }
         
     }
