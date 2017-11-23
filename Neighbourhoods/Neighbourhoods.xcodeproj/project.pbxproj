@@ -16,6 +16,9 @@
 		B6559A101FBD613B00EB6D56 /* PicPicKerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */; };
 		B6559A141FBD6D8C00EB6D56 /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A121FBD6D8C00EB6D56 /* PicPickerViewCell.swift */; };
 		B6559A151FBD6D8C00EB6D56 /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6559A131FBD6D8C00EB6D56 /* PicPickerViewCell.xib */; };
+		B657A05A1FC6BB910021CA4F /* ActivityUnderVotingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A0591FC6BB910021CA4F /* ActivityUnderVotingCell.swift */; };
+		B657A05C1FC6F5EE0021CA4F /* ShowVoteActivResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A05B1FC6F5EE0021CA4F /* ShowVoteActivResult.swift */; };
+		B657A05E1FC6FB3B0021CA4F /* ShowVoteActCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A05D1FC6FB3B0021CA4F /* ShowVoteActCell.swift */; };
 		B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */; };
 		B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
@@ -211,6 +214,9 @@
 		B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPicKerCollectionView.swift; sourceTree = "<group>"; };
 		B6559A121FBD6D8C00EB6D56 /* PicPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
 		B6559A131FBD6D8C00EB6D56 /* PicPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
+		B657A0591FC6BB910021CA4F /* ActivityUnderVotingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityUnderVotingCell.swift; sourceTree = "<group>"; };
+		B657A05B1FC6F5EE0021CA4F /* ShowVoteActivResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowVoteActivResult.swift; sourceTree = "<group>"; };
+		B657A05D1FC6FB3B0021CA4F /* ShowVoteActCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowVoteActCell.swift; sourceTree = "<group>"; };
 		B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowVC.swift; sourceTree = "<group>"; };
 		B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
@@ -720,6 +726,8 @@
 				D3D1FD771FA80BA9009A2E58 /* LotteryTableViewCell.swift */,
 				D3D1FD7B1FA80BB7009A2E58 /* ActivityVoteTableViewCell.swift */,
 				D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */,
+				B657A0591FC6BB910021CA4F /* ActivityUnderVotingCell.swift */,
+				B657A05D1FC6FB3B0021CA4F /* ShowVoteActCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -740,6 +748,7 @@
 				D3A54D451FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift */,
 				D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */,
 				D3FAC7EB1FA97ECD00D972B9 /* ActivityUnderVotingViewController.swift */,
+				B657A05B1FC6F5EE0021CA4F /* ShowVoteActivResult.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1150,6 +1159,7 @@
 				B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */,
 				D360A6B31FB1E85500BC3ABC /* ActListModel.swift in Sources */,
 				D3A54D441FAD5A770066C486 /* LotteryDetialViewController.swift in Sources */,
+				B657A05E1FC6FB3B0021CA4F /* ShowVoteActCell.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D30A17DE1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift in Sources */,
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementViewController.swift in Sources */,
@@ -1199,11 +1209,13 @@
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
 				D3E5BF3B1FBDC01000C4766F /* ProfileReportViewController.swift in Sources */,
 				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
+				B657A05A1FC6BB910021CA4F /* ActivityUnderVotingCell.swift in Sources */,
 				B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */,
 				D36C86B61FA09EF0000CCA17 /* FavUsersListTableViewCell.swift in Sources */,
 				D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */,
 				D35B2D161FBB16AD00F1E8DF /* AttentionAndFansModel.swift in Sources */,
 				B69850F41FC154AC0012FC1D /* LotteryListModel.swift in Sources */,
+				B657A05C1FC6F5EE0021CA4F /* ShowVoteActivResult.swift in Sources */,
 				D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */,
 				D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */,
 				D3D2D7871FAB0FBA0020EE4B /* ShareSDK-Extension.swift in Sources */,

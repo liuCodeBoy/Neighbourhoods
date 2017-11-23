@@ -23,6 +23,8 @@ class ActivityVoteEndedViewController: UIViewController {
         lastedRequest(id: id as! Int)
     }
    
+    @IBAction func ShowEndDetailVC(_ sender: Any) {
+    }
     //MARK: - 最新发布网络请求
     func lastedRequest(id : Int) -> () {
         NetWorkTool.shareInstance.act_det(id: id) {[weak self](info, error) in

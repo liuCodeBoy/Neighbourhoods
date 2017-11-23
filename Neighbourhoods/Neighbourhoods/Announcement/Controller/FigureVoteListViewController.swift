@@ -22,6 +22,8 @@ class FigureVoteListViewController: UIViewController {
         setNavBarTitle(title: "正在投票")
         lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: cate as! Int)
     }
+    
+    
     func lastedRequest(p: Int, status: Int, cate: Int, id: Int) -> () {
         var token = ""
         guard (UserDefaults.standard.string(forKey: "token") != nil) else {
@@ -47,7 +49,6 @@ class FigureVoteListViewController: UIViewController {
                 self?.figureVoteTableView.mj_footer.endRefreshing()
                 }
             }
-        
      }
 }
 

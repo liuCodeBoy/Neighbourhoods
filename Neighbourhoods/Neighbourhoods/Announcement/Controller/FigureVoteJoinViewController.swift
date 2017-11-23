@@ -22,18 +22,21 @@ class FigureVoteJoinViewController: UIViewController {
     let maxNum = 1
     lazy var images = [UIImage]()
     @IBOutlet weak var conductSelfText: UITextView!
-    @IBOutlet weak var nameLable: UITextField!
-    @IBOutlet weak var iphoneLab: UITextField!
     @IBAction func forwardBtnClicked(_ sender: UIButton) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
+        guard (conductSelfText.text != nil)  else{
+          self.presentHintMessage(hintMessgae:  "请完整信息的填写", completion: nil)
+          return
+        }
         
-        NetWorkTool.shareInstance.join_vote(UserDefaults.standard.string(forKey: "token")!, name: "1", image: self.images, id: 1) { [weak self](info, error) in
+        NetWorkTool.shareInstance.join_vote(UserDefaults.standard.string(forKey: "token")!, name: conductSelfText.text!, image: self.images, id: 1) { [weak self](info, error) in
             
             if info?["code"] as? String == "200"{
-                let config = NoticeBarConfig(title: info?["reult"] as? String, image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let result = info?["result"]
+                let config = NoticeBarConfig(title: result as? String, image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
@@ -72,16 +75,6 @@ class FigureVoteJoinViewController: UIViewController {
         
     }
 }
-
-
-
-
-    
-    
-
-
-
-
 
 //MARK: - 照片选择方法
 extension FigureVoteJoinViewController : TZImagePickerControllerDelegate {
@@ -205,17 +198,6 @@ extension FigureVoteJoinViewController : TZImagePickerControllerDelegate {
         self.defaultImage?.addSubview(headerLable)
         self.headerLable = headerLable
         
-        
-        let   detailLable = UILabel.init()
-        detailLable.frame.origin.x =  screenWidth / 2 - 50
-        detailLable.textAlignment = .center
-        detailLable.frame.origin.y = (self.headerLable?.frame.maxY)!
-        detailLable.frame.size = CGSize.init(width: 100, height: 15)
-        detailLable.textColor = UIColor.lightGray
-        detailLable.font = UIFont.systemFont(ofSize: 10)
-        detailLable.text = "个数不超过3张"
-        self.defaultImage?.addSubview(detailLable)
-        self.detailLable = detailLable
     }
     
 }
