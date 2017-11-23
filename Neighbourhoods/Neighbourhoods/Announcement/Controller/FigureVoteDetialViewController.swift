@@ -53,7 +53,7 @@ class FigureVoteDetialViewController: UIViewController {
             return
         }
         token = UserDefaults.standard.string(forKey: "token")!
-        NetWorkTool.shareInstance.vote(token, vote_id: model?.vote_id as! Int, option_id: model?.id as! Int) { (info, error) in
+        NetWorkTool.shareInstance.vote(token, vote_id: model?.vote_id as! Int, option_id: model?.uid as! Int) { (info, error) in
             if info?["code"] as? String == "200"{
                 let result = info?["result"]
                 let config = NoticeBarConfig(title:result as? String, image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
@@ -94,7 +94,7 @@ class FigureVoteDetialViewController: UIViewController {
                             self?.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                         }
                         if  let nickName = model.user?.nickname{
-                            self?.nickName.text = "NO.\(nickName)"
+                            self?.nickName.text = nickName
                         }
                         if let  sex = model.user?.sex?.intValue {
                             if sex == 1 || sex == 2 {
@@ -106,6 +106,9 @@ class FigureVoteDetialViewController: UIViewController {
                         }
                         if let picture = model.picture{
                             self?.detialImage.sd_setImage(with: URL.init(string: picture), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                        }
+                        if let rank = self?.index{
+                        self?.rankLbl.text = "NO.\(String(describing: rank))"
                         }
                         if let number = model.number{
                             if number == 0{

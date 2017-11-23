@@ -19,7 +19,7 @@ class FigureVoteListTableViewCell: UITableViewCell {
     @IBOutlet weak var rankLbl: UILabel!
     var   model :  VoteOptionList?{
         didSet{
-            if let  name = model?.name {
+            if let  name = model?.user?.nickname {
                 self.nickName.text = name
             }
             if let  sex = model?.user?.sex?.intValue {
@@ -44,9 +44,9 @@ class FigureVoteListTableViewCell: UITableViewCell {
             if let number = model?.number{
                 if number == 0{
                     self.voteCountLbl.text = "快为他投上一票"
-                    return
-                }
+                }else{
                 self.voteCountLbl.text = "已有\(number)人为他投票"
+                }
             }
         }
     }

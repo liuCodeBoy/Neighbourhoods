@@ -28,6 +28,9 @@ class ActivityVoteCounsultantCompletedViewController: UIViewController {
     @IBAction func VoteAction(_ sender: Any) {
         if cate == 2{
         let voteAcVC = self.storyboard?.instantiateViewController(withIdentifier: "ActivityUnderVotingVC") as! ActivityUnderVotingViewController
+            voteAcVC.id     = self.id
+            voteAcVC.cate   = self.cate
+            voteAcVC.status = self.status
         self.navigationController?.pushViewController(voteAcVC, animated: true)
         }else if cate == 1{
         let voteAFigureVC = self.storyboard?.instantiateViewController(withIdentifier: "FigureVoteListID") as! FigureVoteListViewController
