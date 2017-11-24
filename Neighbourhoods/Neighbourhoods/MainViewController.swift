@@ -23,8 +23,6 @@ var tabBarHeight: CGFloat {
 
 class MainViewController: UITabBarController {
     
-//    let presentedVC = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController
-    let presentationVC = UIApplication.shared.keyWindow?.rootViewController?.presentationController
     
     var spring: UIView?
     
@@ -33,18 +31,14 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(presentationController)
+        print(presentingViewController)
+        print(presentedViewController)
+        
         // MARK:- share view
-        let shareView = Bundle.main.loadNibNamed("Share", owner: self, options: nil)?.first! as! UIView
-        share = shareView
-        shareView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        presentationVC?.presentedView?.addSubview(shareView)
-        shareView.alpha = 0
+
         
         
-        let springView = Bundle.main.loadNibNamed("SpringView", owner: self, options: nil)?.first! as! UIView
-        spring = springView
-        springView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        presentationVC?.presentedView?.addSubview(springView)
         
         // MARK:- cover the null tab bar item
         let coverView = UIView(frame: CGRect(x: screenWidth / 2 - 50, y: screenHeight - tabBarHeight, width: 100, height: 49))
@@ -73,24 +67,33 @@ class MainViewController: UITabBarController {
     }
     
     @objc func addButtonClicked() {
-        print(presentationController)
-        print(presentingViewController)
-        print(presentedViewController)
-        UIView.animate(withDuration: 0.3) {
-            self.spring?.alpha = 1
-        }
+        let presentationVC = UIApplication.shared.keyWindow?.rootViewController?.presentationController
+        
+        let springView = Bundle.main.loadNibNamed("SpringView", owner: self, options: nil)?.first! as! UIView
+        spring = springView
+        springView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        presentationVC?.presentedView?.addSubview(springView)
+        springView.alpha = 0
+        UIView.animate(withDuration: 0.25, delay: 0.01, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            springView.alpha = 1
+        }, completion: nil)
     }
     
     @objc func shareButtonClicked() {
-        UIView.animate(withDuration: 0.3) {
-            self.share?.alpha = 1
-        }
-        
+        let presentationVC = UIApplication.shared.keyWindow?.rootViewController?.presentationController
+        let shareView = Bundle.main.loadNibNamed("Share", owner: self, options: nil)?.first! as! UIView
+        share = shareView
+        shareView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        presentationVC?.presentedView?.addSubview(shareView)
+        shareView.alpha = 0
+        UIView.animate(withDuration: 0.25, delay: 0.01, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            shareView.alpha = 1
+        }, completion: nil)
     }
     
     @objc func closeBtnClicked() {
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.25) {
             self.share?.alpha = 0
             self.spring?.alpha = 0
         }

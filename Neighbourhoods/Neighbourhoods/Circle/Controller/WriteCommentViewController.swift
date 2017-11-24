@@ -16,7 +16,7 @@ class WriteCommentViewController: UIViewController ,UITextViewDelegate{
     var post_id :NSNumber?
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var sendBtn: UIBarButtonItem!
-    var commentLabel : String?{
+    var commentLabel : String? {
         didSet{
             if commentLabel?.characters.count == 0 {
                 self.sendBtn.isEnabled = false
@@ -31,8 +31,7 @@ class WriteCommentViewController: UIViewController ,UITextViewDelegate{
         setNavBarBackBtn()
         commentTextView.delegate = self
         setNavBarTitle(title: "写评论")
-        self.commentTextView.text = "写评论..."
-        self.commentTextView.textColor = UIColor.lightGray
+        self.commentTextView.becomeFirstResponder()
     }
     
     @IBAction func sendOutComment(_ sender: Any) {
@@ -58,7 +57,7 @@ class WriteCommentViewController: UIViewController ,UITextViewDelegate{
   }
         
     func textViewDidChange(_ textView: UITextView) {
-           self.commentLabel =   textView.text
+           self.commentLabel = textView.text
     }
    
     

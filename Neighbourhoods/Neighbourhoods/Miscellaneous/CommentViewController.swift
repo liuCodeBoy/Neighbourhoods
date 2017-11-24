@@ -10,9 +10,9 @@ import UIKit
 
 class CommentViewController: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
         self.setNavBarTitle(title: "写评论")
         
@@ -31,5 +31,7 @@ class CommentViewController: UIViewController {
     @objc func pop() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
 
 }
