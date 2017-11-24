@@ -8,6 +8,7 @@ target 'Neighbourhoods' do
   pod 'TZImagePickerController'
   pod 'MJRefresh'
   pod 'MJExtension'
+  pod 'JPush'
 
   # Pods for Neighbourhoods
   # MOB

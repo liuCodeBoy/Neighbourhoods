@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SettingsViewController: UIViewController {
 
@@ -35,7 +36,7 @@ class SettingsViewController: UIViewController {
                 // 判断是否可以删除
                 if(FileManager.default.fileExists(atPath: path)){
                     // 删除
-                    try! FileManager.default.removeItem(atPath: path)
+                    try? FileManager.default.removeItem(atPath: path)
                 }
             }
             //删除完重新计算

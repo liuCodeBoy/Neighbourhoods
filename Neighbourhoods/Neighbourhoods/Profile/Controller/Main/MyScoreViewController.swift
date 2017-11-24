@@ -21,6 +21,8 @@ class MyScoreViewController: UIViewController {
     private var pages = 1
     private var page  = 1
     
+    let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
+    
     var myScoreArray = [MyIntegralModel]()
     
     @IBAction func back(_ sender: UIButton) {
@@ -35,6 +37,10 @@ class MyScoreViewController: UIViewController {
         
         lastedRequest(p: page)
         loadRefreshComponet()
+        
+        coverView.showLab.text = "暂无积分"
+        coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        self.view.addSubview(coverView)
     }
     
     func loadRefreshComponet() -> () {
@@ -48,7 +54,9 @@ class MyScoreViewController: UIViewController {
         receiveScoreTableView.mj_header.isAutomaticallyChangeAlpha = true
     }
     @objc func refresh() -> () {
-        receiveScoreTableView.reloadData()
+        self.page = 1
+        self.myScoreArray.removeAll()
+        lastedRequest(p: page)
         receiveScoreTableView.mj_header.endRefreshing()
         
     }
@@ -60,7 +68,10 @@ class MyScoreViewController: UIViewController {
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
-        NetWorkTool.shareInstance.taskList(sort: "task_status", p: 1) { [weak self](info, error) in
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        NetWorkTool.shareInstance.myScore(access_token, p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
@@ -82,13 +93,16 @@ class MyScoreViewController: UIViewController {
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
                 }
+                if CGFloat((self?.myScoreArray.count)!) > 0 {
+                    self?.coverView.removeFromSuperview()
+                }
             }else{
                 //服务器
                 self?.receiveScoreTableView.mj_header.endRefreshing()
                 self?.receiveScoreTableView.mj_footer.endRefreshing()
             }
-            
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,12 +119,14 @@ extension MyScoreViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiveScoreCell") as! ReceivedScoreListTableViewCell
-        cell.viewModel = myScoreArray[indexPath.row]
+        if myScoreArray.count > 0 {
+            cell.viewModel = myScoreArray[indexPath.row]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myScoreArray.count - 1
+        return myScoreArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

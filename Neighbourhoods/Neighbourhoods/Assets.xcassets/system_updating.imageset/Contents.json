@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "system_updating.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "no_news_placeholder.png",
       "scale" : "2x"
     },
     {

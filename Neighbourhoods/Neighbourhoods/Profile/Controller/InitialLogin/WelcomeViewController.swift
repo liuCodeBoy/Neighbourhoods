@@ -53,18 +53,17 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 if error != nil {
                     print(error as AnyObject)
                 } else if result!["code"] as! String == "200" {
-                    self?.presentHintMessage(hintMessgae: "保存成功", completion: { (_) in
-                        UIView.animate(withDuration: 1, animations: {
-                            self?.view.alpha = 0
-                            UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
-                            
-                        }) { (_) in
-//                            UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
-                            
-                            self?.dismiss(animated: true, completion: {
-                            })
-                        }
-                    })
+                    print("register and save user info success")
+                    UIView.animate(withDuration: 1, animations: {
+                        self?.view.alpha = 0
+                        UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
+                        
+                    }) { (_) in
+//                        UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
+                        
+                        self?.dismiss(animated: true, completion: {
+                        })
+                    }
                 } else if result!["code"] as! String == "400" {
                     self?.presentHintMessage(hintMessgae: "查询失败", completion: nil)
                 } else {
