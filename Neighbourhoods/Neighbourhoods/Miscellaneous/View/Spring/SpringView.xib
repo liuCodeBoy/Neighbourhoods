@@ -171,18 +171,28 @@
                         <constraint firstItem="0AW-gO-PkB" firstAttribute="height" secondItem="JNb-9M-Li2" secondAttribute="height" id="pLN-pd-Ixk"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFg-OR-oCj">
+                    <rect key="frame" x="0.0" y="20" width="375" height="475"/>
+                    <connections>
+                        <action selector="closeBtnClicked:" destination="qSd-8V-SFz" eventType="touchUpInside" id="ZbF-zA-9CL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.90027901785714282" alpha="0.50203565140845074" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="hRz-5R-DMR" firstAttribute="trailing" secondItem="wFg-OR-oCj" secondAttribute="trailing" id="3m3-5h-rkv"/>
                 <constraint firstItem="Zb1-e2-tTE" firstAttribute="leading" secondItem="hRz-5R-DMR" secondAttribute="leading" id="9bl-MO-Kf3"/>
+                <constraint firstItem="wFg-OR-oCj" firstAttribute="leading" secondItem="hRz-5R-DMR" secondAttribute="leading" id="MSI-Mm-xca"/>
                 <constraint firstItem="Vui-da-V1R" firstAttribute="leading" secondItem="hRz-5R-DMR" secondAttribute="leading" id="Mdl-ba-8dq"/>
+                <constraint firstItem="wFg-OR-oCj" firstAttribute="top" secondItem="hRz-5R-DMR" secondAttribute="top" id="OhG-Wi-Tpy"/>
                 <constraint firstItem="Vui-da-V1R" firstAttribute="top" secondItem="Zb1-e2-tTE" secondAttribute="bottom" id="RBe-hX-AMj"/>
+                <constraint firstItem="Zb1-e2-tTE" firstAttribute="top" secondItem="wFg-OR-oCj" secondAttribute="bottom" id="VfR-DH-nkv"/>
                 <constraint firstItem="Zb1-e2-tTE" firstAttribute="trailing" secondItem="hRz-5R-DMR" secondAttribute="trailing" id="lvB-KM-Zop"/>
                 <constraint firstItem="Vui-da-V1R" firstAttribute="bottom" secondItem="hRz-5R-DMR" secondAttribute="bottom" id="nyH-nc-1wf"/>
                 <constraint firstItem="hRz-5R-DMR" firstAttribute="trailing" secondItem="Vui-da-V1R" secondAttribute="trailing" id="q2p-ZH-nZE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="hRz-5R-DMR"/>
-            <point key="canvasLocation" x="576" y="279"/>
+            <point key="canvasLocation" x="575.5" y="278.5"/>
         </view>
     </objects>
     <resources>

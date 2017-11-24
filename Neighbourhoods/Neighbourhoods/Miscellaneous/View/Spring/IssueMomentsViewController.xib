@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,10 +53,10 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-tE-ccW">
-                            <rect key="frame" x="12" y="9.5" width="25" height="25"/>
+                            <rect key="frame" x="0.0" y="-3" width="50" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="25" id="8TU-Su-Jxc"/>
-                                <constraint firstAttribute="height" constant="25" id="ggR-gt-4CW"/>
+                                <constraint firstAttribute="width" constant="50" id="8TU-Su-Jxc"/>
+                                <constraint firstAttribute="height" constant="50" id="ggR-gt-4CW"/>
                             </constraints>
                             <state key="normal" image="nav_back"/>
                             <connections>
@@ -83,7 +83,7 @@
                     <constraints>
                         <constraint firstItem="Xvu-SF-4qF" firstAttribute="centerY" secondItem="ydh-Sr-w18" secondAttribute="centerY" id="1Og-Ie-RHS"/>
                         <constraint firstItem="Xvu-SF-4qF" firstAttribute="centerX" secondItem="ydh-Sr-w18" secondAttribute="centerX" id="6tF-fw-eX0"/>
-                        <constraint firstItem="4x6-tE-ccW" firstAttribute="leading" secondItem="ydh-Sr-w18" secondAttribute="leading" constant="12" id="B7O-gd-rdO"/>
+                        <constraint firstItem="4x6-tE-ccW" firstAttribute="leading" secondItem="ydh-Sr-w18" secondAttribute="leading" id="B7O-gd-rdO"/>
                         <constraint firstAttribute="trailing" secondItem="T9F-lG-3Cd" secondAttribute="trailing" constant="12" id="Ibr-Cj-6AM"/>
                         <constraint firstAttribute="height" constant="44" id="Lov-QK-UYB"/>
                         <constraint firstItem="4x6-tE-ccW" firstAttribute="centerY" secondItem="ydh-Sr-w18" secondAttribute="centerY" id="i1N-yF-ymH"/>
@@ -97,7 +97,7 @@
                         <constraint firstAttribute="height" constant="5" id="NV6-Pk-kTh"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="发布动态" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="89g-Bj-7eW">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="89g-Bj-7eW">
                     <rect key="frame" x="10" y="64" width="355" height="194"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
