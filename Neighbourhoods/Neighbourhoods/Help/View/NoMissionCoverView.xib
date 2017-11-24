@@ -17,16 +17,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_news_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="xmO-e6-ntV">
-                    <rect key="frame" x="67" y="163" width="240" height="240"/>
+                    <rect key="frame" x="115" y="251" width="144" height="144"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="240" id="RgL-l9-dUd"/>
-                        <constraint firstAttribute="width" constant="240" id="bn3-tP-zPj"/>
+                        <constraint firstAttribute="height" constant="144" id="RgL-l9-dUd"/>
+                        <constraint firstAttribute="width" constant="144" id="bn3-tP-zPj"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无任务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ny-ab-PGI">
-                    <rect key="frame" x="137" y="368.5" width="101.5" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <rect key="frame" x="141" y="370" width="93.5" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -36,7 +36,7 @@
                 <constraint firstItem="7ny-ab-PGI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NRv-BC-xUR"/>
                 <constraint firstItem="xmO-e6-ntV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="a3O-c4-y5L"/>
                 <constraint firstItem="7ny-ab-PGI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="50" id="pC3-pJ-wcW"/>
-                <constraint firstItem="7ny-ab-PGI" firstAttribute="top" secondItem="xmO-e6-ntV" secondAttribute="bottom" constant="-35" id="vYm-qQ-QII"/>
+                <constraint firstItem="7ny-ab-PGI" firstAttribute="top" secondItem="xmO-e6-ntV" secondAttribute="bottom" constant="-25" id="vYm-qQ-QII"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
@@ -45,6 +45,6 @@
         </view>
     </objects>
     <resources>
-        <image name="no_news_placeholder" width="300" height="300"/>
+        <image name="no_news_placeholder" width="150" height="150"/>
     </resources>
 </document>

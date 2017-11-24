@@ -35,10 +35,8 @@ class MyIssuedMissionTableViewController: UITableViewController {
         coverView.showLab.text = "暂无任务"
         coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         self.view.addSubview(coverView)
-
     }
 
-    
     func loadRefreshComponet() -> () {
         //默认下拉刷新
         tableView.mj_header = LXQHeader(refreshingTarget: self, refreshingAction: #selector(refresh))

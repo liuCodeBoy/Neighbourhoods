@@ -72,6 +72,10 @@
 		D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */; };
 		D334F5E01FA86564006E2769 /* FigureVoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */; };
 		D334F5E41FA86788006E2769 /* CircleVCTopicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334F5E31FA86788006E2769 /* CircleVCTopicsTableViewCell.swift */; };
+		D33A69C01FC811CC00A738A3 /* SystemUpdatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A69BE1FC811CC00A738A3 /* SystemUpdatingViewController.swift */; };
+		D33A69C11FC811CC00A738A3 /* SystemUpdatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33A69BF1FC811CC00A738A3 /* SystemUpdatingViewController.xib */; };
+		D33A69C71FC8123B00A738A3 /* LoadErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A69C51FC8123B00A738A3 /* LoadErrorViewController.swift */; };
+		D33A69C81FC8123B00A738A3 /* LoadErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33A69C61FC8123B00A738A3 /* LoadErrorViewController.xib */; };
 		D33F510E1FC51B2200F5AF87 /* CheckForUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */; };
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
@@ -268,6 +272,10 @@
 		D32F81061FA2D01800FEBE4E /* MyIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueViewController.swift; sourceTree = "<group>"; };
 		D334F5DE1FA86564006E2769 /* FigureVoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteTableViewCell.swift; sourceTree = "<group>"; };
 		D334F5E31FA86788006E2769 /* CircleVCTopicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleVCTopicsTableViewCell.swift; sourceTree = "<group>"; };
+		D33A69BE1FC811CC00A738A3 /* SystemUpdatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUpdatingViewController.swift; sourceTree = "<group>"; };
+		D33A69BF1FC811CC00A738A3 /* SystemUpdatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemUpdatingViewController.xib; sourceTree = "<group>"; };
+		D33A69C51FC8123B00A738A3 /* LoadErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadErrorViewController.swift; sourceTree = "<group>"; };
+		D33A69C61FC8123B00A738A3 /* LoadErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadErrorViewController.xib; sourceTree = "<group>"; };
 		D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForUpdatesViewController.swift; sourceTree = "<group>"; };
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +309,7 @@
 		D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMomentsViewController.swift; sourceTree = "<group>"; };
 		D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueMomentsViewController.xib; sourceTree = "<group>"; };
 		D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityJudgeModel.swift; sourceTree = "<group>"; };
+		D38E46631FC7FBF40009131D /* Neighbourhoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neighbourhoods.entitlements; sourceTree = "<group>"; };
 		D3954E871FC3BAB7003C08DC /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
@@ -522,6 +531,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D33A69BD1FC8108200A738A3 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				D33A69BE1FC811CC00A738A3 /* SystemUpdatingViewController.swift */,
+				D33A69BF1FC811CC00A738A3 /* SystemUpdatingViewController.xib */,
+				D33A69C51FC8123B00A738A3 /* LoadErrorViewController.swift */,
+				D33A69C61FC8123B00A738A3 /* LoadErrorViewController.xib */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		D345ABF31FB1503500FAB15F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,6 +643,7 @@
 				D3FAC7D31FA9633A00D972B9 /* Miscellaneous */,
 				D3A193581F8DC74D002C1E23 /* AppDelegate.swift */,
 				B678E6491FA36899003F7638 /* NetWorkTool.swift */,
+				D38E46631FC7FBF40009131D /* Neighbourhoods.entitlements */,
 				D3A1935C1F8DC74D002C1E23 /* Main.storyboard */,
 				D31B360C1F9C6D8300313268 /* MainViewController.swift */,
 				D3A193611F8DC74D002C1E23 /* LaunchScreen.storyboard */,
@@ -929,6 +950,7 @@
 		D3FAC7E51FA9755200D972B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D33A69BD1FC8108200A738A3 /* Error */,
 				D3F5BBFF1FAB17C7000A6CF5 /* Spring */,
 				D3F5BBFE1FAB17BB000A6CF5 /* Share */,
 				D3FAC7E61FA9757300D972B9 /* Cell */,
@@ -985,6 +1007,11 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1013,9 +1040,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FAC7DB1FA9691200D972B9 /* IssueMissionViewController.xib in Resources */,
+				D33A69C81FC8123B00A738A3 /* LoadErrorViewController.xib in Resources */,
 				D3A193631F8DC74D002C1E23 /* LaunchScreen.storyboard in Resources */,
 				B6559A151FBD6D8C00EB6D56 /* PicPickerViewCell.xib in Resources */,
 				D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */,
+				D33A69C11FC811CC00A738A3 /* SystemUpdatingViewController.xib in Resources */,
 				D3FAC7E11FA96AD400D972B9 /* QuickViewMessgaes.storyboard in Resources */,
 				D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */,
 				D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */,
@@ -1159,6 +1188,7 @@
 				B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */,
 				D360A6B31FB1E85500BC3ABC /* ActListModel.swift in Sources */,
 				D3A54D441FAD5A770066C486 /* LotteryDetialViewController.swift in Sources */,
+				D33A69C71FC8123B00A738A3 /* LoadErrorViewController.swift in Sources */,
 				B657A05E1FC6FB3B0021CA4F /* ShowVoteActCell.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D30A17DE1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift in Sources */,
@@ -1209,6 +1239,7 @@
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
 				D3E5BF3B1FBDC01000C4766F /* ProfileReportViewController.swift in Sources */,
 				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
+				D33A69C01FC811CC00A738A3 /* SystemUpdatingViewController.swift in Sources */,
 				B657A05A1FC6BB910021CA4F /* ActivityUnderVotingCell.swift in Sources */,
 				B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */,
 				D36C86B61FA09EF0000CCA17 /* FavUsersListTableViewCell.swift in Sources */,
@@ -1413,6 +1444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Neighbourhoods;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Neighbourhoods/Neighbourhoods.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2JN69G9M6;
@@ -1442,6 +1474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = Neighbourhoods;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Neighbourhoods/Neighbourhoods.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
