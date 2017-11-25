@@ -12,8 +12,9 @@ import MJRefresh
 class MessagesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-
     
+    let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
+
     var msgListArray = [MsgListModel]()
     
     override func viewDidLoad() {
@@ -21,38 +22,48 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        setNavBarBackBtn()
+        setNavBarTitle(title: "私信")
+        
+        loadData()
+        
+        coverView.showLab.text = "暂无消息"
+        coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        self.view.addSubview(coverView)
 
     }
     
-//
-//                let result  = info!["result"]!["list"] as! [NSDictionary]
-//                for i in 0..<result.count {
-//                    let taskDict =  result[i]
-//                    if  let taskListModel = MsgListModel.mj_object(withKeyValues: taskDict) {
-//                        self?.msgListArray.append(taskListModel)
-//                    }
-//                }
-//                self?.tableView.reloadData()
-//                if p == self?.pages {
-//                    self?.tableView.mj_footer.endRefreshingWithNoMoreData()
-//                }else{
-//                    self?.tableView.mj_footer.endRefreshing()
-//                }
-//                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-//                    self?.page += 1
-//                }
-//
-//                //服务器
-//                self?.tableView.mj_header.endRefreshing()
-//                self?.tableView.mj_footer.endRefreshing()
-    
+    func loadData() {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        NetWorkTool.shareInstance.infoList(access_token) { [weak self](result, error) in
+            if error != nil {
+                print(error as AnyObject)
+            } else if result!["code"] as! String == "200" {
+                for dict in result!["result"] as! [[String: AnyObject]] {
+                    if let model = MsgListModel.mj_object(withKeyValues: dict) {
+                        self?.msgListArray.append(model)
+                    }
+                }
+                self?.tableView.reloadData()
+                if CGFloat((self?.msgListArray.count)!) > 0 {
+                    self?.coverView.removeFromSuperview()
+                }
+            } else {
+                print("post request failed with exit code \(result!["code"] as! String)")
+            }
+            
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return msgListArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageList") as! MessageListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageListCell") as! MessageListTableViewCell
         
         if msgListArray.count > 0 {
             cell.viewModel = msgListArray[indexPath.row]
@@ -62,7 +73,32 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 70
     }
+    
+    
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+//        return UITableViewCellEditingStyle.delete
+//    }
+//
+//    //MARK: - left slide to delete row
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        //TODO: remove form data source
+//        if editingStyle == .delete {
+//            tempCellData.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+//        }
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+//        return "删除"
+//    }
+
+    
 
 }

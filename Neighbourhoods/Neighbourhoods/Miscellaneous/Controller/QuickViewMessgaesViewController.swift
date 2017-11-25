@@ -20,6 +20,7 @@ class QuickViewMessgaesViewController: UIViewController {
     var headMsgModel = MsgListModel()
 
     @IBOutlet weak var contactListTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -152,6 +153,7 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
 //    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
 //        return "删除"
 //    }
+    
     
     
     
