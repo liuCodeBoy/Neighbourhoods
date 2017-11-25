@@ -240,6 +240,9 @@ class MissionDetialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavBarTitle(title: "任务详情")
+        setNavBarBackBtn()
+        
     }
     
     @objc func userCancelMission() {

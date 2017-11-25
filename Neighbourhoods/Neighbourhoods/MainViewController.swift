@@ -31,15 +31,6 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(presentationController)
-        print(presentingViewController)
-        print(presentedViewController)
-        
-        // MARK:- share view
-
-        
-        
-        
         // MARK:- cover the null tab bar item
         let coverView = UIView(frame: CGRect(x: screenWidth / 2 - 50, y: screenHeight - tabBarHeight, width: 100, height: 49))
 

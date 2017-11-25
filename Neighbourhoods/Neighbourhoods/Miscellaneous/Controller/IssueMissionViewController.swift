@@ -13,7 +13,7 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
     @IBOutlet weak var sendBtn: UIButton!
     var commentLabel : String? {
         didSet{
-            if commentLabel?.characters.count == 0 {
+            if commentLabel?.count == 0 {
                 self.sendBtn.isEnabled = false
             }else{
                 self.sendBtn.isEnabled = true

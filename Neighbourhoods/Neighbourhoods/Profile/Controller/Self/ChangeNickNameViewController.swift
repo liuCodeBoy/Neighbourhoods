@@ -16,10 +16,7 @@ class ChangeNickNameViewController: UIViewController {
     var nickName: String?
     var retSegue: UIStoryboardSegue?
     
-    @IBAction func welcome(_ sender: UIButton) {
-        let vc = UIStoryboard.init(name: "Welcome", bundle: nil).instantiateInitialViewController()
-        self.present(vc!, animated: true, completion: nil)
-    }
+
     @IBOutlet weak var nickNameTF: UITextField!
     @IBAction func confirmChangeBtnClicked(_ sender: UIButton) {
         

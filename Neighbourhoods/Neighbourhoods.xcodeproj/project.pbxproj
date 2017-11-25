@@ -76,6 +76,7 @@
 		D33A69C11FC811CC00A738A3 /* SystemUpdatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33A69BF1FC811CC00A738A3 /* SystemUpdatingViewController.xib */; };
 		D33A69C71FC8123B00A738A3 /* LoadErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A69C51FC8123B00A738A3 /* LoadErrorViewController.swift */; };
 		D33A69C81FC8123B00A738A3 /* LoadErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D33A69C61FC8123B00A738A3 /* LoadErrorViewController.xib */; };
+		D33A69CA1FC906AE00A738A3 /* ProfileMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A69C91FC906AE00A738A3 /* ProfileMissionViewController.swift */; };
 		D33F510E1FC51B2200F5AF87 /* CheckForUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */; };
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
@@ -164,6 +165,8 @@
 		D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */; };
 		D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */; };
 		D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */; };
+		D3F47DF91FC91451001C0FEF /* UploadingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */; };
+		D3F47DFB1FC91464001C0FEF /* UploadingDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */; };
 		D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */; };
 		D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */; };
 		D3FAC7D61FA9648500D972B9 /* IssueTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FAC7D41FA9648500D972B9 /* IssueTopicsViewController.swift */; };
@@ -276,6 +279,7 @@
 		D33A69BF1FC811CC00A738A3 /* SystemUpdatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemUpdatingViewController.xib; sourceTree = "<group>"; };
 		D33A69C51FC8123B00A738A3 /* LoadErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadErrorViewController.swift; sourceTree = "<group>"; };
 		D33A69C61FC8123B00A738A3 /* LoadErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadErrorViewController.xib; sourceTree = "<group>"; };
+		D33A69C91FC906AE00A738A3 /* ProfileMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMissionViewController.swift; sourceTree = "<group>"; };
 		D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForUpdatesViewController.swift; sourceTree = "<group>"; };
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +373,8 @@
 		D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
 		D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
+		D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingDataView.swift; sourceTree = "<group>"; };
+		D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadingDataView.xib; sourceTree = "<group>"; };
 		D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
 		D3FAC7D41FA9648500D972B9 /* IssueTopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTopicsViewController.swift; sourceTree = "<group>"; };
@@ -505,8 +511,10 @@
 		D31CD4A71F91DA9100195686 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */,
 				D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */,
+				D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */,
+				D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */,
+				D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */,
 				D37974A21FAAC70E006EA0EE /* Cell */,
 			);
 			path = View;
@@ -594,8 +602,10 @@
 				D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */,
 				D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */,
 				D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */,
-				D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */,
+				D33A69C91FC906AE00A738A3 /* ProfileMissionViewController.swift */,
 				D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */,
+				D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */,
+				D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */,
 				D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */,
 			);
 			path = Main;
@@ -605,7 +615,6 @@
 			isa = PBXGroup;
 			children = (
 				D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */,
-				D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1053,6 +1062,7 @@
 				D3CDF5C61FC1997200C6513A /* InfoPlist.strings in Resources */,
 				D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
+				D3F47DFB1FC91464001C0FEF /* UploadingDataView.xib in Resources */,
 				D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */,
 				D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */,
 				D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */,
@@ -1195,6 +1205,7 @@
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementViewController.swift in Sources */,
 				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D3FAC7E31FA974DB00D972B9 /* QuickMessageListTableViewCell.swift in Sources */,
+				D33A69CA1FC906AE00A738A3 /* ProfileMissionViewController.swift in Sources */,
 				B63A2E591FC595B20026D53F /* User_detModel.swift in Sources */,
 				D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */,
 				D35B2D1A1FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift in Sources */,
@@ -1266,6 +1277,7 @@
 				D3D1FD751FA80B8F009A2E58 /* SocialAnnouncementTableViewCell.swift in Sources */,
 				D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */,
 				D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */,
+				D3F47DF91FC91451001C0FEF /* UploadingDataView.swift in Sources */,
 				D3954E8C1FC3CCF9003C08DC /* WelcomeViewController.swift in Sources */,
 				D3FAC7ED1FA97ECD00D972B9 /* ActivityUnderVotingViewController.swift in Sources */,
 				D345ABF21FB149A900FAB15F /* Network.swift in Sources */,

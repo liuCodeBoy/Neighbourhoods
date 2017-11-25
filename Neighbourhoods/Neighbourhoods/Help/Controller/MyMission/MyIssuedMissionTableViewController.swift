@@ -32,6 +32,9 @@ class MyIssuedMissionTableViewController: UITableViewController {
         lastedRequest(p: page)
         loadRefreshComponet()
         
+        setNavBarTitle(title: "我发布的任务")
+        setNavBarBackBtn()
+        
         coverView.showLab.text = "暂无任务"
         coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         self.view.addSubview(coverView)

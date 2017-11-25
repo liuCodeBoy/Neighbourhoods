@@ -9,7 +9,7 @@
 import UIKit
 import NoticeBar
 import TZImagePickerController
-class ProfileReportViewController: UIViewController {
+class ProfileReportViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var reportTextField: UITextView!
     @IBOutlet weak var pickImageContainView: UIView!
@@ -25,14 +25,33 @@ class ProfileReportViewController: UIViewController {
     let maxNum = 3
     
     lazy var images = [UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNotifications()
         setUpHeaderImageView()
+        setNavBarTitle(title: "监督投诉")
+        setNavBarBackBtn()
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        swipe.direction = .up
+        reportTextField.addGestureRecognizer(swipe)
+        
+        self.reportTextField.becomeFirstResponder()
     }
+    
+    @objc func hideKeyboard() {
+        self.reportTextField.resignFirstResponder()
+    }
+    
     @IBAction func submitAction(_ sender: Any) {
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
+            return
+        }
+        if reportTextField.text.replacingOccurrences(of: " ", with: "") == "" {
+            presentHintMessage(hintMessgae: "内容不能为空", completion: { (_) in
+            })
             return
         }
       
@@ -57,17 +76,13 @@ class ProfileReportViewController: UIViewController {
                 })
             }
         }
-        
     }
-    
     
     deinit {
         
         NotificationCenter.default.removeObserver(self)
     }
 }
-
-
 
 //MARK: - 照片选择方法
 extension ProfileReportViewController : TZImagePickerControllerDelegate {

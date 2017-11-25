@@ -9,26 +9,43 @@
 import UIKit
 import MJRefresh
 class CircleViewController: UIViewController {
+    
     @IBOutlet weak var topicsTableView: UITableView!
     @IBOutlet weak var tabBar: UITabBarItem!
+    
     var page  = 1
     var pages : Int?
+    
     lazy var  rotaionArray = [NborCircleModel]()
+    
+    @IBOutlet weak var scrollHCons: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         topicsTableView.estimatedRowHeight = 50
         topicsTableView.rowHeight = UITableViewAutomaticDimension
+        
         loadRefreshComponet()
         lastedRequest(p : page)
+        
         topicsTableView.delegate = self
         topicsTableView.dataSource = self
+        
         let URLArr = [URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Screen%20Shot%202017-10-21%20at%205.35.48%20PM.png"),
                       URL(string: "http://ow1i9ri5b.bkt.clouddn.com/IMG_7944.jpg"),
                       URL(string: "http://ow1i9ri5b.bkt.clouddn.com/prototype-design-white.png"),
                       URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Sombrero.jpg")]
-        let  loopView = LoopView.init(images: URLArr as! [URL], frame: CGRect.init(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 160), isAutoScroll: true)
+        
+        var frameY: CGFloat = 20
+        
+        if isIPHONEX {
+            frameY += 24
+        }
+        let  loopView = LoopView.init(images: URLArr as! [URL], frame: CGRect.init(x: 0, y: frameY, width: screenWidth, height: 200), isAutoScroll: true)
         self.view.addSubview(loopView)
     }
+    
+    
     func loadRefreshComponet() -> () {
         //默认下拉刷新
         topicsTableView.mj_header = LXQHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
@@ -146,16 +163,3 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
     }
 }
-
-
-
-
-
-    
-
-            
-
-
-    
-
-

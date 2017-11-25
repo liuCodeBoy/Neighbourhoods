@@ -14,9 +14,8 @@ class MyScoreViewController: UIViewController {
     @IBOutlet weak var receiveScoreTableView: UITableView!
     
     @IBOutlet weak var allScoreLbl: UILabel!
-    @IBOutlet weak var monthlyScoreLbl: UILabel!
-    @IBOutlet weak var dailyScorLbl: UILabel!
     
+    var score: String?
     
     private var pages = 1
     private var page  = 1
@@ -34,6 +33,8 @@ class MyScoreViewController: UIViewController {
         
         receiveScoreTableView.delegate = self
         receiveScoreTableView.dataSource = self
+        
+        allScoreLbl.text = score
         
         lastedRequest(p: page)
         loadRefreshComponet()
