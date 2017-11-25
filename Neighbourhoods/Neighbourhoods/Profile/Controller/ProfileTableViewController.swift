@@ -75,5 +75,12 @@ class ProfileTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "scoreSegue" {
+            let dest = segue.destination as! MyScoreViewController
+            dest.score = self.scoreCountLbl.text
+        }
+    }
 
 }

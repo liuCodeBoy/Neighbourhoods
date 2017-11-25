@@ -46,7 +46,7 @@ class MyFollowingsViewController: UIViewController {
                 for userDict in dictArray {
                     if let listModel = AttentionAndFansModel.mj_object(withKeyValues: userDict["user"]) {
                         self?.followingList.append(listModel)
-                    }
+                    } 
                 }
                 self?.myFollowingsTableView.reloadData()
                 if CGFloat((self?.followingList.count)!) > 0 {

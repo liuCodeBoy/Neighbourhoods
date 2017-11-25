@@ -9,7 +9,29 @@
 import UIKit
 import TZImagePickerController
 import NoticeBar
-class IssueTopicsViewController: UIViewController {
+class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+    
+    @IBOutlet weak var sendBtn: UIButton!
+    var commentLabel : String? {
+        didSet{
+            if commentLabel?.count == 0 || topicNameField.text?.count == 0 {
+                self.sendBtn.isEnabled = false
+            }else{
+                self.sendBtn.isEnabled = true
+            }
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.commentLabel = textView.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.topicDetialTextView.becomeFirstResponder()
+        return false
+    }
+    
+    
     @IBOutlet weak var topicNameField: UITextField!
     var picPickerView : PicPicKerCollectionView?
     //默认背景照片
@@ -64,10 +86,6 @@ class IssueTopicsViewController: UIViewController {
             }
         }
         
-        
-        
-        
-        
     }
     
     @IBOutlet weak var topicDetialTextView: UITextView!
@@ -76,19 +94,24 @@ class IssueTopicsViewController: UIViewController {
         super.viewDidLoad()
         setupNotifications()
         setUpHeaderImageView()
+        
+        topicDetialTextView.delegate = self
+        topicNameField.delegate = self
+        self.topicNameField.becomeFirstResponder()
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(tfDidSwipe))
+        swipe.direction = .up
+        topicDetialTextView.addGestureRecognizer(swipe)
     }
     
-    
-    
+    @objc func tfDidSwipe() {
+        self.topicDetialTextView.resignFirstResponder()
+    }
     
     deinit {
-        
         NotificationCenter.default.removeObserver(self)
     }
 }
-
-
-
 
 
 //MARK: - 照片选择方法

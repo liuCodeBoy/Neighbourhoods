@@ -71,7 +71,9 @@ class MomentsViewController: UIViewController {
         childView2 = childVC2.view
         childView3 = childVC3.view
         
-        let y = lineView.frame.origin.y + 1
+        var y = lineView.frame.origin.y + 1
+        
+        if isIPHONEX { y += 24 }
         
         childView1?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)
         childView2?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y)

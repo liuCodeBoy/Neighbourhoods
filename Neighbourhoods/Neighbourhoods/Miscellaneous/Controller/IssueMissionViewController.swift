@@ -8,7 +8,28 @@
 
 import UIKit
 import NoticeBar
-class IssueMissionViewController: UIViewController {
+class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextViewDelegate {
+    
+    @IBOutlet weak var sendBtn: UIButton!
+    var commentLabel : String? {
+        didSet{
+            if commentLabel?.count == 0 || missionTitle.text?.count == 0 {
+                self.sendBtn.isEnabled = false
+            }else{
+                self.sendBtn.isEnabled = true
+            }
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.commentLabel = textView.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.missionDetialTextView.becomeFirstResponder()
+        return false
+    }
+    
     @IBOutlet weak var missionTitle: UITextField!
     @IBOutlet weak var missionScoreTF: UITextField!
     @IBOutlet weak var missionDetialTextView: UITextView!
@@ -26,12 +47,13 @@ class IssueMissionViewController: UIViewController {
             self.presentHintMessage(hintMessgae:  "话题不能为空", completion: nil)
             return
         }
-        guard  missionDetialTextView.text != nil else{
+        guard  missionDetialTextView.text != nil else {
             self.presentHintMessage(hintMessgae:  "话题描述不能为空", completion: nil)
             return
         }
+        // FIXME: - judge wheather the score is valid number
         guard missionScoreTF.text != nil else {
-            self.presentHintMessage(hintMessgae:  "金币数不能为空", completion: nil)
+            self.presentHintMessage(hintMessgae:  "积分数不能为空", completion: nil)
             return
         }
         NetWorkTool.shareInstance.task_publish(UserDefaults.standard.string(forKey: "token")!, title: missionTitle.text!, content: missionDetialTextView.text!, integral: Int(missionScoreTF.text!)!){ [weak self](info, error) in
@@ -58,6 +80,10 @@ class IssueMissionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        missionScoreTF.delegate = self
+        missionDetialTextView.delegate = self
+        
+        self.missionTitle.becomeFirstResponder()
     }
 
 }

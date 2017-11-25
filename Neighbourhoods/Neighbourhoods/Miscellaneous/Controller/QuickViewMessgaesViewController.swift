@@ -24,11 +24,10 @@ class QuickViewMessgaesViewController: UIViewController {
 
         contactListTableView.delegate    = self
         contactListTableView.dataSource  = self
+        
         contactListTableView.allowsMultipleSelection                = false
         contactListTableView.allowsSelectionDuringEditing           = false
         contactListTableView.allowsMultipleSelectionDuringEditing   = false
-
-        
     
     }
 
@@ -48,11 +47,6 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
         
         return cell
         
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
     }
     
     

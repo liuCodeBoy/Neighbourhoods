@@ -61,7 +61,7 @@ class HelpCategoryByScoreViewController: UIViewController, UITableViewDelegate, 
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
-        NetWorkTool.shareInstance.taskList(sort: "time", p: page) { [weak self](info, error) in
+        NetWorkTool.shareInstance.taskList(sort: "integral", p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int

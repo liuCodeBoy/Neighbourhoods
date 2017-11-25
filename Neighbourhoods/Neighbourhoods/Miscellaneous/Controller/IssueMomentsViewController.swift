@@ -9,7 +9,23 @@
 import UIKit
 import NoticeBar
 import TZImagePickerController
-class IssueMomentsViewController: UIViewController {
+class IssueMomentsViewController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var sendBtn: UIButton!
+    var commentLabel : String? {
+        didSet{
+            if commentLabel?.count == 0 {
+                self.sendBtn.isEnabled = false
+            }else{
+                self.sendBtn.isEnabled = true
+            }
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.commentLabel = textView.text
+    }
+    
     @IBOutlet weak var pickImageContainView: UIView!
     //pictrueView
     var picPickerView : PicPicKerCollectionView?
@@ -63,18 +79,14 @@ class IssueMomentsViewController: UIViewController {
         super.viewDidLoad()
         setupNotifications()
         setUpHeaderImageView()
+        topicDetialTextView.delegate = self
+        self.topicDetialTextView.becomeFirstResponder()
     }
 
     deinit {        
         NotificationCenter.default.removeObserver(self)
     }
 }
-
-
-
-
-
-
 
 
 //MARK: - 照片选择方法

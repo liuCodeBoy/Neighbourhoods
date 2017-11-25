@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IssueMomentsViewController" customModule="Neighbourhoods" customModuleProvider="target">
             <connections>
                 <outlet property="pickImageContainView" destination="hpq-Ct-UFZ" id="Xnp-gI-ib0"/>
+                <outlet property="sendBtn" destination="T9F-lG-3Cd" id="bC0-R1-uya"/>
                 <outlet property="topicDetialTextView" destination="89g-Bj-7eW" id="NWV-aF-hkS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -53,10 +54,10 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-tE-ccW">
-                            <rect key="frame" x="12" y="9.5" width="25" height="25"/>
+                            <rect key="frame" x="0.0" y="-3" width="50" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="25" id="8TU-Su-Jxc"/>
-                                <constraint firstAttribute="height" constant="25" id="ggR-gt-4CW"/>
+                                <constraint firstAttribute="width" constant="50" id="8TU-Su-Jxc"/>
+                                <constraint firstAttribute="height" constant="50" id="ggR-gt-4CW"/>
                             </constraints>
                             <state key="normal" image="nav_back"/>
                             <connections>
@@ -69,10 +70,16 @@
                             <color key="textColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9F-lG-3Cd">
-                            <rect key="frame" x="326" y="5" width="37" height="34"/>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9F-lG-3Cd">
+                            <rect key="frame" x="313" y="5" width="50" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="r0h-I4-PNb"/>
+                            </constraints>
                             <state key="normal" title="发送">
-                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="issueBtn:" destination="-1" eventType="touchUpInside" id="8xj-zS-laT"/>
@@ -83,7 +90,7 @@
                     <constraints>
                         <constraint firstItem="Xvu-SF-4qF" firstAttribute="centerY" secondItem="ydh-Sr-w18" secondAttribute="centerY" id="1Og-Ie-RHS"/>
                         <constraint firstItem="Xvu-SF-4qF" firstAttribute="centerX" secondItem="ydh-Sr-w18" secondAttribute="centerX" id="6tF-fw-eX0"/>
-                        <constraint firstItem="4x6-tE-ccW" firstAttribute="leading" secondItem="ydh-Sr-w18" secondAttribute="leading" constant="12" id="B7O-gd-rdO"/>
+                        <constraint firstItem="4x6-tE-ccW" firstAttribute="leading" secondItem="ydh-Sr-w18" secondAttribute="leading" id="B7O-gd-rdO"/>
                         <constraint firstAttribute="trailing" secondItem="T9F-lG-3Cd" secondAttribute="trailing" constant="12" id="Ibr-Cj-6AM"/>
                         <constraint firstAttribute="height" constant="44" id="Lov-QK-UYB"/>
                         <constraint firstItem="4x6-tE-ccW" firstAttribute="centerY" secondItem="ydh-Sr-w18" secondAttribute="centerY" id="i1N-yF-ymH"/>
@@ -97,7 +104,7 @@
                         <constraint firstAttribute="height" constant="5" id="NV6-Pk-kTh"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="发布动态" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="89g-Bj-7eW">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="89g-Bj-7eW">
                     <rect key="frame" x="10" y="64" width="355" height="194"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
