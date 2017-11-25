@@ -149,6 +149,7 @@
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
 		D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */; };
 		D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */; };
+		D3C724C41FC9A6D900AD9D40 /* MessageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */; };
 		D3C8640A1FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */; };
 		D3C8640C1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */; };
 		D3C8640E1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8640D1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift */; };
@@ -169,6 +170,8 @@
 		D3EEB35C1F9F69C400406555 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */; };
 		D3F47DF91FC91451001C0FEF /* UploadingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */; };
 		D3F47DFB1FC91464001C0FEF /* UploadingDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */; };
+		D3F47E071FC971C5001C0FEF /* MessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47E061FC971C5001C0FEF /* MessagesListViewController.swift */; };
+		D3F47E0A1FC982F6001C0FEF /* MsgListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47E091FC982F6001C0FEF /* MsgListModel.swift */; };
 		D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */; };
 		D3F6B1891F9A1359004D0A20 /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */; };
 		D3FAC7D61FA9648500D972B9 /* IssueTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FAC7D41FA9648500D972B9 /* IssueTopicsViewController.swift */; };
@@ -358,6 +361,7 @@
 		D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowersViewController.swift; sourceTree = "<group>"; };
 		D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbourhoods-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListTableViewCell.swift; sourceTree = "<group>"; };
 		D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuedMissionTableViewController.swift; sourceTree = "<group>"; };
 		D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceivedMissionTableViewController.swift; sourceTree = "<group>"; };
 		D3C8640D1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuedMissionTableViewCell.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 		D3EEB35B1F9F69C400406555 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
 		D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingDataView.swift; sourceTree = "<group>"; };
 		D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadingDataView.xib; sourceTree = "<group>"; };
+		D3F47E061FC971C5001C0FEF /* MessagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListViewController.swift; sourceTree = "<group>"; };
+		D3F47E091FC982F6001C0FEF /* MsgListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgListModel.swift; sourceTree = "<group>"; };
 		D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
 		D3FAC7D41FA9648500D972B9 /* IssueTopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTopicsViewController.swift; sourceTree = "<group>"; };
@@ -883,6 +889,14 @@
 			path = Charity;
 			sourceTree = "<group>";
 		};
+		D3F47E081FC982C7001C0FEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3F47E091FC982F6001C0FEF /* MsgListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D3F5BBFE1FAB17BB000A6CF5 /* Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -945,6 +959,7 @@
 			children = (
 				D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */,
 				D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */,
+				D3F47E081FC982C7001C0FEF /* Model */,
 				D3FAC7E51FA9755200D972B9 /* View */,
 				D3FAC7E41FA9753300D972B9 /* Controller */,
 			);
@@ -958,6 +973,7 @@
 				D3FAC7D41FA9648500D972B9 /* IssueTopicsViewController.swift */,
 				D3FAC7D81FA9691200D972B9 /* IssueMissionViewController.swift */,
 				D3FAC7DC1FA96A2A00D972B9 /* QuickViewMessgaesViewController.swift */,
+				D3F47E061FC971C5001C0FEF /* MessagesListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -978,6 +994,7 @@
 			children = (
 				D3FAC7E21FA974DB00D972B9 /* QuickMessageListTableViewCell.swift */,
 				D3B589251FC52AF9003396D3 /* CommentQucikViewListTableViewCell.swift */,
+				D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1179,9 +1196,11 @@
 				D35B2D1E1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift in Sources */,
 				D31E97171FA9F9CE00A78D3A /* SelfInfomationTableViewController.swift in Sources */,
 				D35B2D1C1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift in Sources */,
+				D3F47E0A1FC982F6001C0FEF /* MsgListModel.swift in Sources */,
 				D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */,
 				D31E971D1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift in Sources */,
 				B6B6E0671FB9D2BA00CCD567 /* NoMissionCoverView.swift in Sources */,
+				D3C724C41FC9A6D900AD9D40 /* MessageListTableViewCell.swift in Sources */,
 				D3A54D331FAC41670066C486 /* HelpCategoryByScoreTableViewCell.swift in Sources */,
 				D3A54D291FAC0BFD0066C486 /* ChangeNickNameViewController.swift in Sources */,
 				D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */,
@@ -1194,6 +1213,7 @@
 				B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */,
 				D3C864141FB99CC600CE3B50 /* TaskDetModel.swift in Sources */,
 				B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */,
+				D3F47E071FC971C5001C0FEF /* MessagesListViewController.swift in Sources */,
 				B6DAACB61FC3BE28006A7C3E /* VoteListModel.swift in Sources */,
 				B6559A101FBD613B00EB6D56 /* PicPicKerCollectionView.swift in Sources */,
 				D30ED0F61FAAF832007A5858 /* SelectDistrictTableViewController.swift in Sources */,
@@ -1475,7 +1495,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Carthage/Checkouts/MOBFoundation_IDFA",
 				);
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
