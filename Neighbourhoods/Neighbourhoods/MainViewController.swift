@@ -28,6 +28,8 @@ class MainViewController: UITabBarController {
     
     var share: UIView?
     
+    var rootVC: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,12 +107,21 @@ class MainViewController: UITabBarController {
     
     @objc func showQuickMessageVC() {
         let vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateInitialViewController()! as! QuickViewMessgaesViewController
-        self.present(vc, animated: true, completion: nil)
+        self.rootVC = vc
+        let nav = UINavigationController(rootViewController: vc)
+        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(dismissRootVC))
+        vc.navigationItem.setLeftBarButton(back, animated: true)
+        vc.setNavBarTitle(title: "消息")
+        self.present(nav, animated: true, completion: nil)
         
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func dismissRootVC() {
+        self.rootVC?.dismiss(animated: true, completion: nil)
     }
 
 
