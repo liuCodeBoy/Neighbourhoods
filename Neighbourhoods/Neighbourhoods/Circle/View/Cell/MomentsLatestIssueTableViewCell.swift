@@ -44,6 +44,7 @@ class MomentsLatestIssueTableViewCell: UITableViewCell {
             })
             return
         }
+      
         NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
@@ -91,6 +92,14 @@ class MomentsLatestIssueTableViewCell: UITableViewCell {
             if let  loveNum = momentsCellModel.love {
                 self.likeBtn.setTitle("\(loveNum)", for: .normal)
             }
+            if momentsCellModel.is_zan == 1 {
+                self.likeBtn.isSelected = true
+            }else{
+                self.likeBtn.isSelected = false
+            }
+            self.likeBtn.isSelected = true
+
+
             if let  commentNum = momentsCellModel.comment{
                 self.commentBtn.setTitle("\(commentNum)", for: .normal)
             }

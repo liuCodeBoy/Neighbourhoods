@@ -20,6 +20,7 @@ class NborCircleModel: NSObject {
    @objc  var love      :   NSNumber?
    @objc  var picture   :   NSArray?
    @objc  var address   :   String?
+   @objc  var is_zan    :   NSNumber?
    @objc  var pid       :   NSNumber?
    @objc  var user      :   UserModel?
    @objc  var user_info :   UserModel?

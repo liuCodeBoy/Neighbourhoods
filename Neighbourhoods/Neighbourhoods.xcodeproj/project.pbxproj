@@ -1475,7 +1475,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Carthage/Checkouts/MOBFoundation_IDFA",
 				);
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

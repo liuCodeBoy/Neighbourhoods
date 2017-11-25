@@ -93,6 +93,11 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             if let  loveNum = momentsCellModel.love {
                 self.likeBtn.setTitle("\(loveNum)", for: .normal)
             }
+            if momentsCellModel.is_zan == 1 {
+                self.likeBtn.isSelected = true
+            }else{
+                self.likeBtn.isSelected = false
+            }
             if let  commentNum = momentsCellModel.comment{
                 self.commentBtn.setTitle("\(commentNum)", for: .normal)
             }

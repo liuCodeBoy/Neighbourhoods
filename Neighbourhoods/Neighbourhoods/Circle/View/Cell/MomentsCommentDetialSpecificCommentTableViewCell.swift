@@ -27,9 +27,9 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
     @IBOutlet weak var commentDetailHeight: NSLayoutConstraint!
     var momentsCellModel : NborCircleModel!{
         didSet {
-            self.nickName.text = momentsCellModel.user?.nickname
+            self.nickName.text = momentsCellModel.user_info?.nickname
             self.textLbl.text = momentsCellModel.content
-            let userModel =  momentsCellModel.user
+            let userModel =  momentsCellModel.user_info
             if let avatarString  =  userModel?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                 let  headImageTap = UITapGestureRecognizer.init(target: self, action:#selector(showUserInfoVC))
@@ -38,6 +38,11 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
             }
             if let  loveNum = momentsCellModel.love {
                 self.likeBtn.setTitle("\(loveNum)", for: .normal)
+            }
+            if momentsCellModel.is_zan == 1 {
+                self.likeBtn.isSelected = true
+            }else{
+                self.likeBtn.isSelected = false
             }
             if let  commentNum = momentsCellModel.comment{
                 self.commentBtn.setTitle("\(commentNum)", for: .normal)
@@ -86,6 +91,7 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
             self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid)
         }
         self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
+    
     }
     @IBAction func shareBtnClicked(_ sender: UIButton) {
     }

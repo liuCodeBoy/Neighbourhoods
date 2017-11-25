@@ -88,6 +88,12 @@ class TopicDetialTableViewCell: UITableViewCell {
             if let  likeNum = TopicDetialModel.love{
                 self.likeBtn.setTitle("\(likeNum)", for: .normal)
             }
+            if TopicDetialModel.is_zan == 1 {
+                self.likeBtn.isSelected = true
+            }else{
+                self.likeBtn.isSelected = false
+            }
+
             if let  comment = TopicDetialModel.comment{
                 self.commentBtn.setTitle("\(comment)", for: .normal)
             }
