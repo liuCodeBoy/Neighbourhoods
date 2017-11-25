@@ -13,7 +13,7 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
     @IBOutlet weak var sendBtn: UIButton!
     var commentLabel : String? {
         didSet{
-            if commentLabel?.count == 0 {
+            if commentLabel?.count == 0 || missionTitle.text?.count == 0 {
                 self.sendBtn.isEnabled = false
             }else{
                 self.sendBtn.isEnabled = true
@@ -81,6 +81,8 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
     override func viewDidLoad() {
         super.viewDidLoad()
         missionScoreTF.delegate = self
+        missionDetialTextView.delegate = self
+        
         self.missionTitle.becomeFirstResponder()
     }
 

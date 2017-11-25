@@ -1459,6 +1459,7 @@
 				CODE_SIGN_ENTITLEMENTS = Neighbourhoods/Neighbourhoods.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = M2JN69G9M6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1467,6 +1468,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Carthage/Checkouts/MOBFoundation_IDFA",
 				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1477,6 +1479,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Debug;
 		};
@@ -1490,6 +1493,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = M2JN69G9M6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1498,6 +1502,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/SMSSDK-for-iOS/MobProducts/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Carthage/Checkouts/MOBFoundation_IDFA",
 				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1508,6 +1513,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Release;
 		};
