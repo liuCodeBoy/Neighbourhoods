@@ -43,7 +43,10 @@ class MomentsLatestIssueTableViewController: UITableViewController {
     
     //MARK: - 最新发布网络请求
         func lastedRequest(p : Int) -> () {
-            NetWorkTool.shareInstance.nbor_list(Nbor_Sort.time, p: p) {[weak self](info, error) in
+            
+            //偏好设置
+            let uid =  UserDefaults.standard.integer(forKey: "uid")
+            NetWorkTool.shareInstance.nbor_list(Nbor_Sort.time, p: p, uid: uid) {[weak self](info, error) in
                 if info?["code"] as? String == "200"{
                     if let pages  = info!["result"]!["pages"]
                      {
@@ -85,6 +88,9 @@ class MomentsLatestIssueTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsLatestIssueCell") as! MomentsLatestIssueTableViewCell
         let modelArr =  self.rotaionArray
+        guard self.rotaionArray.count > 0  else{
+            return cell
+        }
         let  model =  modelArr[indexPath.row]
         cell.momentsCellModel = model
         cell.pushImageClouse = {(imageArr, index) in

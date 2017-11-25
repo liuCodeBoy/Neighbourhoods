@@ -43,6 +43,24 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                             //同步数据
                             userDefault.synchronize()
                         }
+                        if  let uid = resultDict?["uid"]{
+                            //偏好设置
+                            let userDefault =  UserDefaults.standard
+                            //存储数据
+                            userDefault.set(uid, forKey: "uid")
+                            //同步数据
+                            userDefault.synchronize()
+                        }
+                        if  let token = resultDict?["token"]{
+                            //偏好设置
+                            let userDefault =  UserDefaults.standard
+                            //存储数据
+                            userDefault.set(token, forKey: "token")
+                            userDefault.set(self?.phoneNumber.text ,forKey: "number")
+                            userDefault.set(self?.password.text, forKey: "pwd")
+                            //同步数据
+                            userDefault.synchronize()
+                        }
                         let alert = UIAlertController(title: "提示", message: "登录成功", preferredStyle: .alert)
                         let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
                             //登陆界面销毁

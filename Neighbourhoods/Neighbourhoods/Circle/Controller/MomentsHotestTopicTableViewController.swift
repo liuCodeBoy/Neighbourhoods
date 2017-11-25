@@ -44,7 +44,10 @@ class MomentsHotestTopicTableViewController: UITableViewController {
     
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
-        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.love, p: p) {[weak self](info, error) in
+        
+        //偏好设置
+        let uid =  UserDefaults.standard.integer(forKey: "uid")
+        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.love, p: p, uid: uid ) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"]
                 {
