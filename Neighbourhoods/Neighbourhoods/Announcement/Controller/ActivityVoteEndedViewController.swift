@@ -11,6 +11,7 @@ import SDWebImage
 class ActivityVoteEndedViewController: UIViewController {
     //投票详情id
     var  id : NSNumber?
+    var  model : VoteActDet?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
@@ -24,6 +25,25 @@ class ActivityVoteEndedViewController: UIViewController {
     }
    
     @IBAction func ShowEndDetailVC(_ sender: Any) {
+        guard model != nil else{
+            return
+        }
+        if model?.cate == 2 {
+        let  showEndDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowVoteActivResultID") as! ShowVoteActivResult
+        showEndDetailVC.cate = model?.cate
+        showEndDetailVC.id = model?.id
+        showEndDetailVC.status = model?.status
+        self.navigationController?.pushViewController(showEndDetailVC, animated: true)
+        }else{
+            let  showEndDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowFigureVotResultVCID") as! ShowFigureVotResultVC
+            showEndDetailVC.cate = model?.cate
+            showEndDetailVC.id = model?.id
+            showEndDetailVC.status = model?.status
+            self.navigationController?.pushViewController(showEndDetailVC, animated: true)
+            
+        }
+    
+        
     }
     //MARK: - 最新发布网络请求
     func lastedRequest(id : Int) -> () {
@@ -31,6 +51,7 @@ class ActivityVoteEndedViewController: UIViewController {
             if info?["code"] as? String == "200"{
                 let result  = info!["result"] as! NSDictionary
                 if  let rotationModel = VoteActDet.mj_object(withKeyValues: result){
+                    self?.model = rotationModel
                     if let avatarString  =  rotationModel.picture {
                         self?.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                     }
@@ -50,12 +71,9 @@ class ActivityVoteEndedViewController: UIViewController {
                         self?.detialTextLbl.text = content
                     }
                 }
-
             }else{
                 //服务器
-            
             }
-            
         }
     }
 }

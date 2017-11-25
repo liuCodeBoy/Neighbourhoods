@@ -13,7 +13,6 @@ class FigureVoteListTableViewCell: UITableViewCell {
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var gender: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var voteCountLbl: UILabel!
     @IBOutlet weak var voteBtn: UIButton!
     @IBOutlet weak var rankLbl: UILabel!
@@ -28,7 +27,6 @@ class FigureVoteListTableViewCell: UITableViewCell {
              }
             }
             
-            self.titleLbl.text = ""
             if let selected = model?.select?.intValue{
                 if  selected == 0 {
                 voteBtn.setTitle("投票", for: .normal)

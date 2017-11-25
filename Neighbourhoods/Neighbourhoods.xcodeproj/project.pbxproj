@@ -19,6 +19,8 @@
 		B657A05A1FC6BB910021CA4F /* ActivityUnderVotingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A0591FC6BB910021CA4F /* ActivityUnderVotingCell.swift */; };
 		B657A05C1FC6F5EE0021CA4F /* ShowVoteActivResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A05B1FC6F5EE0021CA4F /* ShowVoteActivResult.swift */; };
 		B657A05E1FC6FB3B0021CA4F /* ShowVoteActCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A05D1FC6FB3B0021CA4F /* ShowVoteActCell.swift */; };
+		B657A0601FC852710021CA4F /* VoteResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A05F1FC852710021CA4F /* VoteResultModel.swift */; };
+		B657A0641FC94DFF0021CA4F /* ShowFigureVotResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A0631FC94DFE0021CA4F /* ShowFigureVotResultVC.swift */; };
 		B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */; };
 		B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
@@ -221,6 +223,8 @@
 		B657A0591FC6BB910021CA4F /* ActivityUnderVotingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityUnderVotingCell.swift; sourceTree = "<group>"; };
 		B657A05B1FC6F5EE0021CA4F /* ShowVoteActivResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowVoteActivResult.swift; sourceTree = "<group>"; };
 		B657A05D1FC6FB3B0021CA4F /* ShowVoteActCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowVoteActCell.swift; sourceTree = "<group>"; };
+		B657A05F1FC852710021CA4F /* VoteResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteResultModel.swift; sourceTree = "<group>"; };
+		B657A0631FC94DFE0021CA4F /* ShowFigureVotResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFigureVotResultVC.swift; sourceTree = "<group>"; };
 		B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowVC.swift; sourceTree = "<group>"; };
 		B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
@@ -485,6 +489,7 @@
 				B6DAACB71FC3D526006A7C3E /* VoteActDet.swift */,
 				B6DAACB91FC41872006A7C3E /* VoteOptionList.swift */,
 				B63A2E581FC595B20026D53F /* User_detModel.swift */,
+				B657A05F1FC852710021CA4F /* VoteResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -770,6 +775,7 @@
 				D3A54D4D1FAD9D990066C486 /* ActivityVoteEndedViewController.swift */,
 				D3FAC7EB1FA97ECD00D972B9 /* ActivityUnderVotingViewController.swift */,
 				B657A05B1FC6F5EE0021CA4F /* ShowVoteActivResult.swift */,
+				B657A0631FC94DFE0021CA4F /* ShowFigureVotResultVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1100,7 +1106,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-resources.sh",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
-				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
 			);
@@ -1268,6 +1273,7 @@
 				D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */,
 				D3954E8C1FC3CCF9003C08DC /* WelcomeViewController.swift in Sources */,
 				D3FAC7ED1FA97ECD00D972B9 /* ActivityUnderVotingViewController.swift in Sources */,
+				B657A0601FC852710021CA4F /* VoteResultModel.swift in Sources */,
 				D345ABF21FB149A900FAB15F /* Network.swift in Sources */,
 				D30ED0F41FAAF6FC007A5858 /* SettingsViewController.swift in Sources */,
 				D3A54D391FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift in Sources */,
@@ -1292,6 +1298,7 @@
 				D3A54D311FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift in Sources */,
 				D3D1FD841FA81187009A2E58 /* VoteViewController.swift in Sources */,
 				D30A17DC1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift in Sources */,
+				B657A0641FC94DFF0021CA4F /* ShowFigureVotResultVC.swift in Sources */,
 				D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */,
 				D3C8640A1FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift in Sources */,
 				D3C8640E1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift in Sources */,
