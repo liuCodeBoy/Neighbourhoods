@@ -86,9 +86,12 @@ class MainViewController: UITabBarController {
     
     @objc func closeBtnClicked() {
         
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.25, animations: {
             self.share?.alpha = 0
             self.spring?.alpha = 0
+        }) { (_) in
+            self.share?.removeFromSuperview()
+            self.spring?.removeFromSuperview()
         }
         
     }

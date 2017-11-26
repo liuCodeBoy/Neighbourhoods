@@ -21,6 +21,30 @@ let isIPHONEX: Bool = { () -> Bool in
     }
 }()
 
+let isIPHONE_8: Bool = { () -> Bool in
+    if screenHeight == 667.0 && screenWidth == 375.0 {
+        return true
+    } else {
+        return false
+    }
+}()
+
+let isIPHONE_8Plus: Bool = { () -> Bool in
+    if screenHeight == 736.0 && screenWidth == 414.0 {
+        return true
+    } else {
+        return false
+    }
+}()
+
+let isIPHONE_SE: Bool = { () -> Bool in
+    if screenHeight == 568.0 && screenWidth == 320.0 {
+        return true
+    } else {
+        return false
+    }
+}()
+
 enum MissionOperation: Int {
     case submit
     case done

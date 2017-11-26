@@ -132,6 +132,15 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row > 0 {
+            let momentsCommentDetialVC = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
+            
+            momentsCommentDetialVC.id = missionListArray[indexPath.row].id
+            self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
+        }
+    }
+    
 //    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 //        return true
 //    }

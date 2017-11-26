@@ -17,6 +17,8 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
 
     var msgListArray = [MsgListModel]()
     
+    var destnation: ChattingViewController? 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,15 +44,20 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
-                for dict in result!["result"] as! [[String: AnyObject]] {
-                    if let model = MsgListModel.mj_object(withKeyValues: dict) {
-                        self?.msgListArray.append(model)
+                if let result = result!["result"] as? [[String: AnyObject]] {
+                    for dict in result {
+                        if let model = MsgListModel.mj_object(withKeyValues: dict) {
+                            self?.msgListArray.append(model)
+                        }
                     }
+                    self?.tableView.reloadData()
+                    if CGFloat((self?.msgListArray.count)!) > 0 {
+                        self?.coverView.removeFromSuperview()
+                    }
+                } else {
+                    return
                 }
-                self?.tableView.reloadData()
-                if CGFloat((self?.msgListArray.count)!) > 0 {
-                    self?.coverView.removeFromSuperview()
-                }
+                
             } else {
                 print("post request failed with exit code \(result!["code"] as! String)")
             }
@@ -72,8 +79,19 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // MARK:- pass dest user's uid to next vc
+        destnation?.to_uid = msgListArray[indexPath.row].from_user?.uid as? Int
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! ChattingViewController
+        self.destnation = dest
+        
     }
     
     
