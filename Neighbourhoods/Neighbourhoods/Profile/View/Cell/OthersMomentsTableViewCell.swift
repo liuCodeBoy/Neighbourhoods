@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import NoticeBar
 //定义跳转闭包
 typealias pushProImgType = (NSArray? , NSNumber?) -> ()
 class OthersMomentsTableViewCell: UITableViewCell {
@@ -26,8 +27,37 @@ class OthersMomentsTableViewCell: UITableViewCell {
     @IBOutlet weak var imageRight: UIImageView!
     
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
-    
+   
+
     @IBAction func likeBtnClicked(_ sender: UIButton) {
+        
+        let  nbor_id  =  self.momentsCellModel.id
+        guard UserDefaults.standard.string(forKey: "token") != nil else{
+            let config = NoticeBarConfig(title: "你还未登录,请退出游客模式", image: nil, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+            let noticeBar = NoticeBar(config: config)
+            noticeBar.show(duration: 1.0, completed: {
+                (finished) in
+                if finished {
+                }
+            })
+            return
+        }
+        NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
+            print(UserDefaults.standard.string(forKey: "token")!)
+            if info?["code"] as? String == "400"{
+                let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let noticeBar = NoticeBar(config: config)
+                noticeBar.show(duration: 0.25, completed: {
+                    (finished) in
+                    if finished {
+                    }
+                })
+            }else if (info?["code"] as? String == "200"){
+                //服务器
+                self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
+                self?.likeBtn.isSelected = true
+            }
+        }
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
     }
@@ -59,6 +89,11 @@ class OthersMomentsTableViewCell: UITableViewCell {
             
             if let  loveNum = momentsCellModel.love {
                 self.likeBtn.setTitle("\(loveNum)", for: .normal)
+            }
+            if momentsCellModel.is_zan == 1 {
+                self.likeBtn.isSelected = true
+            }else{
+                self.likeBtn.isSelected = false
             }
             if let  commentNum = momentsCellModel.comment{
                 self.commentBtn.setTitle("\(commentNum)", for: .normal)

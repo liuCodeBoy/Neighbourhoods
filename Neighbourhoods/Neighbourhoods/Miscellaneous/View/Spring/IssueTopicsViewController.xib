@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,6 +17,7 @@
                 <outlet property="sendBtn" destination="doH-n6-IlD" id="fPq-s7-xjV"/>
                 <outlet property="topicDetialTextView" destination="jVL-gY-bKp" id="thl-ET-fA2"/>
                 <outlet property="topicNameField" destination="JJl-2j-f4b" id="JOe-po-Vbz"/>
+                <outlet property="topicTitle" destination="ba6-CB-NjY" id="YI7-ML-Iju"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -133,7 +134,7 @@
                 <constraint firstItem="jVL-gY-bKp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="zxK-O6-RuD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-121.5" y="-19.5"/>
+            <point key="canvasLocation" x="-313" y="-125"/>
         </view>
     </objects>
     <resources>

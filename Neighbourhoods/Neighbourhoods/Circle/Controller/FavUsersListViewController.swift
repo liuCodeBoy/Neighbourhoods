@@ -11,7 +11,7 @@ import UIKit
 class FavUsersListViewController: UIViewController {
     
     @IBOutlet weak var followingsTableView: UITableView!
-    
+    let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
     private var followingList = [AttentionAndFansModel]()
     
     override func viewDidLoad() {
@@ -34,7 +34,12 @@ class FavUsersListViewController: UIViewController {
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
-                let dictArray = result!["result"] as! [[String : AnyObject]]
+                guard let dictArray = result?["result"] as? [NSDictionary] else {
+                        self?.coverView.showLab.text = "暂无关注"
+                        self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                    self?.followingsTableView.addSubview((self?.coverView)!)
+                    return
+                }
                 for userDict in dictArray {
                     if let listModel = AttentionAndFansModel.mj_object(withKeyValues: userDict["user"]) {
                         self?.followingList.append(listModel)

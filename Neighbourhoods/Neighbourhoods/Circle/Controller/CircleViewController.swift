@@ -45,6 +45,11 @@ class CircleViewController: UIViewController {
         self.view.addSubview(loopView)
     }
     
+    @IBAction func showPickTopicAction(_ sender: Any) {
+        let  topicVC = self.storyboard?.instantiateViewController(withIdentifier: "MomentsTopicsClassificationTVC") as!  MomentsTopicsClassificationTableViewController
+        topicVC.isChooseTopic = 1
+        self.navigationController?.pushViewController(topicVC, animated: true)
+    }
     
     func loadRefreshComponet() -> () {
         //默认下拉刷新
@@ -70,7 +75,7 @@ class CircleViewController: UIViewController {
       
             //偏好设置
         let uid =  UserDefaults.standard.integer(forKey: "uid")
-        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.love, p: p, uid: uid as! NSInteger) {[weak self](info, error) in
+        NetWorkTool.shareInstance.nbor_list(Nbor_Sort.love, p: p, uid: uid ) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"]
                 {

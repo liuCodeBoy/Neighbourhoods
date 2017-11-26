@@ -14,6 +14,8 @@ class MyFavouriteViewController: UIViewController {
     @IBOutlet weak var favMoments: UIButton!
     @IBOutlet weak var favUsers: UIButton!
     var favUserTableView: UIView?
+    var favUserErrorView : UIView?
+    let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
     @IBAction func btn1clicked(_ sender: UIButton) {
         
         // MARK:- change button control state
@@ -21,6 +23,7 @@ class MyFavouriteViewController: UIViewController {
         favUsers.isSelected = false
         // MARK:- hide the user list table view
         favUserTableView?.isHidden = true
+        favUserErrorView?.isHidden = true
         
     }
     
@@ -29,6 +32,7 @@ class MyFavouriteViewController: UIViewController {
         favUsers.isSelected = true
         // MARK:- reveal the user list table view
         favUserTableView?.isHidden = false
+        favUserErrorView?.isHidden = false
         
     }
     
@@ -40,6 +44,7 @@ class MyFavouriteViewController: UIViewController {
         myFavTableView.dataSource = self
         loadFavUserVC()
         favUserTableView?.isHidden = true
+        favUserErrorView?.isHidden = true
         lastedRequest()
         
     }
@@ -48,6 +53,7 @@ class MyFavouriteViewController: UIViewController {
         let childVC = self.storyboard?.instantiateViewController(withIdentifier: "FavUsersListVC") as! FavUsersListViewController
         let tableView = childVC.view
         favUserTableView = tableView
+        favUserErrorView = childVC.coverView
         var y = (favMoments.superview?.frame.maxY)! + 1
         if isIPHONEX { y += 24 }
         tableView?.frame = CGRect.init(x: 0, y: y, width: UIScreen.main.bounds.width, height: screenHeight - y - 49)
@@ -63,10 +69,15 @@ class MyFavouriteViewController: UIViewController {
             return
         }
         token = UserDefaults.standard.string(forKey: "token")!
-        NetWorkTool.shareInstance.atten_nbor(token) {[weak self](info, error) in
+        NetWorkTool.shareInstance.atten_nbor(token, uid: UserDefaults.standard.integer(forKey: "uid")) {[weak self](info, error) in
+        
             if info?["code"] as? String == "200"{
-             
-                let result  = info!["result"] as! [NSDictionary]
+                guard let result  = info!["result"] as? [NSDictionary] else {
+                    self?.coverView.showLab.text = "暂无动态"
+                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                    self?.myFavTableView.addSubview((self?.coverView)!)
+                    return
+                }
                 for i in 0..<result.count
                 {
                     let  circleInfo  =  result[i]
@@ -76,7 +87,7 @@ class MyFavouriteViewController: UIViewController {
                     }
                 }
                 self?.myFavTableView.reloadData()
-             
+              
             }else{
                 //服务器
              

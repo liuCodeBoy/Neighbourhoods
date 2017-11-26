@@ -35,7 +35,8 @@ class MomentsCommentDetialViewController: UIViewController {
    
     
     func showDetailInfo() -> () {
-        NetWorkTool.shareInstance.nbor_Detail(id: self.id as! NSInteger ) {[weak self](info, error) in
+        
+        NetWorkTool.shareInstance.nbor_Detail(id: self.id as! NSInteger, uid: UserDefaults.standard.integer(forKey: "uid")) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
                 let result  = info!["result"] as? [String : Any]
                 self?.detailMainModel = NborCircleModel.mj_object(withKeyValues: result)

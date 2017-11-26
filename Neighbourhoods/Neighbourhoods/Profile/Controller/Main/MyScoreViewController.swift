@@ -38,10 +38,6 @@ class MyScoreViewController: UIViewController {
         
         lastedRequest(p: page)
         loadRefreshComponet()
-        
-        coverView.showLab.text = "暂无积分"
-        coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        self.view.addSubview(coverView)
     }
     
     func loadRefreshComponet() -> () {
@@ -74,10 +70,15 @@ class MyScoreViewController: UIViewController {
         }
         NetWorkTool.shareInstance.myScore(access_token, p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
-                if let pages  = info!["result"]!["pages"] {
-                    self?.pages = pages as! Int
-                }
                 
+                guard let pages  = info?["result"]?["pages"] as? Int else {
+//                    self?.coverView.showLab.text = "暂无积分"
+//                    self?.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//                    self?.receiveScoreTableView.addSubview((self?.coverView)!)
+//                    self?.receiveScoreTableView.isScrollEnabled = false
+                    return
+                }
+                self?.pages = pages
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count {
                     let taskDict =  result[i]
@@ -112,6 +113,7 @@ class MyScoreViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        
     }
 
 }

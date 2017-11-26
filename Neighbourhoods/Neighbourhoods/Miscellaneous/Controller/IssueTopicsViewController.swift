@@ -10,14 +10,22 @@ import UIKit
 import TZImagePickerController
 import NoticeBar
 class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
-    
+    @IBOutlet weak var topicTitle: UILabel!
     @IBOutlet weak var sendBtn: UIButton!
+    var  topic_id : NSInteger?
     var commentLabel : String? {
         didSet{
+            if  topic_id == nil {
             if commentLabel?.count == 0 || topicNameField.text?.count == 0 {
                 self.sendBtn.isEnabled = false
             }else{
                 self.sendBtn.isEnabled = true
+            }}else{
+                if commentLabel?.count == 0  {
+                    self.sendBtn.isEnabled = false
+                }else{
+                    self.sendBtn.isEnabled = true
+                }
             }
         }
     }
@@ -41,7 +49,7 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
     //detailLable
     var  detailLable : UILabel?
     //定义默认上传图片的最大数额
-    let maxNum = 1
+    var maxNum = 1
     lazy var images = [UIImage]()
 
     @IBOutlet weak var pickImageContainView: UIView!
@@ -56,17 +64,40 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
             self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
-        guard  topicNameField.text != nil else{
-            self.presentHintMessage(hintMessgae:  "话题不能为空", completion: nil)
-            return
-        }
         guard  topicDetialTextView.text != nil else{
             self.presentHintMessage(hintMessgae:  "话题描述不能为空", completion: nil)
             return
         }
+        if self.topic_id != nil {
+            NetWorkTool.shareInstance.topic_post_publish(UserDefaults.standard.string(forKey: "token")!, topic_id: self.topic_id!, image: images, content: topicDetialTextView.text!) { [weak self](info, error) in
+                if info?["code"] as? String == "200"{
+                    let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1), barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                    let noticeBar = NoticeBar(config: config)
+                    noticeBar.show(duration: 0.25, completed: {
+                        (finished) in
+                        if finished {
+                            self?.dismiss(animated: true, completion: nil)
+                        }
+                    })
+                }else {
+                    let config = NoticeBarConfig(title: "服务器错误", image: nil, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                    let noticeBar = NoticeBar(config: config)
+                    noticeBar.show(duration: 0.25, completed: {
+                        (finished) in
+                        if finished {
+                            self?.dismiss(animated: true, completion: nil)
+                        }
+                    })
+                }
+            }
+        }else{
+         guard  topicNameField.text != nil else{
+                self.presentHintMessage(hintMessgae:  "话题不能为空", completion: nil)
+                return
+            }
         NetWorkTool.shareInstance.topic_publish(UserDefaults.standard.string(forKey: "token")!, image: images, name: topicNameField.text!, content: topicDetialTextView.text!)  { [weak self](info, error) in
             if info?["code"] as? String == "200"{
-                let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor: UIColor.blue, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1), barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in
@@ -84,7 +115,11 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
                     }
                 })
             }
+          }
         }
+        
+      
+        
         
     }
     
@@ -98,10 +133,15 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
         topicDetialTextView.delegate = self
         topicNameField.delegate = self
         self.topicNameField.becomeFirstResponder()
-        
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(tfDidSwipe))
         swipe.direction = .up
         topicDetialTextView.addGestureRecognizer(swipe)
+        
+        if self.topic_id != nil {
+            self.topicNameField.isHidden = true
+            self.topicTitle.text = "发布话题帖子"
+            self.maxNum = 2
+        }
     }
     
     @objc func tfDidSwipe() {
@@ -243,7 +283,7 @@ extension IssueTopicsViewController : TZImagePickerControllerDelegate {
         detailLable.frame.size = CGSize.init(width: 100, height: 15)
         detailLable.textColor = UIColor.lightGray
         detailLable.font = UIFont.systemFont(ofSize: 10)
-        detailLable.text = "个数不超过2张"
+        detailLable.text = "个数不超过\(self.maxNum)张"
         self.defaultImage?.addSubview(detailLable)
         self.detailLable = detailLable
     }

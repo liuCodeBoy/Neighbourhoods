@@ -30,40 +30,37 @@ class TopicDetialTableViewController: UITableViewController {
     }
     
     func loadRefreshComponet() -> () {
-        //默认下拉刷新
-        tableView.mj_header = LXQHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         //上拉刷新
         tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(endrefresh))
         //自动根据有无数据来显示和隐藏
         tableView.mj_footer.isAutomaticallyHidden = true
-        // 设置自动切换透明度(在导航栏下面自动隐藏)
-        tableView.mj_header.isAutomaticallyChangeAlpha = true
+        tableView.showsVerticalScrollIndicator = false
     }
     
-    @objc  private func refresh() -> () {
-        self.page = 1
-        self.rotaionArray.removeAll()
-        lastedRequest(p: page)
-        tableView.mj_header.endRefreshing()
-        
-    }
     @objc private func  endrefresh() -> (){
         lastedRequest(p : self.page)
         
     }
     @IBAction func showCommentVC(_ sender: Any) {
-        let commentVc = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "TopicCommentVCID") as? TopicCommentVC
-        commentVc?.pid = 0
-        commentVc?.to_uid  = modelMain?.uid
-        commentVc?.uid     = modelMain?.uid
-        commentVc?.post_id = modelMain?.id
-        self.navigationController?.pushViewController(commentVc!, animated: true)
+        let  issueTopicsVC   = IssueTopicsViewController()
+        issueTopicsVC.topic_id = modelMain?.id as? NSInteger
+        self.present(issueTopicsVC, animated: true, completion: nil)
+
+//        let commentVc = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "TopicCommentVCID") as? TopicCommentVC
+        
+//        commentVc?.pid = 0
+//        commentVc?.to_uid  = modelMain?.uid
+//        commentVc?.uid     = modelMain?.uid
+//        commentVc?.post_id = modelMain?.id
+//        self.navigationController?.pushViewController(commentVc!, animated: true)
     }
     
     
     //MARK: - 最新发布网络请求
    private func lastedRequest(p : Int) -> () {
-    NetWorkTool.shareInstance.topic_det(id : self.id as! NSInteger, p: p) {[weak self](info, error) in
+    //偏好设置
+    let uid =  UserDefaults.standard.integer(forKey: "uid")
+    NetWorkTool.shareInstance.topic_det(id : self.id as! NSInteger, p: p, uid :uid) {[weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let tempPages  = info!["result"]!["pages"]
                 {
@@ -111,7 +108,6 @@ class TopicDetialTableViewController: UITableViewController {
                 
             }else{
                 //服务器
-                self?.tableView.mj_header.endRefreshing()
                 self?.tableView.mj_footer.endRefreshing()
                 self?.tableView.reloadData()
             }
@@ -124,10 +120,13 @@ class TopicDetialTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopicDetialCell") as? TopicDetialTableViewCell
-        if  self.rotaionArray.count > 0 {
-            cell?.title = "#"+(self.modelMain?.name)!+"#"
-            cell?.TopicDetialModel = self.rotaionArray[indexPath.row]
+        guard  self.rotaionArray.count > 0 else {
+            return cell!
         }
+      
+        cell?.title = "#"+(self.modelMain?.name)!+"#"
+        let model =  self.rotaionArray[indexPath.row]
+        cell?.TopicDetialModel = model
         cell?.pushImageClouse = {(imageArr, index) in
             let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
             desVC.index  = index
@@ -144,8 +143,30 @@ class TopicDetialTableViewController: UITableViewController {
                 self.navigationController?.pushViewController(userInfoVc!, animated: true)
             }
         }
+        //跳出评论
+        cell?.showCommentClouse = {() in
+//            let commentVc = self.storyboard?.instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
+//            commentVc?.pid = 0
+//            commentVc?.to_uid  = model.uid
+//            commentVc?.uid     = model.uid
+//            commentVc?.post_id = model.id
+//            self.navigationController?.pushViewController(commentVc!, animated: true)
+            let commentVc = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "TopicCommentVCID") as? TopicCommentVC
+            commentVc?.pid = 0
+            commentVc?.to_uid  =  model.uid
+            commentVc?.uid     =  model.uid
+            commentVc?.post_id =  model.id
+            self.navigationController?.pushViewController(commentVc!, animated: true)
+        }
         return cell!
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let   momentsCommentDetialVC =  UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
+        let modelArr =  self.rotaionArray
+        let  model =  modelArr[indexPath.row]
+        momentsCommentDetialVC.id = model.id
+        self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
+    }
 
 }

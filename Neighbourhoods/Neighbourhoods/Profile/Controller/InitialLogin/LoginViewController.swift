@@ -88,6 +88,13 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     }
     // MARK:- Passenger login
     @IBAction func passengerLoginClicked(_ sender: UIButton) {
+            //偏好设置
+            let userDefault =  UserDefaults.standard
+            //存储数据
+            userDefault.set(0, forKey: "uid")
+            //同步数据
+            userDefault.synchronize()
+        
         let window = UIApplication.shared.delegate?.window as? UIWindow
         window?.rootViewController = AppDelegate.mainVC
     }
