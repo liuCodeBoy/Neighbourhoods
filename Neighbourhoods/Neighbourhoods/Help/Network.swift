@@ -540,7 +540,7 @@ extension NetWorkTool {
     func infoList(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/msg_list"
+        let urlString = "http://106.15.199.8/llb/api/user/info_list"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
