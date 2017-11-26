@@ -11,9 +11,12 @@ import SDWebImage
 import NoticeBar
 typealias MonentDetailHeadImageType = (NSNumber?) -> ()
 typealias MonentDetialImageType = (NSArray? , NSNumber?) -> ()
+//定义评论闭包类型
+typealias TopicDetialType = () -> ()
 class TopicDetialTableViewCell: UITableViewCell {
     var  headImagePushClouse   : MonentDetailHeadImageType?
-    var   pushImageClouse : MonentDetialImageType?
+    var   pushImageClouse      : MonentDetialImageType?
+    var   showCommentClouse   : TopicDetialType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -39,7 +42,7 @@ class TopicDetialTableViewCell: UITableViewCell {
             })
             return
         }
-        NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
+        NetWorkTool.shareInstance.topic_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
@@ -51,10 +54,15 @@ class TopicDetialTableViewCell: UITableViewCell {
             }else if (info?["code"] as? String == "200"){
                 //服务器
                 self?.likeBtn.setTitle("\(Int(truncating: (self?.TopicDetialModel.love!)!) + 1)", for: .normal)
+                self?.likeBtn.isSelected = true
             }
         }
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
+        if self.showCommentClouse != nil{
+            self.showCommentClouse!()
+        }
+        self.commentBtn.setTitle("\(Int(truncating: self.TopicDetialModel.comment!) + 1)", for: .normal)
     }
     var TopicDetialModel : NborCircleModel!{
         didSet {
@@ -82,7 +90,6 @@ class TopicDetialTableViewCell: UITableViewCell {
             str.addAttributes([NSAttributedStringKey.foregroundColor : UIColor.blue ,NSAttributedStringKey.font :  UIFont.systemFont(ofSize: 18)], range: NSRange.init(range))
             self.textLbl.attributedText = str
              }
-          
             }
           
             if let  likeNum = TopicDetialModel.love{

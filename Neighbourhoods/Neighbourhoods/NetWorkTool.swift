@@ -144,7 +144,7 @@ extension NetWorkTool {
        
         let urlString = "http://106.15.199.8/llb/api/nbor/nbor_list"
         //2.获取请求参数
-        let parameters = ["sort" : sort.rawValue , "p" : p, "uid " :uid ] as [String : Any]
+        let parameters = ["sort" : sort.rawValue , "p" : p, "uid" :uid ] as [String : Any]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
             //获取字典数据
@@ -176,12 +176,14 @@ extension NetWorkTool {
     }
     
     //关注动态user/atten_nbor
-    func  atten_nbor(_ token:String ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func  atten_nbor(_ token:String,uid : NSInteger, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //1.获取请求的URLString
         let urlString = "http://106.15.199.8/llb/api/user/atten_nbor"
+        //2.获取请求参数
+        let parameters = ["uid" :uid] as [String : Any]
         //3.发送请求参数
-        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)
@@ -216,11 +218,11 @@ extension NetWorkTool {
     //
     
     //圈内动态 nbor / nbor_list
-    func  nbor_Detail(id : NSInteger ,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func  nbor_Detail(id : NSInteger, uid : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         let urlString = "http://106.15.199.8/llb/api/nbor/nbor_det"
         //2.获取请求参数
-        let parameters = ["id" :  id] as [String : Any]
+        let parameters = ["uid" : uid ,"id" :  id] as [String : Any]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
             //获取字典数据
@@ -267,12 +269,30 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
+    
+    
+    func  choice_topic(p : NSInteger , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/nbor/choice_topic"
+        //2.获取请求参数
+        let parameters = ["p" : p] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
  //nbor/topic_det
-    func topic_det(id : NSInteger , p:NSInteger, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func topic_det(id : NSInteger , p:NSInteger,uid:NSInteger, finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         let urlString = "http://106.15.199.8/llb/api/nbor/topic_det"
         //2.获取请求参数
-        let parameters = ["id" : id ,"p" : p] as [String : Any]
+        let parameters = ["id" : id ,"p" : p,"uid":uid] as [String : Any]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
             //获取字典数据
@@ -324,6 +344,48 @@ extension NetWorkTool{
             finished(resultDict, error)
         }
     }
+ //topic_post_publish
+    func topic_post_publish(_ token: String,
+                   topic_id  : NSInteger,
+                   image  : [UIImage],
+                   content : String,
+                   finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/topic_post_publish"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        var parameters =  ["content":content,"topic_id":topic_id] as [String : Any]
+        var up_cate = 0
+        if image.count > 0 {
+            up_cate = image.count == 1 ? 1 : 2
+            parameters.updateValue(up_cate, forKey: "up_cate")
+        }
+        //3.发送请求参数
+        post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
+            //确定选择类型
+            if image.count > 0 {
+                var  cateName =  ""
+                cateName =  image.count > 1 ?  "image[]" :  "image"
+                for pic in image {
+                    if let imageData = UIImageJPEGRepresentation(pic, 0.5){
+                        let imageName =  self?.getNowTime()
+                        formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName! , mimeType: "image/png")
+                    }
+                }
+            }
+            }, progress: { (Progress) in
+        }, success: { (URLSessionDataTask, success) in         //获取字典数据
+            guard let resultDict = success as? [String : AnyObject] else {
+                return
+            }
+            finished(resultDict , nil)
+        }) { (URLSessionDataTask, error) in
+            finished(nil , error)
+        }
+    }
+    
+    
+    
   //点赞接口user/nbor_zan
     func nbor_zan(token : String, nbor_id : NSNumber , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
@@ -342,7 +404,70 @@ extension NetWorkTool{
             finished(resultDict, error)
         }
     }
+    //topic  moment  click for like topic_zan
+        func topic_zan(token : String, nbor_id : NSNumber , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/topic_zan"
+        //2.获取请求参数
+        let parameters = ["nbor_id" : nbor_id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+//topic_comtZan
+    func topic_comtZan(token : String, nbor_id : NSNumber,id: NSNumber,
+                      finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/topic_comtZan"
+        //2.获取请求参数
+        let parameters = ["nbor_id" : nbor_id ,"id" :id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    
+    
+    //点赞接口user/nbor_zan
+    //commment Clik for liked
+    func nbor_comtZan(token : String, nbor_id : NSNumber,id: NSNumber,
+ finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/nbor_comtZan"
+        //2.获取请求参数
+        let parameters = ["nbor_id" : nbor_id ,"id" :id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    
 }
+
 
 //发布功能模块
 extension NetWorkTool {
@@ -652,13 +777,6 @@ extension NetWorkTool {
         }) { (URLSessionDataTask, error) in
             finished(nil , error)
         }
-        
-        
-        
-        
-        
-        
-        
     }
     
     //user/ vote 投票

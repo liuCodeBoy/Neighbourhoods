@@ -2397,10 +2397,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVr-dx-edQ">
-                                                <rect key="frame" x="318" y="10" width="37" height="15"/>
+                                                <rect key="frame" x="290" y="10" width="70" height="35"/>
                                                 <color key="backgroundColor" white="0.25" alpha="0.49513094190140844" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="15" id="9jk-vX-Ryj"/>
+                                                    <constraint firstAttribute="height" constant="35" id="vdy-HF-SAG"/>
+                                                    <constraint firstAttribute="width" constant="70" id="yjW-yC-j7w"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <state key="normal" title=" +关注 "/>
@@ -2418,13 +2419,25 @@
                                                     <segue destination="p3y-wX-WSA" kind="show" id="XBR-eP-Vao"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTE-ra-kOS">
+                                                <rect key="frame" x="15" y="10" width="70" height="35"/>
+                                                <color key="backgroundColor" white="0.25" alpha="0.49513094190000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="g1K-4R-fZN"/>
+                                                    <constraint firstAttribute="width" constant="70" id="weA-Ha-fIH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title=" 私信"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.5" alpha="0.49524097709999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="eVr-dx-edQ" secondAttribute="trailing" constant="15" id="1U2-f7-1vN"/>
                                             <constraint firstAttribute="bottom" secondItem="BZU-YR-Ek5" secondAttribute="bottom" constant="14" id="4TZ-Pl-Iee"/>
-                                            <constraint firstAttribute="trailing" secondItem="eVr-dx-edQ" secondAttribute="trailing" constant="20" id="YgK-L6-7dL"/>
+                                            <constraint firstItem="eVr-dx-edQ" firstAttribute="top" secondItem="23U-4U-f8T" secondAttribute="top" constant="10" id="7ec-nE-GZl"/>
+                                            <constraint firstItem="RTE-ra-kOS" firstAttribute="top" secondItem="eVr-dx-edQ" secondAttribute="top" id="bF4-3m-Pt0"/>
                                             <constraint firstItem="BZU-YR-Ek5" firstAttribute="leading" secondItem="23U-4U-f8T" secondAttribute="leading" constant="19" id="eMc-kB-h8z"/>
-                                            <constraint firstItem="eVr-dx-edQ" firstAttribute="top" secondItem="23U-4U-f8T" secondAttribute="top" constant="10" id="qsc-M3-c2C"/>
+                                            <constraint firstItem="RTE-ra-kOS" firstAttribute="leading" secondItem="23U-4U-f8T" secondAttribute="leading" constant="15" id="kDb-HO-PYF"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="14q-zm-0XI">
@@ -2722,7 +2735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngF-fB-i4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3023.1999999999998" y="2659.5202398800602"/>
+            <point key="canvasLocation" x="-2959.1999999999998" y="2624.4377811094455"/>
         </scene>
         <!--我的-->
         <scene sceneID="5MF-MK-zko">
