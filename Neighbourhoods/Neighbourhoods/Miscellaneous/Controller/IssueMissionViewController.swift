@@ -62,7 +62,6 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
             self.presentHintMessage(hintMessgae: "任务标题不能超过36个字", completion: nil)
             return
         }
-        // FIXME: - judge wheather the score is valid number
         guard missionScoreTF.text != nil else {
             self.presentHintMessage(hintMessgae:  "积分数不能为空", completion: nil)
             return
@@ -112,8 +111,22 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
         
         self.missionTitle.becomeFirstResponder()
         
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        
+        self.missionDetialTextView.addGestureRecognizer(upSwipe)
+        self.missionDetialTextView.addGestureRecognizer(downSwipe)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        hideKeyboard()
+    }
+    
+    @objc func hideKeyboard() {
+        self.missionScoreTF.resignFirstResponder()
+        self.missionScoreTF.resignFirstResponder()
+        self.missionDetialTextView.resignFirstResponder()
+    }
     
     @objc func hidePlaceholderLbl() {
         self.missionDetialPlaceholderLbl.isHidden = true

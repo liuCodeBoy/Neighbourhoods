@@ -15,6 +15,7 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
     @IBOutlet weak var sendBtn: UIButton!
     
     @IBOutlet weak var detialPlaceholderLbl: UILabel!
+    @IBOutlet weak var backView: UIView!
     
     var progressView: UIView?
 
@@ -166,9 +167,19 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
         topicDetialTextView.delegate = self
         topicNameField.delegate = self
         self.topicNameField.becomeFirstResponder()
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(tfDidSwipe))
-        swipe.direction = .up
-        topicDetialTextView.addGestureRecognizer(swipe)
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(tfDidSwipe))
+        upSwipe.direction = .up
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(tfDidSwipe))
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tfDidSwipe))
+        
+        topicDetialTextView.addGestureRecognizer(upSwipe)
+        topicDetialTextView.addGestureRecognizer(downSwipe)
+        backView.addGestureRecognizer(upSwipe)
+        backView.addGestureRecognizer(downSwipe)
+        backView.addGestureRecognizer(tap)
+        pickImageContainView.addGestureRecognizer(downSwipe)
+        pickImageContainView.addGestureRecognizer(upSwipe)
         
         if self.topic_id != nil {
             self.topicNameField.isHidden = true
