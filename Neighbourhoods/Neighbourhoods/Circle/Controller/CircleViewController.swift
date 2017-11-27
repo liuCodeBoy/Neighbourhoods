@@ -32,9 +32,8 @@ class CircleViewController: UIViewController {
         topicsTableView.dataSource = self
         
         let URLArr = [URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Screen%20Shot%202017-10-21%20at%205.35.48%20PM.png"),
-                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/IMG_7944.jpg"),
-                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/prototype-design-white.png"),
-                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/Sombrero.jpg")]
+                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/%E8%BD%AE%E6%92%AD%E5%9B%BE2.png"),
+                      URL(string: "http://ow1i9ri5b.bkt.clouddn.com/%E8%BD%AE%E6%92%AD%E5%9B%BE.png")]
         
         var frameY: CGFloat = 20
         

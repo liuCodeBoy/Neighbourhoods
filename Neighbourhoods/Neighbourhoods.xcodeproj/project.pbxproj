@@ -113,7 +113,6 @@
 		D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */; };
 		D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */; };
 		D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */; };
-		D3954E881FC3BAB7003C08DC /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3954E871FC3BAB7003C08DC /* Welcome.storyboard */; };
 		D3954E8C1FC3CCF9003C08DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
@@ -327,7 +326,6 @@
 		D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueMomentsViewController.xib; sourceTree = "<group>"; };
 		D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityJudgeModel.swift; sourceTree = "<group>"; };
 		D38E46631FC7FBF40009131D /* Neighbourhoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neighbourhoods.entitlements; sourceTree = "<group>"; };
-		D3954E871FC3BAB7003C08DC /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
@@ -534,8 +532,6 @@
 			children = (
 				D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */,
 				D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */,
-				D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */,
-				D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */,
 				D37974A21FAAC70E006EA0EE /* Cell */,
 			);
 			path = View;
@@ -630,6 +626,15 @@
 				D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D38C71691FCBED42001006DF /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */,
+				D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		D39F63351FAACDAE00C69CA9 /* Others */ = {
@@ -753,7 +758,6 @@
 			isa = PBXGroup;
 			children = (
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
-				D3954E871FC3BAB7003C08DC /* Welcome.storyboard */,
 				D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */,
 				D35B2D121FBB0B3800F1E8DF /* Model */,
 				D31CD4A61F91DA5300195686 /* Controller */,
@@ -993,6 +997,7 @@
 		D3FAC7E51FA9755200D972B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D38C71691FCBED42001006DF /* Loading */,
 				D33A69BD1FC8108200A738A3 /* Error */,
 				D3F5BBFF1FAB17C7000A6CF5 /* Spring */,
 				D3F5BBFE1FAB17BB000A6CF5 /* Share */,
@@ -1109,7 +1114,6 @@
 				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
 				D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
-				D3954E881FC3BAB7003C08DC /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,8 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     private var pages = 1
     private var page  = 1
     
+    var progressView: UIView?
+    
     var socialCharityListArray = [SocialOrgListModel]()
     
     override func viewDidLoad() {
@@ -55,8 +57,21 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.socialCharityList(p: 1) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
+                
+                // MARK:- data fetched successfully
+                UIView.animate(withDuration: 0.25, animations: {
+                    self?.progressView?.alpha = 0
+                })
+                
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
                 }

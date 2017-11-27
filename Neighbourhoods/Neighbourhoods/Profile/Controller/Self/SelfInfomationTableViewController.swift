@@ -17,7 +17,8 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
     @IBOutlet weak var discrictLbl: UILabel!
     @IBOutlet weak var verifyImg: UIImageView!
     
-    
+    var progressView: UIView?
+
     lazy var images = [UIImage]()
     
     var genderPicker: GenderSelectPickerView?
@@ -103,8 +104,23 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                     guard let access_token = UserDefaults.standard.string(forKey: "token") else {
                         return
                     }
+                    
+                    // MARK:- fetching data
+                    let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+                    progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                    progress.loadingHintLbl.text = "加载中"
+                    self.progressView = progress
+                    self.view.addSubview(progress)
+                    
                     // MARK:- upload avatar to the server
                     NetWorkTool.shareInstance.updateProfile(access_token, cate: nil, content: nil, content_sex: nil, image: photosArr?.first!, finished: { [weak self](result, error) in
+                        
+                        // MARK:- data fetched successfully
+                        UIView.animate(withDuration: 0.25, animations: {
+                            self?.progressView?.alpha = 0
+                        }, completion: { (_) in
+                            self?.progressView?.removeFromSuperview()
+                        })
                         
                         if error != nil {
                             print(error as AnyObject)
@@ -141,6 +157,9 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                 
             })
         case 2:
+            if genderPicker?.frame.origin.y == screenHeight - tabBarHeight - 240 {
+                return
+            }
             UIView.animate(withDuration: 0.2, animations: {
                 self.genderPicker?.frame = CGRect(x: 0, y: screenHeight - tabBarHeight - 240, width: screenWidth, height: 240)
             })
@@ -178,7 +197,20 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
         NetWorkTool.shareInstance.identityJudge(access_token) { [weak self](result, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
             if result!["code"] as! String == "200" {
                 let dict = result!["result"] as! [String : AnyObject]
                 let idStatus = IdentityJudgeModel.mj_object(withKeyValues: dict)
@@ -203,7 +235,19 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
         NetWorkTool.shareInstance.loadProfileInfo(access_token) { [weak self](result, error) in
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {

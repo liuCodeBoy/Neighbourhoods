@@ -165,6 +165,7 @@ class LoopView: UIView, UIScrollViewDelegate
             let imageView = UIImageView(frame: CGRect(x: CGFloat(i) * frameWidth, y: 0, width: frameWidth, height: frameHeight))
             imageView.isUserInteractionEnabled = true
             imageView.contentMode = .scaleAspectFill
+            imageView.layer.masksToBounds = true
             
             if i <= 0 {
                 imageView.sd_setImage(with: self.images.last, placeholderImage: nil)

@@ -70,6 +70,9 @@
                 <constraint firstItem="VHW-1H-ACx" firstAttribute="top" secondItem="FQE-P4-p93" secondAttribute="top" id="pBa-Ej-7rj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="FQE-P4-p93"/>
+            <connections>
+                <outlet property="loadingHintLbl" destination="rgM-X8-TYr" id="3pO-bL-o8D"/>
+            </connections>
             <point key="canvasLocation" x="220" y="33"/>
         </view>
     </objects>

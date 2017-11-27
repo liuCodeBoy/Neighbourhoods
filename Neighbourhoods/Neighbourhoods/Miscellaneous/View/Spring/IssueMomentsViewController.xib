@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IssueMomentsViewController" customModule="Neighbourhoods" customModuleProvider="target">
             <connections>
+                <outlet property="detialPlaceholder" destination="Ktz-ks-Nwr" id="4fO-Dg-FSY"/>
                 <outlet property="pickImageContainView" destination="hpq-Ct-UFZ" id="Xnp-gI-ib0"/>
                 <outlet property="sendBtn" destination="T9F-lG-3Cd" id="bC0-R1-uya"/>
                 <outlet property="topicDetialTextView" destination="89g-Bj-7eW" id="NWV-aF-hkS"/>
@@ -75,7 +76,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="r0h-I4-PNb"/>
                             </constraints>
-                            <state key="normal" title="发送">
+                            <state key="normal" title="发布">
                                 <color key="titleColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <state key="disabled">
@@ -110,6 +111,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入动态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktz-ks-Nwr">
+                    <rect key="frame" x="15" y="74" width="71.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -119,6 +126,7 @@
                 <constraint firstItem="xmh-gO-27f" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="9bA-BU-YKb"/>
                 <constraint firstItem="xmh-gO-27f" firstAttribute="top" secondItem="2uU-S5-otM" secondAttribute="bottom" id="GiB-bK-c6Z"/>
                 <constraint firstItem="ydh-Sr-w18" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="IOB-UX-DYU"/>
+                <constraint firstItem="Ktz-ks-Nwr" firstAttribute="leading" secondItem="89g-Bj-7eW" secondAttribute="leading" constant="5" id="KwM-Oq-BAR"/>
                 <constraint firstItem="89g-Bj-7eW" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.3" id="PDi-JV-CIK"/>
                 <constraint firstItem="xmh-gO-27f" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VfP-0x-t3s"/>
                 <constraint firstItem="ydh-Sr-w18" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XmS-Lw-L94"/>
@@ -127,6 +135,7 @@
                 <constraint firstItem="xmh-gO-27f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i5x-81-mGK"/>
                 <constraint firstItem="89g-Bj-7eW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="nZg-cz-deE"/>
                 <constraint firstItem="2uU-S5-otM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oqw-TK-VRk"/>
+                <constraint firstItem="Ktz-ks-Nwr" firstAttribute="top" secondItem="89g-Bj-7eW" secondAttribute="top" constant="10" id="pHr-Cq-HhV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>

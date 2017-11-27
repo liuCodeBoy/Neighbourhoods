@@ -37,7 +37,7 @@ class MessageListTableViewCell: UITableViewCell {
                 self.msgCountLbl.text = "\(count)"
             }
             if let content = viewModel?.content {
-                self.msgCountLbl.text = content
+                self.messageAbbr.text = content
             }
             if let time = viewModel?.time {
                 self.timeLbl.text = NSDate.createDateString(createAtStr: "\(time)")

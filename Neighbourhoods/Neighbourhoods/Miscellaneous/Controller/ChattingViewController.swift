@@ -15,6 +15,10 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var inputDialogueView: UIView!
     @IBOutlet weak var inputTF: UITextField!
     
+    lazy var coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
+    
+    var progressView: UIView?
+
     var to_uid: Int?
     
     var pages = 1
@@ -105,7 +109,23 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.historyRecord(access_token, p: page, to_uid: to_uid!) { [weak self](info, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
@@ -124,8 +144,16 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                 }else{
                     self?.tableView.mj_footer.endRefreshing()
                 }
+                
+                // FIXME:- under some circumsatances it will brake for upwrapping nil
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
+                }
+                
+                if CGFloat((self?.chatHistoryArray.count)!) == 0 {
+                    self?.coverView.showLab.text = "暂无任务"
+                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                    self?.view.addSubview((self?.coverView)!)
                 }
             }else{
                 //服务器

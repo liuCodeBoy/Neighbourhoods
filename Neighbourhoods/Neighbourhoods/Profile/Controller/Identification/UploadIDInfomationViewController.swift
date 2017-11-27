@@ -90,6 +90,8 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
             // MARK:- upload
             UIView.animate(withDuration: 0.25, animations: {
                 self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
             })
             if result!["code"] as! String == "400" {
                 self?.presentHintMessage(hintMessgae: "图片上传失败", completion: nil)

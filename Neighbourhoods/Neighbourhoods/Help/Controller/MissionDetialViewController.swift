@@ -9,17 +9,31 @@
 import UIKit
 
 class MissionDetialViewController: UIViewController {
+    
+    var progressView: UIView?
 
     var missionID: Int? {
         didSet {
             guard let id = self.missionID else {
                 return
             }
+            // MARK:- fetching data
+            let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+            progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+            progress.loadingHintLbl.text = "加载中"
+            self.progressView = progress
+            self.view.addSubview(progress)
             
             guard let access_token = UserDefaults.standard.string(forKey: "token") else {
                 return
             }
             NetWorkTool.shareInstance.taskDet(access_token, id: id) { [weak self](info, error) in
+                
+                // MARK:- data fetched successfully
+                UIView.animate(withDuration: 0.25, animations: {
+                    self?.progressView?.alpha = 0
+                })
+                
                 if info?["code"] as? String == "200"{
                     let result = info!["result"] as! NSDictionary
                     self?.viewModel = TaskDetModel.mj_object(withKeyValues: result)
