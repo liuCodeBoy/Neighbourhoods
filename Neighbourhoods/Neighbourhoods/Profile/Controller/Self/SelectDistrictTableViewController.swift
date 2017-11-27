@@ -14,19 +14,12 @@ class SelectDistrictTableViewController: UITableViewController {
     
     var secondVC: SelectDistrictSecondLevelTableViewController?
     
-//    var firstDName: String? {
-//        didSet {
-//            secondVC?.firstDName = self.firstDName
-//        }
-//    }
-    
+    var progressView: UIView?
     
     var pid: Int?
-    
     var id: Int? {
         didSet {
             secondVC?.pid        = self.id
-            
             secondVC?.district   = self.id
         }
     }
@@ -40,27 +33,26 @@ class SelectDistrictTableViewController: UITableViewController {
         loadFirstLevel()
         
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        let ok = UIAlertAction(title: "确定", style: .default) { (_) in
-//            let vc = self.retSegue?.source as! SelfInfomationTableViewController
-//            vc.discrictLbl.text = self.firstDName
-//            
-//        }
-//        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-//        let alert = UIAlertController(title: "提示", message: "确定选择小区", preferredStyle: .alert)
-//        alert.addAction(cancel)
-//        alert.addAction(ok)
-//        
-//        self.present(alert, animated: true, completion: nil)
-//    }
 
     
     func loadFirstLevel() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.selectDistrict(access_token, level: 1, pid: 0) { [weak self](result, error) in
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {

@@ -15,6 +15,8 @@ class MessageListTableViewCell: UITableViewCell {
     @IBOutlet weak var messageAbbr: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var msgCountLbl: UILabel!
+    
+    var uid: Int?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,11 +30,14 @@ class MessageListTableViewCell: UITableViewCell {
             if let nickname = viewModel?.from_user?.nickname {
                 self.nickName.text = nickname
             }
+            if let uid = viewModel?.from_user?.uid {
+                self.uid = uid as? Int
+            }
             if let count = viewModel?.number {
                 self.msgCountLbl.text = "\(count)"
             }
             if let content = viewModel?.content {
-                self.msgCountLbl.text = content
+                self.messageAbbr.text = content
             }
             if let time = viewModel?.time {
                 self.timeLbl.text = NSDate.createDateString(createAtStr: "\(time)")

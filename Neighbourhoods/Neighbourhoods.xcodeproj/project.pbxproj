@@ -107,12 +107,12 @@
 		D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */; };
 		D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */; };
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
+		D377DA3B1FCAF32F004B7DC8 /* MsgHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D377DA3A1FCAF32E004B7DC8 /* MsgHistoryModel.swift */; };
 		D37974A41FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */; };
 		D38305451FBC29DC00202FA2 /* SelectDistrictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */; };
 		D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */; };
 		D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */; };
 		D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */; };
-		D3954E881FC3BAB7003C08DC /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3954E871FC3BAB7003C08DC /* Welcome.storyboard */; };
 		D3954E8C1FC3CCF9003C08DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
@@ -150,6 +150,10 @@
 		D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */; };
 		D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */; };
 		D3C724C41FC9A6D900AD9D40 /* MessageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */; };
+		D3C724C81FCA61D500AD9D40 /* ChattingWithTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */; };
+		D3C724CA1FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C91FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift */; };
+		D3C724CC1FCA6DA200AD9D40 /* ChattingTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724CB1FCA6DA200AD9D40 /* ChattingTimeTableViewCell.swift */; };
+		D3C724CE1FCA6E8F00AD9D40 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724CD1FCA6E8F00AD9D40 /* ChattingViewController.swift */; };
 		D3C8640A1FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */; };
 		D3C8640C1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */; };
 		D3C8640E1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C8640D1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift */; };
@@ -315,13 +319,13 @@
 		D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityListTableViewCell.swift; sourceTree = "<group>"; };
 		D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListViewController.swift; sourceTree = "<group>"; };
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
+		D377DA3A1FCAF32E004B7DC8 /* MsgHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgHistoryModel.swift; sourceTree = "<group>"; };
 		D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMomentsTableViewCell.swift; sourceTree = "<group>"; };
 		D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictModel.swift; sourceTree = "<group>"; };
 		D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMomentsViewController.swift; sourceTree = "<group>"; };
 		D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueMomentsViewController.xib; sourceTree = "<group>"; };
 		D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityJudgeModel.swift; sourceTree = "<group>"; };
 		D38E46631FC7FBF40009131D /* Neighbourhoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neighbourhoods.entitlements; sourceTree = "<group>"; };
-		D3954E871FC3BAB7003C08DC /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
 		D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderSelectPickerView.xib; sourceTree = "<group>"; };
@@ -362,6 +366,10 @@
 		D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbourhoods-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListTableViewCell.swift; sourceTree = "<group>"; };
+		D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingWithTableViewCell.swift; sourceTree = "<group>"; };
+		D3C724C91FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingDialogueTableViewCell.swift; sourceTree = "<group>"; };
+		D3C724CB1FCA6DA200AD9D40 /* ChattingTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTimeTableViewCell.swift; sourceTree = "<group>"; };
+		D3C724CD1FCA6E8F00AD9D40 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		D3C864091FB96EDB00CE3B50 /* MyIssuedMissionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuedMissionTableViewController.swift; sourceTree = "<group>"; };
 		D3C8640B1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceivedMissionTableViewController.swift; sourceTree = "<group>"; };
 		D3C8640D1FB96F1D00CE3B50 /* MyIssuedMissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuedMissionTableViewCell.swift; sourceTree = "<group>"; };
@@ -524,8 +532,6 @@
 			children = (
 				D39D28511FB6F3E400DEF35A /* GenderSelectPickerView.swift */,
 				D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */,
-				D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */,
-				D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */,
 				D37974A21FAAC70E006EA0EE /* Cell */,
 			);
 			path = View;
@@ -620,6 +626,15 @@
 				D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D38C71691FCBED42001006DF /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				D3F47DF81FC91451001C0FEF /* UploadingDataView.swift */,
+				D3F47DFA1FC91464001C0FEF /* UploadingDataView.xib */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		D39F63351FAACDAE00C69CA9 /* Others */ = {
@@ -743,7 +758,6 @@
 			isa = PBXGroup;
 			children = (
 				D39F9C6D1F9AE46800DD46F2 /* InitialLogin.storyboard */,
-				D3954E871FC3BAB7003C08DC /* Welcome.storyboard */,
 				D3A1938B1F8DCBAA002C1E23 /* Profile.storyboard */,
 				D35B2D121FBB0B3800F1E8DF /* Model */,
 				D31CD4A61F91DA5300195686 /* Controller */,
@@ -893,6 +907,7 @@
 			isa = PBXGroup;
 			children = (
 				D3F47E091FC982F6001C0FEF /* MsgListModel.swift */,
+				D377DA3A1FCAF32E004B7DC8 /* MsgHistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -974,6 +989,7 @@
 				D3FAC7D81FA9691200D972B9 /* IssueMissionViewController.swift */,
 				D3FAC7DC1FA96A2A00D972B9 /* QuickViewMessgaesViewController.swift */,
 				D3F47E061FC971C5001C0FEF /* MessagesListViewController.swift */,
+				D3C724CD1FCA6E8F00AD9D40 /* ChattingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -981,6 +997,7 @@
 		D3FAC7E51FA9755200D972B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D38C71691FCBED42001006DF /* Loading */,
 				D33A69BD1FC8108200A738A3 /* Error */,
 				D3F5BBFF1FAB17C7000A6CF5 /* Spring */,
 				D3F5BBFE1FAB17BB000A6CF5 /* Share */,
@@ -995,6 +1012,9 @@
 				D3FAC7E21FA974DB00D972B9 /* QuickMessageListTableViewCell.swift */,
 				D3B589251FC52AF9003396D3 /* CommentQucikViewListTableViewCell.swift */,
 				D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */,
+				D3C724CB1FCA6DA200AD9D40 /* ChattingTimeTableViewCell.swift */,
+				D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */,
+				D3C724C91FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1094,7 +1114,6 @@
 				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
 				D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
-				D3954E881FC3BAB7003C08DC /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,6 +1208,7 @@
 			files = (
 				D3FAC7F61FA99B8A00D972B9 /* FigureVoteJoinViewController.swift in Sources */,
 				D31E97131FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift in Sources */,
+				D377DA3B1FCAF32F004B7DC8 /* MsgHistoryModel.swift in Sources */,
 				D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */,
 				B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */,
 				D3FAC7DA1FA9691200D972B9 /* IssueMissionViewController.swift in Sources */,
@@ -1242,6 +1262,7 @@
 				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
 				D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */,
 				D30A17E61FAF339D007820D3 /* TopicDetialTableViewCell.swift in Sources */,
+				D3C724C81FCA61D500AD9D40 /* ChattingWithTableViewCell.swift in Sources */,
 				D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */,
 				D35B2D181FBC1A8700F1E8DF /* MyIntegralModel.swift in Sources */,
 				D39D28521FB6F3E400DEF35A /* GenderSelectPickerView.swift in Sources */,
@@ -1270,6 +1291,7 @@
 				D3FE2FFE1FA45B0100FAD95E /* SocialCharityDetialViewController.swift in Sources */,
 				D3C8640C1FB96EEC00CE3B50 /* MyReceivedMissionTableViewController.swift in Sources */,
 				D31CD4A31F91B14700195686 /* CircleViewController.swift in Sources */,
+				D3C724CA1FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift in Sources */,
 				B6DAACB81FC3D526006A7C3E /* VoteActDet.swift in Sources */,
 				D3FAC7D61FA9648500D972B9 /* IssueTopicsViewController.swift in Sources */,
 				D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */,
@@ -1309,6 +1331,7 @@
 				D345ABF21FB149A900FAB15F /* Network.swift in Sources */,
 				D30ED0F41FAAF6FC007A5858 /* SettingsViewController.swift in Sources */,
 				D3A54D391FAC42430066C486 /* HelpCategoryByCompletionStatusViewController.swift in Sources */,
+				D3C724CC1FCA6DA200AD9D40 /* ChattingTimeTableViewCell.swift in Sources */,
 				D3F6B1851F9A10A0004D0A20 /* HelpViewController.swift in Sources */,
 				D3D1FD791FA80BA9009A2E58 /* LotteryTableViewCell.swift in Sources */,
 				D30A17E41FAF3318007820D3 /* SecondaryCommentDetialTableViewCell.swift in Sources */,
@@ -1327,6 +1350,7 @@
 				B6DAACBA1FC41872006A7C3E /* VoteOptionList.swift in Sources */,
 				D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */,
 				D3A2F1CC1FA890490030873F /* MissionDetialViewController.swift in Sources */,
+				D3C724CE1FCA6E8F00AD9D40 /* ChattingViewController.swift in Sources */,
 				D3A54D311FAC41540066C486 /* HelpCategoryByCompletionStatusTableViewCell.swift in Sources */,
 				D3D1FD841FA81187009A2E58 /* VoteViewController.swift in Sources */,
 				D30A17DC1FAF32B7007820D3 /* MomentsHotestTopicTableViewCell.swift in Sources */,

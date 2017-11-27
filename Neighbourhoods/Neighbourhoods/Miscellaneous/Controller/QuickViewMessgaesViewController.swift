@@ -9,13 +9,13 @@
 import UIKit
 import MJRefresh
 
-var tempCellData = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"]
-
 class QuickViewMessgaesViewController: UIViewController {
     
     private var pages = 1
     private var page  = 1
     
+    var progressView: UIView?
+
     var missionListArray = [MsgListModel]()
     var headMsgModel = MsgListModel()
 
@@ -65,7 +65,22 @@ class QuickViewMessgaesViewController: UIViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.quickMessageMain(access_token, p: page) { [weak self](info, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
@@ -129,6 +144,15 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
             return 80
         } else {
             return 148
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row > 0 {
+            let momentsCommentDetialVC = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
+            
+            momentsCommentDetialVC.id = missionListArray[indexPath.row].id
+            self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
         }
     }
     

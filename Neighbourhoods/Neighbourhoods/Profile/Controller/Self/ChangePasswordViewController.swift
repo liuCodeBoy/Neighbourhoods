@@ -19,6 +19,8 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet weak var confirmPwdView: UIView!
     @IBOutlet weak var confirmChangeBtn: UIButton!
     
+    var progressView: UIView?
+
     @IBAction func confirmChangeClicked(_ sender: UIButton) {
         
         if oldPassword.text == "" || newPassword.text == "" || confirmPassword.text == "" {
@@ -34,8 +36,20 @@ class ChangePasswordViewController: UIViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "修改中"
+        self.progressView = progress
+        self.view.addSubview(progress)
         //judge whether the old pwd is right
         NetWorkTool.shareInstance.changePwd(access_token, oldpwd: oldPassword.text!, newpwd: newPassword.text!) { [weak self](result, error) in
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "400.4" {

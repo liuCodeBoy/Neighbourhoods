@@ -57,6 +57,7 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                 }else{
                     self?.tableView.mj_footer.endRefreshing()
                 }
+                // FIXME:- under some circumsatances it will brake for upwrapping nil
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
                 }

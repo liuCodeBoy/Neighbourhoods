@@ -10,8 +10,14 @@ import UIKit
 import TZImagePickerController
 import NoticeBar
 class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+    
     @IBOutlet weak var topicTitle: UILabel!
     @IBOutlet weak var sendBtn: UIButton!
+    
+    @IBOutlet weak var detialPlaceholderLbl: UILabel!
+    
+    var progressView: UIView?
+
     var  topic_id : NSInteger?
     var commentLabel : String? {
         didSet{
@@ -32,6 +38,7 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
     
     func textViewDidChange(_ textView: UITextView) {
         self.commentLabel = textView.text
+        self.detialPlaceholderLbl.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -60,6 +67,8 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
         }
     }
     @IBAction func issueBtn(_ sender: UIButton) {
+        self.topicNameField.resignFirstResponder()
+        self.topicDetialTextView.resignFirstResponder()
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
@@ -68,8 +77,24 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
             self.presentHintMessage(hintMessgae:  "话题描述不能为空", completion: nil)
             return
         }
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "发布中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         if self.topic_id != nil {
             NetWorkTool.shareInstance.topic_post_publish(UserDefaults.standard.string(forKey: "token")!, topic_id: self.topic_id!, image: images, content: topicDetialTextView.text!) { [weak self](info, error) in
+                
+                // MARK:- data fetched successfully
+                UIView.animate(withDuration: 0.25, animations: {
+                    self?.progressView?.alpha = 0
+                }, completion: { (_) in
+                    self?.progressView?.removeFromSuperview()
+                })
+                
                 if info?["code"] as? String == "200"{
                     let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1), barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                     let noticeBar = NoticeBar(config: config)
@@ -97,6 +122,14 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
             }
         NetWorkTool.shareInstance.topic_publish(UserDefaults.standard.string(forKey: "token")!, image: images, name: topicNameField.text!, content: topicDetialTextView.text!)  { [weak self](info, error) in
             if info?["code"] as? String == "200"{
+                
+                // MARK:- data fetched successfully
+                UIView.animate(withDuration: 0.25, animations: {
+                    self?.progressView?.alpha = 0
+                }, completion: { (_) in
+                    self?.progressView?.removeFromSuperview()
+                })
+                
                 let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1), barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {

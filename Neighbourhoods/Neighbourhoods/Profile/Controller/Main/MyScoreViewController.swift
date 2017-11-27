@@ -15,6 +15,8 @@ class MyScoreViewController: UIViewController {
     
     @IBOutlet weak var allScoreLbl: UILabel!
     
+    var progressView: UIView?
+
     var score: String?
     
     private var pages = 1
@@ -68,8 +70,19 @@ class MyScoreViewController: UIViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
         NetWorkTool.shareInstance.myScore(access_token, p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
+                
+                // MARK:- data fetched successfully
+                UIView.animate(withDuration: 0.25, animations: {
+                    self?.progressView?.alpha = 0
+                })
                 
                 guard let pages  = info?["result"]?["pages"] as? Int else {
 //                    self?.coverView.showLab.text = "暂无积分"

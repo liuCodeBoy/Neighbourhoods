@@ -24,6 +24,8 @@ class ProfileReportViewController: UIViewController, UITextViewDelegate {
     //定义默认上传图片的最大数额
     let maxNum = 3
     
+    var progressView: UIView?
+    
     lazy var images = [UIImage]()
     
     override func viewDidLoad() {
@@ -54,8 +56,22 @@ class ProfileReportViewController: UIViewController, UITextViewDelegate {
             })
             return
         }
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "提交中"
+        self.progressView = progress
+        self.view.addSubview(progress)
       
         NetWorkTool.shareInstance.report(UserDefaults.standard.string(forKey: "token")!, image: images, content: reportTextField.text) { [weak self](info, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if info?["code"] as? String == "200"{
                 let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)

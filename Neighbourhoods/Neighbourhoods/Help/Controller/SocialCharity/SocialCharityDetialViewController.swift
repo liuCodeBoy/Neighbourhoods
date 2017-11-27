@@ -19,6 +19,8 @@ class SocialCharityDetialViewController: UIViewController {
     @IBOutlet weak var detialTextView: UITextView!
     @IBOutlet weak var image: UIImageView!
     
+    var progressView: UIView?
+
     var socialCharityDetial = SocialOrgDetModel()
     
     override func viewDidLoad() {
@@ -28,7 +30,22 @@ class SocialCharityDetialViewController: UIViewController {
         setNavBarBackBtn()
         
         //MARK: - load data
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.socialCharityDetial(id: 1) { [weak self](result, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if error != nil {
                 print(error as AnyObject)
             } else {

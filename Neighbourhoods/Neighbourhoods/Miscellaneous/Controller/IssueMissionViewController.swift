@@ -10,6 +10,8 @@ import UIKit
 import NoticeBar
 class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextViewDelegate {
     
+    var progressView: UIView?
+    
     @IBOutlet weak var sendBtn: UIButton!
     var commentLabel : String? {
         didSet{
@@ -23,6 +25,7 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
     
     func textViewDidChange(_ textView: UITextView) {
         self.commentLabel = textView.text
+        self.missionDetialPlaceholderLbl.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -33,22 +36,30 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
     @IBOutlet weak var missionTitle: UITextField!
     @IBOutlet weak var missionScoreTF: UITextField!
     @IBOutlet weak var missionDetialTextView: UITextView!
+    @IBOutlet weak var missionDetialPlaceholderLbl: UILabel!
     @IBAction func backBtn(_ sender: UIButton) {
         self.dismiss(animated: true) {
             
         }
     }
     @IBAction func issueBtn(_ sender: UIButton) {
+        self.missionTitle.resignFirstResponder()
+        self.missionScoreTF.resignFirstResponder()
+        self.missionDetialTextView.resignFirstResponder()
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
         guard  missionTitle.text != nil else{
-            self.presentHintMessage(hintMessgae:  "话题不能为空", completion: nil)
+            self.presentHintMessage(hintMessgae:  "任务标题不能为空", completion: nil)
             return
         }
         guard  missionDetialTextView.text != nil else {
-            self.presentHintMessage(hintMessgae:  "话题描述不能为空", completion: nil)
+            self.presentHintMessage(hintMessgae:  "任务详情不能为空", completion: nil)
+            return
+        }
+        if (CGFloat((missionTitle.text?.count)!) > 36) == true {
+            self.presentHintMessage(hintMessgae: "任务标题不能超过36个字", completion: nil)
             return
         }
         // FIXME: - judge wheather the score is valid number
@@ -56,7 +67,23 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
             self.presentHintMessage(hintMessgae:  "积分数不能为空", completion: nil)
             return
         }
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "发布中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.task_publish(UserDefaults.standard.string(forKey: "token")!, title: missionTitle.text!, content: missionDetialTextView.text!, integral: Int(missionScoreTF.text!)!){ [weak self](info, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if info?["code"] as? String == "200"{
                 let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor: UIColor.blue, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
@@ -84,6 +111,12 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
         missionDetialTextView.delegate = self
         
         self.missionTitle.becomeFirstResponder()
+        
+    }
+    
+    
+    @objc func hidePlaceholderLbl() {
+        self.missionDetialPlaceholderLbl.isHidden = true
     }
 
 }

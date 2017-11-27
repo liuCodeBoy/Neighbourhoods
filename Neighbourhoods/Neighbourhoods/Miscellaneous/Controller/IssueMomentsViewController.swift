@@ -11,7 +11,11 @@ import NoticeBar
 import TZImagePickerController
 class IssueMomentsViewController: UIViewController, UITextViewDelegate {
     
+    var progressView: UIView?
+    
     @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var detialPlaceholder: UILabel!
+    
     var commentLabel : String? {
         didSet{
             if commentLabel?.count == 0 {
@@ -24,6 +28,7 @@ class IssueMomentsViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         self.commentLabel = textView.text
+        self.detialPlaceholder.isHidden = true
     }
     
     @IBOutlet weak var pickImageContainView: UIView!
@@ -46,12 +51,29 @@ class IssueMomentsViewController: UIViewController, UITextViewDelegate {
         }
     }
     @IBAction func issueBtn(_ sender: UIButton) {
+        self.topicDetialTextView.resignFirstResponder()
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             self.presentHintMessage(hintMessgae:  "你还未登录", completion: nil)
             return
         }
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "发布中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.nbor_publish(UserDefaults.standard.string(forKey: "token")!, image: images, content: topicDetialTextView.text) { [weak self](info, error) in
-              if info?["code"] as? String == "200"{
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
+            if info?["code"] as? String == "200"{
             let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
             let noticeBar = NoticeBar(config: config)
             noticeBar.show(duration: 0.25, completed: {

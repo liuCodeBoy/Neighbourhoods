@@ -14,13 +14,11 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
     
     var thirdLevelList = [SelectDistrictModel]()
     
+    var progressView: UIView?
+    
     var district: Int?
     var dong    : Int?
     var door    : Int?
-    
-//    var firstDName: String?
-//    var secondDName: String?
-//    var thirdDName: String?
     
     var pid: Int?
     
@@ -43,7 +41,23 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.selectDistrict(access_token, level: 3, pid: self.pid!) { [weak self](result, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
@@ -76,7 +90,23 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
             guard let access_token = UserDefaults.standard.string(forKey: "token") else {
                 return
             }
+            
+            // MARK:- fetching data
+            let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+            progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+            progress.loadingHintLbl.text = "上传中"
+            self.progressView = progress
+            self.view.addSubview(progress)
+            
             NetWorkTool.shareInstance.upDistrict(access_token, district: self.district!, dong: self.dong!, door: self.door!, finished: { [weak self](result, error) in
+                
+                // MARK:- data fetched successfully
+                UIView.animate(withDuration: 0.25, animations: {
+                    self?.progressView?.alpha = 0
+                }, completion: { (_) in
+                    self?.progressView?.removeFromSuperview()
+                })
+                
                 if error != nil {
                     print(error as AnyObject)
                     self?.presentHintMessage(hintMessgae: error as! String, completion: nil)
@@ -92,7 +122,7 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
             
         }
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        let alert = UIAlertController(title: "提示", message: "确定", preferredStyle: .alert)
+        let alert = UIAlertController(title: "提示", message: "确定选择小区？", preferredStyle: .alert)
         alert.addAction(cancel)
         alert.addAction(ok)
 

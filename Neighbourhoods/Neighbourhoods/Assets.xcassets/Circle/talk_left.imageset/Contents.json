@@ -13,14 +13,14 @@
           "height" : 1
         },
         "cap-insets" : {
-          "bottom" : 25,
-          "top" : 24,
+          "bottom" : 19,
+          "top" : 60,
           "right" : 12,
-          "left" : 21
+          "left" : 28
         }
       },
       "idiom" : "universal",
-      "filename" : "talk_left.png",
+      "filename" : "80白.png",
       "scale" : "2x"
     },
     {
