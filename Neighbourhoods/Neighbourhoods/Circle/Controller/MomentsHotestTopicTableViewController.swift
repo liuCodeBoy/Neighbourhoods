@@ -90,6 +90,9 @@ class MomentsHotestTopicTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MomentsHotestTopicCell") as! MomentsHotestTopicTableViewCell
         let modelArr =  self.rotaionArray
+        guard self.rotaionArray.count > 0  else{
+            return cell
+        }
         let  model =  modelArr[indexPath.row]
         cell.momentsCellModel = model
         cell.pushImageClouse = {(imageArr, index) in

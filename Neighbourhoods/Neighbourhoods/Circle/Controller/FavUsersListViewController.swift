@@ -52,7 +52,6 @@ class FavUsersListViewController: UIViewController {
         }
     }
     
-    
 }
 
 extension FavUsersListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -64,6 +63,9 @@ extension FavUsersListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavUsersListCell") as! FavUsersListTableViewCell
+        guard self.followingList.count > 0  else{
+            return cell
+        }
         cell.viewModel = followingList[indexPath.row]
         return cell
     }
