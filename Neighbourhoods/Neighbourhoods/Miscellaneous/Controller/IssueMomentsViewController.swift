@@ -103,6 +103,29 @@ class IssueMomentsViewController: UIViewController, UITextViewDelegate {
         setUpHeaderImageView()
         topicDetialTextView.delegate = self
         self.topicDetialTextView.becomeFirstResponder()
+        
+        
+        // MARK:- resign first responder to hide keyboard
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        upSwipe.direction = .up
+        
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        downSwipe.direction = .down
+
+        topicDetialTextView.addGestureRecognizer(upSwipe)
+        topicDetialTextView.addGestureRecognizer(downSwipe)
+        
+        pickImageContainView.addGestureRecognizer(downSwipe)
+        pickImageContainView.addGestureRecognizer(upSwipe)
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        hideKeyboard()
+    }
+    
+    @objc func hideKeyboard() {
+        self.topicDetialTextView.resignFirstResponder()
     }
 
     deinit {        

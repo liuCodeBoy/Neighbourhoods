@@ -61,7 +61,7 @@ class SocialCharityDetialViewController: UIViewController {
                     self?.phoneNumber.text = viewModel?.phone
                     self?.emailAddress.text = viewModel?.email
                     self?.detialTextView.text = viewModel?.content
-                    self?.image.sd_setImage(with: URL.init(string: "\(String(describing: viewModel?.picture?.first))"), placeholderImage: #imageLiteral(resourceName: "id_card_authentication_succeeded"), options: .continueInBackground, completed: nil)
+                    self?.image.sd_setImage(with: URL.init(string: "\(String(describing: viewModel?.picture?.first))"), placeholderImage: UIImage(), options: .continueInBackground, completed: nil)
                 }
                 
             }
