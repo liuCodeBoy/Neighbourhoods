@@ -32,6 +32,8 @@ class MissionDetialViewController: UIViewController {
                 // MARK:- data fetched successfully
                 UIView.animate(withDuration: 0.25, animations: {
                     self?.progressView?.alpha = 0
+                }, completion: { (_) in
+                    self?.progressView?.removeFromSuperview()
                 })
                 
                 if info?["code"] as? String == "200"{

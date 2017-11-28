@@ -100,8 +100,10 @@ class OthersMomentsViewController: UIViewController {
                     self?.pages = (pages as! Int)
                 }
                
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
                 let result   = info!["result"]!["nbor_list"] as! [NSDictionary]
                 for i in 0..<result.count

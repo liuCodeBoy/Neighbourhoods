@@ -40,6 +40,13 @@ class MyScoreViewController: UIViewController {
         
         lastedRequest(p: page)
         loadRefreshComponet()
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
     }
     
     func loadRefreshComponet() -> () {
@@ -70,18 +77,15 @@ class MyScoreViewController: UIViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        // MARK:- fetching data
-        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        progress.loadingHintLbl.text = "加载中"
-        self.progressView = progress
-        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.myScore(access_token, p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 
                 // MARK:- data fetched successfully
                 UIView.animate(withDuration: 0.25, animations: {
                     self?.progressView?.alpha = 0
+                }, completion: { (_) in
+                    self?.progressView?.removeFromSuperview()
                 })
                 
                 guard let pages  = info?["result"]?["pages"] as? Int else {
@@ -105,8 +109,10 @@ class MyScoreViewController: UIViewController {
                 }else{
                     self?.receiveScoreTableView.mj_footer.endRefreshing()
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
                 if CGFloat((self?.myScoreArray.count)!) > 0 {
                     self?.coverView.removeFromSuperview()

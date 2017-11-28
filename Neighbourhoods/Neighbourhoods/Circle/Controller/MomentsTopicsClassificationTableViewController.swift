@@ -58,8 +58,10 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                     self?.tableView.mj_footer.endRefreshing()
                 }
                 // FIXME:- under some circumsatances it will brake for upwrapping nil
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
             }else{
                 //服务器
@@ -91,8 +93,10 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                 }else{
                     self?.tableView.mj_footer.endRefreshing()
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
             }else{
                 //服务器
@@ -105,6 +109,9 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           let destVC = self.storyboard?.instantiateViewController(withIdentifier: "TopicDetialTableVC") as! TopicDetialTableViewController
+        guard rotaionArray.count > 0  else {
+            return
+        }
         destVC.id = self.rotaionArray[indexPath.row].id
         self.navigationController?.pushViewController(destVC, animated: true)
     }

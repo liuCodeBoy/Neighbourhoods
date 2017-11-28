@@ -24,3 +24,4 @@ class UserInfoModel: NSObject {
     @objc var status         : NSNumber?
 }
 
+

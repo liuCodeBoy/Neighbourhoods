@@ -29,6 +29,13 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
         setNavBarTitle(title: "社会公益组织")
         setNavBarBackBtn()
         
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         lastedRequest(p: page)
         loadRefreshComponet()
         
@@ -57,12 +64,6 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
-        // MARK:- fetching data
-        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        progress.loadingHintLbl.text = "加载中"
-        self.progressView = progress
-        self.view.addSubview(progress)
         
         NetWorkTool.shareInstance.socialCharityList(p: 1) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
@@ -70,6 +71,8 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
                 // MARK:- data fetched successfully
                 UIView.animate(withDuration: 0.25, animations: {
                     self?.progressView?.alpha = 0
+                }, completion: { (_) in
+                    self?.progressView?.removeFromSuperview()
                 })
                 
                 if let pages  = info!["result"]!["pages"] {
@@ -89,8 +92,10 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
                 }else{
                     self?.socialCharityListTableView.mj_footer.endRefreshing()
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
             }else{
                 //服务器

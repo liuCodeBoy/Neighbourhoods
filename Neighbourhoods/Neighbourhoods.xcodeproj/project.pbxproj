@@ -83,6 +83,7 @@
 		D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */; };
 		D341AAA71F9AEE4D00E640E1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */; };
 		D341AAAA1F9AF14100E640E1 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */; };
+		D34455E11FCD02DF00800988 /* MyCircleMomentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34455E01FCD02DF00800988 /* MyCircleMomentsModel.swift */; };
 		D345ABF21FB149A900FAB15F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D345ABF11FB149A900FAB15F /* Network.swift */; };
 		D345ABF51FB1505B00FAB15F /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D345ABF41FB1505B00FAB15F /* TaskListModel.swift */; };
 		D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D347E5A51FA2091000FFE815 /* SpringView.xib */; };
@@ -295,6 +296,7 @@
 		D341AAA41F9AEE3F00E640E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D341AAA61F9AEE4D00E640E1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		D34455E01FCD02DF00800988 /* MyCircleMomentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCircleMomentsModel.swift; sourceTree = "<group>"; };
 		D345ABF11FB149A900FAB15F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D345ABF41FB1505B00FAB15F /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
 		D347E5A51FA2091000FFE815 /* SpringView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpringView.xib; sourceTree = "<group>"; };
@@ -586,6 +588,7 @@
 				D35B2D171FBC1A8700F1E8DF /* MyIntegralModel.swift */,
 				D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */,
 				D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */,
+				D34455E01FCD02DF00800988 /* MyCircleMomentsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1315,6 +1318,7 @@
 				D31B54AF1FB1AF29003549AF /* SocialOrgDetModel.swift in Sources */,
 				B62C7D8F1FC0351F00772187 /* TopicCommentVC.swift in Sources */,
 				D31E971B1FA9FEB100A78D3A /* ProfileTableViewController.swift in Sources */,
+				D34455E11FCD02DF00800988 /* MyCircleMomentsModel.swift in Sources */,
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
 				D3524C5F1FB40994004240A5 /* ProfileFollowingTableViewCell.swift in Sources */,
 				D30A17D81FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift in Sources */,

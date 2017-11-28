@@ -35,6 +35,13 @@ class HelpCategoryByTimeViewController: UIViewController, UITableViewDelegate, U
         tableview.dataSource = self
         lastedRequest(p: page)
         loadRefreshComponet()
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 151)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
     }
     
     func loadRefreshComponet() -> () {
@@ -62,21 +69,17 @@ class HelpCategoryByTimeViewController: UIViewController, UITableViewDelegate, U
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
 
-        // MARK:- fetching data
-        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 151)
-        progress.loadingHintLbl.text = "加载中"
-        self.progressView = progress
-        self.view.addSubview(progress)
-        
         NetWorkTool.shareInstance.taskList(sort: "time", p: page) { [weak self](info, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if info?["code"] as? String == "200"{
-                
-                // MARK:- data fetched successfully
-                UIView.animate(withDuration: 0.25, animations: {
-                    self?.progressView?.alpha = 0
-                })
-                
+                 
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
                 }
@@ -94,8 +97,10 @@ class HelpCategoryByTimeViewController: UIViewController, UITableViewDelegate, U
                 }else{
                     self?.tableview.mj_footer.endRefreshing()
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
             }else{
                 //服务器

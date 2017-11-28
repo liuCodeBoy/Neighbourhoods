@@ -37,6 +37,13 @@ class MyIssuedMissionTableViewController: UITableViewController {
         setNavBarTitle(title: "我发布的任务")
         setNavBarBackBtn()
         
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 90)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
     }
 
     func loadRefreshComponet() -> () {
@@ -66,12 +73,6 @@ class MyIssuedMissionTableViewController: UITableViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        // MARK:- fetching data
-        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        progress.loadingHintLbl.text = "加载中"
-        self.progressView = progress
-        self.view.addSubview(progress)
         
         NetWorkTool.shareInstance.myTask(access_token, type: 1, p: page, finished: { [weak self](info, error) in
             
@@ -101,11 +102,16 @@ class MyIssuedMissionTableViewController: UITableViewController {
                     self?.tableView.mj_footer.endRefreshing()
                 }
                 // FIXME:- under some circumsatances it will brake for upwrapping nil
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
                 
-                if CGFloat((self?.myMissionArray.count)!) == 0 {
+                guard let arrayCount = self?.myMissionArray.count else {
+                    return
+                }
+                if arrayCount == 0 {
                     self?.coverView.showLab.text = "暂无任务"
                     self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
                     self?.view.addSubview((self?.coverView)!)
