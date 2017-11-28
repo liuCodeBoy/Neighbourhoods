@@ -31,6 +31,7 @@
 		B692F89F1F91F1A700C75B41 /* SDWebImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B692F8991F91F17E00C75B41 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692F8A01F91F1DF00C75B41 /* LoopView.swift */; };
 		B69850F41FC154AC0012FC1D /* LotteryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69850F31FC154AB0012FC1D /* LotteryListModel.swift */; };
+		B69FC87A1FCCFF2800817409 /* NoticedetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC8791FCCFF2800817409 /* NoticedetModel.swift */; };
 		B6B6E0671FB9D2BA00CCD567 /* NoMissionCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B6E0661FB9D2B900CCD567 /* NoMissionCoverView.swift */; };
 		B6DAACB61FC3BE28006A7C3E /* VoteListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAACB51FC3BE28006A7C3E /* VoteListModel.swift */; };
 		B6DAACB81FC3D526006A7C3E /* VoteActDet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAACB71FC3D526006A7C3E /* VoteActDet.swift */; };
@@ -243,6 +244,7 @@
 		B692F89A1F91F17E00C75B41 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
 		B692F8A01F91F1DF00C75B41 /* LoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
 		B69850F31FC154AB0012FC1D /* LotteryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryListModel.swift; sourceTree = "<group>"; };
+		B69FC8791FCCFF2800817409 /* NoticedetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticedetModel.swift; sourceTree = "<group>"; };
 		B6B6E0661FB9D2B900CCD567 /* NoMissionCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMissionCoverView.swift; sourceTree = "<group>"; };
 		B6DAACB51FC3BE28006A7C3E /* VoteListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListModel.swift; sourceTree = "<group>"; };
 		B6DAACB71FC3D526006A7C3E /* VoteActDet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteActDet.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 				B6DAACB91FC41872006A7C3E /* VoteOptionList.swift */,
 				B63A2E581FC595B20026D53F /* User_detModel.swift */,
 				B657A05F1FC852710021CA4F /* VoteResultModel.swift */,
+				B69FC8791FCCFF2800817409 /* NoticedetModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1321,6 +1324,7 @@
 				D3A54D3B1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift in Sources */,
 				D3A54D461FAD622D0066C486 /* ActivityVoteCounsultantCompletedViewController.swift in Sources */,
 				D3A193591F8DC74D002C1E23 /* AppDelegate.swift in Sources */,
+				B69FC87A1FCCFF2800817409 /* NoticedetModel.swift in Sources */,
 				D3D1FD751FA80B8F009A2E58 /* SocialAnnouncementTableViewCell.swift in Sources */,
 				D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */,
 				D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */,

@@ -16,12 +16,25 @@ class SocialAnnouncementDetialViewController: UIViewController,UITableViewDelega
     var webViewHeight : CGFloat = 0
     var  detailView   : UIView?
     var  titleView    : UIView?
+    var  progressView: UIView?
+
     var webFont = 100
+    var noticModel : NoticedetModel?
+    
     //新闻url
     var  url : NSURL?
+    var  id  : NSNumber?
     override func viewDidLoad() {
         super.viewDidLoad()
         createTableView()
+        //添加进度
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
+        loadDetRequest()
     }
     func createTableView() -> () {
         self.webViewHeight = 0.0;
@@ -37,12 +50,27 @@ class SocialAnnouncementDetialViewController: UIViewController,UITableViewDelega
         self.view.addSubview(self.tableView)
     }
     
+      //MARK: - 请求参数
+    func loadDetRequest(){
+        NetWorkTool.shareInstance.announcementNotice_det(id: self.id as! Int) { [weak self](info, error) in
+            if info?["code"] as? String == "200"{
+                let result  = info!["result"] as! NSDictionary
+                    if  let model = NoticedetModel.mj_object(withKeyValues: result) {
+                    self?.noticModel = model
+                }
+                self?.tableView.reloadData()
+            }else{
+                //服务器
+            }
+        }
+    }
+    
+    
     func createWebView()
     {
         let wkWebConfig = WKWebViewConfiguration()
         let wkUController = WKUserContentController()
         wkWebConfig.userContentController = wkUController
-        
         
         // 自适应屏幕宽度js
         let jSString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
@@ -71,7 +99,6 @@ class SocialAnnouncementDetialViewController: UIViewController,UITableViewDelega
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context:
         UnsafeMutableRawPointer?) {
-        
         self.webView.evaluateJavaScript("document.body.clientHeight") { (anyreult, error) in
             if (error == nil) {
                 let height = anyreult as! CGFloat + 50
@@ -88,6 +115,12 @@ class SocialAnnouncementDetialViewController: UIViewController,UITableViewDelega
     }
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         webView.reload()
+    }
+    // 页面加载完成之后调用
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if self.progressView != nil {
+        self.progressView?.removeFromSuperview()
+        }
     }
 }
 
@@ -115,7 +148,7 @@ extension  SocialAnnouncementDetialViewController {
         return 50
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 70
+        return 50
     }
     
     
@@ -124,12 +157,14 @@ extension  SocialAnnouncementDetialViewController {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //初始化热点评论
         let recommendView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 50))
-        recommendView.backgroundColor = #colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1)
+        recommendView.backgroundColor = UIColor.white
         let titleLab = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 50))
         titleLab.textAlignment = .center
         titleLab.font = UIFont.systemFont(ofSize: 18)
-        titleLab.textColor = UIColor.black
-        titleLab.text = "查看查看查看查看查看"
+        titleLab.textColor = UIColor.lightGray
+        if self.noticModel != nil {
+            titleLab.text = noticModel?.title
+        }
         recommendView.addSubview(titleLab)
         return  recommendView
         
@@ -137,14 +172,24 @@ extension  SocialAnnouncementDetialViewController {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let recommendView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 70))
-        recommendView.backgroundColor = #colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1)
-        let titleLab = UILabel.init()
-        titleLab.center.y = recommendView.center.y
-        titleLab.center.x = recommendView.center.x
-        titleLab.font = UIFont.systemFont(ofSize: 18)
-        titleLab.textColor = UIColor.black
-        titleLab.text = "查看查看查看查看查看"
+        recommendView.backgroundColor = UIColor.white
+        let titleLab = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 25))
+        titleLab.textAlignment = .right
+        titleLab.font = UIFont.systemFont(ofSize: 14)
+        titleLab.textColor = UIColor.lightGray
+      
+        let timeLab = UILabel.init(frame: CGRect.init(x: 0, y:25, width: screenWidth, height: 25))
+        timeLab.textAlignment = .right
+        timeLab.font = UIFont.systemFont(ofSize: 14)
+        timeLab.textColor = UIColor.lightGray
+        recommendView.addSubview(timeLab)
         recommendView.addSubview(titleLab)
+        if self.noticModel != nil {
+            if  noticModel?.user != nil{
+            titleLab.text = "\(String(describing: noticModel!.user!))宣"
+            }
+            timeLab.text  = noticModel?.time
+        }
         return  recommendView
     }
    
