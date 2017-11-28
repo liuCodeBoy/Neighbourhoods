@@ -109,7 +109,7 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return socialCharityListArray.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SocialCharityListCell") as! SocialCharityListTableViewCell
         cell.viewModel = socialCharityListArray[indexPath.row]

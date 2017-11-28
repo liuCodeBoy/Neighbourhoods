@@ -57,7 +57,9 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
         
-        NetWorkTool.shareInstance.sendMessage(access_token, content: inputText!, to_uid: self.to_uid!) { [weak self](reuslt, error) in
+        guard let to_uid = to_uid else { return }
+        
+        NetWorkTool.shareInstance.sendMessage(access_token, content: inputText!, to_uid: to_uid) { [weak self](reuslt, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if reuslt!["code"] as! String == "200" {
@@ -81,6 +83,7 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -133,7 +136,11 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
             temporaryPages = page
         }
         
-        NetWorkTool.shareInstance.historyRecord(access_token, p: page, to_uid: to_uid!) { [weak self](info, error) in
+        guard let to_uid = to_uid else {
+            return
+        }
+        
+        NetWorkTool.shareInstance.historyRecord(access_token, p: page, to_uid: to_uid) { [weak self](info, error) in
          
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
@@ -145,8 +152,7 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                     let taskDict =  result[i]
                     if  let taskListModel = MsgHistoryModel.mj_object(withKeyValues: taskDict) {
                         self?.chatHistoryArray.insert(taskListModel, at: 0)
-//                        self?.chatHistoryArray.append(taskListModel)
-//                        print(self?.chatHistoryArray[i].content)
+
                     }
                 }
                 self?.tableView.reloadData()
@@ -184,7 +190,7 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return chatHistoryArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
