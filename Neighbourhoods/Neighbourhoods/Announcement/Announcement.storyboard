@@ -191,7 +191,6 @@
                                             <outlet property="noticeImage" destination="R5M-Ma-Hzx" id="7m3-XO-mAm"/>
                                             <outlet property="readCount" destination="MJ5-qE-wHg" id="Iky-Tw-fpu"/>
                                             <outlet property="titleLbl" destination="JiH-wh-lb0" id="VZZ-Cs-Dxh"/>
-                                            <segue destination="5pq-Vh-5l8" kind="show" id="GpX-1C-lbV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -217,7 +216,7 @@
         <!--Social Announcement Detial View Controller-->
         <scene sceneID="YFh-fm-Cbu">
             <objects>
-                <viewController id="5pq-Vh-5l8" customClass="SocialAnnouncementDetialViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialAnoDetialVCID" id="5pq-Vh-5l8" customClass="SocialAnnouncementDetialViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d41-tF-evR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -21,7 +21,7 @@ class ProfileTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setNavBarTitle(title: "我的")
         
     }

@@ -95,6 +95,7 @@ class OthersMomentsTableViewCell: UITableViewCell {
             }else{
                 self.likeBtn.isSelected = false
             }
+         
             if let  commentNum = momentsCellModel.comment{
                 self.commentBtn.setTitle("\(commentNum)", for: .normal)
             }
