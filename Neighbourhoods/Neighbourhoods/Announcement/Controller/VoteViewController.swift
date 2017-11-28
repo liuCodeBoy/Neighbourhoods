@@ -11,14 +11,22 @@ import MJRefresh
 class VoteViewController: UIViewController{
     var page  = 1
     var pages : Int?
+    var  progressView: UIView?
     lazy var  rotaionArray = [VoteListModel]()
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableview.delegate = self
+        tableview.delegate   = self
         tableview.dataSource = self
+        //添加进度
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.tableview.addSubview(progress)
+        self.progressView = progress
+        
         loadRefreshComponet()
         refresh()
     }
@@ -59,6 +67,9 @@ class VoteViewController: UIViewController{
                     {
                         self?.rotaionArray.append(rotationModel)
                     }
+                }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
                 }
                 self?.tableview.reloadData()
                 if p == self?.pages {

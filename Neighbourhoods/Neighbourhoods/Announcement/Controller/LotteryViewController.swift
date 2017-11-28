@@ -8,13 +8,20 @@
 
 import UIKit
 class LotteryViewController: UIViewController{
-
+    var  progressView: UIView?
     lazy var  rotaionArray = [LotteryListModel]()
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
+    //添加进度
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.tableview.addSubview(progress)
+        self.progressView = progress
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +41,9 @@ class LotteryViewController: UIViewController{
                     {
                         self?.rotaionArray.append(rotationModel)
                     }
+                }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
                 }
                 self?.tableview.reloadData()
             }else{
@@ -81,9 +91,15 @@ extension LotteryViewController: UITableViewDelegate, UITableViewDataSource  {
             return
         }
         if rotaionArray.count > 0 {
+        let lotterModel = rotaionArray[indexPath.row]
+        guard (lotterModel.status != 1) else {
+            return
+            }
+        }
+        if rotaionArray.count > 0 {
         let model = rotaionArray[indexPath.row]
             lottery_judeg(token : UserDefaults.standard.string(forKey: "token")! ,id : model.id as! Int)
-   }
+     }
         
     }
     

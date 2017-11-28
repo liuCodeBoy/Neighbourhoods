@@ -17,6 +17,6 @@ class ActListModel: NSObject {
     @objc var time          : NSNumber?
     @objc var status        : NSNumber?
     @objc var cate          : NSNumber?
-    @objc var picture       : [UIImage]?
+    @objc var picture       : [String]?
 }
 

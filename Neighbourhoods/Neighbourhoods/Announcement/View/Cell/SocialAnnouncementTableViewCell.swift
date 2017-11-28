@@ -7,14 +7,13 @@
 //
 
 import UIKit
-
+import SDWebImage
 class SocialAnnouncementTableViewCell: UITableViewCell {
 
     @IBOutlet weak var noticeImage: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var detialLbl: UILabel!
-    @IBOutlet weak var commentCount: UILabel!
-    @IBOutlet weak var readCount: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,11 +28,15 @@ class SocialAnnouncementTableViewCell: UITableViewCell {
             if let content = viewModel?.content {
                 detialLbl.text = content
             }
-//            if let comment = <#optional#> {
-//                <#statements#>
-//            }
+            guard   viewModel?.picture?[0] != nil else {
+                return
+            }
+            if let avatarString  = viewModel?.picture![0] {
+            self.noticeImage.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+            }
         }
-       
+        
+
     }
 
     

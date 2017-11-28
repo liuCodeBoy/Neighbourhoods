@@ -14,7 +14,8 @@ let announcementDetialNotification = "com.NJQL.announcement"
 class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableview: UITableView!
-    
+    var progressView: UIView?
+
     private var pages = 1
     private var page  = 1
     
@@ -26,6 +27,11 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
         tableview.delegate = self
         tableview.dataSource = self
         
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.tableview.addSubview(progress)
         lastedRequest(p: page)
         loadRefreshComponet()
     }
@@ -64,6 +70,9 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
                     if  let model = ActListModel.mj_object(withKeyValues: dict) {
                         self?.noticeArray.append(model)
                     }
+                }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
                 }
                 self?.tableview.reloadData()
                 if p == self?.pages {
@@ -104,6 +113,7 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
         SocialAnnouncementDetialViewController
         let model = noticeArray[indexPath.row]
         announceVCDet.url = NSURL.init(string: model.content!)
+        announceVCDet.id = model.id
         self.navigationController?.pushViewController(announceVCDet, animated: true)
         
     }

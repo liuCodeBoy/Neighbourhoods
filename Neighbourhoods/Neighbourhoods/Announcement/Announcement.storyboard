@@ -156,40 +156,22 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0阅读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ5-qE-wHg">
-                                                    <rect key="frame" x="140.5" y="56.5" width="32.5" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0条评论" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnk-FZ-isn">
-                                                    <rect key="frame" x="88" y="56.5" width="44.5" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JiH-wh-lb0" firstAttribute="leading" secondItem="R5M-Ma-Hzx" secondAttribute="trailing" constant="8" id="54F-SO-ysI"/>
                                                 <constraint firstItem="68p-wF-sCh" firstAttribute="leading" secondItem="R5M-Ma-Hzx" secondAttribute="trailing" constant="8" id="BKC-b8-CAB"/>
                                                 <constraint firstItem="R5M-Ma-Hzx" firstAttribute="leading" secondItem="IeQ-Td-pC8" secondAttribute="leading" constant="20" id="Bah-Tl-E11"/>
                                                 <constraint firstItem="R5M-Ma-Hzx" firstAttribute="centerY" secondItem="IeQ-Td-pC8" secondAttribute="centerY" id="BwI-zX-rcA"/>
-                                                <constraint firstItem="tnk-FZ-isn" firstAttribute="leading" secondItem="R5M-Ma-Hzx" secondAttribute="trailing" constant="8" id="JFV-Fq-NjR"/>
                                                 <constraint firstAttribute="trailing" secondItem="68p-wF-sCh" secondAttribute="trailing" constant="20" id="M9u-WQ-mrD"/>
-                                                <constraint firstItem="MJ5-qE-wHg" firstAttribute="centerY" secondItem="tnk-FZ-isn" secondAttribute="centerY" id="OJk-BI-K48"/>
-                                                <constraint firstItem="MJ5-qE-wHg" firstAttribute="leading" secondItem="tnk-FZ-isn" secondAttribute="trailing" constant="8" id="k1X-br-5gc"/>
                                                 <constraint firstItem="68p-wF-sCh" firstAttribute="top" secondItem="JiH-wh-lb0" secondAttribute="bottom" constant="3" id="k57-G4-X6J"/>
-                                                <constraint firstItem="tnk-FZ-isn" firstAttribute="top" secondItem="68p-wF-sCh" secondAttribute="bottom" constant="5" id="kXO-ai-Jr8"/>
                                                 <constraint firstItem="JiH-wh-lb0" firstAttribute="top" secondItem="IeQ-Td-pC8" secondAttribute="top" constant="16" id="yoO-6i-LU0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <viewLayoutGuide key="safeArea" id="ELh-xK-wEA"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="commentCount" destination="tnk-FZ-isn" id="XNh-2s-L6W"/>
                                             <outlet property="detialLbl" destination="68p-wF-sCh" id="WPO-8R-YPZ"/>
                                             <outlet property="noticeImage" destination="R5M-Ma-Hzx" id="7m3-XO-mAm"/>
-                                            <outlet property="readCount" destination="MJ5-qE-wHg" id="Iky-Tw-fpu"/>
                                             <outlet property="titleLbl" destination="JiH-wh-lb0" id="VZZ-Cs-Dxh"/>
                                         </connections>
                                     </tableViewCell>
