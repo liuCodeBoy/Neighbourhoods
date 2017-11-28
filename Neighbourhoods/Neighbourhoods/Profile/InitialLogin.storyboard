@@ -167,7 +167,7 @@
                                         <rect key="frame" x="27" y="-0.5" width="286" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96841770410000005" green="0.97262555360000003" blue="0.97247916459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
