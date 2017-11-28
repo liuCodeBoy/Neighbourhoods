@@ -39,6 +39,11 @@ class WriteCommentViewController: UIViewController ,UITextViewDelegate{
             self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
             return
         }
+        print(self.commentTextView.text)
+        guard self.commentTextView.text.count > 0 else {
+            self.presentHintMessage(hintMessgae: "输出内容不能为空", completion: nil)
+            return
+        }
         NetWorkTool.shareInstance.postReply(token: UserDefaults.standard.string(forKey: "token")!, pid: self.pid! , to_uid: self.to_uid!, uid: self.uid!, post_id: self.post_id!, content:  self.commentTextView.text) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let result  = info!["result"]

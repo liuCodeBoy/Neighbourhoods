@@ -86,6 +86,9 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // MARK:- pass dest user's uid to next vc
+        guard msgListArray.count > 0 else {
+            return
+        }
         destnation?.to_uid = msgListArray[indexPath.row].from_user?.uid as? Int
         destnation?.chatUserNickName = msgListArray[indexPath.row].from_user?.nickname
     }

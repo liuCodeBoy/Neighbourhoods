@@ -10,6 +10,7 @@ import UIKit
 import MJRefresh
 class SecondaryCommentTableViewController: UITableViewController {
      var  id  : NSNumber?
+    private var progressView : UIView?
     private  var  page  = 1
     private  var  pages : Int?
     private  var  detailModelArr = [NborCircleModel]()
@@ -18,6 +19,13 @@ class SecondaryCommentTableViewController: UITableViewController {
         super.viewDidLoad()
         loadRefreshComponet()
         lastedRequest(p: page)
+        
+        //    var progressView: UIView?
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
     }
     
     
@@ -62,6 +70,9 @@ class SecondaryCommentTableViewController: UITableViewController {
                     {
                         self?.detailModelArr.append(rotationModel)
                     }
+                }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
                 }
                 self?.tableView.reloadData()
                 if p == self?.pages {

@@ -15,7 +15,7 @@ class CircleViewController: UIViewController {
     
     var page  = 1
     var pages : Int?
-    
+    private var progressView : UIView?
     lazy var  rotaionArray = [NborCircleModel]()
     
     @IBOutlet weak var scrollHCons: NSLayoutConstraint!
@@ -42,6 +42,15 @@ class CircleViewController: UIViewController {
         }
         let  loopView = LoopView.init(images: URLArr as! [URL], frame: CGRect.init(x: 0, y: frameY, width: screenWidth, height: 200), isAutoScroll: true)
         self.view.addSubview(loopView)
+        
+        
+        //    var progressView: UIView?
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 150)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.topicsTableView.addSubview(progress)
+        
     }
     
     @IBAction func showPickTopicAction(_ sender: Any) {
@@ -90,6 +99,9 @@ class CircleViewController: UIViewController {
                         self?.rotaionArray.append(rotationModel)
                     }
                 }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 self?.topicsTableView.reloadData()
                 if p == self?.pages {
                     self?.topicsTableView.mj_footer.endRefreshingWithNoMoreData()
@@ -101,13 +113,14 @@ class CircleViewController: UIViewController {
                         self?.page += 1
                     }
                 }
-                
             }else{
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 //服务器
                 self?.topicsTableView.mj_header.endRefreshing()
                 self?.topicsTableView.mj_footer.endRefreshing()
             }
-            
         }
     }
     
@@ -159,14 +172,16 @@ extension CircleViewController: UITableViewDelegate, UITableViewDataSource {
             commentVc?.uid     = model.uid
             commentVc?.post_id = model.id
             self.navigationController?.pushViewController(commentVc!, animated: true)
-    }
-    
+       }
         return cell
     }
     
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let   momentsCommentDetialVC =  UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
         let modelArr =  self.rotaionArray
+       guard modelArr.count > 0  else {
+        return
+        }
         let  model =  modelArr[indexPath.row]
         momentsCommentDetialVC.id = model.id
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
