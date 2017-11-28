@@ -76,9 +76,12 @@ class QuickViewMessgaesViewController: UIViewController {
                 let dict = info!["result"]
                 self?.headMsgModel = MsgListModel.mj_object(withKeyValues: dict)
                 
-                let result  = info!["result"]!["list"] as! [NSDictionary]
-                for i in 0..<result.count {
-                    let taskDict =  result[i]
+                let result  = info!["result"]!["list"] as? [NSDictionary]
+                guard let count = result?.count else {
+                    return
+                }
+                for i in 0..<count {
+                    let taskDict =  result![i]
                     if  let taskListModel = MsgListModel.mj_object(withKeyValues: taskDict) {
                         self?.missionListArray.append(taskListModel)
                     }
@@ -137,10 +140,10 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if missionListArray.count > 0 {
+        if missionListArray.count > 0 && indexPath.row > 0 {
             let momentsCommentDetialVC = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
             
-            momentsCommentDetialVC.id = missionListArray[indexPath.row].id
+            momentsCommentDetialVC.id = missionListArray[indexPath.row - 1].id
             self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
         }
     }

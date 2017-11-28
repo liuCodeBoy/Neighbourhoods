@@ -14,6 +14,7 @@ class CircleMomentsTableViewCell: UITableViewCell {
     // MARK:- click the image to call the clasure
     var pushImageClouse : MonentImageType?
     
+    var deleteClosure: (() -> ())?
     
     @IBAction func deleteBtnClicked(_ sender: UIButton) {
         

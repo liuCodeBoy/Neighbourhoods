@@ -27,11 +27,14 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     
     var to_uid: Int?
     
-    var pages = 1
-    var page  = 1
+    private var pages = 1
+    private var page = 1
     
-    var chatHistoryArray = [MsgHistoryModel]()
+    private var temporaryPages = 0
     
+    private var chatHistoryArray = [MsgHistoryModel]()
+    
+    // MARK:- sert the state of the send button
     var inputText: String? {
         didSet {
             if inputText?.count == 0 {
@@ -52,6 +55,18 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
             return
         }
         
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
+        
+        NetWorkTool.shareInstance.sendMessage(access_token, content: inputText!, to_uid: self.to_uid!) { [weak self](reuslt, error) in
+            if error != nil {
+                print(error as AnyObject)
+            } else if reuslt!["code"] as! String == "200" {
+                self?.inputTF.text = ""
+                self?.tableView.reloadData()
+            } else {
+                print(reuslt!["code"] as! String)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,10 +108,6 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     func loadRefreshComponet() -> () {
         //默认下拉刷新
         tableView.mj_header = LXQHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
-        //上拉刷新
-        tableView.mj_footer = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(endrefresh))
-        //自动根据有无数据来显示和隐藏
-        tableView.mj_footer.isAutomaticallyHidden = true
         // 设置自动切换透明度(在导航栏下面自动隐藏)
         tableView.mj_header.isAutomaticallyChangeAlpha = true
     }
@@ -104,18 +115,22 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
 //        self.page = 1
         lastedRequest(p: page)
 //        tableView.mj_header.endRefreshing()
-//
-    }
-    @objc func  endrefresh() -> (){
-        lastedRequest(p: page)
         
     }
+
     
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
+        }
+        
+        if page == temporaryPages {
+            tableView.mj_header.endRefreshing()
+            return
+        } else {
+            temporaryPages = page
         }
         
         NetWorkTool.shareInstance.historyRecord(access_token, p: page, to_uid: to_uid!) { [weak self](info, error) in
@@ -129,17 +144,14 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                 for i in 0..<result.count {
                     let taskDict =  result[i]
                     if  let taskListModel = MsgHistoryModel.mj_object(withKeyValues: taskDict) {
-                        self?.chatHistoryArray.append(taskListModel)
+                        self?.chatHistoryArray.insert(taskListModel, at: 0)
+//                        self?.chatHistoryArray.append(taskListModel)
+//                        print(self?.chatHistoryArray[i].content)
                     }
                 }
                 self?.tableView.reloadData()
-                if p == self?.pages {
-                    self?.tableView.mj_footer.endRefreshingWithNoMoreData()
-                }else{
-                    self?.tableView.mj_footer.endRefreshing()
-                }
-                
                 // FIXME:- under some circumsatances it will brake for upwrapping nil
+                
                 if let tempPage = self?.page, let tempPages = self?.pages {
                     if tempPage < tempPages {
                         self?.page += 1
@@ -150,15 +162,18 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                     return
                 }
                 
+                
+                
                 if arrayCount == 0 {
                     self?.coverView.showLab.text = "暂无任务"
                     self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
                     self?.view.addSubview((self?.coverView)!)
                 }
+                
+                self?.tableView.mj_header.endRefreshing()
             }else{
                 //服务器
                 self?.tableView.mj_header.endRefreshing()
-                self?.tableView.mj_footer.endRefreshing()
             }
             
         }
@@ -169,31 +184,27 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatHistoryArray.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell?
         
-        let timeCell = tableView.dequeueReusableCell(withIdentifier: "ChattingTimeCell") as! ChattingTimeTableViewCell
+//        let timeCell = tableView.dequeueReusableCell(withIdentifier: "ChattingTimeCell") as! ChattingTimeTableViewCell
         let chatWithCell = tableView.dequeueReusableCell(withIdentifier: "ChattingWithCell") as! ChattingWithTableViewCell
         let chatDialogueCell = tableView.dequeueReusableCell(withIdentifier: "ChatDialogueCell") as! ChattingDialogueTableViewCell
         
-        if indexPath.row == 0 {
-            cell = timeCell
+        if chatHistoryArray.count == 0 { return chatWithCell }
+        
+        if chatHistoryArray[indexPath.row].is_user == 1 {
+            chatDialogueCell.viewModel = chatHistoryArray[indexPath.row]
+            cell = chatDialogueCell
         } else {
-
-            for i in 0..<chatHistoryArray.count {
-                if chatHistoryArray[i].is_user == 1 {
-                    chatDialogueCell.viewModel = chatHistoryArray[i]
-                    cell = chatDialogueCell
-                } else {
-                    chatWithCell.viewModel = chatHistoryArray[i]
-                    cell = chatWithCell
-                }
-            }
+            chatWithCell.viewModel = chatHistoryArray[indexPath.row]
+            cell = chatWithCell
         }
+        
         return cell!
         
     }
