@@ -68,8 +68,10 @@ class MomentsHotestTopicTableViewController: UITableViewController {
                 }else{
                     self?.tableView.mj_footer.endRefreshing()
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
                 
                 
@@ -126,6 +128,9 @@ class MomentsHotestTopicTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let   momentsCommentDetialVC =  UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
         let modelArr =  self.rotaionArray
+        guard modelArr.count > 0  else {
+            return
+        }
         let  model =  modelArr[indexPath.row]
         momentsCommentDetialVC.id = model.id
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)

@@ -96,8 +96,10 @@ class CircleViewController: UIViewController {
                 }else{
                      self?.topicsTableView.mj_footer.endRefreshing()
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
                 
             }else{

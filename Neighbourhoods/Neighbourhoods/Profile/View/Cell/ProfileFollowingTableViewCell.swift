@@ -24,6 +24,8 @@ class ProfileFollowingTableViewCell: UITableViewCell {
         
         let cancelGes = UITapGestureRecognizer(target: self, action: #selector(cancelFollow))
         alreadyFollowLbl.addGestureRecognizer(cancelGes)
+        alreadyFollowLbl.addGestureRecognizer(cancelGes)
+        alreadyFollowLbl.backgroundColor = UIColor.init(white: 0.95, alpha: 1)
         
         let addFollowGes = UITapGestureRecognizer(target: self, action: #selector(addFollow))
         addFollowView.addGestureRecognizer(addFollowGes)
@@ -86,12 +88,12 @@ class ProfileFollowingTableViewCell: UITableViewCell {
             }
             
             // FIXME: - location bug
-//            if let location = viewModel? {
+//            if let location = viewModel?. {
 //                self.locationBtn.setTitle(location, for: .normal)
 //            } else {
 //                self.locationBtn.isHidden = true
 //            }
-            self.location.text = ""
+//            self.location.text = ""
             
             if let isFollowing = viewModel?.is_atten {
                 if isFollowing == 1 {

@@ -13,10 +13,10 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
 
     @IBOutlet weak var tableview: UITableView!
     
-    var progressView: UIView?
-
     private var pages = 1
     private var page  = 1
+    
+    var progressView: UIView?
     
     var missionID: Int? {
         didSet {
@@ -36,6 +36,13 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
         
         lastedRequest(p: page)
         loadRefreshComponet()
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 151)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
     
     }
     
@@ -64,13 +71,6 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
-        // MARK:- fetching data
-        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 151)
-        progress.loadingHintLbl.text = "加载中"
-        self.progressView = progress
-        self.view.addSubview(progress)
-        
         NetWorkTool.shareInstance.taskList(sort: "task_status", p: page) { [weak self](info, error) in
             
             // MARK:- data fetched successfully
@@ -98,8 +98,10 @@ class HelpCategoryByCompletionStatusViewController: UIViewController, UITableVie
                 }else{
                     self?.tableview.mj_footer.endRefreshing()
                 }
-                if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
-                    self?.page += 1
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
                 }
             }else{
                 //服务器

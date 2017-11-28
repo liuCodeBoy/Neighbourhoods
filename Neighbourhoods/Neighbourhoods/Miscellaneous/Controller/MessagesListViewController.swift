@@ -17,7 +17,6 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
 
     var msgListArray = [MsgListModel]()
     
-    var progressView: UIView?
     
     var destnation: ChattingViewController? 
     
@@ -38,21 +37,8 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        // MARK:- fetching data
-        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        progress.loadingHintLbl.text = "加载中"
-        self.progressView = progress
-        self.view.addSubview(progress)
-        
+
         NetWorkTool.shareInstance.infoList(access_token) { [weak self](result, error) in
-            
-            // MARK:- data fetched successfully
-            UIView.animate(withDuration: 0.25, animations: {
-                self?.progressView?.alpha = 0
-            }, completion: { (_) in
-                self?.progressView?.removeFromSuperview()
-            })
             
             if error != nil {
                 print(error as AnyObject)
@@ -65,7 +51,10 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
                     }
                     self?.tableView.reloadData()
                     
-                    if CGFloat((self?.msgListArray.count)!) == 0 {
+                    guard let arrayCount = self?.msgListArray.count else {
+                        return
+                    }
+                    if arrayCount == 0 {
                         self?.coverView.showLab.text = "暂无消息"
                         self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
                         self?.view.addSubview((self?.coverView)!)
@@ -98,6 +87,7 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // MARK:- pass dest user's uid to next vc
         destnation?.to_uid = msgListArray[indexPath.row].from_user?.uid as? Int
+        destnation?.chatUserNickName = msgListArray[indexPath.row].from_user?.nickname
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

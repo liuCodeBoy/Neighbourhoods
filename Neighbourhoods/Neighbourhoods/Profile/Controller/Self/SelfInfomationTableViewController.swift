@@ -108,7 +108,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                     // MARK:- fetching data
                     let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
                     progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-                    progress.loadingHintLbl.text = "加载中"
+                    progress.loadingHintLbl.text = "上传中"
                     self.progressView = progress
                     self.view.addSubview(progress)
                     
@@ -197,12 +197,6 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        // MARK:- fetching data
-        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        progress.loadingHintLbl.text = "加载中"
-        self.progressView = progress
-        self.view.addSubview(progress)
         NetWorkTool.shareInstance.identityJudge(access_token) { [weak self](result, error) in
             
             // MARK:- data fetched successfully

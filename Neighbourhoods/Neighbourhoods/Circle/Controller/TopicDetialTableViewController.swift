@@ -164,6 +164,9 @@ class TopicDetialTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let   momentsCommentDetialVC =  UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
         let modelArr =  self.rotaionArray
+        guard modelArr.count > 0  else {
+            return
+        }
         let  model =  modelArr[indexPath.row]
         momentsCommentDetialVC.id = model.id
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
