@@ -83,6 +83,9 @@ class SelectDistrictTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard firstLevelList.count > 0 else {
+            return
+        }
         id = firstLevelList[indexPath.row].id as? Int
         pid = firstLevelList[indexPath.row].pid as? Int
 //        firstDName = firstLevelList[indexPath.row].name

@@ -137,7 +137,7 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row > 0 {
+        if missionListArray.count > 0 {
             let momentsCommentDetialVC = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
             
             momentsCommentDetialVC.id = missionListArray[indexPath.row].id

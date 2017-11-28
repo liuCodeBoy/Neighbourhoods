@@ -78,6 +78,9 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard  thirdLevelList.count > 0 else {
+            return
+        }
         id = thirdLevelList[indexPath.row].id as? Int
         pid = thirdLevelList[indexPath.row].pid as? Int
 //        thirdDName = secondDName! + thirdLevelList[indexPath.row].name!

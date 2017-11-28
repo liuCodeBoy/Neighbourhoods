@@ -11,6 +11,7 @@ import MJRefresh
 class MomentsHotestTopicTableViewController: UITableViewController {
     var page  = 1
     var pages : Int?
+    private var progressView : UIView?
     lazy var  rotaionArray = [NborCircleModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,13 @@ class MomentsHotestTopicTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         loadRefreshComponet()
         lastedRequest(p : page)
+        
+        //    var progressView: UIView?
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 150)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.tableView.addSubview(progress)
 
     }
     func loadRefreshComponet() -> () {
@@ -62,6 +70,9 @@ class MomentsHotestTopicTableViewController: UITableViewController {
                         self?.rotaionArray.append(rotationModel)
                     }
                 }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 self?.tableView.reloadData()
                 if p == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
@@ -76,6 +87,9 @@ class MomentsHotestTopicTableViewController: UITableViewController {
                 
                 
             }else{
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 //服务器
                 self?.tableView.mj_header.endRefreshing()
                 self?.tableView.mj_footer.endRefreshing()

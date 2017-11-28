@@ -4,6 +4,7 @@ import MJRefresh
 class MomentsTopicsClassificationTableViewController: UITableViewController {
     var     page  = 1
     var     pages : Int?
+    private var progressView : UIView?
     var     isChooseTopic : NSInteger?
     private lazy var  rotaionArray = [NborTopicModel]()
     override func viewDidLoad() {
@@ -14,8 +15,13 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
         }else{
             loadPickTopic(p: page)
         }
-        
         loadRefreshComponet()
+        //    var progressView: UIView?
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 150)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.tableView.addSubview(progress)
     }
     
     func loadRefreshComponet() -> () {
@@ -51,6 +57,9 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                         self?.rotaionArray.append(rotationModel)
                     }
                 }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 self?.tableView.reloadData()
                 if p == self?.pages {
                     self?.tableView.mj_footer.endRefreshingWithNoMoreData()
@@ -65,6 +74,9 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                 }
             }else{
                 //服务器
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 self?.tableView.mj_footer.endRefreshing()
             }
         }

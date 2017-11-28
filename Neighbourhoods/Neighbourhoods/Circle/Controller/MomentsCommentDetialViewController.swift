@@ -12,7 +12,8 @@ class MomentsCommentDetialViewController: UIViewController {
     var  id               : NSNumber?
     var detailMainModel   : NborCircleModel?
     lazy var  momentsComDetListArray = [NborCircleModel]()
-    
+    private var progressView : UIView?
+
     @IBOutlet weak var momentsCommentDetialTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,13 @@ class MomentsCommentDetialViewController: UIViewController {
         //自动计算高度
         momentsCommentDetialTableView.estimatedRowHeight = 100
         momentsCommentDetialTableView.rowHeight = UITableViewAutomaticDimension
-       
+        
+        //    var progressView: UIView?
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "加载中"
+        self.progressView = progress
+        self.view.addSubview(progress)
    
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -46,8 +53,14 @@ class MomentsCommentDetialViewController: UIViewController {
                     self?.momentsComDetListArray.append(model)
                     }
                 }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 self?.momentsCommentDetialTableView.reloadData()
             }else{
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
                 //服务器
              }
            }
@@ -99,6 +112,9 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
                 let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "SecondaryCommentTable") as!  SecondaryCommentTableViewController
                 desVC.id = id
                 self.navigationController?.pushViewController(desVC, animated: true)
+            }
+            guard momentsComDetListArray.count > 0 else{
+                return cell!
             }
             let  model = self.momentsComDetListArray[indexPath.row]
             cell?.momentsCellModel = model

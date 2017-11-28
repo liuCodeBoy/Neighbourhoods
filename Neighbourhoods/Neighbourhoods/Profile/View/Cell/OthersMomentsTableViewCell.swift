@@ -11,8 +11,10 @@ import SDWebImage
 import NoticeBar
 //定义跳转闭包
 typealias pushProImgType = (NSArray? , NSNumber?) -> ()
+typealias othersCommentType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_ uid : NSNumber?,_ post_id : NSNumber?,_ indexRow : NSNumber?) -> ()
 class OthersMomentsTableViewCell: UITableViewCell {
-    var   pushImageClouse : pushProImgType?
+    var   pushImageClouse   : pushProImgType?
+    var   showCommentClouse : othersCommentType?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -60,6 +62,13 @@ class OthersMomentsTableViewCell: UITableViewCell {
         }
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
+        //取到当前cell的index索引值
+        let tableview = self.superview as! UITableView
+        let indexRow  = tableview.indexPath(for: self)?.row
+        if self.showCommentClouse != nil{
+            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid, indexRow! as NSNumber)
+        }
+        self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
     }
 
     var momentsCellModel : NborCircleModel!{

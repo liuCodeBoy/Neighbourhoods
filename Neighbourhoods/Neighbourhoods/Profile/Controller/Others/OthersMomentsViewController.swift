@@ -14,6 +14,7 @@ class OthersMomentsViewController: UIViewController {
     var uid   : Int?
     var page  = 1
     var pages : Int?
+    @IBOutlet weak var focusBtn: UIButton!
     var userModel : UserModel? {
         didSet{
             if let  avatarStr = userModel?.head_pic {
@@ -36,10 +37,26 @@ class OthersMomentsViewController: UIViewController {
             if let fansNum = userModel?.fans{
                 self.fansNum.text = "\(fansNum)"
             }
+            if let  is_atten = userModel?.is_atten{
+                if is_atten == 1 {
+                    self.focusBtn.setTitle("已关注", for: .normal)
+                }else{
+                    self.focusBtn.setTitle(" +关注 ", for: .normal)
+                }
+            }
+            guard userModel?.is_atten != nil else {
+                return
+            }
+            if   userModel?.is_atten == 0 {
+                type = 1
+            }else if userModel?.is_atten == 1{
+                type = 2
+            }
             
             
         }
     }
+    var type : Int?
     lazy var  rotaionArray = [NborCircleModel]()
     @IBOutlet weak var othersMomentsTableView: UITableView!
     @IBOutlet weak var fcousNumLab: UILabel!
@@ -63,8 +80,48 @@ class OthersMomentsViewController: UIViewController {
     }
  
     @IBAction func addFocus(_ sender: Any) {
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        guard uid! > 0  else {
+            return
+        }
+    
+      
+       
         
+        NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid!, type: type!) { [weak self](result, error) in
+            if error != nil {
+                print(error as AnyObject)
+                return
+            }
+            var  showText : String?
+            switch result!["code"] as! String {
+            case "200" :
+                if self?.type == 1 {
+                    showText = "关注成功"
+                    self?.focusBtn.setTitle("已关注", for: .normal)
+                    self?.type = 2
+                }else{
+                    showText = "取消关注成功"
+                    self?.focusBtn.setTitle(" +关注 ", for: .normal)
+                    self?.type = 1
+                }
+            case "400" :
+                if self?.type == 1 {
+                    showText = "关注失败"
+             
+                }else{
+                    showText = "取消关注失败"
+                }
+            case "402" : showText = "请传入type参数"
+            default    : break
+            }
+            self?.presentHintMessage(hintMessgae: showText!, completion: nil)
+        }
     }
+    
+    
     
     func loadRefreshComponet() -> () {
         //上拉刷新
@@ -134,14 +191,38 @@ extension OthersMomentsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let  cell = tableView.dequeueReusableCell(withIdentifier: "OthersMomentsCell") as! OthersMomentsTableViewCell
-        cell.momentsCellModel = rotaionArray[indexPath.row]
+        guard rotaionArray.count > 0  else {
+            return cell
+        }
+        let  model = rotaionArray[indexPath.row]
+        cell.momentsCellModel = model
         cell.pushImageClouse = {(imageArr, index) in
             let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
             desVC.index  = index
             desVC.imageArr = imageArr
             self.present(desVC, animated: true, completion: nil)
         }
+        //跳出评论
+        cell.showCommentClouse = {(pid ,to_uid ,uid,post_id,indexRow) in
+            let commentVc = UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "WriteCommentIdent") as? WriteCommentViewController
+            commentVc?.pid = 0
+            commentVc?.row = indexRow
+            commentVc?.to_uid  = model.uid
+            commentVc?.uid     = model.uid
+            commentVc?.post_id = model.id
+            self.navigationController?.pushViewController(commentVc!, animated: true)
+        }
         return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let   momentsCommentDetialVC =  UIStoryboard.init(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "MomentsCommentDetialViewController") as! MomentsCommentDetialViewController
+        let modelArr =  self.rotaionArray
+        guard modelArr.count > 0 else {
+            return
+        }
+        let  model =  modelArr[indexPath.row]
+        momentsCommentDetialVC.id = model.id
+        self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
     }
 }

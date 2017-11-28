@@ -47,6 +47,7 @@ class LotteryDetialViewController: UIViewController {
                     UIView.animate(withDuration: 1.5, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                         self.lotteryDetialLbl.text = title
                         self.lotteryInfoBtn.setTitle(msg, for: .normal)
+                        self.lotteryDetialLbl.font = UIFont.systemFont(ofSize: 14)
                         self.lotteryBackView.backgroundColor = default_grey
                         self.lotteryInfoBtn.backgroundColor  = default_grey
                     })
