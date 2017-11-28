@@ -53,15 +53,14 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
-        NetWorkTool.shareInstance.announcementList(id: 1) { [weak self](info, error) in
+        NetWorkTool.shareInstance.announcementNotice_list(p: self.page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
                 }
-                
                 let result  = info!["result"]!["list"] as! [NSDictionary]
                 for i in 0..<result.count {
-                    let dict =  result[i]
+                    let dict =  result[i]    
                     if  let model = ActListModel.mj_object(withKeyValues: dict) {
                         self?.noticeArray.append(model)
                     }
@@ -91,10 +90,23 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "SocialAnnouncementCell")! as! SocialAnnouncementTableViewCell
+        guard noticeArray.count > 0 else {
+            return cell
+        }
         cell.viewModel = noticeArray[indexPath.row]
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard noticeArray.count > 0 else {
+            return
+        }
+        let announceVCDet = self.storyboard?.instantiateViewController(withIdentifier: "SocialAnoDetialVCID") as!
+        SocialAnnouncementDetialViewController
+        let model = noticeArray[indexPath.row]
+        announceVCDet.url = NSURL.init(string: model.content!)
+        self.navigationController?.pushViewController(announceVCDet, animated: true)
+        
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
