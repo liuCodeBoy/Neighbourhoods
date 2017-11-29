@@ -59,6 +59,10 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         
         guard let to_uid = to_uid else { return }
         
+        self.chatHistoryArray.removeAll()
+        temporaryPages = 0
+        page = 1
+        
         NetWorkTool.shareInstance.sendMessage(access_token, content: inputText!, to_uid: to_uid) { [weak self](reuslt, error) in
             if error != nil {
                 print(error as AnyObject)
@@ -69,6 +73,9 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                 print(reuslt!["code"] as! String)
             }
         }
+        
+        lastedRequest(p: page)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

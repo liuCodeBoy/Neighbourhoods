@@ -20,9 +20,11 @@ class FigureVoteListViewController: UIViewController {
         figureVoteTableView.dataSource = self
         setNavBarBackBtn()
         setNavBarTitle(title: "正在投票")
-      
+        lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: id as! Int)
+    }
     
-            lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: cate as! Int)
+    override func viewWillAppear(_ animated: Bool) {
+        lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: id as! Int)
     
     }
     
@@ -79,6 +81,8 @@ extension FigureVoteListViewController: UITableViewDelegate, UITableViewDataSour
             let model = self.rotaionArray[indexPath.row]
             figureVoteDetialVC.index = indexPath.row + 1
             figureVoteDetialVC.id = model.id
+            figureVoteDetialVC.voteId = self.id
+            figureVoteDetialVC.chooseId = model.vote_id
         }
         self.navigationController?.pushViewController(figureVoteDetialVC, animated: true)
     }

@@ -15,4 +15,7 @@ class SocialOrgListModel: NSObject {
     @objc var uid           : NSNumber?
     @objc var content       : String?
     @objc var head_pic      : String?
+    @objc var url           : String?
+
 }
+

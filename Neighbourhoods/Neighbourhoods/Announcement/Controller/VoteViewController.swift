@@ -133,17 +133,10 @@ extension VoteViewController :  UITableViewDelegate, UITableViewDataSource {
         }
         //取出模型 ：2正在投票；1协商中；-1已结束
         let model = self.rotaionArray[indexPath.row]
-  //      let cate = model.cate as! Int
-//        if cate == 1 {
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "FigureVoteListVC") as! FigureVoteListViewController
-//            vc.id = model.id
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }else{
             if model.status == -1 {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteEndedVC") as! ActivityVoteEndedViewController
                 vc.id = model.id
                 self.navigationController?.pushViewController(vc, animated: true)
-                
             }else if  model.status == 1{
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "ActivityVoteConsultingVC") as! ActivityVoteConsultingViewController
                 vc.id = model.id

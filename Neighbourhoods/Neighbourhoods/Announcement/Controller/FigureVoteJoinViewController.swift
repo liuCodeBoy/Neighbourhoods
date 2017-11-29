@@ -10,6 +10,8 @@ import UIKit
 import NoticeBar
 import TZImagePickerController
 class FigureVoteJoinViewController: UIViewController {
+    // vote for id
+    var  id  : Int?
     //pictrueView
     var picPickerView : PicPicKerCollectionView?
     //默认背景照片
@@ -32,7 +34,7 @@ class FigureVoteJoinViewController: UIViewController {
           return
         }
         
-        NetWorkTool.shareInstance.join_vote(UserDefaults.standard.string(forKey: "token")!, name: conductSelfText.text!, image: self.images, id: 1) { [weak self](info, error) in
+        NetWorkTool.shareInstance.join_vote(UserDefaults.standard.string(forKey: "token")!, name: conductSelfText.text!, image: self.images, id: id!) { [weak self](info, error) in
             
             if info?["code"] as? String == "200"{
                 let result = info?["result"]

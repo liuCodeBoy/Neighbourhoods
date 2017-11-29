@@ -26,11 +26,11 @@ class CircleMomentsTableViewCell: UITableViewCell {
             } else if result!["code"] as! String == "200" {
                 
                 // MARK:- delete successful
-//                let config = NoticeBarConfig(title:"删除成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
-//                let noticeBar = NoticeBar(config: config)
-//                noticeBar.show(duration: 0.5, completed: nil)
-//            } else {
-//                print("post request failed with exit code \(result!["code"] as! String)")
+                let config = NoticeBarConfig(title:"删除成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let noticeBar = NoticeBar(config: config)
+                noticeBar.show(duration: 0.5, completed: nil)
+            } else {
+                print("post request failed with exit code \(result!["code"] as! String)")
             }
         }
     }

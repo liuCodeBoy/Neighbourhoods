@@ -25,13 +25,6 @@ class NborCircleModel: NSObject {
    @objc  var user      :   UserModel?
    @objc  var user_info :   UserModel?
    @objc  var info      :   String?
-    
-    
-    
-   
- 
-   
-    
    
     
 }

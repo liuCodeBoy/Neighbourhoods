@@ -1019,8 +1019,8 @@
 				D3B589251FC52AF9003396D3 /* CommentQucikViewListTableViewCell.swift */,
 				D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */,
 				D3C724CB1FCA6DA200AD9D40 /* ChattingTimeTableViewCell.swift */,
-				D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */,
 				D3C724C91FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift */,
+				D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1128,7 +1128,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		110D7019E2BC97238707F9DE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1145,14 +1145,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1DB30466C1F822018A82592D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1165,14 +1165,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE59EEBE9D1B01AD7C3FE40B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1183,7 +1183,7 @@
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Neighbourhoods-checkManifestLockResult.txt",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;

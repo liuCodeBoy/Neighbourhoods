@@ -27,7 +27,7 @@ class ShowVoteActCell: UITableViewCell {
             }
             if let percentage = model?.percentage{
                 self.percentageText.text = "\(percentage)%"
-                self.Chosewidth.constant  += (screenWidth - 10) * (CGFloat(truncating: percentage) / 100)
+                self.Chosewidth.constant  += (screenWidth - 60) * (CGFloat(truncating: percentage) / 100)
             }
             
           

@@ -15,6 +15,8 @@ class MyFollowersViewController: UIViewController {
     private var followingList = [AttentionAndFansModel]()
     
     var progressView: UIView?
+    
+    var uid: NSNumber?
 
     lazy var coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
     
@@ -25,7 +27,7 @@ class MyFollowersViewController: UIViewController {
         myFollowersTableView.dataSource = self
         
         setNavBarBackBtn()
-        setNavBarTitle(title: "我的粉丝")
+        setNavBarTitle(title: "他的粉丝")
         
         loadFollowingUsers()
 
@@ -42,7 +44,13 @@ class MyFollowersViewController: UIViewController {
         progress.loadingHintLbl.text = "加载中"
         self.progressView = progress
         self.view.addSubview(progress)
-        NetWorkTool.shareInstance.userFans(access_token) { [weak self](result, error) in
+        
+        if uid == nil {
+            self.uid = UserDefaults.standard.integer(forKey: "uid") as NSNumber
+            self.setNavBarTitle(title: "我的粉丝")
+        }
+        
+        NetWorkTool.shareInstance.userFans(access_token, uid: uid as! Int) { [weak self](result, error) in
             
             // MARK:- data fetched successfully
             UIView.animate(withDuration: 0.25, animations: {
@@ -55,7 +63,7 @@ class MyFollowersViewController: UIViewController {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 guard let dictArray = result?["result"] as? [NSDictionary] else {
-                    self?.coverView.showLab.text = "暂无关注"
+                    self?.coverView.showLab.text = "暂无粉丝"
                     self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
                     self?.myFollowersTableView.addSubview((self?.coverView)!)
                     return
