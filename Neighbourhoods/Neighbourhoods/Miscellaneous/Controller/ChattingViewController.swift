@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import SDWebImage
 
 class ChattingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UITextFieldDelegate {
     
@@ -26,6 +27,10 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     var to_uid: Int?
+    
+    var id: Int?
+    
+    var isConsultingChat: Bool = false
     
     private var pages = 1
     private var page = 1
@@ -50,31 +55,30 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func sendBtnClicked(_ sender: UIButton) {
         
-        if inputText?.replacingOccurrences(of: " ", with: "") == "" {
+        if inputTF.text?.replacingOccurrences(of: " ", with: "") == "" || inputTF.text == nil || inputTF.text == "" {
             presentHintMessage(hintMessgae: "输入不能为空", completion: nil)
             return
         }
+//        self.chatHistoryArray.removeAll()
+//        self.temporaryPages = 0
+//        self.page = 1
+//        lastedRequest(p: page)
+
         
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
-        
-        guard let to_uid = to_uid else { return }
-        
-        self.chatHistoryArray.removeAll()
-        temporaryPages = 0
-        page = 1
-        
-        NetWorkTool.shareInstance.sendMessage(access_token, content: inputText!, to_uid: to_uid) { [weak self](reuslt, error) in
-            if error != nil {
-                print(error as AnyObject)
-            } else if reuslt!["code"] as! String == "200" {
-                self?.inputTF.text = ""
-                self?.tableView.reloadData()
-            } else {
-                print(reuslt!["code"] as! String)
-            }
+        if isConsultingChat == false {
+            postChat()
+        } else {
+            postConsult()
         }
         
-        lastedRequest(p: page)
+        let fakeModel = MsgHistoryModel()
+        fakeModel.content = inputTF.text
+        fakeModel.is_user = 1
+        
+        self.chatHistoryArray.append(fakeModel)
+        self.tableView.reloadData()
+        
+        
 
     }
     
@@ -132,10 +136,6 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
-            return
-        }
-        
         if page == temporaryPages {
             tableView.mj_header.endRefreshing()
             return
@@ -143,53 +143,12 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
             temporaryPages = page
         }
         
-        guard let to_uid = to_uid else {
-            return
+        if isConsultingChat == false {
+            loadChattingHistory()
+        } else {
+            loadConsultingHistory()
         }
         
-        NetWorkTool.shareInstance.historyRecord(access_token, p: page, to_uid: to_uid) { [weak self](info, error) in
-         
-            if info?["code"] as? String == "200"{
-                if let pages  = info!["result"]!["pages"] {
-                    self?.pages = pages as! Int
-                }
-                
-                let result  = info!["result"]!["list"] as! [NSDictionary]
-                for i in 0..<result.count {
-                    let taskDict =  result[i]
-                    if  let taskListModel = MsgHistoryModel.mj_object(withKeyValues: taskDict) {
-                        self?.chatHistoryArray.insert(taskListModel, at: 0)
-
-                    }
-                }
-                self?.tableView.reloadData()
-                // FIXME:- under some circumsatances it will brake for upwrapping nil
-                
-                if let tempPage = self?.page, let tempPages = self?.pages {
-                    if tempPage < tempPages {
-                        self?.page += 1
-                    }
-                }
-                
-                guard let arrayCount = self?.chatHistoryArray.count else {
-                    return
-                }
-                
-                
-                
-                if arrayCount == 0 {
-                    self?.coverView.showLab.text = "暂无任务"
-                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-                    self?.view.addSubview((self?.coverView)!)
-                }
-                
-                self?.tableView.mj_header.endRefreshing()
-            }else{
-                //服务器
-                self?.tableView.mj_header.endRefreshing()
-            }
-            
-        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -212,6 +171,9 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         
         if chatHistoryArray[indexPath.row].is_user == 1 {
             chatDialogueCell.viewModel = chatHistoryArray[indexPath.row]
+            if chatHistoryArray[indexPath.row].id == nil {
+                chatDialogueCell.avatar.image = userAvatar.image
+            }
             cell = chatDialogueCell
         } else {
             chatWithCell.viewModel = chatHistoryArray[indexPath.row]
@@ -221,8 +183,148 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         return cell!
         
     }
-
     
+    func loadConsultingHistory() {
+        
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
+        
+        guard let id = id else { return }
+        
+        NetWorkTool.shareInstance.option_list(access_token, p: page, status: 1, cate: 0, id: id) { [weak self](info, error) in
+            
+            if info?["code"] as? String == "200"{
+                if let pages  = info!["result"]!["pages"] {
+                    self?.pages = pages as! Int
+                }
+                
+                let result  = info!["result"]!["list"] as! [NSDictionary]
+                for i in 0..<result.count {
+                    let taskDict =  result[i]
+                    if  let taskListModel = MsgHistoryModel.mj_object(withKeyValues: taskDict) {
+                        self?.chatHistoryArray.insert(taskListModel, at: 0)
+                        
+                    }
+                }
+                self?.tableView.reloadData()
+                
+                
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
+                }
+                
+                guard let arrayCount = self?.chatHistoryArray.count else {
+                    return
+                }
+                if arrayCount == 0 {
+                    self?.coverView.showLab.text = "暂无任务"
+                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                    self?.view.addSubview((self?.coverView)!)
+                }
+                
+                self?.chatHistoryArray.removeAll()
+                self?.temporaryPages = 0
+                self?.page = 1
+                
+                self?.tableView.mj_header.endRefreshing()
+            }else{
+                //服务器
+                self?.tableView.mj_header.endRefreshing()
+            }
+        }
+    }
+    
+    func loadChattingHistory() {
+        
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            return
+        }
+        
+        guard let to_uid = to_uid else {
+            return
+        }
+        
+        NetWorkTool.shareInstance.historyRecord(access_token, p: page, to_uid: to_uid) { [weak self](info, error) in
+            
+            if info?["code"] as? String == "200"{
+                if let pages  = info!["result"]!["pages"] {
+                    self?.pages = pages as! Int
+                }
+                
+                let result  = info!["result"]!["list"] as! [NSDictionary]
+                for i in 0..<result.count {
+                    let taskDict =  result[i]
+                    if  let taskListModel = MsgHistoryModel.mj_object(withKeyValues: taskDict) {
+                        self?.chatHistoryArray.insert(taskListModel, at: 0)
+                        
+                    }
+                }
+                self?.tableView.reloadData()
+                // FIXME:- under some circumsatances it will brake for upwrapping nil
+                
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
+                }
+                
+                guard let arrayCount = self?.chatHistoryArray.count else {
+                    return
+                }
+                
+                if arrayCount == 0 {
+                    self?.coverView.showLab.text = "暂无任务"
+                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                    self?.view.addSubview((self?.coverView)!)
+                }
+                
+                self?.tableView.mj_header.endRefreshing()
+            }else{
+                //服务器
+                self?.tableView.mj_header.endRefreshing()
+            }
+            
+        }
+        
+    }
+    
+    func postChat() {
+        
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
+        
+        guard let to_uid = to_uid else { return }
+        
+        NetWorkTool.shareInstance.sendMessage(access_token, content: inputTF.text!, to_uid: to_uid) { [weak self](result, error) in
+            if error != nil {
+                print(error as AnyObject)
+            } else if result!["code"] as! String == "200" {
+                self?.inputTF.text = ""
+                self?.tableView.reloadData()
+            } else {
+                print(result!["code"] as! String)
+            }
+        }
+    }
+    
+    func postConsult() {
+        
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
+        
+        guard let id = id else { return }
+
+        NetWorkTool.shareInstance.voteConsult(access_token, content: inputTF.text!, id: id) { [weak self](result, error) in
+            if error != nil {
+                print(error as AnyObject)
+            } else if result!["code"] as! String == "200" {
+                self?.inputTF.text = ""
+                self?.tableView.reloadData()
+            } else {
+                print(result!["code"] as! String)
+            }
+        }
+    }
+
     //键盘的弹起监控
     @objc func keyboardWillChangeFrame(notific: NSNotification) {
         let info = notific.userInfo

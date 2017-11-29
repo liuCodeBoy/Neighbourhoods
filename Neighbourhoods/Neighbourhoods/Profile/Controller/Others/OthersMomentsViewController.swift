@@ -133,6 +133,7 @@ class OthersMomentsViewController: UIViewController {
         }
         
         vc.to_uid = userModel.uid as? Int
+        vc.isConsultingChat = false
         vc.setNavBarTitle(title: userModel.nickname!)
         self.navigationController?.pushViewController(vc, animated: true)
     }

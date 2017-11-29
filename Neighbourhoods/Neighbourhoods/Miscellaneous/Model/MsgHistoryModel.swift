@@ -18,7 +18,6 @@ class MsgHistoryModel: NSObject {
     @objc var from_user      : UserModel?
     @objc var to_user        : UserModel?
     @objc var is_user        : NSNumber?
-
     
 }
 

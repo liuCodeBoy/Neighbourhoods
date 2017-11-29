@@ -24,6 +24,8 @@ class ActivityVoteConsultingViewController: UIViewController {
     @IBAction func consultBtnClicked(_ sender: UIButton) {
         // FIXME:- complete
         vc.setNavBarTitle(title: "群聊")
+        vc.id = self.id as? Int
+        vc.isConsultingChat = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

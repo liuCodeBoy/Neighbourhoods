@@ -33,6 +33,7 @@ class SocialCharityDetialViewController: UIViewController {
     @IBAction func consultBtnClicked(_ sender: UIButton) {
         
         vc.to_uid = self.to_uid
+        vc.isConsultingChat = false
         vc.setNavBarTitle(title: "咨询")
         self.navigationController?.pushViewController(vc, animated: true)
         

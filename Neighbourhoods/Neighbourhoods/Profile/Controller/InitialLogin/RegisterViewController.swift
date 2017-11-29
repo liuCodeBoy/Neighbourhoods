@@ -116,6 +116,9 @@ class RegisterViewController: UIViewController {
                                     // MARK:- save token to user dafaults
                                     let token = userInfo!["result"]!["token"]
                                     UserDefaults.standard.setValue(token!, forKey: "token")
+                                    let uid = userInfo!["result"]!["token"]
+                                    UserDefaults.standard.setValue(uid!, forKey: "uid")
+                                    UserDefaults.standard.synchronize()
                                     
                                     let alert = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
                                     let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
