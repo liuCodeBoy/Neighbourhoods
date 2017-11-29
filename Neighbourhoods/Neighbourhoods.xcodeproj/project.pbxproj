@@ -11,6 +11,7 @@
 		B6098D3E1FA9A56E00FC0BAD /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */; };
 		B62C7D8F1FC0351F00772187 /* TopicCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C7D8E1FC0351F00772187 /* TopicCommentVC.swift */; };
 		B63A2E591FC595B20026D53F /* User_detModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A2E581FC595B20026D53F /* User_detModel.swift */; };
+		B6450D941FCEBE6000AC2C9A /* TopicCommoentDetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6450D931FCEBE6000AC2C9A /* TopicCommoentDetVC.swift */; };
 		B646FDD31FB18D4C00990357 /* NborTopicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646FDD21FB18D4C00990357 /* NborTopicModel.swift */; };
 		B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */; };
 		B6559A101FBD613B00EB6D56 /* PicPicKerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */; };
@@ -227,6 +228,7 @@
 		B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		B62C7D8E1FC0351F00772187 /* TopicCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCommentVC.swift; sourceTree = "<group>"; };
 		B63A2E581FC595B20026D53F /* User_detModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_detModel.swift; sourceTree = "<group>"; };
+		B6450D931FCEBE6000AC2C9A /* TopicCommoentDetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCommoentDetVC.swift; sourceTree = "<group>"; };
 		B646FDD21FB18D4C00990357 /* NborTopicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborTopicModel.swift; sourceTree = "<group>"; };
 		B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersListViewController.swift; sourceTree = "<group>"; };
 		B6559A0D1FBD5CFE00EB6D56 /* PicPicKerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPicKerCollectionView.swift; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 				B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */,
 				B6559A091FBD23E700EB6D56 /* FavUsersListViewController.swift */,
 				B62C7D8E1FC0351F00772187 /* TopicCommentVC.swift */,
+				B6450D931FCEBE6000AC2C9A /* TopicCommoentDetVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1254,6 +1257,7 @@
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D30A17DE1FAF32C4007820D3 /* MomentsTopicsClassificationTableViewCell.swift in Sources */,
 				D3D1FD801FA8116D009A2E58 /* SocialAnnouncementViewController.swift in Sources */,
+				B6450D941FCEBE6000AC2C9A /* TopicCommoentDetVC.swift in Sources */,
 				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D3FAC7E31FA974DB00D972B9 /* QuickMessageListTableViewCell.swift in Sources */,
 				D33A69CA1FC906AE00A738A3 /* ProfileMissionViewController.swift in Sources */,

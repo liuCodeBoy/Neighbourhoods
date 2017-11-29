@@ -84,7 +84,16 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
             })
             
             if info?["code"] as? String == "200"{
-                let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor: UIColor.blue, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let config = NoticeBarConfig(title: "发布成功", image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.3764705956, green: 0.7882353067, blue: 0.9725490212, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let noticeBar = NoticeBar(config: config)
+                noticeBar.show(duration: 0.25, completed: {
+                    (finished) in
+                    if finished {
+                        self?.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }else if(info?["code"] as? String == "400"){
+                let config = NoticeBarConfig(title: "积分不足", image: nil, textColor: UIColor.white, backgroundColor: #colorLiteral(red: 0.9921568632, green: 0.5803921819, blue: 0.1490196139, alpha: 1), barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in

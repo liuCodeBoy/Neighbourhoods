@@ -9,6 +9,7 @@
 import UIKit
 import NoticeBar
 class WriteCommentViewController: UIViewController ,UITextViewDelegate{
+    var isTopic : NSInteger?
     var pid : NSNumber?
     var row : NSNumber?
     var to_uid :NSNumber?
@@ -44,21 +45,43 @@ class WriteCommentViewController: UIViewController ,UITextViewDelegate{
             self.presentHintMessage(hintMessgae: "输出内容不能为空", completion: nil)
             return
         }
-        NetWorkTool.shareInstance.postReply(token: UserDefaults.standard.string(forKey: "token")!, pid: self.pid! , to_uid: self.to_uid!, uid: self.uid!, post_id: self.post_id!, content:  self.commentTextView.text) { [weak self](info, error) in
-            if info?["code"] as? String == "200"{
-                if let result  = info!["result"]
-                {
-                    let config = NoticeBarConfig(title:result as? String, image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
-                    let noticeBar = NoticeBar(config: config)
-                    noticeBar.show(duration: 0.5, completed: {
-                        (finished) in
-                        if finished {
-                            self?.navigationController?.popViewController(animated: true)
-                        }
-                    })
+        
+        
+        if self.isTopic == nil {
+            NetWorkTool.shareInstance.postReply(token: UserDefaults.standard.string(forKey: "token")!, pid: self.pid! , to_uid: self.to_uid!, uid: self.uid!, post_id: self.post_id!, content:  self.commentTextView.text) { [weak self](info, error) in
+                if info?["code"] as? String == "200"{
+                    if let result  = info!["result"]
+                    {
+                        let config = NoticeBarConfig(title:result as? String, image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                        let noticeBar = NoticeBar(config: config)
+                        noticeBar.show(duration: 0.5, completed: {
+                            (finished) in
+                            if finished {
+                                self?.navigationController?.popViewController(animated: true)
+                            }
+                        })
+                    }
+                }
+            }
+        }else{
+            NetWorkTool.shareInstance.topicReply(token: UserDefaults.standard.string(forKey: "token")!, pid: self.pid! , to_uid: self.to_uid!, uid: self.uid!, post_id: self.post_id!, content:  self.commentTextView.text) { [weak self](info, error) in
+                if info?["code"] as? String == "200"{
+                    if let result  = info!["result"]
+                    {
+                        let config = NoticeBarConfig(title:result as? String, image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                        let noticeBar = NoticeBar(config: config)
+                        noticeBar.show(duration: 0.5, completed: {
+                            (finished) in
+                            if finished {
+                                self?.navigationController?.popViewController(animated: true)
+                            }
+                        })
+                    }
                 }
             }
         }
+        
+       
   }
         
     func textViewDidChange(_ textView: UITextView) {

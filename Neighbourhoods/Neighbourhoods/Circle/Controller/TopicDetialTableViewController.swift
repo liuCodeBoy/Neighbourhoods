@@ -107,6 +107,7 @@ class TopicDetialTableViewController: UITableViewController {
                 }
                 
             }else{
+                print(error)
                 //服务器
                 self?.tableView.mj_footer.endRefreshing()
                 self?.tableView.reloadData()
@@ -169,6 +170,8 @@ class TopicDetialTableViewController: UITableViewController {
         }
         let  model =  modelArr[indexPath.row]
         momentsCommentDetialVC.id = model.id
+        momentsCommentDetialVC.topicTitle = "#"+(self.modelMain?.name)!+"#"
+        momentsCommentDetialVC.isTopic = 1
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
     }
 

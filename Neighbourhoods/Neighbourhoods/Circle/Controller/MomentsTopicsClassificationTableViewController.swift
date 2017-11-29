@@ -18,8 +18,9 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
         loadRefreshComponet()
         //    var progressView: UIView?
         let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
-        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 150)
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         progress.loadingHintLbl.text = "加载中"
+        self.setNavBarTitle(title: "精选话题")
         self.progressView = progress
         self.tableView.addSubview(progress)
     }
@@ -98,6 +99,9 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
                     {
                         self?.rotaionArray.append(rotationModel)
                     }
+                }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
                 }
                 self?.tableView.reloadData()
                 if p == self?.pages {

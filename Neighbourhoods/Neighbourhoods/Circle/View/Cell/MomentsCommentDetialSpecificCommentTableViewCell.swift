@@ -16,6 +16,7 @@ typealias commentSecondaryDetialType = (_ pid : NSNumber?,_ to_uid : NSNumber?,_
 class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
     var  headImagePushClouse   : MonentCommentDetailSpecHeadImageType?
     var  showCommentClouse     : commentSecondaryDetialType?
+    var  isTopic   : NSInteger?
     @IBOutlet weak var commentMoreBtn: UIButton!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
@@ -61,12 +62,7 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
     }
     var pushClouse : pushDetailVCType?
     @IBAction func likeBtnClicked(_ sender: UIButton) {
-        guard let   id  =  self.momentsCellModel.id else{
-            return
-        }
-        guard let  nbor_id  =  self.momentsCellModel.nbor_id else{
-            return
-        }
+    
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             let config = NoticeBarConfig(title: "你还未登录,请退出游客模式", image: nil, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
             let noticeBar = NoticeBar(config: config)
@@ -77,21 +73,54 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
             })
             return
         }
-          NetWorkTool.shareInstance.nbor_comtZan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id, id: id) { [weak self](info, error) in
-            if info?["code"] as? String == "400"{
-                let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
-                let noticeBar = NoticeBar(config: config)
-                noticeBar.show(duration: 0.25, completed: {
-                    (finished) in
-                    if finished {
-                    }
-                })
-            }else if (info?["code"] as? String == "200"){
-                //服务器
-                self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
-                self?.likeBtn.isSelected = true
+        
+        
+        if isTopic == nil {
+              guard let   id  =  self.momentsCellModel.id else{
+                return
+             }
+             guard let  nbor_id  =  self.momentsCellModel.nbor_id else{
+                 return
+            }
+            NetWorkTool.shareInstance.nbor_comtZan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id, id: id) { [weak self](info, error) in
+                if info?["code"] as? String == "400"{
+                    let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                    let noticeBar = NoticeBar(config: config)
+                    noticeBar.show(duration: 0.25, completed: {
+                        (finished) in
+                        if finished {
+                        }
+                    })
+                }else if (info?["code"] as? String == "200"){
+                    //服务器
+                    self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
+                    self?.likeBtn.isSelected = true
+                }
+            }
+        }else{
+            guard let   id  =  self.momentsCellModel.id else{
+                return
+            }
+            guard let  nbor_id  =  self.momentsCellModel.topic_talk_id else{
+                return
+            }
+            NetWorkTool.shareInstance.topic_comtZan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id, id: id) { [weak self](info, error) in
+                if info?["code"] as? String == "400"{
+                    let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                    let noticeBar = NoticeBar(config: config)
+                    noticeBar.show(duration: 0.25, completed: {
+                        (finished) in
+                        if finished {
+                        }
+                    })
+                }else if (info?["code"] as? String == "200"){
+                    //服务器
+                    self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
+                    self?.likeBtn.isSelected = true
+                }
             }
         }
+       
     }
     @IBAction func commentBtnCell(_ sender: UIButton) {
         if self.showCommentClouse != nil{
