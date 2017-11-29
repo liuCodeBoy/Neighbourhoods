@@ -16,6 +16,7 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
     var  headImagePushClouse   : MonentDetailHeaderHeadImageType?
     var   pushImageClouse : MonentDetialHeaderImageType?
     var  showCommentClouse     : commentSecondaryHeaderType?
+    var  isTopic : NSInteger?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -30,7 +31,6 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var imageRight: UIImageView!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBAction func likeBtnClicked(_ sender: UIButton) {
-        let  nbor_id  =  self.momentsCellModel.id
         guard UserDefaults.standard.string(forKey: "token") != nil else{
             let config = NoticeBarConfig(title: "你还未登录,请退出游客模式", image: nil, textColor: UIColor.white, backgroundColor: UIColor.red, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
             let noticeBar = NoticeBar(config: config)
@@ -41,6 +41,17 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             })
             return
         }
+        if self.isTopic == nil{
+            nborZan()
+        }else{
+            topicZan()
+        }
+    
+    }
+    
+    
+    func nborZan(){
+        let  nbor_id  =  self.momentsCellModel.id
         NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
@@ -57,6 +68,27 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    func  topicZan(){
+        let  nbor_id  =  self.momentsCellModel.id
+        NetWorkTool.shareInstance.topic_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
+            if info?["code"] as? String == "400"{
+                let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let noticeBar = NoticeBar(config: config)
+                noticeBar.show(duration: 0.25, completed: {
+                    (finished) in
+                    if finished {
+                    }
+                })
+            }else if (info?["code"] as? String == "200"){
+                //服务器
+                self?.likeBtn.setTitle("\(Int(truncating: (self?.momentsCellModel.love!)!) + 1)", for: .normal)
+                self?.likeBtn.isSelected = true
+            }
+        }
+    }
+    
+    
     @IBAction func commentBtnCell(_ sender: UIButton) {
         if self.showCommentClouse != nil{
             self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid)

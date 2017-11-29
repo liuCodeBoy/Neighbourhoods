@@ -10,6 +10,7 @@ import UIKit
 import MJRefresh
 class SecondaryCommentTableViewController: UITableViewController {
      var  id  : NSNumber?
+    var     isTopic  : NSInteger?
     private var progressView : UIView?
     private  var  page  = 1
     private  var  pages : Int?
@@ -18,7 +19,11 @@ class SecondaryCommentTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRefreshComponet()
+        if isTopic == nil {
         lastedRequest(p: page)
+        }else{
+        loadTopicRequest(p: page)
+        }
         
         //    var progressView: UIView?
         let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
@@ -42,14 +47,66 @@ class SecondaryCommentTableViewController: UITableViewController {
     @objc func refresh() -> () {
         self.page = 1
         self.detailModelArr.removeAll()
-        lastedRequest(p: page)
+        if isTopic == nil {
+            lastedRequest(p: page)
+        }else{
+            loadTopicRequest(p: page)
+        }
         tableView.mj_header.endRefreshing()
         
     }
     @objc func  endrefresh() -> (){
-        lastedRequest(p: page)
+        if isTopic == nil {
+            lastedRequest(p: page)
+        }else{
+            loadTopicRequest(p: page)
+        }
         
     }
+    
+    func loadTopicRequest(p : Int) -> () {
+        NetWorkTool.shareInstance.topic_com_det(id: self.id as! NSInteger, p: p) {[weak self](info, error) in
+            if info?["code"] as? String == "200"{
+                if let pages  = info!["result"]!["pages"]
+                {
+                    if pages != nil {
+                        self?.pages = pages as? Int
+                    }
+                }
+                let result  = info!["result"] as! [String : Any]
+                self?.mainCommentModel =  NborCircleModel.mj_object(withKeyValues: result)
+                let resultComment = result["sec_comment"] as? [[String : Any]]
+                for dict  in  resultComment!
+                {
+                    if  let rotationModel = NborCircleModel.mj_object(withKeyValues: dict)
+                    {
+                        self?.detailModelArr.append(rotationModel)
+                    }
+                }
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
+                self?.tableView.reloadData()
+                if p == self?.pages {
+                    self?.tableView.mj_footer.endRefreshingWithNoMoreData()
+                }else{
+                    self?.tableView.mj_footer.endRefreshing()
+                }
+                if let tempPage = self?.page, let tempPages = self?.pages {
+                    if tempPage < tempPages {
+                        self?.page += 1
+                    }
+                }
+                
+            }else{
+                //服务器
+                self?.tableView.mj_header.endRefreshing()
+                self?.tableView.mj_footer.endRefreshing()
+            }
+            
+        }    }
+    
+    
     
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {

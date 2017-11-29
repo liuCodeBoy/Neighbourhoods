@@ -235,6 +235,24 @@ extension NetWorkTool {
         }
     }
     
+    //nbor/topic_com
+    func  topic_com(id : NSInteger, uid : Int,p : Int,finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/nbor/topic_com"
+        //2.获取请求参数
+        let parameters = ["uid" : uid ,"id" :  id, "p" : p] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
 //邻里圈单条详情
     func  nbor_com_det(id : NSInteger , p : NSInteger , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
@@ -252,6 +270,25 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
+    
+//话题单挑评论详情
+    func  topic_com_det(id : NSInteger , p : NSInteger , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/nbor/topic_com_det"
+        //2.获取请求参数
+        let parameters = ["id" :  id , "p" : p] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
  //nbor/topic_list
     func  topic_list(p : NSInteger , finished:@escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
