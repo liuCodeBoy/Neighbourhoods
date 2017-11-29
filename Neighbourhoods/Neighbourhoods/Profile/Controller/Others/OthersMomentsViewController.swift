@@ -10,11 +10,17 @@ import UIKit
 import MJRefresh
 import SDWebImage
 class OthersMomentsViewController: UIViewController {
+    
     private var tokenStr = UserDefaults.standard.string(forKey: "token")
+    
     var uid   : Int?
     var page  = 1
     var pages : Int?
+    
+    lazy var vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateViewController(withIdentifier: "ChattingVC") as! ChattingViewController
+    
     @IBOutlet weak var focusBtn: UIButton!
+    
     var userModel : UserModel? {
         didSet{
             if let  avatarStr = userModel?.head_pic {
@@ -54,6 +60,7 @@ class OthersMomentsViewController: UIViewController {
             }
             
             
+            
         }
     }
     var type : Int?
@@ -87,8 +94,6 @@ class OthersMomentsViewController: UIViewController {
             return
         }
     
-      
-       
         
         NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid!, type: type!) { [weak self](result, error) in
             if error != nil {
@@ -121,7 +126,16 @@ class OthersMomentsViewController: UIViewController {
         }
     }
     
-    
+    @IBAction func sendMsgClicked(_ sender: UIButton) {
+        
+        guard let userModel = self.userModel else {
+            return
+        }
+        
+        vc.to_uid = userModel.uid as? Int
+        vc.setNavBarTitle(title: userModel.nickname!)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func loadRefreshComponet() -> () {
         //上拉刷新
@@ -224,5 +238,15 @@ extension OthersMomentsViewController: UITableViewDelegate, UITableViewDataSourc
         let  model =  modelArr[indexPath.row]
         momentsCommentDetialVC.id = model.id
         self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FollowersSegue" {
+            let dest = segue.destination as! MyFollowersViewController
+            dest.uid = userModel?.uid
+        } else if segue.identifier == "FollowingsSegue" {
+            let dest = segue.destination as! MyFollowingsViewController
+            dest.uid = userModel?.uid
+        }
     }
 }

@@ -10,7 +10,9 @@ import UIKit
 import SDWebImage
 import NoticeBar
 class FigureVoteDetialViewController: UIViewController {
-    var  id   : NSNumber?
+    var id   : NSNumber?
+    var voteId : NSNumber?
+    var chooseId : NSNumber?
     var index : Int?
     var model : User_detModel?
     @IBOutlet weak var avatar: UIImageView!
@@ -41,6 +43,7 @@ class FigureVoteDetialViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let desVC =  segue.destination as! FigureVoteJoinViewController
+        desVC.id  = self.voteId as? Int
     }
     
     
@@ -53,7 +56,7 @@ class FigureVoteDetialViewController: UIViewController {
             return
         }
         token = UserDefaults.standard.string(forKey: "token")!
-        NetWorkTool.shareInstance.vote(token, vote_id: model?.vote_id as! Int, option_id: model?.uid as! Int) { (info, error) in
+        NetWorkTool.shareInstance.vote(token, vote_id:  chooseId as! Int, option_id: id as! Int) { (info, error) in
             if info?["code"] as? String == "200"{
                 let result = info?["result"]
                 let config = NoticeBarConfig(title:result as? String, image: nil, textColor: UIColor.white, backgroundColor:#colorLiteral(red: 0.36, green: 0.79, blue: 0.96, alpha: 1) , barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
@@ -95,7 +98,10 @@ class FigureVoteDetialViewController: UIViewController {
                         }
                         if  let nickName = model.user?.nickname{
                             self?.nickName.text = nickName
+                            self?.setNavBarTitle(title: nickName)
+
                         }
+                        
                         if let  sex = model.user?.sex?.intValue {
                             if sex == 1 || sex == 2 {
                                 self?.gender.image =   sex == 1 ? UIImage.init(named: "male") : UIImage.init(named: "female")

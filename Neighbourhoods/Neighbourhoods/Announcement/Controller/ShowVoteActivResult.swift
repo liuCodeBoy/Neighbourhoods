@@ -64,19 +64,17 @@ extension ShowVoteActivResult: UITableViewDelegate, UITableViewDataSource {
     }
     
 
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return self.rotaionArray.count
         }
 
 
 
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 90
-        }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 40
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-          return 50
     }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
           let numberView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 50))
           let numLabel = UILabel.init(frame: CGRect.init(x: screenWidth - 150, y: 0, width: 150, height: 50))

@@ -128,6 +128,49 @@ extension CircleMomentsViewController: UITableViewDataSource, UITableViewDelegat
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    //MARK: - left slide to delete row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //TODO: remove form data source
+        if editingStyle == .delete {
+            
+
+            // MARK:- post request to server
+            
+            guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+                return
+            }
+            guard let id = momentsArray[indexPath.row].id as? Int else {
+                return
+            }
+            NetWorkTool.shareInstance.deleteMyMoments(access_token, id: id, finished: { [weak self](result, error) in
+                if error != nil {
+                    print(error as AnyObject)
+                } else if result!["code"] as! String == "200" {
+                    self?.presentHintMessage(hintMessgae: "删除成功", completion: nil)
+                } else {
+                    print("post request failed with exit code \(result!["code"] as! String)")
+                }
+            })
+            
+            momentsArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+            
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
+    }
+
 
 
 

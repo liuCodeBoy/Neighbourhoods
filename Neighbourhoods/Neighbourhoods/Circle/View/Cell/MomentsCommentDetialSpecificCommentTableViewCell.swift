@@ -56,6 +56,7 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
             }else{
                      commentDetailHeight.constant = 0
             }
+            print(momentsCellModel.uid as! Int)
         }
     }
     var pushClouse : pushDetailVCType?
@@ -109,7 +110,7 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
   
     //点击头像
     @objc private func showUserInfoVC(){
-        if let  otherID = self.momentsCellModel.uid {
+        if let  otherID = self.momentsCellModel.from_uid {
             if self.headImagePushClouse != nil {
                 self.headImagePushClouse!(otherID)
             }

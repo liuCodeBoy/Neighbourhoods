@@ -20,6 +20,14 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     
     var socialCharityListArray = [SocialOrgListModel]()
     
+    var destnation: SocialCharityDetialViewController?
+    
+    var urlString: String? {
+        didSet {
+            destnation?.urlString = self.urlString
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -109,11 +117,22 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return socialCharityListArray.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if socialCharityListArray.count > 0 {
+            self.urlString = socialCharityListArray[indexPath.row].url
+        }
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SocialCharityListCell") as! SocialCharityListTableViewCell
         cell.viewModel = socialCharityListArray[indexPath.row]
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! SocialCharityDetialViewController
+        self.destnation = dest
     }
 
 }

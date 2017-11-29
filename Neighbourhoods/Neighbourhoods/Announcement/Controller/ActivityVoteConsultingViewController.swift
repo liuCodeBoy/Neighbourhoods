@@ -9,7 +9,9 @@
 import UIKit
 import SDWebImage
 class ActivityVoteConsultingViewController: UIViewController {
+    
     var  id : NSNumber?
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
@@ -17,18 +19,17 @@ class ActivityVoteConsultingViewController: UIViewController {
     @IBOutlet weak var emailAddress: UILabel!
     @IBOutlet weak var detialTextLbl: UILabel!
     
-    @IBAction func addComment(_ sender: UIButton) {
-        self.navigationController?.pushViewController(CommentViewController(), animated: true)
-    }
+    let vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateViewController(withIdentifier: "ChattingVC") as! ChattingViewController
     
-    @IBOutlet weak var commentTableView: UITableView!
+    @IBAction func consultBtnClicked(_ sender: UIButton) {
+        // FIXME:- complete
+        vc.setNavBarTitle(title: "群聊")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        commentTableView.delegate = self
-        commentTableView.dataSource = self
-        
+
         setNavBarBackBtn()
         setNavBarTitle(title: "某正在协商的活动")
         lastedRequest(id : id as! Int)

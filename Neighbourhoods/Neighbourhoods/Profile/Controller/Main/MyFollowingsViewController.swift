@@ -16,6 +16,8 @@ class MyFollowingsViewController: UIViewController {
     
     var progressView: UIView?
     
+    var uid: NSNumber?
+    
     lazy var coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
     
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class MyFollowingsViewController: UIViewController {
         myFollowingsTableView.dataSource = self
         
         setNavBarBackBtn()
-        setNavBarTitle(title: "我的关注")
+        setNavBarTitle(title: "他的关注")
         
         loadFollowingUsers()
     }
@@ -42,7 +44,12 @@ class MyFollowingsViewController: UIViewController {
         self.progressView = progress
         self.view.addSubview(progress)
         
-        NetWorkTool.shareInstance.userAttention(access_token) { [weak self](result, error) in
+        if uid == nil {
+            self.uid = UserDefaults.standard.integer(forKey: "uid") as NSNumber
+            self.setNavBarTitle(title: "我的关注")
+        }
+        
+        NetWorkTool.shareInstance.userAttention(access_token, uid: uid as! Int) { [weak self](result, error) in
             
             // MARK:- data fetched successfully
             UIView.animate(withDuration: 0.25, animations: {

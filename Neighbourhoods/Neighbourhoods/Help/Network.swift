@@ -206,13 +206,14 @@ extension NetWorkTool {
     }
     
     //MARK: - 关注列表
-    func userAttention(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func userAttention(_ token: String, uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
         let urlString = "http://106.15.199.8/llb/api/user/attention"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.发送请求参数
-        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+        let parameters = ["uid": uid] as [String : AnyObject]
+        request(.POST, urlString: urlString, parameters: parameters) { (result, error) -> () in
             //获取字典数据
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)
@@ -224,13 +225,15 @@ extension NetWorkTool {
     }
 
     //MARK: - 粉丝列表
-    func userFans(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+    func userFans(_ token: String, uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
         let urlString = "http://106.15.199.8/llb/api/user/fans_list"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.发送请求参数
-        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+        let parameters = ["uid": uid] as [String : AnyObject]
+        
+        request(.POST, urlString: urlString, parameters: parameters) { (result, error) -> () in
             //获取字典数据
             guard let resultDict = result as? [String : AnyObject] else {
                 finished(nil, error)
@@ -616,8 +619,24 @@ extension NetWorkTool {
         }
     }
     
-    
+    //MARK: - 协商群聊
+    func voteConsult(_ token: String, content: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/chat"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["content": content, "id": id] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
     
 }
-
-

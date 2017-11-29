@@ -16,8 +16,9 @@ class SocialCharityDetialViewController: UIViewController {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var emailAddress: UILabel!
-    @IBOutlet weak var detialTextView: UITextView!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var detialWeb: UIWebView!
+    
+    lazy var vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateViewController(withIdentifier: "ChattingVC") as! ChattingViewController
     
     var progressView: UIView?
 
@@ -27,22 +28,18 @@ class SocialCharityDetialViewController: UIViewController {
     
     var to_uid: Int?
     
+    var urlString: String?
+    
     @IBAction func consultBtnClicked(_ sender: UIButton) {
         
-        let vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateViewController(withIdentifier: "ChattingVC")
-        
-        self.rootVC = vc
-        let nav = UINavigationController(rootViewController: vc)
-        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(dismissRootVC))
-        vc.navigationItem.setLeftBarButton(back, animated: true)
+        vc.to_uid = self.to_uid
         vc.setNavBarTitle(title: "咨询")
-        self.present(nav, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
     @objc func dismissRootVC() {
-        self.rootVC?.dismiss(animated: true, completion: nil)
-        
+        rootVC?.dismiss(animated: true, completion: nil)  
     }
     
     override func viewDidLoad() {
@@ -58,6 +55,18 @@ class SocialCharityDetialViewController: UIViewController {
         progress.loadingHintLbl.text = "加载中"
         self.progressView = progress
         self.view.addSubview(progress)
+        
+        loadWebView()
+
+    }
+    
+    func loadWebView() {
+        
+        guard let urlString = urlString else {
+            return
+        }
+        let urlRequest = URLRequest(url: URL.init(string: urlString)!)
+        detialWeb.loadRequest(urlRequest)
         
         NetWorkTool.shareInstance.socialCharityDetial(id: 1) { [weak self](result, error) in
             
@@ -82,20 +91,13 @@ class SocialCharityDetialViewController: UIViewController {
                     self?.location.text = viewModel?.address
                     self?.phoneNumber.text = viewModel?.phone
                     self?.emailAddress.text = viewModel?.email
-                    self?.detialTextView.text = viewModel?.content
-                    self?.image.sd_setImage(with: URL.init(string: "\(String(describing: viewModel?.picture?.first))"), placeholderImage: UIImage(), options: .continueInBackground, completed: nil)
                     self?.to_uid = viewModel?.uid as? Int
                 }
                 
             }
         }
-
+        
+        
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! ChattingViewController
-        dest.to_uid = self.to_uid
-    }
-
 
 }

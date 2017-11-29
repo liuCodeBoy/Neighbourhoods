@@ -14,6 +14,8 @@ class FavUsersListViewController: UIViewController {
     let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
     private var followingList = [AttentionAndFansModel]()
     
+    var uid: NSNumber?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +32,10 @@ class FavUsersListViewController: UIViewController {
     func loadFollowingUsers() {
         
         let token = UserDefaults.standard.string(forKey: "token")
-        NetWorkTool.shareInstance.userAttention(token!) { [weak self](result, error) in
+        if uid == nil {
+            self.uid = UserDefaults.standard.integer(forKey: "uid") as NSNumber
+        }
+        NetWorkTool.shareInstance.userAttention(token!, uid: uid as! Int) { [weak self](result, error) in
             if error != nil {
                 print(error as AnyObject)
             } else if result!["code"] as! String == "200" {

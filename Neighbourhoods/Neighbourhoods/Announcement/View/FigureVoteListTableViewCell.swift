@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 class FigureVoteListTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var gender: UIImageView!
