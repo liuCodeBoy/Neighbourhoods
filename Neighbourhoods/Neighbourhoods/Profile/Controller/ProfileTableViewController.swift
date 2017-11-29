@@ -45,7 +45,7 @@ class ProfileTableViewController: UITableViewController {
     var viewModel: UserInfoModel? {
         didSet {
             if let avatatStr = viewModel?.head_pic {
-                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "notice_placeholder"), options: .continueInBackground, completed: nil)
+                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let verify = viewModel?.type {
                 self.verifyLbl.text = verify

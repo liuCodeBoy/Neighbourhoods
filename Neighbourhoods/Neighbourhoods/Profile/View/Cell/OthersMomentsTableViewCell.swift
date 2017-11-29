@@ -79,7 +79,7 @@ class OthersMomentsTableViewCell: UITableViewCell {
                 let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
                 imageLeft.addGestureRecognizer(tap)
                 let leftImage = pictureStringArr[0]
-                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                 self.imageRight.isUserInteractionEnabled = false
                 self.imageRight.image = nil
                 if  pictureStringArr.count >= 2 {

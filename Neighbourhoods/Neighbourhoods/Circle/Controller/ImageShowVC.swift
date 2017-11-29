@@ -34,7 +34,7 @@ class ImageShowVC: UIViewController {
          
             childImageView.contentMode = UIViewContentMode.scaleAspectFit
             self.imageScrollView.addSubview(childImageView)
-            childImageView.sd_setImage(with: URL.init(string: showImageArr[index as! Int] as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+            childImageView.sd_setImage(with: URL.init(string: showImageArr[index as! Int] as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
 //        }
       }
       self.imageScrollView.bounces = false

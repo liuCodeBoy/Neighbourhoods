@@ -31,7 +31,7 @@ class CommentQucikViewListTableViewCell: UITableViewCell {
                 self.fromUserLbl.text = from
             }
             if let image = viewModel?.picture?.first {
-                self.img.sd_setImage(with: URL.init(string: image), placeholderImage: #imageLiteral(resourceName: "image_placeholder_loading"), options: .continueInBackground, completed: nil)
+                self.img.sd_setImage(with: URL.init(string: image), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let title = viewModel?.user {
                 self.title.text = title

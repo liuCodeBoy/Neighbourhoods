@@ -107,7 +107,7 @@ class TopicDetialTableViewCell: UITableViewCell {
             if let pictureStringArr = TopicDetialModel?.picture{
                 imageHeightConstraint.constant = 90
                 let leftImage = pictureStringArr[0]
-                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                 let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
                 imageLeft.addGestureRecognizer(tap)
                  self.imageRight.image = nil
@@ -115,7 +115,7 @@ class TopicDetialTableViewCell: UITableViewCell {
                 if  pictureStringArr.count >= 2 {
                       let  rightImage = pictureStringArr[1]
                       self.imageRight.isUserInteractionEnabled = true
-                      self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"),options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                      self.imageRight.sd_setImage(with: URL.init(string: rightImage as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"),options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                     let  tapSecond = UITapGestureRecognizer.init(target: self, action:#selector(showSecondVC))
                     imageRight.addGestureRecognizer(tapSecond)
                 }

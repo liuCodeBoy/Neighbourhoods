@@ -32,7 +32,7 @@ class SocialAnnouncementTableViewCell: UITableViewCell {
                 return
             }
             if let avatarString  = viewModel?.picture![0] {
-            self.noticeImage.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+            self.noticeImage.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "social_orgnazation"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
             }
         }
         

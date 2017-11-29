@@ -70,7 +70,7 @@ class ProfileFollowerTableViewCell: UITableViewCell {
     var viewModel: AttentionAndFansModel? {
         didSet {
             if let avatatStr = viewModel?.head_pic {
-                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "notice_placeholder"), options: .continueInBackground, completed: nil)
+                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let name = viewModel?.nickname {
                 self.nickName.text = name
