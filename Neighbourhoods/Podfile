@@ -13,16 +13,7 @@ target 'Neighbourhoods' do
   # Pods for Neighbourhoods
   # MOB
   pod 'SMSSDK'
-  pod 'ShareSDK3'
   pod 'MOBFoundation'
-  pod 'ShareSDK3/ShareSDKUI'
-  pod 'ShareSDK3/ShareSDKExtension'
 
-  pod 'ShareSDK3/ShareSDKPlatforms/QQ'
-  pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
-  pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
-
-  # Reveal
-  pod 'Reveal-SDK', :configurations => ['Debug']
 
 end

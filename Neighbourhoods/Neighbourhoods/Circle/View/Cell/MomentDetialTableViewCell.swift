@@ -12,10 +12,6 @@ let shareNotification = "com.neighbourhood.share"
 
 class MomentDetialTableViewCell: UITableViewCell {
 
-    @IBAction func shareBtnClicked(_ sender: UIButton) {
-        
-        NotificationCenter.default.post(name: NSNotification.Name.init(shareNotification), object: nil)
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

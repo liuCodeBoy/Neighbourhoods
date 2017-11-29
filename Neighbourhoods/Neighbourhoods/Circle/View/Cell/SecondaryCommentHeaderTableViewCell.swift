@@ -51,10 +51,7 @@ class SecondaryCommentHeaderTableViewCell: UITableViewCell {
         }
     }
     
-    
-    @IBAction func shareBtnClicked(_ sender: UIButton) {
-        NotificationCenter.default.post(name: NSNotification.Name.init(shareNotification), object: nil)
-    }
+
     //点击头像
     @objc private func showUserInfoVC(){
         if let  otherID = self.momentsCellModel.uid {
