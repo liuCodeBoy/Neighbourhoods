@@ -21,7 +21,29 @@ class SocialCharityDetialViewController: UIViewController {
     
     var progressView: UIView?
 
+    var rootVC: UIViewController?
+    
     var socialCharityDetial = SocialOrgDetModel()
+    
+    var to_uid: Int?
+    
+    @IBAction func consultBtnClicked(_ sender: UIButton) {
+        
+        let vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateViewController(withIdentifier: "ChattingVC")
+        
+        self.rootVC = vc
+        let nav = UINavigationController(rootViewController: vc)
+        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .done, target: self, action: #selector(dismissRootVC))
+        vc.navigationItem.setLeftBarButton(back, animated: true)
+        vc.setNavBarTitle(title: "咨询")
+        self.present(nav, animated: true, completion: nil)
+        
+    }
+    
+    @objc func dismissRootVC() {
+        self.rootVC?.dismiss(animated: true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +84,17 @@ class SocialCharityDetialViewController: UIViewController {
                     self?.emailAddress.text = viewModel?.email
                     self?.detialTextView.text = viewModel?.content
                     self?.image.sd_setImage(with: URL.init(string: "\(String(describing: viewModel?.picture?.first))"), placeholderImage: UIImage(), options: .continueInBackground, completed: nil)
+                    self?.to_uid = viewModel?.uid as? Int
                 }
                 
             }
         }
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! ChattingViewController
+        dest.to_uid = self.to_uid
     }
 
 

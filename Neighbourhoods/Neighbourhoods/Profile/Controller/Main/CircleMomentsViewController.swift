@@ -12,7 +12,7 @@ import MJRefresh
 class CircleMomentsViewController: UIViewController {
     
     var page  = 1
-    var pages : Int?
+    var pages : Int? = 1
     
     lazy var momentsArray = [MyCircleMomentsModel]()
     

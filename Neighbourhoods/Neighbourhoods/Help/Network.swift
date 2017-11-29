@@ -187,25 +187,6 @@ extension NetWorkTool {
         }
     }
     
-    //MARK: - 社区公告列表
-    func announcementList(id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
-        //1.获取请求的URLString
-        
-        let urlString = "http://106.15.199.8/llb/api/notice/act_list"
-        //2.获取请求参数
-        let parameters = ["id": id]
-        //3.发送请求参数
-        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
-            //获取字典数据
-            guard let resultDict = result as? [String : AnyObject] else {
-                finished(nil, error)
-                return
-            }
-            //将数组数据回调给外界控制器
-            finished(resultDict, error)
-        }
-    }
-    
     //MARK: - 查看用户信息
     func userInfo(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
@@ -603,6 +584,26 @@ extension NetWorkTool {
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["p": p, "to_uid": to_uid] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //MARK: - 发送私信
+    func sendMessage(_ token: String, content: String, to_uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/chat"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters = ["content": content, "to_uid": to_uid] as [String : Any]
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
             //获取字典数据

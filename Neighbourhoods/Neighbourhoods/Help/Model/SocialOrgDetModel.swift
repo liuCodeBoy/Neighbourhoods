@@ -15,7 +15,7 @@ class SocialOrgDetModel: NSObject {
     @objc var address       : String?
     @objc var phone         : String?
     @objc var email         : String?
-    @objc var uid           : String?
+    @objc var uid           : NSNumber?
     @objc var picture       :[String]?
     @objc var content       : String?
     @objc var head_pic      : String?
