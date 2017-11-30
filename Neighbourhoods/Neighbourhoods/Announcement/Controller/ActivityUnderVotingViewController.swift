@@ -9,6 +9,7 @@
 import UIKit
 import NoticeBar
 class ActivityUnderVotingViewController: UIViewController {
+    
     var  id : NSNumber?
     var  cate : NSNumber?
     var  status : NSNumber?

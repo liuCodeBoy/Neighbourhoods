@@ -16,7 +16,6 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var inputDialogueView: UIView!
     @IBOutlet weak var inputTF: UITextField!
     
-    lazy var coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
     
     var chatUserNickName: String? {
         didSet {
@@ -219,11 +218,6 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                 guard let arrayCount = self?.chatHistoryArray.count else {
                     return
                 }
-                if arrayCount == 0 {
-                    self?.coverView.showLab.text = "暂无任务"
-                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-                    self?.view.addSubview((self?.coverView)!)
-                }
 
                 self?.tableView.mj_header.endRefreshing()
             }else{
@@ -270,15 +264,15 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
                 
-                guard let arrayCount = self?.chatHistoryArray.count else {
-                    return
-                }
+//                guard let arrayCount = self?.chatHistoryArray.count else {
+//                    return
+//                }
                 
-                if arrayCount == 0 {
-                    self?.coverView.showLab.text = "暂无任务"
-                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-                    self?.view.addSubview((self?.coverView)!)
-                }
+//                if arrayCount == 0 {
+//                    self?.coverView.showLab.text = "暂无任务"
+//                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//                    self?.view.addSubview((self?.coverView)!)
+//                }
                 
                 self?.tableView.mj_header.endRefreshing()
             }else{

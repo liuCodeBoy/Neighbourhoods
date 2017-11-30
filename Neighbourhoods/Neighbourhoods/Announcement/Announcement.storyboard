@@ -977,9 +977,8 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMS-TM-m3f">
                                                             <rect key="frame" x="10" y="5" width="300" height="59.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="选项" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tt-eH-hSg">
-                                                                    <rect key="frame" x="13" y="19" width="35" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选项" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tt-eH-hSg">
+                                                                    <rect key="frame" x="8" y="19" width="35" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1008,6 +1007,8 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
+                                                                <constraint firstItem="4tt-eH-hSg" firstAttribute="centerY" secondItem="VMS-TM-m3f" secondAttribute="centerY" id="20u-TJ-RaR"/>
+                                                                <constraint firstItem="4tt-eH-hSg" firstAttribute="leading" secondItem="VMS-TM-m3f" secondAttribute="leading" constant="8" id="5ia-Yq-bwC"/>
                                                                 <constraint firstItem="oWH-qe-Kyk" firstAttribute="centerY" secondItem="VMS-TM-m3f" secondAttribute="centerY" id="mGq-zK-iOi"/>
                                                                 <constraint firstAttribute="trailing" secondItem="oWH-qe-Kyk" secondAttribute="trailing" constant="20" id="oHe-Yf-lox"/>
                                                             </constraints>
@@ -1049,6 +1050,7 @@
                     </view>
                     <connections>
                         <outlet property="activityUnderTableView" destination="FzC-5S-NTe" id="yoH-NK-thp"/>
+                        <outlet property="nobodyCoverView" destination="gh4-o3-6zx" id="FAy-hV-QPa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18P-V5-E6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1442,25 +1444,65 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-o3-6zx">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-0q-5ev">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lc-6a-qVa">
+                                        <rect key="frame" x="100" y="254" width="120" height="40"/>
+                                        <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="elr-OW-eX3"/>
+                                            <constraint firstAttribute="height" constant="40" id="q1V-og-pDr"/>
+                                        </constraints>
+                                        <state key="normal" title="我要投票"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Hta-za-jZw" kind="show" identifier="JoinVoteSegue" id="ods-Hz-0UO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="PTE-0q-5ev" secondAttribute="trailing" id="4rY-AV-Aip"/>
+                                    <constraint firstItem="6lc-6a-qVa" firstAttribute="centerX" secondItem="gh4-o3-6zx" secondAttribute="centerX" id="bgE-eG-QR3"/>
+                                    <constraint firstItem="PTE-0q-5ev" firstAttribute="leading" secondItem="gh4-o3-6zx" secondAttribute="leading" id="g2S-fP-Zuk"/>
+                                    <constraint firstItem="PTE-0q-5ev" firstAttribute="top" secondItem="gh4-o3-6zx" secondAttribute="top" id="nYA-vr-L6p"/>
+                                    <constraint firstItem="6lc-6a-qVa" firstAttribute="centerY" secondItem="gh4-o3-6zx" secondAttribute="centerY" id="sw9-gl-41y"/>
+                                    <constraint firstAttribute="bottom" secondItem="PTE-0q-5ev" secondAttribute="bottom" id="uv8-tY-h6W"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Djt-yz-6se" firstAttribute="bottom" secondItem="I7V-U2-Ubv" secondAttribute="bottom" id="0TT-NV-LSe"/>
+                            <constraint firstItem="gh4-o3-6zx" firstAttribute="trailing" secondItem="Djt-yz-6se" secondAttribute="trailing" id="7wV-sJ-ike"/>
                             <constraint firstItem="I7V-U2-Ubv" firstAttribute="top" secondItem="5jh-T0-0Sr" secondAttribute="top" id="8hl-ns-myG"/>
+                            <constraint firstItem="gh4-o3-6zx" firstAttribute="top" secondItem="Djt-yz-6se" secondAttribute="top" id="bi0-sL-etf"/>
                             <constraint firstItem="Djt-yz-6se" firstAttribute="trailing" secondItem="I7V-U2-Ubv" secondAttribute="trailing" id="n3d-Be-29D"/>
                             <constraint firstItem="I7V-U2-Ubv" firstAttribute="leading" secondItem="Djt-yz-6se" secondAttribute="leading" id="r2Q-Wb-Szq"/>
+                            <constraint firstItem="gh4-o3-6zx" firstAttribute="leading" secondItem="Djt-yz-6se" secondAttribute="leading" id="xHb-ey-AnD"/>
+                            <constraint firstItem="Djt-yz-6se" firstAttribute="bottom" secondItem="gh4-o3-6zx" secondAttribute="bottom" id="xHs-NF-bcQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Djt-yz-6se"/>
                     </view>
                     <navigationItem key="navigationItem" id="r5o-5v-o0p"/>
                     <connections>
                         <outlet property="figureVoteTableView" destination="I7V-U2-Ubv" id="Mgx-fs-Q5F"/>
+                        <outlet property="nobodyCoverView" destination="gh4-o3-6zx" id="zxb-Ci-Wb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3z-Po-TWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KBT-WK-SBu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5448.75" y="1480.9859154929577"/>
+            <point key="canvasLocation" x="5449" y="1549"/>
         </scene>
         <!--Figure Vote Detial View Controller-->
         <scene sceneID="Y4f-OM-75L">
@@ -1603,7 +1645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvz-7K-oMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6185" y="1482"/>
+            <point key="canvasLocation" x="6184" y="1549"/>
         </scene>
         <!--Figure Vote Join View Controller-->
         <scene sceneID="Mej-mr-UJu">
@@ -1677,7 +1719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9n3-Bs-1GF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6939.375" y="1480.9859154929577"/>
+            <point key="canvasLocation" x="6938" y="1549"/>
         </scene>
     </scenes>
     <resources>
@@ -1689,4 +1731,7 @@
         <image name="tabbar_announcements_highlighted" width="25" height="19"/>
         <image name="vote_placeholder" width="120" height="120"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ods-Hz-0UO"/>
+    </inferredMetricsTieBreakers>
 </document>

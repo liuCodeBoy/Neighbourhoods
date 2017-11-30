@@ -9,6 +9,7 @@
 import UIKit
 import MJRefresh
 class FigureVoteListViewController: UIViewController {
+    @IBOutlet weak var nobodyCoverView: UIView!
     var  id : NSNumber?
     var  cate : NSNumber?
     var  status : NSNumber?
@@ -26,6 +27,11 @@ class FigureVoteListViewController: UIViewController {
         rotaionArray.removeAll()
         
         lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: id as! Int)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! FigureVoteJoinViewController
+        dest.id = self.id as? Int
     }
     
     
@@ -49,6 +55,10 @@ class FigureVoteListViewController: UIViewController {
               }
             }
                 self?.figureVoteTableView.reloadData()
+                if (self?.rotaionArray.count)! > 0 {
+                    self?.nobodyCoverView.isHidden = true
+                }
+                
                 }else{
                 //服务器
                 self?.figureVoteTableView.mj_header.endRefreshing()
@@ -103,4 +113,6 @@ extension FigureVoteListViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+    
+    
 }
