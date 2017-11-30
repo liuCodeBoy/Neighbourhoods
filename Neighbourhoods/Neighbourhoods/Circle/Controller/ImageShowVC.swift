@@ -61,7 +61,7 @@ class ImageShowVC: UIViewController {
 //            let point:CGPoint = panView.location(in:self.view);
 //            let tempX = point.x - (lastPoint?.x)!
 //            let tempY = point.y - (lastPoint?.y)!
-//            print(tempX ,tempY)
+//            //print(tempX ,tempY)
 //            self.x = Int(CGFloat(self.x)  +  CGFloat(tempX))
 //            self.y = Int(CGFloat(self.y)  +  CGFloat(tempY))
 //            panView.view?.frame.origin.x = CGFloat(self.x)

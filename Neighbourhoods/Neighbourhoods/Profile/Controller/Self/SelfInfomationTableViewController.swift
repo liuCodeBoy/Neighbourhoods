@@ -123,11 +123,11 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                         })
                         
                         if error != nil {
-                            print(error as AnyObject)
+                            //print(error as AnyObject)
                         } else if result!["code"] as! String == "200" {
                             self?.presentHintMessage(hintMessgae: "上传成功", completion: nil)
                         } else {
-                            print("request failed with exit code \(String(describing: result!["code"]))")
+                            //print("request failed with exit code \(String(describing: result!["code"]))")
                         }
                     })
                 }
@@ -195,6 +195,9 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
     
     func loadIdentityStatus() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.identityJudge(access_token) { [weak self](result, error) in
@@ -220,13 +223,16 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                 default: break
                 }
             } else {
-                print("post request failed with code : \(result!["code"] as! String)")
+                //print("post request failed with code : \(result!["code"] as! String)")
             }
         }
     }
     
     func loadProfileInfo() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         // MARK:- fetching data
@@ -243,12 +249,12 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                 self?.progressView?.removeFromSuperview()
             })
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 let dict = result!["result"] as! [String : AnyObject]
                 self?.profileViewModel = UserInfoModel.mj_object(withKeyValues: dict)
             } else {
-                print("post request failed with code : \(result!["code"] as! String)")
+                //print("post request failed with code : \(result!["code"] as! String)")
             }
         }
     }

@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("did Fail To Register For Remote Notifications With Error: \(error)")
+        //print("did Fail To Register For Remote Notifications With Error: \(error)")
     }
     
 

@@ -84,6 +84,9 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         self.progressView = progress
         self.view.addSubview(progress)
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.identityAuth(access_token, up_cate: 2, name: name, id_number: id_Num, image: [IDImgFront.image!, IDImgBack.image!]) { [weak self](result, error) in

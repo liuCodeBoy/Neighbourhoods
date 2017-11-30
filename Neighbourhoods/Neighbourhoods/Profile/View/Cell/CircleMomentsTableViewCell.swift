@@ -22,7 +22,7 @@ class CircleMomentsTableViewCell: UITableViewCell {
         
         NetWorkTool.shareInstance.deleteMyMoments(access_token, id: viewModel?.id as! Int) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 
                 // MARK:- delete successful
@@ -30,7 +30,7 @@ class CircleMomentsTableViewCell: UITableViewCell {
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.5, completed: nil)
             } else {
-                print("post request failed with exit code \(result!["code"] as! String)")
+                //print("post request failed with exit code \(result!["code"] as! String)")
             }
         }
     }

@@ -63,6 +63,9 @@ class CircleMomentsViewController: UIViewController {
     func lastedRequest(p : Int) -> () {
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.myCircleMoments(access_token, p: page) {[weak self](info, error) in
@@ -152,11 +155,11 @@ extension CircleMomentsViewController: UITableViewDataSource, UITableViewDelegat
             }
             NetWorkTool.shareInstance.deleteMyMoments(access_token, id: id, finished: { [weak self](result, error) in
                 if error != nil {
-                    print(error as AnyObject)
+                    //print(error as AnyObject)
                 } else if result!["code"] as! String == "200" {
                     self?.presentHintMessage(hintMessgae: "删除成功", completion: nil)
                 } else {
-                    print("post request failed with exit code \(result!["code"] as! String)")
+                    //print("post request failed with exit code \(result!["code"] as! String)")
                 }
             })
             

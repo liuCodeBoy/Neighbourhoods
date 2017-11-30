@@ -75,9 +75,14 @@ class MyScoreViewController: UIViewController {
     func lastedRequest(p : Int) -> () {
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         
+        
+            
         NetWorkTool.shareInstance.myScore(access_token, p: page) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 

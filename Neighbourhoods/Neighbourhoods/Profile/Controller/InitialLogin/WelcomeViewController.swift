@@ -37,6 +37,9 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             presentHintMessage(hintMessgae: "昵称不能为空", completion: nil)
         } else if (nickNameTF.text?.contains(" "))! {
             presentHintMessage(hintMessgae: "昵称不能含有空格", completion: nil)
+        } else if (CGFloat((nickNameTF.text?.count)!) > 8) == true {
+            self.presentHintMessage(hintMessgae: "昵称不能超过8个字", completion: nil)
+            return
         } else if maleBtn.isSelected == false && femaleBtn.isSelected == false {
             presentHintMessage(hintMessgae: "请选择性别", completion: nil)
         } else {
@@ -51,9 +54,9 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             }
             NetWorkTool.shareInstance.editNameAndSex(access_token, nickname: self.nickNameTF.text!, sex: gender!, finished: { [weak self](result, error) in
                 if error != nil {
-                    print(error as AnyObject)
+                    //print(error as AnyObject)
                 } else if result!["code"] as! String == "200" {
-                    print("register and save user info success")
+                    //print("register and save user info success")
                     UIView.animate(withDuration: 1, animations: {
                         self?.view.alpha = 0
                         UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC
@@ -67,7 +70,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 } else if result!["code"] as! String == "400" {
                     self?.presentHintMessage(hintMessgae: "查询失败", completion: nil)
                 } else {
-                    print("post failed with code \(String(describing: result!["code"]))")
+                    //print("post failed with code \(String(describing: result!["code"]))")
                 }
             })
             

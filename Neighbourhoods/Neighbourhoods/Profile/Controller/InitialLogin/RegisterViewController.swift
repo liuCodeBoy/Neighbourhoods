@@ -79,7 +79,7 @@ class RegisterViewController: UIViewController {
         
         SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneNumber.text, zone: "86", result: { (error: Error?) in
             if error != nil {
-                print(error as Any)
+                //print(error as Any)
             } else {
                 self.phoneNumber.endEditing(true)
                 self.presentHintMessage(hintMessgae: "验证码发送成功", completion: nil)
@@ -137,14 +137,14 @@ class RegisterViewController: UIViewController {
                                 } else if userInfo!["code"] as! String == "415" {
                                     self?.presentHintMessage(hintMessgae: "错误的请求类型", completion: nil)
                                 } else {
-                                    print("post request failed with exit code \(userInfo!["code"] as! String)")
+                                    //print("post request failed with exit code \(userInfo!["code"] as! String)")
                                 }
                                 
                                 
                                 
 
                             } else {
-                                print(error as AnyObject)
+                                //print(error as AnyObject)
                             }
                         })
                     }

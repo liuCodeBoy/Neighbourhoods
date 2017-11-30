@@ -326,7 +326,7 @@
                                             <outlet property="msgCountLbl" destination="qnd-VB-RCo" id="cw9-hf-QmU"/>
                                             <outlet property="nickName" destination="RzP-Fg-uGu" id="pLC-Mh-Bmy"/>
                                             <outlet property="timeLbl" destination="gDd-O5-iMP" id="BOo-N2-vF4"/>
-                                            <segue destination="NtE-Q8-Bxy" kind="show" id="p9a-6g-Sed"/>
+                                            <segue destination="NtE-Q8-Bxy" kind="show" identifier="messageSegue" id="p9a-6g-Sed"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

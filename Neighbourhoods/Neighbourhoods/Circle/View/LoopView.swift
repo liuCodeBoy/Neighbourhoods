@@ -13,7 +13,7 @@
  imageScrollView.images = images
  imageScrollView.isAutoScroll = true
  imageScrollView.imageClickedHandler = { (indexOfImage) -> Void in
- print("the index of clicked image: \(indexOfImage)")
+ //print("the index of clicked image: \(indexOfImage)")
  }
 */
 

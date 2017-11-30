@@ -32,8 +32,8 @@ class ActivityVoteConsultingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNavBarTitle(title: "投票")
         setNavBarBackBtn()
-        setNavBarTitle(title: "某正在协商的活动")
         lastedRequest(id : id as! Int)
     }
 

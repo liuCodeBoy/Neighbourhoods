@@ -31,13 +31,20 @@ class FavUsersListViewController: UIViewController {
     
     func loadFollowingUsers() {
         
-        let token = UserDefaults.standard.string(forKey: "token")
         if uid == nil {
             self.uid = UserDefaults.standard.integer(forKey: "uid") as NSNumber
         }
-        NetWorkTool.shareInstance.userAttention(token!, uid: uid as! Int) { [weak self](result, error) in
+        
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
+        
+        NetWorkTool.shareInstance.userAttention(access_token, uid: uid as! Int) { [weak self](result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 guard let dictArray = result?["result"] as? [NSDictionary] else {
                         self?.coverView.showLab.text = "暂无关注"
@@ -52,7 +59,7 @@ class FavUsersListViewController: UIViewController {
                 }
                 self?.followingsTableView.reloadData()
             } else {
-                print("post failed with code \(String(describing: result!["code"]))")
+                //print("post failed with code \(String(describing: result!["code"]))")
             }
         }
     }

@@ -33,12 +33,20 @@ class ChangeNickNameViewController: UIViewController {
             return
         }
         
+        if (CGFloat((nickNameTF.text?.count)!) > 8) == true {
+            self.presentHintMessage(hintMessgae: "昵称不能超过8个字", completion: nil)
+            return
+        }
+        
         
         //MARK: - change the former vc's property
         let firstVC = self.retSegue?.source as! SelfInfomationTableViewController
         firstVC.nickNameLbl.text = nickName
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         
@@ -58,13 +66,13 @@ class ChangeNickNameViewController: UIViewController {
                 self?.progressView?.removeFromSuperview()
             })
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 let source = self?.retSegue?.source as! SelfInfomationTableViewController
                 source.nickNameLbl.text = self?.nickName
                 self?.presentHintMessage(hintMessgae: "修改成功", completion: nil)
             } else {
-                print("request failed with exit code \(String(describing: result!["code"]))")
+                //print("request failed with exit code \(String(describing: result!["code"]))")
             }
         })
        

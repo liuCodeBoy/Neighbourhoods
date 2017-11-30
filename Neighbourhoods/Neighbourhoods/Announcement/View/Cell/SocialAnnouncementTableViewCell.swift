@@ -25,8 +25,8 @@ class SocialAnnouncementTableViewCell: UITableViewCell {
             if let title = viewModel?.title {
                 titleLbl.text = title
             }
-            if let content = viewModel?.content {
-                detialLbl.text = content
+            if let content = viewModel?.time {
+                detialLbl.text = NSDate.createDateString(createAtStr: "\(content)")
             }
             guard   viewModel?.picture?[0] != nil else {
                 return

@@ -16,6 +16,9 @@ class FigureVoteListTableViewCell: UITableViewCell {
     @IBOutlet weak var voteCountLbl: UILabel!
     @IBOutlet weak var voteBtn: UIButton!
     @IBOutlet weak var rankLbl: UILabel!
+    
+    var   headImagePushClouse  : headImageType?
+
     var   model :  VoteOptionList?{
         didSet{
             if let  name = model?.user?.nickname {
@@ -51,8 +54,19 @@ class FigureVoteListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let  headImageTap = UITapGestureRecognizer.init(target: self, action:#selector(showUserInfoVC))
+        avatar.addGestureRecognizer(headImageTap)
+        
     }
 
-
+    //点击头像
+    @objc private func showUserInfoVC(){
+        
+        if let  otherID = model?.uid {
+            if self.headImagePushClouse != nil {
+                self.headImagePushClouse!(otherID)
+            }
+        }
+    }
 }

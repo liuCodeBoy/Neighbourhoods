@@ -62,6 +62,9 @@ class QuickViewMessgaesViewController: UIViewController {
     func lastedRequest(p : Int) -> () {
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
 
@@ -169,8 +172,6 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
 //    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
 //        return "删除"
 //    }
-    
-    
     
     
 }

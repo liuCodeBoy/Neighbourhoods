@@ -79,7 +79,7 @@ class SocialCharityDetialViewController: UIViewController {
             })
             
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else {
                 guard let resultDict = result else {
                     return

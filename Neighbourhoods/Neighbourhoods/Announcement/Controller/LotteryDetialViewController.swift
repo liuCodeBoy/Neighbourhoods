@@ -29,32 +29,39 @@ class LotteryDetialViewController: UIViewController {
     }
 
     func play_lottery(token : String ,id : Int) -> () {
-        NetWorkTool.shareInstance.play_lottery(token, id: id) { (info, error) in
+        NetWorkTool.shareInstance.play_lottery(token, id: id) { [weak self](info, error) in
             if info?["code"] as? String == "200"{
                 let dict = info!["result"] as! NSDictionary
                 let title = dict["title"] as? String
-                let msg = info!["msg"] as? String
-                self.lotteryInfoBtn.setTitle("摇号中...", for: .normal)
-                let  result =  "摇号成功".compare(msg!).rawValue
-                if result == 0{
-                    UIView.animate(withDuration: 1.5, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
-                                    self.lotteryDetialLbl.text = title
-                                    self.lotteryBackView.backgroundColor = default_orange
-                                    self.lotteryInfoBtn.backgroundColor  = default_orange
-                                    self.lotteryInfoBtn.setTitle(msg, for: .normal)
+                self?.lotteryInfoBtn.setTitle("摇号中...", for: .normal)
+                let  result =  "很遗憾，没有摇到".compare(title!).rawValue
+                if result == 0 {
+                    UIView.animate(withDuration: 3, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                        self?.lotteryDetialLbl.text = title
+                        self?.lotteryInfoBtn.setTitle("未摇到", for: .normal)
+                        self?.lotteryDetialLbl.font = UIFont.systemFont(ofSize: 14)
+                        self?.lotteryBackView.backgroundColor = default_grey
+                        self?.lotteryInfoBtn.backgroundColor  = default_grey
+                        self?.colorfulBrand.alpha = 0
                     })
                 }else{
-                    UIView.animate(withDuration: 1.5, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
-                        self.lotteryDetialLbl.text = title
-                        self.lotteryInfoBtn.setTitle(msg, for: .normal)
-                        self.lotteryDetialLbl.font = UIFont.systemFont(ofSize: 14)
-                        self.lotteryBackView.backgroundColor = default_grey
-                        self.lotteryInfoBtn.backgroundColor  = default_grey
+                
+                    UIView.animate(withDuration: 3, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                        self?.lotteryDetialLbl.text = title
+                        self?.lotteryBackView.backgroundColor = default_orange
+                        self?.lotteryInfoBtn.backgroundColor  = default_orange
+                        self?.lotteryInfoBtn.setTitle("摇到啦", for: .normal)
+                        self?.colorfulBrand.alpha = 1
+                        self?.btnHCons.constant += 35
+
                     })
+                    
+    
+                   
                 }
             }else if(info?["code"] as? String == "403"){
                 //服务器error
-                self.presentHintMessage(hintMessgae: "抱歉你还没有权限", completion: nil)
+                self?.presentHintMessage(hintMessgae: "抱歉你还没有权限", completion: nil)
             }
         }
     }
@@ -65,8 +72,12 @@ class LotteryDetialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavBarBackBtn()
+        setNavBarTitle(title: "摇号")
+        colorfulBrand.alpha = 0
+        
         guard showText != nil else {
-            colorfulBrand.isHidden = true
+            colorfulBrand.alpha = 0
             lotteryInfoBtn.backgroundColor =  defaultBlueColor
             lotteryBackView.backgroundColor =  defaultBlueColor
             self.lotteryInfoBtn.isUserInteractionEnabled = true
@@ -77,13 +88,14 @@ class LotteryDetialViewController: UIViewController {
         guard   obj.length > 0 else {
             self.lotteryBackView.backgroundColor = default_grey
             self.lotteryInfoBtn.backgroundColor  = default_grey
-            self.lotteryInfoBtn.setTitle("很遗憾，没有摇到", for: .normal)
+            self.lotteryInfoBtn.setTitle("未摇到", for: .normal)
+            
             self.lotteryInfoBtn.isUserInteractionEnabled = false
             self.lotteryDetialLbl.text = ""
             return
         }
         btnHCons.constant += 35
-        colorfulBrand.isHidden = false
+        colorfulBrand.alpha = 1
         lotteryInfoBtn.backgroundColor =  default_orange
         lotteryBackView.backgroundColor =  default_orange
         self.lotteryInfoBtn.setTitle("摇到啦!", for: .normal)

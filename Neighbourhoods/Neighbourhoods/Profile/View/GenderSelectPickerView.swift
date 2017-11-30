@@ -30,11 +30,11 @@ class GenderSelectPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSour
         }
         NetWorkTool.shareInstance.updateProfile(access_token, cate: "sex", content: nil, content_sex: self.sex, image: nil) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
-                print("change gender successful")
+                //print("change gender successful")
             } else {
-                print("post request failed with exit code \(String(describing: result!["code"]))")
+                //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
         

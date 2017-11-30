@@ -53,16 +53,16 @@ class ProfileFollowingTableViewCell: UITableViewCell {
         }
         NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid, type: type) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
                 return
             }
             
-            switch result!["code"] as! String {
-            case "200" : print("关注成功")
-            case "400" : print("关注失败, 取消关注成功")
-            case "402" : print("请传入type参数")
-            default    : break
-            }
+//            switch result!["code"] as! String {
+//            case "200" : //print("关注成功")
+//            case "400" : //print("关注失败, 取消关注成功")
+//            case "402" : //print("请传入type参数")
+//            default    : break
+//            }
         }
         
     }

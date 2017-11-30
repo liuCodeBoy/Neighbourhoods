@@ -99,7 +99,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
             return
         }
         NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
-            print(UserDefaults.standard.string(forKey: "token")!)
+            //print(UserDefaults.standard.string(forKey: "token")!)
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)

@@ -36,6 +36,9 @@ class MyFollowersViewController: UIViewController {
     func loadFollowingUsers() {
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         // MARK:- fetching data
@@ -60,7 +63,7 @@ class MyFollowersViewController: UIViewController {
             })
             
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 guard let dictArray = result?["result"] as? [NSDictionary] else {
                     self?.coverView.showLab.text = "暂无粉丝"
@@ -83,7 +86,7 @@ class MyFollowersViewController: UIViewController {
                     }
                 }
             } else {
-                print("post failed with code \(String(describing: result!["code"]))")
+                //print("post failed with code \(String(describing: result!["code"]))")
             }
         }
     }

@@ -20,16 +20,17 @@ class FigureVoteListViewController: UIViewController {
         figureVoteTableView.dataSource = self
         setNavBarBackBtn()
         setNavBarTitle(title: "正在投票")
-        lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: id as! Int)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        rotaionArray.removeAll()
+        
         lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: id as! Int)
-    
     }
     
     
     func lastedRequest(p: Int, status: Int, cate: Int, id: Int) -> () {
+        
         var token = ""
         guard (UserDefaults.standard.string(forKey: "token") != nil) else {
             self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
@@ -71,6 +72,18 @@ extension FigureVoteListViewController: UITableViewDelegate, UITableViewDataSour
             cell.model = self.rotaionArray[indexPath.row]
             cell.rankLbl.text = "NO.\(indexPath.row + 1)"
         }
+        
+        //跳出用户详情
+        cell.headImagePushClouse = { (otherID) in
+            let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+            userInfoVc?.uid = otherID as? Int
+            if  UserDefaults.standard.string(forKey: "token") == nil{
+                self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
+            }else{
+                self.navigationController?.pushViewController(userInfoVc!, animated: true)
+            }
+        }
+        
         return cell
     }
     

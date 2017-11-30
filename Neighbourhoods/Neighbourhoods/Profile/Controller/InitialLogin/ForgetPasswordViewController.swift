@@ -21,7 +21,7 @@ class ForgetPasswordViewController: UIViewController {
         
         SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneOrUserName.text, zone: "86", result: { (error: Error?) in
             if error != nil {
-                print(error as Any)
+                //print(error as Any)
             } else {
                 self.phoneOrUserName.endEditing(true)
                 self.presentHintMessage(hintMessgae: "验证码发送成功", completion: nil)
@@ -60,13 +60,13 @@ class ForgetPasswordViewController: UIViewController {
                     
                     NetWorkTool.shareInstance.forgetPwd(account: self.phoneOrUserName.text!, newpwd: self.newPwd.text!, finished: { [weak self](result, error) in
                         if error != nil {
-                            print(error as AnyObject)
+                            //print(error as AnyObject)
                         } else if result!["code"] as! String == "200" {
                             weakSelf?.presentHintMessage(hintMessgae: "密码重置成功", completion: { (_) in
                                 self?.navigationController?.popViewController(animated: true)
                             })
                         } else {
-                            print(result!["code"] as! String)
+                            //print(result!["code"] as! String)
                             weakSelf?.presentHintMessage(hintMessgae: "修改失败", completion: nil)
                         }
                     })

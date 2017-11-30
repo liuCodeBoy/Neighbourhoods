@@ -71,6 +71,9 @@ class MyIssuedMissionTableViewController: UITableViewController {
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         

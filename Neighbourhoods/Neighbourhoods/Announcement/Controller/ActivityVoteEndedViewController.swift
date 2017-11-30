@@ -22,6 +22,8 @@ class ActivityVoteEndedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lastedRequest(id: id as! Int)
+        setNavBarTitle(title: "投票")
+        setNavBarBackBtn()
     }
    
     @IBAction func ShowEndDetailVC(_ sender: Any) {

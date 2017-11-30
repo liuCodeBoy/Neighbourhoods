@@ -32,6 +32,8 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     
     var isConsultingChat: Bool = false
     
+    var isPushedFromTabBarHidden = false
+    
     private var pages = 1
     private var page = 1
     
@@ -222,11 +224,7 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                     self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
                     self?.view.addSubview((self?.coverView)!)
                 }
-                
-                self?.chatHistoryArray.removeAll()
-                self?.temporaryPages = 0
-                self?.page = 1
-                
+
                 self?.tableView.mj_header.endRefreshing()
             }else{
                 //服务器
@@ -238,6 +236,9 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     func loadChattingHistory() {
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         
@@ -297,12 +298,12 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         
         NetWorkTool.shareInstance.sendMessage(access_token, content: inputTF.text!, to_uid: to_uid) { [weak self](result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 self?.inputTF.text = ""
                 self?.tableView.reloadData()
             } else {
-                print(result!["code"] as! String)
+                //print(result!["code"] as! String)
             }
         }
     }
@@ -315,12 +316,12 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
 
         NetWorkTool.shareInstance.voteConsult(access_token, content: inputTF.text!, id: id) { [weak self](result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 self?.inputTF.text = ""
                 self?.tableView.reloadData()
             } else {
-                print(result!["code"] as! String)
+                //print(result!["code"] as! String)
             }
         }
     }
@@ -331,10 +332,16 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
         let  keyBoardBounds = (info?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let duration = (info?[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         
-        let deltaY = keyBoardBounds.size.height
+        var deltaY = keyBoardBounds.size.height - 2 * tabBarHeight + (self.inputDialogueView?.frame.height)!
         let animations:(() -> Void) = {
             //键盘的偏移量
+            
+            if self.isPushedFromTabBarHidden == true {
+                deltaY = keyBoardBounds.size.height
+            }
+            
             self.inputDialogueView.transform = CGAffineTransform(translationX: 0 , y: -(deltaY))
+           
         }
         
         if duration > 0 {

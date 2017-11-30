@@ -57,7 +57,7 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
             }else{
                      commentDetailHeight.constant = 0
             }
-            print(momentsCellModel.uid as! Int)
+            //print(momentsCellModel.uid as! Int)
         }
     }
     var pushClouse : pushDetailVCType?

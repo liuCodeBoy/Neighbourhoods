@@ -24,7 +24,7 @@ class OthersMomentsViewController: UIViewController {
     var userModel : UserModel? {
         didSet{
             if let  avatarStr = userModel?.head_pic {
-            self.avatarImageView.sd_setImage(with: URL.init(string: avatarStr), completed: nil)
+                self.avatarImageView.sd_setImage(with: URL.init(string: avatarStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
             if  let name = userModel?.nickname{
               self.niChen.text = name
@@ -88,6 +88,9 @@ class OthersMomentsViewController: UIViewController {
  
     @IBAction func addFocus(_ sender: Any) {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         guard uid! > 0  else {
@@ -97,7 +100,7 @@ class OthersMomentsViewController: UIViewController {
         
         NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid!, type: type!) { [weak self](result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
                 return
             }
             var  showText : String?

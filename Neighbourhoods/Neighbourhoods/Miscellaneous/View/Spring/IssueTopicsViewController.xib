@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -104,17 +104,16 @@
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jVL-gY-bKp">
                     <rect key="frame" x="10" y="114" width="355" height="200"/>
-                    <color key="backgroundColor" white="0.97971540180000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入要发布的话题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJl-2j-f4b">
-                    <rect key="frame" x="20" y="76" width="335" height="30"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入要发布的话题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJl-2j-f4b">
+                    <rect key="frame" x="20" y="72" width="335" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="4gV-dB-ZQc"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入话题详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hr7-J0-vsf">
@@ -123,11 +122,21 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elI-2G-7x9">
+                    <rect key="frame" x="0.0" y="109" width="375" height="5"/>
+                    <color key="backgroundColor" white="0.97971540180000005" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="kLV-gv-N8R"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="elI-2G-7x9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0mO-IW-tbp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="w6Y-85-Ir0" secondAttribute="bottom" id="2X7-2M-VAw"/>
-                <constraint firstItem="JJl-2j-f4b" firstAttribute="top" secondItem="I3E-Zp-B7R" secondAttribute="bottom" constant="12" id="93V-2P-ck2"/>
+                <constraint firstItem="JJl-2j-f4b" firstAttribute="top" secondItem="I3E-Zp-B7R" secondAttribute="bottom" constant="8" id="93V-2P-ck2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="elI-2G-7x9" secondAttribute="trailing" id="9iv-Wd-pZ1"/>
+                <constraint firstItem="jVL-gY-bKp" firstAttribute="top" secondItem="elI-2G-7x9" secondAttribute="bottom" id="B4g-AX-UDg"/>
                 <constraint firstItem="jVL-gY-bKp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="CrW-7j-jiV"/>
                 <constraint firstItem="I3E-Zp-B7R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EYY-aN-bdw"/>
                 <constraint firstItem="jVL-gY-bKp" firstAttribute="top" secondItem="I3E-Zp-B7R" secondAttribute="bottom" constant="50" id="FOl-X7-Hmz"/>
@@ -144,7 +153,7 @@
                 <constraint firstItem="jVL-gY-bKp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="zxK-O6-RuD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-313" y="-125"/>
+            <point key="canvasLocation" x="-313.5" y="-125.5"/>
         </view>
     </objects>
     <resources>
