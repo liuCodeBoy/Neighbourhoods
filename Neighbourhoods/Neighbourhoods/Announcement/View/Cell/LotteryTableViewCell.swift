@@ -20,10 +20,13 @@ class LotteryTableViewCell: UITableViewCell {
         if let status = lotterModel?.status {
             if status == -1 {
                 self.statusBtn.setTitle("已结束", for: .normal)
+                self.statusBtn.backgroundColor = default_grey
             }else if status == 1{
                 self.statusBtn.setTitle("即将开始", for: .normal)
+                 self.statusBtn.backgroundColor = #colorLiteral(red: 0.3764705956, green: 0.7882353067, blue: 0.9725490212, alpha: 1)
             }else if status == 2{
                 self.statusBtn.setTitle("进行中", for: .normal)
+                self.statusBtn.backgroundColor = default_orange
             }
          }
         if let timeNum = lotterModel?.time {
