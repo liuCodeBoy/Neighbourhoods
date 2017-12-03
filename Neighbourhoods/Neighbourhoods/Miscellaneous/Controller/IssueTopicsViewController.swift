@@ -16,6 +16,7 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
     
     @IBOutlet weak var detialPlaceholderLbl: UILabel!
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var detialTopDistanceCons: NSLayoutConstraint!
     
     var progressView: UIView?
 
@@ -188,6 +189,8 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
         
         if self.topic_id != nil {
             self.topicNameField.isHidden = true
+            self.detialTopDistanceCons.constant = 0
+            self.topicDetialTextView.becomeFirstResponder()
             self.topicTitle.text = "发布话题帖子"
             self.maxNum = 2
         }

@@ -267,6 +267,11 @@ class MissionDetialViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(pushReceiversProfile))
         receiverAvatar.addGestureRecognizer(tap)
         
+        if UserDefaults.standard.string(forKey: "token") == nil {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
 
     }
     

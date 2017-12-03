@@ -32,6 +32,12 @@ class SocialCharityDetialViewController: UIViewController {
     
     @IBAction func consultBtnClicked(_ sender: UIButton) {
         
+        if UserDefaults.standard.string(forKey: "token") == nil {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
         vc.to_uid = self.to_uid
         vc.isConsultingChat = false
         vc.setNavBarTitle(title: "咨询")
