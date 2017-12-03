@@ -19,7 +19,7 @@ class MomentsTopicsClassificationTableViewCell: UITableViewCell {
         didSet {
             if let toplabel = cellModel?.name{
                 self.topicTitleLbl.text = "#" + (toplabel) + "#"
-                self.topicTitleLbl.textColor = UIColor.blue
+                self.topicTitleLbl.textColor = defaultBlueColor
             }
             self.topicDetialLbl.text =  cellModel?.content
             if let avatarString  =  cellModel?.picture {

@@ -187,8 +187,12 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     
     func loadConsultingHistory() {
         
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
-        
+guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
         guard let id = id else { return }
         
         NetWorkTool.shareInstance.option_list(access_token, p: page, status: 1, cate: 0, id: id) { [weak self](info, error) in
@@ -215,7 +219,7 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                 }
                 
-                guard let arrayCount = self?.chatHistoryArray.count else {
+                guard (self?.chatHistoryArray.count) != nil else {
                     return
                 }
 
@@ -286,8 +290,12 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     
     func postChat() {
         
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
-        
+guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
         guard let to_uid = to_uid else { return }
         
         NetWorkTool.shareInstance.sendMessage(access_token, content: inputTF.text!, to_uid: to_uid) { [weak self](result, error) in
@@ -304,8 +312,12 @@ class ChattingViewController: UIViewController, UITableViewDelegate, UITableView
     
     func postConsult() {
         
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else { return }
-        
+guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
         guard let id = id else { return }
 
         NetWorkTool.shareInstance.voteConsult(access_token, content: inputTF.text!, id: id) { [weak self](result, error) in

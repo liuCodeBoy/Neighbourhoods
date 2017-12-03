@@ -84,6 +84,8 @@ class OthersMomentsViewController: UIViewController {
         //加载刷新控件
         loadRefreshComponet()
         endrefresh()
+        
+        
     }
  
     @IBAction func addFocus(_ sender: Any) {
