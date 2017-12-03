@@ -34,7 +34,7 @@ class ImageShowVC: UIViewController {
          
             childImageView.contentMode = UIViewContentMode.scaleAspectFit
             self.imageScrollView.addSubview(childImageView)
-            childImageView.sd_setImage(with: URL.init(string: showImageArr[index as! Int] as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+            childImageView.sd_setImage(with: URL.init(string: showImageArr[index as! Int] as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
 //        }
       }
       self.imageScrollView.bounces = false
@@ -61,7 +61,7 @@ class ImageShowVC: UIViewController {
 //            let point:CGPoint = panView.location(in:self.view);
 //            let tempX = point.x - (lastPoint?.x)!
 //            let tempY = point.y - (lastPoint?.y)!
-//            print(tempX ,tempY)
+//            //print(tempX ,tempY)
 //            self.x = Int(CGFloat(self.x)  +  CGFloat(tempX))
 //            self.y = Int(CGFloat(self.y)  +  CGFloat(tempY))
 //            panView.view?.frame.origin.x = CGFloat(self.x)

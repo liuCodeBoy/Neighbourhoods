@@ -57,7 +57,7 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
             }else{
                      commentDetailHeight.constant = 0
             }
-            print(momentsCellModel.uid as! Int)
+            //print(momentsCellModel.uid as! Int)
         }
     }
     var pushClouse : pushDetailVCType?
@@ -129,8 +129,7 @@ class MomentsCommentDetialSpecificCommentTableViewCell: UITableViewCell {
         self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
     
     }
-    @IBAction func shareBtnClicked(_ sender: UIButton) {
-    }
+
     @IBAction func showCommentDetail(_ sender: Any) {
         if self.pushClouse != nil{
             self.pushClouse!(self.momentsCellModel.id)

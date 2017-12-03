@@ -967,7 +967,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ag-Tf-eDP">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="1Ag-Tf-eDP">
                                             <rect key="frame" x="20" y="10" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="8A0-vT-ne1"/>
@@ -998,17 +998,27 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEa-Fo-GOD">
+                                            <rect key="frame" x="0.0" y="79" width="375" height="1"/>
+                                            <color key="backgroundColor" white="0.85354275173611116" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="OAI-lQ-66y"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="1Ag-Tf-eDP" firstAttribute="leading" secondItem="yC1-Qv-ofh" secondAttribute="leading" constant="20" id="6Pc-Kj-b5h"/>
                                         <constraint firstItem="DQ8-lT-kcU" firstAttribute="leading" secondItem="1Ag-Tf-eDP" secondAttribute="trailing" constant="8" id="6dB-lG-rlS"/>
                                         <constraint firstItem="fhM-96-Eox" firstAttribute="leading" secondItem="1Ag-Tf-eDP" secondAttribute="trailing" constant="8" id="8WG-IH-eT1"/>
                                         <constraint firstItem="3Ee-wH-c75" firstAttribute="leading" secondItem="1Ag-Tf-eDP" secondAttribute="trailing" constant="8" id="BXj-mH-s7g"/>
+                                        <constraint firstItem="QEa-Fo-GOD" firstAttribute="leading" secondItem="yC1-Qv-ofh" secondAttribute="leading" id="JJ3-qJ-X5c"/>
                                         <constraint firstItem="1Ag-Tf-eDP" firstAttribute="centerY" secondItem="yC1-Qv-ofh" secondAttribute="centerY" id="LGm-ZH-Y4g"/>
                                         <constraint firstItem="DQ8-lT-kcU" firstAttribute="top" secondItem="fhM-96-Eox" secondAttribute="bottom" id="Ncq-Xn-ASi"/>
                                         <constraint firstItem="DQ8-lT-kcU" firstAttribute="trailing" secondItem="yC1-Qv-ofh" secondAttribute="trailingMargin" id="OCD-D1-76o"/>
+                                        <constraint firstAttribute="bottom" secondItem="QEa-Fo-GOD" secondAttribute="bottom" id="aNf-7P-zb6"/>
                                         <constraint firstItem="1Ag-Tf-eDP" firstAttribute="top" secondItem="yC1-Qv-ofh" secondAttribute="top" constant="10" id="dHG-2u-Eya"/>
                                         <constraint firstItem="3Ee-wH-c75" firstAttribute="top" secondItem="DQ8-lT-kcU" secondAttribute="bottom" constant="2" id="fIJ-lC-brl"/>
+                                        <constraint firstAttribute="trailing" secondItem="QEa-Fo-GOD" secondAttribute="trailing" id="hqr-jq-ui2"/>
                                         <constraint firstItem="fhM-96-Eox" firstAttribute="top" secondItem="yC1-Qv-ofh" secondAttribute="topMargin" constant="5" id="iqj-SF-q5A"/>
                                         <constraint firstAttribute="bottom" secondItem="1Ag-Tf-eDP" secondAttribute="bottom" constant="10" id="l2b-2b-JSM"/>
                                         <constraint firstItem="eS7-eJ-NVi" firstAttribute="leading" secondItem="3Ee-wH-c75" secondAttribute="trailing" constant="12" id="p1N-Fv-bVo"/>
@@ -1782,9 +1792,6 @@
                                                         <constraint firstAttribute="height" constant="13" id="9hj-ER-XrK"/>
                                                         <constraint firstAttribute="width" constant="13" id="uX2-dJ-UiF"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <action selector="shareBtnClicked:" destination="zpc-Y6-h03" eventType="touchUpInside" id="YG9-V4-KUg"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUj-OG-7jO">
                                                     <rect key="frame" x="272" y="45" width="40" height="22"/>
@@ -1962,9 +1969,6 @@
                                                 <constraint firstAttribute="width" constant="15" id="39c-ea-1Vt"/>
                                                 <constraint firstAttribute="height" constant="15" id="pFx-fM-Z1Q"/>
                                             </constraints>
-                                            <connections>
-                                                <action selector="shareBtnClicked:" destination="MeC-pJ-OMA" eventType="touchUpInside" id="K7b-Xa-GuY"/>
-                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLx-qf-h00">
                                             <rect key="frame" x="296" y="29.5" width="64" height="18"/>
@@ -2254,5 +2258,6 @@
         <image name="profile_follow" width="25" height="26"/>
         <image name="tabbar_circle" width="25" height="26"/>
         <image name="tabbar_circle_highlighted" width="25" height="26"/>
+        <image name="topic_placeholder" width="120" height="120"/>
     </resources>
 </document>

@@ -25,14 +25,14 @@ class SocialAnnouncementTableViewCell: UITableViewCell {
             if let title = viewModel?.title {
                 titleLbl.text = title
             }
-            if let content = viewModel?.content {
-                detialLbl.text = content
+            if let content = viewModel?.time {
+                detialLbl.text = NSDate.createDateString(createAtStr: "\(content)")
             }
             guard   viewModel?.picture?[0] != nil else {
                 return
             }
             if let avatarString  = viewModel?.picture![0] {
-            self.noticeImage.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+            self.noticeImage.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "social_orgnazation"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
             }
         }
         

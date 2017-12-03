@@ -70,7 +70,7 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                         alert.addAction(ok)
                         weakSelf?.present(alert, animated: true, completion: nil)
                     }else{
-                        print("login failed with post request exit code \(String(describing: userInfoDict["code"] as? String))")
+                        //print("login failed with post request exit code \(String(describing: userInfoDict["code"] as? String))")
                         let alert = UIAlertController(title: "登录失败", message: "请检查账号密码后重试", preferredStyle: .alert)
                         let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
                             

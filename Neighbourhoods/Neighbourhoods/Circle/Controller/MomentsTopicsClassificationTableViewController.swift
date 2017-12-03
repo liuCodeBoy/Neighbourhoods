@@ -9,6 +9,7 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
     private lazy var  rotaionArray = [NborTopicModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBarBackBtn()
         self.tableView.showsVerticalScrollIndicator = false
         if  isChooseTopic == nil{
             lastedRequest(p : page)

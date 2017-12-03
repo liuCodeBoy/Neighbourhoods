@@ -24,6 +24,8 @@ class ActivityVoteCounsultantCompletedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lastedRequest(id : id as! Int)
+        setNavBarTitle(title: "投票")
+        setNavBarBackBtn()
     }
     @IBAction func VoteAction(_ sender: Any) {
         if cate == 2{

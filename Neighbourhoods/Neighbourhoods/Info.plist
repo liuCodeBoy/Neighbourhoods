@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.8</string>
+	<string>1.1.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -52,59 +52,9 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>11</string>
 	<key>LSApplicationCategoryType</key>
 	<string>Privacy - Camera Usage Description</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>sinaweibo</string>
-		<string>sinaweibohd</string>
-		<string>sinaweibosso</string>
-		<string>sinaweibohdsso</string>
-		<string>weibosdk</string>
-		<string>weibosdk2.5</string>
-		<string>wechat</string>
-		<string>weixin</string>
-		<string>fb-messenger</string>
-		<string>fbauth2</string>
-		<string>fbauth</string>
-		<string>alipay</string>
-		<string>alipayshare</string>
-		<string>timapi</string>
-		<string>mqzoneopensdk</string>
-		<string>mqzoneopensdkapi</string>
-		<string>mqzoneopensdkapi19</string>
-		<string>mqzoneopensdkapiV2</string>
-		<string>mqqOpensdkSSoLogin</string>
-		<string>mqqopensdkapiV2</string>
-		<string>mqqopensdkapiV3</string>
-		<string>wtloginmqq2</string>
-		<string>mqqapi</string>
-		<string>mqqwpa</string>
-		<string>mqzone</string>
-		<string>mqq</string>
-		<string>mqqopensdkapiV4</string>
-		<string>googlechrome</string>
-		<string>googlechrome-x-callback</string>
-		<string>hasgplus4</string>
-		<string>com.google.gppconsent</string>
-		<string>com.google.gppconsent.2.2.0</string>
-		<string>com.google.gppconsent.2.3.0</string>
-		<string>com.google.gppconsent.2.4.0</string>
-		<string>com.google.gppconsent.2.4.1</string>
-		<string>pocket-oauth-v1</string>
-		<string>pinit</string>
-		<string>pinterestsdk.v1</string>
-		<string>instagram</string>
-		<string>whatsapp</string>
-		<string>line</string>
-		<string>lineauth</string>
-		<string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-		<string>mtmv</string>
-		<string>mpsharesdk10</string>
-		<string>mpsharesdk11</string>
-		<string>youtube</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBAppKey</key>

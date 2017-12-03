@@ -26,12 +26,13 @@ class MainViewController: UITabBarController {
     
     var spring: UIView?
     
-    var share: UIView?
-    
     var rootVC: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK:- provide the initial avatar
+        userAvatar.image = #imageLiteral(resourceName: "profile_avatar_placeholder")
         
         // MARK:- cover the null tab bar item
         let coverView = UIView(frame: CGRect(x: screenWidth / 2 - 50, y: screenHeight - tabBarHeight, width: 100, height: 49))
@@ -49,8 +50,6 @@ class MainViewController: UITabBarController {
         self.view.addSubview(add)
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeBtnClicked), name: NSNotification.Name.init(closeSpringViewNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(shareButtonClicked), name: NSNotification.Name.init(shareNotification), object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueMomentsVC), name: NSNotification.Name.init(issueMomentsNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueTopicsVC), name: NSNotification.Name.init(issueTopicsNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueMissionVC), name: NSNotification.Name.init(issueMissionNotification), object: nil)
@@ -72,29 +71,17 @@ class MainViewController: UITabBarController {
         }, completion: nil)
     }
     
-    @objc func shareButtonClicked() {
-        let presentationVC = UIApplication.shared.keyWindow?.rootViewController?.presentationController
-        let shareView = Bundle.main.loadNibNamed("Share", owner: self, options: nil)?.first! as! UIView
-        share = shareView
-        shareView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        presentationVC?.presentedView?.addSubview(shareView)
-        shareView.alpha = 0
-        UIView.animate(withDuration: 0.25, delay: 0.01, options: UIViewAnimationOptions.curveEaseInOut, animations: {
-            shareView.alpha = 1
-        }, completion: nil)
-    }
-    
     @objc func closeBtnClicked() {
         
         UIView.animate(withDuration: 0.25, animations: {
-            self.share?.alpha = 0
             self.spring?.alpha = 0
         }) { (_) in
-            self.share?.removeFromSuperview()
             self.spring?.removeFromSuperview()
         }
         
     }
+
+
     
     @objc func showIssueMomentsVC() {
         self.present(IssueMomentsViewController(), animated: true, completion: nil)

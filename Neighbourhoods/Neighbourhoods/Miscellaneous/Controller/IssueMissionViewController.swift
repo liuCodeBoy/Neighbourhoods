@@ -58,8 +58,8 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
             self.presentHintMessage(hintMessgae:  "任务详情不能为空", completion: nil)
             return
         }
-        if (CGFloat((missionTitle.text?.count)!) > 36) == true {
-            self.presentHintMessage(hintMessgae: "任务标题不能超过36个字", completion: nil)
+        if (CGFloat((missionTitle.text?.count)!) > 24) == true {
+            self.presentHintMessage(hintMessgae: "任务标题不能超过24个字", completion: nil)
             return
         }
         guard missionScoreTF.text != nil else {

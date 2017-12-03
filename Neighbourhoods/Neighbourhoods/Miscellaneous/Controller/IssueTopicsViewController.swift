@@ -79,6 +79,11 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
             return
         }
         
+        if (CGFloat((topicNameField.text?.count)!) > 16) == true {
+            self.presentHintMessage(hintMessgae: "标题不能超过16个字", completion: nil)
+            return
+        }
+        
         // MARK:- fetching data
         let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
         progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)

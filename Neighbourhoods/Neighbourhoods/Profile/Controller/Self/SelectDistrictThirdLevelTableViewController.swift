@@ -39,6 +39,9 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
     
     func loadFirstLevel() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         
@@ -59,14 +62,14 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
             })
             
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 for dict in result!["result"] as! [[String : AnyObject]] {
                     let model = SelectDistrictModel.mj_object(withKeyValues: dict)!
                     self?.thirdLevelList.append(model)
                 }
             } else {
-                print("post failed with exit code \(String(describing: result!["code"]))")
+                //print("post failed with exit code \(String(describing: result!["code"]))")
             }
             self?.tableView.reloadData()
         }
@@ -111,14 +114,14 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
                 })
                 
                 if error != nil {
-                    print(error as AnyObject)
+                    //print(error as AnyObject)
                     self?.presentHintMessage(hintMessgae: error as! String, completion: nil)
                 } else if result!["code"] as! String == "200" {
                     let index = self?.navigationController?.viewControllers.index(after: 0)
                     self?.navigationController?.popToViewController((self?.navigationController?.viewControllers[index!])!, animated: true)
                 } else {
                     self?.presentHintMessage(hintMessgae: "修改失败", completion: nil)
-                    print("post failed with exit code \(String(describing: result!["code"]))")
+                    //print("post failed with exit code \(String(describing: result!["code"]))")
                 }
             })
             // MARK: - pop to designate vc

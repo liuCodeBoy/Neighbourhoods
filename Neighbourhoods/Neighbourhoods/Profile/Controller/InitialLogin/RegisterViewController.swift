@@ -79,7 +79,7 @@ class RegisterViewController: UIViewController {
         
         SMSSDK.getVerificationCode(by: SMSGetCodeMethodSMS, phoneNumber: phoneNumber.text, zone: "86", result: { (error: Error?) in
             if error != nil {
-                print(error as Any)
+                //print(error as Any)
             } else {
                 self.phoneNumber.endEditing(true)
                 self.presentHintMessage(hintMessgae: "验证码发送成功", completion: nil)
@@ -116,6 +116,9 @@ class RegisterViewController: UIViewController {
                                     // MARK:- save token to user dafaults
                                     let token = userInfo!["result"]!["token"]
                                     UserDefaults.standard.setValue(token!, forKey: "token")
+                                    let uid = userInfo!["result"]!["token"]
+                                    UserDefaults.standard.setValue(uid!, forKey: "uid")
+                                    UserDefaults.standard.synchronize()
                                     
                                     let alert = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
                                     let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
@@ -134,14 +137,14 @@ class RegisterViewController: UIViewController {
                                 } else if userInfo!["code"] as! String == "415" {
                                     self?.presentHintMessage(hintMessgae: "错误的请求类型", completion: nil)
                                 } else {
-                                    print("post request failed with exit code \(userInfo!["code"] as! String)")
+                                    //print("post request failed with exit code \(userInfo!["code"] as! String)")
                                 }
                                 
                                 
                                 
 
                             } else {
-                                print(error as AnyObject)
+                                //print(error as AnyObject)
                             }
                         })
                     }

@@ -44,6 +44,8 @@ class MissionDetialViewController: UIViewController {
         }
     }
     
+    var uid: Int?
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var cartifyLbl: UILabel!
@@ -103,6 +105,9 @@ class MissionDetialViewController: UIViewController {
             } else {
                 self.receiverAvatar.isHidden   = true
                 self.receiveStatusLbl.isHidden = true
+            }
+            if let uid = viewModel?.receive?.uid as? Int {
+                self.uid = uid
             }
             if let missionStatus = viewModel?.task_status {
                 if let user = viewModel?.is_user {
@@ -259,15 +264,32 @@ class MissionDetialViewController: UIViewController {
         setNavBarTitle(title: "任务详情")
         setNavBarBackBtn()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(pushReceiversProfile))
+        receiverAvatar.addGestureRecognizer(tap)
+        
+
+    }
+    
+    @objc func pushReceiversProfile() {
+        let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+        userInfoVc?.uid = self.uid
+        if  UserDefaults.standard.string(forKey: "token") == nil{
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
+        }else{
+            self.navigationController?.pushViewController(userInfoVc!, animated: true)
+        }
     }
     
     @objc func userCancelMission() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.cancelTask(access_token, id: self.missionID!) { [weak self](result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 self?.presentHintMessage(hintMessgae: "任务删除成功", completion: { (_) in
                     self?.navigationController?.popViewController(animated: true)
@@ -277,35 +299,41 @@ class MissionDetialViewController: UIViewController {
             } else if result!["code"] as! String == "403" {
                 self?.presentHintMessage(hintMessgae: "任务进行中，无法删除", completion: nil)
             } else {
-                print("post request failed with exit code \(String(describing: result!["code"]))")
+                //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
     }
     
     @objc func userReceiveMission() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.receiveTask(access_token, id: self.missionID!) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 self.presentHintMessage(hintMessgae: "领取成功", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
                 })
             } else {
-                print("post request failed with exit code \(String(describing: result!["code"]))")
+                //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
     }
     
     @objc func userSubmitMission() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.operateTask(access_token, id: self.missionID!, type: .submit) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 self.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
@@ -316,18 +344,21 @@ class MissionDetialViewController: UIViewController {
             } else if result!["code"] as! String == "400" {
                 self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
             } else {
-                print("post request failed with exit code \(String(describing: result!["code"]))")
+                //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
     }
     
     @objc func userConfirmMissionComplete() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.operateTask(access_token, id: self.missionID!, type: .done) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 self.presentHintMessage(hintMessgae: "确认成功", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
@@ -338,18 +369,21 @@ class MissionDetialViewController: UIViewController {
             } else if result!["code"] as! String == "400" {
                 self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
             } else {
-                print("post request failed with exit code \(String(describing: result!["code"]))")
+                //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
     }
     
     @objc func userRejectMission() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         NetWorkTool.shareInstance.operateTask(access_token, id: self.missionID!, type: .reject) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 self.presentHintMessage(hintMessgae: "驳回成功", completion: { (_) in
                     self.navigationController?.popViewController(animated: true)
@@ -360,7 +394,7 @@ class MissionDetialViewController: UIViewController {
             } else if result!["code"] as! String == "400" {
                 self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
             } else {
-                print("post request failed with exit code \(String(describing: result!["code"]))")
+                //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
     }

@@ -24,14 +24,16 @@ class ActivityVoteConsultingViewController: UIViewController {
     @IBAction func consultBtnClicked(_ sender: UIButton) {
         // FIXME:- complete
         vc.setNavBarTitle(title: "群聊")
+        vc.id = self.id as? Int
+        vc.isConsultingChat = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNavBarTitle(title: "投票")
         setNavBarBackBtn()
-        setNavBarTitle(title: "某正在协商的活动")
         lastedRequest(id : id as! Int)
     }
 

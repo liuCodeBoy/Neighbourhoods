@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("did Fail To Register For Remote Notifications With Error: \(error)")
+        //print("did Fail To Register For Remote Notifications With Error: \(error)")
     }
     
 
@@ -80,50 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         // 如需继续使用pushConfig.plist文件声明appKey等配置内容，请依旧使用[JPUSHService setupWithOption:launchOptions]方式初始化。
         let advertisingId = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         JPUSHService.setup(withOption: launchOptions, appKey: "5a271528ff179474042f1215", channel: "Test", apsForProduction: false, advertisingIdentifier: advertisingId)
-        
-        //MARK: - initialize the mob
-        ShareSDK.registerActivePlatforms(
-            [
-                SSDKPlatformType.typeSinaWeibo.rawValue,
-                SSDKPlatformType.typeWechat.rawValue,
-                SSDKPlatformType.typeQQ.rawValue
-            ],
-            onImport: {(platform : SSDKPlatformType) -> Void in
-                switch platform
-                {
-                case SSDKPlatformType.typeSinaWeibo:
-                    ShareSDKConnector.connectWeibo(WeiboSDK.classForCoder())
-                case SSDKPlatformType.typeWechat:
-                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
-                case SSDKPlatformType.typeQQ:
-                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
-                default:
-                    break
-                }
-        },
-            onConfiguration: {(platform : SSDKPlatformType , appInfo : NSMutableDictionary?) -> Void in
-                switch platform
-                {
-                case SSDKPlatformType.typeSinaWeibo:
-                    //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                    appInfo?.ssdkSetupSinaWeibo(byAppKey: "568898243",
-                                                appSecret: "38a4f8204cc784f81f9f0daaf31e02e3",
-                                                redirectUri: "http://www.sharesdk.cn",
-                                                authType: SSDKAuthTypeBoth)
-                    
-                case SSDKPlatformType.typeWechat:
-                    //设置微信应用信息
-                    appInfo?.ssdkSetupWeChat(byAppId: "wx4868b35061f87885",
-                                             appSecret: "64020361b8ec4c99936c0e3999a9f249")
-                case SSDKPlatformType.typeQQ:
-                    //设置QQ应用信息
-                    appInfo?.ssdkSetupQQ(byAppId: "100371282",
-                                         appKey: "aed9b0303e3ed1e27bae87c33761161d",
-                                         authType: SSDKAuthTypeWeb)
-                default:
-                    break
-                }
-        })
         
         return true
     }

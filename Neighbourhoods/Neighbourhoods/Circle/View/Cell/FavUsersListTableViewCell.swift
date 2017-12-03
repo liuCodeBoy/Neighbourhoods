@@ -21,7 +21,7 @@ class FavUsersListTableViewCell: UITableViewCell {
     var viewModel: AttentionAndFansModel? {
         didSet {
             if let avatatStr = viewModel?.head_pic {
-                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "notice_placeholder"), options: .continueInBackground, completed: nil)
+                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let name = viewModel?.nickname {
                 self.nickName.text = name
@@ -86,16 +86,16 @@ class FavUsersListTableViewCell: UITableViewCell {
         let token = UserDefaults.standard.string(forKey: "token")
         NetWorkTool.shareInstance.changeFollowStatus(token!, uid: uid, type: type) { (result, error) in
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
                 return
             }
             
-            switch result!["code"] as! String {
-            case "200" : print("关注成功")
-            case "400" : print("关注失败, 取消关注成功")
-            case "402" : print("请传入type参数")
-            default    : break
-            }
+//            switch result!["code"] as! String {
+//            case "200" : //print("关注成功")
+//            case "400" : //print("关注失败, 取消关注成功")
+//            case "402" : //print("请传入type参数")
+//            default    : break
+//            }
         }
         
     }

@@ -35,13 +35,16 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
     
     func loadData() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
 
         NetWorkTool.shareInstance.infoList(access_token) { [weak self](result, error) in
             
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 if let result = result!["result"] as? [[String: AnyObject]] {
                     for dict in result {
@@ -64,7 +67,7 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
                 }
                 
             } else {
-                print("post request failed with exit code \(result!["code"] as! String)")
+                //print("post request failed with exit code \(result!["code"] as! String)")
             }
             
         }
@@ -99,6 +102,7 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! ChattingViewController
+        dest.isPushedFromTabBarHidden = true
         self.destnation = dest
         
     }

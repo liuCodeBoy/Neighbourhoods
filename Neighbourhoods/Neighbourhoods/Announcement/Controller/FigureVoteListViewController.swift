@@ -9,6 +9,7 @@
 import UIKit
 import MJRefresh
 class FigureVoteListViewController: UIViewController {
+    @IBOutlet weak var nobodyCoverView: UIView!
     var  id : NSNumber?
     var  cate : NSNumber?
     var  status : NSNumber?
@@ -20,16 +21,22 @@ class FigureVoteListViewController: UIViewController {
         figureVoteTableView.dataSource = self
         setNavBarBackBtn()
         setNavBarTitle(title: "正在投票")
-        lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: id as! Int)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        rotaionArray.removeAll()
+        
         lastedRequest( p: 1, status: status as! Int, cate: cate as! Int, id: id as! Int)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! FigureVoteJoinViewController
+        dest.id = self.id as? Int
     }
     
     
     func lastedRequest(p: Int, status: Int, cate: Int, id: Int) -> () {
+        
         var token = ""
         guard (UserDefaults.standard.string(forKey: "token") != nil) else {
             self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
@@ -48,6 +55,10 @@ class FigureVoteListViewController: UIViewController {
               }
             }
                 self?.figureVoteTableView.reloadData()
+                if (self?.rotaionArray.count)! > 0 {
+                    self?.nobodyCoverView.isHidden = true
+                }
+                
                 }else{
                 //服务器
                 self?.figureVoteTableView.mj_header.endRefreshing()
@@ -71,6 +82,18 @@ extension FigureVoteListViewController: UITableViewDelegate, UITableViewDataSour
             cell.model = self.rotaionArray[indexPath.row]
             cell.rankLbl.text = "NO.\(indexPath.row + 1)"
         }
+        
+        //跳出用户详情
+        cell.headImagePushClouse = { (otherID) in
+            let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+            userInfoVc?.uid = otherID as? Int
+            if  UserDefaults.standard.string(forKey: "token") == nil{
+                self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
+            }else{
+                self.navigationController?.pushViewController(userInfoVc!, animated: true)
+            }
+        }
+        
         return cell
     }
     
@@ -90,4 +113,6 @@ extension FigureVoteListViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+    
+    
 }

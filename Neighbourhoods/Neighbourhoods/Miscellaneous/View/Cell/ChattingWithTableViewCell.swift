@@ -8,6 +8,8 @@
 
 import UIKit
 
+var userAvatar = UIImageView()
+
 class ChattingWithTableViewCell: UITableViewCell {
     
     @IBOutlet weak var avatar: UIImageView!
@@ -30,7 +32,10 @@ class ChattingWithTableViewCell: UITableViewCell {
     
     var viewModel: MsgHistoryModel? {
         didSet {
-            if let avatar = viewModel?.to_user?.head_pic {
+            if let avatar = viewModel?.from_user?.head_pic {
+                self.avatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let avatar = viewModel?.user?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let content = viewModel?.content {

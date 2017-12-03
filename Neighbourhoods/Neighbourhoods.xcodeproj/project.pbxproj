@@ -105,8 +105,6 @@
 		D36C86BE1FA0B279000CCA17 /* MomentDetialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */; };
 		D36C86C21FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C01FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift */; };
 		D36C86C51FA0B962000CCA17 /* MomentsCommentDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */; };
-		D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86C61FA0C19A000CCA17 /* Share.xib */; };
-		D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86C81FA0C1A5000CCA17 /* Share.swift */; };
 		D3716F8E1FA8949300C31A48 /* SocialCharityListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */; };
 		D3716F941FA89B0E00C31A48 /* FigureVoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */; };
 		D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */; };
@@ -170,7 +168,6 @@
 		D3D1FD801FA8116D009A2E58 /* SocialAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD7F1FA8116D009A2E58 /* SocialAnnouncementViewController.swift */; };
 		D3D1FD821FA81179009A2E58 /* LotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD811FA81179009A2E58 /* LotteryViewController.swift */; };
 		D3D1FD841FA81187009A2E58 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D1FD831FA81187009A2E58 /* VoteViewController.swift */; };
-		D3D2D7871FAB0FBA0020EE4B /* ShareSDK-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2D7861FAB0FBA0020EE4B /* ShareSDK-Extension.swift */; };
 		D3E5BF3B1FBDC01000C4766F /* ProfileReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */; };
 		D3E5F0711FA9C28600FA9C53 /* WriteCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */; };
 		D3E5F0731FA9E32500FA9C53 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */; };
@@ -320,8 +317,6 @@
 		D36C86BC1FA0B279000CCA17 /* MomentDetialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetialTableViewCell.swift; sourceTree = "<group>"; };
 		D36C86C01FA0B28D000CCA17 /* MomentDetialsCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentDetialsCommentTableViewCell.swift; sourceTree = "<group>"; };
 		D36C86C41FA0B962000CCA17 /* MomentsCommentDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsCommentDetialViewController.swift; sourceTree = "<group>"; };
-		D36C86C61FA0C19A000CCA17 /* Share.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Share.xib; sourceTree = "<group>"; };
-		D36C86C81FA0C1A5000CCA17 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		D3716F8D1FA8949300C31A48 /* SocialCharityListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialCharityListTableViewCell.swift; sourceTree = "<group>"; };
 		D3716F931FA89B0E00C31A48 /* FigureVoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListViewController.swift; sourceTree = "<group>"; };
 		D3716F981FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureVoteListTableViewCell.swift; sourceTree = "<group>"; };
@@ -390,7 +385,6 @@
 		D3D1FD7F1FA8116D009A2E58 /* SocialAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAnnouncementViewController.swift; sourceTree = "<group>"; };
 		D3D1FD811FA81179009A2E58 /* LotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryViewController.swift; sourceTree = "<group>"; };
 		D3D1FD831FA81187009A2E58 /* VoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
-		D3D2D7861FAB0FBA0020EE4B /* ShareSDK-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareSDK-Extension.swift"; sourceTree = "<group>"; };
 		D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReportViewController.swift; sourceTree = "<group>"; };
 		D3E5F0701FA9C28600FA9C53 /* WriteCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewController.swift; sourceTree = "<group>"; };
 		D3E5F0721FA9E32500FA9C53 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -921,15 +915,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D3F5BBFE1FAB17BB000A6CF5 /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				D36C86C81FA0C1A5000CCA17 /* Share.swift */,
-				D36C86C61FA0C19A000CCA17 /* Share.xib */,
-			);
-			path = Share;
-			sourceTree = "<group>";
-		};
 		D3F5BBFF1FAB17C7000A6CF5 /* Spring */ = {
 			isa = PBXGroup;
 			children = (
@@ -959,7 +944,6 @@
 			isa = PBXGroup;
 			children = (
 				B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */,
-				D3D2D7861FAB0FBA0020EE4B /* ShareSDK-Extension.swift */,
 				D3F6B1881F9A1359004D0A20 /* Extension+Colors.swift */,
 				D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */,
 				B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */,
@@ -1009,7 +993,6 @@
 				D38C71691FCBED42001006DF /* Loading */,
 				D33A69BD1FC8108200A738A3 /* Error */,
 				D3F5BBFF1FAB17C7000A6CF5 /* Spring */,
-				D3F5BBFE1FAB17BB000A6CF5 /* Share */,
 				D3FAC7E61FA9757300D972B9 /* Cell */,
 			);
 			path = View;
@@ -1108,7 +1091,6 @@
 				D33A69C11FC811CC00A738A3 /* SystemUpdatingViewController.xib in Resources */,
 				D3FAC7E11FA96AD400D972B9 /* QuickViewMessgaes.storyboard in Resources */,
 				D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */,
-				D36C86C71FA0C19A000CCA17 /* Share.xib in Resources */,
 				D3FAC7D71FA9648500D972B9 /* IssueTopicsViewController.xib in Resources */,
 				D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */,
 				D3CDF5C61FC1997200C6513A /* InfoPlist.strings in Resources */,
@@ -1138,14 +1120,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-10/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1218,7 +1198,6 @@
 				D3FAC7F61FA99B8A00D972B9 /* FigureVoteJoinViewController.swift in Sources */,
 				D31E97131FA9F91900A78D3A /* VerifyIDInfomationFailedViewController.swift in Sources */,
 				D377DA3B1FCAF32F004B7DC8 /* MsgHistoryModel.swift in Sources */,
-				D36C86C91FA0C1A5000CCA17 /* Share.swift in Sources */,
 				B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */,
 				D3FAC7DA1FA9691200D972B9 /* IssueMissionViewController.swift in Sources */,
 				D38305451FBC29DC00202FA2 /* SelectDistrictModel.swift in Sources */,
@@ -1317,7 +1296,6 @@
 				B657A05C1FC6F5EE0021CA4F /* ShowVoteActivResult.swift in Sources */,
 				D31E97151FA9F95700A78D3A /* VerifyIDInfomationSucceededViewController.swift in Sources */,
 				D347E5A81FA20B6B00FFE815 /* SpringView.swift in Sources */,
-				D3D2D7871FAB0FBA0020EE4B /* ShareSDK-Extension.swift in Sources */,
 				D341AAA51F9AEE3F00E640E1 /* LoginViewController.swift in Sources */,
 				D3B589261FC52AFA003396D3 /* CommentQucikViewListTableViewCell.swift in Sources */,
 				D334F5E41FA86788006E2769 /* CircleVCTopicsTableViewCell.swift in Sources */,

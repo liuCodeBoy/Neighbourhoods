@@ -45,7 +45,7 @@ class OthersMomentsTableViewCell: UITableViewCell {
             return
         }
         NetWorkTool.shareInstance.nbor_zan(token: UserDefaults.standard.string(forKey: "token")!, nbor_id: nbor_id!) { [weak self](info, error) in
-            print(UserDefaults.standard.string(forKey: "token")!)
+            //print(UserDefaults.standard.string(forKey: "token")!)
             if info?["code"] as? String == "400"{
                 let config = NoticeBarConfig(title: "你已点赞", image: nil, textColor: UIColor.white, backgroundColor: UIColor.gray, barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
@@ -79,7 +79,7 @@ class OthersMomentsTableViewCell: UITableViewCell {
                 let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
                 imageLeft.addGestureRecognizer(tap)
                 let leftImage = pictureStringArr[0]
-                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                self.imageLeft.sd_setImage(with: URL.init(string: leftImage as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                 self.imageRight.isUserInteractionEnabled = false
                 self.imageRight.image = nil
                 if  pictureStringArr.count >= 2 {

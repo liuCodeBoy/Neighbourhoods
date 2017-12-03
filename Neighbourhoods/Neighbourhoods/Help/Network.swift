@@ -623,7 +623,7 @@ extension NetWorkTool {
     func voteConsult(_ token: String, content: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/chat"
+        let urlString = "http://106.15.199.8/llb/api/user/group_chat"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["content": content, "id": id] as [String : Any]

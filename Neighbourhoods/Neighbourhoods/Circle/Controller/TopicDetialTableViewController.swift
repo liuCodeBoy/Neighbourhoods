@@ -107,7 +107,7 @@ class TopicDetialTableViewController: UITableViewController {
                 }
                 
             }else{
-                print(error)
+                //print(error)
                 //服务器
                 self?.tableView.mj_footer.endRefreshing()
                 self?.tableView.reloadData()

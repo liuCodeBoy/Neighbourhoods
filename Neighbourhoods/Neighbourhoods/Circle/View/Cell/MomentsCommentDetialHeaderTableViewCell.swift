@@ -102,8 +102,8 @@ class MomentsCommentDetialHeaderTableViewCell: UITableViewCell {
                 let leftImage = pictureStringArr[0] as! String
                 if leftImage.count > 1 {
                 imageHeightConstraint.constant = 90
-                self.imageLeft.sd_setImage(with: URL.init(string: leftImage), placeholderImage: #imageLiteral(resourceName: "spring_view_shadow"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
-                print(leftImage)
+                self.imageLeft.sd_setImage(with: URL.init(string: leftImage), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+                //print(leftImage)
                 let  tap = UITapGestureRecognizer.init(target: self, action:#selector(showImageVC))
                 imageLeft.addGestureRecognizer(tap)
                 self.imageRight.isUserInteractionEnabled = false

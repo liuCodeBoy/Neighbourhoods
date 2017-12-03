@@ -34,6 +34,9 @@ class ChangePasswordViewController: UIViewController {
         }
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
             return
         }
         // MARK:- fetching data
@@ -51,14 +54,14 @@ class ChangePasswordViewController: UIViewController {
                 self?.progressView?.removeFromSuperview()
             })
             if error != nil {
-                print(error as AnyObject)
+                //print(error as AnyObject)
             } else if result!["code"] as! String == "400.4" {
                 self?.presentHintMessage(hintMessgae: "您输入的密码有误", completion: nil)
             } else if result!["code"] as! String == "200" {
                 self?.presentHintMessage(hintMessgae: "密码修改成功", completion: nil)
             } else {
                 self?.presentHintMessage(hintMessgae: "修改失败", completion: nil)
-                print("post request failed with exit code \(String(describing: result!["code"]))")
+                //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
     }

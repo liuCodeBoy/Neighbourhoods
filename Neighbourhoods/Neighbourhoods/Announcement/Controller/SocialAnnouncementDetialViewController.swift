@@ -26,6 +26,9 @@ class SocialAnnouncementDetialViewController: UIViewController,UITableViewDelega
     var  id  : NSNumber?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNavBarBackBtn()
+        setNavBarTitle(title: "公告")
         createTableView()
         //添加进度
         let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
@@ -173,12 +176,12 @@ extension  SocialAnnouncementDetialViewController {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let recommendView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 70))
         recommendView.backgroundColor = UIColor.white
-        let titleLab = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 25))
+        let titleLab = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth - 16, height: 25))
         titleLab.textAlignment = .right
         titleLab.font = UIFont.systemFont(ofSize: 14)
         titleLab.textColor = UIColor.lightGray
       
-        let timeLab = UILabel.init(frame: CGRect.init(x: 0, y:25, width: screenWidth, height: 25))
+        let timeLab = UILabel.init(frame: CGRect.init(x: 0, y:25, width: screenWidth - 16, height: 25))
         timeLab.textAlignment = .right
         timeLab.font = UIFont.systemFont(ofSize: 14)
         timeLab.textColor = UIColor.lightGray

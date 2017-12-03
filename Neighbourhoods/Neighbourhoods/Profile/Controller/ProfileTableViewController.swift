@@ -30,10 +30,10 @@ class ProfileTableViewController: UITableViewController {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             return
         }
-        print(access_token)
+        //print(access_token)
         NetWorkTool.shareInstance.userInfo(access_token) { [weak self](result, error) in
             if error != nil {
-                print(error as Any)
+                //print(error as Any)
             } else if result?["code"] as! String == "200" {
                 let resultDict = result!["result"] as! [String: AnyObject]
                 self?.viewModel = UserInfoModel.mj_object(withKeyValues: resultDict)
@@ -45,7 +45,8 @@ class ProfileTableViewController: UITableViewController {
     var viewModel: UserInfoModel? {
         didSet {
             if let avatatStr = viewModel?.head_pic {
-                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "notice_placeholder"), options: .continueInBackground, completed: nil)
+                self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+                userAvatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let verify = viewModel?.type {
                 self.verifyLbl.text = verify

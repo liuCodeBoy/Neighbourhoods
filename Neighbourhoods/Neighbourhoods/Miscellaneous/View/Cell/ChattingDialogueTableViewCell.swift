@@ -32,6 +32,10 @@ class ChattingDialogueTableViewCell: UITableViewCell {
         didSet {
             if let avatar = viewModel?.from_user?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+                userAvatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let avatar = viewModel?.user?.head_pic {
+                self.avatar.sd_setImage(with: URL.init(string: avatar), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
             if let content = viewModel?.content {
                 self.contentLbl.text = content

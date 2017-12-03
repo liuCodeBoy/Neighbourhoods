@@ -18,8 +18,12 @@ class MsgHistoryModel: NSObject {
     @objc var from_user      : UserModel?
     @objc var to_user        : UserModel?
     @objc var is_user        : NSNumber?
-
     
-}
+    // MARK:- consulting model
+    @objc var is_host        : NSNumber?
+    @objc var user           : UserModel?
+    @objc var vote_id        : NSNumber?
 
+
+}
 
