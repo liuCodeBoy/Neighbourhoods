@@ -116,7 +116,7 @@ class RegisterViewController: UIViewController {
                                     // MARK:- save token to user dafaults
                                     let token = userInfo!["result"]!["token"]
                                     UserDefaults.standard.setValue(token!, forKey: "token")
-                                    let uid = userInfo!["result"]!["token"]
+                                    let uid = userInfo!["result"]!["uid"]
                                     UserDefaults.standard.setValue(uid!, forKey: "uid")
                                     UserDefaults.standard.synchronize()
                                     

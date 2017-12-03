@@ -92,7 +92,7 @@ extension LotteryViewController: UITableViewDelegate, UITableViewDataSource  {
         }
         if rotaionArray.count > 0 {
         let lotterModel = rotaionArray[indexPath.row]
-        guard (lotterModel.status != 1) else {
+        guard (lotterModel.status != 1 && lotterModel.status != -1) else {
             return
             }
         }
