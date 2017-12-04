@@ -33,6 +33,11 @@ class ChangePasswordViewController: UIViewController {
             return
         }
         
+        if newPassword.text?.isValidPassword == false {
+            self.presentHintMessage(hintMessgae: "密码应为6-20位字母和数字组合", completion: nil)
+            return
+        }
+        
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {
             self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
                 self.navigationController?.popViewController(animated: true)
