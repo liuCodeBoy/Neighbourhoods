@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QaR-6z-NBF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QaR-6z-NBF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -86,7 +86,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="registeAction:" destination="LWj-7Y-etA" eventType="touchUpInside" id="lPB-Qa-mg1"/>
+                                    <segue destination="3yt-mr-1jR" kind="show" id="sgs-Ix-imq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF3-Ix-qrg">
@@ -150,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9Q-jF-LHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="125"/>
+            <point key="canvasLocation" x="1557.5999999999999" y="124.58770614692655"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="qYo-cH-r9u">
@@ -302,6 +302,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1b-Us-kHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2273" y="125"/>
+        </scene>
+        <!--Protocals View Controller-->
+        <scene sceneID="Gew-xv-r5P">
+            <objects>
+                <viewController id="3yt-mr-1jR" customClass="ProtocalsViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ksM-2R-xka">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs4-PX-OG1">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnF-mS-G0n">
+                                        <rect key="frame" x="336" y="5" width="31" height="30"/>
+                                        <state key="normal" title="同意"/>
+                                        <connections>
+                                            <action selector="confirmBtnClicked:" destination="3yt-mr-1jR" eventType="touchUpInside" id="Rxw-dv-JV2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvp-KN-0Da">
+                                        <rect key="frame" x="8" y="5" width="31" height="30"/>
+                                        <state key="normal" title="拒绝">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="refuse:" destination="3yt-mr-1jR" eventType="touchUpInside" id="sTr-Mk-Ktl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.95364540153079558" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KJx-K0-ENm"/>
+                                    <constraint firstAttribute="trailing" secondItem="VnF-mS-G0n" secondAttribute="trailing" constant="8" id="Vvn-da-TDK"/>
+                                    <constraint firstItem="wvp-KN-0Da" firstAttribute="centerY" secondItem="cs4-PX-OG1" secondAttribute="centerY" id="kaa-B0-9Su"/>
+                                    <constraint firstItem="VnF-mS-G0n" firstAttribute="centerY" secondItem="cs4-PX-OG1" secondAttribute="centerY" id="tdt-7H-UNy"/>
+                                    <constraint firstItem="wvp-KN-0Da" firstAttribute="leading" secondItem="cs4-PX-OG1" secondAttribute="leading" constant="8" id="x36-QX-BFO"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eu9-Fx-OC6">
+                                <rect key="frame" x="5" y="64" width="365" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text"> 本协议是您(个人或单一实体)与软件作者之间关于《邻里帮_社区云治理服务平台》产品的法律协议，其中包含软件开发商软件作者对用户的承诺、技术支持，请认真阅读。
+声明：使用本软件前，请您仔细阅读以下条款，访问、浏览或使用本软件，即承认您已阅读、理解并同意接受这些条款或提及的所有条款，并遵守相关法律法规。如果您不接受这些条款，您将不能获得使用本软件产品的权力。
+1. 本软件的内容仅供您个人而非商业性使用，对于内容中所含的任何权利声明您应予以遵守，您应尊重这些内容的合法权益并遵守相关法律规定。
+2. 您不得以任何方式修改、复制、公布或以其他方式将本软件内容用于任何公开或商业目的，禁止以任何目的把本软件内容用于任何其他网络或媒体。
+3. 您不得在本软件发布任何以下内容：
+ ①.未经合法授权而披露的个人信息。
+ ②.包含裸露、色情、亵渎、邪教等非法的、威胁性的、暴力性的、反动性的、侮辱诽谤的、淫秽色情的或其他违法性的内容。
+ ③.侵犯他人合法的知识产权权益的内容。
+ ④.垃圾邮件、广告信息。
+ ⑤.禁止对本软件进行反向工程，如反汇编、反编译等。
+ 如果您不遵守该发布条款，您需对发布的内容承担全部责任。本公司可以单方随时修改、删除该内容，或可以单方无限时中止该内容的浏览或者将进行封号处理，情节严重的，本公司将提交相关部门处理。
+4. 本软件产品受中华人民共和国版权法及国际版权条约和其他知识产权法及条约的保护。用户获得的只是本软件产品的使用权。
+5.本软件产品的版权归软件作者所有，受到适用版权法及其他知识产权法及条约的保护。
+6. 如果您未遵守本协议的任一条款，软件作者有权立即终止本协议，且您必须立即终止使用本软件并销毁本软件产品的所有副本。这项要求对各种拷贝形式有效。
+7. 盗版用户：使用盗版的本软件产品的一切后果由使用者自己承担。对于使用盗版的该软件产品对使用者操作系统造成的故障及损害，软件作者不承担任何责任。
+8. 本使用条款的解释权以及有关本软件使用的解释权属于本软件所有。
+9. 本软件的内容受到法律法规的保护，若您违反了本使用条款，您应承担由此造成的一切后果和法律责任。</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cs4-PX-OG1" firstAttribute="top" secondItem="Eu9-Fx-OC6" secondAttribute="bottom" id="1aT-ZM-mjP"/>
+                            <constraint firstAttribute="bottom" secondItem="cs4-PX-OG1" secondAttribute="bottom" id="3GN-q5-uoQ"/>
+                            <constraint firstItem="XIm-Hy-4zE" firstAttribute="trailing" secondItem="cs4-PX-OG1" secondAttribute="trailing" id="FCY-jk-InG"/>
+                            <constraint firstItem="cs4-PX-OG1" firstAttribute="leading" secondItem="XIm-Hy-4zE" secondAttribute="leading" id="WCf-3Y-U1I"/>
+                            <constraint firstItem="Eu9-Fx-OC6" firstAttribute="leading" secondItem="XIm-Hy-4zE" secondAttribute="leading" constant="5" id="WhF-3K-ora"/>
+                            <constraint firstItem="Eu9-Fx-OC6" firstAttribute="top" secondItem="XIm-Hy-4zE" secondAttribute="top" id="dbk-Bq-mio"/>
+                            <constraint firstItem="XIm-Hy-4zE" firstAttribute="trailing" secondItem="Eu9-Fx-OC6" secondAttribute="trailing" constant="5" id="sOn-7H-qWG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XIm-Hy-4zE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0q-9H-Jlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1557.5999999999999" y="849.62518740629696"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lkt-Ex-3ZP">
@@ -727,7 +805,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3k-UZ-uSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1558" y="849"/>
+            <point key="canvasLocation" x="2273" y="850"/>
         </scene>
     </scenes>
     <resources>
