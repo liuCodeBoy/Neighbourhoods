@@ -33,6 +33,7 @@
 		B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692F8A01F91F1DF00C75B41 /* LoopView.swift */; };
 		B69850F41FC154AC0012FC1D /* LotteryListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69850F31FC154AB0012FC1D /* LotteryListModel.swift */; };
 		B69FC87A1FCCFF2800817409 /* NoticedetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69FC8791FCCFF2800817409 /* NoticedetModel.swift */; };
+		B6B3DFEF1FD798CA0018C1DB /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3DFEE1FD798CA0018C1DB /* ReportVC.swift */; };
 		B6B6E0671FB9D2BA00CCD567 /* NoMissionCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B6E0661FB9D2B900CCD567 /* NoMissionCoverView.swift */; };
 		B6DAACB61FC3BE28006A7C3E /* VoteListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAACB51FC3BE28006A7C3E /* VoteListModel.swift */; };
 		B6DAACB81FC3D526006A7C3E /* VoteActDet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DAACB71FC3D526006A7C3E /* VoteActDet.swift */; };
@@ -246,6 +247,7 @@
 		B692F8A01F91F1DF00C75B41 /* LoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
 		B69850F31FC154AB0012FC1D /* LotteryListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryListModel.swift; sourceTree = "<group>"; };
 		B69FC8791FCCFF2800817409 /* NoticedetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticedetModel.swift; sourceTree = "<group>"; };
+		B6B3DFEE1FD798CA0018C1DB /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
 		B6B6E0661FB9D2B900CCD567 /* NoMissionCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMissionCoverView.swift; sourceTree = "<group>"; };
 		B6DAACB51FC3BE28006A7C3E /* VoteListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteListModel.swift; sourceTree = "<group>"; };
 		B6DAACB71FC3D526006A7C3E /* VoteActDet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteActDet.swift; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */,
+				B6B3DFEE1FD798CA0018C1DB /* ReportVC.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1339,6 +1342,7 @@
 				D31B54AD1FB1A1F3003549AF /* SocialOrgListModel.swift in Sources */,
 				D3FAC7E91FA97E9E00D972B9 /* ActivityVoteConsultingViewController.swift in Sources */,
 				B6559A141FBD6D8C00EB6D56 /* PicPickerViewCell.swift in Sources */,
+				B6B3DFEF1FD798CA0018C1DB /* ReportVC.swift in Sources */,
 				D39F63371FAACEDE00C69CA9 /* OthersMomentsViewController.swift in Sources */,
 				B6DAACBA1FC41872006A7C3E /* VoteOptionList.swift in Sources */,
 				D39EFF331FAAC28400C6AE57 /* CircleMomentsViewController.swift in Sources */,
