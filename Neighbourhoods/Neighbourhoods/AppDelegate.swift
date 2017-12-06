@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         /// Required - 注册 DeviceToken
         JPUSHService.registerDeviceToken(deviceToken)
+        JMessage.registerDeviceToken(deviceToken)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -51,8 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
 
     var window: UIWindow?
+    
     static let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
     static let InitialLoginVC = UIStoryboard.init(name: "InitialLogin", bundle: Bundle.main).instantiateInitialViewController()!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UITabBar.appearance().tintColor = navAndTabBarTintColor
         UINavigationBar.appearance().tintColor = navAndTabBarTintColor
@@ -79,10 +82,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         // notice: 2.1.5版本的SDK新增的注册方法，改成可上报IDFA，如果没有使用IDFA直接传nil
         // 如需继续使用pushConfig.plist文件声明appKey等配置内容，请依旧使用[JPUSHService setupWithOption:launchOptions]方式初始化。
         let advertisingId = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        JPUSHService.setup(withOption: launchOptions, appKey: "5a271528ff179474042f1215", channel: "Test", apsForProduction: false, advertisingIdentifier: advertisingId)
+        JPUSHService.setup(withOption: launchOptions, appKey: "2088416fa8b1228b53017804", channel: "Test", apsForProduction: false, advertisingIdentifier: advertisingId)
+        
+        // MARK:- initialize JMessage
+        JMessage.setupJMessage(launchOptions, appKey: "2088416fa8b1228b53017804", channel: "Test", apsForProduction: false, category: nil, messageRoaming: false)
+        
+        JMessage.register(forRemoteNotificationTypes: (UInt(UInt8(UIUserNotificationType.badge.rawValue) | UInt8(UIUserNotificationType.sound.rawValue) | UInt8(UIUserNotificationType.alert.rawValue))), categories: nil)
+        
+        
         
         return true
     }
+    
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         UIApplication.shared.applicationIconBadgeNumber = 0

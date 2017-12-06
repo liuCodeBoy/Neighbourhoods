@@ -9,6 +9,7 @@ target 'Neighbourhoods' do
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'JPush'
+  pod 'JMessage'
 
   # Pods for Neighbourhoods
   # MOB

@@ -6,6 +6,7 @@
 #import <SMS_SDK/SMSSDK.h>
 
 #import "JPUSHService.h"
+#import <JMessage/JMessage.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
