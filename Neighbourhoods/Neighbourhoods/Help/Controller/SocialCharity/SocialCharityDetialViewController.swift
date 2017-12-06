@@ -30,6 +30,7 @@ class SocialCharityDetialViewController: UIViewController {
     
     var urlString: String?
     
+    var id : NSNumber?
     @IBAction func consultBtnClicked(_ sender: UIButton) {
         
         if UserDefaults.standard.string(forKey: "token") == nil {
@@ -62,12 +63,11 @@ class SocialCharityDetialViewController: UIViewController {
         progress.loadingHintLbl.text = "加载中"
         self.progressView = progress
         self.view.addSubview(progress)
-        
-        loadWebView()
+        loadWebView(id: id)
 
     }
     
-    func loadWebView() {
+    func loadWebView(id : NSNumber?) {
         
         guard let urlString = urlString else {
             return
@@ -75,7 +75,7 @@ class SocialCharityDetialViewController: UIViewController {
         let urlRequest = URLRequest(url: URL.init(string: urlString)!)
         detialWeb.loadRequest(urlRequest)
         
-        NetWorkTool.shareInstance.socialCharityDetial(id: 1) { [weak self](result, error) in
+        NetWorkTool.shareInstance.socialCharityDetial(id: id as! Int) { [weak self](result, error) in
             
             // MARK:- data fetched successfully
             UIView.animate(withDuration: 0.25, animations: {

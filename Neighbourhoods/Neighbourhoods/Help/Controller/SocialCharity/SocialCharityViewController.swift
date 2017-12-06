@@ -22,9 +22,14 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     
     var destnation: SocialCharityDetialViewController?
     
-    var urlString: String? {
+    private var urlString: String? {
         didSet {
             destnation?.urlString = self.urlString
+        }
+    }
+    private var id : NSNumber?{
+        didSet {
+            destnation?.id  = self.id
         }
     }
     
@@ -121,6 +126,7 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if socialCharityListArray.count > 0 {
             self.urlString = socialCharityListArray[indexPath.row].url
+            self.id        = socialCharityListArray[indexPath.row].id
         }
     }
 
