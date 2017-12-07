@@ -16,7 +16,7 @@ class QuickViewMessgaesViewController: UIViewController {
     
 
     var missionListArray = [MsgListModel]()
-    var headMsgModel = MsgListModel()
+    var headMsgModel :  MsgListModel?
 
     @IBOutlet weak var contactListTableView: UITableView!
     
@@ -25,11 +25,7 @@ class QuickViewMessgaesViewController: UIViewController {
 
         contactListTableView.delegate    = self
         contactListTableView.dataSource  = self
-        
-//        contactListTableView.allowsMultipleSelection                = false
-//        contactListTableView.allowsSelectionDuringEditing           = false
-//        contactListTableView.allowsMultipleSelectionDuringEditing   = false
-        
+
         lastedRequest(p: page)
         loadRefreshComponet()
     
@@ -123,9 +119,13 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
         
         if missionListArray.count > 0 {
             commentCell.viewModel = missionListArray[indexPath.row]
+        }
+        if(headMsgModel != nil){
             msgCell.viewModel = headMsgModel
         }
-
+        if( missionListArray.count < 0 && headMsgModel == nil){
+            self.presentHintMessage(hintMessgae: "暂无消息", completion: nil)
+        }
         if indexPath.row == 0 {
             return msgCell
         } else {
@@ -150,28 +150,4 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
             self.navigationController?.pushViewController(momentsCommentDetialVC, animated: true)
         }
     }
-    
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-//        return UITableViewCellEditingStyle.delete
-//    }
-//
-//    //MARK: - left slide to delete row
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        //TODO: remove form data source
-//        if editingStyle == .delete {
-//            tempCellData.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
-//        }
-//
-//    }
-//    
-//    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-//        return "删除"
-//    }
-    
-    
 }
