@@ -50,6 +50,14 @@ class OthersMomentsViewController: UIViewController {
                     self.focusBtn.setTitle(" +关注 ", for: .normal)
                 }
             }
+            if let  is_black = userModel?.is_black{
+                if is_black == 1 {
+                    self.shieldBtn?.setTitle("已拉黑", for: .normal)
+                }else{
+                    self.shieldBtn?.setTitle("拉黑", for: .normal)
+                }
+            }
+            
             guard userModel?.is_atten != nil else {
                 return
             }
@@ -58,13 +66,17 @@ class OthersMomentsViewController: UIViewController {
             }else if userModel?.is_atten == 1{
                 type = 2
             }
-            
-            
-            
+            if   userModel?.is_black == 0 {
+                blackType = 1
+            }else if userModel?.is_black == 1{
+                blackType = 2
+            }
         }
     }
     var type : Int?
+    var blackType : Int?
     lazy var  rotaionArray = [NborCircleModel]()
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var othersMomentsTableView: UITableView!
     @IBOutlet weak var fcousNumLab: UILabel!
     @IBOutlet weak var fansNum: UILabel!
@@ -72,6 +84,10 @@ class OthersMomentsViewController: UIViewController {
     @IBOutlet weak var sexImageView: UIImageView!
     @IBOutlet weak var addressBtn: UIButton!
     @IBOutlet weak var niChen: UILabel!
+    private var listView : UIView?
+    private var arrow : UIBarButtonItem?
+    private var arrowStatus = false
+    private var shieldBtn : UIButton?
     var nomission : NoMissionCoverView?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,11 +97,101 @@ class OthersMomentsViewController: UIViewController {
         self.nomission = Bundle.main.loadNibNamed("NoMissionCoverView", owner: self, options: nil)?.first as? NoMissionCoverView
         setNavBarBackBtn()
         setNavBarTitle(title: "他的")
+        //设置导航栏下拉控件
+        setNavBarArrowBtn()
         //加载刷新控件
         loadRefreshComponet()
         endrefresh()
+        loadListView()
+    }
+    
+    func loadListView() {
+        let listView = UIView.init(frame: CGRect.init(x: screenWidth - 100, y: 64, width: 100, height: 70))
+        listView.backgroundColor = #colorLiteral(red: 0.3764705956, green: 0.7882353067, blue: 0.9725490212, alpha: 1)
+        let shieldBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 35))
+        shieldBtn.addTarget(self, action: #selector(shieldFriend), for: .touchUpInside)
+        shieldBtn.setTitle("拉黑", for: .normal)
+        listView.addSubview(shieldBtn)
+        self.shieldBtn = shieldBtn
+        let chattingBtn = UIButton.init(frame: CGRect.init(x: 0, y: 35, width: 100, height: 35))
+        chattingBtn.addTarget(self, action: #selector(chattingAction), for: .touchUpInside)
+        chattingBtn.setTitle("私信", for: .normal)
+        listView.addSubview(chattingBtn)
+        self.view.addSubview(listView)
+        self.listView = listView
+        self.listView?.alpha = 0
+    }
+    //屏蔽方法
+    @objc func shieldFriend() -> (){
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
+        guard uid! > 0  else {
+            return
+        }
+        NetWorkTool.shareInstance.blacklist(access_token, uid: uid!, type: blackType!) { [weak self](result, error) in
+            if error != nil {
+                //print(error as AnyObject)
+                return
+            }
+            var  showText : String?
+            switch result!["code"] as! String {
+            case "200" :
+                if self?.blackType == 1 {
+                    showText = "已拉黑"
+                    self?.shieldBtn?.setTitle("已拉黑", for: .normal)
+                    self?.blackType = 2
+                }else{
+                    showText = "取消拉黑成功"
+                    self?.shieldBtn?.setTitle("拉黑", for: .normal)
+                    self?.blackType = 1
+                }
+            case "400" :
+                if self?.blackType == 1 {
+                    showText = "拉黑失败"
+                    
+                }else{
+                    showText = "取消拉黑失败"
+                }
+            case "402" : showText = "请传入type参数"
+            default    : break
+            }
+            self?.presentHintMessage(hintMessgae: showText!, completion: nil)
+        }
         
+    }
+    //聊天方法
+    @objc func chattingAction()->(){
+        guard let userModel = self.userModel else {
+            return
+        }
         
+        vc.to_uid = userModel.uid as? Int
+        vc.isConsultingChat = false
+        vc.setNavBarTitle(title: userModel.nickname!)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setNavBarArrowBtn() {
+        self.arrow = UIBarButtonItem(image: UIImage.init(named: "arrowDown"), style: .done, target: self, action: #selector(showList))
+        self.navigationItem.setRightBarButton(arrow, animated: true)
+    }
+    
+    @objc func showList() {
+        arrowStatus =  !arrowStatus
+        self.arrow?.image = arrowStatus ? UIImage.init(named: "arrowDown") :  UIImage.init(named: "arrowUp")
+        if arrowStatus {
+            UIView.animate(withDuration: 0.7, animations: {
+                self.listView?.alpha = 1
+            })
+        }else{
+            UIView.animate(withDuration: 0.7, animations: {
+                self.listView?.alpha = 0
+            })
+        }
     }
  
     @IBAction func addFocus(_ sender: Any) {
@@ -98,8 +204,6 @@ class OthersMomentsViewController: UIViewController {
         guard uid! > 0  else {
             return
         }
-    
-        
         NetWorkTool.shareInstance.changeFollowStatus(access_token, uid: uid!, type: type!) { [weak self](result, error) in
             if error != nil {
                 //print(error as AnyObject)

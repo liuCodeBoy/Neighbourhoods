@@ -19,7 +19,7 @@ class UserModel: NSObject {
    @objc  var fans     : NSNumber?
    @objc  var address  : String?
    @objc  var is_atten : NSNumber?
-
+   @objc  var is_black : NSNumber?
 }
 
 
