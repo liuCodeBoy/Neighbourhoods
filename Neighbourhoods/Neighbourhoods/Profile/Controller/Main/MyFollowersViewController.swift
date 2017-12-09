@@ -66,9 +66,6 @@ class MyFollowersViewController: UIViewController {
                 //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
                 guard let dictArray = result?["result"] as? [NSDictionary] else {
-                    self?.coverView.showLab.text = "暂无粉丝"
-                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-                    self?.myFollowersTableView.addSubview((self?.coverView)!)
                     return
                 }
                 for userDict in dictArray {
@@ -80,13 +77,15 @@ class MyFollowersViewController: UIViewController {
                 
                 if let count = self?.followingList.count {
                     if CGFloat(count) == 0 {
-                        self?.coverView.showLab.text = "暂无关注"
+                        self?.coverView.showLab.text = "暂无粉丝"
                         self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
                         self?.view.addSubview((self?.coverView)!)
                     }
                 }
-            } else {
-                //print("post failed with code \(String(describing: result!["code"]))")
+            } else if result!["code"] as! String == "400" {
+                    self?.coverView.showLab.text = "暂无粉丝"
+                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                    self?.view.addSubview((self?.coverView)!)
             }
         }
     }

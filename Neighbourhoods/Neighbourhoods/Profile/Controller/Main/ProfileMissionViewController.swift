@@ -12,9 +12,7 @@ class ProfileMissionViewController: UIViewController {
     
     @IBOutlet weak var myIssuedMission: UIButton!
     @IBOutlet weak var myReceivedMission: UIButton!
-    
     @IBOutlet weak var lineView: UIView!
-    
     var childView1: UIView?
     var childView2: UIView?
     

@@ -110,15 +110,11 @@ class MyReceivedMissionTableViewController: UITableViewController {
                         self?.page += 1
                     }
                 }
-                
-                guard let arrayCount = self?.myMissionArray.count else {
-                    return
-                }
-                if arrayCount == 0 {
-                    self?.coverView.showLab.text = "暂无任务"
-                    self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-                    self?.view.addSubview((self?.coverView)!)
-                }
+            
+            }else if info?["code"] as? String  == "402" {
+                self?.coverView.showLab.text = "暂无任务"
+                self?.coverView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                self?.view.addSubview((self?.coverView)!)
             }else{
                 //服务器
                 self?.tableView.mj_header.endRefreshing()
