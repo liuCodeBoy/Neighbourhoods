@@ -2781,7 +2781,7 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods.consultbranch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
@@ -2816,7 +2816,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods.consultbranch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";

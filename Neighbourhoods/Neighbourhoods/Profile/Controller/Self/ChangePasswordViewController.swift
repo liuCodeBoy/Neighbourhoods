@@ -58,11 +58,13 @@ class ChangePasswordViewController: UIViewController {
             }, completion: { (_) in
                 self?.progressView?.removeFromSuperview()
             })
+            
             if error != nil {
                 //print(error as AnyObject)
             } else if result!["code"] as! String == "400.4" {
                 self?.presentHintMessage(hintMessgae: "您输入的密码有误", completion: nil)
             } else if result!["code"] as! String == "200" {
+                
                 self?.presentHintMessage(hintMessgae: "密码修改成功", completion: nil)
             } else {
                 self?.presentHintMessage(hintMessgae: "修改失败", completion: nil)

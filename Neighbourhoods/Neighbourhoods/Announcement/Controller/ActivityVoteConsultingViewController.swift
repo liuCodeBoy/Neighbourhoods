@@ -22,10 +22,7 @@ class ActivityVoteConsultingViewController: UIViewController {
     
     @IBAction func consultBtnClicked(_ sender: UIButton) {
        
-        JMSGUser.login(withUsername: "18851731008", password: "123456") { (_, error) in
-            print(error as Any)
-        }
-        
+
         JMSGConversation.createGroupConversation(withGroupId: "10300794") { (result, error) in
             if let conv = result as? JMSGConversation {
                 let vc = JCChatViewController(conversation: conv)

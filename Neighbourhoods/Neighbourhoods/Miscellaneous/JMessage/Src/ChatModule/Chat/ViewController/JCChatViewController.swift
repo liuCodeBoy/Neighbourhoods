@@ -10,6 +10,9 @@ import UIKit
 import YHPhotoKit
 import MobileCoreServices
 
+let hideAddButtonNotification = "com.app.tabbar.addBtn.hide"
+let showAddButtonNotification = "com.app.tabbar.addBtn.show"
+
 class JCChatViewController: UIViewController {
     
     open var conversation: JMSGConversation
@@ -48,13 +51,17 @@ class JCChatViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         toolbar.isHidden = false
+        NotificationCenter.default.post(Notification.init(name: Notification.Name.init(hideAddButtonNotification)))
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.post(Notification.init(name: Notification.Name.init(showAddButtonNotification)))
+
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameChanged(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -66,7 +73,7 @@ class JCChatViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.navigationBar.isTranslucent = true
         JCDraft.update(text: toolbar.text, conversation: conversation)
     }
     
@@ -141,8 +148,8 @@ class JCChatViewController: UIViewController {
             SAIToolboxItem("page:pic", "照片", UIImage.loadImage("chat_tool_pic")),
             SAIToolboxItem("page:camera", "拍照", UIImage.loadImage("chat_tool_camera")),
             SAIToolboxItem("page:video_s", "小视频", UIImage.loadImage("chat_tool_video_short")),
-            SAIToolboxItem("page:location", "位置", UIImage.loadImage("chat_tool_location")),
-            SAIToolboxItem("page:businessCard", "名片", UIImage.loadImage("chat_tool_businessCard")),
+//            SAIToolboxItem("page:location", "位置", UIImage.loadImage("chat_tool_location")),
+//            SAIToolboxItem("page:businessCard", "名片", UIImage.loadImage("chat_tool_businessCard")),
             ]
     }()
     
@@ -234,21 +241,23 @@ class JCChatViewController: UIViewController {
     }
     
     private func _setupNavigation() {
-        let navButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        if isGroup {
-            navButton.setImage(UIImage.loadImage("com_icon_group_w"), for: .normal)
-            navButton.addTarget(self, action: #selector(_getGroupInfo), for: .touchUpInside)
-        } else {
-            navButton.setImage(UIImage.loadImage("com_icon_user_w"), for: .normal)
-            navButton.addTarget(self, action: #selector(_getSingleInfo), for: .touchUpInside)
-        }
-        let item1 = UIBarButtonItem(customView: navButton)
-        navigationItem.rightBarButtonItems =  [item1]
-
-        let item2 = UIBarButtonItem(customView: leftButton)
-        navigationItem.leftBarButtonItems =  [item2]
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        let navButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        if isGroup {
+//            navButton.setImage(UIImage.loadImage("com_icon_group_w"), for: .normal)
+//            navButton.addTarget(self, action: #selector(_getGroupInfo), for: .touchUpInside)
+//        } else {
+//            navButton.setImage(UIImage.loadImage("com_icon_user_w"), for: .normal)
+//            navButton.addTarget(self, action: #selector(_getSingleInfo), for: .touchUpInside)
+//        }
+//        let item1 = UIBarButtonItem(customView: navButton)
+//        navigationItem.rightBarButtonItems =  [item1]
+//
+//        let item2 = UIBarButtonItem(customView: leftButton)
+//        navigationItem.leftBarButtonItems =  [item2]
+//        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+//        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        setNavBarBackBtn()
+        
     }
     
     func _back() {
@@ -836,12 +845,23 @@ extension JCChatViewController: JCMessageDelegate {
     
     func tapAvatarView(message: JCMessageType) {
         toolbar.resignFirstResponder()
-        if message.options.alignment == .right {
-            navigationController?.pushViewController(JCMyInfoViewController(), animated: true)
-        } else {
-            let vc = JCUserInfoViewController()
-            vc.user = message.sender
-            navigationController?.pushViewController(vc, animated: true)
+//        if message.options.alignment == .right {
+//            navigationController?.pushViewController(JCMyInfoViewController(), animated: true)
+//        } else {
+//            let vc = JCUserInfoViewController()
+//            vc.user = message.sender
+//            navigationController?.pushViewController(vc, animated: true)
+//        }
+        
+        let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+        let user = message.sender
+        if let uid = user?.region {
+            userInfoVc?.uid = Int(uid)
+        }
+        if  UserDefaults.standard.string(forKey: "token") == nil{
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
+        }else{
+            self.navigationController?.pushViewController(userInfoVc!, animated: true)
         }
     }
 

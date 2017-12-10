@@ -65,6 +65,9 @@ class ChangeNickNameViewController: UIViewController {
             }, completion: { (_) in
                 self?.progressView?.removeFromSuperview()
             })
+            
+            // MARK:- update JMessage
+            JMSGUser.updateMyInfo(withParameter: (self?.nickNameTF.text)!, userFieldType: .fieldsNickname, completionHandler: nil)
             if error != nil {
                 //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {

@@ -157,7 +157,8 @@ class OthersMomentsViewController: UIViewController {
                     showText = "取消拉黑失败"
                 }
             case "402" : showText = "请传入type参数"
-            default    : break
+            case "401" : showText = "不能拉黑自己"
+            default    : showText = "error"
             }
             self?.presentHintMessage(hintMessgae: showText!, completion: nil)
         }

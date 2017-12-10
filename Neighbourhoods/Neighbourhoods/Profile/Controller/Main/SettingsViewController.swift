@@ -64,6 +64,10 @@ class SettingsViewController: UIViewController {
             deafult.removeObject(forKey: "token")
             deafult.removeObject(forKey: "number")
             deafult.removeObject(forKey: "pwd")
+            
+            // MARK:- logout JMessage
+            JMSGUser.logout(nil)
+            
             //登陆界面销毁
 //            [[UIApplication sharedApplication].delegate window]
      
