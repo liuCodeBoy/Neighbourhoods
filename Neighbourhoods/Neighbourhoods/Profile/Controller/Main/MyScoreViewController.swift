@@ -26,7 +26,7 @@ class MyScoreViewController: UIViewController {
     
     var myScoreArray = [MyIntegralModel]()
     
-    @IBAction func back(_ sender: UIButton) {
+    @IBAction func backBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     

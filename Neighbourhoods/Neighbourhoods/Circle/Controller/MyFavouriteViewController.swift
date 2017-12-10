@@ -9,7 +9,7 @@
 import UIKit
 
 class MyFavouriteViewController: UIViewController {
-    private lazy var  rotaionArray = [NborCircleModel]()
+    lazy var  rotaionArray = [NborCircleModel]()
     @IBOutlet weak var myFavTableView: UITableView!
     @IBOutlet weak var favMoments: UIButton!
     @IBOutlet weak var favUsers: UIButton!

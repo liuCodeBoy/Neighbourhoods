@@ -19,14 +19,20 @@ class ActivityVoteConsultingViewController: UIViewController {
     @IBOutlet weak var emailAddress: UILabel!
     @IBOutlet weak var detialTextLbl: UILabel!
     
-    let vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateViewController(withIdentifier: "ChattingVC") as! ChattingViewController
     
     @IBAction func consultBtnClicked(_ sender: UIButton) {
-        // FIXME:- complete
-        vc.setNavBarTitle(title: "群聊")
-        vc.id = self.id as? Int
-        vc.isConsultingChat = true
-        self.navigationController?.pushViewController(vc, animated: true)
+       
+        JMSGUser.login(withUsername: "18851731008", password: "123456") { (_, error) in
+            print(error as Any)
+        }
+        
+        JMSGConversation.createGroupConversation(withGroupId: "10300794") { (result, error) in
+            if let conv = result as? JMSGConversation {
+                let vc = JCChatViewController(conversation: conv)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateConversation), object: nil, userInfo: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
     override func viewDidLoad() {
