@@ -52,6 +52,10 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
         lastedRequest(p: page)
         loadRefreshComponet()
         
+        // MARK:- adjust tableview height
+        self.socialCharityListTableView.estimatedRowHeight = 80
+        self.socialCharityListTableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
     func loadRefreshComponet() -> () {

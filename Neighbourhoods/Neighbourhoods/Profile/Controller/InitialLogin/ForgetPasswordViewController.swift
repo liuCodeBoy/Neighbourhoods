@@ -62,6 +62,7 @@ class ForgetPasswordViewController: UIViewController {
                         if error != nil {
                             //print(error as AnyObject)
                         } else if result!["code"] as! String == "200" {
+                            
                             weakSelf?.presentHintMessage(hintMessgae: "密码重置成功", completion: { (_) in
                                 self?.navigationController?.popViewController(animated: true)
                             })

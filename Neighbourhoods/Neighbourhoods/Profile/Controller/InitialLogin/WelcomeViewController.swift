@@ -57,6 +57,9 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                     //print(error as AnyObject)
                 } else if result!["code"] as! String == "200" {
                     //print("register and save user info success")
+                    // MARK:- update JMessage
+                    JMSGUser.updateMyInfo(withParameter: (self?.nickNameTF.text)!, userFieldType: .fieldsNickname, completionHandler: nil)
+                    
                     UIView.animate(withDuration: 1, animations: {
                         self?.view.alpha = 0
                         UIApplication.shared.keyWindow?.rootViewController = AppDelegate.mainVC

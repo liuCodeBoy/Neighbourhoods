@@ -50,6 +50,8 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                             userDefault.set(uid, forKey: "uid")
                             //同步数据
                             userDefault.synchronize()
+                        } else {
+                            return
                         }
                         if  let token = resultDict?["token"]{
                             //偏好设置
@@ -60,7 +62,23 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                             userDefault.set(self?.password.text, forKey: "pwd")
                             //同步数据
                             userDefault.synchronize()
+                        } else {
+                            return
                         }
+                        // MARK:- login in JMessage
+                        JMSGUser.login(withUsername: (self?.phoneNumber.text)!, password: "llb2580.", completionHandler: { (_, error) in
+                            if error != nil {
+                                self?.presentHintMessage(hintMessgae: "IM login failed", completion: nil)
+                            }
+                            // MARK:- save uid to IM server
+                            JMSGUser.updateMyInfo(withParameter:  UserDefaults.standard.string(forKey: "uid")!, userFieldType: .fieldsRegion, completionHandler: { (_, error) in
+                                if error != nil {
+                                    self?.presentHintMessage(hintMessgae: "IM uid save failed", completion: nil)
+                                }
+                            })
+                        })
+                        
+                        
                         let alert = UIAlertController(title: "提示", message: "登录成功", preferredStyle: .alert)
                         let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
                             //登陆界面销毁

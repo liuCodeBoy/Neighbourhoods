@@ -115,6 +115,20 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                     // MARK:- upload avatar to the server
                     NetWorkTool.shareInstance.updateProfile(access_token, cate: nil, content: nil, content_sex: nil, image: photosArr?.first!, finished: { [weak self](result, error) in
                         
+                        // MARK:- update JMessage User Info
+                        if let image = photosArr?.first! {
+                            let imageData = UIImageJPEGRepresentation(image, 0.8)
+                            JMSGUser.updateMyInfo(withParameter: imageData!, userFieldType: .fieldsAvatar, completionHandler: { (result, error) in
+                                if error == nil {
+                                    let avatorData = NSKeyedArchiver.archivedData(withRootObject: imageData!)
+                                    UserDefaults.standard.set(avatorData, forKey: kLastUserAvator)
+                                    NotificationCenter.default.post(name: Notification.Name(rawValue: kUpdateUserInfo), object: nil)
+                                }
+                            })
+                        } else {
+                            UserDefaults.standard.removeObject(forKey: kLastUserAvator)
+                        }
+                        
                         // MARK:- data fetched successfully
                         UIView.animate(withDuration: 0.25, animations: {
                             self?.progressView?.alpha = 0
@@ -126,6 +140,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                             //print(error as AnyObject)
                         } else if result!["code"] as! String == "200" {
                             self?.presentHintMessage(hintMessgae: "上传成功", completion: nil)
+                            
                         } else {
                             //print("request failed with exit code \(String(describing: result!["code"]))")
                         }

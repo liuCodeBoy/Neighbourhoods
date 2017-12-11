@@ -87,7 +87,7 @@ class TopicDetialTableViewCell: UITableViewCell {
             let str = NSMutableAttributedString(string: titleTheme + topicStr)
             let strNum = titleTheme.count
             let range  = Range.init(0...strNum-1)
-            str.addAttributes([NSAttributedStringKey.foregroundColor : UIColor.blue ,NSAttributedStringKey.font :  UIFont.systemFont(ofSize: 18)], range: NSRange.init(range))
+//            str.addAttributes([NSAttributedStringKey.foregroundColor : UIColor.blue ,NSAttributedStringKey.font :  UIFont.systemFont(ofSize: 18)], range: NSRange.init(range))
             self.textLbl.attributedText = str
              }
             }

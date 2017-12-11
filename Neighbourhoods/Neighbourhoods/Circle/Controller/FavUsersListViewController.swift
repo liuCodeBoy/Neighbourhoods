@@ -12,7 +12,7 @@ class FavUsersListViewController: UIViewController {
     
     @IBOutlet weak var followingsTableView: UITableView!
     let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
-    private var followingList = [AttentionAndFansModel]()
+    var followingList = [AttentionAndFansModel]()
     
     var uid: NSNumber?
     
