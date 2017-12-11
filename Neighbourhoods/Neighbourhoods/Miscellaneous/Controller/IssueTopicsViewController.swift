@@ -266,7 +266,7 @@ extension IssueTopicsViewController : TZImagePickerControllerDelegate {
         self.addPhotoClick()
     }
     
-    private func setupNotifications() {
+    func setupNotifications() {
         //        // 监听键盘的弹出
         //        NotificationCenter.default.addObserver(self, selector: Selector(("keyboardWillChangeFrame:")), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
@@ -281,7 +281,7 @@ extension IssueTopicsViewController : TZImagePickerControllerDelegate {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    private func  setUpHeaderImageView(){
+    func  setUpHeaderImageView(){
         
         //初始化view成为tableview的headerView
         let  headerImageView =  UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 200))

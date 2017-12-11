@@ -9,13 +9,13 @@
 import UIKit
 
 extension  String {
-   static func getLabHeight(labelStr: String, font: UIFont, width: CGFloat) -> CGFloat {
-        let statusLabelText = labelStr
-        let size = CGSize(width: width, height: 900)
-    let dic = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
-    let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : Any] , context: nil).size
-        return strSize.height
-    }
+//   static func getLabHeight(labelStr: String, font: UIFont, width: CGFloat) -> CGFloat {
+//        let statusLabelText = labelStr
+//        let size = CGSize(width: width, height: 900)
+//    let dic = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
+//    let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : Any] , context: nil).size
+//        return strSize.height
+//    }
     
     //MARK: - judge wheather the phone number is valid or not
     

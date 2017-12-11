@@ -12,7 +12,7 @@ class MyFollowersViewController: UIViewController {
     
     @IBOutlet weak var myFollowersTableView: UITableView!
     
-    private var followingList = [AttentionAndFansModel]()
+    var followingList = [AttentionAndFansModel]()
     
     var progressView: UIView?
     

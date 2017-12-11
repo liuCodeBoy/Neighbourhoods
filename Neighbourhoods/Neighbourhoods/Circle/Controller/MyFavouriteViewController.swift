@@ -9,7 +9,7 @@
 import UIKit
 
 class MyFavouriteViewController: UIViewController {
-    private lazy var  rotaionArray = [NborCircleModel]()
+    lazy var  rotaionArray = [NborCircleModel]()
     @IBOutlet weak var myFavTableView: UITableView!
     @IBOutlet weak var favMoments: UIButton!
     @IBOutlet weak var favUsers: UIButton!
@@ -46,6 +46,10 @@ class MyFavouriteViewController: UIViewController {
         favUserTableView?.isHidden = true
         favUserErrorView?.isHidden = true
         lastedRequest()
+        
+        // MARK:- adjust tableview height
+        self.myFavTableView.estimatedRowHeight = 200
+        self.myFavTableView.rowHeight = UITableViewAutomaticDimension
         
     }
     // MARK:- initialize the user list table view and controller

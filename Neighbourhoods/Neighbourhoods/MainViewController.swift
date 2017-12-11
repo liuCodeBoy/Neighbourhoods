@@ -28,6 +28,8 @@ class MainViewController: UITabBarController {
     
     var rootVC: UIViewController?
     
+    var addBtn: UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +49,8 @@ class MainViewController: UITabBarController {
         
         add.adjustsImageWhenHighlighted = false
         
+        addBtn = add
+        
         self.view.addSubview(add)
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeBtnClicked), name: NSNotification.Name.init(closeSpringViewNotification), object: nil)
@@ -55,7 +59,17 @@ class MainViewController: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueMissionVC), name: NSNotification.Name.init(issueMissionNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showQuickMessageVC), name: NSNotification.Name.init(quickLookMessageNotification), object: nil)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(hideAddBtn), name: NSNotification.Name.init(hideAddButtonNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showAddBtn), name: NSNotification.Name.init(showAddButtonNotification), object: nil)
 
+    }
+    
+    @objc func hideAddBtn() {
+        addBtn?.alpha = 0
+    }
+    
+    @objc func showAddBtn() {
+        addBtn?.alpha = 1
     }
     
     @objc func addButtonClicked() {

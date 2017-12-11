@@ -65,6 +65,9 @@ class ProtocalsViewController: UIViewController {
                                     UserDefaults.standard.setValue(uid!, forKey: "uid")
                                     UserDefaults.standard.synchronize()
                                     
+                                    // MARK:- login to JMessage
+                                    JMSGUser.login(withUsername: (self?.phoneNumber)!, password: "llb2580.", completionHandler: nil)
+                                    
                                     let alert = UIAlertController(title: "提示", message: "注册成功", preferredStyle: .alert)
                                     let ok = UIAlertAction(title: "好的", style: .default, handler: { (_) in
                                         // MARK:- show main interface
@@ -84,9 +87,6 @@ class ProtocalsViewController: UIViewController {
                                 } else {
                                     //print("post request failed with exit code \(userInfo!["code"] as! String)")
                                 }
-                                
-                                
-                                
                                 
                             } else {
                                 //print(error as AnyObject)
