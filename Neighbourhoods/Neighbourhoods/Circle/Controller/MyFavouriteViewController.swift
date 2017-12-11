@@ -47,6 +47,10 @@ class MyFavouriteViewController: UIViewController {
         favUserErrorView?.isHidden = true
         lastedRequest()
         
+        // MARK:- adjust tableview height
+        self.myFavTableView.estimatedRowHeight = 200
+        self.myFavTableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     // MARK:- initialize the user list table view and controller
     func loadFavUserVC() {

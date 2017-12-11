@@ -27,6 +27,10 @@ class TopicDetialTableViewController: UITableViewController {
         lastedRequest(p: page)
         self.tableView.reloadData()
         setNavBarBackBtn()
+        
+        // MARK:- adjust tableview height
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func loadRefreshComponet() -> () {

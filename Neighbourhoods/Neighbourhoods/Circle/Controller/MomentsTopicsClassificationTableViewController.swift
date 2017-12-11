@@ -24,6 +24,10 @@ class MomentsTopicsClassificationTableViewController: UITableViewController {
         self.setNavBarTitle(title: "精选话题")
         self.progressView = progress
         self.tableView.addSubview(progress)
+        
+        // MARK:- adjust tableview height
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func loadRefreshComponet() -> () {

@@ -103,6 +103,9 @@ class OthersMomentsViewController: UIViewController {
         loadRefreshComponet()
         endrefresh()
         loadListView()
+        // MARK:- adjust tableview height
+        self.othersMomentsTableView.estimatedRowHeight = 200
+        self.othersMomentsTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func loadListView() {

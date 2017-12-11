@@ -31,6 +31,10 @@ class SecondaryCommentTableViewController: UITableViewController {
         progress.loadingHintLbl.text = "加载中"
         self.progressView = progress
         self.view.addSubview(progress)
+        
+        // MARK:- adjust tableview height
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     
