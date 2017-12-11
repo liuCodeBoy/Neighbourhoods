@@ -92,9 +92,16 @@ extension LotteryViewController: UITableViewDelegate, UITableViewDataSource  {
         }
         if rotaionArray.count > 0 {
         let lotterModel = rotaionArray[indexPath.row]
-        guard (lotterModel.status != 1 && lotterModel.status != -1) else {
+        guard (lotterModel.status != -1) else {
             return
-            }
+         }
+        if (lotterModel.status == 1 &&  rotaionArray.count > 0){
+            let model = rotaionArray[indexPath.row]
+            let lotteryDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LotteryDetailVCID") as! LotteryDetailVC
+            lotteryDetailVC.modeId = model.id as? Int
+            self.navigationController?.pushViewController(lotteryDetailVC, animated: true)
+            return
+         }
         }
         if rotaionArray.count > 0 {
         let model = rotaionArray[indexPath.row]

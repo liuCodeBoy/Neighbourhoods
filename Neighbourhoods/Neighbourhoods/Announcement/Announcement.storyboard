@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mcl-uA-zDH">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mcl-uA-zDH">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,7 +17,7 @@
             <objects>
                 <viewController id="OjL-R2-iab" customClass="AnnouncementViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mxP-mm-NBT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVa-xl-AUW">
@@ -122,11 +122,11 @@
             <objects>
                 <viewController storyboardIdentifier="SocialAnnouncementVC" id="jaE-pw-2Tj" customClass="SocialAnnouncementViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c8e-6y-glq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t91-gQ-zio">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SocialAnnouncementCell" rowHeight="93" id="9qG-GH-JdA" customClass="SocialAnnouncementTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
@@ -200,7 +200,7 @@
             <objects>
                 <viewController storyboardIdentifier="SocialAnoDetialVCID" id="5pq-Vh-5l8" customClass="SocialAnnouncementDetialViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d41-tF-evR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QNI-l5-qto"/>
@@ -215,11 +215,11 @@
             <objects>
                 <viewController storyboardIdentifier="LotteryVC" id="Qc0-WC-tXT" customClass="LotteryViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fnz-kO-5lR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1FI-q5-mXM">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LotteryCell" rowHeight="73" id="EYR-Dh-BmQ" customClass="LotteryTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
@@ -306,11 +306,11 @@
             <objects>
                 <viewController storyboardIdentifier="VoteVC" id="z14-Zh-FwG" customClass="VoteViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="05B-hk-XSA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-yY-OBn">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FigureVoteCell" rowHeight="92" id="Tsl-zM-wtz" customClass="FigureVoteTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
@@ -455,7 +455,7 @@
             <objects>
                 <viewController storyboardIdentifier="LotteryDetialVC" id="qpz-dE-yHn" customClass="LotteryDetialViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nql-Fo-YEk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ou-sV-3zD">
@@ -523,6 +523,114 @@
             </objects>
             <point key="canvasLocation" x="3693.5999999999999" y="-18.440779610194905"/>
         </scene>
+        <!--Lottery DetailVC-->
+        <scene sceneID="Bbf-vk-8YP">
+            <objects>
+                <viewController storyboardIdentifier="LotteryDetailVCID" id="uFv-50-zd9" customClass="LotteryDetailVC" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XXo-PS-WCC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZo-PO-mGi">
+                                <rect key="frame" x="104" y="30" width="112" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.35544677819999998" green="0.71710945339999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uvo-yd-aKt">
+                                <rect key="frame" x="15" y="99" width="290" height="150"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1Xi-mi-ydC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:24" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgs-As-Jgr">
+                                <rect key="frame" x="265" y="264" width="40" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主持方" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4k-TP-1Jz">
+                                <rect key="frame" x="253" y="295" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.35544677819999998" green="0.71710945339999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfL-DV-mXj">
+                                <rect key="frame" x="95" y="346" width="130" height="50"/>
+                                <color key="backgroundColor" red="0.35544677819999998" green="0.71710945339999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4vE-Eq-mx7"/>
+                                    <constraint firstAttribute="width" constant="130" id="qGT-EG-lcZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="报名参加">
+                                    <color key="titleColor" red="0.99215686270000003" green="1" blue="0.99163479880000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="voteJoinAction:" destination="uFv-50-zd9" eventType="touchUpInside" id="CjD-C6-UMY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参与对象限制" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFX-ES-mtu">
+                                <rect key="frame" x="15" y="76" width="92" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9V-gd-VDs">
+                                <rect key="frame" x="274" y="76.5" width="31" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I4k-TP-1Jz" firstAttribute="top" secondItem="cgs-As-Jgr" secondAttribute="bottom" constant="10" id="0Cy-QP-ap6"/>
+                            <constraint firstItem="gZo-PO-mGi" firstAttribute="top" secondItem="jYB-kq-jns" secondAttribute="top" constant="10" id="0kB-46-Hfa"/>
+                            <constraint firstItem="Uvo-yd-aKt" firstAttribute="leading" secondItem="jYB-kq-jns" secondAttribute="leading" constant="15" id="5WS-bC-lCv"/>
+                            <constraint firstItem="Z9V-gd-VDs" firstAttribute="trailing" secondItem="Uvo-yd-aKt" secondAttribute="trailing" id="8VN-nv-kwc"/>
+                            <constraint firstItem="jYB-kq-jns" firstAttribute="trailing" secondItem="Uvo-yd-aKt" secondAttribute="trailing" constant="15" id="H3J-m6-sAN"/>
+                            <constraint firstItem="cgs-As-Jgr" firstAttribute="trailing" secondItem="Uvo-yd-aKt" secondAttribute="trailing" id="NFp-Eg-tOI"/>
+                            <constraint firstItem="cgs-As-Jgr" firstAttribute="top" secondItem="Uvo-yd-aKt" secondAttribute="bottom" constant="15" id="OUe-of-bWn"/>
+                            <constraint firstItem="yfL-DV-mXj" firstAttribute="top" secondItem="I4k-TP-1Jz" secondAttribute="bottom" constant="30" id="SBL-QM-pES"/>
+                            <constraint firstItem="gZo-PO-mGi" firstAttribute="centerX" secondItem="jYB-kq-jns" secondAttribute="centerX" id="UpL-bD-vcN"/>
+                            <constraint firstItem="I4k-TP-1Jz" firstAttribute="trailing" secondItem="cgs-As-Jgr" secondAttribute="trailing" id="ZYI-Qu-NOl"/>
+                            <constraint firstItem="Z9V-gd-VDs" firstAttribute="centerY" secondItem="iFX-ES-mtu" secondAttribute="centerY" id="bYe-33-xb2"/>
+                            <constraint firstItem="yfL-DV-mXj" firstAttribute="centerX" secondItem="jYB-kq-jns" secondAttribute="centerX" id="ln4-tO-gcG"/>
+                            <constraint firstItem="iFX-ES-mtu" firstAttribute="leading" secondItem="Uvo-yd-aKt" secondAttribute="leading" id="uiJ-xG-nyv"/>
+                            <constraint firstItem="Uvo-yd-aKt" firstAttribute="top" secondItem="gZo-PO-mGi" secondAttribute="bottom" constant="40" id="xGT-fE-JzM"/>
+                            <constraint firstItem="Uvo-yd-aKt" firstAttribute="top" secondItem="iFX-ES-mtu" secondAttribute="bottom" constant="5" id="yL5-sg-NKm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jYB-kq-jns"/>
+                    </view>
+                    <connections>
+                        <outlet property="distictText" destination="Z9V-gd-VDs" id="ctf-ob-DSz"/>
+                        <outlet property="ownerLab" destination="I4k-TP-1Jz" id="7E2-Dd-FtZ"/>
+                        <outlet property="timeDetLab" destination="cgs-As-Jgr" id="dzd-pb-lGk"/>
+                        <outlet property="voteContentTextView" destination="Uvo-yd-aKt" id="vgz-M5-0bs"/>
+                        <outlet property="voteDetailText" destination="gZo-PO-mGi" id="xUh-kg-B4G"/>
+                        <outlet property="voteJoinBtn" destination="yfL-DV-mXj" id="Oq8-EP-1fs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdo-hE-VR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4361.25" y="-20"/>
+        </scene>
         <!--社区公告-->
         <scene sceneID="fhz-nP-SrP">
             <objects>
@@ -547,7 +655,7 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityVoteConsultingVC" id="8o8-66-Hvs" customClass="ActivityVoteConsultingViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TmO-9q-hSE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rd-1u-gpR">
@@ -677,7 +785,7 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityVoteEndedVC" id="BjZ-nC-kS4" customClass="ActivityVoteEndedViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQ0-e2-sgU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cf-wO-5pB">
@@ -826,7 +934,7 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityVoteCounsultantCompletedVC" id="GIg-zI-nN0" customClass="ActivityVoteCounsultantCompletedViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cv8-2F-06R">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHR-dD-mwY">
@@ -956,11 +1064,11 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityUnderVotingVC" id="uG2-qE-q5l" customClass="ActivityUnderVotingViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lpd-UJ-PhJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FzC-5S-NTe">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94095736740000002" green="0.94509977099999998" blue="0.94911319019999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -1062,11 +1170,11 @@
             <objects>
                 <viewController storyboardIdentifier="ShowVoteActivResultID" id="7Qx-cs-cZp" customClass="ShowVoteActivResult" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ks4-if-gae">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BvL-d7-5Tj">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowVoteActCellID" rowHeight="113" id="j9L-qW-WR4" customClass="ShowVoteActCell" customModule="Neighbourhoods" customModuleProvider="target">
@@ -1171,11 +1279,11 @@
             <objects>
                 <viewController storyboardIdentifier="ShowFigureVotResultVCID" id="x7a-bK-AdW" customClass="ShowFigureVotResultVC" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wus-O8-9BX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-5J-7qf">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FigureVoteCell" rowHeight="90" id="ETD-P5-ygk" customClass="FigureVoteListTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
@@ -1319,11 +1427,11 @@
             <objects>
                 <viewController storyboardIdentifier="FigureVoteListID" id="8nC-ry-jwz" customClass="FigureVoteListViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5jh-T0-0Sr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7V-U2-Ubv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FigureVoteCell" rowHeight="90" id="4qN-EW-sQP" customClass="FigureVoteListTableViewCell" customModule="Neighbourhoods" customModuleProvider="target">
@@ -1445,13 +1553,13 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-o3-6zx">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PTE-0q-5ev">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lc-6a-qVa">
-                                        <rect key="frame" x="100" y="254" width="120" height="40"/>
+                                        <rect key="frame" x="100" y="210" width="120" height="40"/>
                                         <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="elr-OW-eX3"/>
@@ -1509,7 +1617,7 @@
             <objects>
                 <viewController storyboardIdentifier="FigureVoteDetialVCID" id="ePS-CY-Qsy" customClass="FigureVoteDetialViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QiI-xX-4DH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmZ-mG-v1Y">
@@ -1551,22 +1659,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-cB-fMt">
-                                <rect key="frame" x="20" y="107" width="280" height="142"/>
+                                <rect key="frame" x="20" y="107" width="280" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qlX-c4-utt">
-                                <rect key="frame" x="20" y="261" width="280" height="142"/>
+                                <rect key="frame" x="20" y="239" width="280" height="120"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已有0人为他投票" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Li3-h7-mh3">
-                                <rect key="frame" x="113" y="408" width="94" height="15"/>
+                                <rect key="frame" x="113" y="364" width="94" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsP-ay-DW7">
-                                <rect key="frame" x="20" y="431" width="120" height="40"/>
+                                <rect key="frame" x="20" y="387" width="120" height="40"/>
                                 <color key="backgroundColor" red="0.9505731463" green="0.72976130250000004" blue="0.21306520700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CJq-kk-pOt"/>
@@ -1584,7 +1692,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCP-8T-isg">
-                                <rect key="frame" x="180" y="431" width="120" height="40"/>
+                                <rect key="frame" x="180" y="387" width="120" height="40"/>
                                 <color key="backgroundColor" red="0.27812278270000002" green="0.68835920100000003" blue="0.99172490840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="我也要参加"/>
                                 <userDefinedRuntimeAttributes>
@@ -1652,7 +1760,7 @@
             <objects>
                 <viewController id="Hta-za-jZw" customClass="FigureVoteJoinViewController" customModule="Neighbourhoods" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2IB-P3-5Ko">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwO-Ep-yJM">

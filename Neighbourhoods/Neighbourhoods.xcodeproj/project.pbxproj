@@ -24,6 +24,7 @@
 		B657A0641FC94DFF0021CA4F /* ShowFigureVotResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A0631FC94DFE0021CA4F /* ShowFigureVotResultVC.swift */; };
 		B657C4F81FB44B2C00E12E14 /* ImageShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */; };
 		B657C4FA1FB4878C00E12E14 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */; };
+		B65E9CEF1FDEA13400450CBC /* LotteryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65E9CEE1FDEA13400450CBC /* LotteryDetailVC.swift */; };
 		B678E64A1FA3689A003F7638 /* NetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678E6491FA36899003F7638 /* NetWorkTool.swift */; };
 		B681C9DC1FA9ED06008006D6 /* LXQHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */; };
 		B692F89B1F91F17E00C75B41 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B692F8991F91F17E00C75B41 /* SDWebImage.framework */; };
@@ -450,6 +451,7 @@
 		B657A0631FC94DFE0021CA4F /* ShowFigureVotResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFigureVotResultVC.swift; sourceTree = "<group>"; };
 		B657C4F71FB44B2C00E12E14 /* ImageShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShowVC.swift; sourceTree = "<group>"; };
 		B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		B65E9CEE1FDEA13400450CBC /* LotteryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryDetailVC.swift; sourceTree = "<group>"; };
 		B678E6491FA36899003F7638 /* NetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTool.swift; sourceTree = "<group>"; };
 		B681C9DB1FA9ED06008006D6 /* LXQHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXQHeader.swift; sourceTree = "<group>"; };
 		B692F8991F91F17E00C75B41 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
@@ -1269,6 +1271,7 @@
 				D3FAC7EB1FA97ECD00D972B9 /* ActivityUnderVotingViewController.swift */,
 				B657A05B1FC6F5EE0021CA4F /* ShowVoteActivResult.swift */,
 				B657A0631FC94DFE0021CA4F /* ShowFigureVotResultVC.swift */,
+				B65E9CEE1FDEA13400450CBC /* LotteryDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2416,6 +2419,7 @@
 				D3D65A621FDC3201008DAC16 /* ImageFileCell.swift in Sources */,
 				D3D65A821FDC3202008DAC16 /* ScanQRCodeViewController.swift in Sources */,
 				D3D65A5E1FDC3201008DAC16 /* JCChatViewLayout.swift in Sources */,
+				B65E9CEF1FDEA13400450CBC /* LotteryDetailVC.swift in Sources */,
 				D30A17D21FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift in Sources */,
 				D3D65A4D1FDC3201008DAC16 /* JCContactsViewController.swift in Sources */,
 				D3D1FD821FA81179009A2E58 /* LotteryViewController.swift in Sources */,
