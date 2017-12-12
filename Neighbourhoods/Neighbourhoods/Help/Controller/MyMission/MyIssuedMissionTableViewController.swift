@@ -44,6 +44,10 @@ class MyIssuedMissionTableViewController: UITableViewController {
         self.progressView = progress
         self.view.addSubview(progress)
         
+        // MARK:- table view row height
+        self.tableView.estimatedRowHeight = 180
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
     func loadRefreshComponet() -> () {

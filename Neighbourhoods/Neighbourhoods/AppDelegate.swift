@@ -134,6 +134,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         hostReachability = Reachability(hostName: "www.apple.com")
         hostReachability.startNotifier()
         
+        // MARK:- turn off console log
+        JMessage.setLogOFF()
+        JPUSHService.setLogOFF()
+        
         return true
     }
     
@@ -183,6 +187,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         //        userDefault.synchronize()
         
     }
+    
     
 }
 

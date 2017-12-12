@@ -187,6 +187,49 @@ extension NetWorkTool {
         }
     }
     
+    //MARK: - 任务评价
+    func evaluateTask(_ token: String, id: Int, uid: Int, star: Int, content: String?, up_cate: Int?, image: UIImage?, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://106.15.199.8/llb/api/user/task_evaluation"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        var parameters = ["id": id, "uid": uid, "star": star] as [String : Any]
+
+        
+        // update evaluate content
+        if content != nil {
+            parameters.updateValue(content!, forKey: "content")
+        }
+        
+        // upload image
+        if up_cate != nil && image != nil {
+            parameters.updateValue(1, forKey: "up_cate")
+            parameters.updateValue(image!, forKey: "image")
+        }
+        
+        //3.发送请求参数
+        post(urlString, parameters: parameters, constructingBodyWith: { [weak self](formData) in
+            //upload image
+            if image != nil {
+                let cateName = "image"
+                if let imageData = UIImageJPEGRepresentation(image!, 0.5){
+                    let imageName =  self?.getNowTime()
+                    formData.appendPart(withFileData: imageData, name: cateName, fileName: imageName! , mimeType: "image/png")
+                }
+            }
+            
+            }, progress: { (Progress) in
+        }, success: { (_, success) in
+            guard let resultDict = success as? [String : AnyObject] else {
+                return
+            }
+            finished(resultDict , nil)
+        }) { (URLSessionDataTask, error) in
+            finished(nil , error)
+        }
+    }
+    
     //MARK: - 查看用户信息
     func userInfo(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString

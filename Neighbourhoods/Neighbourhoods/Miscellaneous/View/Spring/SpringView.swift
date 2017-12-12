@@ -14,6 +14,7 @@ let issueMomentsNotification = "com.app.issue.moments"
 let issueTopicsNotification = "com.app.issue.topics"
 let issueMissionNotification = "com.app.issue.missions"
 let quickLookMessageNotification = "com.app.quick.message"
+let signInMotification = "com.app.signin"
 
 
 class SpringView: UIView {
@@ -30,6 +31,10 @@ class SpringView: UIView {
     @IBAction func messgaeBtn(_ sender: UIButton) {
         NotificationCenter.default.post(name: NSNotification.Name.init(quickLookMessageNotification), object: nil)
     }
+    @IBAction func signInBtn(_ sender: UIButton) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(signInMotification), object: nil)
+    }
+    
     @IBAction func closeBtnClicked(_ sender: UIButton) {
         NotificationCenter.default.post(name: NSNotification.Name.init(closeSpringViewNotification), object: nil)
     }
