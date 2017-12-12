@@ -18,5 +18,8 @@ class ActListModel: NSObject {
     @objc var status        : NSNumber?
     @objc var cate          : NSNumber?
     @objc var picture       : [String]?
+    @objc var district      : String?
+    @objc var user          : String?
+    @objc var is_apply      : NSNumber?
 }
 
