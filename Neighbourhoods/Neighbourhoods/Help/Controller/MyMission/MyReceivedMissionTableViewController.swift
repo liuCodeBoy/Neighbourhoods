@@ -43,6 +43,10 @@ class MyReceivedMissionTableViewController: UITableViewController {
         progress.loadingHintLbl.text = "加载中"
         self.progressView = progress
         self.view.addSubview(progress)
+        
+        // MARK:- table view row height
+        self.tableView.estimatedRowHeight = 180
+        self.tableView.rowHeight = UITableViewAutomaticDimension
 
     }
 

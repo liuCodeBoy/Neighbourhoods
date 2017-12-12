@@ -11,6 +11,8 @@ import UIKit
 class MissionDetialViewController: UIViewController {
     
     var progressView: UIView?
+    
+    let imagePicker = UIImagePickerController()
 
     var missionID: Int? {
         didSet {
@@ -139,11 +141,15 @@ class MissionDetialViewController: UIViewController {
                             self.receiveStatusLbl.text = (viewModel?.receive?.nickname!)! + "已提交任务"
                             missionStatusBtn2.setTitle("确认完成", for: .normal)
                             missionStatusBtn2.backgroundColor = mission_complete
-                            missionStatusBtn2.addTarget(self, action: #selector(userConfirmMissionComplete), for: .touchUpInside)
+                            // MARK:- set button tag
+                            missionStatusBtn2.tag = 111111
+                            missionStatusBtn2.addTarget(self, action: #selector(evaluateMission(_:)), for: .touchUpInside)
                             
                             missionStatusBtn3.setTitle("驳回", for: .normal)
                             missionStatusBtn3.backgroundColor = mission_going
-                            missionStatusBtn3.addTarget(self, action: #selector(userRejectMission), for: .touchUpInside)
+                            // MARK:- set button tag
+                            missionStatusBtn3.tag = 222222
+                            missionStatusBtn3.addTarget(self, action: #selector(evaluateMission(_:)), for: .touchUpInside)
                         case 3:
                             missionStatusBtn1.isHidden = false
                             missionStatusBtn2.isHidden = true
@@ -272,6 +278,11 @@ class MissionDetialViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             })
         }
+        
+        if TARGET_IPHONE_SIMULATOR != 1 {
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .camera
+        }
 
     }
     
@@ -336,73 +347,53 @@ class MissionDetialViewController: UIViewController {
             })
             return
         }
-        NetWorkTool.shareInstance.operateTask(access_token, id: self.missionID!, type: .submit) { (result, error) in
+        NetWorkTool.shareInstance.operateTask(access_token, id: self.missionID!, type: .submit) { [weak self](result, error) in
             if error != nil {
                 //print(error as AnyObject)
             } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
-                    self.navigationController?.popViewController(animated: true)
+                self?.presentHintMessage(hintMessgae: "提交成功", completion: { (_) in
+                    let takePhoto = UIAlertController(title: "提示", message: "是否拍照留存", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "拍照", style: .default, handler: { (_) in
+                        self?.present((self?.imagePicker)!, animated: true, completion: nil)
+                    })
+                    let cancel = UIAlertAction(title: "取消", style: .cancel, handler: { (_) in
+                        self?.navigationController?.popViewController(animated: true)
+                    })
+                    takePhoto.addAction(ok)
+                    takePhoto.addAction(cancel)
+                    self?.present(takePhoto, animated: true, completion: nil)
                 })
             } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(hintMessgae: "提交失败", completion: nil)
+                self?.presentHintMessage(hintMessgae: "提交失败", completion: nil)
                 
             } else if result!["code"] as! String == "400" {
-                self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
+                self?.presentHintMessage(hintMessgae: "查询失败", completion: nil)
             } else {
                 //print("post request failed with exit code \(String(describing: result!["code"]))")
             }
         }
     }
     
-    @objc func userConfirmMissionComplete() {
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
-            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
-                self.navigationController?.popViewController(animated: true)
-            })
-            return
-        }
-        NetWorkTool.shareInstance.operateTask(access_token, id: self.missionID!, type: .done) { (result, error) in
-            if error != nil {
-                //print(error as AnyObject)
-            } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(hintMessgae: "确认成功", completion: { (_) in
-                    self.navigationController?.popViewController(animated: true)
-                })
-            } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(hintMessgae: "提交失败", completion: nil)
-                
-            } else if result!["code"] as! String == "400" {
-                self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
-            } else {
-                //print("post request failed with exit code \(String(describing: result!["code"]))")
-            }
-        }
+    @objc func evaluateMission(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MissionEvaluation") as! MissionEvaluationViewController
+        // MARK:- pass mission id to next vc
+        vc.missionID = self.missionID
+        vc.uid = self.uid
+        // TODO:- judge the tag and set value positive or nagative
+        sender.tag == 222222 ? (vc.isConfirmed = false) : (vc.isConfirmed = true)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
-    @objc func userRejectMission() {
-        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
-            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
-                self.navigationController?.popViewController(animated: true)
-            })
-            return
-        }
-        NetWorkTool.shareInstance.operateTask(access_token, id: self.missionID!, type: .reject) { (result, error) in
-            if error != nil {
-                //print(error as AnyObject)
-            } else if result!["code"] as! String == "200" {
-                self.presentHintMessage(hintMessgae: "驳回成功", completion: { (_) in
-                    self.navigationController?.popViewController(animated: true)
-                })
-            } else if result!["code"] as! String == "401" {
-                self.presentHintMessage(hintMessgae: "提交失败", completion: nil)
-                
-            } else if result!["code"] as! String == "400" {
-                self.presentHintMessage(hintMessgae: "查询失败", completion: nil)
-            } else {
-                //print("post request failed with exit code \(String(describing: result!["code"]))")
-            }
-        }
-    }
+}
 
+extension MissionDetialViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let takenPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+        UIImageWriteToSavedPhotosAlbum(takenPhoto, nil, nil, nil)
+        dismiss(animated: true) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 
 }

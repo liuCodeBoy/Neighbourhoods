@@ -152,6 +152,7 @@
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
 		D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */; };
 		D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */; };
+		D3C527CA1FDE680200A97AD2 /* MissionEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C527C91FDE680200A97AD2 /* MissionEvaluationViewController.swift */; };
 		D3C724C41FC9A6D900AD9D40 /* MessageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */; };
 		D3C724C81FCA61D500AD9D40 /* ChattingWithTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */; };
 		D3C724CA1FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C91FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift */; };
@@ -581,6 +582,7 @@
 		D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowersViewController.swift; sourceTree = "<group>"; };
 		D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbourhoods-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		D3C527C91FDE680200A97AD2 /* MissionEvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEvaluationViewController.swift; sourceTree = "<group>"; };
 		D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListTableViewCell.swift; sourceTree = "<group>"; };
 		D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingWithTableViewCell.swift; sourceTree = "<group>"; };
 		D3C724C91FCA621100AD9D40 /* ChattingDialogueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingDialogueTableViewCell.swift; sourceTree = "<group>"; };
@@ -1105,7 +1107,6 @@
 			isa = PBXGroup;
 			children = (
 				D39F63361FAACEDE00C69CA9 /* OthersMomentsViewController.swift */,
-				B6B3DFEE1FD798CA0018C1DB /* ReportVC.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1992,6 +1993,7 @@
 			children = (
 				D3F6B1841F9A10A0004D0A20 /* HelpViewController.swift */,
 				D3A2F1CB1FA890490030873F /* MissionDetialViewController.swift */,
+				D3C527C91FDE680200A97AD2 /* MissionEvaluationViewController.swift */,
 				D3E5BF411FBDC29500C4766F /* SocialCharity */,
 				D3E5BF401FBDC27A00C4766F /* MyMission */,
 				D3E5BF3E1FBDC1D900C4766F /* Categories */,
@@ -2043,6 +2045,7 @@
 				D3FAC7DC1FA96A2A00D972B9 /* QuickViewMessgaesViewController.swift */,
 				D3F47E061FC971C5001C0FEF /* MessagesListViewController.swift */,
 				D3C724CD1FCA6E8F00AD9D40 /* ChattingViewController.swift */,
+				B6B3DFEE1FD798CA0018C1DB /* ReportVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2222,7 +2225,7 @@
 		};
 		1DB30466C1F822018A82592D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -2233,14 +2236,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE59EEBE9D1B01AD7C3FE40B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -2251,14 +2254,14 @@
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Neighbourhoods-checkManifestLockResult.txt",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D3B589271FC5697D003396D3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -2269,7 +2272,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
@@ -2498,6 +2501,7 @@
 				D3D65AAF1FDC3202008DAC16 /* JCButtonCell.swift in Sources */,
 				D3B589261FC52AFA003396D3 /* CommentQucikViewListTableViewCell.swift in Sources */,
 				D3D65ACE1FDC3202008DAC16 /* JMSGMessage+.swift in Sources */,
+				D3C527CA1FDE680200A97AD2 /* MissionEvaluationViewController.swift in Sources */,
 				D3D65AFC1FDC3202008DAC16 /* JCConstants.swift in Sources */,
 				D3D65A991FDC3202008DAC16 /* JCEmoticonTabItemView.swift in Sources */,
 				D3D65ADE1FDC3202008DAC16 /* SAIInputBar+Resource.swift in Sources */,

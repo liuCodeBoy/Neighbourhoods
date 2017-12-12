@@ -49,7 +49,6 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
         if TARGET_IPHONE_SIMULATOR != 1 {
             imagePicker.delegate = self
             imagePicker.sourceType = .camera
-            imagePicker.sourceType = .camera
             
             
             let leftTap = UITapGestureRecognizer(target: self, action: #selector(takeLeftPhoto))
