@@ -57,8 +57,8 @@ class MainViewController: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueMomentsVC), name: NSNotification.Name.init(issueMomentsNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueTopicsVC), name: NSNotification.Name.init(issueTopicsNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showIssueMissionVC), name: NSNotification.Name.init(issueMissionNotification), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(showIssueSignVC), name: NSNotification.Name.init(signInMotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showQuickMessageVC), name: NSNotification.Name.init(quickLookMessageNotification), object: nil)
-
         NotificationCenter.default.addObserver(self, selector: #selector(hideAddBtn), name: NSNotification.Name.init(hideAddButtonNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showAddBtn), name: NSNotification.Name.init(showAddButtonNotification), object: nil)
 
@@ -108,7 +108,9 @@ class MainViewController: UITabBarController {
     @objc func showIssueMissionVC() {
         self.present(IssueMissionViewController(), animated: true, completion: nil)
     }
-    
+    @objc func showIssueSignVC(){
+         self.present(SignInViewController(), animated: true, completion: nil)
+    }
     @objc func showQuickMessageVC() {
         let vc = UIStoryboard.init(name: "QuickViewMessgaes", bundle: nil).instantiateInitialViewController()! as! QuickViewMessgaesViewController
         self.rootVC = vc

@@ -715,6 +715,26 @@ extension NetWorkTool {
         }
     }
     
+    // 加入协商群聊（user/join_group_chat
+    func join_group_chat(token : String, gid : Int,
+                     finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {
+        //1.获取请求的URLString
+        let urlString = "http://106.15.199.8/llb/api/user/join_group_chat"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //2.获取请求参数
+        let parameters =  ["gid" : gid] as [String : Any]
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject] ) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
     //摇号报名
     func userVote(token: String, id : Int,
                   finished: @escaping (_ result: [String: AnyObject]?, _ error: Error?) -> ()) {

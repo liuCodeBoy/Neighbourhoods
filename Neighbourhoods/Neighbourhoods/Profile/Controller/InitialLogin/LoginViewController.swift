@@ -71,7 +71,7 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
                                 self?.presentHintMessage(hintMessgae: "IM login failed", completion: nil)
                             }
                             // MARK:- save uid to IM server
-                            JMSGUser.updateMyInfo(withParameter:  UserDefaults.standard.string(forKey: "uid")!, userFieldType: .fieldsRegion, completionHandler: { (_, error) in
+                            JMSGUser.updateMyInfo(withParameter:  UserDefaults.standard.string(forKey: "uid")!, userFieldType: .fieldsAddress, completionHandler: { (_, error) in
                                 if error != nil {
                                     self?.presentHintMessage(hintMessgae: "IM uid save failed", completion: nil)
                                 }

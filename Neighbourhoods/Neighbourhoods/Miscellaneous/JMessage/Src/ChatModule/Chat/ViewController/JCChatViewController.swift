@@ -855,7 +855,7 @@ extension JCChatViewController: JCMessageDelegate {
         
         let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
         let user = message.sender
-        if let uid = user?.region {
+        if let uid = user?.address {
             userInfoVc?.uid = Int(uid)
         }
         if  UserDefaults.standard.string(forKey: "token") == nil{

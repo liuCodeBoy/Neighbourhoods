@@ -46,6 +46,8 @@
 		B6ECB6F51FA804DE006C2BCC /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */; };
 		B6ECB71D1FA858FE006C2BCC /* NborCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */; };
 		B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */; };
+		B6F4FE1A1FDF822700BB8566 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4FE181FDF822700BB8566 /* SignInViewController.swift */; };
+		B6F4FE1B1FDF822700BB8566 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F4FE191FDF822700BB8566 /* SignInViewController.xib */; };
 		D30A17CE1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17CD1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift */; };
 		D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17CF1FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift */; };
 		D30A17D21FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30A17D11FAF2DD9007820D3 /* MomentsTopicsClassificationTableViewController.swift */; };
@@ -470,6 +472,8 @@
 		B6ECB6F41FA804DE006C2BCC /* NSDate-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		B6ECB71C1FA858FE006C2BCC /* NborCircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NborCircleModel.swift; sourceTree = "<group>"; };
 		B6ECB71E1FA85E7E006C2BCC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B6F4FE181FDF822700BB8566 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B6F4FE191FDF822700BB8566 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		B6F71F381FA9647300BB8B90 /* NewsRotationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRotationModel.swift; sourceTree = "<group>"; };
 		CF6C6FCE95D274E0C52054A6 /* Pods-Neighbourhoods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbourhoods.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods.release.xcconfig"; sourceTree = "<group>"; };
 		D30A17CD1FAF2DA4007820D3 /* MomentsLatestIssueTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsLatestIssueTableViewController.swift; sourceTree = "<group>"; };
@@ -1984,6 +1988,7 @@
 				D3FAC7D51FA9648500D972B9 /* IssueTopicsViewController.xib */,
 				D3FAC7D91FA9691200D972B9 /* IssueMissionViewController.xib */,
 				D3FAC7E01FA96AD400D972B9 /* QuickViewMessgaes.storyboard */,
+				B6F4FE191FDF822700BB8566 /* SignInViewController.xib */,
 			);
 			path = Spring;
 			sourceTree = "<group>";
@@ -2046,6 +2051,7 @@
 				D3F47E061FC971C5001C0FEF /* MessagesListViewController.swift */,
 				D3C724CD1FCA6E8F00AD9D40 /* ChattingViewController.swift */,
 				B6B3DFEE1FD798CA0018C1DB /* ReportVC.swift */,
+				B6F4FE181FDF822700BB8566 /* SignInViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2158,6 +2164,7 @@
 				D3D65A3B1FDC3201008DAC16 /* yh_image_picked@2x.png in Resources */,
 				D3D65A3A1FDC3201008DAC16 /* yh_image_no_picked@3x.png in Resources */,
 				D33A69C11FC811CC00A738A3 /* SystemUpdatingViewController.xib in Resources */,
+				B6F4FE1B1FDF822700BB8566 /* SignInViewController.xib in Resources */,
 				D3FAC7E11FA96AD400D972B9 /* QuickViewMessgaes.storyboard in Resources */,
 				D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */,
 				D3D65A391FDC3201008DAC16 /* yh_image_no_picked@2x.png in Resources */,
@@ -2387,6 +2394,7 @@
 				D3D65A401FDC3201008DAC16 /* JCSearchController.swift in Sources */,
 				D3D65A4C1FDC3201008DAC16 /* JCSearchFriendViewController.swift in Sources */,
 				D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */,
+				B6F4FE1A1FDF822700BB8566 /* SignInViewController.swift in Sources */,
 				D3D65A861FDC3202008DAC16 /* FileViewController.swift in Sources */,
 				D3D65ACB1FDC3202008DAC16 /* ExJMessage.swift in Sources */,
 				D35B2D1A1FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift in Sources */,

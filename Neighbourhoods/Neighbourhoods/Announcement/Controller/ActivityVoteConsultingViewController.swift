@@ -11,25 +11,43 @@ import SDWebImage
 class ActivityVoteConsultingViewController: UIViewController {
     
     var  id : NSNumber?
-    
+    var  voteDetModel : VoteActDet?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var emailAddress: UILabel!
     @IBOutlet weak var detialTextLbl: UILabel!
-    
-    
-    @IBAction func consultBtnClicked(_ sender: UIButton) {
-       
 
-        JMSGConversation.createGroupConversation(withGroupId: "10300794") { (result, error) in
-            if let conv = result as? JMSGConversation {
-                let vc = JCChatViewController(conversation: conv)
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateConversation), object: nil, userInfo: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func consultBtnClicked(_ sender: UIButton) {
+        guard voteDetModel != nil else {
+            return
+        }
+        guard UserDefaults.standard.string(forKey: "token") != nil else{
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
+            return
+        }
+        NetWorkTool.shareInstance.join_group_chat(token: UserDefaults.standard.string(forKey: "token")!, gid: voteDetModel?.gid as! Int) { [weak self](info, error) in
+            if info?["code"] as? String == "200"{
+                guard let gidNum = self?.voteDetModel?.gid else{
+                   return
+                }
+                 let gidString = String(describing: gidNum)
+                JMSGConversation.createGroupConversation(withGroupId: gidString) { (result, error) in
+                    if let conv = result as? JMSGConversation {
+                        let vc = JCChatViewController(conversation: conv)
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateConversation), object: nil, userInfo: nil)
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }else{
+                self?.presentHintMessage(hintMessgae: "系统错误", completion: nil)
             }
         }
+        
+        
+        
+       
     }
     
     override func viewDidLoad() {
@@ -46,6 +64,7 @@ func lastedRequest(id : Int) -> () {
         if info?["code"] as? String == "200"{
             let result  = info!["result"] as! NSDictionary
             if  let rotationModel = VoteActDet.mj_object(withKeyValues: result){
+                self?.voteDetModel = rotationModel
                 if let avatarString  =  rotationModel.picture {
                     self?.avatar.sd_setImage(with: URL.init(string: avatarString), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
                 }
