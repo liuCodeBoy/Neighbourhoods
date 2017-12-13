@@ -15,6 +15,7 @@ import UIKit
     case bubble
     case content
     case tips
+    case zhuchi
 }
 
 @objc open class JCChatViewLayoutAttributes: UICollectionViewLayoutAttributes {
