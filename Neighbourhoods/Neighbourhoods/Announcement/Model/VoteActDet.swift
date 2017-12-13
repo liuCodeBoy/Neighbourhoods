@@ -16,6 +16,7 @@ class VoteActDet: NSObject {
     @objc var phone       : String?
     @objc var email       : String?
     @objc var picture     : String?
+    @objc var gid         : NSNumber?
     @objc var status      : NSNumber?
     @objc var cate        : NSNumber?
 }
