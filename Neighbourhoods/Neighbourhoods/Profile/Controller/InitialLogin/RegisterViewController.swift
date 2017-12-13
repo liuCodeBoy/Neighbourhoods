@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var idNumber: UITextField!
+    @IBOutlet weak var invitationCode: UITextField!
     @IBOutlet weak var navBar: UINavigationItem!
     
     fileprivate var remainingSeconds: Int = 0 {

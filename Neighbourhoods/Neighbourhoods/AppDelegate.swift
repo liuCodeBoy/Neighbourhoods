@@ -165,6 +165,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         UIApplication.shared.applicationIconBadgeNumber = 0
+        application.cancelAllLocalNotifications()
+        JMessage.resetBadge()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        resetBadge(application)
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        resetBadge(application)
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

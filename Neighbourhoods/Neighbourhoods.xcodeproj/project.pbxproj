@@ -64,6 +64,9 @@
 		D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */; };
 		D30ED0F41FAAF6FC007A5858 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */; };
 		D30ED0F61FAAF832007A5858 /* SelectDistrictTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30ED0F51FAAF832007A5858 /* SelectDistrictTableViewController.swift */; };
+		D31A6FD61FE15C4B00F7E131 /* InvitationCodeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31A6FD51FE15C4B00F7E131 /* InvitationCodeTableViewController.swift */; };
+		D31A6FD81FE15C5C00F7E131 /* InvitationCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31A6FD71FE15C5C00F7E131 /* InvitationCodeTableViewCell.swift */; };
+		D31A6FDA1FE15D1200F7E131 /* InvitationCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31A6FD91FE15D1200F7E131 /* InvitationCodeModel.swift */; };
 		D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360C1F9C6D8300313268 /* MainViewController.swift */; };
 		D31B36101F9C768A00313268 /* SystemConstantValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B360F1F9C768A00313268 /* SystemConstantValue.swift */; };
 		D31B54AD1FB1A1F3003549AF /* SocialOrgListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B54AC1FB1A1F3003549AF /* SocialOrgListModel.swift */; };
@@ -491,6 +494,9 @@
 		D30ED0ED1FAAEB1E007A5858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D30ED0F51FAAF832007A5858 /* SelectDistrictTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictTableViewController.swift; sourceTree = "<group>"; };
+		D31A6FD51FE15C4B00F7E131 /* InvitationCodeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCodeTableViewController.swift; sourceTree = "<group>"; };
+		D31A6FD71FE15C5C00F7E131 /* InvitationCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCodeTableViewCell.swift; sourceTree = "<group>"; };
+		D31A6FD91FE15D1200F7E131 /* InvitationCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCodeModel.swift; sourceTree = "<group>"; };
 		D31B360C1F9C6D8300313268 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D31B360F1F9C768A00313268 /* SystemConstantValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConstantValue.swift; sourceTree = "<group>"; };
 		D31B54AC1FB1A1F3003549AF /* SocialOrgListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialOrgListModel.swift; sourceTree = "<group>"; };
@@ -1052,6 +1058,7 @@
 				D38305441FBC29DC00202FA2 /* SelectDistrictModel.swift */,
 				D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */,
 				D34455E01FCD02DF00800988 /* MyCircleMomentsModel.swift */,
+				D31A6FD91FE15D1200F7E131 /* InvitationCodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1060,6 +1067,7 @@
 			isa = PBXGroup;
 			children = (
 				D37974A31FAAC72D006EA0EE /* CircleMomentsTableViewCell.swift */,
+				D31A6FD71FE15C5C00F7E131 /* InvitationCodeTableViewCell.swift */,
 				D39F63331FAACD9C00C69CA9 /* OthersMomentsTableViewCell.swift */,
 				D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */,
 				D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */,
@@ -1089,6 +1097,7 @@
 				D359931B1F9C9B8C00F96103 /* MyScoreViewController.swift */,
 				D33A69C91FC906AE00A738A3 /* ProfileMissionViewController.swift */,
 				D39EFF321FAAC28400C6AE57 /* CircleMomentsViewController.swift */,
+				D31A6FD51FE15C4B00F7E131 /* InvitationCodeTableViewController.swift */,
 				D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */,
 				D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */,
 				D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */,
@@ -2346,6 +2355,7 @@
 				B657A05E1FC6FB3B0021CA4F /* ShowVoteActCell.swift in Sources */,
 				D3D65A8A1FDC3202008DAC16 /* FileManagerViewController.swift in Sources */,
 				D3D65AC71FDC3202008DAC16 /* UIViewController+JChat.swift in Sources */,
+				D31A6FD61FE15C4B00F7E131 /* InvitationCodeTableViewController.swift in Sources */,
 				D31B360D1F9C6D8300313268 /* MainViewController.swift in Sources */,
 				D3D65AFD1FDC3202008DAC16 /* JCVideoManager.swift in Sources */,
 				D3D65A3E1FDC3201008DAC16 /* JCVerificationInfo.swift in Sources */,
@@ -2371,6 +2381,7 @@
 				D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */,
 				B6F4FE1A1FDF822700BB8566 /* SignInViewController.swift in Sources */,
 				D3D65A861FDC3202008DAC16 /* FileViewController.swift in Sources */,
+				D31A6FD81FE15C5C00F7E131 /* InvitationCodeTableViewCell.swift in Sources */,
 				D3D65ACB1FDC3202008DAC16 /* ExJMessage.swift in Sources */,
 				D35B2D1A1FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift in Sources */,
 				D32F81071FA2D01800FEBE4E /* MyIssueViewController.swift in Sources */,
@@ -2564,6 +2575,7 @@
 				D30A17D41FAF2E07007820D3 /* TopicDetialTableViewController.swift in Sources */,
 				D30A17DA1FAF328E007820D3 /* MomentsLatestIssueTableViewCell.swift in Sources */,
 				D3D65A7E1FDC3201008DAC16 /* JCNetworkTipsCell.swift in Sources */,
+				D31A6FDA1FE15D1200F7E131 /* InvitationCodeModel.swift in Sources */,
 				D31B54AD1FB1A1F3003549AF /* SocialOrgListModel.swift in Sources */,
 				D3FAC7E91FA97E9E00D972B9 /* ActivityVoteConsultingViewController.swift in Sources */,
 				D3D65AA91FDC3202008DAC16 /* UserDefaultValidationService.swift in Sources */,
