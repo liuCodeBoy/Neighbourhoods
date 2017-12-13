@@ -138,14 +138,22 @@ open class JCChatViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             if _avatarView == nil {
                 _avatarView = type(of: self).avatarViewClass._init()
             }
+            if _zhuView == nil{
+                _zhuView = UIButton.init()
+                _zhuView?.backgroundColor = default_orange
+                _zhuView?.setTitle("主持人", for: .normal)
+            }
             if let view = _avatarView as? UIView, view.superview == nil {
-                contentView.addSubview(view)
+                //contentView.addSubview(view)
+                contentView.addSubview(_zhuView!)
             }
         } else {
             if let view = _avatarView as? UIView {
                 view.removeFromSuperview()
+                _zhuView?.removeFromSuperview()
             }
             _avatarView = nil
+            _zhuView = nil
         }
         
         if _contentView == nil {
@@ -177,6 +185,9 @@ open class JCChatViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         // update avatar view layout
         if let view = _avatarView as? UIView {
             view.frame = layoutInfo.layoutedRect(with: .avatar)
+            _zhuView?.frame = layoutInfo.layoutedRect(with: .zhuchi)
+            _zhuView?.titleLabel?.font = UIFont.systemFont(ofSize: 11)
+            _zhuView?.setTitleColor(UIColor.white, for: .normal)
         }
         
         // update content view layout
@@ -193,6 +204,12 @@ open class JCChatViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         _cardView?.apply(message)
         _tipsView?.apply(message)
         _avatarView?.apply(message)
+        
+        if(message.sender?.signature != nil){
+          self._zhuView?.isHidden = false
+        }else{
+          self._zhuView?.isHidden = true
+        }
         let avatarView = _avatarView as? JCMessageAvatarView
         if avatarView != nil {
             avatarView?.delegate = self.delegate
@@ -320,6 +337,7 @@ open class JCChatViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     fileprivate var _cardView: JCMessageContentViewType?
     fileprivate var _avatarView: JCMessageContentViewType?
+    fileprivate var _zhuView  : UIButton?
     fileprivate var _contentView: JCMessageContentViewType?
     fileprivate var _tipsView: JCMessageContentViewType?
     

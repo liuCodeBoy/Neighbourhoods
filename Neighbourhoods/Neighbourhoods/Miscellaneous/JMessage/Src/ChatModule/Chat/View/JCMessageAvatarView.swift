@@ -38,7 +38,8 @@ open class JCMessageAvatarView: UIImageView, JCMessageContentViewType {
         weak var weakSelf = self
         message.sender?.thumbAvatarData({ (data, id, error) in
             if let data = data {
-                weakSelf?.image = UIImage(data: data)
+              weakSelf?.image = UIImage(data: data)
+                
             } else {
                 self.image = self.userDefaultIcon
             }

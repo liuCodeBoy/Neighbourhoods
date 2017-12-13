@@ -63,8 +63,9 @@ import UIKit
         var cardBoxRect: CGRect = .zero
         
         var avatarRect: CGRect = .zero
+        var zhuChiRect: CGRect = .zero
         var avatarBoxRect: CGRect = .zero
-        
+        var zhuChiBoxRect: CGRect = .zero
         var bubbleRect: CGRect = .zero
         var bubbleBoxRect: CGRect = .zero
         
@@ -103,8 +104,14 @@ import UIKit
             let box = CGRect(x: x1, y: y1, width: edg.left + size.width + edg.right, height: edg.top + size.height + edg.bottom)
             let rect = UIEdgeInsetsInsetRect(box, edg)
             
+            let   Box = CGRect(x: x1, y: y1 + size.height + 5, width: edg.left + size.width + edg.right, height: edg.top + 15 + edg.bottom)
+            let   Rect =  UIEdgeInsetsInsetRect(Box, edg)
+
             avatarRect = rect
             avatarBoxRect = box
+            
+             zhuChiRect      = Rect
+             zhuChiBoxRect    = Box
             
             x1 = box.maxX
         }
@@ -236,7 +243,8 @@ import UIKit
             .avatar: avatarRect,
             .bubble: bubbleRect,
             .content: contentRect,
-            .tips: tipsRect
+            .tips: tipsRect,
+            .zhuchi : zhuChiRect
         ]
         let boxRects: [JCChatViewLayoutItem: CGRect] = [
             .all: allBoxRect,
@@ -244,7 +252,8 @@ import UIKit
             .avatar: avatarBoxRect,
             .bubble: bubbleBoxRect,
             .content: contentBoxRect,
-            .tips: tipsBoxRect
+            .tips: tipsBoxRect,
+            .zhuchi : zhuChiBoxRect
         ]
         let info = JCChatViewLayoutAttributesInfo(message: message, size: size, rects: rects, boxRects: boxRects)
         _allLayoutAttributesInfo[message.identifier] = info
@@ -265,6 +274,7 @@ import UIKit
             case .bubble: size = .zero
             case .content: size = .zero
             case .tips: size = delegate.collectionView?(collectionView, layout: self, sizeForItemTipsOf: style)
+            default : break
             }
         }
         _cachedAllLayoutSize[key] = size ?? .zero
@@ -284,6 +294,7 @@ import UIKit
             case .avatar: edg = delegate.collectionView?(collectionView, layout: self, insetForItemAvatarOf: style)
             case .bubble: edg = delegate.collectionView?(collectionView, layout: self, insetForItemBubbleOf: style)
             case .content: edg = delegate.collectionView?(collectionView, layout: self, insetForItemContentOf: style)
+            default : break
             }
         }
         _cachedAllLayoutInset[key] = edg ?? .zero
