@@ -21,4 +21,6 @@ class TaskDetModel: NSObject {
     @objc var receive       : UserModel?
     @objc var is_user       : NSNumber?
     @objc var user          : UserModel?
+    @objc var evaluation    : EvaluationDetModel?
 }
+

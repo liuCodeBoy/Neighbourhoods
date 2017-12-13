@@ -463,12 +463,21 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evaluation_img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Tvf-Li-3Jk">
+                                                <rect key="frame" x="343" y="15" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="B4L-7b-agw"/>
+                                                    <constraint firstAttribute="height" constant="20" id="kSu-rT-Wsg"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="K82-T8-Zek" firstAttribute="top" secondItem="pbE-tq-pi1" secondAttribute="bottom" constant="5" id="99o-6V-m2Y"/>
                                             <constraint firstItem="pbE-tq-pi1" firstAttribute="leading" secondItem="b7S-lR-qfG" secondAttribute="trailing" constant="9" id="9tb-as-Pze"/>
+                                            <constraint firstItem="Tvf-Li-3Jk" firstAttribute="centerY" secondItem="hPk-jo-PjF" secondAttribute="centerY" id="AnN-Xb-CRu"/>
                                             <constraint firstItem="b7S-lR-qfG" firstAttribute="top" secondItem="dXr-MM-QrT" secondAttribute="top" constant="12" id="Cs9-mG-C6Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tvf-Li-3Jk" secondAttribute="trailing" constant="12" id="EIG-bg-uCq"/>
                                             <constraint firstItem="hPk-jo-PjF" firstAttribute="leading" secondItem="J9O-jU-NQS" secondAttribute="trailing" constant="8" id="LzB-du-F2g"/>
                                             <constraint firstItem="b7S-lR-qfG" firstAttribute="leading" secondItem="dXr-MM-QrT" secondAttribute="leading" constant="12" id="Mjm-4D-Dj6"/>
                                             <constraint firstItem="J9O-jU-NQS" firstAttribute="leading" secondItem="b7S-lR-qfG" secondAttribute="trailing" constant="8" id="RQT-wd-0VS"/>
@@ -554,9 +563,16 @@
                         <viewLayoutGuide key="safeArea" id="08G-fm-QoF"/>
                     </view>
                     <connections>
-                        <outlet property="avatar" destination="Yfh-Pj-z4u" id="jSs-YC-iDA"/>
+                        <outlet property="avatar" destination="Yfh-Pj-z4u" id="TxK-fR-5aw"/>
                         <outlet property="cartifyLbl" destination="KNn-pD-77M" id="JtL-i6-8NY"/>
                         <outlet property="detialLbl" destination="dj6-bZ-EIk" id="n9Y-JD-rTK"/>
+                        <outlet property="evaAvatar" destination="b7S-lR-qfG" id="H6D-Ze-ubi"/>
+                        <outlet property="evaDetialLbl" destination="K82-T8-Zek" id="yZ1-eb-dBe"/>
+                        <outlet property="evaImage" destination="Tvf-Li-3Jk" id="ul9-Cy-cwe"/>
+                        <outlet property="evaNickNameLbl" destination="J9O-jU-NQS" id="eg1-kN-klT"/>
+                        <outlet property="evaScrollView" destination="Rvh-YP-pvu" id="C7H-7i-Wnl"/>
+                        <outlet property="evaStarCountImg" destination="hPk-jo-PjF" id="Shf-VG-IIj"/>
+                        <outlet property="evaTimeLbl" destination="pbE-tq-pi1" id="pXg-OI-n49"/>
                         <outlet property="gender" destination="PB7-wc-H4s" id="0j6-V5-W6a"/>
                         <outlet property="location" destination="DTh-H3-A6s" id="UQV-xw-FqR"/>
                         <outlet property="locationImg" destination="vtY-M8-O7f" id="Z0x-p1-rn8"/>
@@ -1521,6 +1537,7 @@
     <resources>
         <image name="cumulative_score" width="20" height="20"/>
         <image name="evaluate_none" width="125" height="25"/>
+        <image name="evaluation_img_placeholder" width="23" height="20"/>
         <image name="help_my_issued_mission" width="49" height="60"/>
         <image name="help_my_received_mission" width="45" height="60"/>
         <image name="help_social_charity" width="60" height="53"/>
