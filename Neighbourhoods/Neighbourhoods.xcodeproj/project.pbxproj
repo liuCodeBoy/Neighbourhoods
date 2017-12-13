@@ -101,6 +101,7 @@
 		D35B2D1C1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */; };
 		D35B2D1E1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */; };
 		D360A6B31FB1E85500BC3ABC /* ActListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360A6B21FB1E85500BC3ABC /* ActListModel.swift */; };
+		D36274641FDF75F700F58832 /* EvaluationDetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36274631FDF75F700F58832 /* EvaluationDetModel.swift */; };
 		D36C86B61FA09EF0000CCA17 /* FavUsersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B41FA09EF0000CCA17 /* FavUsersListTableViewCell.swift */; };
 		D36C86BA1FA0ACFD000CCA17 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */; };
 		D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */; };
@@ -152,6 +153,8 @@
 		D3BEA88C1FA3901200E4595E /* MyFollowingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88B1FA3901200E4595E /* MyFollowingsViewController.swift */; };
 		D3BEA88E1FA3903100E4595E /* MyFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */; };
 		D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */; };
+		D3C418011FDFD28D008364A5 /* EvaluationDetialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C418001FDFD28D008364A5 /* EvaluationDetialTableViewController.swift */; };
+		D3C418031FDFEF99008364A5 /* EvaluationDetialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C418021FDFEF99008364A5 /* EvaluationDetialTableViewCell.swift */; };
 		D3C527CA1FDE680200A97AD2 /* MissionEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C527C91FDE680200A97AD2 /* MissionEvaluationViewController.swift */; };
 		D3C724C41FC9A6D900AD9D40 /* MessageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */; };
 		D3C724C81FCA61D500AD9D40 /* ChattingWithTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */; };
@@ -277,13 +280,6 @@
 		D3D65A9F1FDC3202008DAC16 /* JCEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D659AE1FDC3201008DAC16 /* JCEmoticonInputView.swift */; };
 		D3D65AA01FDC3202008DAC16 /* JCEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D659AF1FDC3201008DAC16 /* JCEmoticon.swift */; };
 		D3D65AA11FDC3202008DAC16 /* JCEmoticonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D659B01FDC3201008DAC16 /* JCEmoticonGroup.swift */; };
-		D3D65AA21FDC3202008DAC16 /* 定位1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D659B31FDC3201008DAC16 /* 定位1.png */; };
-		D3D65AA31FDC3202008DAC16 /* 定位2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D659B41FDC3201008DAC16 /* 定位2.png */; };
-		D3D65AA41FDC3202008DAC16 /* jiantou2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D659B51FDC3201008DAC16 /* jiantou2@2x.png */; };
-		D3D65AA51FDC3202008DAC16 /* icon_baidu_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D659B61FDC3201008DAC16 /* icon_baidu_marker.png */; };
-		D3D65AA61FDC3202008DAC16 /* JCAddMapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3D659B71FDC3201008DAC16 /* JCAddMapViewController.mm */; };
-		D3D65AA71FDC3202008DAC16 /* AddMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D659BA1FDC3201008DAC16 /* AddMapTableViewCell.xib */; };
-		D3D65AA81FDC3202008DAC16 /* AddMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D659BC1FDC3201008DAC16 /* AddMapTableViewCell.m */; };
 		D3D65AA91FDC3202008DAC16 /* UserDefaultValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D659BF1FDC3201008DAC16 /* UserDefaultValidationService.swift */; };
 		D3D65AAA1FDC3202008DAC16 /* JCMyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D659C11FDC3201008DAC16 /* JCMyInfoCell.swift */; };
 		D3D65AAB1FDC3202008DAC16 /* JCJChatInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D659C21FDC3201008DAC16 /* JCJChatInfoCell.swift */; };
@@ -527,6 +523,7 @@
 		D35B2D1B1FBC21E100F1E8DF /* SelectDistrictSecondLevelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictSecondLevelTableViewController.swift; sourceTree = "<group>"; };
 		D35B2D1D1FBC21EF00F1E8DF /* SelectDistrictThirdLevelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistrictThirdLevelTableViewController.swift; sourceTree = "<group>"; };
 		D360A6B21FB1E85500BC3ABC /* ActListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActListModel.swift; sourceTree = "<group>"; };
+		D36274631FDF75F700F58832 /* EvaluationDetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationDetModel.swift; sourceTree = "<group>"; };
 		D36C86B41FA09EF0000CCA17 /* FavUsersListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavUsersListTableViewCell.swift; sourceTree = "<group>"; };
 		D36C86B81FA0ACFD000CCA17 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		D36C86B91FA0ACFD000CCA17 /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
@@ -582,6 +579,8 @@
 		D3BEA88D1FA3903100E4595E /* MyFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFollowersViewController.swift; sourceTree = "<group>"; };
 		D3BEA8991FA3942500E4595E /* Neighbourhoods-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbourhoods-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3C1D6CA1FA6D7E100207E38 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
+		D3C418001FDFD28D008364A5 /* EvaluationDetialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationDetialTableViewController.swift; sourceTree = "<group>"; };
+		D3C418021FDFEF99008364A5 /* EvaluationDetialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationDetialTableViewCell.swift; sourceTree = "<group>"; };
 		D3C527C91FDE680200A97AD2 /* MissionEvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEvaluationViewController.swift; sourceTree = "<group>"; };
 		D3C724C31FC9A6D900AD9D40 /* MessageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListTableViewCell.swift; sourceTree = "<group>"; };
 		D3C724C71FCA61D500AD9D40 /* ChattingWithTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingWithTableViewCell.swift; sourceTree = "<group>"; };
@@ -708,15 +707,6 @@
 		D3D659AE1FDC3201008DAC16 /* JCEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCEmoticonInputView.swift; sourceTree = "<group>"; };
 		D3D659AF1FDC3201008DAC16 /* JCEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCEmoticon.swift; sourceTree = "<group>"; };
 		D3D659B01FDC3201008DAC16 /* JCEmoticonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCEmoticonGroup.swift; sourceTree = "<group>"; };
-		D3D659B31FDC3201008DAC16 /* 定位1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位1.png"; sourceTree = "<group>"; };
-		D3D659B41FDC3201008DAC16 /* 定位2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定位2.png"; sourceTree = "<group>"; };
-		D3D659B51FDC3201008DAC16 /* jiantou2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jiantou2@2x.png"; sourceTree = "<group>"; };
-		D3D659B61FDC3201008DAC16 /* icon_baidu_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_baidu_marker.png; sourceTree = "<group>"; };
-		D3D659B71FDC3201008DAC16 /* JCAddMapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JCAddMapViewController.mm; sourceTree = "<group>"; };
-		D3D659B81FDC3201008DAC16 /* JCAddMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCAddMapViewController.h; sourceTree = "<group>"; };
-		D3D659BA1FDC3201008DAC16 /* AddMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMapTableViewCell.xib; sourceTree = "<group>"; };
-		D3D659BB1FDC3201008DAC16 /* AddMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMapTableViewCell.h; sourceTree = "<group>"; };
-		D3D659BC1FDC3201008DAC16 /* AddMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMapTableViewCell.m; sourceTree = "<group>"; };
 		D3D659BF1FDC3201008DAC16 /* UserDefaultValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultValidationService.swift; sourceTree = "<group>"; };
 		D3D659C11FDC3201008DAC16 /* JCMyInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCMyInfoCell.swift; sourceTree = "<group>"; };
 		D3D659C21FDC3201008DAC16 /* JCJChatInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCJChatInfoCell.swift; sourceTree = "<group>"; };
@@ -1038,6 +1028,7 @@
 				D31B54AC1FB1A1F3003549AF /* SocialOrgListModel.swift */,
 				D31B54AE1FB1AF29003549AF /* SocialOrgDetModel.swift */,
 				D3C864131FB99CC600CE3B50 /* TaskDetModel.swift */,
+				D36274631FDF75F700F58832 /* EvaluationDetModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1063,6 +1054,7 @@
 				D3524C5E1FB40994004240A5 /* ProfileFollowingTableViewCell.swift */,
 				D3AD803A1FB5970D002BDFBF /* ProfileFollowerTableViewCell.swift */,
 				D35B2D191FBC1C5F00F1E8DF /* ReceivedScoreListTableViewCell.swift */,
+				D3C418021FDFEF99008364A5 /* EvaluationDetialTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1090,6 +1082,7 @@
 				D30ED0F31FAAF6FC007A5858 /* SettingsViewController.swift */,
 				D33F510D1FC51B2100F5AF87 /* CheckForUpdatesViewController.swift */,
 				D3E5BF3A1FBDC01000C4766F /* ProfileReportViewController.swift */,
+				D3C418001FDFD28D008364A5 /* EvaluationDetialTableViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1526,7 +1519,6 @@
 			isa = PBXGroup;
 			children = (
 				D3D659A51FDC3201008DAC16 /* InputView */,
-				D3D659B11FDC3201008DAC16 /* Map */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -1554,38 +1546,6 @@
 				D3D659B01FDC3201008DAC16 /* JCEmoticonGroup.swift */,
 			);
 			path = Emoticon;
-			sourceTree = "<group>";
-		};
-		D3D659B11FDC3201008DAC16 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				D3D659B21FDC3201008DAC16 /* Resources */,
-				D3D659B71FDC3201008DAC16 /* JCAddMapViewController.mm */,
-				D3D659B81FDC3201008DAC16 /* JCAddMapViewController.h */,
-				D3D659B91FDC3201008DAC16 /* View */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
-		D3D659B21FDC3201008DAC16 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D3D659B31FDC3201008DAC16 /* 定位1.png */,
-				D3D659B41FDC3201008DAC16 /* 定位2.png */,
-				D3D659B51FDC3201008DAC16 /* jiantou2@2x.png */,
-				D3D659B61FDC3201008DAC16 /* icon_baidu_marker.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		D3D659B91FDC3201008DAC16 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D3D659BA1FDC3201008DAC16 /* AddMapTableViewCell.xib */,
-				D3D659BB1FDC3201008DAC16 /* AddMapTableViewCell.h */,
-				D3D659BC1FDC3201008DAC16 /* AddMapTableViewCell.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D3D659BD1FDC3201008DAC16 /* UserModule */ = {
@@ -2154,7 +2114,6 @@
 				B6559A151FBD6D8C00EB6D56 /* PicPickerViewCell.xib in Resources */,
 				D3D65AD41FDC3202008DAC16 /* blackTheme.bundle in Resources */,
 				D36C86BB1FA0ACFD000CCA17 /* CommentViewController.xib in Resources */,
-				D3D65AA41FDC3202008DAC16 /* jiantou2@2x.png in Resources */,
 				D3D65A3B1FDC3201008DAC16 /* yh_image_picked@2x.png in Resources */,
 				D3D65A3A1FDC3201008DAC16 /* yh_image_no_picked@3x.png in Resources */,
 				D33A69C11FC811CC00A738A3 /* SystemUpdatingViewController.xib in Resources */,
@@ -2162,13 +2121,11 @@
 				D30ED0EE1FAAEB1E007A5858 /* Assets.xcassets in Resources */,
 				D3D65A391FDC3201008DAC16 /* yh_image_no_picked@2x.png in Resources */,
 				D3FAC7D71FA9648500D972B9 /* IssueTopicsViewController.xib in Resources */,
-				D3D65AA31FDC3202008DAC16 /* 定位2.png in Resources */,
 				D3A1938C1F8DCBAA002C1E23 /* Profile.storyboard in Resources */,
 				D3D65AEC1FDC3202008DAC16 /* area.plist in Resources */,
 				D3D65A3D1FDC3201008DAC16 /* emoticons.bundle in Resources */,
 				D3D65AD01FDC3202008DAC16 /* defaultTheme.bundle in Resources */,
 				D3CDF5C61FC1997200C6513A /* InfoPlist.strings in Resources */,
-				D3D65AA71FDC3202008DAC16 /* AddMapTableViewCell.xib in Resources */,
 				D3D65AD61FDC3202008DAC16 /* JCMessageImageCollectionViewCell.xib in Resources */,
 				D3A193811F8DCA4F002C1E23 /* Announcement.storyboard in Resources */,
 				D3A1937F1F8DCA37002C1E23 /* Circle.storyboard in Resources */,
@@ -2176,10 +2133,8 @@
 				D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */,
 				D3A193881F8DCB4C002C1E23 /* Help.storyboard in Resources */,
 				D3A1935E1F8DC74D002C1E23 /* Main.storyboard in Resources */,
-				D3D65AA21FDC3202008DAC16 /* 定位1.png in Resources */,
 				D3C864121FB989EB00CE3B50 /* NoMissionCoverView.xib in Resources */,
 				D3A193861F8DCB2E002C1E23 /* Null.storyboard in Resources */,
-				D3D65AA51FDC3202008DAC16 /* icon_baidu_marker.png in Resources */,
 				D347E5A61FA2091000FFE815 /* SpringView.xib in Resources */,
 				D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */,
 				D39F9C6E1F9AE46800DD46F2 /* InitialLogin.storyboard in Resources */,
@@ -2225,7 +2180,7 @@
 		};
 		1DB30466C1F822018A82592D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -2236,14 +2191,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE59EEBE9D1B01AD7C3FE40B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -2254,14 +2209,14 @@
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Neighbourhoods-checkManifestLockResult.txt",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D3B589271FC5697D003396D3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -2272,7 +2227,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
@@ -2315,7 +2270,6 @@
 				D31E971D1FAA02A400A78D3A /* AccessDeniedNotVerifiedIDInfomationViewController.swift in Sources */,
 				D3D65A4A1FDC3201008DAC16 /* JCVerificationDetailViewController.swift in Sources */,
 				B6B6E0671FB9D2BA00CCD567 /* NoMissionCoverView.swift in Sources */,
-				D3D65AA81FDC3202008DAC16 /* AddMapTableViewCell.m in Sources */,
 				D3C724C41FC9A6D900AD9D40 /* MessageListTableViewCell.swift in Sources */,
 				D3D65A671FDC3201008DAC16 /* JCMessageLocationContent.swift in Sources */,
 				D3A54D331FAC41670066C486 /* HelpCategoryByScoreTableViewCell.swift in Sources */,
@@ -2338,6 +2292,7 @@
 				D3D65AF71FDC3202008DAC16 /* JCFPSLabel.swift in Sources */,
 				B6ECB71F1FA85E7E006C2BCC /* UserModel.swift in Sources */,
 				D3C864141FB99CC600CE3B50 /* TaskDetModel.swift in Sources */,
+				D3C418011FDFD28D008364A5 /* EvaluationDetialTableViewController.swift in Sources */,
 				B6559A0A1FBD23E700EB6D56 /* FavUsersListViewController.swift in Sources */,
 				D3D65AB11FDC3202008DAC16 /* JCPhotoBar.swift in Sources */,
 				D3F47E071FC971C5001C0FEF /* MessagesListViewController.swift in Sources */,
@@ -2375,6 +2330,7 @@
 				D3D65AB31FDC3202008DAC16 /* JCLoginViewController.swift in Sources */,
 				B6450D941FCEBE6000AC2C9A /* TopicCommoentDetVC.swift in Sources */,
 				D3D65AA11FDC3202008DAC16 /* JCEmoticonGroup.swift in Sources */,
+				D3C418031FDFEF99008364A5 /* EvaluationDetialTableViewCell.swift in Sources */,
 				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D3D65A6D1FDC3201008DAC16 /* JCMessageNoticeContent.swift in Sources */,
 				D3FAC7E31FA974DB00D972B9 /* QuickMessageListTableViewCell.swift in Sources */,
@@ -2480,7 +2436,6 @@
 				D3D65AC81FDC3202008DAC16 /* UISearchBar+JChat.swift in Sources */,
 				D39F63341FAACD9D00C69CA9 /* OthersMomentsTableViewCell.swift in Sources */,
 				D33A69C01FC811CC00A738A3 /* SystemUpdatingViewController.swift in Sources */,
-				D3D65AA61FDC3202008DAC16 /* JCAddMapViewController.mm in Sources */,
 				B657A05A1FC6BB910021CA4F /* ActivityUnderVotingCell.swift in Sources */,
 				D3D65AE71FDC3202008DAC16 /* SAIInputItemView.swift in Sources */,
 				D3D65AE11FDC3202008DAC16 /* SAIInputTextFieldItem.swift in Sources */,
@@ -2520,6 +2475,7 @@
 				B692F8A11F91F1DF00C75B41 /* LoopView.swift in Sources */,
 				D3524C5F1FB40994004240A5 /* ProfileFollowingTableViewCell.swift in Sources */,
 				D30A17D81FAF2EAA007820D3 /* SecondaryCommentTableViewController.swift in Sources */,
+				D36274641FDF75F700F58832 /* EvaluationDetModel.swift in Sources */,
 				D3A54D3B1FAC424D0066C486 /* HelpCategoryByScoreViewController.swift in Sources */,
 				D3D65AB21FDC3202008DAC16 /* JCNoteNameViewController.swift in Sources */,
 				D3D65A7A1FDC3201008DAC16 /* JCMessageCardView.swift in Sources */,
@@ -2789,7 +2745,7 @@
 				INFOPLIST_FILE = Neighbourhoods/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods.consultbranch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";
@@ -2824,7 +2780,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods.consultbranch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NJSupier.Neighbourhoods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbourhoods/Neighbourhoods-Bridging-Header.h";

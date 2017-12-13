@@ -48,6 +48,8 @@ class MissionDetialViewController: UIViewController {
     
     var uid: Int?
     
+    var evaluationImage: UIImage?
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var cartifyLbl: UILabel!
@@ -58,14 +60,24 @@ class MissionDetialViewController: UIViewController {
     @IBOutlet weak var scoreBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var detialLbl: UITextView!
+    
     @IBOutlet weak var missionStatusBtn1: UIButton!
     @IBOutlet weak var missionStatusBtn2: UIButton!
     @IBOutlet weak var missionStatusBtn3: UIButton!
     @IBOutlet weak var receiverAvatar: UIImageView!
     @IBOutlet weak var receiveStatusLbl: UILabel!
     
+    @IBOutlet weak var evaScrollView: UIScrollView!
+    @IBOutlet weak var evaAvatar: UIImageView!
+    @IBOutlet weak var evaNickNameLbl: UILabel!
+    @IBOutlet weak var evaStarCountImg: UIImageView!
+    @IBOutlet weak var evaTimeLbl: UILabel!
+    @IBOutlet weak var evaDetialLbl: UILabel!
+    @IBOutlet weak var evaImage: UIImageView!
+    
     var viewModel: TaskDetModel? {
         didSet {
+            // MARK:- mission host's info
             if let avatarStr = viewModel?.user?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatarStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
@@ -111,6 +123,7 @@ class MissionDetialViewController: UIViewController {
             if let uid = viewModel?.receive?.uid as? Int {
                 self.uid = uid
             }
+            // MARK:- mission receiver's info
             if let missionStatus = viewModel?.task_status {
                 if let user = viewModel?.is_user {
                     switch user {
@@ -259,7 +272,48 @@ class MissionDetialViewController: UIViewController {
                 }
                 
             }
-
+            // MARK:- mission evaluation
+            if let starCount = viewModel?.evaluation?.star {
+                if starCount != 0 {
+                    evaScrollView.isHidden = false
+                    // TODO:- set avatar
+                    if let avatarStr = viewModel?.user?.head_pic {
+                        self.evaAvatar.sd_setImage(with: URL.init(string: avatarStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+                    }
+                    // TODO:- set nick nmae
+                    if let userName = viewModel?.user?.nickname {
+                        self.evaNickNameLbl.text = userName
+                    }
+                    // TODO:- set star count
+                    switch starCount as! Int {
+                    case 1: evaStarCountImg.image = #imageLiteral(resourceName: "evaluate_one")
+                    case 2: evaStarCountImg.image = #imageLiteral(resourceName: "evaluate_two")
+                    case 3: evaStarCountImg.image = #imageLiteral(resourceName: "evaluate_three")
+                    case 4: evaStarCountImg.image = #imageLiteral(resourceName: "evaluate_four")
+                    case 5: evaStarCountImg.image = #imageLiteral(resourceName: "evaluate_five")
+                    default: evaStarCountImg.image = #imageLiteral(resourceName: "evaluate_none")
+                    }
+                    // TODO:- set evaluation time
+                    if let time = viewModel?.time {
+                        evaTimeLbl.text = NSDate.createDateString(createAtStr: "\(time)")
+                    }
+                    // TODO:- set evaluation detial
+                    if let detialText = viewModel?.evaluation?.content {
+                        evaDetialLbl.text = detialText
+                    }
+                    // TODO:- set evaluation image
+                    if let image = viewModel?.evaluation?.picture {
+                        evaImage.isHidden = false
+                        
+                    } else {
+                        evaImage.isHidden = true
+                    }
+                } else {
+                    // MARK:- evaluation not exist
+                    evaScrollView.isHidden = true
+                }
+            }
+            
         }
         
     }

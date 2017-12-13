@@ -361,6 +361,9 @@ extension OthersMomentsViewController: UITableViewDelegate, UITableViewDataSourc
         } else if segue.identifier == "FollowingsSegue" {
             let dest = segue.destination as! MyFollowingsViewController
             dest.uid = userModel?.uid
+        } else if segue.identifier == "EvaluationSegue" {
+            let dest = segue.destination as! EvaluationDetialTableViewController
+            dest.uid = userModel?.uid as! Int
         }
     }
 }

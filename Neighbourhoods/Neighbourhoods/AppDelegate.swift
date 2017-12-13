@@ -15,10 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     // MARK:- jmessgae
     let JMAPPKEY = "2e9e03b0d2c6fb033b440bf4"
-    // 百度地图 SDK AppKey，请自行申请你对应的 AppKey
-    let BMAPPKEY = "BNsPzc36d1GBRD9zC3QGO3wUFbY3P3qv"
-    
-    var _mapManager: BMKMapManager?
     
     fileprivate var hostReachability: Reachability!
     
@@ -126,11 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         
         JMessage.setupJMessage(launchOptions, appKey: JMAPPKEY, channel: nil, apsForProduction: true, category: nil, messageRoaming: true)
         _setupJMessage()
-        
-        _mapManager = BMKMapManager()
-        BMKMapManager.setCoordinateTypeUsedInBaiduMapSDK(BMK_COORDTYPE_BD09LL)
-        _mapManager?.start(BMAPPKEY, generalDelegate: nil)
-        
+                
         hostReachability = Reachability(hostName: "www.apple.com")
         hostReachability.startNotifier()
         
