@@ -144,7 +144,7 @@ open class JCChatViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                 _zhuView?.setTitle("主持人", for: .normal)
             }
             if let view = _avatarView as? UIView, view.superview == nil {
-                //contentView.addSubview(view)
+                contentView.addSubview(view)
                 contentView.addSubview(_zhuView!)
             }
         } else {
