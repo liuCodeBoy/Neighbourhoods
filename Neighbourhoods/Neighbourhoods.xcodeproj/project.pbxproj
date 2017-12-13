@@ -119,6 +119,9 @@
 		D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */; };
 		D38305491FBD20B400202FA2 /* IssueMomentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */; };
 		D383054B1FBDA9E400202FA2 /* IdentityJudgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */; };
+		D38612C41FE0CBF700F31DEF /* SignInDetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38612C31FE0CBF700F31DEF /* SignInDetModel.swift */; };
+		D38612C71FE0D67F00F31DEF /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38612C61FE0D67F00F31DEF /* Share.swift */; };
+		D38612C91FE0DA6E00F31DEF /* ShareSDK-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38612C81FE0DA6E00F31DEF /* ShareSDK-Extension.swift */; };
 		D3954E8C1FC3CCF9003C08DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */; };
 		D3993BDF1F9B45C200AF62D9 /* MomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */; };
 		D39D28501FB6F3CD00DEF35A /* GenderSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D39D284F1FB6F3CD00DEF35A /* GenderSelectPickerView.xib */; };
@@ -543,6 +546,9 @@
 		D38305461FBD20B400202FA2 /* IssueMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMomentsViewController.swift; sourceTree = "<group>"; };
 		D38305471FBD20B400202FA2 /* IssueMomentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueMomentsViewController.xib; sourceTree = "<group>"; };
 		D383054A1FBDA9E300202FA2 /* IdentityJudgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityJudgeModel.swift; sourceTree = "<group>"; };
+		D38612C31FE0CBF700F31DEF /* SignInDetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDetModel.swift; sourceTree = "<group>"; };
+		D38612C61FE0D67F00F31DEF /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		D38612C81FE0DA6E00F31DEF /* ShareSDK-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShareSDK-Extension.swift"; sourceTree = "<group>"; };
 		D38E46631FC7FBF40009131D /* Neighbourhoods.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neighbourhoods.entitlements; sourceTree = "<group>"; };
 		D3954E8B1FC3CCF9003C08DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D3993BDE1F9B45C200AF62D9 /* MomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentsViewController.swift; sourceTree = "<group>"; };
@@ -1089,6 +1095,14 @@
 				D3C418001FDFD28D008364A5 /* EvaluationDetialTableViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D38612C51FE0D66A00F31DEF /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				D38612C61FE0D67F00F31DEF /* Share.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		D38C71691FCBED42001006DF /* Loading */ = {
@@ -1935,6 +1949,7 @@
 			children = (
 				D3F47E091FC982F6001C0FEF /* MsgListModel.swift */,
 				D377DA3A1FCAF32E004B7DC8 /* MsgHistoryModel.swift */,
+				D38612C31FE0CBF700F31DEF /* SignInDetModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1974,6 +1989,7 @@
 				D341AAA91F9AF14100E640E1 /* Extension+UIViewController.swift */,
 				B6098D3D1FA9A56E00FC0BAD /* Extension+String.swift */,
 				B657C4F91FB4878C00E12E14 /* Extension+UIImage.swift */,
+				D38612C81FE0DA6E00F31DEF /* ShareSDK-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -2019,6 +2035,7 @@
 		D3FAC7E51FA9755200D972B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D38612C51FE0D66A00F31DEF /* Share */,
 				D38C71691FCBED42001006DF /* Loading */,
 				D33A69BD1FC8108200A738A3 /* Error */,
 				D3F5BBFF1FAB17C7000A6CF5 /* Spring */,
@@ -2192,7 +2209,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Neighbourhoods/Pods-Neighbourhoods-resources.sh",
-				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -2338,6 +2356,7 @@
 				B6450D941FCEBE6000AC2C9A /* TopicCommoentDetVC.swift in Sources */,
 				D3D65AA11FDC3202008DAC16 /* JCEmoticonGroup.swift in Sources */,
 				D3C418031FDFEF99008364A5 /* EvaluationDetialTableViewCell.swift in Sources */,
+				D38612C41FE0CBF700F31DEF /* SignInDetModel.swift in Sources */,
 				D3716F991FA89B4C00C31A48 /* FigureVoteListTableViewCell.swift in Sources */,
 				D3D65A6D1FDC3201008DAC16 /* JCMessageNoticeContent.swift in Sources */,
 				D3FAC7E31FA974DB00D972B9 /* QuickMessageListTableViewCell.swift in Sources */,
@@ -2359,6 +2378,7 @@
 				D30A17EA1FAF3A86007820D3 /* MomentsCommentDetialSpecificCommentTableViewCell.swift in Sources */,
 				D38305481FBD20B400202FA2 /* IssueMomentsViewController.swift in Sources */,
 				D3A8CB3D1FBECD7B00555E2E /* VerifyIDInfomaionUnderCheckingViewController.swift in Sources */,
+				D38612C71FE0D67F00F31DEF /* Share.swift in Sources */,
 				D3D65A691FDC3201008DAC16 /* JCMessageVideoContentView.swift in Sources */,
 				D3C1D6CB1FA6D7E100207E38 /* AnnouncementViewController.swift in Sources */,
 				D30A17D01FAF2DB4007820D3 /* MomentsHotestTopicTableViewController.swift in Sources */,
@@ -2533,6 +2553,7 @@
 				D3D65A471FDC3201008DAC16 /* JCVerificationInfoDB.swift in Sources */,
 				D3D65A7C1FDC3201008DAC16 /* JCChatViewData.swift in Sources */,
 				D31E97111FA9F8EC00A78D3A /* UploadIDInfomationViewController.swift in Sources */,
+				D38612C91FE0DA6E00F31DEF /* ShareSDK-Extension.swift in Sources */,
 				D3D65A8B1FDC3202008DAC16 /* JCChatViewController.swift in Sources */,
 				D33F510E1FC51B2200F5AF87 /* CheckForUpdatesViewController.swift in Sources */,
 				D3D65A801FDC3202008DAC16 /* JCSingleSettingCell.swift in Sources */,

@@ -268,17 +268,11 @@ extension AppDelegate: UIAlertViewDelegate {
                 window?.rootViewController = AppDelegate.InitialLoginVC
                 return
             }
-            guard let password = UserDefaults.standard.object(forKey: "pwd") as? String else {
-                let window = UIApplication.shared.delegate?.window as? UIWindow
-                window?.rootViewController = AppDelegate.InitialLoginVC
-                return
-            }
             MBProgressHUD_JChat.showMessage(message: "登录中", toView: nil)
-            JMSGUser.login(withUsername: username, password: password) { (result, error) in
+            JMSGUser.login(withUsername: username, password: "llb2580.") { (result, error) in
                 MBProgressHUD_JChat.hide(forView: nil, animated: true)
                 if error == nil {
                     UserDefaults.standard.set(username, forKey: "number")
-                    UserDefaults.standard.set(password, forKey: "pwd")
                 } else {
                     let window = UIApplication.shared.delegate?.window as? UIWindow
                     window?.rootViewController = AppDelegate.InitialLoginVC
