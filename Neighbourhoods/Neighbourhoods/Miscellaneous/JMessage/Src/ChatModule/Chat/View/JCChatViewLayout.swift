@@ -110,8 +110,8 @@ import UIKit
             avatarRect = rect
             avatarBoxRect = box
             
-             zhuChiRect      = Rect
-             zhuChiBoxRect    = Box
+            zhuChiRect      = Rect
+            zhuChiBoxRect    = Box
             
             x1 = box.maxX
         }
@@ -196,7 +196,7 @@ import UIKit
         r1.size.width = x1 - r1.minX
         r1.size.height = y1 - r1.minY
         r0.size.width = x1
-        r0.size.height = y1 + edg0.bottom
+        r0.size.height = y1 + edg0.bottom + 20
         
         allRect = r1
         allBoxRect = r0
@@ -213,6 +213,10 @@ import UIKit
             
             avatarRect.origin.x = size.width - avatarRect.maxX
             avatarBoxRect.origin.x = size.width - avatarBoxRect.maxX
+            
+            zhuChiRect.origin.x  = size.width - zhuChiRect.maxX
+            zhuChiBoxRect.origin.x =  size.width - zhuChiBoxRect.maxX
+            
             
             bubbleRect.origin.x = size.width - bubbleRect.maxX
             bubbleBoxRect.origin.x = size.width - bubbleBoxRect.maxX
@@ -283,7 +287,7 @@ import UIKit
     private func _inset(with style: JCMessageStyle, for item: JCChatViewLayoutItem) -> UIEdgeInsets {
         let key = "\(style.rawValue)-\(item.rawValue)"
         if let edg = _cachedAllLayoutInset[key] {
-            return edg // hit cache
+            return edg  // hit cache
         }
         var edg: UIEdgeInsets?
         if let collectionView = collectionView, let delegate = collectionView.delegate as? JCChatViewLayoutDelegate {
