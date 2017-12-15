@@ -30,6 +30,7 @@ class WriteCommentViewController: UIViewController ,UITextViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBarBackBtn()
+        self.automaticallyAdjustsScrollViewInsets = false
         commentTextView.delegate = self
         setNavBarTitle(title: "写评论")
         self.commentTextView.becomeFirstResponder()

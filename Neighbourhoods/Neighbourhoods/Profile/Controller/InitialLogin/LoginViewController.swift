@@ -124,6 +124,7 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
         self.setRoundRect(targets: [accountBackView, pwdBackView, loginBtnBackView])
         setNavBarAttribute()
     }

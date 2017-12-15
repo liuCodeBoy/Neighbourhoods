@@ -21,6 +21,7 @@ class MomentsCommentDetialViewController: UIViewController {
     @IBOutlet weak var momentsCommentDetialTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
         setNavBarBackBtn()
         setNavBarTitle(title: "圈内动态")
         //自动计算高度
