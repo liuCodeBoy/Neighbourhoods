@@ -31,6 +31,9 @@ class SocialCharityListTableViewCell: UITableViewCell {
             if let avatarStr = viewModel?.head_pic {
                 charityAvatr.sd_setImage(with: URL.init(string: avatarStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
+            if let address = viewModel?.address {
+                charityLocation.text = "地址：" + address
+            }
         }
     }
 }

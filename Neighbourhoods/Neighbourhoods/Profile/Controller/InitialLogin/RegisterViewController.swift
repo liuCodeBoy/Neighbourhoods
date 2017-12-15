@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var idNumber: UITextField!
+    @IBOutlet weak var invitationCode: UITextField!
     @IBOutlet weak var navBar: UINavigationItem!
     
     fileprivate var remainingSeconds: Int = 0 {
@@ -123,7 +124,7 @@ class RegisterViewController: UIViewController {
                         self.presentHintMessage(hintMessgae: "验证码输入错误", completion: nil)
                     } else {
                         weak var weakSelf = self
-                        NetWorkTool.shareInstance.UserRegister((weakSelf?.phoneNumber.text)!, password: (weakSelf?.password.text)!, finished: { [weak self](userInfo, error) in
+                        NetWorkTool.shareInstance.UserRegister((weakSelf?.phoneNumber.text)!, password: (weakSelf?.password.text)!, invite_code: (weakSelf?.invitationCode.text)!, finished: { [weak self](userInfo, error) in
                             if error == nil {
                                 // MARK:- judge the return data from server
                                 if userInfo!["code"] as! String == "200" {
@@ -149,6 +150,8 @@ class RegisterViewController: UIViewController {
                                     
                                 } else if userInfo!["code"] as! String == "400" {
                                     self?.presentHintMessage(hintMessgae: "该账号已注册", completion: nil)
+                                } else if userInfo!["code"] as! String == "402" {
+                                    self?.presentHintMessage(hintMessgae: "邀请码不可用", completion: nil)
                                 } else if userInfo!["code"] as! String == "401" {
                                     self?.presentHintMessage(hintMessgae: "注册失败", completion: nil)
                                 } else if userInfo!["code"] as! String == "415" {

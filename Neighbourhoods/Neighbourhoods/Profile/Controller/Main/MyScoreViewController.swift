@@ -26,15 +26,16 @@ class MyScoreViewController: UIViewController {
     
     var myScoreArray = [MyIntegralModel]()
     
-    @IBAction func backBtnClicked(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         receiveScoreTableView.delegate = self
         receiveScoreTableView.dataSource = self
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        setNavBarTitle(title: "我的功分")
+        setNavBarBackBtn()
         
         allScoreLbl.text = score
         
@@ -47,6 +48,9 @@ class MyScoreViewController: UIViewController {
         progress.loadingHintLbl.text = "加载中"
         self.progressView = progress
         self.view.addSubview(progress)
+        
+        self.receiveScoreTableView.estimatedRowHeight = 100
+        self.receiveScoreTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func loadRefreshComponet() -> () {
@@ -130,16 +134,8 @@ class MyScoreViewController: UIViewController {
         }
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-        
-    }
 
+    
 }
 
 extension MyScoreViewController: UITableViewDelegate, UITableViewDataSource {
@@ -156,7 +152,5 @@ extension MyScoreViewController: UITableViewDelegate, UITableViewDataSource {
         return myScoreArray.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
+
 }

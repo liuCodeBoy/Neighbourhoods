@@ -13,6 +13,8 @@ class MissionDetialViewController: UIViewController {
     var progressView: UIView?
     
     let imagePicker = UIImagePickerController()
+    
+    var imgURL: String?
 
     var missionID: Int? {
         didSet {
@@ -304,7 +306,7 @@ class MissionDetialViewController: UIViewController {
                     // TODO:- set evaluation image
                     if let image = viewModel?.evaluation?.picture {
                         evaImage.isHidden = false
-                        
+                        imgURL = image
                     } else {
                         evaImage.isHidden = true
                     }
@@ -337,7 +339,10 @@ class MissionDetialViewController: UIViewController {
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = .camera
         }
-
+        
+        // MARK:- tap to see image
+        let tapImg = UITapGestureRecognizer(target: self, action: #selector(showImageClicked))
+        evaImage.addGestureRecognizer(tapImg)
     }
     
     @objc func pushReceiversProfile() {
@@ -439,6 +444,14 @@ class MissionDetialViewController: UIViewController {
         
     }
     
+    @objc func showImageClicked() {
+        guard let imgURL = imgURL else { return }
+        let imageArr = [imgURL]
+        let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
+        desVC.index = 0
+        desVC.imageArr = imageArr as NSArray
+        self.present(desVC, animated: true, completion: nil)
+    }
 }
 
 extension MissionDetialViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {

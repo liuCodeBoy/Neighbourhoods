@@ -53,7 +53,7 @@ class SocialCharityDetialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setNavBarTitle(title: "社区公益组织")
+        setNavBarTitle(title: "社会服务机构、组织")
         setNavBarBackBtn()
         
         //MARK: - load data

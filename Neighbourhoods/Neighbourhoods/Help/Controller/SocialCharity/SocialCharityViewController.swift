@@ -39,7 +39,7 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
         socialCharityListTableView.delegate = self
         socialCharityListTableView.dataSource = self
         
-        setNavBarTitle(title: "社会公益组织")
+        setNavBarTitle(title: "社会服务机构、组织")
         setNavBarBackBtn()
         
         // MARK:- fetching data

@@ -106,7 +106,12 @@ extension MyFollowingsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
-        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as! OthersMomentsViewController
+        vc.uid = followingList[indexPath.row].uid as? Int
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

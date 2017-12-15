@@ -154,7 +154,7 @@
                                 <constraint firstItem="pWg-eC-lzB" firstAttribute="centerX" secondItem="Gee-26-4iK" secondAttribute="centerX" id="q5x-Fv-RNt"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKN-fV-eTc">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKN-fV-eTc">
                             <rect key="frame" x="125" y="75" width="125" height="75"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNZ-bv-G4d">

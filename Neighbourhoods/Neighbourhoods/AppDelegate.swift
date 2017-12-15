@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     // MARK:- iOS 9.0 support
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        UIApplication.shared.applicationIconBadgeNumber += 1
         JPUSHService.handleRemoteNotification(userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
@@ -67,6 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     static let InitialLoginVC = UIStoryboard.init(name: "InitialLogin", bundle: Bundle.main).instantiateInitialViewController()!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        JPUSHService.resetBadge()
+        JMessage.resetBadge()
+        
         UITabBar.appearance().tintColor = navAndTabBarTintColor
         UINavigationBar.appearance().tintColor = navAndTabBarTintColor
         //读取偏好设置数据
@@ -85,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         
         // MARK:- initialize JPush
         let entity = JPUSHRegisterEntity()
-        entity.types = Int(UInt8(JPAuthorizationOptions.alert.rawValue) | UInt8(JPAuthorizationOptions.badge.rawValue) | UInt8(JPAuthorizationOptions.sound.rawValue))
+        entity.types = Int(UInt8(JPAuthorizationOptions.alert.rawValue) | UInt8(JPAuthorizationOptions.sound.rawValue))
         
         JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
         
@@ -97,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         // MARK:- initialize JMessage
         JMessage.setupJMessage(launchOptions, appKey: "2e9e03b0d2c6fb033b440bf4", channel: "Test", apsForProduction: false, category: nil, messageRoaming: false)
         
-        JMessage.register(forRemoteNotificationTypes: (UInt(UInt8(UIUserNotificationType.badge.rawValue) | UInt8(UIUserNotificationType.sound.rawValue) | UInt8(UIUserNotificationType.alert.rawValue))), categories: nil)
+        JMessage.register(forRemoteNotificationTypes: (UInt(UInt8(UIUserNotificationType.sound.rawValue) | UInt8(UIUserNotificationType.alert.rawValue))), categories: nil)
         
         #if READ_VERSION
             print("-------------READ_VERSION------------")
@@ -133,6 +137,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         return true
     }
     
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        JPUSHService.resetBadge()
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        JPUSHService.resetBadge()
+        JMessage.resetBadge()
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        JPUSHService.setBadge(0)
+        JPUSHService.resetBadge()
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+    
     // MARK: - private func
     private func _setupJMessage() {
         JMessage.add(self, with: nil)
@@ -140,32 +161,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         JMessage.setDebugMode()
         if #available(iOS 8, *) {
             JMessage.register(
-                forRemoteNotificationTypes: UIUserNotificationType.badge.rawValue |
-                    UIUserNotificationType.sound.rawValue |
-                    UIUserNotificationType.alert.rawValue,
+                forRemoteNotificationTypes: UIUserNotificationType.sound.rawValue |  UIUserNotificationType.alert.rawValue,
                 categories: nil)
         } else {
             // iOS 8 以前 categories 必须为nil
             JMessage.register(
-                forRemoteNotificationTypes: UIRemoteNotificationType.badge.rawValue |
+                forRemoteNotificationTypes:
                     UIRemoteNotificationType.sound.rawValue |
                     UIRemoteNotificationType.alert.rawValue,
                 categories: nil)
         }
     }
-    
-    
-    
-    private func resetBadge(_ application: UIApplication) {
-        application.applicationIconBadgeNumber = 0
-        application.cancelAllLocalNotifications()
-        JMessage.resetBadge()
-    }
-    
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
-    }
+
     
     func applicationWillTerminate(_ application: UIApplication) {
         
@@ -268,17 +275,11 @@ extension AppDelegate: UIAlertViewDelegate {
                 window?.rootViewController = AppDelegate.InitialLoginVC
                 return
             }
-            guard let password = UserDefaults.standard.object(forKey: "pwd") as? String else {
-                let window = UIApplication.shared.delegate?.window as? UIWindow
-                window?.rootViewController = AppDelegate.InitialLoginVC
-                return
-            }
             MBProgressHUD_JChat.showMessage(message: "登录中", toView: nil)
-            JMSGUser.login(withUsername: username, password: password) { (result, error) in
+            JMSGUser.login(withUsername: username, password: "llb2580.") { (result, error) in
                 MBProgressHUD_JChat.hide(forView: nil, animated: true)
                 if error == nil {
                     UserDefaults.standard.set(username, forKey: "number")
-                    UserDefaults.standard.set(password, forKey: "pwd")
                 } else {
                     let window = UIApplication.shared.delegate?.window as? UIWindow
                     window?.rootViewController = AppDelegate.InitialLoginVC

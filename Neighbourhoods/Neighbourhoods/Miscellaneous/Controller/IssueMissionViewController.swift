@@ -63,7 +63,7 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
             return
         }
         guard missionScoreTF.text != nil else {
-            self.presentHintMessage(hintMessgae:  "积分数不能为空", completion: nil)
+            self.presentHintMessage(hintMessgae:  "功分数不能为空", completion: nil)
             return
         }
         
@@ -93,7 +93,7 @@ class IssueMissionViewController: UIViewController, UITextFieldDelegate,UITextVi
                     }
                 })
             }else if(info?["code"] as? String == "400"){
-                let config = NoticeBarConfig(title: "积分不足", image: nil, textColor: UIColor.white, backgroundColor: #colorLiteral(red: 0.9921568632, green: 0.5803921819, blue: 0.1490196139, alpha: 1), barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
+                let config = NoticeBarConfig(title: "功分不足", image: nil, textColor: UIColor.white, backgroundColor: #colorLiteral(red: 0.9921568632, green: 0.5803921819, blue: 0.1490196139, alpha: 1), barStyle: NoticeBarStyle.onNavigationBar, animationType: NoticeBarAnimationType.top )
                 let noticeBar = NoticeBar(config: config)
                 noticeBar.show(duration: 0.25, completed: {
                     (finished) in

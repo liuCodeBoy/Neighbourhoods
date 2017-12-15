@@ -186,8 +186,11 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "VerifySucceeded") as! VerifyIDInfomationSucceededViewController
                 // MARK:- pass id info data through closure
                 vc.receiveIDInfoClosure = { (name, idNum) in
-                    name.text = "真实姓名：" + self.identityName!
-                    idNum.text = "身份证号：" + self.identityNumber!
+                    guard let identityName = self.identityName, let identityNumber = self.identityNumber else {
+                        return
+                    }
+                    name.text = "真实姓名：" + identityName
+                    idNum.text = "身份证号：" + identityNumber
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if userIdentificationStatus == "审核失败" {
@@ -226,6 +229,10 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
             if result!["code"] as! String == "200" {
                 let dict = result!["result"] as! [String : AnyObject]
                 let idStatus = IdentityJudgeModel.mj_object(withKeyValues: dict)
+                
+                // MARK:- save status value to user dafaults
+                UserDefaults.standard.set(idStatus?.status as! Int, forKey: "idStatus")
+                
                 switch idStatus?.status as! Int {
                 case 0: self?.userIdentificationStatus = "身份未认证"
                 case 1:
