@@ -946,21 +946,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D30ED0F71FAB0324007A5858 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				D30ED0F81FAB0333007A5858 /* View */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		D30ED0F81FAB0333007A5858 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		D31B360E1F9C766800313268 /* Static */ = {
 			isa = PBXGroup;
 			children = (
@@ -1152,7 +1137,6 @@
 		D3A193571F8DC74D002C1E23 /* Neighbourhoods */ = {
 			isa = PBXGroup;
 			children = (
-				D30ED0F71FAB0324007A5858 /* Public */,
 				B681C9DA1FA9ECA8008006D6 /* Tool */,
 				D31B360E1F9C766800313268 /* Static */,
 				D3F6B1861F9A1325004D0A20 /* Extension */,

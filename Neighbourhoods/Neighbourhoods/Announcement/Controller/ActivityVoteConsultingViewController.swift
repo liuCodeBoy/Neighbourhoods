@@ -12,6 +12,9 @@ class ActivityVoteConsultingViewController: UIViewController {
     
     var  id : NSNumber?
     var  voteDetModel : VoteActDet?
+    
+    var progressView: UIView?
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
@@ -27,21 +30,51 @@ class ActivityVoteConsultingViewController: UIViewController {
             self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
             return
         }
+        
+        // MARK:- fetching data
+        let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+        progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        progress.loadingHintLbl.text = "进入中"
+        self.progressView = progress
+        self.view.addSubview(progress)
+        
         NetWorkTool.shareInstance.join_group_chat(token: UserDefaults.standard.string(forKey: "token")!, gid: voteDetModel?.gid as! Int) { [weak self](info, error) in
-            if info?["code"] as? String == "200"{
+            
+
+            if info?["code"] as? String == "200" {
                 guard let gidNum = self?.voteDetModel?.gid else{
                    return
                 }
                  let gidString = String(describing: gidNum)
                 JMSGConversation.createGroupConversation(withGroupId: gidString) { (result, error) in
+                    
+                    // MARK:- data fetched successfully
+                    self?.progressView?.alpha = 0
+                    self?.progressView?.removeFromSuperview()
+
                     if let conv = result as? JMSGConversation {
                         let vc = JCChatViewController(conversation: conv)
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateConversation), object: nil, userInfo: nil)
                         self?.navigationController?.pushViewController(vc, animated: true)
+                        
                     }
                 }
-            }else{
-                self?.presentHintMessage(hintMessgae: "系统错误", completion: nil)
+            } else if info?["code"] as? String == "400" {
+                self?.presentHintMessage(hintMessgae: "不存在该成员", completion: { (_) in
+                    return
+                })
+            } else if info?["code"] as? String == "402" {
+                self?.presentHintMessage(hintMessgae: "未传gid参数", completion: { (_) in
+                    return
+                })
+            } else if info?["code"] as? String == "500" {
+                self?.presentHintMessage(hintMessgae: "登录信息已失效，请重新登录", completion: { (_) in
+                    return
+                })
+            } else {
+                self?.presentHintMessage(hintMessgae: "post rrquest fialed with exit code \(String(describing: info?["code"] as? String))", completion: { (_) in
+                    return
+                })
             }
         }
         

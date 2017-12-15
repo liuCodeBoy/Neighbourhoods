@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileFollowingTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var verifyLbl: UILabel!
@@ -29,7 +29,7 @@ class ProfileFollowingTableViewCell: UITableViewCell {
         
         let addFollowGes = UITapGestureRecognizer(target: self, action: #selector(addFollow))
         addFollowView.addGestureRecognizer(addFollowGes)
-        
+                
     }
     
     @objc func addFollow() {
@@ -45,7 +45,7 @@ class ProfileFollowingTableViewCell: UITableViewCell {
         
         userClickChangeFollowStatus(uid: self.viewModel?.uid! as! Int, type: 2)
     }
-
+    
     func userClickChangeFollowStatus(uid: Int, type: Int) {
         
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {

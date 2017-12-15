@@ -16,6 +16,7 @@ class SocialOrgListModel: NSObject {
     @objc var content       : String?
     @objc var head_pic      : String?
     @objc var url           : String?
+    @objc var address       : String?
 
 }
 

@@ -14,6 +14,7 @@ class UserInfoModel: NSObject {
     @objc var nickname       : String?
     @objc var sex            : NSNumber?
     @objc var head_pic       : String?
+    @objc var level          : NSNumber?
     @objc var integral       : NSNumber?
     @objc var atten          : NSNumber?
     @objc var fans           : NSNumber?

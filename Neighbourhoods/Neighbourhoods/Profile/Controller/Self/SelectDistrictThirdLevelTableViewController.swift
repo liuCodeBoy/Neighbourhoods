@@ -84,6 +84,14 @@ class SelectDistrictThirdLevelTableViewController: UITableViewController {
         guard  thirdLevelList.count > 0 else {
             return
         }
+        let idStatus = UserDefaults.standard.integer(forKey: "idStatus")
+        // MARK:- judge whether user has been identified
+        guard idStatus != 1 else {
+            self.presentHintMessage(hintMessgae: "您的身份已认证，如果要修改小区请联系管理员", completion: { (_) in
+                return
+            })
+            return
+        }
         id = thirdLevelList[indexPath.row].id as? Int
         pid = thirdLevelList[indexPath.row].pid as? Int
 //        thirdDName = secondDName! + thirdLevelList[indexPath.row].name!

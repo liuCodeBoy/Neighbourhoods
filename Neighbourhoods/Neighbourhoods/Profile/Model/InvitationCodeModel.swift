@@ -10,9 +10,8 @@ import UIKit
 import MJExtension
 
 class InvitationCodeModel: NSObject {
-    @objc var id             : NSNumber?
-    @objc var uid            : NSNumber?
-    @objc var content        : String?
+    @objc var code           : String?
+    @objc var status         : NSNumber?
 
 }
 

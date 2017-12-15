@@ -14,7 +14,7 @@ extension NetWorkTool {
     func taskList(sort: String, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/task/task_list"
+        let urlString = "http://www.netqlv.com/llb/api/task/task_list"
         //2.获取请求参数
         let parameters = ["sort" : sort , "p": p] as [String : Any]
         //3.发送请求参数
@@ -33,7 +33,7 @@ extension NetWorkTool {
     func taskDetial(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/task_det"
+        let urlString = "http://www.netqlv.com/llb/api/user/task_det"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id] as [String : Any]
@@ -53,7 +53,7 @@ extension NetWorkTool {
     func socialCharityList(p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/task/social_org_list"
+        let urlString = "http://www.netqlv.com/llb/api/task/social_org_list"
         //2.获取请求参数
         let parameters = ["p": p]
         //3.发送请求参数
@@ -72,7 +72,7 @@ extension NetWorkTool {
     func socialCharityDetial(id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/task/social_org_det"
+        let urlString = "http://www.netqlv.com/llb/api/task/social_org_det"
         //2.获取请求参数
         let parameters = ["id": id]
         //3.发送请求参数
@@ -91,7 +91,7 @@ extension NetWorkTool {
     func myTask(_ token: String, type: Int, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/my_task"
+        let urlString = "http://www.netqlv.com/llb/api/user/my_task"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["type": type, "p": p] as [String : Any]
@@ -111,7 +111,7 @@ extension NetWorkTool {
     func taskDet(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/task_det"
+        let urlString = "http://www.netqlv.com/llb/api/user/task_det"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id]
@@ -131,7 +131,7 @@ extension NetWorkTool {
     func receiveTask(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/task_rec"
+        let urlString = "http://www.netqlv.com/llb/api/user/task_rec"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id]
@@ -151,7 +151,7 @@ extension NetWorkTool {
     func cancelTask(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/task_cancel"
+        let urlString = "http://www.netqlv.com/llb/api/user/task_cancel"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id]
@@ -171,7 +171,7 @@ extension NetWorkTool {
     func operateTask(_ token: String, id: Int, type: MissionOperation, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/task_operate"
+        let urlString = "http://www.netqlv.com/llb/api/user/task_operate"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id, "type": type.rawValue + 1] as [String : Any]
@@ -191,7 +191,7 @@ extension NetWorkTool {
     func evaluateTask(_ token: String, id: Int, uid: Int, star: Int, content: String?, up_cate: Int?, image: UIImage?, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/task_evaluation"
+        let urlString = "http://www.netqlv.com/llb/api/user/task_evaluation"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         var parameters = ["id": id, "uid": uid, "star": star] as [String : Any]
@@ -234,7 +234,7 @@ extension NetWorkTool {
     func userInfo(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/userInfo"
+        let urlString = "http://www.netqlv.com/llb/api/user/userInfo"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
@@ -252,7 +252,7 @@ extension NetWorkTool {
     func userAttention(_ token: String, uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/attention"
+        let urlString = "http://www.netqlv.com/llb/api/user/attention"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.发送请求参数
         let parameters = ["uid": uid] as [String : AnyObject]
@@ -271,7 +271,7 @@ extension NetWorkTool {
     func userFans(_ token: String, uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/fans_list"
+        let urlString = "http://www.netqlv.com/llb/api/user/fans_list"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.发送请求参数
         let parameters = ["uid": uid] as [String : AnyObject]
@@ -291,7 +291,7 @@ extension NetWorkTool {
     func changeFollowStatus(_ token: String, uid: Int, type: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/cancel_atten"
+        let urlString = "http://www.netqlv.com/llb/api/user/cancel_atten"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["uid": uid, "type": type] as [String : Any]
@@ -310,7 +310,7 @@ extension NetWorkTool {
     func blacklist(_ token: String, uid: Int, type: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/blacklist"
+        let urlString = "http://www.netqlv.com/llb/api/user/blacklist"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["uid": uid, "type": type] as [String : Any]
@@ -330,7 +330,7 @@ extension NetWorkTool {
     func myScore(_ token: String, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/my_integral"
+        let urlString = "http://www.netqlv.com/llb/api/user/my_integral"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["p": p] as [String : Any]
@@ -350,7 +350,7 @@ extension NetWorkTool {
     func myCircleMoments(_ token: String, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/dynamic"
+        let urlString = "http://www.netqlv.com/llb/api/user/dynamic"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["p": p] as [String : Any]
@@ -366,11 +366,29 @@ extension NetWorkTool {
         }
     }
     
+    //MARK: - 我的邀请码
+    func myInvitationCode(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://www.netqlv.com/llb/api/user/invitate_code_list"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
     //MARK: - 删除动态
     func deleteMyMoments(_ token: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/del_nbor"
+        let urlString = "http://www.netqlv.com/llb/api/user/del_nbor"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["id": id] as [String : Any]
@@ -391,7 +409,7 @@ extension NetWorkTool {
     func selectDistrict(_ token: String, level: Int, pid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/select_district"
+        let urlString = "http://www.netqlv.com/llb/api/user/select_district"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["level": level, "pid": pid] as [String : Any]
@@ -411,7 +429,7 @@ extension NetWorkTool {
     func identityJudge(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/identity_judeg"
+        let urlString = "http://www.netqlv.com/llb/api/user/identity_judeg"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.发送请求参数
         request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
@@ -429,7 +447,7 @@ extension NetWorkTool {
     func identityAuth(_ token: String, up_cate: Int, name: String, id_number: String, image: [UIImage], finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         
         //1.fetch the url string
-        let urlString = "http://106.15.199.8/llb/api/user/identity_auth"
+        let urlString = "http://www.netqlv.com/llb/api/user/identity_auth"
         
         //2.add access token in the http request head
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
@@ -463,7 +481,7 @@ extension NetWorkTool {
     func loadProfileInfo(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/edit_data"
+        let urlString = "http://www.netqlv.com/llb/api/user/edit_data"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
@@ -481,7 +499,7 @@ extension NetWorkTool {
     func checkEvaluation(_ token: String, uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/check_evaluation"
+        let urlString = "http://www.netqlv.com/llb/api/user/check_evaluation"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["uid" : uid]
@@ -501,7 +519,7 @@ extension NetWorkTool {
     func updateProfile(_ token: String, cate: String?, content: String?, content_sex: Int?, image: UIImage?, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/edit_data"
+        let urlString = "http://www.netqlv.com/llb/api/user/edit_data"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         var parameters: [String: Any] = [String: AnyObject]()
@@ -548,7 +566,7 @@ extension NetWorkTool {
     func changePwd(_ token: String, oldpwd: String, newpwd: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/changePwd"
+        let urlString = "http://www.netqlv.com/llb/api/user/changePwd"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["oldpwd": oldpwd, "newpwd": newpwd] as [String : Any]
@@ -568,7 +586,7 @@ extension NetWorkTool {
     func forgetPwd(account: String, newpwd: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/login/forgetPwd"
+        let urlString = "http://www.netqlv.com/llb/api/login/forgetPwd"
         //2.获取请求参数
         let parameters = ["account": account, "newpwd": newpwd] as [String : Any]
         //3.发送请求参数
@@ -587,7 +605,7 @@ extension NetWorkTool {
     func upDistrict(_ token: String, district: Int, dong: Int, door: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/up_district"
+        let urlString = "http://www.netqlv.com/llb/api/user/up_district"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["district": district, "dong": dong, "door": door] as [String : Any]
@@ -607,7 +625,7 @@ extension NetWorkTool {
     func editNameAndSex(_ token: String, nickname: String, sex: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/edit_name"
+        let urlString = "http://www.netqlv.com/llb/api/user/edit_name"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["nickname": nickname, "sex": sex] as [String : Any]
@@ -627,7 +645,7 @@ extension NetWorkTool {
     func quickMessageMain(_ token: String, p: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/msg_list"
+        let urlString = "http://www.netqlv.com/llb/api/user/msg_list"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["p": p] as [String : Any]
@@ -647,7 +665,7 @@ extension NetWorkTool {
     func infoList(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/info_list"
+        let urlString = "http://www.netqlv.com/llb/api/user/info_list"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //3.发送请求参数
         request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
@@ -665,7 +683,7 @@ extension NetWorkTool {
     func historyRecord(_ token: String, p: Int, to_uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/history_record"
+        let urlString = "http://www.netqlv.com/llb/api/user/history_record"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["p": p, "to_uid": to_uid] as [String : Any]
@@ -685,7 +703,7 @@ extension NetWorkTool {
     func sendMessage(_ token: String, content: String, to_uid: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/chat"
+        let urlString = "http://www.netqlv.com/llb/api/user/chat"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["content": content, "to_uid": to_uid] as [String : Any]
@@ -705,7 +723,7 @@ extension NetWorkTool {
     func voteConsult(_ token: String, content: String, id: Int, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/group_chat"
+        let urlString = "http://www.netqlv.com/llb/api/user/group_chat"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         let parameters = ["content": content, "id": id] as [String : Any]
@@ -725,7 +743,7 @@ extension NetWorkTool {
     func signIn(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/sign_in"
+        let urlString = "http://www.netqlv.com/llb/api/user/sign_in"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         //2.获取请求参数
         //3.发送请求参数
@@ -744,7 +762,7 @@ extension NetWorkTool {
     func signInDetial(_ token: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
         //1.获取请求的URLString
         
-        let urlString = "http://106.15.199.8/llb/api/user/sign_det"
+        let urlString = "http://www.netqlv.com/llb/api/user/sign_det"
         self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
         
         //3.发送请求参数

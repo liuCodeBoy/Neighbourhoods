@@ -18,6 +18,8 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var followingCountLbl: UILabel!
     @IBOutlet weak var followerCountLbl: UILabel!
     @IBOutlet weak var scoreCountLbl: UILabel!
+    @IBOutlet weak var scoreLevelImg: UIImageView!
+    @IBOutlet weak var scoreIcon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,31 @@ class ProfileTableViewController: UITableViewController {
             if let avatatStr = viewModel?.head_pic {
                 self.avatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
                 userAvatar.sd_setImage(with: URL.init(string: avatatStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
+            }
+            if let level = viewModel?.level {
+                switch level {
+                case 1:
+                    scoreLevelImg.image = #imageLiteral(resourceName: "score_rookie")
+                    scoreIcon.image = #imageLiteral(resourceName: "score_icon_rookie")
+                case 2:
+                    scoreLevelImg.image = #imageLiteral(resourceName: "score_three")
+                    scoreIcon.image = #imageLiteral(resourceName: "star_3")
+                case 3:
+                    scoreLevelImg.image = #imageLiteral(resourceName: "score_four")
+                    scoreIcon.image = #imageLiteral(resourceName: "star_4")
+                case 4:
+                    scoreLevelImg.image = #imageLiteral(resourceName: "score_five")
+                    scoreIcon.image = #imageLiteral(resourceName: "star_5")
+                case 5:
+                    scoreLevelImg.image = #imageLiteral(resourceName: "score_gold")
+                    scoreIcon.image = #imageLiteral(resourceName: "score_icon_gold")
+                case 6:
+                    scoreLevelImg.image = #imageLiteral(resourceName: "score_diamond")
+                    scoreIcon.image = #imageLiteral(resourceName: "score_icom_diamond")
+                default:
+                    scoreLevelImg.image = #imageLiteral(resourceName: "score_rookie")
+                    scoreIcon.image = #imageLiteral(resourceName: "score_icon_rookie")
+                }
             }
             if let verify = viewModel?.type {
                 self.verifyLbl.text = verify

@@ -54,7 +54,7 @@
                         <constraint firstItem="3Aw-Av-Hx7" firstAttribute="leading" secondItem="icK-w0-aar" secondAttribute="leading" id="yGi-Ky-Jht"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积分 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayX-Oh-RSB">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="功分 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayX-Oh-RSB">
                     <rect key="frame" x="15" y="72" width="43" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,7 +131,7 @@
                     <rect key="frame" x="16" y="327" width="343" height="142"/>
                     <string key="text">签到规则：
 1.签到仅限邻里帮APP操作用户参与。
-2.本次活动7天签到为一周期，每天签到获10积分，连续7天签到获50个积分礼包。7天之后从零计算。
+2.本次活动7天签到为一周期，每天签到获10功分，连续7天签到获50个功分礼包。7天之后从零计算。
 3.中途中断签到则重新开始计算。
 4.最终解释权归邻里帮所有。
 5.记得每天来签到哦！登录邻里帮进入签到页面。</string>
