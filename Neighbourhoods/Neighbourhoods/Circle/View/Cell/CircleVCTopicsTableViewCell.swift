@@ -19,6 +19,7 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
     var   pushImageClouse : pushImageType?
     var   headImagePushClouse  : headImageType?
     var   showCommentClouse : commentType?
+    var    cellRow  : NSNumber?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var certifyLbl: UILabel!
@@ -118,12 +119,22 @@ class CircleVCTopicsTableViewCell: UITableViewCell{
     //评论点击
     @IBAction func commentBtnCell(_ sender: UIButton) {
         //取到当前cell的index索引值
-        let tableview = self.superview as! UITableView
-        let indexRow  = tableview.indexPath(for: self)?.row
-        if self.showCommentClouse != nil{
-            self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid, indexRow! as NSNumber)
+        if let  tableview  = self.superview as? UITableView {
+            let indexRow  = tableview.indexPath(for: self)?.row
+            if self.showCommentClouse != nil{
+                self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid, indexRow! as NSNumber)
+            }
+            self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
+        }else{
+            let  tableview  = self.superview?.superview as? UITableView
+            let indexRow  = tableview?.indexPath(for: self)?.row
+            if self.showCommentClouse != nil{
+                self.showCommentClouse!(0,momentsCellModel.id,momentsCellModel.id,momentsCellModel.pid, indexRow! as NSNumber)
+            }
+            self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
         }
-        self.commentBtn.setTitle("\(Int(truncating: self.momentsCellModel.comment!) + 1)", for: .normal)
+      
+     
     }
     @objc private func showImageVC(){
         if let pictureStringArr = momentsCellModel.picture{

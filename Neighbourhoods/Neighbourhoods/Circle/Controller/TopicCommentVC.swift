@@ -51,6 +51,7 @@ class TopicCommentVC: UIViewController ,UITextViewDelegate {
         super.viewDidLoad()
         setNavBarBackBtn()
         commentTextField.delegate = self
+        self.automaticallyAdjustsScrollViewInsets = false
         setNavBarTitle(title: "写评论")
         self.commentTextField.text = "写评论..."
         self.commentTextField.textColor = UIColor.lightGray
