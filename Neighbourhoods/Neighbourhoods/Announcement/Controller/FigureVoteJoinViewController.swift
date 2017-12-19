@@ -76,6 +76,9 @@ class FigureVoteJoinViewController: UIViewController {
   
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.conductSelfText.resignFirstResponder()
+    }
 }
 
 //MARK: - 照片选择方法
