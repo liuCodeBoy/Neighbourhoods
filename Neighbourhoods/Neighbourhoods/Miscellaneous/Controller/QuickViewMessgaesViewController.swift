@@ -109,7 +109,7 @@ class QuickViewMessgaesViewController: UIViewController {
 extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return missionListArray.count
+        return missionListArray.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,8 +117,8 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
         let msgCell = tableView.dequeueReusableCell(withIdentifier: "ContactListUserCell") as! QuickMessageListTableViewCell
         let commentCell = tableView.dequeueReusableCell(withIdentifier: "CommentQucikViewListCell") as! CommentQucikViewListTableViewCell
         
-        if missionListArray.count > 0 {
-            commentCell.viewModel = missionListArray[indexPath.row]
+        if missionListArray.count > 0  && indexPath.row > 0 {
+            commentCell.viewModel = missionListArray[indexPath.row - 1]
         }
         if(headMsgModel != nil){
             msgCell.viewModel = headMsgModel

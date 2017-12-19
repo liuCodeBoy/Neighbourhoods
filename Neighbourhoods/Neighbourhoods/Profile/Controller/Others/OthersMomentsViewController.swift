@@ -26,8 +26,11 @@ class OthersMomentsViewController: UIViewController {
             if let  avatarStr = userModel?.head_pic {
                 self.avatarImageView.sd_setImage(with: URL.init(string: avatarStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
             }
+            if  let type = userModel?.type{
+              self.identifyLab.text = type
+            }
             if  let name = userModel?.nickname{
-              self.niChen.text = name
+                self.niChen.text = name
             }
             if let address = userModel?.address{
                 self.addressBtn.setTitle(address, for: .normal)
@@ -84,6 +87,7 @@ class OthersMomentsViewController: UIViewController {
     @IBOutlet weak var sexImageView: UIImageView!
     @IBOutlet weak var addressBtn: UIButton!
     @IBOutlet weak var niChen: UILabel!
+    @IBOutlet weak var identifyLab: UILabel!
     private var listView : UIView?
     private var arrow : UIBarButtonItem?
     private var arrowStatus = false
