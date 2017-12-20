@@ -26,9 +26,13 @@ class QuickViewMessgaesViewController: UIViewController {
         contactListTableView.delegate    = self
         contactListTableView.dataSource  = self
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        missionListArray.removeAll()
+        page = 1
         lastedRequest(p: page)
         loadRefreshComponet()
-    
     }
 
     
@@ -76,9 +80,12 @@ class QuickViewMessgaesViewController: UIViewController {
                 self?.headMsgModel = MsgListModel.mj_object(withKeyValues: dict)
                 
                 let result  = info!["result"]!["list"] as? [NSDictionary]
+                
+                self?.contactListTableView.reloadData()
                 guard let count = result?.count else {
                     return
                 }
+                
                 for i in 0..<count {
                     let taskDict =  result![i]
                     if  let taskListModel = MsgListModel.mj_object(withKeyValues: taskDict) {
@@ -124,7 +131,7 @@ extension QuickViewMessgaesViewController: UITableViewDelegate, UITableViewDataS
             msgCell.viewModel = headMsgModel
         }
         if( missionListArray.count < 0 && headMsgModel == nil){
-            self.presentHintMessage(hintMessgae: "暂无消息", completion: nil)
+            self.presentHintMessage(hintMessgae: "暂无新消息", completion: nil)
         }
         if indexPath.row == 0 {
             return msgCell

@@ -83,10 +83,14 @@ class SocialAnnouncementViewController: UIViewController, UITableViewDelegate, U
                 if  CGFloat((self?.page)!) <  CGFloat((self?.pages)!){
                     self?.page += 1
                 }
-            }else{
+            } else{
                 //服务器
                 self?.tableview.mj_header.endRefreshing()
                 self?.tableview.mj_footer.endRefreshing()
+                
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
             }
             
         }

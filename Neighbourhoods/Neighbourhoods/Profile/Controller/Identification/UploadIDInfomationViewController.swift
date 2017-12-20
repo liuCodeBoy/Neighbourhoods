@@ -60,6 +60,11 @@ class UploadIDInfomationViewController: UIViewController, UINavigationController
 
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameTF.resignFirstResponder()
+        IDNumTF.resignFirstResponder()
+    }
+    
     @objc func takeLeftPhoto() {
         imageCount = 2
         self.present(imagePicker, animated: true) {

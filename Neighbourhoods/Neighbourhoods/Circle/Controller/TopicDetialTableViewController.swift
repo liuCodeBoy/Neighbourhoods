@@ -23,14 +23,20 @@ class TopicDetialTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRefreshComponet()
-        lastedRequest(p: page)
-        self.tableView.reloadData()
+        
         setNavBarBackBtn()
         
         // MARK:- adjust tableview height
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        rotaionArray.removeAll()
+        page = 1
+        loadRefreshComponet()
+        lastedRequest(p: page)
+        self.tableView.reloadData()
     }
     
     func loadRefreshComponet() -> () {
