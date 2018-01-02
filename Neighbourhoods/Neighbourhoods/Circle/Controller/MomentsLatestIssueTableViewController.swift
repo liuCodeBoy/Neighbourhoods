@@ -20,6 +20,8 @@ class MomentsLatestIssueTableViewController: UITableViewController {
         loadRefreshComponet()
         lastedRequest(p : page)
         
+        
+        
         //    var progressView: UIView?
         let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
         progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 150)

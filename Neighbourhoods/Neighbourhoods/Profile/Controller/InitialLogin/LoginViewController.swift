@@ -11,6 +11,8 @@ import TZImagePickerController
 
 class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
     
+    var progressView: UIView?
+    
     @IBOutlet weak var accountBackView: UIView!
     @IBOutlet weak var pwdBackView: UIView!
     @IBOutlet weak var loginBtnBackView: UIButton!
@@ -25,13 +27,32 @@ class LoginViewController: UIViewController ,TZImagePickerControllerDelegate {
         } else if password.text == "" {
             self.presentHintMessage(hintMessgae: "请输入密码", completion: nil)
         } else if phoneNumber.text?.isValidePhoneNumber == true {
+            
+            // MARK:- fetching data
+            let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+            progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+            progress.loadingHintLbl.text = "请稍等"
+            self.progressView = progress
+            self.view.addSubview(progress)
+            
             //检查密码是否与服务器数据匹配
             weak var weakSelf = self
             NetWorkTool.shareInstance.UserLogin((weakSelf?.phoneNumber.text)!, password: (weakSelf?.password.text)!, type: "pas", finished: { [weak self](userInfo, error) in
+                
+                // MARK:- data fetched successfully
+                UIView.animate(withDuration: 0.25, animations: {
+                    self?.progressView?.alpha = 0
+                }, completion: { (_) in
+                    self?.progressView?.removeFromSuperview()
+                })
+                
+                
                 if error == nil {
                     let  userInfoDict = userInfo!
                     let loginStaus =  userInfoDict["code"] as? String
                     if  loginStaus == "200" {
+                        
+                       
                         let  resultDict = userInfoDict["result"] as? NSDictionary
                         if  let token = resultDict?["token"]{
                             //偏好设置

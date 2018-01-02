@@ -51,6 +51,36 @@ class CircleViewController: UIViewController {
         self.progressView = progress
         self.topicsTableView.addSubview(progress)
         
+        
+        // MARK:- check version
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else{
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
+            return
+        }
+        NetWorkTool.shareInstance.checkVersion(access_token, version_code: localVersion) { [weak self](result, error) in
+            if result!["code"] as! String == "200" {
+                let alert = UIAlertController(title: "提示", message: "检查到新版本，是否更新？", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "更新", style: .default, handler: { (_) in
+                    // MARK:- jump to app store
+                    let AppID = "1316363309"
+                    if let URL = NSURL(string: "https://itunes.apple.com/us/app/id\(AppID)?ls=1&mt=8") {
+                        UIApplication.shared.openURL(URL as URL)
+                    }
+                  
+                    
+                })
+                let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                
+                alert.addAction(cancel)
+                alert.addAction(ok)
+
+                self?.present(alert, animated: true, completion: nil)
+                
+                
+            }
+        }
+        
     }
     
     @IBAction func showPickTopicAction(_ sender: Any) {

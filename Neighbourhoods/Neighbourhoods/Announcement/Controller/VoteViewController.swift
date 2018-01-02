@@ -54,12 +54,20 @@ class VoteViewController: UIViewController{
     //MARK: - 最新发布网络请求
     func lastedRequest(p : Int) -> () {
         NetWorkTool.shareInstance.act_list(p: p) {[weak self](info, error) in
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
             if info?["code"] as? String == "200"{
                 if let pages  = info!["result"]!["pages"]
                 {
                     self?.pages = (pages as! Int)
                 }
-                let result  = info!["result"]!["list"] as! [NSDictionary]
+                guard let result  = info!["result"]!["list"] as? [NSDictionary] else {
+                    return
+                }
                 for i in 0..<result.count
                 {
                     let  circleInfo  =  result[i]

@@ -35,6 +35,11 @@ class MessageListTableViewCell: UITableViewCell {
             }
             if let count = viewModel?.number {
                 self.msgCountLbl.text = "\(count)"
+                if count == 0 {
+                    self.msgCountLbl.isHidden = true
+                } else {
+                    self.msgCountLbl.isHidden = false
+                }
             }
             if let content = viewModel?.content {
                 self.messageAbbr.text = content

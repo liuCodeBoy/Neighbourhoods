@@ -29,14 +29,14 @@ class QuickMessageListTableViewCell: UITableViewCell {
             if let name = viewModel?.msg_user {
                 self.nickName.text = name
             }
-            if let content = viewModel?.content {
+            if let content = viewModel?.msg_content {
                 self.messageAbbr.text = content
             }
             if let time = viewModel?.time {
                 self.timeLbl.text = NSDate.createDateString(createAtStr: "\(time)")
             }
             if viewModel?.msg_count == 0 {
-                self.nickName.text = "暂无消息"
+                self.nickName.text = "暂无新消息"
                 self.messageAbbr.text = ""
                 self.timeLbl.text = ""
                 self.msgCountLbl.isHidden = true

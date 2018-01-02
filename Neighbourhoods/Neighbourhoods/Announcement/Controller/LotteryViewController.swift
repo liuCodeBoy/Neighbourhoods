@@ -21,6 +21,7 @@ class LotteryViewController: UIViewController{
         progress.loadingHintLbl.text = "加载中"
         self.tableview.addSubview(progress)
         self.progressView = progress
+        loadRefreshComponet()
         
     }
     
@@ -28,9 +29,26 @@ class LotteryViewController: UIViewController{
         self.rotaionArray.removeAll()
         lastedRequest()
     }
+    
+    func loadRefreshComponet() -> () {
+        //默认下拉刷新
+        tableview.mj_header = LXQHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
+    }
+    @objc func refresh() -> () {
+        tableview.reloadData()
+        tableview.mj_header.endRefreshing()
+        
+    }
+    
     //MARK: - 最新发布网络请求
     func lastedRequest() -> () {
         NetWorkTool.shareInstance.lottery_list() {[weak self](info, error) in
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
             if info?["code"] as? String == "200"{
               
                 let result  = info!["result"] as! [NSDictionary]
@@ -55,7 +73,13 @@ class LotteryViewController: UIViewController{
     func lottery_judeg(token : String ,id : Int) -> () {
         let detailLotteryDetialVC = self.storyboard?.instantiateViewController(withIdentifier: "LotteryDetialVC") as! LotteryDetialViewController
         let AccessDeniedNotVC = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "AccessDeniedNotVerified")
-        NetWorkTool.shareInstance.lottery_judeg(token, id: id) { (info, error) in
+        NetWorkTool.shareInstance.lottery_judeg(token, id: id) { [weak self](info, error) in
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
             if info?["code"] as? String == "200"{
                 let  result =  "已摇号".compare( info?["msg"] as! String).rawValue
                 if result == 0{
@@ -63,10 +87,13 @@ class LotteryViewController: UIViewController{
                 }else{
                      detailLotteryDetialVC.id  = id
                 }
-                self.navigationController?.pushViewController(detailLotteryDetialVC, animated: true)
+                self?.navigationController?.pushViewController(detailLotteryDetialVC, animated: true)
             }else if(info?["code"] as? String == "401"){
-                //服务器error 
-                 self.navigationController?.pushViewController(AccessDeniedNotVC, animated: true)
+                //服务器error
+                if self?.progressView != nil {
+                    self?.progressView?.removeFromSuperview()
+                }
+                 self?.navigationController?.pushViewController(AccessDeniedNotVC, animated: true)
             }
         }
     }

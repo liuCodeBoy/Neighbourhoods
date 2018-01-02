@@ -12,6 +12,8 @@ class RegisterViewController: UIViewController {
     
     fileprivate var countDownTimer: Timer?
     
+    var progressView: UIView?
+    
     @IBOutlet weak var phoneBackView: UIView!
     @IBOutlet weak var pwdBackView: UIView!
     @IBOutlet weak var confirmBackView: UIView!
@@ -119,12 +121,28 @@ class RegisterViewController: UIViewController {
         } else {
             if phoneNumber.text?.isValidePhoneNumber == true {
                 
+                // MARK:- fetching data
+                let progress = Bundle.main.loadNibNamed("UploadingDataView", owner: self, options: nil)?.first as! UploadingDataView
+                progress.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                progress.loadingHintLbl.text = "请稍等"
+                self.progressView = progress
+                self.view.addSubview(progress)
+                
                 SMSSDK.commitVerificationCode(idNumber.text, phoneNumber: phoneNumber.text, zone: "86", result: { (error: Error?) in
                     if error != nil {
                         self.presentHintMessage(hintMessgae: "验证码输入错误", completion: nil)
                     } else {
                         weak var weakSelf = self
                         NetWorkTool.shareInstance.UserRegister((weakSelf?.phoneNumber.text)!, password: (weakSelf?.password.text)!, invite_code: (weakSelf?.invitationCode.text)!, finished: { [weak self](userInfo, error) in
+                            
+                            // MARK:- data fetched successfully
+                            UIView.animate(withDuration: 0.25, animations: {
+                                self?.progressView?.alpha = 0
+                            }, completion: { (_) in
+                                self?.progressView?.removeFromSuperview()
+                            })
+                            
+                            
                             if error == nil {
                                 // MARK:- judge the return data from server
                                 if userInfo!["code"] as! String == "200" {

@@ -16,8 +16,7 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
     let coverView = Bundle.main.loadNibNamed("NoMissionCoverView", owner: nil, options: nil)?.first as! NoMissionCoverView
 
     var msgListArray = [MsgListModel]()
-    
-    
+        
     var destnation: ChattingViewController? 
     
     override func viewDidLoad() {
@@ -29,8 +28,11 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
         setNavBarBackBtn()
         setNavBarTitle(title: "私信")
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        msgListArray.removeAll()
         loadData()
-        
     }
     
     func loadData() {
@@ -80,6 +82,7 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageListCell") as! MessageListTableViewCell
         
+
         if msgListArray.count > 0 {
             cell.viewModel = msgListArray[indexPath.row]
         }
@@ -107,28 +110,6 @@ class MessagesListViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-//        return UITableViewCellEditingStyle.delete
-//    }
-//
-//    //MARK: - left slide to delete row
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        //TODO: remove form data source
-//        if editingStyle == .delete {
-//            tempCellData.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
-//        }
-//
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-//        return "删除"
-//    }
 
     
 

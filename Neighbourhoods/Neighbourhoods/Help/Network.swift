@@ -778,4 +778,26 @@ extension NetWorkTool {
         }
     }
     
+    //MARK: - 检查更新
+    func checkVersion(_ token: String, version_code: String, finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://www.netqlv.com/llb/api/user/checkVersion"
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        
+        let parameters = ["app_id": 2, "version_code": version_code] as [String : Any]
+
+        //3.发送请求参数
+        
+        request(.POST, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
 }

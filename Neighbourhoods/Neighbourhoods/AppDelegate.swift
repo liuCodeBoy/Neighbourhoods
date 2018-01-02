@@ -276,6 +276,19 @@ extension AppDelegate: UIAlertViewDelegate {
                 return
             }
             MBProgressHUD_JChat.showMessage(message: "登录中", toView: nil)
+            NetWorkTool.shareInstance.UserLogin(UserDefaults.standard.string(forKey: "number")!, password: UserDefaults.standard.string(forKey: "pwd")!, type: "pas", finished: { (userInfo, error) in
+                if error == nil {
+                    let  userInfoDict = userInfo!
+                    let loginStaus =  userInfoDict["code"] as? String
+                    if  loginStaus == "200" {
+                        
+                        let  resultDict = userInfoDict["result"] as? NSDictionary
+                        if  let token = resultDict?["token"]{
+                            UserDefaults.standard.set(token, forKey: "token")
+                        }
+                    }
+                }
+                })
             JMSGUser.login(withUsername: username, password: "llb2580.") { (result, error) in
                 MBProgressHUD_JChat.hide(forView: nil, animated: true)
                 if error == nil {

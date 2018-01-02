@@ -83,14 +83,15 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
         
         
         NetWorkTool.shareInstance.socialCharityList(p: 1) { [weak self](info, error) in
+            
+            // MARK:- data fetched successfully
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.progressView?.alpha = 0
+            }, completion: { (_) in
+                self?.progressView?.removeFromSuperview()
+            })
+            
             if info?["code"] as? String == "200"{
-                
-                // MARK:- data fetched successfully
-                UIView.animate(withDuration: 0.25, animations: {
-                    self?.progressView?.alpha = 0
-                }, completion: { (_) in
-                    self?.progressView?.removeFromSuperview()
-                })
                 
                 if let pages  = info!["result"]!["pages"] {
                     self?.pages = pages as! Int
@@ -116,6 +117,7 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
                 }
             }else{
                 //服务器
+                
                 self?.socialCharityListTableView.mj_header.endRefreshing()
                 self?.socialCharityListTableView.mj_footer.endRefreshing()
             }
