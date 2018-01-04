@@ -49,6 +49,7 @@ class MissionDetialViewController: UIViewController {
     }
     
     var uid: Int?
+    var posterId : Int?
     
     var evaluationImage: UIImage?
     
@@ -124,6 +125,9 @@ class MissionDetialViewController: UIViewController {
             }
             if let uid = viewModel?.receive?.uid as? Int {
                 self.uid = uid
+            }
+            if let posterId = viewModel?.uid as? Int {
+                self.posterId = posterId
             }
             // MARK:- mission receiver's info
             if let missionStatus = viewModel?.task_status {
@@ -282,6 +286,7 @@ class MissionDetialViewController: UIViewController {
                     if let avatarStr = viewModel?.user?.head_pic {
                         self.evaAvatar.sd_setImage(with: URL.init(string: avatarStr), placeholderImage: #imageLiteral(resourceName: "profile_avatar_placeholder"), options: .continueInBackground, completed: nil)
                     }
+                    
                     // TODO:- set nick nmae
                     if let userName = viewModel?.user?.nickname {
                         self.evaNickNameLbl.text = userName
@@ -327,8 +332,9 @@ class MissionDetialViewController: UIViewController {
         setNavBarBackBtn()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(pushReceiversProfile))
+        let tapSelf = UITapGestureRecognizer(target: self, action: #selector(pushPosterProfile))
         receiverAvatar.addGestureRecognizer(tap)
-        
+        avatar.addGestureRecognizer(tapSelf)
         if UserDefaults.standard.string(forKey: "token") == nil {
             self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
                 self.navigationController?.popViewController(animated: true)
@@ -354,6 +360,17 @@ class MissionDetialViewController: UIViewController {
             self.navigationController?.pushViewController(userInfoVc!, animated: true)
         }
     }
+    
+    @objc func pushPosterProfile() {
+        let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
+        userInfoVc?.uid = self.posterId
+        if  UserDefaults.standard.string(forKey: "token") == nil{
+            self.presentHintMessage(hintMessgae: "你还未登录", completion: nil)
+        }else{
+            self.navigationController?.pushViewController(userInfoVc!, animated: true)
+        }
+    }
+    
     
     @objc func userCancelMission() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {

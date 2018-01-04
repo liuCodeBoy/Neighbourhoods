@@ -82,7 +82,7 @@ class SocialCharityViewController: UIViewController, UITableViewDelegate, UITabl
     func lastedRequest(p : Int) -> () {
         
         
-        NetWorkTool.shareInstance.socialCharityList(p: 1) { [weak self](info, error) in
+        NetWorkTool.shareInstance.socialCharityList(p: p) { [weak self](info, error) in
             
             // MARK:- data fetched successfully
             UIView.animate(withDuration: 0.25, animations: {

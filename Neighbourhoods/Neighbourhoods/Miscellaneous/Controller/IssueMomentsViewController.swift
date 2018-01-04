@@ -41,7 +41,7 @@ class IssueMomentsViewController: UIViewController, UITextViewDelegate {
     //detailLable
     var  detailLable : UILabel?
     //定义默认上传图片的最大数额
-    let maxNum = 2
+    let maxNum = 9
     
      lazy var images = [UIImage]()
 
@@ -263,7 +263,7 @@ extension IssueMomentsViewController : TZImagePickerControllerDelegate {
         detailLable.frame.size = CGSize.init(width: 100, height: 15)
         detailLable.textColor = UIColor.lightGray
         detailLable.font = UIFont.systemFont(ofSize: 10)
-        detailLable.text = "个数不超过2张"
+        detailLable.text = "个数不超过9张"
         self.defaultImage?.addSubview(detailLable)
         self.detailLable = detailLable
     }

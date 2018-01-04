@@ -957,7 +957,48 @@ extension NetWorkTool {
             finished(resultDict, error)
         }
     }
-  
+    
+    //judge_district token
+    func  judge_district( _ token: String,finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://www.netqlv.com/llb/api/user/judge_district"
+        //2.获取请求参数
+       
+       self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    //judge_district token
+    func  msg_count( _ token: String,finished: @escaping (_ result : [String : AnyObject]? ,_ error:Error?) ->()) {
+        //1.获取请求的URLString
+        
+        let urlString = "http://www.netqlv.com/llb/api/user/msg_count"
+        //2.获取请求参数
+        
+        self.requestSerializer.setValue(token, forHTTPHeaderField: "token")
+        //3.发送请求参数
+        request(.POST, urlString: urlString, parameters: nil) { (result, error) -> () in
+            //获取字典数据
+            guard let resultDict = result as? [String : AnyObject] else {
+                finished(nil, error)
+                return
+            }
+            //将数组数据回调给外界控制器
+            finished(resultDict, error)
+        }
+    }
+    
+    
 }
 
 

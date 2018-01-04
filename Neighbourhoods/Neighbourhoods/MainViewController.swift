@@ -24,7 +24,7 @@ var tabBarHeight: CGFloat {
 class MainViewController: UITabBarController {
     
     
-    var spring: UIView?
+    var spring: SpringView?
     
     var rootVC: UIViewController?
     
@@ -74,9 +74,10 @@ class MainViewController: UITabBarController {
     
     @objc func addButtonClicked() {
         let presentationVC = UIApplication.shared.keyWindow?.rootViewController?.presentationController
+        let springView = Bundle.main.loadNibNamed("SpringView", owner: self, options: nil)?.first! as! SpringView
         
-        let springView = Bundle.main.loadNibNamed("SpringView", owner: self, options: nil)?.first! as! UIView
         spring = springView
+        msg_count()
         springView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         presentationVC?.presentedView?.addSubview(springView)
         springView.alpha = 0
@@ -85,6 +86,29 @@ class MainViewController: UITabBarController {
         }, completion: nil)
     }
     
+    func msg_count(){
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
+        NetWorkTool.shareInstance.msg_count(access_token) { [weak self](result, error) in
+            if result!["code"] as! String == "200" {
+                let num = result!["result"] as! Int
+                if num == 0{
+                 self?.spring?.numberLab.isHidden = true
+                }else{
+                 self?.spring?.numberLab.text = "\(num)"
+                }
+//                self.presentHintMessage(hintMessgae: "您还未填写地址", completion: { (action) in
+//                    self.navigationController?.popViewController(animated: true)
+//                    return
+//                })
+                
+            }
+        }
+    }
     @objc func closeBtnClicked() {
         
         UIView.animate(withDuration: 0.25, animations: {

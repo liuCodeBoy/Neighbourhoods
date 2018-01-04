@@ -8,7 +8,8 @@
 
 import UIKit
 import SDWebImage
-class ImageShowVC: UIViewController {
+class ImageShowVC: UIViewController,UIScrollViewDelegate {
+    @IBOutlet weak var pageLab: UILabel!
     @IBOutlet weak var imageScrollView: UIScrollView!
     var  index  : NSNumber?
     var  imageArr : NSArray?
@@ -18,31 +19,39 @@ class ImageShowVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let showImageArr = imageArr{
-            self.imageScrollView.contentSize = CGSize.init(width: screenWidth, height: imageScrollView.bounds.height)
+            let imageNum = showImageArr.count
+            self.imageScrollView.contentSize = CGSize.init(width: screenWidth * CGFloat(imageNum), height: imageScrollView.bounds.height)
             self.imageScrollView.isPagingEnabled = true
-            let backgroundView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight))
-          
-            self.imageScrollView.addSubview(backgroundView)
-            let childImageView = UIImageView.init(frame: CGRect.init(x: 0 , y: 0, width: screenWidth , height: screenHeight))
+            for i in 0..<imageNum{
+            let childImageView = UIImageView.init(frame: CGRect.init(x: screenWidth * CGFloat(i) , y: 30, width: screenWidth , height: screenHeight - 60))
             childImageView.isUserInteractionEnabled = true
-            //建立手势识别器
-            let gesture = UIPanGestureRecognizer(target: self, action:  #selector(panView(panView:)))
-            //附加识别器到视图
-            childImageView.addGestureRecognizer(gesture)
-            let pichGestrue = UIPinchGestureRecognizer.init(target: self, action: #selector(pinchView(pinchGestureRecognizer:)))
-            childImageView.addGestureRecognizer(pichGestrue)
-         
-            childImageView.contentMode = UIViewContentMode.scaleAspectFit
-            self.imageScrollView.addSubview(childImageView)
-            childImageView.sd_setImage(with: URL.init(string: showImageArr[index as! Int] as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
-//        }
+            childImageView.contentMode = .scaleAspectFit
+            childImageView.sd_setImage(with: URL.init(string: showImageArr[i] as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+            imageScrollView.addSubview(childImageView)
+            }
+            let startPage = Int(index!) + 1
+            self.pageLab.text = "\(String(describing: startPage))"+"/"+"\(imageNum)"
+            self.imageScrollView.setContentOffset(CGPoint.init(x:CGFloat(index!) * screenWidth , y: 0), animated: false)
       }
-      self.imageScrollView.bounces = false
-      self.imageScrollView.showsVerticalScrollIndicator = false
+      self.imageScrollView.delegate = self
+      self.imageScrollView.bounces  = false
+      self.imageScrollView.showsVerticalScrollIndicator   = false
       self.imageScrollView.showsHorizontalScrollIndicator = false
-     let gesture = UITapGestureRecognizer(target: self, action: #selector(viewTap(sender:)))
+      let gesture = UITapGestureRecognizer(target: self, action: #selector(viewTap(sender:)))
        self.imageScrollView.addGestureRecognizer(gesture)
     }
+    
+    
+    //pagecontroll的委托方法
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    if let showImageArr = imageArr{
+        let imageNum = showImageArr.count
+        let  page = Int(scrollView.contentOffset.x / scrollView.frame.size.width) + 1;
+        // 设置页码
+        self.pageLab.text = "\(String(describing: page))"+"/"+"\(imageNum)"
+        }
+    }
+
     
     
     @objc func  pinchView(pinchGestureRecognizer : UIPinchGestureRecognizer){
@@ -55,30 +64,11 @@ class ImageShowVC: UIViewController {
     
     @objc func panView(panView : UIPanGestureRecognizer){
         //得到拖的过程中的xy坐标
-//        if lastPoint == nil {
-//            lastPoint = panView.location(in:self.view);
-//        }else{
-//            let point:CGPoint = panView.location(in:self.view);
-//            let tempX = point.x - (lastPoint?.x)!
-//            let tempY = point.y - (lastPoint?.y)!
-//            //print(tempX ,tempY)
-//            self.x = Int(CGFloat(self.x)  +  CGFloat(tempX))
-//            self.y = Int(CGFloat(self.y)  +  CGFloat(tempY))
-//            panView.view?.frame.origin.x = CGFloat(self.x)
-//            panView.view?.frame.origin.y = CGFloat(self.y)
-//        }
         let transX = panView.translation(in: panView.view).x
         let transY = panView.translation(in: panView.view).y
         UIView.animate(withDuration: 0.2) {
             panView.view?.transform = CGAffineTransform(translationX: transX, y: transY)
         }
-    
-        
-//        UIView.animate(withDuration: 0.25, animations: {
-//            panView.view?.frame.origin.x = CGFloat(self.x)
-//            panView.view?.frame.origin.y = CGFloat(self.y)
-//        }, completion: nil)
-//        view1.transform = CGAffineTransformMakeTranslation(_transX, _transY)
     }
     
     @objc func viewTap(sender : UITapGestureRecognizer){
@@ -91,3 +81,18 @@ class ImageShowVC: UIViewController {
     }
 
 }
+//
+//            self.imageScrollView.addSubview(backgroundView)
+//            let childImageView = UIImageView.init(frame: CGRect.init(x: 0 , y: 0, width: screenWidth , height: screenHeight))
+//            childImageView.isUserInteractionEnabled = true
+//            //建立手势识别器
+//            let gesture = UIPanGestureRecognizer(target: self, action:  #selector(panView(panView:)))
+//            //附加识别器到视图
+//            childImageView.addGestureRecognizer(gesture)
+//            let pichGestrue = UIPinchGestureRecognizer.init(target: self, action: #selector(pinchView(pinchGestureRecognizer:)))
+//            childImageView.addGestureRecognizer(pichGestrue)
+//
+//            childImageView.contentMode = UIViewContentMode.scaleAspectFit
+//            self.imageScrollView.addSubview(childImageView)
+//            childImageView.sd_setImage(with: URL.init(string: showImageArr[index as! Int] as! String), placeholderImage: #imageLiteral(resourceName: "img_loading_placeholder"), options: SDWebImageOptions.continueInBackground, progress: nil, completed: nil)
+//        }

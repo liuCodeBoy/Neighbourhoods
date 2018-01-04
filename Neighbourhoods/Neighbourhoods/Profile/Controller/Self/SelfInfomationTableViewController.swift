@@ -180,6 +180,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
             })
         case 4:
             
+             judge_district()
         // MARK:- judge wheater the user's id is verified
             if userIdentificationStatus == "身份已认证" {
             // MARK:- verify succeeded
@@ -199,6 +200,7 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if userIdentificationStatus == "身份未认证" {
             // MARK:- not uploaded verification infomation
+               
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotVerified") as! NotVerifiedIDInfomationViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if userIdentificationStatus == "身份待审核" {
@@ -249,6 +251,25 @@ class SelfInfomationTableViewController: UITableViewController, TZImagePickerCon
             }
         }
     }
+    
+    func judge_district(){
+        guard let access_token = UserDefaults.standard.string(forKey: "token") else {
+            self.presentHintMessage(hintMessgae: "你还未登陆", completion: { (_) in
+                self.navigationController?.popViewController(animated: true)
+            })
+            return
+        }
+        NetWorkTool.shareInstance.judge_district(access_token) { (result, error) in
+            if result!["code"] as! String == "400" {
+                self.presentHintMessage(hintMessgae: "您还未填写地址", completion: { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                    return
+                })
+               
+            }
+      }
+    }
+    
     
     func loadProfileInfo() {
         guard let access_token = UserDefaults.standard.string(forKey: "token") else {

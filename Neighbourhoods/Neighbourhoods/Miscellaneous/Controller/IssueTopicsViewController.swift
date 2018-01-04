@@ -192,7 +192,9 @@ class IssueTopicsViewController: UIViewController, UITextViewDelegate, UITextFie
             self.detialTopDistanceCons.constant = 0
             self.topicDetialTextView.becomeFirstResponder()
             self.topicTitle.text = "发布话题帖子"
-            self.maxNum = 2
+            self.maxNum = 9
+            detailLable?.text = "个数不超过\(self.maxNum)张"
+            
         }
     }
     

@@ -18,6 +18,7 @@ let signInMotification = "com.app.signin"
 
 
 class SpringView: UIView {
+    @IBOutlet weak var numberLab: UILabel!
     
     @IBAction func momentsBtn(_ sender: UIButton) {
         NotificationCenter.default.post(name: NSNotification.Name.init(issueMomentsNotification), object: nil)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -144,14 +144,33 @@
                                         <action selector="messgaeBtn:" destination="qSd-8V-SFz" eventType="touchUpInside" id="XKV-Jd-ggL"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ2-fc-f87">
+                                    <rect key="frame" x="65" y="8" width="20" height="20"/>
+                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="mAA-Q5-T8W"/>
+                                        <constraint firstAttribute="width" constant="20" id="xex-LA-mos"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="75" id="Oge-Eh-XV0"/>
                                 <constraint firstItem="HV8-bw-R9l" firstAttribute="top" secondItem="pWg-eC-lzB" secondAttribute="bottom" constant="5" id="YAS-Gz-sBd"/>
+                                <constraint firstItem="wQ2-fc-f87" firstAttribute="top" secondItem="pWg-eC-lzB" secondAttribute="top" id="hUj-Rl-4zW"/>
                                 <constraint firstItem="pWg-eC-lzB" firstAttribute="top" secondItem="Gee-26-4iK" secondAttribute="top" constant="8" id="iAJ-D4-oUv"/>
                                 <constraint firstItem="HV8-bw-R9l" firstAttribute="centerX" secondItem="pWg-eC-lzB" secondAttribute="centerX" id="jIb-gq-DzU"/>
                                 <constraint firstItem="pWg-eC-lzB" firstAttribute="centerX" secondItem="Gee-26-4iK" secondAttribute="centerX" id="q5x-Fv-RNt"/>
+                                <constraint firstItem="wQ2-fc-f87" firstAttribute="trailing" secondItem="pWg-eC-lzB" secondAttribute="trailing" id="rV8-v1-nqK"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKN-fV-eTc">
@@ -243,6 +262,9 @@
                 <constraint firstItem="4C4-IP-2hO" firstAttribute="top" secondItem="qSd-8V-SFz" secondAttribute="top" id="xZ1-QW-VJa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="hRz-5R-DMR"/>
+            <connections>
+                <outlet property="numberLab" destination="wQ2-fc-f87" id="zaI-RC-qrj"/>
+            </connections>
             <point key="canvasLocation" x="575.5" y="278.5"/>
         </view>
     </objects>

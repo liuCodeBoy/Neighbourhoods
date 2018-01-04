@@ -162,6 +162,12 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
             if detailMainModel != nil {
             cell.momentsCellModel = detailMainModel
             }
+            cell.pushImageClouse = {(imageArr, index) in
+                let desVC = UIStoryboard(name: "Circle", bundle: nil).instantiateViewController(withIdentifier: "ImageShowVCID") as!  ImageShowVC
+                desVC.index  = index
+                desVC.imageArr = imageArr
+                self.present(desVC, animated: true, completion: nil)
+            }
             //跳出用户详情
             cell.headImagePushClouse = { (otherID) in
                 let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
@@ -203,6 +209,7 @@ extension MomentsCommentDetialViewController: UITableViewDelegate, UITableViewDa
             }
             let  model = self.momentsComDetListArray[indexPath.row]
             cell?.momentsCellModel = model
+            
             //跳出用户详情
             cell?.headImagePushClouse = { (otherID) in
                 let userInfoVc = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "OthersMomentsID") as? OthersMomentsViewController
