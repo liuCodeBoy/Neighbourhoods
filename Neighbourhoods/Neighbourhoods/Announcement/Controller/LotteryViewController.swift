@@ -126,9 +126,22 @@ extension LotteryViewController: UITableViewDelegate, UITableViewDataSource  {
             let model = rotaionArray[indexPath.row]
             let lotteryDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LotteryDetailVCID") as! LotteryDetailVC
             lotteryDetailVC.modeId = model.id as? Int
+            NetWorkTool.shareInstance.lottery_judeg(UserDefaults.standard.string(forKey: "token")!, id: lotteryDetailVC.modeId!) { [weak self](info, error) in
+                if info?["code"] as? String == "200"{
+                    
+                }else if(info?["code"] as? String == "401"){
+                    self?.presentHintMessage(hintMessgae: "身份未认证", completion: { (action) in
+                        self?.navigationController?.popViewController(animated: true)
+                        return
+                    })
+                }else{
+                    
+                }
+            }
+            
             self.navigationController?.pushViewController(lotteryDetailVC, animated: true)
             return
-         }
+          }
         }
         if rotaionArray.count > 0 {
         let model = rotaionArray[indexPath.row]
